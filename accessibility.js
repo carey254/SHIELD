@@ -7,6 +7,9 @@ class AccessibilityWidget {
         this.setupImageDescriptions();
         this.isReading = false;
         this.currentUtterance = null;
+        this.readingQueue = [];
+        this.currentIndex = 0;
+        this.isPaused = false;
     }
 
     createWidget() {
@@ -20,6 +23,9 @@ class AccessibilityWidget {
                 <h3>Accessibility Options</h3>
                 <button id="screenReader" aria-label="Toggle screen reader">
                     <i class="fas fa-headphones"></i> Screen Reader
+                </button>
+                <button id="readPage" aria-label="Read entire page">
+                    <i class="fas fa-book-reader"></i> Read Page
                 </button>
                 <button id="highContrast" aria-label="Toggle high contrast">
                     <i class="fas fa-adjust"></i> High Contrast
@@ -42,6 +48,24 @@ class AccessibilityWidget {
             </div>
         `;
         document.body.appendChild(widget);
+
+        // Create reading controls
+        const controls = document.createElement('div');
+        controls.id = 'reading-controls';
+        controls.style.display = 'none';
+        controls.innerHTML = `
+            <button id="pauseReading" aria-label="Pause reading">
+                <i class="fas fa-pause"></i>
+            </button>
+            <button id="resumeReading" aria-label="Resume reading" style="display: none;">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="stopReading" aria-label="Stop reading">
+                <i class="fas fa-stop"></i>
+            </button>
+        `;
+        document.body.appendChild(controls);
+
         this.initializeEventListeners();
     }
 
@@ -84,6 +108,23 @@ class AccessibilityWidget {
 
         document.getElementById('resetAll').addEventListener('click', () => {
             this.resetAllSettings();
+        });
+
+        document.getElementById('readPage').addEventListener('click', () => {
+            this.readEntirePage();
+            document.getElementById('reading-controls').style.display = 'flex';
+        });
+
+        document.getElementById('pauseReading').addEventListener('click', () => {
+            this.pauseReading();
+        });
+
+        document.getElementById('resumeReading').addEventListener('click', () => {
+            this.resumeReading();
+        });
+
+        document.getElementById('stopReading').addEventListener('click', () => {
+            this.stopReading();
         });
     }
 
@@ -275,6 +316,149 @@ class AccessibilityWidget {
                 element.setAttribute('role', element.tagName.toLowerCase());
             }
         });
+    }
+
+    readEntirePage() {
+        this.stopSpeaking();
+        this.readingQueue = [];
+        this.currentIndex = 0;
+        
+        // Get all readable content in order
+        const contentNodes = this.getReadableContent(document.body);
+        this.readingQueue = contentNodes;
+        
+        // Start reading
+        this.readNextInQueue();
+        
+        // Show reading controls
+        document.getElementById('reading-controls').style.display = 'flex';
+    }
+
+    getReadableContent(element) {
+        const readableElements = [];
+        
+        // Helper function to check if text is meaningful
+        const isMeaningfulText = (text) => {
+            return text.trim().length > 0 && !/^[\s\r\n]+$/.test(text);
+        };
+
+        // Helper function to get element's display style
+        const isVisible = (elem) => {
+            return !!(elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length);
+        };
+
+        // Recursively gather readable content
+        const traverse = (node) => {
+            // Skip hidden elements
+            if (node.nodeType === Node.ELEMENT_NODE && !isVisible(node)) {
+                return;
+            }
+
+            // Handle text nodes
+            if (node.nodeType === Node.TEXT_NODE && isMeaningfulText(node.textContent)) {
+                readableElements.push({
+                    type: 'text',
+                    content: node.textContent.trim(),
+                    element: node.parentElement
+                });
+                return;
+            }
+
+            // Handle images
+            if (node.nodeName === 'IMG') {
+                const description = node.getAttribute('data-description') || node.alt;
+                if (description) {
+                    readableElements.push({
+                        type: 'image',
+                        content: `Image: ${description}`,
+                        element: node
+                    });
+                }
+                return;
+            }
+
+            // Handle form elements
+            if (['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON'].includes(node.nodeName)) {
+                const label = node.getAttribute('aria-label') || node.placeholder || node.value;
+                if (label) {
+                    readableElements.push({
+                        type: 'form',
+                        content: `${node.nodeName.toLowerCase()}: ${label}`,
+                        element: node
+                    });
+                }
+                return;
+            }
+
+            // Recursively process child nodes
+            if (node.childNodes) {
+                Array.from(node.childNodes).forEach(traverse);
+            }
+        };
+
+        traverse(element);
+        return readableElements;
+    }
+
+    readNextInQueue() {
+        if (this.isPaused || this.currentIndex >= this.readingQueue.length) {
+            if (this.currentIndex >= this.readingQueue.length) {
+                this.stopReading();
+            }
+            return;
+        }
+
+        const item = this.readingQueue[this.currentIndex];
+        const utterance = new SpeechSynthesisUtterance(item.content);
+        
+        // Highlight current element being read
+        if (item.element) {
+            item.element.classList.add('currently-reading');
+        }
+
+        utterance.onend = () => {
+            if (item.element) {
+                item.element.classList.remove('currently-reading');
+            }
+            this.currentIndex++;
+            this.readNextInQueue();
+        };
+
+        utterance.onerror = (event) => {
+            console.error('Speech synthesis error:', event);
+            this.currentIndex++;
+            this.readNextInQueue();
+        };
+
+        window.speechSynthesis.speak(utterance);
+        this.currentUtterance = utterance;
+    }
+
+    pauseReading() {
+        this.isPaused = true;
+        window.speechSynthesis.pause();
+        document.getElementById('pauseReading').style.display = 'none';
+        document.getElementById('resumeReading').style.display = 'block';
+    }
+
+    resumeReading() {
+        this.isPaused = false;
+        window.speechSynthesis.resume();
+        document.getElementById('pauseReading').style.display = 'block';
+        document.getElementById('resumeReading').style.display = 'none';
+        this.readNextInQueue();
+    }
+
+    stopReading() {
+        this.stopSpeaking();
+        this.readingQueue = [];
+        this.currentIndex = 0;
+        this.isPaused = false;
+        document.getElementById('reading-controls').style.display = 'none';
+        
+        // Remove any highlighting
+        const highlighted = document.querySelectorAll('.currently-reading');
+        highlighted.forEach(el => el.classList.remove('currently-reading'));
     }
 }
 
