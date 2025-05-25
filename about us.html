@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+      
+
+         /* Values page*/
+         * {
+          box-sizing: border-box;
+        }
+      
+        body {
+          font-family: sans-serif;
+          margin: 0;
+          background-color: #fefefe;
+        }
+      
+        .values-section {
+          padding: 2rem;
+          background-color: #fff7ed;
+        }
+      
+        summary {
+          background-color: #ffffff;
+          padding: 1.2rem;
+          font-size: 1.6rem;
+          font-weight: bold;
+          color: #ea580c;
+          text-align: center;
+          border-radius: 10px;
+          cursor: pointer;
+          border: 2px solid #f97316;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+      
+        summary::marker {
+          display: none;
+        }
+      
+        .values-intro {
+          text-align: center;
+          max-width: 900px;
+          margin: 1.7rem auto;
+          font-size: 1.3rem;
+          color: black;
+        }
+      
+        .values-cards {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1.5rem;
+          margin-top: 2rem;
+        }
+      
+        .card {
+          width: 18%;
+          min-width: 180px;
+          perspective: 1000px;
+        }
+      
+        .card-inner {
+          width: 100%;
+          height: 220px;
+          position: relative;
+          transition: transform 0.8s;
+          transform-style: preserve-3d;
+        }
+      
+        .card:hover .card-inner {
+          transform: rotateY(180deg);
+        }
+      
+        .card-front, .card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          backface-visibility: hidden;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          background-color: white;
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+      
+        .card-front {
+          border: 2px solid #f97316;
+          color: #ea580c;
+          font-weight: bold;
+        }
+      
+        .card-front i {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+          color: #ea580c;
+        }
+      
+        .sticker {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          background: #f97316;
+          color: white;
+          font-size: 0.75rem;
+          padding: 0.2rem 0.6rem;
+          border-radius: 10px;
+        }
+      
+        .card-back {
+          transform: rotateY(180deg);
+          background-color: #fff7ed;
+          border: 2px solid #f97316;
+          color: #444;
+          font-size: 0.95rem;
+          padding: 1rem;
+        }
+      
+        @media (max-width: 1000px) {
+          .card {
+            width: 45%;
+          }
+        }
+      
+        @media (max-width: 600px) {
+          .card {
+            width: 90%;
+          }
+        }
+
+/*action*/
+
+.shield-cta-section {
+    padding: 60px 20px;
+    background: #FF6600 !important; /* strong orange background */
+    color: rgb(27, 25, 25); /* dark text color */
+    text-align: center; /* center the text */
+}
+
+
+
+.shield-cta-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.shield-cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.shield-cta-intro {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    line-height: 1.7;
+}
+
+.shield-cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #ffffff;
+    color: #FF6600;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.btn-get-involved {
+    display: inline-block;
+    background-color: #f5f1ef;
+    color: orangered;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+
+
+/* What We Do Section Styles */
+/* What We Do Section (Professional Style) */
+/* Full-Width What We Do Section */
+/* Reset default margin */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+ 
+  font-family: Arial, sans-serif;
+margin: 0; /* Remove original margin */
+padding-top: 80px; /* 👈 Adds space for the nav */
+}
+
+/* Full-width section */
+#what-we-do {
+  width: 100vw;
+  background-color: #fff8f0;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+/* Heading */
+#what-we-do h2 {
+  color: orange;
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* Content stretches full width */
+/* Ensure no default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full-width section */
+#what-we-do {
+  width: 100%;
+  background-color: #fff8f0;
+  padding: 60px 0;
+}
+
+/* Heading style */
+#what-we-do h2 {
+  color: orange;
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* Container: no max width, full width */
+.what-we-do-content {
+  width: 100%;
+  display: block;
+}
+
+/* Each item full width */
+.what-we-do-item {
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 40px;
+}
+
+/* Sub-headings */
+.what-we-do-item h3 {
+  color: black;
+  font-size: 1.7em;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-decoration: #000;
+}
+
+/* Paragraphs */
+.what-we-do-item p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Add this to your CSS */
+.what-we-do-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 40px; /* optional side padding for spacing */
+  box-sizing: border-box;
+}
+
+
+
+#team-intro {
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+#team {
+  margin-bottom: 100px;
+}
+
+.shield-cta-section {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+footer {
+  margin-top: 60px;
+}
+
+
+
+/*OUR VALUES*/
+
+.values-section {
+  background-color: #f3f4f6;
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+.values-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+summary {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+}
+
+details[open] summary::after {
+  content: "▲";
+  float: right;
+}
+
+summary::after {
+  content: "▼";
+  float: right;
+}
+
+.values-intro {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: black;
+}
+
+.values-cards {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.value-card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.value-card h3 {
+  color: #6b21a8;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.value-card p {
+  color:black;
+  font-size: 1.03rem;
+}
+#team-intro {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 40px;
+}
+
+
+
+
+/* Full-width container */
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* or: center */
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  gap: 10px; /* small spacing between items */
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* adds space between cards */
+  padding: 40px 20px; /* adds space around the whole container */
+}
+
+.team-member {
+  background-color: #fff;
+  border: 2px solid #ffa733;
+  border-radius: 12px;
+  padding: 20px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+
+
+/* Text styling */
+.team-member h3 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.team-member p {
+  font-size: 0.9em;
+  color: #555;
+  margin: 5px 0 0 0;
+}
+
+@media (max-width: 600px) {
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-member {
+    width: 90%;
+  }
+}
+
+/* Footer Styles */
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 40px 20px 10px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.footer-logo img {
+  max-height: 100px;
+}
+
+.footer-links, .footer-location, .footer-contact {
+  max-width: 250px;
+}
+
+.footer-links h3,
+.footer-location h3,
+.footer-contact h3 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 6px;
+}
+
+.footer-links ul li a,
+.footer-contact p,
+.footer-location p {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 15px;
+}
+.footer-links h3 {
+  color: orange;
+}
+.footer-location h3,
+.footer-contact h3 {
+  color: orange;
+}
+
+.footer-links .donate-btn {
+  background-color: #f2b400;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #000;
+}
+
+.payment-icons img {
+  margin-top: 10px;
+  margin-right: 8px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #aaa;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+}
+
+.team-intro h2{
+  color: orange;
+}
+
+.about-us {
+  padding: 60px 5%;
+  background-color: #f0f4f8;
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  flex: 0.5;
+  max-width: 400px;
+}
+
+.wide-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-text h2 {
+  text-align: center;
+  font-size: 2.5em;
+  color: orange;
+  margin-bottom: 30px;
+}
+
+.about-paragraphs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.about-text p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 0;
+}
+
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-us .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-us .content,
+  .about-us .image {
+    flex: 1 1 100%;
+  }
+
+  .about-us .content h2 {
+    font-size: 1.5em;
+  }
+
+  .about-us .content p {
+    font-size: 1em;
+  }
+}
+
+.about-container,
+.what-we-do-container,
+.values-cards,
+.team-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    max-width: 200%;
+    gap: 5px;
+    padding: 0 5%;
+}
+
+.about-image, .about-text {
+    width: 48%;
+}
+
+.what-we-do-item,
+.value-card,
+.team-member {
+    flex: 1 1 30%; /* Adjusts to 3 per row */
+    margin: 10px;
+    min-width: 250px;
+}
+
+.values-intro,
+#team-intro p {
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+#what-we-do, .values-section, #team {
+    padding: 40px 5%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2Opx;
+}
+
+
+.wide-image {
+  width: 100%;
+  max-width: 1500px; /* Adjust to control stretch limit */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Base styling */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px;
+}
+
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+    margin-right: 100px; /* <-- Add this */
+   
+  white-space: nowrap; /* prevents breaking into 2 lines */
+
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* Responsive Mobile Menu */
+/* General styles for the .nav element */
+.nav {
+  
+}
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+  .nav {
+    width: 90%; /* Adjust width on tablets */
+  }
+}
+
+/* Media query for small devices (phones) */
+@media (max-width: 768px) {
+  .nav {
+    width: 100%; /* Full width on mobile devices */
+    padding: 10px; /* Optional, adjust padding on smaller screens */
+  }
+}
+
+/* Media query for very small devices (phones in portrait) */
+@media (max-width: 480px) {
+  .nav {
+    width: 100%; /* Full width for very small screens */
+    padding: 5px; /* Further adjust padding if necessary */
+  }
+}
+
+
+.hero img {
+   
+  max-width: 600px; /* Set a max width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto; /* Center the images */
+  width: 100%; /* Ensures the image spans the full width */
+  max-width: 100%; /* Prevents overflow */
+  height: 400px; /* Keeps the height fixed */
+  object-fit: cover; /* Ensures the image fills the width while maintaining a good aspect ratio */
+  display: block;
+}
+
+
+/* Hide hamburger & menu by default */
+.hamburger,
+.side-menu {
+  display: none;
+}
+
+/* Mobile styles only */
+@media (max-width: 768px) {
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    z-index: 1001;
+    display: block;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .side-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .side-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    margin: 15px 0;
+  }
+
+  .close-btn {
+    align-self: flex-end;
+    font-size: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  /* Hide original nav links */
+  nav .nav-links {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* WHAT WE DO: Stack items vertically on phones */
+  .what-we-do-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .what-we-do-item {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  /* OUR TEAM: Stack members vertically on phones */
+  .team-container {
+    flex-direction: column !important;
+    align-items:center
+  }
+
+  .team-member {
+    width: 90% !important;
+    margin-bottom : 20px;
+  }
+}
+
+
+
+
+
+/* Desktop - big logo */
+.logo {
+  height: 200px !important;
+  object-fit: contain;
+}
+/* Hamburger Icon (Mobile Only) */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  color: #ff4500;
+  z-index: 1100;
+  cursor: pointer;
+}
+
+/* Sidebar Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  max-width: 280px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  transition: 0.3s ease-in-out;
+  z-index: 1050;
+  padding: 20px;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-btn {
+  font-size: 26px;
+  color: #ff4500;
+  cursor: pointer;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 15px;
+}
+
+.mobile-menu ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #222;
+}
+
+.mobile-menu ul li a.highlight {
+  background-color: #ff4500;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+/* Show hamburger and hide desktop links on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000;
+    height: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .logo-link img {
+    height: 65px !important;
+    margin: 0;
+    padding: 0;
+  }
+  .logo-link {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .about-image,
+  .about-text {
+    width: 100%;
+    max-width: 95%;
+  }
+
+  .about-text h2 {
+    font-size: 1.6rem;
+    margin-top: 20px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+      <a href="index.html" class="logo-link">
+        <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo">
+      </a>
+    
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about us.html">About Us</a>
+        <a href="resource&support.html">Resources</a>
+        <div class="dropdown">
+          <a href="#">Get Involved</a>
+          <div class="dropdown-content">
+            <a href="events.html">Events</a>
+            <a href="news.html">News</a>
+            <a href="partner.html">Partner with Us</a>
+          </div>
+        </div>
+        <a href="donate.html" class="highlight">Donate</a>
+      </div>
+    </nav>
+
+   <!-- Hamburger Icon (Mobile Only) -->
+<div class="hamburger" onclick="openMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<!-- Mobile Sidebar Menu -->
+<div id="mobileMenu" class="mobile-menu">
+  <div class="menu-header">
+    <span class="close-btn" onclick="closeMenu()">&times;</span>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about us.html">About Us</a></li>
+    <li><a href="resource&support.html">Resources</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="partner.html">Partner with Us</a></li>
+    <li><a href="donate.html" class="highlight">Donate</a></li>
+  </ul>
+</div>
+
+    <section class="hero-alt">
+      <div class="image-container">
+        <div class="color-overlay"></div>
+        <img src="images/image.png" alt="Background 1" class="bg-image active">
+        <img src="images/innovation.png" alt="Background 2" class="bg-image">
+        <img src="images/prevent.png" alt="Background 3" class="bg-image">
+        <img src="images/aboutus.png" alt="Background 4" class="bg-image">
+    
+        
+        </div>
+      </div>
+    </section>
+
+<!-- About Us Section -->
+<section class="about-us">
+  <div class="about-container">
+      <div class="about-image"> 
+          <img src="images/woman.png" alt="About Us" class="wide-image">
+      </div>
+      <div class="about-text">
+          <h2 style="color: orange;">About Us</h2>
+          <p>Shield Maidens was founded in 2024 by Sumaiyya Jumma and Maria Muneeni as a way of giving back to the community. As beneficiaries of UN Women, the African Girls Can Code Initiative (AGCCI), and Siemens EmpowerHER, they recognized the need to create a platform dedicated to advocacy, empowerment, and education.</p>
+          <p>At Shield Maidens, our mission is to educate young women and youth on digital safety while actively fighting against technology-facilitated gender-based violence (TFGBV). We are committed to fostering an inclusive world by advocating for gender equality, justice, and the protection of online spaces.</p>
+          <p>Our goal is to empower individuals with the knowledge and tools needed to navigate the digital world safely, to amplify voices against gender-based violence, and to drive meaningful change through advocacy and education. Together, we stand for a safer, more inclusive future for all.</p>
+      </div>
+  </div>
+</section>
+
+<!-- What We Do Section -->
+<!-- What We Do Section -->
+<section id="what-we-do">
+  <h2>What We Do</h2>
+  <div class="what-we-do-container">
+      <div class="what-we-do-item">
+          <h3>Digital Safety & Awareness</h3>
+          <p>We equip individuals, especially women, girls, and marginalized groups, with the knowledge and skills they need to protect themselves in the digital world. Through online safety trainings, toolkits, and community workshops, we teach how to identify online threats such as phishing, cyberbullying, and doxxing. We also advocate for responsible digital citizenship and the ethical use of technology in everyday life.</p>
+      </div>
+
+      <div class="what-we-do-item">
+          <h3>TFGBV Prevention & Support</h3>
+          <p>Technology Facilitated Gender Based Violence (TFGBV) is a growing concern in the digital age. We actively address this issue by creating safe spaces for survivors, offering emotional support, and connecting them to professional resources and services. Through storytelling, survivor-led advocacy, and awareness campaigns, we educate the public and policymakers about the impact of TFGBV and push for systemic change.</p>
+      </div>
+
+      <div class="what-we-do-item">
+          <h3>Innovation & Technology</h3>
+          <p>We believe technology can be a force for good. That is why we support youth and women in developing digital solutions that promote safety, inclusivity, and justice. Digital reporting tools and educational platforms, our team harnesses innovation to solve real-world issues. We also teach coding, cybersecurity, and digital literacy to bridge the digital divide and empower future tech leaders.</p>
+      </div>
+  </div>
+</section>
+
+
+<!-- Tailwind Core Values Dropdown Cards Section -->
+<section class="values-section">
+  <details open>
+    <summary>🔥 Our Core Values</summary>
+    <p class="values-intro">
+      At Shield Maidens, we empower young women, girls, and marginalized communities to thrive in digital spaces. United by core values, we combat TFGBV and stand for a just, inclusive, and safe tech world.
+    </p>
+
+    <div class="values-cards">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Empowerment</div>
+            <i class="fas fa-bolt"></i>
+            Empowerment
+          </div>
+          <div class="card-back">
+            We uplift women and girls to confidently and safely lead in digital spaces, fighting TFGBV every step of the way.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Integrity</div>
+            <i class="fas fa-shield-alt"></i>
+            Integrity
+          </div>
+          <div class="card-back">
+            We are honest, ethical, and transparent in everything we do, building trust with our communities.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Advocacy</div>
+            <i class="fas fa-bullhorn"></i>
+            Advocacy
+          </div>
+          <div class="card-back">
+            We amplify marginalized voices and demand policies and protections that keep all users safe online.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Solidarity</div>
+            <i class="fas fa-hands-helping"></i>
+            Solidarity
+          </div>
+          <div class="card-back">
+            We stand with survivors and allies to build a community rooted in strength and resilience.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Inclusion</div>
+            <i class="fas fa-universal-access"></i>
+            Inclusion
+          </div>
+          <div class="card-back">
+            We celebrate diversity and ensure access for all, including those with disabilities, to participate equally in tech.
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+
+
+<hr style="border: none; height: 60px;" />
+
+<!-- Our Team Section -->
+<section id="team-intro">
+  <h2 style="color: orange;">Our Amazing Team</h2>
+  <p>Empowering and celebrating women in technology across Africa guiding Tech-Girls to their Full Potential</p>
+</section>
+
+<section id="team">
+  <div class="team-container">
+      <div class="team-member">
+          <img src="images/sumaiya.jpg" alt="Sumaiyya">
+          <div class="team-info">
+              <h3>Jane Doe</h3>
+              <p>Founder / Data Privacy Specialist</p>
+          </div>
+      </div>
+      <div class="team-member">
+          <img src="images/mariah.png" alt="Maria">
+          <div class="team-info">
+              <h3>Maria Muneeni</h3>
+              <p>Co-Founder / Digital Safety Trainer / Champion for PWDs Inclusivity</p>
+          </div>
+      </div>
+      <div class="team-member">
+          <img src="images/ruthi.png" alt="Ruth">
+          <div class="team-info">
+              <h3>Ruth Jebitok</h3>
+              <p>Social Media Manager</p>
+          </div>
+      </div>
+      <div class="team-member">
+          <img src="images/new_2.jpg" alt="Ruth">
+          <div class="team-info">
+              <h3>Susan Wangari</h3>
+              <p>Online Safety Advocate</p>
+          </div>
+      </div>
+      <div class="team-member">
+        <img src="images/irene.png" alt="Ruth">
+        <div class="team-info">
+            <h3>Irene Cherono</h3>
+            <p>Online Safety Advocate/Content Creator</p>
+        </div>
+    </div>
+      <div class="team-member">
+          <img src="images/rey.png" alt="Caren">
+          <div class="team-info">
+              <h3>Caren Jeruto</h3>
+              <p>Online Safety Advocate / Developer</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<section class="shield-cta-section">
+    <div class="shield-cta-container">
+        <h2>Join Us in Making a Difference</h2>
+        <p class="shield-cta-intro">
+            At Shield Maidens, we believe in the power of collective action. Together, we can create a safer, more inclusive digital space for all. Get involved today to help us fight against Technology-Facilitated Gender-Based Violence and advocate for the rights of marginalized communities online.
+        </p>
+        <a href="index.html#contact" class="btn-get-involved">Get Involved</a>
+    </div>
+</section>
+
+
+ <!-- Footer -->
+ <footer class="footer">
+  <div class="footer-container">
+      <div class="footer-logo">
+          <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo">
+      </div>
+
+      <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about us.html">About Us</a></li>
+              <li><a href="resource&support.html">Resources</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="partner.html">Partner with Us</a></li>
+              <li><a href="donate.html" class="donate-btn">Donate</a></li>
+          </ul>
+          <div class="payment-icons">
+              <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
+              <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" height="20">
+              <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" height="20">
+          </div>
+      </div>
+
+      <div class="footer-location">
+          <h3>Location</h3>
+          <p>Nairobi, Kenya</p>
+      </div>
+
+      <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>Email: info@shieldmaidens.org</p>
+          <h3>Our Socials</h3>
+          <div class="social-icons">
+            <a href="https://x.com/_shield_maidens" target="_blank">
+                <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
+            </a>
+            <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank">
+                <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"/>
+            </a>
+            <a href="https://www.instagram.com/the_shield_maidens/" target="_blank">
+                <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram"/>
+            </a>
+        </div>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>Copyright © 2025 Shield Maidens</p>
+  </div>
+</footer>
+
+  
+<script>
+  //heroes section
+
+
+  const images = document.querySelectorAll('.bg-image');
+  let current = 0;
+
+  setInterval(() => {
+    images[current].classList.remove('active');
+    current = (current + 1) % images.length;
+    images[current].classList.add('active');
+  }, 4000); // change every 4 seconds
+
+
+  function openMenu() {
+    document.getElementById("mobileMenu").classList.add("active");
+  }
+
+  function closeMenu() {
+    document.getElementById("mobileMenu").classList.remove("active");
+  }
+</script>
+
+<script src="accessibility.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
