@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="accessibility.css">
+  <link rel="stylesheet" href="quiz.css">
   
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
@@ -1101,62 +1102,62 @@ button:disabled {
     <div id="basic-quiz" class="visible">
       <h2>Basic Level Quiz</h2>
 
-      <div class="question" data-correct="B">
+      <div class="question" data-correct="1">
         <p>1. What is TFGBV?</p>
         <ul class="options">
-          <li><label><input type="radio" name="q1" value="A">Violence only in physical spaces</label></li>
-          <li><label><input type="radio" name="q1" value="B">Violence using digital technologies</label></li>
-          <li><label><input type="radio" name="q1" value="C">Only verbal abuse offline</label></li>
-          <li><label><input type="radio" name="q1" value="D">Violence targeting men exclusively</label></li>
+          <li><label><input type="radio" name="q1" value="0">Violence only in physical spaces</label></li>
+          <li><label><input type="radio" name="q1" value="1">Violence using digital technologies</label></li>
+          <li><label><input type="radio" name="q1" value="2">Only verbal abuse offline</label></li>
+          <li><label><input type="radio" name="q1" value="3">Violence targeting men exclusively</label></li>
         </ul>
       </div>
 
-      <div class="question" data-correct="A">
+      <div class="question" data-correct="0">
         <p>2. Which is an example of TFGBV?</p>
         <ul class="options">
-          <li><label><input type="radio" name="q2" value="A">Sending anonymous threats online</label></li>
-          <li><label><input type="radio" name="q2" value="B">A face-to-face argument</label></li>
-          <li><label><input type="radio" name="q2" value="C">Schoolyard bullying</label></li>
-          <li><label><input type="radio" name="q2" value="D">None of the above</label></li>
+          <li><label><input type="radio" name="q2" value="0">Sending anonymous threats online</label></li>
+          <li><label><input type="radio" name="q2" value="1">A face-to-face argument</label></li>
+          <li><label><input type="radio" name="q2" value="2">Schoolyard bullying</label></li>
+          <li><label><input type="radio" name="q2" value="3">None of the above</label></li>
         </ul>
       </div>
 
-      <div class="question" data-correct="B">
+      <div class="question" data-correct="1">
         <p>3. Who are chiefly targeted by TFGBV?</p>
         <ul class="options">
-          <li><label><input type="radio" name="q3" value="A">All genders equally</label></li>
-          <li><label><input type="radio" name="q3" value="B">Women and girls</label></li>
-          <li><label><input type="radio" name="q3" value="C">Only men</label></li>
-          <li><label><input type="radio" name="q3" value="D">Children under 5</label></li>
+          <li><label><input type="radio" name="q3" value="0">All genders equally</label></li>
+          <li><label><input type="radio" name="q3" value="1">Women and girls</label></li>
+          <li><label><input type="radio" name="q3" value="2">Only men</label></li>
+          <li><label><input type="radio" name="q3" value="3">Children under 5</label></li>
         </ul>
       </div>
 
-      <div class="question" data-correct="A">
+      <div class="question" data-correct="0">
         <p>4. What is "doxxing"?</p>
         <ul class="options">
-          <li><label><input type="radio" name="q4" value="A">Publishing private info without consent</label></li>
-          <li><label><input type="radio" name="q4" value="B">Sending kind messages</label></li>
-          <li><label><input type="radio" name="q4" value="C">Setting up security software</label></li>
-          <li><label><input type="radio" name="q4" value="D">None of these</label></li>
+          <li><label><input type="radio" name="q4" value="0">Publishing private info without consent</label></li>
+          <li><label><input type="radio" name="q4" value="1">Sending kind messages</label></li>
+          <li><label><input type="radio" name="q4" value="2">Setting up security software</label></li>
+          <li><label><input type="radio" name="q4" value="3">None of these</label></li>
         </ul>
       </div>
 
-      <div class="question" data-correct="D">
+      <div class="question" data-correct="3">
         <p>5. A consequence of TFGBV can be:</p>
         <ul class="options">
-          <li><label><input type="radio" name="q5" value="A">Better job offers</label></li>
-          <li><label><input type="radio" name="q5" value="B">Increased self-esteem</label></li>
-          <li><label><input type="radio" name="q5" value="C">More trust in technology</label></li>
-          <li><label><input type="radio" name="q5" value="D">Emotional distress and reputational harm</label></li>
+          <li><label><input type="radio" name="q5" value="0">Better job offers</label></li>
+          <li><label><input type="radio" name="q5" value="1">Increased self-esteem</label></li>
+          <li><label><input type="radio" name="q5" value="2">More trust in technology</label></li>
+          <li><label><input type="radio" name="q5" value="3">Emotional distress and reputational harm</label></li>
         </ul>
       </div>
+
       <div class="btn-group">
         <button id="prev">⬅ Previous</button>
         <button id="next">Next ➡</button>
       </div>
       
       <button id="submit-basic" class="quiz-submit">Submit Basic Quiz</button>
-
     </div>
 
     <!-- RESULTS -->
@@ -1167,64 +1168,63 @@ button:disabled {
       <button id="go-intermediate">Go to Intermediate Quiz</button>
     </div>
 
-   <!-- INTERMEDIATE QUIZ -->
-<div id="intermediate-quiz" style="display: none;">
-  <h2>Intermediate Level Quiz</h2>
+    <!-- INTERMEDIATE QUIZ -->
+    <div id="intermediate-quiz" style="display: none;">
+      <h2>Intermediate Level Quiz</h2>
 
-  <div class="question" data-correct="A">
-    <p>1. What makes digital tools powerful for TFGBV perpetrators?</p>
-    <ul class="options">
-      <li><label><input type="radio" name="iq1" value="A">Anonymity and wide reach</label></li>
-      <li><label><input type="radio" name="iq1" value="B">Strong encryption</label></li>
-      <li><label><input type="radio" name="iq1" value="C">Offline meetups</label></li>
-      <li><label><input type="radio" name="iq1" value="D">Legal barriers</label></li>
-    </ul>
+      <div class="question" data-correct="0">
+        <p>1. What makes digital tools powerful for TFGBV perpetrators?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="iq1" value="0">Anonymity and wide reach</label></li>
+          <li><label><input type="radio" name="iq1" value="1">Strong encryption</label></li>
+          <li><label><input type="radio" name="iq1" value="2">Offline meetups</label></li>
+          <li><label><input type="radio" name="iq1" value="3">Legal barriers</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="3">
+        <p>2. Which is NOT a form of TFGBV?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="iq2" value="0">Cyberstalking</label></li>
+          <li><label><input type="radio" name="iq2" value="1">Impersonation</label></li>
+          <li><label><input type="radio" name="iq2" value="2">Non-consensual image sharing</label></li>
+          <li><label><input type="radio" name="iq2" value="3">Peaceful protest</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="1">
+        <p>3. A common impact of TFGBV is:</p>
+        <ul class="options">
+          <li><label><input type="radio" name="iq3" value="0">More online participation</label></li>
+          <li><label><input type="radio" name="iq3" value="1">Negative psychological harm</label></li>
+          <li><label><input type="radio" name="iq3" value="2">Improved finances</label></li>
+          <li><label><input type="radio" name="iq3" value="3">Better career prospects</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="1">
+        <p>4. What is "revenge porn"?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="iq4" value="0">Posting memes</label></li>
+          <li><label><input type="radio" name="iq4" value="1">Non-consensual sharing of intimate images</label></li>
+          <li><label><input type="radio" name="iq4" value="2">Cyberbullying by text only</label></li>
+          <li><label><input type="radio" name="iq4" value="3">Hacking bank accounts</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="0">
+        <p>5. How can communities reduce TFGBV?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="iq5" value="0">Spreading awareness and digital literacy</label></li>
+          <li><label><input type="radio" name="iq5" value="1">Ignoring the issue</label></li>
+          <li><label><input type="radio" name="iq5" value="2">Limiting all online use</label></li>
+          <li><label><input type="radio" name="iq5" value="3">Encouraging anonymous threats</label></li>
+        </ul>
+      </div>
+      
+      <button id="submit-intermediate">Submit Intermediate Quiz</button>
+    </div>
   </div>
-
-  <div class="question" data-correct="D">
-    <p>2. Which is NOT a form of TFGBV?</p>
-    <ul class="options">
-      <li><label><input type="radio" name="iq2" value="A">Cyberstalking</label></li>
-      <li><label><input type="radio" name="iq2" value="B">Impersonation</label></li>
-      <li><label><input type="radio" name="iq2" value="C">Non-consensual image sharing</label></li>
-      <li><label><input type="radio" name="iq2" value="D">Peaceful protest</label></li>
-    </ul>
-  </div>
-
-  <div class="question" data-correct="B">
-    <p>3. A common impact of TFGBV is:</p>
-    <ul class="options">
-      <li><label><input type="radio" name="iq3" value="A">More online participation</label></li>
-      <li><label><input type="radio" name="iq3" value="B">Negative psychological harm</label></li>
-      <li><label><input type="radio" name="iq3" value="C">Improved finances</label></li>
-      <li><label><input type="radio" name="iq3" value="D">Better career prospects</label></li>
-    </ul>
-  </div>
-
-  <div class="question" data-correct="B">
-    <p>4. What is "revenge porn"?</p>
-    <ul class="options">
-      <li><label><input type="radio" name="iq4" value="A">Posting memes</label></li>
-      <li><label><input type="radio" name="iq4" value="B">Non-consensual sharing of intimate images</label></li>
-      <li><label><input type="radio" name="iq4" value="C">Cyberbullying by text only</label></li>
-      <li><label><input type="radio" name="iq4" value="D">Hacking bank accounts</label></li>
-    </ul>
-  </div>
-
-  <div class="question" data-correct="A">
-    <p>5. How can communities reduce TFGBV?</p>
-    <ul class="options">
-      <li><label><input type="radio" name="iq5" value="A">Spreading awareness and digital literacy</label></li>
-      <li><label><input type="radio" name="iq5" value="B">Ignoring the issue</label></li>
-      <li><label><input type="radio" name="iq5" value="C">Limiting all online use</label></li>
-      <li><label><input type="radio" name="iq5" value="D">Encouraging anonymous threats</label></li>
-    </ul>
-  </div>
-
-  <!-- ✅ Visible submit button inside the quiz div -->
-  <button id="submit-intermediate">Submit Intermediate Quiz</button>
-</div>
-</div>
 
 
   <section id="resources" class="resources-section">
@@ -1326,6 +1326,7 @@ button:disabled {
 
    
   <script src="accessibility.js"></script>
+  <script src="quiz.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
