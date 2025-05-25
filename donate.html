@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Now - Support Our Cause</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  
+
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html" class="logo-link">
+        <img src="/images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
+    </a>
+
+   
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about us.html">About Us</a>
+        <a href="resource&support.html">Resources</a>
+        <div class="dropdown">
+            <a href="#">Get Involved</a>
+            <div class="dropdown-content">
+                <a href="events.html">Events</a>
+                <a href="news.html">News</a>
+          
+                <a href="partner.html">Partner with Us</a>
+            </div>
+        </div>
+        <a href="donate.html" class="highlight">Donate</a>
+    </div>
+</nav>
+
+ <!-- Hamburger Icon (Mobile Only) -->
+ <div class="hamburger" onclick="openMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<!-- Mobile Sidebar Menu -->
+<div id="mobileMenu" class="mobile-menu">
+  <div class="menu-header">
+    <span class="close-btn" onclick="closeMenu()">&times;</span>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about us.html">About Us</a></li>
+    <li><a href="resource&support.html">Resources</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="partner.html">Partner with Us</a></li>
+    <li><a href="donate.html" class="highlight">Donate</a></li>
+  </ul>
+</div>
+
+
+  <div class="container">
+    <h1>Support Our Mission</h1>
+    <p class="intro">Help us offer free legal services to victims of TFGBV,  fundraise for survivors and help include PWDs .</p>
+
+    <form id="donationForm" action="process_donation.php" method="POST" aria-label="Donation Form">
+      <label for="frequency">Donation Type</label>
+      <select name="frequency" id="frequency">
+        <option value="one-time">One-time</option>
+        <option value="monthly">Monthly</option>
+      </select>
+
+      <label>Choose Amount (KES)</label>
+      <div class="preset-amounts">
+        <button type="button" class="amount-btn" data-amount="5000">KES 5,000</button>
+        <button type="button" class="amount-btn" data-amount="2500">KES 2,500</button>
+        <button type="button" class="amount-btn" data-amount="1000">KES 1,000</button>
+        <button type="button" class="amount-btn" data-amount="500">KES 500</button>
+      </div>
+      <input type="number" name="custom_amount" id="customAmount" placeholder="Or enter custom amount">
+      <input type="hidden" name="amount" id="finalAmount" required>
+
+      <h3>Your Details</h3>
+      <input type="text" name="first_name" placeholder="First Name" required aria-required="true">
+      <input type="text" name="last_name" placeholder="Last Name" required aria-required="true">
+      <input type="email" name="email" placeholder="Email Address" required aria-required="true">
+      <input type="tel" name="phone" placeholder="Phone Number (e.g. +254...)" required aria-required="true">
+
+      <label for="message">Comment (optional)</label>
+      <textarea name="message" id="message" rows="3" placeholder="Leave a short note..." aria-required="false"></textarea>
+
+      <p id="summaryText">Selected donation: <strong>KES 0</strong></p>
+
+      <button type="submit" aria-label="Submit Donation">Donate Now</button>
+    </form>
+  </div>
+
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo">
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+               
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="resource&support.html">Resources</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="partner.html">Partner with Us</a></li>
+                <li><a href="donate.html" class="donate-btn">Donate</a></li>
+            </ul>
+            <div class="payment-icons">
+                <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
+                <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" height="20">
+                <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" height="20">
+            </div>
+        </div>
+
+        <div class="footer-location">
+            <h3>Location</h3>
+            <p>Nairobi, Kenya</p>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: info@shieldmaidens.org</p>
+            <h3>Our Socials</h3>
+            <div class="social-icons">
+              <a href="https://x.com/_shield_maidens" target="_blank">
+                  <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
+              </a>
+              <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank">
+                  <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"/>
+              </a>
+              <a href="https://www.instagram.com/the_shield_maidens/" target="_blank">
+                  <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram"/>
+              </a>
+          </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright © 2025 Shield Maidens</p>
+    </div>
+</footer>
+
+
+  <script src="accessibility.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

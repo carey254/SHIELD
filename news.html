@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shield Maidens</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+     
+      font-family: Arial, sans-serif;
+margin: 0; /* Remove original margin */
+padding-top: 100px; /* 👈 Adds space for the nav */
+  }
+
+  .gicicit-milestone h4 {
+    margin-top: 24px;
+    font-size: 1.25rem;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .milestone-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .milestone-images img {
+    flex: 1 1 calc(33.33% - 12px);
+    max-width: calc(33.33% - 12px);
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  main.news-section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .milestones {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .milestones,
+.news-section {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+  
+
+.milestone-card {
+  width: 100%;
+  margin: 10px 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+
+
+  
+  .milestone-card h4 {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .milestone-card p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  .milestone-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  
+  .milestone-images img {
+    flex: 1 1 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+    
+  /* General styles for the .nav element */
+.nav {
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-right: 140px; /* <-- Add this */
+ 
+white-space: nowrap; /* prevents breaking into 2 lines */
+
+
+}
+
+/* Navigation links */
+nav a {
+  color: rgb(26, 23, 23);
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+nav a:not(.logo-link):hover {
+  background-color: #ff4500;
+  color: white;
+  border-radius: 15px;
+}
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+  .nav {
+    width: 90%; /* Adjust width on tablets */
+  }
+}
+
+/* Media query for small devices (phones) */
+@media (max-width: 768px) {
+  .nav {
+    width: 100%; /* Full width on mobile devices */
+    padding: 10px; /* Optional, adjust padding on smaller screens */
+  }
+}
+
+/* Media query for very small devices (phones in portrait) */
+@media (max-width: 480px) {
+  .nav {
+    width: 100%; /* Full width for very small screens */
+    padding: 5px; /* Further adjust padding if necessary */
+  }
+}
+
+
+
+/* Hamburger Icon (Mobile Only) */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  color: #ff4500;
+  z-index: 1100;
+  cursor: pointer;
+}
+
+/* Sidebar Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  max-width: 280px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  transition: 0.3s ease-in-out;
+  z-index: 1050;
+  padding: 20px;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-btn {
+  font-size: 26px;
+  color: #ff4500;
+  cursor: pointer;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 15px;
+}
+
+.mobile-menu ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #222;
+}
+
+.mobile-menu ul li a.highlight {
+  background-color: #ff4500;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+/* Show hamburger and hide desktop links on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000;
+    height: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .logo-link img {
+    height: 65px !important;
+    margin: 0;
+    padding: 0;
+  }
+  .logo-link {
+    display: flex;
+    align-items: center;
+  }
+}
+
+</style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html" class="logo-link">
+            <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
+        </a>
+        
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about us.html">About Us</a>
+            <a href="resource&support.html">Resources</a>
+            <div class="dropdown">
+                <a href="#">Get Involved</a>
+                <div class="dropdown-content">
+                    <a href="events.html">Events</a>
+                    <a href="news.html">News</a>
+               
+                    <a href="partner.html">Partner with Us</a>
+                </div>
+            </div>
+            <a href="donate.html" class="highlight">Donate</a>
+        </div>
+    </nav>
+    
+ <!-- Hamburger Icon (Mobile Only) -->
+ <div class="hamburger" onclick="openMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<!-- Mobile Sidebar Menu -->
+<div id="mobileMenu" class="mobile-menu">
+  <div class="menu-header">
+    <span class="close-btn" onclick="closeMenu()">&times;</span>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about us.html">About Us</a></li>
+    <li><a href="resource&support.html">Resources</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="partner.html">Partner with Us</a></li>
+    <li><a href="donate.html" class="highlight">Donate</a></li>
+  </ul>
+</div>
+    
+
+    <main class="news-section">
+        <section class="milestones">
+            <h2>Milestones</h2>
+            <h3>2024</h3>
+            <div class="milestone-card">
+                <span class="year"></span>
+                <p> UN Women,African Girls Can Code Initiative (AGCCI) girls sessions on Digital Security and Mobile App Security. Two sessions with 30+ attendees total.</p>
+            </div>
+            <div class="milestone-card">
+                <span class="year"></span>
+                <p>Partnered with Inuka AgriSolutions – training on Cybersecurity & Artificial Intelligence (AI) during a holiday bootcamp. 27 trained.</p>
+            </div>
+            <div class="milestone-card">
+              <h4>Hour of Code Launch at Pharo School Nairobi</h4>
+              <p>Happy to have been part of the launch of an Hour of Code at Pharo School Nairobi. The spark of curiosity in the young learners' eyes as they learn to code is a powerful reminder of the importance of introducing these skills early on ✨💡.</p>
+              
+              <div class="milestone-images">
+                <img src="images/pharoo.png" alt="Pharo School Hour of Code 1">
+                <img src="images/pharo.png" alt="Pharo School Hour of Code 2">
+                
+              </div>
+            </div>
+            
+            <div class="milestone-card">
+              <h4>Highlight from GICICI Primary School Session</h4>
+              <span class="year"></span>
+              <p>
+                GICICI Primary School with Betty Mwende – taught 36 students about Cyberbullying & Online Safety.
+                It was an absolute honor to be invited and share insights on internet safety. The students were engaged 
+                and well-informed, offering a glimpse into the digital habits of today's young generation. 
+                This experience highlighted the urgent need for digital literacy and encouraged us to continue 
+                empowering youth through meaningful collaborations.
+              </p>
+              <div class="milestone-images">
+                
+                <img src="images/givivi.png" alt="GICICIT Session 2">
+                <img src="images/GICICV.png" alt="GICICIT Session 3">
+              </div>
+            </div>
+            
+            <div class="milestone-card">
+              <h4>Highlight from Gifted Community Center on Good Digital CitizenshipSession</h4>
+              <span class="year"></span>
+              <p>
+                X-Space event with Gifted Community Center – focused on Good Digital Citizenship & Cybersecurity Protection. 
+                Joined by tech experts, legislators, student leaders, and women with disabilities, the session emphasized 
+                online safety, inclusion, and fighting technology-facilitated gender-based violence (TFGBV). 
+                A powerful, collaborative effort to create safer digital spaces for all.
+              </p>
+              <img src="images/X.png" alt="X-Space event session" style="max-width:100%; margin-top: 10px; border-radius: 8px;">
+            </div>
+            
+        </section>
+
+       
+    </main>
+
+
+     <!-- Footer -->
+     <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-logo">
+              <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo">
+          </div>
+  
+          <div class="footer-links">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about us.html">About Us</a></li>
+                  <li><a href="resource&support.html">Resources</a></li>
+                  <li><a href="events.html">Events</a></li>
+                  <li><a href="news.html">News</a></li>
+                  <li><a href="partner.html">Partner with Us</a></li>
+                  <li><a href="donate.html" class="donate-btn">Donate</a></li>
+              </ul>
+              <div class="payment-icons">
+                  <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
+                  <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" height="20">
+                  <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" height="20">
+              </div>
+          </div>
+  
+          <div class="footer-location">
+              <h3>Location</h3>
+              <p>Nairobi, Kenya</p>
+          </div>
+  
+          <div class="footer-contact">
+              <h3>Contact Us</h3>
+              <p>Email: info@shieldmaidens.org</p>
+              <h3>Our Socials</h3>
+              <div class="social-icons">
+                <a href="https://x.com/_shield_maidens" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
+                </a>
+                <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"/>
+                </a>
+                <a href="https://www.instagram.com/the_shield_maidens/" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram"/>
+                </a>
+            </div>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>Copyright © 2025 Shield Maidens</p>
+      </div>
+  </footer>
+  
+      
+<script>
+function openMenu() {
+  document.getElementById("mobileMenu").classList.add("active");
+}
+
+function closeMenu() {
+  document.getElementById("mobileMenu").classList.remove("active");
+}
+</script>
+    <script src="accessibility.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
