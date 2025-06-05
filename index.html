@@ -34,6 +34,12 @@
                 </div>
             </div>
             <a href="donate.html" class="highlight" role="menuitem">Donate</a>
+            
+            <!-- Report Button added to Navigation -->
+            <a href="report.html" class="nav-report-btn" role="menuitem">
+                <i class="fas fa-exclamation-circle"></i>
+                Where to Report
+            </a>
         </div>
     </nav>
     <!-- Hamburger Icon (Mobile Only) -->
@@ -183,58 +189,282 @@
   </div>
 </section>
 
-<h2>Join Our Next Sessions</h2>
-<div class="carousel-wrapper">
-  <div class="session-carousel">
-    <!-- PAST SESSION -->
-    <div class="session-card past">
-      <img src="images/eventw1.jpg" alt="Past Event 1">
-      <p><strong>Topic:</strong> Technology-Facilitated Gender-Based Violence (TFGBV)</p>
-      <p>Don't miss our session! Join us to learn how to stay safe online.</p>
-      <a class="event-link past-link">Past Event</a>
+<!-- Dynamic Card Display Section -->
+<section class="dynamic-cards-section">
+  <div class="card-navigation">
+    <button class="card-nav-btn active" data-card="digital-safety">Digital Safety & Accessibility</button>
+    <button class="card-nav-btn" data-card="tfgbv">TFGBV Protection Tools</button>
+    <button class="card-nav-btn" data-card="quick-access">Quick Access Tools</button>
+  </div>
+  
+  <div class="card-display-container">
+    <!-- Digital Safety Card -->
+    <div class="dynamic-card active" id="digital-safety">
+      <div class="card-content">
+        <h3>Digital Safety & Accessibility</h3>
+        <div class="card-grid">
+          <div class="card-item">
+            <div class="card-inner">
+              <div class="card-front">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Password Security</h4>
+                <p>Create strong, unique passwords and use password managers</p>
+              </div>
+              <div class="card-back">
+                <h4>Password Security Tips</h4>
+                <ul>
+                  <li>Use at least 12 characters</li>
+                  <li>Mix uppercase, lowercase, numbers & symbols</li>
+                  <li>Never reuse passwords across accounts</li>
+                  <li>Use a password manager like LastPass or 1Password</li>
+                  <li>Enable biometric authentication when available</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-item">
+            <div class="card-inner">
+              <div class="card-front">
+                <i class="fas fa-lock"></i>
+                <h4>Privacy Settings</h4>
+                <p>Manage your privacy settings across all platforms</p>
+              </div>
+              <div class="card-back">
+                <h4>Privacy Settings Guide</h4>
+                <ul>
+                  <li>Review social media privacy settings monthly</li>
+                  <li>Limit who can see your posts and profile</li>
+                  <li>Disable location sharing when not needed</li>
+                  <li>Use private browsing for sensitive activities</li>
+                  <li>Regularly clear browser cookies and cache</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-item">
+            <div class="card-inner">
+              <div class="card-front">
+                <i class="fas fa-user-shield"></i>
+                <h4>Two-Factor Authentication</h4>
+                <p>Enable 2FA for additional account security</p>
+              </div>
+              <div class="card-back">
+                <h4>2FA Implementation Guide</h4>
+                <ul>
+                  <li>Enable 2FA on all critical accounts</li>
+                  <li>Use authenticator apps over SMS when possible</li>
+                  <li>Keep backup codes in a secure location</li>
+                  <li>Set up recovery email addresses</li>
+                  <li>Regularly review active sessions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- PAST SESSION -->
-    <div class="session-card past">
-      <img src="images/event 3.jpg" alt="Past Event 2">
-      <p><strong>Topic:</strong> Online Privacy & Digital Footprint</p>
-      <p>Stay Safe in Digital Space.</p>
-      <a class="event-link past-link">Past Event</a>
+    <!-- TFGBV Protection Card -->
+    <div class="dynamic-card" id="tfgbv">
+      <div class="card-content">
+        <h3>TFGBV Protection Tools</h3>
+        <div class="card-grid">
+          <div class="card-item">
+            <div class="card-inner">
+              <div class="card-front">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h4>Report Abuse</h4>
+                <p>Report and document online harassment</p>
+                <button class="report-btn" onclick="openReportForm()">Report Incident</button>
+              </div>
+              <div class="card-back">
+                <h4>How to Report Abuse</h4>
+                <ul>
+                  <li>Document all incidents with screenshots</li>
+                  <li>Report to platform moderators</li>
+                  <li>Contact local authorities if needed</li>
+                  <li>Use our reporting form for support</li>
+                  <li>Keep records of all communications</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-item">
+            <div class="card-inner">
+              <div class="card-front">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h4>Support Resources</h4>
+                <p>Access counseling and support services</p>
+              </div>
+              <div class="card-back">
+                <h4>Available Support</h4>
+                <ul>
+                  <li>24/7 Crisis hotline support</li>
+                  <li>Professional counseling services</li>
+                  <li>Peer support groups</li>
+                  <li>Legal consultation</li>
+                  <li>Mental health resources</li>
+                </ul>
+                <a href="resource&support.html" class="resource-link">Access Resources →</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-item">
+            <div class="card-inner">
+              <div class="card-front">
+                <i class="fas fa-gavel"></i>
+                <h4>Legal Guidance</h4>
+                <p>Information about legal rights and protections</p>
+              </div>
+              <div class="card-back">
+                <h4>Legal Resources</h4>
+                <ul>
+                  <li>Know your digital rights</li>
+                  <li>Documentation guidelines</li>
+                  <li>Legal consultation services</li>
+                  <li>Restraining order information</li>
+                  <li>International legal resources</li>
+                </ul>
+                <a href="resource&support.html#legal" class="resource-link">Legal Resources →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="session-card past">
-      <img src="images/eventw2.jpg" alt="Past Event 2">
-      <p><strong>Topic:</strong> Online Privacy & Digital Footprint</p>
-      <p>Stay Safe in Digital Space.</p>
-      <a class="event-link past-link">Past Event</a>
-    </div>
-
-    <!-- PAST SESSION -->
-    <div class="session-card past">
-      <img src="images/kenya.jpg" alt="Past Event 3">
-      <p><strong>Topic:</strong> TFGBV in Kenya</p>
-      <p>Session was on 7-8 PM. Learn about TFGBV in Kenya and the Resources involved to combat it.</p>
-      <a class="event-link past-link">Past Event</a>
-    </div>
-     <!-- PAST SESSION -->
-     <div class="session-card past">
-      <img src="images/Eventt4.jpg" alt="Past Event 3">
-      <p><strong>Topic:</strong> Introduction to Cyber Attacks</p>
-      <p>Session was on 7-8 PM. Learn how to protect yourself against cyber threats.</p>
-      <a class="event-link past-link">Past Event</a>
-    </div>
-
-    <!-- TODAY'S SESSION - UPCOMING -->
-    <div class="session-card upcoming">
-      <img src="images/today.jpg" alt="Today's Event">
-      <p><strong>Topic:</strong>  Introduction to Cyber Attacks</p>
-      <p>Join us Today, 15 May 2025 at 7:00 PM for a powerful session.
-        
-        </p>
-      <a href="https://calendar.app.google/Uas6NuqhVGtgV6Vz9" class="event-link">Click here to join</a>
+    <!-- Quick Access Card -->
+    <div class="dynamic-card" id="quick-access">
+      <div class="card-content">
+        <h3>Quick Access Tools</h3>
+        <div class="card-grid">
+          <div class="card-item">
+            <div class="card-inner">
+              <div class="card-front">
+                <i class="fas fa-phone-alt"></i>
+                <h4>Emergency Contacts</h4>
+                <p>Quick access to emergency services</p>
+              </div>
+              <div class="card-back">
+                <h4>Emergency Resources</h4>
+                <ul>
+                  <li>Emergency Services: 911</li>
+                  <li>National Crisis Hotline: 988</li>
+                  <li>Local Support Services</li>
+                  <li>Medical Emergency</li>
+                  <li>Law Enforcement</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-item">
+            <div class="card-inner">
+              <div class="card-front">
+                <i class="fas fa-file-alt"></i>
+                <h4>Reporting Forms</h4>
+                <p>Easy-to-use incident reporting forms</p>
+              </div>
+              <div class="card-back">
+                <h4>Report an Incident</h4>
+                <ul>
+                  <li>Anonymous reporting option</li>
+                  <li>Detailed incident forms</li>
+                  <li>Evidence upload capability</li>
+                  <li>Follow-up tracking</li>
+                  <li>Support service connection</li>
+                </ul>
+                <button class="report-btn" onclick="openReportForm()">Report Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-item">
+            <div class="card-inner">
+              <div class="card-front">
+                <i class="fas fa-hands-helping"></i>
+                <h4>Support Services</h4>
+                <p>Direct access to support resources</p>
+              </div>
+              <div class="card-back">
+                <h4>Available Support</h4>
+                <ul>
+                  <li>24/7 Online Chat Support</li>
+                  <li>Peer Support Groups</li>
+                  <li>Professional Counseling</li>
+                  <li>Resource Directory</li>
+                  <li>Community Forums</li>
+                </ul>
+                <div style="margin-top:10px;">
+                  <strong>Contact us 24/7:</strong><br>
+                  <a href="mailto:shi3ldmaidens@gmail.com" style="color:#e63946;">shi3ldmaidens@gmail.com</a><br>
+                  <a href="tel:+254702997534" style="color:#e63946;">+254 702 997534</a>
+                </div>
+                <a href="resource&support.html" class="resource-link">Get Support →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<!-- Add a divider for clarity -->
+<hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
+
+<section class="next-sessions-section">
+  <h2>Join Our Next Sessions</h2>
+  <div class="carousel-wrapper">
+    <div class="session-carousel">
+      <!-- PAST SESSION -->
+      <div class="session-card past">
+        <img src="images/eventw1.jpg" alt="Past Event 1">
+        <p><strong>Topic:</strong> Technology-Facilitated Gender-Based Violence (TFGBV)</p>
+        <p>Don't miss our session! Join us to learn how to stay safe online.</p>
+        <a class="event-link past-link">Past Event</a>
+      </div>
+
+      <!-- PAST SESSION -->
+      <div class="session-card past">
+        <img src="images/event 3.jpg" alt="Past Event 2">
+        <p><strong>Topic:</strong> Online Privacy & Digital Footprint</p>
+        <p>Stay Safe in Digital Space.</p>
+        <a class="event-link past-link">Past Event</a>
+      </div>
+
+      <div class="session-card past">
+        <img src="images/eventw2.jpg" alt="Past Event 2">
+        <p><strong>Topic:</strong> Online Privacy & Digital Footprint</p>
+        <p>Stay Safe in Digital Space.</p>
+        <a class="event-link past-link">Past Event</a>
+      </div>
+
+      <!-- PAST SESSION -->
+      <div class="session-card past">
+        <img src="images/kenya.jpg" alt="Past Event 3">
+        <p><strong>Topic:</strong> TFGBV in Kenya</p>
+        <p>Session was on 7-8 PM. Learn about TFGBV in Kenya and the Resources involved to combat it.</p>
+        <a class="event-link past-link">Past Event</a>
+      </div>
+       <!-- PAST SESSION -->
+       <div class="session-card past">
+        <img src="images/Eventt4.jpg" alt="Past Event 3">
+        <p><strong>Topic:</strong> Introduction to Cyber Attacks</p>
+        <p>Session was on 7-8 PM. Learn how to protect yourself against cyber threats.</p>
+        <a class="event-link past-link">Past Event</a>
+      </div>
+
+      <!-- TODAY'S SESSION - UPCOMING -->
+      <div class="session-card upcoming">
+        <img src="images/today.jpg" alt="Today's Event">
+        <p><strong>Topic:</strong>  Introduction to Cyber Attacks</p>
+        <p>Join us Today, 15 May 2025 at 7:00 PM for a powerful session.
+          
+          </p>
+        <a href="https://calendar.app.google/Uas6NuqhVGtgV6Vz9" class="event-link">Click here to join</a>
+      </div>
+    </div>
+  </div>
+</section>
 
     
 
@@ -401,7 +631,7 @@
   
           <div class="footer-contact">
               <h3>Contact Us</h3>
-              <p>Email: info@shieldmaidens.org</p>
+              <p>Email: shi3ldmaidens@gmail.com</p>
               <h3>Our Socials</h3>
               <div class="social-icons">
                 <a href="https://x.com/_shield_maidens" target="_blank">
@@ -435,5 +665,90 @@
 
     <script src="accessibility.js"></script>
     <script src="script.js"></script>
+
+<script>
+// Dynamic Card System
+document.addEventListener('DOMContentLoaded', function() {
+  const cardButtons = document.querySelectorAll('.card-nav-btn');
+  const cards = document.querySelectorAll('.dynamic-card');
+
+  cardButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons and cards
+      cardButtons.forEach(btn => btn.classList.remove('active'));
+      cards.forEach(card => card.classList.remove('active'));
+
+      // Add active class to clicked button
+      button.classList.add('active');
+
+      // Show corresponding card
+      const cardId = button.getAttribute('data-card');
+      const targetCard = document.getElementById(cardId);
+      if (targetCard) {
+        targetCard.classList.add('active');
+      }
+    });
+  });
+});
+</script>
+
+<!-- Report Form Modal -->
+<div id="reportModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeReportForm()">&times;</span>
+    <h2>Report an Incident</h2>
+    <form id="reportForm" onsubmit="submitReport(event)">
+      <div class="form-group">
+        <label for="reporterName">Your Name:</label>
+        <input type="text" id="reporterName" name="reporterName" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="incidentDescription">Describe the Incident:</label>
+        <textarea id="incidentDescription" name="incidentDescription" required></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="reporterEmail">Email Address (Optional):</label>
+        <input type="email" id="reporterEmail" name="reporterEmail">
+      </div>
+      
+      <div class="form-group checkbox">
+        <input type="checkbox" id="contactPermission" name="contactPermission">
+        <label for="contactPermission">I agree to be contacted for follow-up (we will respond within 12 hours)</label>
+      </div>
+      
+      <div class="form-group">
+        <button type="submit" class="submit-btn">Submit Report</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+function submitReport(event) {
+  event.preventDefault();
+
+  const form = document.getElementById('reportForm');
+  const formData = new FormData(form);
+
+  fetch('send_report.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    alert(data.message);
+    if (data.status === 'success') {
+      closeReportForm();
+      form.reset();
+    }
+  })
+  .catch(error => {
+    alert('There was an error sending your report. Please try again later.');
+    console.error(error);
+  });
+}
+</script>
 </body>
 </html>

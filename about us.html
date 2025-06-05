@@ -979,19 +979,25 @@ nav {
         <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo">
       </a>
     
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about us.html">About Us</a>
-        <a href="resource&support.html">Resources</a>
-        <div class="dropdown">
-          <a href="#">Get Involved</a>
-          <div class="dropdown-content">
-            <a href="events.html">Events</a>
-            <a href="news.html">News</a>
-            <a href="partner.html">Partner with Us</a>
+      <div class="nav-links" role="menubar">
+        <a href="index.html" role="menuitem">Home</a>
+        <a href="about us.html" role="menuitem" aria-current="page">About Us</a>
+        <a href="resource&support.html" role="menuitem">Resources</a>
+        <div class="dropdown" role="menuitem" aria-haspopup="true">
+          <a href="#" aria-expanded="false">Get Involved</a>
+          <div class="dropdown-content" role="menu">
+            <a href="events.html" role="menuitem">Events</a>
+            <a href="news.html" role="menuitem">News</a>
+            <a href="partner.html" role="menuitem">Partner with Us</a>
           </div>
         </div>
-        <a href="donate.html" class="highlight">Donate</a>
+        <a href="donate.html" class="highlight" role="menuitem">Donate</a>
+        
+        <!-- Report Button added to Navigation -->
+        <a href="report.html" class="nav-report-btn" role="menuitem">
+          <i class="fas fa-exclamation-circle"></i>
+          Where to Report
+        </a>
       </div>
     </nav>
 
@@ -1038,7 +1044,7 @@ nav {
       <div class="about-text">
           <h2 style="color: orange;">About Us</h2>
           <p>Shield Maidens was founded in 2024 by Sumaiyya Jumma and Maria Muneeni as a way of giving back to the community. As beneficiaries of UN Women, the African Girls Can Code Initiative (AGCCI), and Siemens EmpowerHER, they recognized the need to create a platform dedicated to advocacy, empowerment, and education.</p>
-          <p>At Shield Maidens, our mission is to educate young women and youth on digital safety while actively fighting against technology-facilitated gender-based violence (TFGBV). We are committed to fostering an inclusive world by advocating for gender equality, justice, and the protection of online spaces.</p>
+          <p>At Shield Maidens, our mission is to educate young women, persons with disabilities (PWDs) and youth on digital safety while actively fighting against technology-facilitated gender-based violence (TFGBV). We are committed to fostering an inclusive world by advocating for gender equality, justice, and the protection of online spaces.</p>
           <p>Our goal is to empower individuals with the knowledge and tools needed to navigate the digital world safely, to amplify voices against gender-based violence, and to drive meaningful change through advocacy and education. Together, we stand for a safer, more inclusive future for all.</p>
       </div>
   </div>
@@ -1084,7 +1090,7 @@ nav {
             Empowerment
           </div>
           <div class="card-back">
-            We uplift women and girls to confidently and safely lead in digital spaces, fighting TFGBV every step of the way.
+            We uplift women, girls and persons with disabilities (PWDs) to confidently and safely lead in digital spaces, fighting TFGBV every step of the way.
           </div>
         </div>
       </div>
@@ -1136,7 +1142,7 @@ nav {
             Inclusion
           </div>
           <div class="card-back">
-            We celebrate diversity and ensure access for all, including those with disabilities, to participate equally in tech.
+            We celebrate diversity and ensure access for all, including Persons with Disabilities (PWDs), to participate equally in tech.
           </div>
         </div>
       </div>
@@ -1182,13 +1188,7 @@ nav {
               <p>Social Media Manager</p>
           </div>
       </div>
-      <div class="team-member">
-          <img src="images/new_2.jpg" alt="Ruth">
-          <div class="team-info">
-              <h3>Susan Wangari</h3>
-              <p>Online Safety Advocate</p>
-          </div>
-      </div>
+     
       <div class="team-member">
         <img src="images/irene.png" alt="Ruth">
         <div class="team-info">
@@ -1250,7 +1250,7 @@ nav {
 
       <div class="footer-contact">
           <h3>Contact Us</h3>
-          <p>Email: info@shieldmaidens.org</p>
+          <p>Email: shi3ldmaidens@gmail.com</p>
           <h3>Our Socials</h3>
           <div class="social-icons">
             <a href="https://x.com/_shield_maidens" target="_blank">
@@ -1296,6 +1296,35 @@ nav {
 
 <script src="accessibility.js"></script>
 <script src="script.js"></script>
+
+<!-- Report Form Modal -->
+<div id="reportModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeReportForm()">&times;</span>
+    <h2>Report an Incident</h2>
+    <form id="reportForm" onsubmit="submitReport(event)">
+      <div class="form-group">
+        <label for="reporterName">Your Name:</label>
+        <input type="text" id="reporterName" name="reporterName" required>
+      </div>
+      <div class="form-group">
+        <label for="incidentDescription">Describe the Incident:</label>
+        <textarea id="incidentDescription" name="incidentDescription" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="reporterEmail">Email Address (Optional):</label>
+        <input type="email" id="reporterEmail" name="reporterEmail">
+      </div>
+      <div class="form-group checkbox">
+        <input type="checkbox" id="contactPermission" name="contactPermission">
+        <label for="contactPermission">I agree to be contacted for follow-up (we will respond within 12 hours)</label>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="submit-btn">Submit Report</button>
+      </div>
+    </form>
+  </div>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Incident - Hotlines & Resources</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Add specific styles for the report page content here */
+        .report-resources-section {
+            margin-top: 120px; /* Add top margin to push content below fixed nav */
+            padding: 20px; /* Adjusted padding for internal spacing */
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-sizing: border-box; /* Ensure consistent box model */
+        }
+        .report-resources-section h2 {
+            text-align: center;
+            color: orange;
+            margin-bottom: 30px;
+        }
+        .resource-list {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto; /* Center the resource list */
+        }
+        .resource-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            text-align: center; /* Center the item block */
+        }
+        .resource-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .resource-item h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .resource-item p {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            text-align: left; /* Keep paragraph text left-aligned for readability */
+        }
+        .resource-item a {
+            color: orangered;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 0;
+            display: inline-block;
+            padding: 8px 20px;
+            border: 2px solid orangered;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .resource-item a:hover {
+            background-color: orangered;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+      <a href="index.html" class="logo-link">
+        <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
+      </a>
+    
+      <div class="nav-links" role="menubar">
+        <a href="index.html" role="menuitem">Home</a>
+        <a href="about us.html" role="menuitem">About Us</a>
+        <a href="resource&support.html" role="menuitem">Resources</a>
+        <div class="dropdown" role="menuitem" aria-haspopup="true">
+          <a href="#" aria-expanded="false">Get Involved</a>
+          <div class="dropdown-content" role="menu">
+            <a href="events.html" role="menuitem">Events</a>
+            <a href="news.html" role="menuitem">News</a>
+            <a href="partner.html" role="menuitem">Partner with Us</a>
+          </div>
+        </div>
+        <a href="donate.html" class="highlight" role="menuitem">Donate</a>
+        
+        <!-- Report Button added to Navigation -->
+        <a href="report.html" class="nav-report-btn" role="menuitem">
+          <i class="fas fa-exclamation-circle"></i>
+          Where to Report
+        </a>
+      </div>
+    </nav>
+
+   <!-- Hamburger Icon (Mobile Only) -->
+    <div class="hamburger" onclick="openMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Mobile Sidebar Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="menu-header">
+        <span class="close-btn" onclick="closeMenu()">&times;</span>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about us.html">About Us</a></li>
+        <li><a href="resource&support.html">Resources</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="partner.html">Partner with Us</a></li>
+        <li><a href="donate.html" class="highlight">Donate</a></li>
+        <li><a href="report.html">Where to Report</a></li>
+      </ul>
+    </div>
+
+    <section class="report-resources-section">
+        <h2>Kenyan Hotlines and Reporting Platforms for GBV</h2>
+        <ul class="resource-list">
+            <li class="resource-item">
+                <h3>Stop NCII</h3>
+                <p>StopNCII.org is a free tool to support victims of Non-Consensual Intimate Image (NCII) abuse. It works by generating a digital fingerprint (hash) of your intimate image(s)/video(s) on your device. This hash is then shared with participating companies to help detect and remove the images if they are shared online. The tool does not upload your actual images.</p>
+                <p><a href="https://stopncii.org/" target="_blank">Report via StopNCII.org</a></p>
+            </li>
+             <li class="resource-item">
+                <h3>National Computer and Cybercrimes Coordination Committee (NC4)</h3>
+                <p>NC4 is a multi-agency entity in Kenya established to coordinate national cybersecurity matters, including the detection, prevention, response, investigation, and prosecution of computer misuse and cybercrimes.</p>
+                <p><a href="https://nc4.go.ke/" target="_blank">Visit NC4 Website</a></p>
+            </li>
+            <li class="resource-item">
+                <h3>Healthcare Assistance Kenya (HAK) - GBV Hotline</h3>
+                <p>Provides immediate assistance and referrals for GBV survivors.</p>
+                <p>Hotline: 1195 (24/7, toll-free)</p>
+                <p>Email: info@hakgbv1195.org</p>
+                <p><a href="https://hakgbv1195.org/" target="_blank">Website</a></p>
+            </li>
+             <li class="resource-item">
+                <h3>National Police Service</h3>
+                <p>Toll-free line for reporting SGBV cases.</p>
+                <p>Hotline: 0800730999 (toll-free)</p>
+            </li>
+             <li class="resource-item">
+                <h3>Gender Violence Recovery Centre (GVRC)</h3>
+                <p>Offers medical and psychosocial support to GBV survivors.</p>
+                <p>Hotlines: +254 719 638 006 / +254 709 667 000</p>
+                <p>Email: info@gvrc.or.ke</p>
+                <p><a href="https://gvrc.or.ke/" target="_blank">Website</a></p>
+            </li>
+             <li class="resource-item">
+                <h3>Wangu Kanja Foundation</h3>
+                <p>Provides medical, psychosocial, legal support, and financial empowerment to survivors.</p>
+                <p>Hotline: +254722790404</p>
+            </li>
+             <li class="resource-item">
+                <h3>SOLWODI (Solidarity with Women in Distress) Mombasa</h3>
+                <p>Focuses on rescuing girls from commercial sex trade, human trafficking, and forced marriages.</p>
+                <p>Hotline: +254739422422</p>
+            </li>
+             <li class="resource-item">
+                <h3>Medicins Sans Frontieres (MSF's) Lavender House Clinic (Mathare, Nairobi)</h3>
+                <p>Offers medical and psychosocial support in low-income areas.</p>
+                <p>Contact: 020 2400330</p>
+            </li>
+             <li class="resource-item">
+                <h3>Rescue Dada Centre (Ngara, Nairobi)</h3>
+                <p>Rescue, rehabilitation, and reintegration for girls from the streets.</p>
+                <p>Contact: 0725 694 624</p>
+            </li>
+             <li class="resource-item">
+                <h3>Nena Na Binti</h3>
+                <p>Provides confidential and non-judgmental SRHR support, including SGBV linkage.</p>
+                 <p>Hotlines: 0800 211 227 (Toll Free), 0775533117 (Text/WhatsApp)</p>
+                 <p><a href="https://nenanabinti.org/" target="_blank">Website</a></p>
+            </li>
+             <li class="resource-item">
+                <h3>Uwiano Platform for Peace</h3>
+                <p>Conflict prevention strategy, includes reporting via SMS or email.</p>
+                 <p>Report via SMS to: 108</p>
+                 <p>Email: uwiano@nscpeace.go.ke</p>
+                 <p><a href="https://nscpeace.go.ke/108/" target="_blank">Website</a></p>
+            </li>
+             <li class="resource-item">
+                <h3>FIDA Kenya</h3>
+                <p>Provides legal aid and advocacy for women's rights.</p>
+                <p>Hotline: +254 772 509 760</p>
+                <p>Email: info@fida-kenya.org</p>
+                <p><a href="https://www.fida-kenya.org/" target="_blank">Website</a></p>
+            </li>
+             <li class="resource-item">
+                <h3>CREAW Kenya</h3>
+                <p>Offers legal and psychosocial support to GBV survivors.</p>
+                <p>Toll-Free Hotline: 0800 720 186</p>
+                <p>Email: info@creaw.org</p>
+                <p><a href="https://home.creaw.org/" target="_blank">Website</a></p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo">
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="resource&support.html">Resources</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="partner.html">Partner with Us</a></li>
+                    <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                </ul>
+                <div class="payment-icons">
+                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
+                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" height="20">
+                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" height="20">
+                </div>
+            </div>
+
+            <div class="footer-location">
+                <h3>Location</h3>
+                <p>Nairobi, Kenya</p>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: shi3ldmaidens@gmail.com</p>
+                <h3>Our Socials</h3>
+                <div class="social-icons">
+                    <a href="https://x.com/_shield_maidens" target="_blank">
+                        <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank">
+                        <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"/>
+                    </a>
+                    <a href="https://www.instagram.com/the_shield_maidens/" target="_blank">
+                        <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2025 Shield Maidens</p>
+        </div>
+    </footer>
+
+    <script src="accessibility.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

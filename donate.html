@@ -21,20 +21,25 @@
     </a>
 
    
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about us.html">About Us</a>
-        <a href="resource&support.html">Resources</a>
-        <div class="dropdown">
-            <a href="#">Get Involved</a>
-            <div class="dropdown-content">
-                <a href="events.html">Events</a>
-                <a href="news.html">News</a>
-          
-                <a href="partner.html">Partner with Us</a>
+    <div class="nav-links" role="menubar">
+        <a href="index.html" role="menuitem">Home</a>
+        <a href="about us.html" role="menuitem">About Us</a>
+        <a href="resource&support.html" role="menuitem">Resources</a>
+        <div class="dropdown" role="menuitem" aria-haspopup="true">
+            <a href="#" aria-expanded="false">Get Involved</a>
+            <div class="dropdown-content" role="menu">
+                <a href="events.html" role="menuitem">Events</a>
+                <a href="news.html" role="menuitem">News</a>
+                <a href="partner.html" role="menuitem">Partner with Us</a>
             </div>
         </div>
-        <a href="donate.html" class="highlight">Donate</a>
+        <a href="donate.html" class="highlight" role="menuitem" aria-current="page">Donate</a>
+        
+        <!-- Report Button added to Navigation -->
+        <button class="nav-report-btn" onclick="openReportForm()" role="menuitem">
+            <i class="fas fa-exclamation-circle"></i>
+            Report
+        </button>
     </div>
 </nav>
 
@@ -129,7 +134,7 @@
 
         <div class="footer-contact">
             <h3>Contact Us</h3>
-            <p>Email: info@shieldmaidens.org</p>
+            <p>Email: shi3ldmaidens@gmail.com</p>
             <h3>Our Socials</h3>
             <div class="social-icons">
               <a href="https://x.com/_shield_maidens" target="_blank">
@@ -149,6 +154,34 @@
     </div>
 </footer>
 
+<!-- Report Form Modal -->
+<div id="reportModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeReportForm()">&times;</span>
+    <h2>Report an Incident</h2>
+    <form id="reportForm" onsubmit="submitReport(event)">
+      <div class="form-group">
+        <label for="reporterName">Your Name:</label>
+        <input type="text" id="reporterName" name="reporterName" required>
+      </div>
+      <div class="form-group">
+        <label for="incidentDescription">Describe the Incident:</label>
+        <textarea id="incidentDescription" name="incidentDescription" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="reporterEmail">Email Address (Optional):</label>
+        <input type="email" id="reporterEmail" name="reporterEmail">
+      </div>
+      <div class="form-group checkbox">
+        <input type="checkbox" id="contactPermission" name="contactPermission">
+        <label for="contactPermission">I agree to be contacted for follow-up (we will respond within 12 hours)</label>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="submit-btn">Submit Report</button>
+      </div>
+    </form>
+  </div>
+</div>
 
   <script src="accessibility.js"></script>
   <script src="script.js"></script>
