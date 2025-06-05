@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let hoursLeft = timeDiff / (1000 * 60 * 60);
   let minutesLeft = timeDiff / (1000 * 60);
 
-  titleEl.innerText = "Shield Maidens 2024!";
+  titleEl.innerText = "Shield Maidens 2025!";
 
   // Display popup if event is in the future
   if (!event || event.date < now) {
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     // Detect 1-day-before message
     if (hoursLeft <= 48 && now.getDate() !== event.date.getDate()) {
-      messageEl.innerText = "🚨 Just a day to go! Set a reminder so you don’t miss it.";
+      messageEl.innerText = "🚨 Just a day to go! Set a reminder so you don't miss it.";
       reminderBtn.style.display = "block";
       linkEl.style.display = "none";
 
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Show popup box
   popup.style.display = "block";
 
-  // If reminder already set, and it’s within 30 minutes, trigger a notification
+  // If reminder already set, and it's within 30 minutes, trigger a notification
   if (localStorage.getItem("eventReminder") === "set" && minutesLeft <= 30 && minutesLeft > 0) {
     sendReminderNotification("Your Shield Maidens session starts in 30 minutes! Be ready.");
     localStorage.removeItem("eventReminder"); // clear reminder after showing
@@ -129,7 +129,7 @@ carousel.innerHTML += carousel.innerHTML; // Duplicate for seamless scroll
   });
   
   function showContactAlert() {
-    alert("Thanks for your interest! Please email us at: shi3ldmaidens@gmail.com and we’ll get back to you shortly.");
+    alert("Thanks for your interest! Please email us at: shi3ldmaidens@gmail.com and we'll get back to you shortly.");
   }
   
   // Donate Page
@@ -437,4 +437,73 @@ document.getElementById('contactForm').addEventListener('submit', async function
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   
   ===== END OF SERVER-SIDE CODE ===== */
+  
+// Report Form Functions
+function openReportForm() {
+  document.getElementById('reportModal').style.display = 'block';
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeReportForm() {
+  document.getElementById('reportModal').style.display = 'none';
+  document.body.style.overflow = 'auto'; // Re-enable background scrolling
+}
+
+function submitReport(event) {
+  event.preventDefault();
+  
+  // Get form data
+  const formData = {
+    name: document.getElementById('reporterName').value,
+    description: document.getElementById('incidentDescription').value,
+    email: document.getElementById('reporterEmail').value,
+    contactPermission: document.getElementById('contactPermission').checked
+  };
+  
+  // Here you would typically send the data to your server
+  // For now, we'll just show a success message
+  alert('Thank you for your report. Our team will review it and contact you within 12 hours if you provided contact information and gave permission.');
+  
+  // Close the modal and reset the form
+  closeReportForm();
+  document.getElementById('reportForm').reset();
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+  const modal = document.getElementById('reportModal');
+  if (event.target == modal) {
+    closeReportForm();
+  }
+}
+
+// Hamburger Menu Functionality
+function openMenu() {
+    document.getElementById("mobileMenu").classList.add("active");
+    document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
+}
+
+function closeMenu() {
+    document.getElementById("mobileMenu").classList.remove("active");
+    document.body.style.overflow = ""; // Restore scrolling
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById("mobileMenu");
+    const hamburger = document.querySelector(".hamburger");
+    
+    if (mobileMenu.classList.contains("active") && 
+        !mobileMenu.contains(event.target) && 
+        !hamburger.contains(event.target)) {
+        closeMenu();
+    }
+});
+
+// Close menu when pressing Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        closeMenu();
+    }
+});
   
