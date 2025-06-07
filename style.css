@@ -172,7 +172,6 @@ nav a:not(.logo-link):hover {
 
 
 .logo {
-    height: 500px;                 /* You can make this larger if needed */
     width: auto;
     display: block;
     margin: 0 auto;
@@ -1910,6 +1909,18 @@ button:hover {
 
     nav {
         padding: 10px 20px;
+        /* Ensure nav is a flex container */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-link {
+        /* Removed order: 2 */
+    }
+
+    .hamburger {
+        /* Removed order: 1 */
     }
 
     .logo-link img {

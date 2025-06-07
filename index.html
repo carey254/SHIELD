@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="accessibility.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="accessibility.js" defer></script>
 <style>
   
   
@@ -15,6 +16,9 @@
 
 </head>
 <body>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
     <!-- Navigation Bar -->
     <nav role="navigation" aria-label="Main navigation">
         <a href="index.html" class="logo-link" aria-label="Shield Maidens Home">
@@ -42,713 +46,690 @@
             </a>
         </div>
     </nav>
+
     <!-- Hamburger Icon (Mobile Only) -->
-<div class="hamburger" onclick="openMenu()" aria-label="Open mobile menu" role="button">
-  <i class="fas fa-bars"></i>
-</div>
-
-<!-- Mobile Sidebar Menu -->
-<div id="mobileMenu" class="mobile-menu" role="dialog" aria-label="Mobile menu">
-  <div class="menu-header">
-    <span class="close-btn" onclick="closeMenu()" aria-label="Close mobile menu" role="button">&times;</span>
-  </div>
-  <ul role="menu">
-    <li><a href="index.html" role="menuitem" aria-current="page">Home</a></li>
-    <li><a href="about us.html" role="menuitem">About Us</a></li>
-    <li><a href="resource&support.html" role="menuitem">Resources</a></li>
-    <li><a href="events.html" role="menuitem">Events</a></li>
-    <li><a href="news.html" role="menuitem">News</a></li>
-    <li><a href="partner.html" role="menuitem">Partner with Us</a></li>
-    <li><a href="donate.html" class="highlight" role="menuitem">Donate</a></li>
-  </ul>
-</div>
-
-
-
-
-<div id="eventPopup" class="popup"> 
-  <div class="popup-content">
-      <span class="close-btn" onclick="closePopup()">&times;</span>
-      <h2 id="eventTitle"></h2>
-      <p id="eventMessage"></p>
-      <a id="eventLink" href="#" target="_blank" style="display:none;">Join Event</a>
-      <button id="setReminder" style="display:none;" onclick="setReminder()"> 🔔Set Reminder</button>
-  </div>
-</div>
-
-
-
-
-
-
- 
- <!-- Hero Section with Responsive Video -->
-
- 
- <section class="hero-alt" role="banner" aria-label="Hero section with rotating images">
-  <div class="image-container">
-    <div class="color-overlay" aria-hidden="true"></div>
-    <img src="images/gbv1.png" alt="Women empowerment and digital safety awareness campaign" class="bg-image active">
-    <img src="images/tgbvw2.png" alt="Fighting technology-facilitated gender-based violence" class="bg-image">
-    <img src="images/tgbv.png" alt="Supporting survivors of online harassment" class="bg-image">
-    <img src="images/tgbvw1.png" alt="Building a safer digital space for women" class="bg-image">
-
-    
-    </div>
-  </div>
-</section>
-
-
-<!-- About Us (Homepage Intro) -->
-<section class="about-us" style="padding: 60px 20px; background-color: #f0f4f8;">
-  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; max-width: 1200px; margin: auto;">
-    <div style="flex: 1 1 300px; padding: 20px; text-align: center;">
-      <img src="images/Globe.png" alt="About Us" style="max-width: 100%; height: auto; border-radius: 10px;">
-    </div>
-    <div style="flex: 2 1 400px; padding: 20px;">
-      <h2 style="font-size: 2em; color: #1d3557; margin-bottom: 15px;">Who We Are</h2>
-      <p style="font-size: 1.2em; margin-bottom: 20px;">
-        Shield Maidens is a women-led initiative dedicated to digital empowerment and online safety for young women and marginalized groups. We work to combat technology-facilitated gender-based violence (TFGBV) through education, advocacy, and inclusive support.
-      </p>
-      <a href="about us.html" style="display: inline-block; padding: 10px 20px; background-color: #e63946; color: white; border-radius: 5px; text-decoration: none;">
-        Learn More
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Mission and Vision Section -->
-<section id="mission-vision" style="background-color: #f8f9fa; padding: 60px 20px;">
-  <div style="width: 100%; text-align: center;">
-    <h2 style="font-size: 2.5em; color: orange; margin-bottom: 40px;">Our Mission & Vision</h2>
-    
-    <div style="background: #ffffff; padding: 30px; margin: 0 auto 30px auto; border-left: 6px solid orange; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); max-width: 1200px;">
-      <strong style="font-size: 1.3em; display: block; margin-bottom: 10px;">Our Mission:</strong>
-      <p style="font-size: 1.2em;">We aim to raise awareness, provide cyber safety practices, and engage communities in combating TFGBV while supporting marginalized groups, including PWDs, through inclusive resources and advocacy.</p>
+    <div class="hamburger" onclick="openMenu()">
+        <i class="fas fa-bars"></i>
     </div>
 
-    <div style="background: #ffffff; padding: 30px; margin: auto; border-left: 6px solid orange; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); max-width: 1200px;">
-      <strong style="font-size: 1.3em; display: block; margin-bottom: 10px;">Our Vision:</strong>
-      <p style="font-size: 1.2em;">To create a world where young women, girls, and persons with disabilities are empowered to navigate digital spaces safely, confidently, and free from Technology-Facilitated Gender-Based Violence (TFGBV).</p>
-    </div>
-  </div>
-</section>
-
-<!-- Learn to Be Safe Online Section -->
-<section id="safety" style="padding: 60px 20px; background-color: #f2f6f9;">
-  <div style="max-width: 1200px; margin: auto;">
-    <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 30px;">Learn to Be Safe Online</h2>
-
-    <p style="font-size: 1.3em; margin: auto; max-width: 900px;">
-      The internet can be empowering, but also risky without the right knowledge. Whether you're a teen, adult, or guardian, 
-      understanding how to stay safe online is critical. This section highlights a few essential practices to protect yourself and others. 
-      Want to dive deeper? Visit our <strong>Resources</strong> section to access toolkits, guides, and take our interactive safety quiz.
-    </p>
-
-    <div style="text-align: center; margin: 40px 0;">
-      <a href="resource&support.html#quiz" style="background-color: #e63946; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 6px;">
-        Explore More & Take the Safety Quiz →
-      </a>
-    </div>
-
-    <div class="safety-cards" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
-      <!-- Repeatable card style -->
-      <div style="flex: 1 1 300px; min-width: 280px; padding: 25px; font-size: 1.2em;">
-        <h3 style="color: orange;">Strong Passwords</h3>
-        <p>Create long, unique passwords using a combination of letters, numbers, and symbols. Avoid reusing the same password across platforms. Use a password manager if possible.</p>
-      </div>
-
-      <div style="flex: 1 1 300px; min-width: 280px; padding: 25px; font-size: 1.2em;">
-        <h3 style="color: orange;">Avoid Phishing</h3>
-        <p>Phishing scams attempt to steal your data through fake emails, links, or messages. Be cautious of anything that asks for sensitive info or urges "urgent" action. Verify sources directly.</p>
-      </div>
-
-      <div style="flex: 1 1 300px; min-width: 280px; padding: 25px; font-size: 1.2em;">
-        <h3 style="color: orange;">Privacy Settings</h3>
-        <p>Always check and customize your privacy settings on social media and apps. Limit who can view your posts, tag you, or access your location and personal data.</p>
-      </div>
-
-      <div style="flex: 1 1 300px; min-width: 280px; padding: 25px; font-size: 1.2em;">
-        <h3 style="color: orange;">Safe Sharing Habits</h3>
-        <p>Think before you share. Avoid posting personal information like your address, school, or travel plans. Once it's online, it can be hard to control who sees it, or how it's used.</p>
-      </div>
-
-      <div style="flex: 1 1 300px; min-width: 280px; padding: 25px; font-size: 1.2em;">
-        <h3 style="color: orange;">Seek Help</h3>
-        <p>If you're being harassed or threatened online, don't stay silent. Report the incident to the platform and reach out to someone you trust. Need support?
-          <a href="#contact" style="color: #e63946; text-decoration: none; font-weight: bold;"> Contact our team →</a>
-        </p>
-      </div>
-    </div>
-
-    <div style="text-align: center; margin: 40px 0; ">
-      <a href="resource&support.html" style="background-color: #1d3557; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 6px;">
-        Go to Resources & Support →
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Dynamic Card Display Section -->
-<section class="dynamic-cards-section">
-  <div class="card-navigation">
-    <button class="card-nav-btn active" data-card="digital-safety">Digital Safety & Accessibility</button>
-    <button class="card-nav-btn" data-card="tfgbv">TFGBV Protection Tools</button>
-    <button class="card-nav-btn" data-card="quick-access">Quick Access Tools</button>
-  </div>
-  
-  <div class="card-display-container">
-    <!-- Digital Safety Card -->
-    <div class="dynamic-card active" id="digital-safety">
-      <div class="card-content">
-        <h3>Digital Safety & Accessibility</h3>
-        <div class="card-grid">
-          <div class="card-item">
-            <div class="card-inner">
-              <div class="card-front">
-                <i class="fas fa-shield-alt"></i>
-                <h4>Password Security</h4>
-                <p>Create strong, unique passwords and use password managers</p>
-              </div>
-              <div class="card-back">
-                <h4>Password Security Tips</h4>
-                <ul>
-                  <li>Use at least 12 characters</li>
-                  <li>Mix uppercase, lowercase, numbers & symbols</li>
-                  <li>Never reuse passwords across accounts</li>
-                  <li>Use a password manager like LastPass or 1Password</li>
-                  <li>Enable biometric authentication when available</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="card-item">
-            <div class="card-inner">
-              <div class="card-front">
-                <i class="fas fa-lock"></i>
-                <h4>Privacy Settings</h4>
-                <p>Manage your privacy settings across all platforms</p>
-              </div>
-              <div class="card-back">
-                <h4>Privacy Settings Guide</h4>
-                <ul>
-                  <li>Review social media privacy settings monthly</li>
-                  <li>Limit who can see your posts and profile</li>
-                  <li>Disable location sharing when not needed</li>
-                  <li>Use private browsing for sensitive activities</li>
-                  <li>Regularly clear browser cookies and cache</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="card-item">
-            <div class="card-inner">
-              <div class="card-front">
-                <i class="fas fa-user-shield"></i>
-                <h4>Two-Factor Authentication</h4>
-                <p>Enable 2FA for additional account security</p>
-              </div>
-              <div class="card-back">
-                <h4>2FA Implementation Guide</h4>
-                <ul>
-                  <li>Enable 2FA on all critical accounts</li>
-                  <li>Use authenticator apps over SMS when possible</li>
-                  <li>Keep backup codes in a secure location</li>
-                  <li>Set up recovery email addresses</li>
-                  <li>Regularly review active sessions</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+    <!-- Mobile Sidebar Menu -->
+    <div id="mobileMenu" class="mobile-menu" role="dialog" aria-label="Mobile menu">
+        <div class="menu-header">
+            <span class="close-btn" onclick="closeMenu()" aria-label="Close mobile menu" role="button">&times;</span>
         </div>
-      </div>
+        <ul role="menu">
+            <li><a href="index.html" role="menuitem" aria-current="page">Home</a></li>
+            <li><a href="about us.html" role="menuitem">About Us</a></li>
+            <li><a href="resource&support.html" role="menuitem">Resources</a></li>
+            <li><a href="events.html" role="menuitem">Events</a></li>
+            <li><a href="news.html" role="menuitem">News</a></li>
+            <li><a href="partner.html" role="menuitem">Partner with Us</a></li>
+            <li><a href="donate.html" class="highlight" role="menuitem">Donate</a></li>
+        </ul>
     </div>
 
-    <!-- TFGBV Protection Card -->
-    <div class="dynamic-card" id="tfgbv">
-      <div class="card-content">
-        <h3>TFGBV Protection Tools</h3>
-        <div class="card-grid">
-          <div class="card-item">
-            <div class="card-inner">
-              <div class="card-front">
-                <i class="fas fa-exclamation-triangle"></i>
-                <h4>Report Abuse</h4>
-                <p>Report and document online harassment</p>
-                <button class="report-btn" onclick="openReportForm()">Report Incident</button>
-              </div>
-              <div class="card-back">
-                <h4>How to Report Abuse</h4>
-                <ul>
-                  <li>Document all incidents with screenshots</li>
-                  <li>Report to platform moderators</li>
-                  <li>Contact local authorities if needed</li>
-                  <li>Use our reporting form for support</li>
-                  <li>Keep records of all communications</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="card-item">
-            <div class="card-inner">
-              <div class="card-front">
-                <i class="fas fa-hand-holding-heart"></i>
-                <h4>Support Resources</h4>
-                <p>Access counseling and support services</p>
-              </div>
-              <div class="card-back">
-                <h4>Available Support</h4>
-                <ul>
-                  <li>24/7 Crisis hotline support</li>
-                  <li>Professional counseling services</li>
-                  <li>Peer support groups</li>
-                  <li>Legal consultation</li>
-                  <li>Mental health resources</li>
-                </ul>
-                <a href="resource&support.html" class="resource-link">Access Resources →</a>
-              </div>
-            </div>
-          </div>
-          <div class="card-item">
-            <div class="card-inner">
-              <div class="card-front">
-                <i class="fas fa-gavel"></i>
-                <h4>Legal Guidance</h4>
-                <p>Information about legal rights and protections</p>
-              </div>
-              <div class="card-back">
-                <h4>Legal Resources</h4>
-                <ul>
-                  <li>Know your digital rights</li>
-                  <li>Documentation guidelines</li>
-                  <li>Legal consultation services</li>
-                  <li>Restraining order information</li>
-                  <li>International legal resources</li>
-                </ul>
-                <a href="resource&support.html#legal" class="resource-link">Legal Resources →</a>
-              </div>
-            </div>
-          </div>
+    <div id="eventPopup" class="popup"> 
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2 id="eventTitle"></h2>
+            <p id="eventMessage"></p>
+            <a id="eventLink" href="#" target="_blank" style="display:none;">Join Event</a>
+            <button id="setReminder" style="display:none;" onclick="setReminder()"> 🔔Set Reminder</button>
         </div>
-      </div>
     </div>
 
-    <!-- Quick Access Card -->
-    <div class="dynamic-card" id="quick-access">
-      <div class="card-content">
-        <h3>Quick Access Tools</h3>
-        <div class="card-grid">
-          <div class="card-item">
-            <div class="card-inner">
-              <div class="card-front">
-                <i class="fas fa-phone-alt"></i>
-                <h4>Emergency Contacts</h4>
-                <p>Quick access to emergency services</p>
-              </div>
-              <div class="card-back">
-                <h4>Emergency Resources</h4>
-                <ul>
-                  <li>Emergency Services: 911</li>
-                  <li>National Crisis Hotline: 988</li>
-                  <li>Local Support Services</li>
-                  <li>Medical Emergency</li>
-                  <li>Law Enforcement</li>
-                </ul>
-              </div>
+    <!-- Hero Section with Responsive Video -->
+    <section class="hero-alt" role="banner" aria-label="Hero section with rotating images">
+        <div class="image-container">
+            <div class="color-overlay" aria-hidden="true"></div>
+            <img src="images/gbv1.png" alt="Women empowerment and digital safety awareness campaign" class="bg-image active">
+            <img src="images/tgbvw2.png" alt="Fighting technology-facilitated gender-based violence" class="bg-image">
+            <img src="images/tgbv.png" alt="Supporting survivors of online harassment" class="bg-image">
+            <img src="images/tgbvw1.png" alt="Building a safer digital space for women" class="bg-image">
+        </div>
+    </section>
+
+    <!-- About Us (Homepage Intro) -->
+    <section class="about-us" style="padding: 60px 20px; background-color: #f0f4f8;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; max-width: 1200px; margin: auto;">
+            <div style="flex: 1 1 300px; padding: 20px; text-align: center;">
+                <img src="images/Globe.png" alt="About Us" style="max-width: 100%; height: auto; border-radius: 10px;">
             </div>
-          </div>
-          <div class="card-item">
-            <div class="card-inner">
-              <div class="card-front">
-                <i class="fas fa-file-alt"></i>
-                <h4>Reporting Forms</h4>
-                <p>Easy-to-use incident reporting forms</p>
-              </div>
-              <div class="card-back">
-                <h4>Report an Incident</h4>
-                <ul>
-                  <li>Anonymous reporting option</li>
-                  <li>Detailed incident forms</li>
-                  <li>Evidence upload capability</li>
-                  <li>Follow-up tracking</li>
-                  <li>Support service connection</li>
-                </ul>
-                <button class="report-btn" onclick="openReportForm()">Report Now</button>
-              </div>
+            <div style="flex: 2 1 400px; padding: 20px;">
+                <h2 style="font-size: 2em; color: #1d3557; margin-bottom: 15px;">Who We Are</h2>
+                <p style="font-size: 1.2em; margin-bottom: 20px;">
+                    Shield Maidens is a women-led initiative dedicated to digital empowerment and online safety for young women and marginalized groups. We work to combat technology-facilitated gender-based violence (TFGBV) through education, advocacy, and inclusive support.
+                </p>
+                <a href="about us.html" style="display: inline-block; padding: 10px 20px; background-color: #e63946; color: white; border-radius: 5px; text-decoration: none;">
+                    Learn More
+                </a>
             </div>
-          </div>
-          <div class="card-item">
-            <div class="card-inner">
-              <div class="card-front">
-                <i class="fas fa-hands-helping"></i>
-                <h4>Support Services</h4>
-                <p>Direct access to support resources</p>
-              </div>
-              <div class="card-back">
-                <h4>Available Support</h4>
-                <ul>
-                  <li>24/7 Online Chat Support</li>
-                  <li>Peer Support Groups</li>
-                  <li>Professional Counseling</li>
-                  <li>Resource Directory</li>
-                  <li>Community Forums</li>
-                </ul>
-                <div style="margin-top:10px;">
-                  <strong>Contact us 24/7:</strong><br>
-                  <a href="mailto:shi3ldmaidens@gmail.com" style="color:#e63946;">shi3ldmaidens@gmail.com</a><br>
-                  <a href="tel:+254702997534" style="color:#e63946;">+254 702 997534</a>
+        </div>
+    </section>
+
+    <!-- Mission and Vision Section -->
+    <section id="mission-vision" style="background-color: #f8f9fa; padding: 60px 20px;">
+        <div style="width: 100%; text-align: center;">
+            <h2 style="font-size: 2.5em; color: orange; margin-bottom: 40px;">Our Mission & Vision</h2>
+            
+            <div style="background: #ffffff; padding: 30px; margin: 0 auto 30px auto; border-left: 6px solid orange; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); max-width: 1200px;">
+                <strong style="font-size: 1.3em; display: block; margin-bottom: 10px;">Our Mission:</strong>
+                <p style="font-size: 1.2em;">We aim to raise awareness, provide cyber safety practices, and engage communities in combating TFGBV while supporting marginalized groups, including PWDs, through inclusive resources and advocacy.</p>
+            </div>
+
+            <div style="background: #ffffff; padding: 30px; margin: auto; border-left: 6px solid orange; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); max-width: 1200px;">
+                <strong style="font-size: 1.3em; display: block; margin-bottom: 10px;">Our Vision:</strong>
+                <p style="font-size: 1.2em;">To create a world where young women, girls, and persons with disabilities are empowered to navigate digital spaces safely, confidently, and free from Technology-Facilitated Gender-Based Violence (TFGBV).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learn to Be Safe Online Section -->
+    <section id="safety" style="padding: 60px 20px; background-color: #f2f6f9;">
+        <div style="max-width: 1200px; margin: auto;">
+            <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 30px;">Learn to Be Safe Online</h2>
+
+            <p style="font-size: 1.3em; margin: auto; max-width: 900px;">
+                The internet can be empowering, but also risky without the right knowledge. Whether you're a teen, adult, or guardian, 
+                understanding how to stay safe online is critical. This section highlights a few essential practices to protect yourself and others. 
+                Want to dive deeper? Visit our <strong>Resources</strong> section to access toolkits, guides, and take our interactive safety quiz.
+            </p>
+
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="resource&support.html#quiz" style="background-color: #e63946; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 6px;">
+                    Explore More & Take the Safety Quiz →
+                </a>
+            </div>
+
+            <div class="safety-cards" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+                <!-- Repeatable card style -->
+                <div style="flex: 1 1 300px; min-width: 280px; padding: 25px; font-size: 1.2em;">
+                    <h3 style="color: orange;">Strong Passwords</h3>
+                    <p>Create long, unique passwords using a combination of letters, numbers, and symbols. Avoid reusing the same password across platforms. Use a password manager if possible.</p>
                 </div>
-                <a href="resource&support.html" class="resource-link">Get Support →</a>
-              </div>
+
+                <div style="flex: 1 1 300px; min-width: 280px; padding: 25px; font-size: 1.2em;">
+                    <h3 style="color: orange;">Avoid Phishing</h3>
+                    <p>Phishing scams attempt to steal your data through fake emails, links, or messages. Be cautious of anything that asks for sensitive info or urges "urgent" action. Verify sources directly.</p>
+                </div>
+
+                <div style="flex: 1 1 300px; min-width: 280px; padding: 25px; font-size: 1.2em;">
+                    <h3 style="color: orange;">Privacy Settings</h3>
+                    <p>Always check and customize your privacy settings on social media and apps. Limit who can view your posts, tag you, or access your location and personal data.</p>
+                </div>
+
+                <div style="flex: 1 1 300px; min-width: 280px; padding: 25px; font-size: 1.2em;">
+                    <h3 style="color: orange;">Safe Sharing Habits</h3>
+                    <p>Think before you share. Avoid posting personal information like your address, school, or travel plans. Once it's online, it can be hard to control who sees it, or how it's used.</p>
+                </div>
+
+                <div style="flex: 1 1 300px; min-width: 280px; padding: 25px; font-size: 1.2em;">
+                    <h3 style="color: orange;">Seek Help</h3>
+                    <p>If you're being harassed or threatened online, don't stay silent. Report the incident to the platform and reach out to someone you trust. Need support?
+                        <a href="#contact" style="color: #e63946; text-decoration: none; font-weight: bold;"> Contact our team →</a>
+                    </p>
+                </div>
             </div>
-          </div>
+
+            <div style="text-align: center; margin: 40px 0; ">
+                <a href="resource&support.html" style="background-color: #1d3557; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 6px;">
+                    Go to Resources & Support →
+                </a>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Add a divider for clarity -->
-<hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
+    <!-- Dynamic Card Display Section -->
+    <section class="dynamic-cards-section">
+        <div class="card-navigation">
+            <button class="card-nav-btn active" data-card="digital-safety">Digital Safety & Accessibility</button>
+            <button class="card-nav-btn" data-card="tfgbv">TFGBV Protection Tools</button>
+            <button class="card-nav-btn" data-card="quick-access">Quick Access Tools</button>
+        </div>
+        
+        <div class="card-display-container">
+            <!-- Digital Safety Card -->
+            <div class="dynamic-card active" id="digital-safety">
+                <div class="card-content">
+                    <h3>Digital Safety & Accessibility</h3>
+                    <div class="card-grid">
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <h4>Password Security</h4>
+                                    <p>Create strong, unique passwords and use password managers</p>
+                                </div>
+                                <div class="card-back">
+                                    <h4>Password Security Tips</h4>
+                                    <ul>
+                                        <li>Use at least 12 characters</li>
+                                        <li>Mix uppercase, lowercase, numbers & symbols</li>
+                                        <li>Never reuse passwords across accounts</li>
+                                        <li>Use a password manager like LastPass or 1Password</li>
+                                        <li>Enable biometric authentication when available</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <i class="fas fa-lock"></i>
+                                    <h4>Privacy Settings</h4>
+                                    <p>Manage your privacy settings across all platforms</p>
+                                </div>
+                                <div class="card-back">
+                                    <h4>Privacy Settings Guide</h4>
+                                    <ul>
+                                        <li>Review social media privacy settings monthly</li>
+                                        <li>Limit who can see your posts and profile</li>
+                                        <li>Disable location sharing when not needed</li>
+                                        <li>Use private browsing for sensitive activities</li>
+                                        <li>Regularly clear browser cookies and cache</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <i class="fas fa-user-shield"></i>
+                                    <h4>Two-Factor Authentication</h4>
+                                    <p>Enable 2FA for additional account security</p>
+                                </div>
+                                <div class="card-back">
+                                    <h4>2FA Implementation Guide</h4>
+                                    <ul>
+                                        <li>Enable 2FA on all critical accounts</li>
+                                        <li>Use authenticator apps over SMS when possible</li>
+                                        <li>Keep backup codes in a secure location</li>
+                                        <li>Set up recovery email addresses</li>
+                                        <li>Regularly review active sessions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<section class="next-sessions-section">
-  <h2>Join Our Next Sessions</h2>
-  <div class="carousel-wrapper">
-    <div class="session-carousel">
-      <!-- PAST SESSION -->
-      <div class="session-card past">
-        <img src="images/eventw1.jpg" alt="Past Event 1">
-        <p><strong>Topic:</strong> Technology-Facilitated Gender-Based Violence (TFGBV)</p>
-        <p>Don't miss our session! Join us to learn how to stay safe online.</p>
-        <a class="event-link past-link">Past Event</a>
-      </div>
+            <!-- TFGBV Protection Card -->
+            <div class="dynamic-card" id="tfgbv">
+                <div class="card-content">
+                    <h3>TFGBV Protection Tools</h3>
+                    <div class="card-grid">
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <h4>Report Abuse</h4>
+                                    <p>Report and document online harassment</p>
+                                    <button class="report-btn" onclick="openReportForm()">Report Incident</button>
+                                </div>
+                                <div class="card-back">
+                                    <h4>How to Report Abuse</h4>
+                                    <ul>
+                                        <li>Document all incidents with screenshots</li>
+                                        <li>Report to platform moderators</li>
+                                        <li>Contact local authorities if needed</li>
+                                        <li>Use our reporting form for support</li>
+                                        <li>Keep records of all communications</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <i class="fas fa-hand-holding-heart"></i>
+                                    <h4>Support Resources</h4>
+                                    <p>Access counseling and support services</p>
+                                </div>
+                                <div class="card-back">
+                                    <h4>Available Support</h4>
+                                    <ul>
+                                        <li>24/7 Crisis hotline support</li>
+                                        <li>Professional counseling services</li>
+                                        <li>Peer support groups</li>
+                                        <li>Legal consultation</li>
+                                        <li>Mental health resources</li>
+                                    </ul>
+                                    <a href="resource&support.html" class="resource-link">Access Resources →</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <i class="fas fa-gavel"></i>
+                                    <h4>Legal Guidance</h4>
+                                    <p>Information about legal rights and protections</p>
+                                </div>
+                                <div class="card-back">
+                                    <h4>Legal Resources</h4>
+                                    <ul>
+                                        <li>Know your digital rights</li>
+                                        <li>Documentation guidelines</li>
+                                        <li>Legal consultation services</li>
+                                        <li>Restraining order information</li>
+                                        <li>International legal resources</li>
+                                    </ul>
+                                    <a href="resource&support.html#legal" class="resource-link">Legal Resources →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-      <!-- PAST SESSION -->
-      <div class="session-card past">
-        <img src="images/event 3.jpg" alt="Past Event 2">
-        <p><strong>Topic:</strong> Online Privacy & Digital Footprint</p>
-        <p>Stay Safe in Digital Space.</p>
-        <a class="event-link past-link">Past Event</a>
-      </div>
+            <!-- Quick Access Card -->
+            <div class="dynamic-card" id="quick-access">
+                <div class="card-content">
+                    <h3>Quick Access Tools</h3>
+                    <div class="card-grid">
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <h4>Emergency Contacts</h4>
+                                    <p>Quick access to emergency services</p>
+                                </div>
+                                <div class="card-back">
+                                    <h4>Emergency Resources</h4>
+                                    <ul>
+                                        <li>Emergency Services: 911</li>
+                                        <li>National Crisis Hotline: 988</li>
+                                        <li>Local Support Services</li>
+                                        <li>Medical Emergency</li>
+                                        <li>Law Enforcement</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <i class="fas fa-file-alt"></i>
+                                    <h4>Reporting Forms</h4>
+                                    <p>Easy-to-use incident reporting forms</p>
+                                </div>
+                                <div class="card-back">
+                                    <h4>Report an Incident</h4>
+                                    <ul>
+                                        <li>Anonymous reporting option</li>
+                                        <li>Detailed incident forms</li>
+                                        <li>Evidence upload capability</li>
+                                        <li>Follow-up tracking</li>
+                                        <li>Support service connection</li>
+                                    </ul>
+                                    <button class="report-btn" onclick="openReportForm()">Report Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <i class="fas fa-hands-helping"></i>
+                                    <h4>Support Services</h4>
+                                    <p>Direct access to support resources</p>
+                                </div>
+                                <div class="card-back">
+                                    <h4>Available Support</h4>
+                                    <ul>
+                                        <li>24/7 Online Chat Support</li>
+                                        <li>Peer Support Groups</li>
+                                        <li>Professional Counseling</li>
+                                        <li>Resource Directory</li>
+                                        <li>Community Forums</li>
+                                    </ul>
+                                    <div style="margin-top:10px;">
+                                        <strong>Contact us 24/7:</strong><br>
+                                        <a href="mailto:shi3ldmaidens@gmail.com" style="color:#e63946;">shi3ldmaidens@gmail.com</a><br>
+                                        <a href="tel:+254702997534" style="color:#e63946;">+254 702 997534</a>
+                                    </div>
+                                    <a href="resource&support.html" class="resource-link">Get Support →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="session-card past">
-        <img src="images/eventw2.jpg" alt="Past Event 2">
-        <p><strong>Topic:</strong> Online Privacy & Digital Footprint</p>
-        <p>Stay Safe in Digital Space.</p>
-        <a class="event-link past-link">Past Event</a>
-      </div>
+    <!-- Add a divider for clarity -->
+    <hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
 
-      <!-- PAST SESSION -->
-      <div class="session-card past">
-        <img src="images/kenya.jpg" alt="Past Event 3">
-        <p><strong>Topic:</strong> TFGBV in Kenya</p>
-        <p>Session was on 7-8 PM. Learn about TFGBV in Kenya and the Resources involved to combat it.</p>
-        <a class="event-link past-link">Past Event</a>
-      </div>
-       <!-- PAST SESSION -->
-       <div class="session-card past">
-        <img src="images/Eventt4.jpg" alt="Past Event 3">
-        <p><strong>Topic:</strong> Introduction to Cyber Attacks</p>
-        <p>Session was on 7-8 PM. Learn how to protect yourself against cyber threats.</p>
-        <a class="event-link past-link">Past Event</a>
-      </div>
+    <section class="next-sessions-section">
+        <h2>Join Our Next Sessions</h2>
+        <div class="carousel-wrapper">
+            <div class="session-carousel">
+                <!-- PAST SESSION -->
+                <div class="session-card past">
+                    <img src="images/eventw1.jpg" alt="Past Event 1">
+                    <p><strong>Topic:</strong> Technology-Facilitated Gender-Based Violence (TFGBV)</p>
+                    <p>Don't miss our session! Join us to learn how to stay safe online.</p>
+                    <a class="event-link past-link">Past Event</a>
+                </div>
 
-      <!-- TODAY'S SESSION - UPCOMING -->
-      <div class="session-card upcoming">
-        <img src="images/today.jpg" alt="Today's Event">
-        <p><strong>Topic:</strong>  Introduction to Cyber Attacks</p>
-        <p>Join us Today, 15 May 2025 at 7:00 PM for a powerful session.
+                <!-- PAST SESSION -->
+                <div class="session-card past">
+                    <img src="images/event 3.jpg" alt="Past Event 2">
+                    <p><strong>Topic:</strong> Online Privacy & Digital Footprint</p>
+                    <p>Stay Safe in Digital Space.</p>
+                    <a class="event-link past-link">Past Event</a>
+                </div>
+
+                <div class="session-card past">
+                    <img src="images/eventw2.jpg" alt="Past Event 2">
+                    <p><strong>Topic:</strong> Online Privacy & Digital Footprint</p>
+                    <p>Stay Safe in Digital Space.</p>
+                    <a class="event-link past-link">Past Event</a>
+                </div>
+
+                <!-- PAST SESSION -->
+                <div class="session-card past">
+                    <img src="images/kenya.jpg" alt="Past Event 3">
+                    <p><strong>Topic:</strong> TFGBV in Kenya</p>
+                    <p>Session was on 7-8 PM. Learn about TFGBV in Kenya and the Resources involved to combat it.</p>
+                    <a class="event-link past-link">Past Event</a>
+                </div>
+                <!-- PAST SESSION -->
+                <div class="session-card past">
+                    <img src="images/Eventt4.jpg" alt="Past Event 3">
+                    <p><strong>Topic:</strong> Introduction to Cyber Attacks</p>
+                    <p>Session was on 7-8 PM. Learn how to protect yourself against cyber threats.</p>
+                    <a class="event-link past-link">Past Event</a>
+                </div>
+
+                <!-- TODAY'S SESSION - UPCOMING -->
+                <div class="session-card upcoming">
+                    <img src="images/today.jpg" alt="Today's Event">
+                    <p><strong>Topic:</strong>  Introduction to Cyber Attacks</p>
+                    <p>Join us Today, 15 May 2025 at 7:00 PM for a powerful session.
+                      
+                      </p>
+                    <a href="https://calendar.app.google/Uas6NuqhVGtgV6Vz9" class="event-link">Click here to join</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="social-section">
+
+        <!-- LinkedIn -->
+        <div class="social-box">
+            <div style="border: 1px solid #ddd; padding: 16px; border-radius: 8px; background: #fff; position: relative;">
           
-          </p>
-        <a href="https://calendar.app.google/Uas6NuqhVGtgV6Vz9" class="event-link">Click here to join</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-    
-
-    
-
-<div class="social-section">
-
-<!-- LinkedIn -->
-<div class="social-box">
-    <div style="border: 1px solid #ddd; padding: 16px; border-radius: 8px; background: #fff; position: relative;">
-  
-      <!-- Connect Button at Top Right -->
-      <div style="position: absolute; top: 16px; right: 16px;">
-        <a href="https://www.linkedin.com/in/shield-maidens-47ab66329" target="_blank" 
-           style="padding: 8px 14px; background-color: #0077b5; color: white; text-decoration: none; font-size: 14px; border-radius: 5px;">
-          Connect
-        </a>
-      </div>
-  
-      <!-- LinkedIn logo and text in one row -->
-      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-        <!-- LinkedIn Icon -->
-        <img src="https://static-exp1.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" 
-             alt="LinkedIn Logo" 
-             style="width: 40px; height: 40px; border-radius: 4px;">
-  
-        <!-- Text and Link -->
-        <div style="text-align: left;">
-          <a href="https://www.linkedin.com/in/shield-maidens-47ab66329" target="_blank" style="text-decoration: none; color: #000;">
-            <strong>Shield Maidens</strong><br>
-            View our LinkedIn profile<br>
-            <span style="color: #0077b5; font-size: 13px;">linkedin.com/in/shield-maidens-47ab66329</span>
-          </a>
+                <!-- Connect Button at Top Right -->
+                <div style="position: absolute; top: 16px; right: 16px;">
+                    <a href="https://www.linkedin.com/in/shield-maidens-47ab66329" target="_blank" 
+                       style="padding: 8px 14px; background-color: #0077b5; color: white; text-decoration: none; font-size: 14px; border-radius: 5px;">
+                        Connect
+                    </a>
+                </div>
+          
+                <!-- LinkedIn logo and text in one row -->
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                    <!-- LinkedIn Icon -->
+                    <img src="https://static-exp1.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" 
+                         alt="LinkedIn Logo" 
+                         style="width: 40px; height: 40px; border-radius: 4px;">
+          
+                    <!-- Text and Link -->
+                    <div style="text-align: left;">
+                        <a href="https://www.linkedin.com/in/shield-maidens-47ab66329" target="_blank" style="text-decoration: none; color: #000;">
+                            <strong>Shield Maidens</strong><br>
+                            View our LinkedIn profile<br>
+                            <span style="color: #0077b5; font-size: 13px;">linkedin.com/in/shield-maidens-47ab66329</span>
+                        </a>
+                    </div>
+                </div>
+          
+                <!-- Gigs Image Below -->
+                <div>
+                    <img src="images/gigs.jpg" alt="Gigs Image" style="width: 100%; border-radius: 10px;">
+                </div>
+          
+            </div>
         </div>
-      </div>
-  
-      <!-- Gigs Image Below -->
-      <div>
-        <img src="images/gigs.jpg" alt="Gigs Image" style="width: 100%; border-radius: 10px;">
-      </div>
-  
+        
+
+        <!-- Instagram -->
+        <div class="social-box">
+            <div class="follow-btn">
+                <a href="https://www.instagram.com/the_shield_maidens/" target="_blank" class="instagram-btn">
+                    Follow on Instagram
+                </a>
+            </div>
+            <iframe src="https://www.instagram.com/the_shield_maidens/embed" 
+                    width="100%" height="500" frameborder="0" scrolling="yes"></iframe>
+        </div>
+
+        <!-- Twitter (X) -->
+        <div class="social-card twitter-card">
+            <div class="card-header">
+                <img src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Twitter Logo" style="width: 32px;">
+                <strong>@_shield_maidens</strong>
+            </div>
+
+            <!-- Twitter Timeline -->
+            <a class="twitter-timeline"
+               href="https://twitter.com/_shield_maidens"
+               data-height="400"
+               data-theme="light"
+               data-chrome="noheader nofooter noborders transparent"
+               data-dnt="true">
+                Tweets by @_shield_maidens
+            </a>
+
+            <!-- Twitter Follow Button -->
+            <a href="https://twitter.com/_shield_maidens?ref_src=twsrc%5Etfw" 
+               class="twitter-follow-button"
+               data-show-count="false"
+               data-size="large">
+                Follow @_shield_maidens
+            </a>
+
+            <!-- Embedded Recent Post -->
+            <blockquote class="twitter-tweet" data-theme="dark">
+                <a href="https://twitter.com/_shield_maidens/status/1911289276991492240"></a>
+            </blockquote>
+
+        </div>
+
     </div>
-  </div>
-  
 
-  <!-- Instagram -->
-  <div class="social-box">
-    <div class="follow-btn">
-      <a href="https://www.instagram.com/the_shield_maidens/" target="_blank" class="instagram-btn">
-        Follow on Instagram
-      </a>
-    </div>
-    <iframe src="https://www.instagram.com/the_shield_maidens/embed" 
-            width="100%" height="500" frameborder="0" scrolling="yes"></iframe>
-  </div>
-
-  <!-- Twitter (X) -->
-  <div class="social-card twitter-card">
-    <div class="card-header">
-      <img src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Twitter Logo" style="width: 32px;">
-      <strong>@_shield_maidens</strong>
-    </div>
-
-    <!-- Twitter Timeline -->
-    <a class="twitter-timeline"
-       href="https://twitter.com/_shield_maidens"
-       data-height="400"
-       data-theme="light"
-       data-chrome="noheader nofooter noborders transparent"
-       data-dnt="true">
-      Tweets by @_shield_maidens
-    </a>
-
-    <!-- Twitter Follow Button -->
-    <a href="https://twitter.com/_shield_maidens?ref_src=twsrc%5Etfw" 
-       class="twitter-follow-button"
-       data-show-count="false"
-       data-size="large">
-      Follow @_shield_maidens
-    </a>
-
-    <!-- Embedded Recent Post -->
-    <blockquote class="twitter-tweet" data-theme="dark">
-      <a href="https://twitter.com/_shield_maidens/status/1911289276991492240"></a>
-    </blockquote>
-
-  </div>
-
-</div>
-
-<!-- Twitter Script Loader -->
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <!-- Twitter Script Loader -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-<section class="shield-cta-section">
-  <div class="shield-cta-container">
-      <h2>Join Us in Making a Difference</h2>
-      <p class="shield-cta-intro">
-          At Shield Maidens, we believe in the power of collective action. Together, we can create a safer, more inclusive digital space for all. Get involved today to help us fight against Technology-Facilitated Gender-Based Violence and advocate for the rights of marginalized communities online.
-      </p>
-      <a href="index.html#contact" class="btn-get-involved">Join Us</a>
-  </div>
-</section>  
+    <section class="shield-cta-section">
+        <div class="shield-cta-container">
+            <h2>Join Us in Making a Difference</h2>
+            <p class="shield-cta-intro">
+                At Shield Maidens, we believe in the power of collective action. Together, we can create a safer, more inclusive digital space for all. Get involved today to help us fight against Technology-Facilitated Gender-Based Violence and advocate for the rights of marginalized communities online.
+            </p>
+            <a href="index.html#contact" class="btn-get-involved">Join Us</a>
+        </div>
+    </section>  
 
     <!-- Contact Us -->
     <div class="contact-container">
         <div id="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm" action="submit_contact.php" method="POST">
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-<input type="email" id="email" name="email" placeholder="Your Email" required>
-<textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <h2>Contact Us</h2>
+            <form id="contactForm" action="submit_contact.php" method="POST">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
 
-            <button type="submit">Send Message</button>
-          </form>
-          
-        <p id="response"></p>
+                <button type="submit">Send Message</button>
+            </form>
+            
+            <p id="response"></p>
         </div>
     
-     
-         <!-- Mailing List Section -->
-<form id="mailing-list" method="POST">
-    <h2>Join Our Mailing List</h2>
-    <p>Be the first to know about upcoming Training Sessions, Events, and other related news.</p>
-    <input type="email" id="mailingEmail" name="mailingEmail" placeholder="Enter your email here" required>
-    <button type="submit">Stay updated</button>
-    <p id="mailingResponse"></p>
-  </form>
-  
-  
- 
-
-
+        <!-- Mailing List Section -->
+        <form id="mailing-list" method="POST">
+            <h2>Join Our Mailing List</h2>
+            <p>Be the first to know about upcoming Training Sessions, Events, and other related news.</p>
+            <input type="email" id="mailingEmail" name="mailingEmail" placeholder="Enter your email here" required>
+            <button type="submit">Stay updated</button>
+            <p id="mailingResponse"></p>
+        </form>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="footer-container">
-          <div class="footer-logo">
-              <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo">
-          </div>
-  
-          <div class="footer-links">
-              <h3>Quick Links</h3>
-              <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="about us.html">About Us</a></li>
-                  <li><a href="resource&support.html">Resources</a></li>
-                  <li><a href="events.html">Events</a></li>
-                  <li><a href="news.html">News</a></li>
-                  <li><a href="partner.html">Partner with Us</a></li>
-                  <li><a href="donate.html" class="donate-btn">Donate</a></li>
-              </ul>
-              <div class="payment-icons">
-                  <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
-                  <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" height="20">
-                  <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" height="20">
-              </div>
-          </div>
-  
-          <div class="footer-location">
-              <h3>Location</h3>
-              <p>Nairobi, Kenya</p>
-          </div>
-  
-          <div class="footer-contact">
-              <h3>Contact Us</h3>
-              <p>Email: shi3ldmaidens@gmail.com</p>
-              <h3>Our Socials</h3>
-              <div class="social-icons">
-                <a href="https://x.com/_shield_maidens" target="_blank">
-                    <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
-                </a>
-                <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank">
-                    <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"/>
-                </a>
-                <a href="https://www.instagram.com/the_shield_maidens/" target="_blank">
-                    <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram"/>
-                </a>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo">
             </div>
-          </div>
-      </div>
-      <div class="footer-bottom">
-          <p>Copyright © 2025 Shield Maidens</p>
-      </div>
-  </footer>
-  
-  <script>
-    function openMenu() {
-      document.getElementById("mobileMenu").classList.add("active");
-    }
-  
-    function closeMenu() {
-      document.getElementById("mobileMenu").classList.remove("active");
-    }
-  </script>
-  
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="resource&support.html">Resources</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="partner.html">Partner with Us</a></li>
+                    <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                </ul>
+                <div class="payment-icons">
+                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
+                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" height="20">
+                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" height="20">
+                </div>
+            </div>
+
+            <div class="footer-location">
+                <h3>Location</h3>
+                <p>Nairobi, Kenya</p>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: shi3ldmaidens@gmail.com</p>
+                <h3>Our Socials</h3>
+                <div class="social-icons">
+                    <a href="https://x.com/_shield_maidens" target="_blank">
+                        <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank">
+                        <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"/>
+                    </a>
+                    <a href="https://www.instagram.com/the_shield_maidens/" target="_blank">
+                        <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2025 Shield Maidens</p>
+        </div>
+    </footer>
+    
+    <script>
+        function openMenu() {
+            document.getElementById("mobileMenu").classList.add("active");
+        }
+    
+        function closeMenu() {
+            document.getElementById("mobileMenu").classList.remove("active");
+        }
+    </script>
+    
 
 
     <script src="accessibility.js"></script>
     <script src="script.js"></script>
 
-<script>
-// Dynamic Card System
-document.addEventListener('DOMContentLoaded', function() {
-  const cardButtons = document.querySelectorAll('.card-nav-btn');
-  const cards = document.querySelectorAll('.dynamic-card');
+    <script>
+    // Dynamic Card System
+    document.addEventListener('DOMContentLoaded', function() {
+        const cardButtons = document.querySelectorAll('.card-nav-btn');
+        const cards = document.querySelectorAll('.dynamic-card');
 
-  cardButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Remove active class from all buttons and cards
-      cardButtons.forEach(btn => btn.classList.remove('active'));
-      cards.forEach(card => card.classList.remove('active'));
+        cardButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and cards
+                cardButtons.forEach(btn => btn.classList.remove('active'));
+                cards.forEach(card => card.classList.remove('active'));
 
-      // Add active class to clicked button
-      button.classList.add('active');
+                // Add active class to clicked button
+                button.classList.add('active');
 
-      // Show corresponding card
-      const cardId = button.getAttribute('data-card');
-      const targetCard = document.getElementById(cardId);
-      if (targetCard) {
-        targetCard.classList.add('active');
-      }
+                // Show corresponding card
+                const cardId = button.getAttribute('data-card');
+                const targetCard = document.getElementById(cardId);
+                if (targetCard) {
+                    targetCard.classList.add('active');
+                }
+            });
+        });
     });
-  });
-});
-</script>
+    </script>
 
-<!-- Report Form Modal -->
-<div id="reportModal" class="modal">
-  <div class="modal-content">
-    <span class="close-modal" onclick="closeReportForm()">&times;</span>
-    <h2>Report an Incident</h2>
-    <form id="reportForm" onsubmit="submitReport(event)">
-      <div class="form-group">
-        <label for="reporterName">Your Name:</label>
-        <input type="text" id="reporterName" name="reporterName" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="incidentDescription">Describe the Incident:</label>
-        <textarea id="incidentDescription" name="incidentDescription" required></textarea>
-      </div>
-      
-      <div class="form-group">
-        <label for="reporterEmail">Email Address (Optional):</label>
-        <input type="email" id="reporterEmail" name="reporterEmail">
-      </div>
-      
-      <div class="form-group checkbox">
-        <input type="checkbox" id="contactPermission" name="contactPermission">
-        <label for="contactPermission">I agree to be contacted for follow-up (we will respond within 12 hours)</label>
-      </div>
-      
-      <div class="form-group">
-        <button type="submit" class="submit-btn">Submit Report</button>
-      </div>
-    </form>
-  </div>
-</div>
+    <!-- Report Form Modal -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeReportForm()">&times;</span>
+            <h2>Report an Incident</h2>
+            <form id="reportForm" onsubmit="submitReport(event)">
+                <div class="form-group">
+                    <label for="reporterName">Your Name:</label>
+                    <input type="text" id="reporterName" name="reporterName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="incidentDescription">Describe the Incident:</label>
+                    <textarea id="incidentDescription" name="incidentDescription" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reporterEmail">Email Address (Optional):</label>
+                    <input type="email" id="reporterEmail" name="reporterEmail">
+                </div>
+                
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="contactPermission" name="contactPermission">
+                    <label for="contactPermission">I agree to be contacted for follow-up (we will respond within 12 hours)</label>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">Submit Report</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-<script>
-function submitReport(event) {
-  event.preventDefault();
+    <script>
+    function submitReport(event) {
+        event.preventDefault();
 
-  const form = document.getElementById('reportForm');
-  const formData = new FormData(form);
+        const form = document.getElementById('reportForm');
+        const formData = new FormData(form);
 
-  fetch('send_report.php', {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => response.json())
-  .then(data => {
-    alert(data.message);
-    if (data.status === 'success') {
-      closeReportForm();
-      form.reset();
+        fetch('send_report.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            if (data.status === 'success') {
+                closeReportForm();
+                form.reset();
+            }
+        })
+        .catch(error => {
+            alert('There was an error sending your report. Please try again later.');
+            console.error(error);
+        });
     }
-  })
-  .catch(error => {
-    alert('There was an error sending your report. Please try again later.');
-    console.error(error);
-  });
-}
-</script>
+    </script>
 </body>
 </html>

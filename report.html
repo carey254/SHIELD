@@ -10,11 +10,13 @@
     <style>
         /* Add specific styles for the report page content here */
         .report-resources-section {
-            margin-top: 120px; /* Add top margin to push content below fixed nav */
+            display: block; /* Ensure it's a block element for auto margins to work */
+            margin-top: 280px; /* Increased top margin to push content further below fixed nav */
             padding: 20px; /* Adjusted padding for internal spacing */
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 900px; /* Re-added max-width to control content width */
+            width: 95%; /* Added explicit width */
+            margin-left: auto !important;
+            margin-right: auto !important;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);

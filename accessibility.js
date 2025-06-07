@@ -10,6 +10,65 @@ class AccessibilityWidget {
         this.readingQueue = [];
         this.currentIndex = 0;
         this.isPaused = false;
+        
+        // Auto-start screen reader when page loads
+        this.autoStartScreenReader();
+    }
+
+    getKenyanVoice() {
+        const voices = speechSynthesis.getVoices();
+        
+        // First try to find a Kenyan English voice
+        let kenyanVoice = voices.find(voice => 
+            voice.lang.includes('en-KE') || 
+            voice.name.toLowerCase().includes('kenya')
+        );
+
+        // If no Kenyan voice is found, try to find an East African English voice
+        if (!kenyanVoice) {
+            kenyanVoice = voices.find(voice => 
+                voice.lang.includes('en-UG') || 
+                voice.lang.includes('en-TZ') ||
+                voice.name.toLowerCase().includes('africa')
+            );
+        }
+
+        // If still no voice found, try to find a British English voice (closer to Kenyan English)
+        if (!kenyanVoice) {
+            kenyanVoice = voices.find(voice => 
+                voice.lang.includes('en-GB') || 
+                voice.name.toLowerCase().includes('british')
+            );
+        }
+
+        // If no suitable voice is found, use the default voice
+        return kenyanVoice || voices[0];
+    }
+
+    autoStartScreenReader() {
+        // Wait for voices to be loaded
+        if (speechSynthesis.getVoices().length > 0) {
+            this.startReading();
+        } else {
+            // If voices aren't loaded yet, wait for them
+            speechSynthesis.onvoiceschanged = () => {
+                this.startReading();
+            };
+        }
+    }
+
+    startReading() {
+        // Get all readable content
+        const mainContent = document.querySelector('main') || document.body;
+        const content = this.getReadableContent(mainContent);
+        
+        // Start reading with Kenyan voice
+        this.readingQueue = content;
+        this.currentIndex = 0;
+        this.readNextInQueue();
+        
+        // Show reading controls
+        document.getElementById('reading-controls').style.display = 'flex';
     }
 
     createWidget() {
@@ -410,6 +469,14 @@ class AccessibilityWidget {
 
         const item = this.readingQueue[this.currentIndex];
         const utterance = new SpeechSynthesisUtterance(item.content);
+        
+        // Set Kenyan voice
+        utterance.voice = this.getKenyanVoice();
+        
+        // Adjust speech parameters for better clarity
+        utterance.rate = 0.9; // Slightly slower for better understanding
+        utterance.pitch = 1.0;
+        utterance.volume = 1.0;
         
         // Highlight current element being read
         if (item.element) {

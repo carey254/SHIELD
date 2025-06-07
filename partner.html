@@ -62,23 +62,22 @@ padding-top: 100px; /* 👈 Adds space for the nav */
             <div class="dropdown-content" role="menu">
                 <a href="events.html" role="menuitem">Events</a>
                 <a href="news.html" role="menuitem">News</a>
-                <a href="partner.html" role="menuitem" aria-current="page">Partner with Us</a>
+                <a href="partner.html" class="highlight" role="menuitem" aria-current="page">Partner with Us</a>
             </div>
         </div>
-        <a href="donate.html" class="highlight" role="menuitem">Donate</a>
+        <a href="donate.html" role="menuitem">Donate</a>
         
         <!-- Report Button added to Navigation -->
-        <button class="nav-report-btn" onclick="openReportForm()" role="menuitem">
+        <a href="report.html" class="nav-report-btn" role="menuitem">
             <i class="fas fa-exclamation-circle"></i>
-            Report
-        </button>
+            Where to Report
+        </a>
+    </div>
+    <!-- Hamburger Icon (Mobile Only) -->
+    <div class="hamburger" onclick="openMenu()">
+      <i class="fas fa-bars"></i>
     </div>
 </nav>
-
-<!-- Hamburger Icon (Mobile Only) -->
-<div class="hamburger" onclick="openMenu()">
-  <i class="fas fa-bars"></i>
-</div>
 
 <!-- Mobile Sidebar Menu -->
 <div id="mobileMenu" class="mobile-menu">
