@@ -907,6 +907,108 @@ button:disabled {
     align-items: center;
   }
 }
+
+.hero-slide {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/kenya.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-slide .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-slide h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+#slides {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slide-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #FF6600;
+}
+
+.slide-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btns button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background-color: #FF6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btns button:hover {
+    background-color: #FF8533;
+}
+
+@media (max-width: 768px) {
+    .hero-slide h1 {
+        font-size: 2em;
+    }
+
+    .slide-content h2 {
+        font-size: 1.5em;
+    }
+
+    .slide-content p {
+        font-size: 1.1em;
+    }
+
+    #slides {
+        height: 350px;
+    }
+}
   </style>
 </head>
 
@@ -1004,8 +1106,8 @@ button:disabled {
       </div>
     </div>
     <div class="btns">
-      <button onclick="manualPrev()">⬅ Back</button>
-      <button onclick="manualNext()">Next ➡</button>
+      <button onclick="manualPrev()" aria-label="Previous slide">⬅ Back</button>
+      <button onclick="manualNext()" aria-label="Next slide">Next ➡</button>
     </div>
   </div>
 </section>
@@ -1125,7 +1227,7 @@ button:disabled {
         </ul>
       </div>
 
-      <div class="question" data-correct="1">
+      <div class="question" data-correct="0">
         <p>3. Who are chiefly targeted by TFGBV?</p>
         <ul class="options">
           <li><label><input type="radio" name="q3" value="0">All genders equally</label></li>
@@ -1366,5 +1468,50 @@ button:disabled {
   <i class="fas fa-exclamation-circle"></i>
   Report Incident
 </button>
+
+<!-- Add Slides JavaScript -->
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+
+  function showSlide(index) {
+      // Hide all slides
+      slides.forEach(slide => {
+          slide.classList.remove('active');
+          slide.style.opacity = '0';
+      });
+      
+      // Show the current slide
+      slides[index].classList.add('active');
+      slides[index].style.opacity = '1';
+  }
+
+  function manualNext() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+  }
+
+  function manualPrev() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+  }
+
+  // Auto-advance slides every 5 seconds
+  let slideInterval = setInterval(manualNext, 5000);
+
+  // Pause auto-advance when user interacts with buttons
+  document.querySelectorAll('.btns button').forEach(button => {
+      button.addEventListener('click', () => {
+          clearInterval(slideInterval);
+          slideInterval = setInterval(manualNext, 5000);
+      });
+  });
+
+  // Initialize first slide
+  document.addEventListener('DOMContentLoaded', () => {
+      showSlide(0);
+  });
+</script>
 </body>
 </html>
