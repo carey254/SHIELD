@@ -1,59 +1,51 @@
-<?php 
-// Include the email sending function
-require_once __DIR__ . "/send_email.php";
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-// Database connection
-$conn = new mysqli("localhost", "root", "", "contact_db");
-
-// Check connection
-if ($conn->connect_error) {
-    // If connection fails, output error and exit
-    echo json_encode(['status' => 'error', 'message' => 'Connection failed: ' . $conn->connect_error]);
-    exit();
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Invalid request method: ' . $_SERVER['REQUEST_METHOD']
+    ]);
+    exit;
 }
 
-// Sanitize and validate the email input
-$email = filter_var($_POST['mailingEmail'], FILTER_SANITIZE_EMAIL);
-
-// Response array to hold output
-$response = [];
-
-if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    // Prepare and execute the insert query
-    $stmt = $conn->prepare("INSERT INTO mailing_list (email) VALUES (?)");
-
-    if ($stmt) {
-        $stmt->bind_param("s", $email);
-        if ($stmt->execute()) {
-            // Send confirmation email
-            sendEmail(
-                $email,
-                "Welcome to Our Mailing List",
-                "Thank you for subscribing! We’ll notify you about events and updates."
-            );
-            // Success: Send success response
-            $response['status'] = 'success';
-            $response['message'] = '✅ Subscribed successfully!';
-        } else {
-            // Failure: Send error message
-            $response['status'] = 'error';
-            $response['message'] = '❌ Failed to insert email: ' . $stmt->error;
-        }
-        $stmt->close();
-    } else {
-        // Statement preparation failed
-        $response['status'] = 'error';
-        $response['message'] = '❌ Statement preparation failed: ' . $conn->error;
-    }
-} else {
-    // Invalid email address
-    $response['status'] = 'error';
-    $response['message'] = '⚠️ Invalid email address.';
+if (!isset($_POST['mailingEmail']) || empty($_POST['mailingEmail'])) {
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Email is required.'
+    ]);
+    exit;
 }
 
-// Close the database connection
-$conn->close();
+$mysqli = new mysqli("localhost", "root", "", "shieldmaidens_db", 3308);
 
-// Return the response as JSON
-echo json_encode($response);
+if ($mysqli->connect_error) {
+    die("Connection failed: " . $mysqli->connect_error);
+}
+
+$email = $_POST['mailingEmail'];
+
+// Insert into database
+$stmt = $mysqli->prepare("INSERT IGNORE INTO mailing_list (email) VALUES (?)");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+
+// Comment out mail() lines for now (XAMPP mail doesn't work by default)
+// $admin_email = "shi3ldmaidens@gmail.com";
+// $subject = "New Mailing List Subscription";
+// $body = "A new user has subscribed to your mailing list:\n\nEmail: $email";
+// mail($admin_email, $subject, $body);
+
+// $user_subject = "Thank you for subscribing to Shieldmaidens News!";
+// $user_body = "Thank you for subscribing to our news! Let's get updated! 📰\n\nWith love, 💖\nShieldmaidens Team";
+// mail($email, $user_subject, $user_body);
+
+$stmt->close();
+$mysqli->close();
+
+echo json_encode([
+    'status' => 'success',
+    'message' => 'Subscription successful!'
+]);
 ?>

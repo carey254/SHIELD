@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="accessibility.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="translations.js"></script>
+    <script src="accessibility.js" defer></script>
     <style>
       
 
@@ -285,12 +288,14 @@ padding-top: 80px; /* 👈 Adds space for the nav */
 
 
 #team-intro {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 60px;
 }
 
 #team {
-  margin-bottom: 100px;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  width: 100%;
 }
 
 .shield-cta-section {
@@ -371,73 +376,81 @@ summary::after {
 }
 #team-intro {
   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 40px;
+  padding: 40px 20px;
+  background: white;
 }
 
+#team-intro h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
 
-
+#team-intro p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1em;
+  color: #666;
+  line-height: 1.6;
+}
 
 /* Full-width container */
 .team-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* or: center */
-  width: 100%;
-  padding: 0 10px;
-  box-sizing: border-box;
-  gap: 10px; /* small spacing between items */
-}
-
-.team-container {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 30px; /* adds space between cards */
-  padding: 40px 20px; /* adds space around the whole container */
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .team-member {
-  background-color: #fff;
-  border: 2px solid #ffa733;
-  border-radius: 12px;
-  padding: 20px;
-  width: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  flex: 1 1 300px;
+  max-width: 350px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
 }
 
 .team-member img {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 300px;
   object-fit: cover;
-  border-radius: 50%;
+  display: block;
+}
+
+.team-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.team-info h3 {
+  color: #333;
   margin-bottom: 10px;
+  font-size: 1.2em;
 }
 
-
-
-/* Text styling */
-.team-member h3 {
-  margin: 0;
-  font-size: 1em;
-  font-weight: 700;
-}
-
-.team-member p {
+.team-info p {
+  color: #666;
   font-size: 0.9em;
-  color: #555;
-  margin: 5px 0 0 0;
+  line-height: 1.4;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .team-container {
-    flex-direction: column;
-    align-items: center;
+    gap: 20px;
+    padding: 10px;
   }
-
+  
   .team-member {
-    width: 90%;
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 
@@ -653,45 +666,59 @@ img {
 }
 
 /* Base styling */
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: white;
-  padding: 15px 40px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  height: 60px;
+ /* General styles for the .nav element */
+ .nav {
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
 }
-
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
-
 .nav-links {
   display: flex;
-  gap: 20px;
   align-items: center;
-
-    margin-right: 100px; /* <-- Add this */
-   
-  white-space: nowrap; /* prevents breaking into 2 lines */
-
+  gap: 10px;
+  margin: 0;
+  white-space: nowrap;
 }
 
-.nav-links a {
+/* Navigation links */
+nav a {
+  color: rgb(26, 23, 23);
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  padding: 8px 12px;
+  transition: 0.3s;
 }
+
+/* Hover effect */
+nav a:not(.logo-link):hover {
+  background-color: #ff4500;
+  color: white;
+  border-radius: 15px;
+}
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+  .nav {
+    width: 90%; /* Adjust width on tablets */
+  }
+}
+
+/* Media query for small devices (phones) */
+@media (max-width: 768px) {
+  .nav {
+    width: 100%; /* Full width on mobile devices */
+    padding: 10px; /* Optional, adjust padding on smaller screens */
+  }
+}
+
+/* Media query for very small devices (phones in portrait) */
+@media (max-width: 480px) {
+  .nav {
+    width: 100%; /* Full width for very small screens */
+    padding: 5px; /* Further adjust padding if necessary */
+  }
+}
+
+
 
 .dropdown {
   position: relative;
@@ -840,7 +867,7 @@ nav {
 
 /* Desktop - big logo */
 .logo {
-  height: 200px !important;
+  height: 150px !important;
   object-fit: contain;
 }
 /* Hamburger Icon (Mobile Only) */
@@ -920,6 +947,23 @@ nav {
 
   nav {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px; /* adjust as needed for left/right spacing */
+  }
+  
+  .logo-link {
+    flex-shrink: 0;
+  }
+  
+  .right-nav-section {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* pushes this section to the far right */
+  }
+
+  nav {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
@@ -969,6 +1013,18 @@ nav {
     line-height: 1.6;
   }
 }
+.nav-links a:hover {
+  background-color: #ff4500;
+  color: white;
+  border-radius: 12px;
+}
+
+.right-nav-section {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 20px;
+}
 
     </style>
 </head>
@@ -979,26 +1035,36 @@ nav {
       <a href="index.html" class="logo-link">
         <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo">
       </a>
-    
-      <div class="nav-links" role="menubar">
-        <a href="index.html" role="menuitem">Home</a>
-        <a href="about us.html" role="menuitem" aria-current="page">About Us</a>
-        <a href="resource&support.html" role="menuitem">Resources</a>
-        <div class="dropdown" role="menuitem" aria-haspopup="true">
-          <a href="#" aria-expanded="false">Get Involved</a>
-          <div class="dropdown-content" role="menu">
-            <a href="events.html" role="menuitem">Events</a>
-            <a href="news.html" role="menuitem">News</a>
-            <a href="partner.html" role="menuitem">Partner with Us</a>
+      <div class="right-nav-section">
+        <div class="nav-links" role="menubar">
+          <a href="index.html" role="menuitem" data-translate="home_link">Home</a>
+          <a href="about us.html" role="menuitem" aria-current="page" data-translate="about_us_link">About Us</a>
+          <a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a>
+          <div class="dropdown" role="menuitem" aria-haspopup="true">
+              <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content" role="menu">
+                  <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
+                  <a href="news.html" role="menuitem" data-translate="news_link">News</a>
+                  <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
+              </div>
           </div>
-        </div>
-        <a href="donate.html" class="highlight" role="menuitem">Donate</a>
-        
-        <!-- Report Button added to Navigation -->
-        <a href="report.html" class="nav-report-btn" role="menuitem">
-          <i class="fas fa-exclamation-circle"></i>
-          Where to Report
+          <a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a>
+  
+          <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">
+            <i class="fas fa-exclamation-circle"></i>
+            Where to Report
         </a>
+        </div>
+        <!-- Language Switcher -->
+        <div class="dropdown language-switcher" role="menuitem" aria-haspopup="true">
+            <a href="#" aria-expanded="false">ENG <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content" role="menu">
+                <a href="#" data-lang="en" data-translate="english_link">English</a>
+                <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+                <a href="#" data-lang="fr" data-translate="french_link">French</a>
+                <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
+            </div>
+        </div>
       </div>
     </nav>
 
@@ -1012,14 +1078,14 @@ nav {
   <div class="menu-header">
     <span class="close-btn" onclick="closeMenu()">&times;</span>
   </div>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about us.html">About Us</a></li>
-    <li><a href="resource&support.html">Resources</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="news.html">News</a></li>
-    <li><a href="partner.html">Partner with Us</a></li>
-    <li><a href="donate.html" class="highlight">Donate</a></li>
+  <ul role="menu">
+    <li><a href="index.html" role="menuitem" aria-current="page" data-translate="home_link">Home</a></li>
+    <li><a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a></li>
+    <li><a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a></li>
+    <li><a href="events.html" role="menuitem" data-translate="events_link">Events</a></li>
+    <li><a href="news.html" role="menuitem" data-translate="news_link">News</a></li>
+    <li><a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a></li>
+    <li><a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a></li>
   </ul>
 </div>
 
@@ -1043,32 +1109,31 @@ nav {
           <img src="images/woman.png" alt="About Us" class="wide-image">
       </div>
       <div class="about-text">
-          <h2 style="color: orange;">About Us</h2>
-          <p>Shield Maidens was founded in 2024 by Sumaiyya Jumma and Maria Muneeni as a way of giving back to the community. As beneficiaries of UN Women, the African Girls Can Code Initiative (AGCCI), and Siemens EmpowerHER, they recognized the need to create a platform dedicated to advocacy, empowerment, and education.</p>
-          <p>At Shield Maidens, our mission is to educate young women, persons with disabilities (PWDs) and youth on digital safety while actively fighting against technology-facilitated gender-based violence (TFGBV). We are committed to fostering an inclusive world by advocating for gender equality, justice, and the protection of online spaces.</p>
-          <p>Our goal is to empower individuals with the knowledge and tools needed to navigate the digital world safely, to amplify voices against gender-based violence, and to drive meaningful change through advocacy and education. Together, we stand for a safer, more inclusive future for all.</p>
+          <h2 style="color: orange;" data-translate="about_us_title">About Us</h2>
+          <p data-translate="about_us_paragraph_1">Shield Maidens was founded in 2024 by Sumaiyya Jumma and Maria Muneeni as a way of giving back to the community. As beneficiaries of UN Women, the African Girls Can Code Initiative (AGCCI), and Siemens EmpowerHER, they recognized the need to create a platform dedicated to advocacy, empowerment, and education.</p>
+          <p data-translate="about_us_paragraph_2">At Shield Maidens, our mission is to educate young women, persons with disabilities (PWDs) and youth on digital safety while actively fighting against technology-facilitated gender-based violence (TFGBV). We are committed to fostering an inclusive world by advocating for gender equality, justice, and the protection of online spaces.</p>
+          <p data-translate="about_us_paragraph_3">Our goal is to empower individuals with the knowledge and tools needed to navigate the digital world safely, to amplify voices against gender-based violence, and to drive meaningful change through advocacy and education. Together, we stand for a safer, more inclusive future for all.</p>
       </div>
   </div>
 </section>
 
 <!-- What We Do Section -->
-<!-- What We Do Section -->
 <section id="what-we-do">
-  <h2>What We Do</h2>
+  <h2 data-translate="what_we_do_title">What We Do</h2>
   <div class="what-we-do-container">
       <div class="what-we-do-item">
-          <h3>Digital Safety & Awareness</h3>
-          <p>We equip individuals, especially women, girls, and marginalized groups, with the knowledge and skills they need to protect themselves in the digital world. Through online safety trainings, toolkits, and community workshops, we teach how to identify online threats such as phishing, cyberbullying, and doxxing. We also advocate for responsible digital citizenship and the ethical use of technology in everyday life.</p>
+          <h3 data-translate="what_we_do_digital_safety_heading">Digital Safety & Awareness</h3>
+          <p data-translate="what_we_do_digital_safety_text">We equip individuals, especially women, girls, and marginalized groups, with the knowledge and skills they need to protect themselves in the digital world. Through online safety trainings, toolkits, and community workshops, we teach how to identify online threats such as phishing, cyberbullying, and doxxing. We also advocate for responsible digital citizenship and the ethical use of technology in everyday life.</p>
       </div>
 
       <div class="what-we-do-item">
-          <h3>TFGBV Prevention & Support</h3>
-          <p>Technology Facilitated Gender Based Violence (TFGBV) is a growing concern in the digital age. We actively address this issue by creating safe spaces for survivors, offering emotional support, and connecting them to professional resources and services. Through storytelling, survivor-led advocacy, and awareness campaigns, we educate the public and policymakers about the impact of TFGBV and push for systemic change.</p>
+          <h3 data-translate="what_we_do_tfgbv_prevention_heading">TFGBV Prevention & Support</h3>
+          <p data-translate="what_we_do_tfgbv_prevention_text">Technology Facilitated Gender Based Violence (TFGBV) is a growing concern in the digital age. We actively address this issue by creating safe spaces for survivors, offering emotional support, and connecting them to professional resources and services. Through storytelling, survivor-led advocacy, and awareness campaigns, we educate the public and policymakers about the impact of TFGBV and push for systemic change.</p>
       </div>
 
       <div class="what-we-do-item">
-          <h3>Innovation & Technology</h3>
-          <p>We believe technology can be a force for good. That is why we support youth and women in developing digital solutions that promote safety, inclusivity, and justice. Digital reporting tools and educational platforms, our team harnesses innovation to solve real-world issues. We also teach coding, cybersecurity, and digital literacy to bridge the digital divide and empower future tech leaders.</p>
+          <h3 data-translate="what_we_do_innovation_heading">Innovation & Technology</h3>
+          <p data-translate="what_we_do_innovation_text">We believe technology can be a force for good. That is why we support youth and women in developing digital solutions that promote safety, inclusivity, and justice. Digital reporting tools and educational platforms, our team harnesses innovation to solve real-world issues. We also teach coding, cybersecurity, and digital literacy to bridge the digital divide and empower future tech leaders.</p>
       </div>
   </div>
 </section>
@@ -1078,7 +1143,7 @@ nav {
 <section class="values-section">
   <details open>
     <summary>🔥 Our Core Values</summary>
-    <p class="values-intro">
+    <p class="values-intro" data-translate="core_values_intro">
       At Shield Maidens, we empower young women, girls, and marginalized communities to thrive in digital spaces. United by core values, we combat TFGBV and stand for a just, inclusive, and safe tech world.
     </p>
 
@@ -1088,10 +1153,10 @@ nav {
           <div class="card-front">
             <div class="sticker">Empowerment</div>
             <i class="fas fa-bolt"></i>
-            Empowerment
+            <span data-translate="value_empowerment_title">Empowerment</span>
           </div>
           <div class="card-back">
-            We uplift women, girls and persons with disabilities (PWDs) to confidently and safely lead in digital spaces, fighting TFGBV every step of the way.
+            <span data-translate="value_empowerment_text">We uplift women, girls and persons with disabilities (PWDs) to confidently and safely lead in digital spaces, fighting TFGBV every step of the way.</span>
           </div>
         </div>
       </div>
@@ -1101,10 +1166,10 @@ nav {
           <div class="card-front">
             <div class="sticker">Integrity</div>
             <i class="fas fa-shield-alt"></i>
-            Integrity
+            <span data-translate="value_integrity_title">Integrity</span>
           </div>
           <div class="card-back">
-            We are honest, ethical, and transparent in everything we do, building trust with our communities.
+            <span data-translate="value_integrity_text">We are honest, ethical, and transparent in everything we do, building trust with our communities.</span>
           </div>
         </div>
       </div>
@@ -1114,10 +1179,10 @@ nav {
           <div class="card-front">
             <div class="sticker">Advocacy</div>
             <i class="fas fa-bullhorn"></i>
-            Advocacy
+            <span data-translate="value_advocacy_title">Advocacy</span>
           </div>
           <div class="card-back">
-            We amplify marginalized voices and demand policies and protections that keep all users safe online.
+            <span data-translate="value_advocacy_text">We amplify marginalized voices and demand policies and protections that keep all users safe online.</span>
           </div>
         </div>
       </div>
@@ -1127,10 +1192,10 @@ nav {
           <div class="card-front">
             <div class="sticker">Solidarity</div>
             <i class="fas fa-hands-helping"></i>
-            Solidarity
+            <span data-translate="value_solidarity_title">Solidarity</span>
           </div>
           <div class="card-back">
-            We stand with survivors and allies to build a community rooted in strength and resilience.
+            <span data-translate="value_solidarity_text">We stand with survivors and allies to build a community rooted in strength and resilience.</span>
           </div>
         </div>
       </div>
@@ -1140,10 +1205,10 @@ nav {
           <div class="card-front">
             <div class="sticker">Inclusion</div>
             <i class="fas fa-universal-access"></i>
-            Inclusion
+            <span data-translate="value_inclusion_title">Inclusion</span>
           </div>
           <div class="card-back">
-            We celebrate diversity and ensure access for all, including Persons with Disabilities (PWDs), to participate equally in tech.
+            <span data-translate="value_inclusion_text">We celebrate diversity and ensure access for all, including Persons with Disabilities (PWDs), to participate equally in tech.</span>
           </div>
         </div>
       </div>
@@ -1158,12 +1223,10 @@ nav {
 
 
 
-<hr style="border: none; height: 60px;" />
-
 <!-- Our Team Section -->
 <section id="team-intro">
-  <h2 style="color: orange;">Our Amazing Team</h2>
-  <p>Empowering and celebrating women in technology across Africa guiding Tech-Girls to their Full Potential</p>
+  <h2 style="color: orange;" data-translate="our_team_title">Our Amazing Team</h2>
+  <p data-translate="our_team_intro">Empowering and celebrating women in technology across Africa guiding Tech-Girls to their Full Potential</p>
 </section>
 
 <section id="team">
@@ -1171,37 +1234,37 @@ nav {
       <div class="team-member">
           <img src="images/sumaiya.jpg" alt="Sumaiyya">
           <div class="team-info">
-              <h3>Jane Doe</h3>
-              <p>Founder / Data Privacy Specialist</p>
+              <h3 data-translate="team_member_jane_name">Jane Doe</h3>
+              <p data-translate="team_member_jane_role">Founder / Data Privacy Specialist</p>
           </div>
       </div>
       <div class="team-member">
           <img src="images/mariah.png" alt="Maria">
           <div class="team-info">
-              <h3>Maria Muneeni</h3>
-              <p>Co-Founder / Digital Safety Trainer / Champion for PWDs Inclusivity</p>
+              <h3 data-translate="team_member_maria_name">Maria Muneeni</h3>
+              <p data-translate="team_member_maria_role">Co-Founder / Digital Safety Trainer / Champion for PWDs Inclusivity</p>
           </div>
       </div>
       <div class="team-member">
           <img src="images/ruthi.png" alt="Ruth">
           <div class="team-info">
-              <h3>Ruth Jebitok</h3>
-              <p>Social Media Manager</p>
+              <h3 data-translate="team_member_ruth_name">Ruth Jebitok</h3>
+              <p data-translate="team_member_ruth_role">Social Media Manager</p>
           </div>
       </div>
      
       <div class="team-member">
         <img src="images/irene.png" alt="Ruth">
         <div class="team-info">
-            <h3>Irene Cherono</h3>
-            <p>Online Safety Advocate/Content Creator</p>
+            <h3 data-translate="team_member_irene_name">Irene Cherono</h3>
+            <p data-translate="team_member_irene_role">Online Safety Advocate/Content Creator</p>
         </div>
     </div>
       <div class="team-member">
           <img src="images/rey.png" alt="Caren">
           <div class="team-info">
-              <h3>Caren Jeruto</h3>
-              <p>Online Safety Advocate / Developer</p>
+              <h3 data-translate="team_member_caren_name">Caren Jeruto</h3>
+              <p data-translate="team_member_caren_role">Online Safety Advocate / Developer</p>
           </div>
       </div>
   </div>
@@ -1210,11 +1273,11 @@ nav {
 
 <section class="shield-cta-section">
     <div class="shield-cta-container">
-        <h2>Join Us in Making a Difference</h2>
-        <p class="shield-cta-intro">
+        <h2 data-translate="join_difference_about">Join Us in Making a Difference</h2>
+        <p class="shield-cta-intro" data-translate="cta_intro_about">
             At Shield Maidens, we believe in the power of collective action. Together, we can create a safer, more inclusive digital space for all. Get involved today to help us fight against Technology-Facilitated Gender-Based Violence and advocate for the rights of marginalized communities online.
         </p>
-        <a href="index.html#contact" class="btn-get-involved">Get Involved</a>
+        <a href="index.html#contact" class="btn-get-involved" data-translate="join_us_about">Get Involved</a>
     </div>
 </section>
 
@@ -1227,15 +1290,15 @@ nav {
       </div>
 
       <div class="footer-links">
-          <h3>Quick Links</h3>
+          <h3 data-translate="quick_links">Quick Links</h3>
           <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about us.html">About Us</a></li>
-              <li><a href="resource&support.html">Resources</a></li>
-              <li><a href="events.html">Events</a></li>
-              <li><a href="news.html">News</a></li>
-              <li><a href="partner.html">Partner with Us</a></li>
-              <li><a href="donate.html" class="donate-btn">Donate</a></li>
+              <li><a href="index.html" data-translate="home_link">Home</a></li>
+              <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
+              <li><a href="resource&support.html" data-translate="resources_link">Resources</a></li>
+              <li><a href="events.html" data-translate="events_link">Events</a></li>
+              <li><a href="news.html" data-translate="news_link">News</a></li>
+              <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
+              <li><a href="donate.html" class="donate-btn" data-translate="donate_link">Donate</a></li>
           </ul>
           <div class="payment-icons">
               <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
@@ -1245,14 +1308,14 @@ nav {
       </div>
 
       <div class="footer-location">
-          <h3>Location</h3>
+          <h3 data-translate="location">Location</h3>
           <p>Nairobi, Kenya</p>
       </div>
 
       <div class="footer-contact">
-          <h3>Contact Us</h3>
+          <h3 data-translate="contact_us_footer">Contact Us</h3>
           <p>Email: shi3ldmaidens@gmail.com</p>
-          <h3>Our Socials</h3>
+          <h3 data-translate="our_socials">Our Socials</h3>
           <div class="social-icons">
             <a href="https://x.com/_shield_maidens" target="_blank">
                 <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
@@ -1267,65 +1330,346 @@ nav {
       </div>
   </div>
   <div class="footer-bottom">
-      <p>Copyright © 2025 Shield Maidens</p>
+      <p data-translate="copyright">Copyright © 2025 Shield Maidens</p>
   </div>
 </footer>
-
-  
-<script>
-  //heroes section
-
-
-  const images = document.querySelectorAll('.bg-image');
-  let current = 0;
-
-  setInterval(() => {
-    images[current].classList.remove('active');
-    current = (current + 1) % images.length;
-    images[current].classList.add('active');
-  }, 4000); // change every 4 seconds
-
-
-  function openMenu() {
-    document.getElementById("mobileMenu").classList.add("active");
-  }
-
-  function closeMenu() {
-    document.getElementById("mobileMenu").classList.remove("active");
-  }
-</script>
 
 <script src="accessibility.js"></script>
 <script src="script.js"></script>
 
-<!-- Report Form Modal -->
-<div id="reportModal" class="modal">
-  <div class="modal-content">
-    <span class="close-modal" onclick="closeReportForm()">&times;</span>
-    <h2>Report an Incident</h2>
-    <form id="reportForm" onsubmit="submitReport(event)">
-      <div class="form-group">
-        <label for="reporterName">Your Name:</label>
-        <input type="text" id="reporterName" name="reporterName" required>
-      </div>
-      <div class="form-group">
-        <label for="incidentDescription">Describe the Incident:</label>
-        <textarea id="incidentDescription" name="incidentDescription" required></textarea>
-      </div>
-      <div class="form-group">
-        <label for="reporterEmail">Email Address (Optional):</label>
-        <input type="email" id="reporterEmail" name="reporterEmail">
-      </div>
-      <div class="form-group checkbox">
-        <input type="checkbox" id="contactPermission" name="contactPermission">
-        <label for="contactPermission">I agree to be contacted for follow-up (we will respond within 12 hours)</label>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="submit-btn">Submit Report</button>
-      </div>
-    </form>
+
+
+<script src="js/language-handler.js"></script>
+
+<div class="accessibility-panel" id="accessibilityPanel">
+  <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()">
+    <i class="fas fa-universal-access"></i>
+  </button>
+  <div class="accessibility-controls">
+    <button onclick="toggleTextToSpeech()" id="ttsToggle">
+      <i class="fas fa-volume-up"></i> TTS
+    </button>
+    <button onclick="increaseFontSize()">
+      <i class="fas fa-text-height"></i> A+
+    </button>
+    <button onclick="decreaseFontSize()">
+      <i class="fas fa-text-height"></i> A-
+    </button>
+    <button onclick="toggleHighContrast()" id="contrastToggle">
+      <i class="fas fa-adjust"></i> Contrast
+    </button>
+    <button onclick="resetAccessibility()">
+      <i class="fas fa-undo"></i> Reset
+    </button>
   </div>
 </div>
+
+<style>
+/* Accessibility Panel Styles */
+.accessibility-panel {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.accessibility-toggle {
+  background: #ff4500;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.accessibility-toggle:hover {
+  transform: scale(1.1);
+}
+
+.accessibility-controls {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accessibility-controls.active {
+  display: flex;
+}
+
+.accessibility-controls button {
+  background: #f5f5f5;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.accessibility-controls button:hover {
+  background: #e0e0e0;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast * {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.high-contrast a {
+  color: #ffff00 !important;
+}
+
+.high-contrast button {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+</style>
+
+<script>
+// Accessibility Functions (Globally accessible)
+let isTTSActive = true; // Set to true by default for auto-read
+let isHighContrast = false;
+let currentFontSize = 16;
+let currentTTSVoice = null; // To store the currently selected voice
+
+// Function to find a voice based on language
+window.selectTTSVoice = function(lang) {
+    const voices = window.speechSynthesis.getVoices();
+    console.log('Available Voices:', voices);
+    console.log('Attempting to select voice for language:', lang);
+
+    let selectedVoice = null;
+
+    if (lang === 'en') {
+        // Prioritize Awasili voice for English
+        selectedVoice = voices.find(voice => voice.name === 'Awasili') ||
+                       voices.find(voice => voice.name === 'Asilia') ||
+                       voices.find(voice => voice.lang === 'en-KE') ||
+                       voices.find(voice => voice.lang.startsWith('en-US')) ||
+                       voices.find(voice => voice.lang.startsWith('en-GB')) ||
+                       voices.find(voice => voice.lang.startsWith('en'));
+    } else if (lang === 'sw') {
+        // Prioritize Swahili (Kenya) then any Swahili voice
+        selectedVoice = voices.find(voice => voice.lang === 'sw-KE') ||
+                       voices.find(voice => voice.lang.startsWith('sw'));
+    } else if (lang === 'fr') {
+        // Prioritize French voices
+        selectedVoice = voices.find(voice => voice.lang.startsWith('fr'));
+    } else if (lang === 'ar') {
+        // Prioritize Arabic voices
+        selectedVoice = voices.find(voice => voice.lang.startsWith('ar'));
+    }
+
+    currentTTSVoice = selectedVoice || voices.find(voice => voice.lang.startsWith('en')) || voices[0];
+    if (!currentTTSVoice) {
+        console.warn("No suitable voice found for language " + lang + ", using default system voice.");
+    } else {
+        console.log('Selected voice:', currentTTSVoice.name, '(' + currentTTSVoice.lang + ')');
+    }
+};
+
+// Toggle accessibility panel visibility
+window.toggleAccessibilityPanel = function() {
+    const controls = document.querySelector('.accessibility-controls');
+    controls.classList.toggle('active');
+};
+
+// Toggle text-to-speech on/off
+window.toggleTextToSpeech = function() {
+    isTTSActive = !isTTSActive;
+    const ttsButton = document.getElementById('ttsToggle');
+    
+    if (isTTSActive) {
+        ttsButton.style.backgroundColor = '#ff4500';
+        ttsButton.style.color = 'white';
+        window.readPageContent(); // Restart reading when toggled on
+    } else {
+        ttsButton.style.backgroundColor = '#f5f5f5';
+        ttsButton.style.color = 'black';
+        window.speechSynthesis.cancel();
+    }
+};
+
+// Read the entire page content
+window.readPageContent = function() {
+    if (!isTTSActive) {
+        console.log('TTS is not active, not reading content.');
+        return;
+    }
+    
+    // Get the current language
+    const currentLang = document.documentElement.lang || 'en';
+    
+    // Function to create and speak an utterance
+    const speakText = (text, rate = 1) => {
+        if (!text) return null;
+        
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = rate;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+        utterance.lang = currentLang;
+        
+        if (currentTTSVoice) {
+            utterance.voice = currentTTSVoice;
+        }
+        
+        return utterance;
+    };
+
+    // Create a queue of utterances
+    const utterances = [];
+    
+    // 1. Read navigation links once, clearly
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        // Get the complete text content, including any child elements
+        const text = link.textContent.replace(/\s+/g, ' ').trim();
+        if (text) {
+            const utterance = speakText(text, 0.9);
+            if (utterance) {
+                utterances.push(utterance);
+            }
+        }
+    });
+
+    // 2. Read the main content
+    const mainContent = Array.from(document.querySelectorAll('[data-translate]'))
+        .filter(el => el.getAttribute('data-lang') === currentLang || !el.getAttribute('data-lang'))
+        .map(el => el.textContent.replace(/\s+/g, ' ').trim())
+        .filter(text => text) // Remove empty strings
+        .join(' ');
+
+    if (mainContent) {
+        const utterance = speakText(mainContent, 1);
+        if (utterance) {
+            utterances.push(utterance);
+        }
+    }
+
+    // Function to speak the next utterance in the queue
+    const speakNext = (index) => {
+        if (index < utterances.length) {
+            const utterance = utterances[index];
+            utterance.onend = () => {
+                // Add a pause between items
+                setTimeout(() => {
+                    speakNext(index + 1);
+                }, 500); // Consistent pause between all items
+            };
+            window.speechSynthesis.speak(utterance);
+        }
+    };
+
+    // Start speaking the queue
+    speakNext(0);
+};
+
+// Increase font size
+window.increaseFontSize = function() {
+    currentFontSize += 2;
+    document.body.style.fontSize = currentFontSize + 'px';
+};
+
+// Decrease font size
+window.decreaseFontSize = function() {
+    currentFontSize = Math.max(12, currentFontSize - 2);
+    document.body.style.fontSize = currentFontSize + 'px';
+};
+
+// Toggle high contrast mode
+window.toggleHighContrast = function() {
+    isHighContrast = !isHighContrast;
+    const contrastButton = document.getElementById('contrastToggle');
+    
+    if (isHighContrast) {
+        document.body.classList.add('high-contrast');
+        contrastButton.style.backgroundColor = '#ff4500';
+        contrastButton.style.color = 'white';
+    } else {
+        document.body.classList.remove('high-contrast');
+        contrastButton.style.backgroundColor = '#f5f5f5';
+        contrastButton.style.color = 'black';
+    }
+};
+
+// Reset all accessibility settings
+window.resetAccessibility = function() {
+    // Reset font size
+    currentFontSize = 16;
+    document.body.style.fontSize = ''; // Resets to default
+
+    // Reset high contrast
+    isHighContrast = false;
+    document.body.classList.remove('high-contrast');
+    document.getElementById('contrastToggle').style.backgroundColor = '#f5f5f5';
+    document.getElementById('contrastToggle').style.color = 'black';
+
+    // Reset text-to-speech
+    isTTSActive = false;
+    window.speechSynthesis.cancel(); // Stop any ongoing speech
+    document.getElementById('ttsToggle').style.backgroundColor = '#f5f5f5';
+    document.getElementById('ttsToggle').style.color = 'black';
+
+    // Re-select voice based on current page language (defaults to English)
+    window.selectTTSVoice(document.documentElement.lang || 'en');
+};
+
+// Initial setup for voices and auto-read
+document.addEventListener('DOMContentLoaded', () => {
+    const initializeTTSOnLoad = () => {
+        // Set TTS to active by default
+        isTTSActive = true;
+        
+        // Initialize voice selection
+        window.selectTTSVoice(document.documentElement.lang || 'en');
+        
+        // Set the TTS button to active state
+        const ttsButton = document.getElementById('ttsToggle');
+        if (ttsButton) {
+            ttsButton.style.backgroundColor = '#ff4500';
+            ttsButton.style.color = 'white';
+        }
+
+        // Start reading the page content automatically
+        setTimeout(() => {
+            window.readPageContent();
+        }, 1000); // Small delay to ensure everything is loaded
+    };
+
+    if (window.speechSynthesis && window.speechSynthesis.getVoices().length > 0) {
+        initializeTTSOnLoad();
+    } else if (window.speechSynthesis) {
+        window.speechSynthesis.onvoiceschanged = () => {
+            initializeTTSOnLoad();
+        };
+    } else {
+        console.warn("SpeechSynthesis API not supported in this browser.");
+    }
+});
+</script>
+</body>
+</html>
 
 </body>
 </html>

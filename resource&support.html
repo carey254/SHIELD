@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="accessibility.css">
   <link rel="stylesheet" href="quiz.css">
   
+  <!-- Load resources_translations.js first to define resourcesTranslations -->
+  <script src="js/resources_translations.js"></script>
+  <!-- Then make resourcesTranslations available globally -->
+  <script src="js/language-handler.js"></script>
+  
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
 
@@ -45,12 +50,9 @@ nav {
 }
 
 /* LOGO */
-.logo-link img {
-  height: 50px;
-}
+
 
 /* NAV LINKS GROUP */
-/* NAV LINKS GROUP (update this) */
 .nav-links {
   display: flex;
   align-items: center;
@@ -59,6 +61,41 @@ nav {
   margin-right: 80px;
 }
 
+.language-switcher {
+    position: relative;
+    display: inline-block;
+}
+
+.language-switcher a {
+    text-decoration: none;
+    color: #1a1717;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.language-switcher .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.language-switcher .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.language-switcher .dropdown-content a:hover {background-color: #f1f1f1;}
+
+.language-switcher:hover .dropdown-content {
+    display: block;
+}
 
 /* INDIVIDUAL LINKS */
 .nav-links a {
@@ -72,6 +109,13 @@ nav {
 .nav-links a:hover {
   background-color: #ff4500;
   color: white;
+  border-radius: 12px;
+}
+
+/* Ensure highlight class links also get the hover effect */
+.nav-links a.highlight:hover {
+  background-color: #ff4500; /* Ensure orange background on hover */
+  color: white; /* Ensure white text on hover */
   border-radius: 12px;
 }
 
@@ -142,11 +186,9 @@ a:visited {
     /* Hero wrapper: full-width background image for the entire section */
 /* Hero-slide wrapper with moving background */
 .hero-slide {
-  width: 100%;
-  background: url('images/resources.png') center bottom/cover no-repeat;
-  animation: bgScroll 30s linear infinite;
-  padding: 80px 0;
-  color: #fff;
+  background: url('images/resources.png') center/cover no-repeat;
+  color: white;
+  padding: 60px 20px;
   text-align: center;
 }
 
@@ -186,8 +228,11 @@ a:visited {
 
 /* Headings */
 .hero-slide h1 {
-  font-size: 2rem;
-  color: #f39c12;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #fff;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .hero-slide h2 {
   font-size: 1.8rem;
@@ -804,7 +849,7 @@ button:disabled {
 
 /* Desktop - big logo */
 .logo {
-  height: 200px !important;
+  height: 170px !important;
   object-fit: contain;
 }
 /* Hamburger Icon (Mobile Only) */
@@ -909,9 +954,7 @@ button:disabled {
 }
 
 .hero-slide {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/kenya.jpg');
-    background-size: cover;
-    background-position: center;
+    background: url('images/resources.png') center/cover no-repeat;
     color: white;
     padding: 60px 20px;
     text-align: center;
@@ -926,6 +969,8 @@ button:disabled {
     font-size: 2.5em;
     margin-bottom: 40px;
     color: #fff;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #slides {
@@ -964,17 +1009,24 @@ button:disabled {
     font-size: 1.8em;
     margin-bottom: 20px;
     color: #FF6600;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .slide-content p {
     font-size: 1.2em;
     line-height: 1.6;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .btns {
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+.logo{
+  height: 150px !important;
 }
 
 .btns button {
@@ -1015,29 +1067,35 @@ button:disabled {
 <body>
    <!-- Navigation Bar -->
    <nav>
-    <a href="index.html" class="logo-link">
-        <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
+    <a href="index.html" class="logo-link" aria-label="Home">
+        <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo"  >
     </a>
     
-    <div class="nav-links" role="menubar">
-      <a href="index.html" role="menuitem">Home</a>
-      <a href="about us.html" role="menuitem">About Us</a>
-      <a href="resource&support.html" role="menuitem" aria-current="page">Resources</a>
+    <div class="nav-links">
+      <a href="index.html" role="menuitem" data-translate="home_link">Home</a>
+      <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
+      <a href="resource&support.html" class="highlight" role="menuitem" aria-current="page" data-translate="resources_link">Resources</a>
       <div class="dropdown" role="menuitem" aria-haspopup="true">
-        <a href="#" aria-expanded="false">Get Involved</a>
+        <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
         <div class="dropdown-content" role="menu">
-          <a href="events.html" role="menuitem">Events</a>
-          <a href="news.html" role="menuitem">News</a>
-          <a href="partner.html" role="menuitem">Partner with Us</a>
+          <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
+          <a href="news.html" role="menuitem" data-translate="news_link">News</a>
+          <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
         </div>
       </div>
-      <a href="donate.html" class="highlight" role="menuitem">Donate</a>
+      <a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a>
       
       <!-- Report Button added to Navigation -->
-      <a href="report.html" class="nav-report-btn" role="menuitem">
-        <i class="fas fa-exclamation-circle"></i>
-        Where to Report
-      </a>
+      <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">Where to Report</a>
+       <div class="dropdown language-switcher" role="menuitem" aria-haspopup="true">
+          <a href="#" aria-expanded="false" data-translate="english_link">English <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content" role="menu">
+              <a href="#" data-lang="en" data-translate="english_link">English</a>
+              <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+              <a href="#" data-lang="fr" data-translate="french_link">French</a>
+              <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
+          </div>
+      </div>
     </div>
   </div>
 </nav>
@@ -1066,42 +1124,42 @@ button:disabled {
  <!-- Hero Slide Section -->
 <section class="hero-slide">
   <div class="container">
-    <h1>Understanding the Laws and Protections Against TFGBV</h1>
+    <h1 data-translate="hero_heading">Understanding the Laws and Protections Against TFGBV</h1>
     <div id="slides">
       <div class="slide active">
         <div class="slide-content">
-          <h2>What is TFGBV?</h2>
-          <p>Understanding Technology-Facilitated Gender-Based Violence is the first step to building safer online spaces. Learn how laws protect your rights and dignity.</p>
+          <h2 data-translate="what_is_tfgbv_heading">What is TFGBV?</h2>
+          <p data-translate="what_is_tfgbv_description">Understanding Technology-Facilitated Gender-Based Violence is the first step to building safer online spaces. Learn how laws protect your rights and dignity.</p>
         </div>
       </div>
       <div class="slide">
         <div class="slide-content">
-          <h2>📡 Kenya Information and Communications Act (1998)</h2>
-          <p>This Act governs electronic communication and promotes ethical online behavior, indirectly addressing TFGBV.</p>
+          <h2 data-translate="kenya_act_heading">📡 Kenya Information and Communications Act (1998)</h2>
+          <p data-translate="kenya_act_description">This Act governs electronic communication and promotes ethical online behavior, indirectly addressing TFGBV.</p>
         </div>
       </div>
       <div class="slide">
         <div class="slide-content">
-          <h2>📜 Constitution of Kenya (2010)</h2>
-          <p>Guarantees the right to privacy, freedom from discrimination, and protection from violence—core defenses against TFGBV.</p>
+          <h2 data-translate="constitution_heading">📜 Constitution of Kenya (2010)</h2>
+          <p data-translate="constitution_description">Guarantees the right to privacy, freedom from discrimination, and protection from violence, core defenses against TFGBV.</p>
         </div>
       </div>
       <div class="slide">
         <div class="slide-content">
-          <h2>👩🏽‍⚖️ National Gender and Equality Commission Act (2011)</h2>
-          <p>Establishes oversight on gender-based issues and supports policy formation to curb digital abuse.</p>
+          <h2 data-translate="national_gender_act_heading">👩🏽‍⚖️ National Gender and Equality Commission Act (2011)</h2>
+          <p data-translate="national_gender_act_description">Establishes oversight on gender-based issues and supports policy formation to curb digital abuse.</p>
         </div>
       </div>
       <div class="slide">
         <div class="slide-content">
-          <h2>💻 Computer Misuse and Cybercrimes Act (2018)</h2>
-          <p>Criminalizes cyber harassment, stalking, and unauthorized sharing of intimate content.</p>
+          <h2 data-translate="cybercrimes_act_heading">💻 Computer Misuse and Cybercrimes Act (2018)</h2>
+          <p data-translate="cybercrimes_act_description">Criminalizes cyber harassment, stalking, and unauthorized sharing of intimate content.</p>
         </div>
       </div>
       <div class="slide">
         <div class="slide-content">
-          <h2>🔒 Data Protection Act (2019)</h2>
-          <p>Ensures that victims control their personal information online—key to preventing digital exploitation.</p>
+          <h2 data-translate="data_protection_act_heading">🔒 Data Protection Act (2019)</h2>
+          <p data-translate="data_protection_act_description">Ensures that victims control their personal information online—key to preventing digital exploitation.</p>
         </div>
       </div>
     </div>
@@ -1118,21 +1176,21 @@ button:disabled {
     <div class="awareness-container">
       <div class="left-panel">
         <div class="circle-grid">
-          <div class="circle-card who"><h2>Who?</h2><p>Women, girls, LGBTQ+, and marginalized communities are primarily affected.</p></div>
-          <div class="circle-card what"><h2>What?</h2><p>Harassment, threats, cyberstalking, image-based abuse, and more.</p></div>
-          <div class="circle-card center"><h2>TFGBV</h2><p>Technology-Facilitated Gender-Based Violence (TFGBV)</p></div>
-          <div class="circle-card when"><h2>When?</h2><p>Often begins as early as ages 9-14 and continues into adulthood.</p></div>
-          <div class="circle-card where"><h2>Where?</h2><p>Occurs on social media, email, smart tech, and connected devices.</p></div>
+          <div class="circle-card who"><h2 data-translate="who_heading">Who?</h2><p data-translate="who_description">Women, girls, LGBTQ+, and marginalized communities are primarily affected.</p></div>
+          <div class="circle-card what"><h2 data-translate="what_heading">What?</h2><p data-translate="what_description">Harassment, threats, cyberstalking, image-based abuse, and more.</p></div>
+          <div class="circle-card center"><h2 data-translate="tfgbv_center_heading">TFGBV</h2><p data-translate="tfgbv_center_description">Technology-Facilitated Gender-Based Violence (TFGBV)</p></div>
+          <div class="circle-card when"><h2 data-translate="when_heading">When?</h2><p data-translate="when_description">Often begins as early as ages 9-14 and continues into adulthood.</p></div>
+          <div class="circle-card where"><h2 data-translate="where_heading">Where?</h2><p data-translate="where_description">Occurs on social media, email, smart tech, and connected devices.</p></div>
         </div>
       </div>
       <div class="right-panel">
-        <h1>TFGBV Statistics</h1>
-        <p><strong>Did you know?</strong> Over <span class="highlight">85%</span> of women online globally have witnessed or experienced digital violence. In Kenya, a 2021 survey reported that <span class="highlight">1 in 3</span> women encountered TFGBV during election seasons.</p>
-        <p>This growing trend reflects how online spaces mirror offline gender discrimination—yet with faster, broader consequences. We need digital safety policies, education, and tech accountability now more than ever.</p>
+        <h1 data-translate="statistics_heading">TFGBV Statistics</h1>
+        <p data-translate="statistics_text_1" data-html="true"><strong>Did you know?</strong> Over <span class="highlight">85%</span> of women online globally have witnessed or experienced digital violence. In Kenya, a 2021 survey reported that <span class="highlight">1 in 3</span> women encountered TFGBV during election seasons.</p>
+        <p data-translate="statistics_text_2">This growing trend reflects how online spaces mirror offline gender discrimination—yet with faster, broader consequences. We need digital safety policies, education, and tech accountability now more than ever.</p>
       
        <!-- New Stats -->
-       <p class="big-stat">60% of survivors don't report the abuse</strong></p>
-       <p class="big-stat">40% of victims remain in contact with their abuser</strong></p>
+       <p class="big-stat" data-translate="stat_survivors_not_report">60% of survivors don't report the abuse</p>
+       <p class="big-stat" data-translate="stat_victims_contact_abuser">40% of victims remain in contact with their abuser</p>
       </div>
     </div>
   </div>
@@ -1140,13 +1198,13 @@ button:disabled {
 
     <!-- Block 1 -->
     <div class="awareness-row">
-      <div class="awareness-image">
+      <div class="awareness-image"> 
         <img src="images/May.png" alt="Meaning and Types of TFGBV">
       </div>
       <div class="awareness-text">
         <div class="block-number">01</div>
-        <h2>Meaning and Types of TFGBV</h2>
-        <p>Technology-facilitated gender-based violence (TFGBV) describes harmful acts or behaviors committed against people using digital technologies, usually women and girls. These acts take advantage of the anonymity and connectivity that technology offers, making it easier for perpetrators to target their victims and inflict more widespread harm.</p>
+        <h2 data-translate="meaning_types_heading">Meaning and Types of TFGBV</h2>
+        <p data-translate="meaning_types_description">Technology-facilitated gender-based violence (TFGBV) describes harmful acts or behaviors committed against people using digital technologies, usually women and girls. These acts take advantage of the anonymity and connectivity that technology offers, making it easier for perpetrators to target their victims and inflict more widespread harm.</p>
       </div>
     </div>
   
@@ -1157,19 +1215,19 @@ button:disabled {
   </div>
   <div class="awareness-text">
     <div class="block-number">02</div>
-    <h2>Forms of Technology-Facilitated Gender-Based Violence</h2>
-    <p>
+    <h2 data-translate="forms_heading">Forms of Technology-Facilitated Gender-Based Violence</h2>
+    <p data-translate="forms_description">
       TFGBV takes many forms, which are constantly evolving with technology. These acts often target women and girls, aiming to humiliate, silence, or control them through digital means. Some common forms include:
     </p>
     <ul>
-      <li><strong>Cyberstalking:</strong> Repeated online harassment and threats that instill fear or distress.</li>
-      <li><strong>Doxxing:</strong> Publishing private information like phone numbers, addresses, or personal data without consent.</li>
-      <li><strong>Non-consensual sharing of intimate images:</strong> Often referred to as "revenge porn," this involves distributing private content to shame or blackmail victims.</li>
-      <li><strong>Online harassment:</strong> Persistent abusive messages via social media, email, or forums.</li>
-      <li><strong>Deepfakes and manipulated content:</strong> Using AI to create false or harmful visual/audio content, often sexual in nature.</li>
+      <li data-translate="cyberstalking_li" data-html="true"><strong>Cyberstalking:</strong> Repeated online harassment and threats that instill fear or distress.</li>
+      <li data-translate="doxxing_li" data-html="true"><strong>Doxxing:</strong> Publishing private information like phone numbers, addresses, or personal data without consent.</li>
+      <li data-translate="non_consensual_li" data-html="true"><strong>Non-consensual sharing of intimate images:</strong> Often referred to as "revenge porn," this involves distributing private content to shame or blackmail victims.</li>
+      <li data-translate="online_harassment_li" data-html="true"><strong>Online harassment:</strong> Persistent abusive messages via social media, email, or forums.</li>
+      <li data-translate="deepfakes_li" data-html="true"><strong>Deepfakes and manipulated content:</strong> Using AI to create false or harmful visual/audio content, often sexual in nature.</li>
     </ul>
-    <p>These forms not only cause emotional and psychological harm but also infringe on rights to safety, dignity, and expression.</p>
-    <a href="https://www.unfpa.org/sites/default/files/pub-pdf/An%20Infographic%20Guide%20to%20An%20Infographic%20Guide%20to%20TFGBV.pdf" target="_blank">Explore more on UNFPA</a>
+    <p data-translate="forms_conclusion">These forms not only cause emotional and psychological harm but also infringe on rights to safety, dignity, and expression.</p>
+    <a href="https://www.unfpa.org/sites/default/files/pub-pdf/An%20Infographic%20Guide%20to%20An%20Infographic%20Guide%20to%20TFGBV.pdf" target="_blank" data-translate="explore_unfpa">Explore more on UNFPA</a>
   </div>
 </div>
 
@@ -1180,20 +1238,20 @@ button:disabled {
   </div>
   <div class="awareness-text">
     <div class="block-number">03</div>
-    <h2>Effects of Technology-Facilitated Gender-Based Violence</h2>
-    <p>
+    <h2 data-translate="effects_heading">Effects of Technology-Facilitated Gender-Based Violence</h2>
+    <p data-translate="effects_description">
       The impact of TFGBV goes beyond the screen. Victims experience serious consequences across emotional, physical, social, and economic levels:
     </p>
     <ul>
-      <li><strong>Mental Health:</strong> Victims often suffer from anxiety, depression, panic attacks, and PTSD.</li>
-      <li><strong>Loss of Opportunities:</strong> Some withdraw from public life, education, or career advancement due to fear or shame.</li>
-      <li><strong>Physical Safety Risks:</strong> Online abuse can escalate to physical stalking or violence in the real world.</li>
-      <li><strong>Self-Censorship:</strong> Many survivors silence their voices or avoid digital spaces entirely to avoid further harm.</li>
+      <li data-translate="mental_health_li" data-html="true"><strong>Mental Health:</strong> Victims often suffer from anxiety, depression, panic attacks, and PTSD.</li>
+      <li data-translate="loss_opportunities_li" data-html="true"><strong>Loss of Opportunities:</strong> Some withdraw from public life, education, or career advancement due to fear or shame.</li>
+      <li data-translate="physical_safety_li" data-html="true"><strong>Physical Safety Risks:</strong> Online abuse can escalate to physical stalking or violence in the real world.</li>
+      <li data-translate="self_censorship_li" data-html="true"><strong>Self-Censorship:</strong> Many survivors silence their voices or avoid digital spaces entirely to avoid further harm.</li>
     </ul>
-    <p>
+    <p data-translate="effects_conclusion">
       These effects can linger for years, diminishing self-worth, eroding trust in technology, and limiting freedom of expression and access to digital resources.
     </p>
-    <a href="https://giwps.georgetown.edu/resource/technology-facilitated-gender-based-violence/" target="_blank">Learn more on GWPS</a>
+    <a href="https://giwps.georgetown.edu/resource/technology-facilitated-gender-based-violence/" target="_blank" data-translate="learn_more_gwps">Learn more on GWPS</a>
   </div>
 </div>
 
@@ -1201,24 +1259,24 @@ button:disabled {
   
 
   <div id="quiz" class="quiz-container">
-    <h1>Test Your TFGBV Knowledge</h1>
+    <h1 data-translate="quiz_title">Test Your TFGBV Knowledge</h1>
 
     <!-- BASIC QUIZ -->
-    <div id="basic-quiz" class="visible">
-      <h2>Basic Level Quiz</h2>
+    <div id="basic-quiz" data-ltr-direction="true" class="visible">
+      <h2 data-translate="basic_quiz_heading">Basic Level Quiz</h2>
 
       <div class="question" data-correct="1">
-        <p>1. What is TFGBV?</p>
+        <p data-translate="q1_text">1. What is TFGBV?</p>
         <ul class="options">
-          <li><label><input type="radio" name="q1" value="0">Violence only in physical spaces</label></li>
-          <li><label><input type="radio" name="q1" value="1">Violence using digital technologies</label></li>
-          <li><label><input type="radio" name="q1" value="2">Only verbal abuse offline</label></li>
-          <li><label><input type="radio" name="q1" value="3">Violence targeting men exclusively</label></li>
+          <li><label><input type="radio" name="q1" value="0"><span data-translate="q1_opt1">Violence only in physical spaces</span></label></li>
+          <li><label><input type="radio" name="q1" value="1"><span data-translate="q1_opt2">Violence using digital technologies</span></label></li>
+          <li><label><input type="radio" name="q1" value="2"><span data-translate="q1_opt3">Only verbal abuse offline</span></label></li>
+          <li><label><input type="radio" name="q1" value="3"><span data-translate="q1_opt4">Violence targeting men exclusively</span></label></li>
         </ul>
       </div>
 
       <div class="question" data-correct="0">
-        <p>2. Which is an example of TFGBV?</p>
+        <p data-translate="q2_text">2. Which is an example of TFGBV?</p>
         <ul class="options">
           <li><label><input type="radio" name="q2" value="0">Sending anonymous threats online</label></li>
           <li><label><input type="radio" name="q2" value="1">A face-to-face argument</label></li>
@@ -1228,7 +1286,7 @@ button:disabled {
       </div>
 
       <div class="question" data-correct="0">
-        <p>3. Who are chiefly targeted by TFGBV?</p>
+        <p data-translate="q3_text">3. Who are chiefly targeted by TFGBV?</p>
         <ul class="options">
           <li><label><input type="radio" name="q3" value="0">All genders equally</label></li>
           <li><label><input type="radio" name="q3" value="1">Women and girls</label></li>
@@ -1237,8 +1295,8 @@ button:disabled {
         </ul>
       </div>
 
-      <div class="question" data-correct="0">
-        <p>4. What is "doxxing"?</p>
+      <div class="question" data-correct="3">
+        <p data-translate="q4_text">4. What is "doxxing"?</p>
         <ul class="options">
           <li><label><input type="radio" name="q4" value="0">Publishing private info without consent</label></li>
           <li><label><input type="radio" name="q4" value="1">Sending kind messages</label></li>
@@ -1248,7 +1306,7 @@ button:disabled {
       </div>
 
       <div class="question" data-correct="3">
-        <p>5. A consequence of TFGBV can be:</p>
+        <p data-translate="q5_text">5. A consequence of TFGBV can be:</p>
         <ul class="options">
           <li><label><input type="radio" name="q5" value="0">Better job offers</label></li>
           <li><label><input type="radio" name="q5" value="1">Increased self-esteem</label></li>
@@ -1274,11 +1332,11 @@ button:disabled {
     </div>
 
     <!-- INTERMEDIATE QUIZ -->
-    <div id="intermediate-quiz" style="display: none;">
+    <div id="intermediate-quiz" style="display: none;" data-ltr-direction="true">
       <h2>Intermediate Level Quiz</h2>
 
       <div class="question" data-correct="0">
-        <p>1. What makes digital tools powerful for TFGBV perpetrators?</p>
+        <p data-translate="iq1_text">1. What makes digital tools powerful for TFGBV perpetrators?</p>
         <ul class="options">
           <li><label><input type="radio" name="iq1" value="0">Anonymity and wide reach</label></li>
           <li><label><input type="radio" name="iq1" value="1">Strong encryption</label></li>
@@ -1288,7 +1346,7 @@ button:disabled {
       </div>
 
       <div class="question" data-correct="3">
-        <p>2. Which is NOT a form of TFGBV?</p>
+        <p data-translate="iq2_text">2. Which is NOT a form of TFGBV?</p>
         <ul class="options">
           <li><label><input type="radio" name="iq2" value="0">Cyberstalking</label></li>
           <li><label><input type="radio" name="iq2" value="1">Impersonation</label></li>
@@ -1298,7 +1356,7 @@ button:disabled {
       </div>
 
       <div class="question" data-correct="1">
-        <p>3. A common impact of TFGBV is:</p>
+        <p data-translate="iq3_text">3. A common impact of TFGBV is:</p>
         <ul class="options">
           <li><label><input type="radio" name="iq3" value="0">More online participation</label></li>
           <li><label><input type="radio" name="iq3" value="1">Negative psychological harm</label></li>
@@ -1308,7 +1366,7 @@ button:disabled {
       </div>
 
       <div class="question" data-correct="1">
-        <p>4. What is "revenge porn"?</p>
+        <p data-translate="iq4_text">4. What is "revenge porn"?</p>
         <ul class="options">
           <li><label><input type="radio" name="iq4" value="0">Posting memes</label></li>
           <li><label><input type="radio" name="iq4" value="1">Non-consensual sharing of intimate images</label></li>
@@ -1318,7 +1376,7 @@ button:disabled {
       </div>
 
       <div class="question" data-correct="0">
-        <p>5. How can communities reduce TFGBV?</p>
+        <p data-translate="iq5_text">5. How can communities reduce TFGBV?</p>
         <ul class="options">
           <li><label><input type="radio" name="iq5" value="0">Spreading awareness and digital literacy</label></li>
           <li><label><input type="radio" name="iq5" value="1">Ignoring the issue</label></li>
@@ -1332,44 +1390,41 @@ button:disabled {
   </div>
 
 
-  <section id="resources" class="resources-section">
+  <section id="resources" class="resources-section" data-ltr-direction="true">
     <div class="resources-container">
-      <h2>📚 Learn More: Useful Resources</h2>
+      <h2 data-translate="useful_resources_heading">📚 Learn More: Useful Resources</h2>
       
       <div class="resource-item">
         <div class="resource-content">
-          <h3>📖 Digital Safety Guide</h3>
-          <p>Learn how to protect yourself from online abuse and harassment through this detailed guide that provides practical advice on securing your digital presence.</p>
+          <h3 data-translate="digital_safety_guide_heading">📖 Digital Safety Guide</h3>
+          <p data-translate="digital_safety_guide_description">Learn how to protect yourself from online abuse and harassment through this detailed guide that provides practical advice on securing your digital presence.</p>
         </div>
         <div class="resource-link">
-          <a href="https://thelantern.net/wp-content/uploads/2022/04/TLP_SafetyGuide_2022.pdf" target="_blank">Download the Safety Guide</a>
-          <a href="https://www.ncsc.gov.uk/cyberaware/home" target="_blank">Additional Guide</a>
-          
-        </div>
-        
-      </div>
-  
-      <div class="resource-item">
-        <div class="resource-content">
-          <h3>🎓 Learning the Effects of TFGBV</h3>
-          <p>Understand the profound psychological and emotional effects that Technology-facilitated Gender-Based Violence can have on its victims, and learn the best strategies to help prevent it.</p>
-        </div>
-        <div class="resource-link">
-          <a href="https://giwps.georgetown.edu/resource/technology-facilitated-gender-based-violence/" target="_blank">Learn More About the Effects</a>
-          <a href="https://www.unfpa.org/sites/default/files/pub-pdf/A%20Framework%20for%20TFGBV%20Programming.pdf" target="_blank">Additional Guide</a>
+          <a href="https://thelantern.net/wp-content/uploads/2022/04/TLP_SafetyGuide_2022.pdf" target="_blank" data-translate="download_safety_guide">Download the Safety Guide</a>
+          <a href="https://www.ncsc.gov.uk/cyberaware/home" target="_blank" data-translate="additional_guide">Additional Guide</a>
         </div>
       </div>
   
       <div class="resource-item">
         <div class="resource-content">
-          <h3>🔒 Protecting Yourself from TFGBV</h3>
-          <p>This guide explains effective techniques and tools you can use to protect yourself from online and mobile harassment, including how to report TFGBV safely and securely.</p>
+          <h3 data-translate="learning_effects_heading">🎓 Learning the Effects of TFGBV</h3>
+          <p data-translate="learning_effects_description">Understand the profound psychological and emotional effects that Technology-facilitated Gender-Based Violence can have on its victims, and learn the best strategies to help prevent it.</p>
         </div>
         <div class="resource-link">
-          <a href="https://unric.org/en/how-technology-facilitated-gender-based-violence-impacts-women-and-girls/" target="_blank">Learn How to Protect Yourself</a>
-           <a href="https://www.unwomen.org/sites/default/files/2024-09/technology-facilitated-gender-based-violence-shared-research-agenda-en.pdf" target="_blank">Additional Guide</a>
+          <a href="https://giwps.georgetown.edu/resource/technology-facilitated-gender-based-violence/" target="_blank" data-translate="learn_more_effects">Learn More About the Effects</a>
+          <a href="https://www.unfpa.org/sites/default/files/pub-pdf/A%20Framework%20for%20TFGBV%20Programming.pdf" target="_blank" data-translate="additional_guide">Additional Guide</a>
         </div>
-        
+      </div>
+  
+      <div class="resource-item">
+        <div class="resource-content">
+          <h3 data-translate="protecting_yourself_heading">🔒 Protecting Yourself from TFGBV</h3>
+          <p data-translate="protecting_yourself_description">This guide explains effective techniques and tools you can use to protect yourself from online and mobile harassment, including how to report TFGBV safely and securely.</p>
+        </div>
+        <div class="resource-link">
+          <a href="https://unric.org/en/how-technology-facilitated-gender-based-violence-impacts-women-and-girls/" target="_blank" data-translate="learn_how_to_protect">Learn How to Protect Yourself</a>
+          <a href="https://www.unwomen.org/sites/default/files/2024-09/technology-facilitated-gender-based-violence-shared-research-agenda-en.pdf" target="_blank" data-translate="additional_guide">Additional Guide</a>
+        </div>
       </div>
     </div>
   </section>
@@ -1383,15 +1438,15 @@ button:disabled {
         </div>
 
         <div class="footer-links">
-            <h3>Quick Links</h3>
+            <h3 data-translate="quick_links_heading">Quick Links</h3>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about us.html">About Us</a></li>
-                <li><a href="resource&support.html">Resources</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="partner.html">Partner with Us</a></li>
-                <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                <li><a href="index.html" data-translate="home_link">Home</a></li>
+                <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
+                <li><a href="resource&support.html" data-translate="resources_link">Resources</a></li>
+                <li><a href="events.html" data-translate="events_link">Events</a></li>
+                <li><a href="news.html" data-translate="news_link">News</a></li>
+                <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
+                <li><a href="donate.html" class="donate-btn" data-translate="donate_link">Donate</a></li>
             </ul>
             <div class="payment-icons">
                 <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
@@ -1401,14 +1456,14 @@ button:disabled {
         </div>
 
         <div class="footer-location">
-            <h3>Location</h3>
-            <p>Nairobi, Kenya</p>
+            <h3 data-translate="location_heading">Location</h3>
+            <p data-translate="location_text">Nairobi, Kenya</p>
         </div>
 
         <div class="footer-contact">
-            <h3>Contact Us</h3>
-            <p>Email: shi3ldmaidens@gmail.com</p>
-            <h3>Our Socials</h3>
+            <h3 data-translate="contact_us_heading">Contact Us</h3>
+            <p data-translate="email_text">Email: shi3ldmaidens@gmail.com</p>
+            <h3 data-translate="socials_heading">Our Socials</h3>
             <div class="social-icons">
               <a href="https://x.com/_shield_maidens" target="_blank">
                   <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
@@ -1423,7 +1478,7 @@ button:disabled {
         </div>
     </div>
     <div class="footer-bottom">
-        <p>Copyright © 2025 Shield Maidens</p>
+        <p data-translate="copyright_text">Copyright © 2025 Shield Maidens</p>
     </div>
 </footer>
 
@@ -1432,42 +1487,37 @@ button:disabled {
    
   <script src="accessibility.js"></script>
   <script src="quiz.js"></script>
-  <script src="script.js"></script>
 
 <!-- Report Form Modal -->
 <div id="reportModal" class="modal">
   <div class="modal-content">
     <span class="close-modal" onclick="closeReportForm()">&times;</span>
-    <h2>Report an Incident</h2>
+    <h2 data-translate="report_incident_modal_heading">Report an Incident</h2>
     <form id="reportForm" onsubmit="submitReport(event)">
       <div class="form-group">
-        <label for="reporterName">Your Name:</label>
+        <label for="reporterName" data-translate="your_name_label">Your Name:</label>
         <input type="text" id="reporterName" name="reporterName" required>
       </div>
       <div class="form-group">
-        <label for="incidentDescription">Describe the Incident:</label>
+        <label for="incidentDescription" data-translate="incident_description_label">Describe the Incident:</label>
         <textarea id="incidentDescription" name="incidentDescription" required></textarea>
       </div>
       <div class="form-group">
-        <label for="reporterEmail">Email Address (Optional):</label>
+        <label for="reporterEmail" data-translate="email_address_label">Email Address (Optional):</label>
         <input type="email" id="reporterEmail" name="reporterEmail">
       </div>
       <div class="form-group checkbox">
         <input type="checkbox" id="contactPermission" name="contactPermission">
-        <label for="contactPermission">I agree to be contacted for follow-up (we will respond within 12 hours)</label>
+        <label for="contactPermission" data-translate="contact_permission_label">I agree to be contacted for follow-up (we will respond within 12 hours)</label>
       </div>
       <div class="form-group">
-        <button type="submit" class="submit-btn">Submit Report</button>
+        <button type="submit" class="submit-btn" data-translate="submit_report_button">Submit Report</button>
       </div>
     </form>
   </div>
 </div>
 
-<!-- Floating Report Button -->
-<button class="floating-report-btn" onclick="openReportForm()">
-  <i class="fas fa-exclamation-circle"></i>
-  Report Incident
-</button>
+
 
 <!-- Add Slides JavaScript -->
 <script>
@@ -1512,6 +1562,335 @@ button:disabled {
   document.addEventListener('DOMContentLoaded', () => {
       showSlide(0);
   });
+</script>
+
+<!-- Accessibility Control Panel -->
+<div class="accessibility-panel" id="accessibilityPanel">
+  <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()">
+    <i class="fas fa-universal-access"></i>
+  </button>
+  <div class="accessibility-controls">
+    <button onclick="toggleTextToSpeech()" id="ttsToggle">
+      <i class="fas fa-volume-up"></i> TTS
+    </button>
+    <button onclick="increaseFontSize()">
+      <i class="fas fa-text-height"></i> A+
+    </button>
+    <button onclick="decreaseFontSize()">
+      <i class="fas fa-text-height"></i> A-
+    </button>
+    <button onclick="toggleHighContrast()" id="contrastToggle">
+      <i class="fas fa-adjust"></i> Contrast
+    </button>
+    <button onclick="resetAccessibility()">
+      <i class="fas fa-undo"></i> Reset
+    </button>
+  </div>
+</div>
+
+<style>
+/* Accessibility Panel Styles */
+.accessibility-panel {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.accessibility-toggle {
+  background: #ff4500;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.accessibility-toggle:hover {
+  transform: scale(1.1);
+}
+
+.accessibility-controls {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accessibility-controls.active {
+  display: flex;
+}
+
+.accessibility-controls button {
+  background: #f5f5f5;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.accessibility-controls button:hover {
+  background: #e0e0e0;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast * {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.high-contrast a {
+  color: #ffff00 !important;
+}
+
+.high-contrast button {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+</style>
+
+<script>
+// Accessibility Functions (Globally accessible)
+let isTTSActive = true; // Set to true by default for auto-read
+let isHighContrast = false;
+let currentFontSize = 16;
+let currentTTSVoice = null; // To store the currently selected voice
+
+// Function to find a voice based on language
+window.selectTTSVoice = function(lang) {
+    const voices = window.speechSynthesis.getVoices();
+    console.log('Available Voices:', voices);
+    console.log('Attempting to select voice for language:', lang);
+
+    let selectedVoice = null;
+
+    if (lang === 'en') {
+        // Prioritize Awasili voice for English
+        selectedVoice = voices.find(voice => voice.name === 'Awasili') ||
+                       voices.find(voice => voice.name === 'Asilia') ||
+                       voices.find(voice => voice.lang === 'en-KE') ||
+                       voices.find(voice => voice.lang.startsWith('en-US')) ||
+                       voices.find(voice => voice.lang.startsWith('en-GB')) ||
+                       voices.find(voice => voice.lang.startsWith('en'));
+    } else if (lang === 'sw') {
+        // Prioritize Swahili (Kenya) then any Swahili voice
+        selectedVoice = voices.find(voice => voice.lang === 'sw-KE') ||
+                       voices.find(voice => voice.lang.startsWith('sw'));
+    } else if (lang === 'fr') {
+        // Prioritize French voices
+        selectedVoice = voices.find(voice => voice.lang.startsWith('fr'));
+    } else if (lang === 'ar') {
+        // Prioritize Arabic voices
+        selectedVoice = voices.find(voice => voice.lang.startsWith('ar'));
+    }
+
+    currentTTSVoice = selectedVoice || voices.find(voice => voice.lang.startsWith('en')) || voices[0];
+    if (!currentTTSVoice) {
+        console.warn("No suitable voice found for language " + lang + ", using default system voice.");
+    } else {
+        console.log('Selected voice:', currentTTSVoice.name, '(' + currentTTSVoice.lang + ')');
+    }
+};
+
+// Toggle accessibility panel visibility
+window.toggleAccessibilityPanel = function() {
+    const controls = document.querySelector('.accessibility-controls');
+    controls.classList.toggle('active');
+};
+
+// Toggle text-to-speech on/off
+window.toggleTextToSpeech = function() {
+    isTTSActive = !isTTSActive;
+    const ttsButton = document.getElementById('ttsToggle');
+    
+    if (isTTSActive) {
+        ttsButton.style.backgroundColor = '#ff4500';
+        ttsButton.style.color = 'white';
+        window.readPageContent(); // Restart reading when toggled on
+    } else {
+        ttsButton.style.backgroundColor = '#f5f5f5';
+        ttsButton.style.color = 'black';
+        window.speechSynthesis.cancel();
+    }
+};
+
+// Read the entire page content
+window.readPageContent = function() {
+    if (!isTTSActive) {
+        console.log('TTS is not active, not reading content.');
+        return;
+    }
+    
+    // Get the current language
+    const currentLang = document.documentElement.lang || 'en';
+    
+    // Function to create and speak an utterance
+    const speakText = (text, rate = 1) => {
+        if (!text) return null;
+        
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = rate;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+        utterance.lang = currentLang;
+        
+        if (currentTTSVoice) {
+            utterance.voice = currentTTSVoice;
+        }
+        
+        return utterance;
+    };
+
+    // Create a queue of utterances
+    const utterances = [];
+    
+    // 1. Read navigation links once, clearly
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        // Get the complete text content, including any child elements
+        const text = link.textContent.replace(/\s+/g, ' ').trim();
+        if (text) {
+            const utterance = speakText(text, 0.9);
+            if (utterance) {
+                utterances.push(utterance);
+            }
+        }
+    });
+
+    // 2. Read the main content
+    const mainContent = Array.from(document.querySelectorAll('[data-translate]'))
+        .filter(el => el.getAttribute('data-lang') === currentLang || !el.getAttribute('data-lang'))
+        .map(el => el.textContent.replace(/\s+/g, ' ').trim())
+        .filter(text => text) // Remove empty strings
+        .join(' ');
+
+    if (mainContent) {
+        const utterance = speakText(mainContent, 1);
+        if (utterance) {
+            utterances.push(utterance);
+        }
+    }
+
+    // Function to speak the next utterance in the queue
+    const speakNext = (index) => {
+        if (index < utterances.length) {
+            const utterance = utterances[index];
+            utterance.onend = () => {
+                // Add a pause between items
+                setTimeout(() => {
+                    speakNext(index + 1);
+                }, 500); // Consistent pause between all items
+            };
+            window.speechSynthesis.speak(utterance);
+        }
+    };
+
+    // Start speaking the queue
+    speakNext(0);
+};
+
+// Increase font size
+window.increaseFontSize = function() {
+    currentFontSize += 2;
+    document.body.style.fontSize = currentFontSize + 'px';
+};
+
+// Decrease font size
+window.decreaseFontSize = function() {
+    currentFontSize = Math.max(12, currentFontSize - 2);
+    document.body.style.fontSize = currentFontSize + 'px';
+};
+
+// Toggle high contrast mode
+window.toggleHighContrast = function() {
+    isHighContrast = !isHighContrast;
+    const contrastButton = document.getElementById('contrastToggle');
+    
+    if (isHighContrast) {
+        document.body.classList.add('high-contrast');
+        contrastButton.style.backgroundColor = '#ff4500';
+        contrastButton.style.color = 'white';
+    } else {
+        document.body.classList.remove('high-contrast');
+        contrastButton.style.backgroundColor = '#f5f5f5';
+        contrastButton.style.color = 'black';
+    }
+};
+
+// Reset all accessibility settings
+window.resetAccessibility = function() {
+    // Reset font size
+    currentFontSize = 16;
+    document.body.style.fontSize = ''; // Resets to default
+
+    // Reset high contrast
+    isHighContrast = false;
+    document.body.classList.remove('high-contrast');
+    document.getElementById('contrastToggle').style.backgroundColor = '#f5f5f5';
+    document.getElementById('contrastToggle').style.color = 'black';
+
+    // Reset text-to-speech
+    isTTSActive = false;
+    window.speechSynthesis.cancel(); // Stop any ongoing speech
+    document.getElementById('ttsToggle').style.backgroundColor = '#f5f5f5';
+    document.getElementById('ttsToggle').style.color = 'black';
+
+    // Re-select voice based on current page language (defaults to English)
+    window.selectTTSVoice(document.documentElement.lang || 'en');
+};
+
+// Initial setup for voices and auto-read
+document.addEventListener('DOMContentLoaded', () => {
+    const initializeTTSOnLoad = () => {
+        // Set TTS to active by default
+        isTTSActive = true;
+        
+        // Initialize voice selection
+        window.selectTTSVoice(document.documentElement.lang || 'en');
+        
+        // Set the TTS button to active state
+        const ttsButton = document.getElementById('ttsToggle');
+        if (ttsButton) {
+            ttsButton.style.backgroundColor = '#ff4500';
+            ttsButton.style.color = 'white';
+        }
+
+        // Start reading the page content automatically
+        setTimeout(() => {
+            window.readPageContent();
+        }, 1000); // Small delay to ensure everything is loaded
+    };
+
+    if (window.speechSynthesis && window.speechSynthesis.getVoices().length > 0) {
+        initializeTTSOnLoad();
+    } else if (window.speechSynthesis) {
+        window.speechSynthesis.onvoiceschanged = () => {
+            initializeTTSOnLoad();
+        };
+    } else {
+        console.warn("SpeechSynthesis API not supported in this browser.");
+    }
+});
 </script>
 </body>
 </html>
