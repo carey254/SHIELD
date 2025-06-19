@@ -6,6 +6,9 @@ require_once __DIR__ . '/PHPMailer-master/src/PHPMailer.php';
 require_once __DIR__ . '/PHPMailer-master/src/Exception.php';
 require_once __DIR__ . '/PHPMailer-master/src/SMTP.php';
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 header('Content-Type: application/json');
 
 function sendEmail($to, $subject, $body) {
@@ -49,11 +52,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'
         exit;
     }
 
+    // After validating $name, $email, $message
+    $mysqli = new mysqli("localhost", "root", "", "shieldmaidens_db", 3308);
+    if ($mysqli->connect_error) {
+        echo json_encode([
+            'status'  => 'error',
+            'message' => 'Database connection failed: ' . $mysqli->connect_error
+        ]);
+        exit;
+    }
+    $stmt = $mysqli->prepare("INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $name, $email, $message);
+    $stmt->execute();
+    $stmt->close();
+    $mysqli->close();
+
     // Send acknowledgement to user
     sendEmail(
         $email,
         "We've received your message",
-        "Hi {$name},\n\nThank you for reaching out! We’ll reply shortly.\n\n– ShieldMaidens Team"
+        "Hi {$name},\n\nThank you for reaching out! We'll reply shortly.\n\n– ShieldMaidens Team"
     );
 
     // Send copy to admin
@@ -71,8 +89,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'
 }
 
 // ─── Handle MAILING-LIST Sign-ups ──────────────────────────────────────────────
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
-    $email = trim($_POST['email']);
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && (isset($_POST['email']) || isset($_POST['mailingEmail']))) {
+    $email = isset($_POST['email']) ? trim($_POST['email']) : trim($_POST['mailingEmail']);
     if ($email === '') {
         echo json_encode([
             'status'  => 'error',
@@ -80,6 +98,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
         ]);
         exit;
     }
+
+    // Save to database
+    $mysqli = new mysqli("localhost", "root", "", "shieldmaidens_db", 3308);
+    if ($mysqli->connect_error) {
+        echo json_encode([
+            'status'  => 'error',
+            'message' => 'Database connection failed: ' . $mysqli->connect_error
+        ]);
+        exit;
+    }
+    $stmt = $mysqli->prepare("INSERT IGNORE INTO mailing_list (email) VALUES (?)");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->close();
+    $mysqli->close();
 
     $subject = "Welcome to Our Mailing List";
     $body    = "Thank you for subscribing! We'll keep you updated with our latest news.";
@@ -92,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
     } else {
         echo json_encode([
             'status'  => 'error',
-            'message' => 'Mailer Error: Could not send subscription email.'
+            'message' => 'Mailer Error: ' . $mail->ErrorInfo
         ]);
     }
     exit;

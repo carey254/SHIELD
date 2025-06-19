@@ -69,6 +69,12 @@
             background-color: orangered;
             color: white;
         }
+
+        .nav-links a:hover {
+          background-color: #ff4500;
+          color: white;
+          border-radius: 12px;
+        }
     </style>
 </head>
 <body>
@@ -79,24 +85,33 @@
       </a>
     
       <div class="nav-links" role="menubar">
-        <a href="index.html" role="menuitem">Home</a>
-        <a href="about us.html" role="menuitem">About Us</a>
-        <a href="resource&support.html" role="menuitem">Resources</a>
+        <a href="index.html" role="menuitem" data-translate="home_link">Home</a>
+        <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
+        <a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a>
         <div class="dropdown" role="menuitem" aria-haspopup="true">
-          <a href="#" aria-expanded="false">Get Involved</a>
+          <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-content" role="menu">
-            <a href="events.html" role="menuitem">Events</a>
-            <a href="news.html" role="menuitem">News</a>
-            <a href="partner.html" role="menuitem">Partner with Us</a>
+            <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
+            <a href="news.html" role="menuitem" data-translate="news_link">News</a>
+            <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
           </div>
         </div>
-        <a href="donate.html" class="highlight" role="menuitem">Donate</a>
+        <a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a>
         
         <!-- Report Button added to Navigation -->
-        <a href="report.html" class="nav-report-btn" role="menuitem">
+        <a href="report.html" class="nav-report-btn" role="menuitem" aria-current="page" data-translate="where_to_report_link">
           <i class="fas fa-exclamation-circle"></i>
           Where to Report
         </a>
+             <div class="dropdown language-switcher" role="menuitem" aria-haspopup="true">
+                <a href="#" aria-expanded="false" data-translate="english_link">English <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content" role="menu">
+                    <a href="#" data-lang="en" data-translate="english_link">English</a>
+                    <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+                    <a href="#" data-lang="fr" data-translate="french_link">French</a>
+                    <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
+                </div>
+            </div>
       </div>
     </nav>
 
@@ -111,95 +126,95 @@
         <span class="close-btn" onclick="closeMenu()">&times;</span>
       </div>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about us.html">About Us</a></li>
-        <li><a href="resource&support.html">Resources</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="partner.html">Partner with Us</a></li>
-        <li><a href="donate.html" class="highlight">Donate</a></li>
-        <li><a href="report.html">Where to Report</a></li>
+        <li><a href="index.html" data-translate="home_link">Home</a></li>
+        <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
+        <li><a href="resource&support.html" data-translate="resources_link">Resources</a></li>
+        <li><a href="events.html" data-translate="events_link">Events</a></li>
+        <li><a href="news.html" data-translate="news_link">News</a></li>
+        <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
+        <li><a href="donate.html" class="highlight" data-translate="donate_link">Donate</a></li>
+        <li><a href="report.html" data-translate="where_to_report_link">Where to Report</a></li>
       </ul>
     </div>
 
     <section class="report-resources-section">
-        <h2>Kenyan Hotlines and Reporting Platforms for GBV</h2>
+        <h2 data-translate="hotlines_heading">Kenyan Hotlines and Reporting Platforms for GBV</h2>
         <ul class="resource-list">
             <li class="resource-item">
-                <h3>Stop NCII</h3>
-                <p>StopNCII.org is a free tool to support victims of Non-Consensual Intimate Image (NCII) abuse. It works by generating a digital fingerprint (hash) of your intimate image(s)/video(s) on your device. This hash is then shared with participating companies to help detect and remove the images if they are shared online. The tool does not upload your actual images.</p>
-                <p><a href="https://stopncii.org/" target="_blank">Report via StopNCII.org</a></p>
+                <h3 data-translate="stop_ncii_title">Stop NCII</h3>
+                <p data-translate="stop_ncii_p1">StopNCII.org is a free tool to support victims of Non-Consensual Intimate Image (NCII) abuse. It works by generating a digital fingerprint (hash) of your intimate image(s)/video(s) on your device. This hash is then shared with participating companies to help detect and remove the images if they are shared online. The tool does not upload your actual images.</p>
+                <p><a href="https://stopncii.org/" target="_blank" data-translate="stop_ncii_link">Report via StopNCII.org</a></p>
             </li>
              <li class="resource-item">
-                <h3>National Computer and Cybercrimes Coordination Committee (NC4)</h3>
-                <p>NC4 is a multi-agency entity in Kenya established to coordinate national cybersecurity matters, including the detection, prevention, response, investigation, and prosecution of computer misuse and cybercrimes.</p>
-                <p><a href="https://nc4.go.ke/" target="_blank">Visit NC4 Website</a></p>
+                <h3 data-translate="nc4_title">National Computer and Cybercrimes Coordination Committee (NC4)</h3>
+                <p data-translate="nc4_p1">NC4 is a multi-agency entity in Kenya established to coordinate national cybersecurity matters, including the detection, prevention, response, investigation, and prosecution of computer misuse and cybercrimes.</p>
+                <p><a href="https://nc4.go.ke/" target="_blank" data-translate="nc4_link">Visit NC4 Website</a></p>
             </li>
             <li class="resource-item">
-                <h3>Healthcare Assistance Kenya (HAK) - GBV Hotline</h3>
-                <p>Provides immediate assistance and referrals for GBV survivors.</p>
-                <p>Hotline: 1195 (24/7, toll-free)</p>
-                <p>Email: info@hakgbv1195.org</p>
-                <p><a href="https://hakgbv1195.org/" target="_blank">Website</a></p>
+                <h3 data-translate="hak_title">Healthcare Assistance Kenya (HAK) - GBV Hotline</h3>
+                <p data-translate="hak_p1">Provides immediate assistance and referrals for GBV survivors.</p>
+                <p data-translate="hak_hotline">Hotline: 1195 (24/7, toll-free)</p>
+                <p data-translate="hak_email">Email: info@hakgbv1195.org</p>
+                <p><a href="https://hakgbv1195.org/" target="_blank" data-translate="hak_link">Website</a></p>
             </li>
              <li class="resource-item">
-                <h3>National Police Service</h3>
-                <p>Toll-free line for reporting SGBV cases.</p>
-                <p>Hotline: 0800730999 (toll-free)</p>
+                <h3 data-translate="nps_title">National Police Service</h3>
+                <p data-translate="nps_p1">Toll-free line for reporting SGBV cases.</p>
+                <p data-translate="nps_hotline">Hotline: 0800730999 (toll-free)</p>
             </li>
              <li class="resource-item">
-                <h3>Gender Violence Recovery Centre (GVRC)</h3>
-                <p>Offers medical and psychosocial support to GBV survivors.</p>
-                <p>Hotlines: +254 719 638 006 / +254 709 667 000</p>
-                <p>Email: info@gvrc.or.ke</p>
-                <p><a href="https://gvrc.or.ke/" target="_blank">Website</a></p>
+                <h3 data-translate="gvrc_title">Gender Violence Recovery Centre (GVRC)</h3>
+                <p data-translate="gvrc_p1">Offers medical and psychosocial support to GBV survivors.</p>
+                <p data-translate="gvrc_hotlines">Hotlines: +254 719 638 006 / +254 709 667 000</p>
+                <p data-translate="gvrc_email">Email: info@gvrc.or.ke</p>
+                <p><a href="https://gvrc.or.ke/" target="_blank" data-translate="gvrc_link">Website</a></p>
             </li>
              <li class="resource-item">
-                <h3>Wangu Kanja Foundation</h3>
-                <p>Provides medical, psychosocial, legal support, and financial empowerment to survivors.</p>
-                <p>Hotline: +254722790404</p>
+                <h3 data-translate="wangu_kanja_title">Wangu Kanja Foundation</h3>
+                <p data-translate="wangu_kanja_p1">Provides medical, psychosocial, legal support, and financial empowerment to survivors.</p>
+                <p data-translate="wangu_kanja_hotline">Hotline: +254722790404</p>
             </li>
              <li class="resource-item">
-                <h3>SOLWODI (Solidarity with Women in Distress) Mombasa</h3>
-                <p>Focuses on rescuing girls from commercial sex trade, human trafficking, and forced marriages.</p>
-                <p>Hotline: +254739422422</p>
+                <h3 data-translate="solwodi_title">SOLWODI (Solidarity with Women in Distress) Mombasa</h3>
+                <p data-translate="solwodi_p1">Focuses on rescuing girls from commercial sex trade, human trafficking, and forced marriages.</p>
+                <p data-translate="solwodi_hotline">Hotline: +254739422422</p>
             </li>
              <li class="resource-item">
-                <h3>Medicins Sans Frontieres (MSF's) Lavender House Clinic (Mathare, Nairobi)</h3>
-                <p>Offers medical and psychosocial support in low-income areas.</p>
-                <p>Contact: 020 2400330</p>
+                <h3 data-translate="msf_title">Medicins Sans Frontieres (MSF's) Lavender House Clinic (Mathare, Nairobi)</h3>
+                <p data-translate="msf_p1">Offers medical and psychosocial support in low-income areas.</p>
+                <p data-translate="msf_contact">Contact: 020 2400330</p>
             </li>
              <li class="resource-item">
-                <h3>Rescue Dada Centre (Ngara, Nairobi)</h3>
-                <p>Rescue, rehabilitation, and reintegration for girls from the streets.</p>
-                <p>Contact: 0725 694 624</p>
+                <h3 data-translate="rescue_dada_title">Rescue Dada Centre (Ngara, Nairobi)</h3>
+                <p data-translate="rescue_dada_p1">Rescue, rehabilitation, and reintegration for girls from the streets.</p>
+                <p data-translate="rescue_dada_contact">Contact: 0725 694 624</p>
             </li>
              <li class="resource-item">
-                <h3>Nena Na Binti</h3>
-                <p>Provides confidential and non-judgmental SRHR support, including SGBV linkage.</p>
-                 <p>Hotlines: 0800 211 227 (Toll Free), 0775533117 (Text/WhatsApp)</p>
-                 <p><a href="https://nenanabinti.org/" target="_blank">Website</a></p>
+                <h3 data-translate="nena_na_binti_title">Nena Na Binti</h3>
+                <p data-translate="nena_na_binti_p1">Provides confidential and non-judgmental SRHR support, including SGBV linkage.</p>
+                 <p data-translate="nena_na_binti_hotlines">Hotlines: 0800 211 227 (Toll Free), 0775533117 (Text/WhatsApp)</p>
+                 <p><a href="https://nenanabinti.org/" target="_blank" data-translate="nena_na_binti_link">Website</a></p>
             </li>
              <li class="resource-item">
-                <h3>Uwiano Platform for Peace</h3>
-                <p>Conflict prevention strategy, includes reporting via SMS or email.</p>
-                 <p>Report via SMS to: 108</p>
-                 <p>Email: uwiano@nscpeace.go.ke</p>
-                 <p><a href="https://nscpeace.go.ke/108/" target="_blank">Website</a></p>
+                <h3 data-translate="uwiano_title">Uwiano Platform for Peace</h3>
+                <p data-translate="uwiano_p1">Conflict prevention strategy, includes reporting via SMS or email.</p>
+                 <p data-translate="uwiano_sms">Report via SMS to: 108</p>
+                 <p data-translate="uwiano_email">Email: uwiano@nscpeace.go.ke</p>
+                 <p><a href="https://nscpeace.go.ke/108/" target="_blank" data-translate="uwiano_link">Website</a></p>
             </li>
              <li class="resource-item">
-                <h3>FIDA Kenya</h3>
-                <p>Provides legal aid and advocacy for women's rights.</p>
-                <p>Hotline: +254 772 509 760</p>
-                <p>Email: info@fida-kenya.org</p>
-                <p><a href="https://www.fida-kenya.org/" target="_blank">Website</a></p>
+                <h3 data-translate="fida_title">FIDA Kenya</h3>
+                <p data-translate="fida_p1">Provides legal aid and advocacy for women's rights.</p>
+                <p data-translate="fida_hotline">Hotline: +254 772 509 760</p>
+                <p data-translate="fida_email">Email: info@fida-kenya.org</p>
+                <p><a href="https://www.fida-kenya.org/" target="_blank" data-translate="fida_link">Website</a></p>
             </li>
              <li class="resource-item">
-                <h3>CREAW Kenya</h3>
-                <p>Offers legal and psychosocial support to GBV survivors.</p>
-                <p>Toll-Free Hotline: 0800 720 186</p>
-                <p>Email: info@creaw.org</p>
-                <p><a href="https://home.creaw.org/" target="_blank">Website</a></p>
+                <h3 data-translate="creaw_title">CREAW Kenya</h3>
+                <p data-translate="creaw_p1">Offers legal and psychosocial support to GBV survivors.</p>
+                <p data-translate="creaw_hotline">Toll-Free Hotline: 0800 720 186</p>
+                <p data-translate="creaw_email">Email: info@creaw.org</p>
+                <p><a href="https://home.creaw.org/" target="_blank" data-translate="creaw_link">Website</a></p>
             </li>
         </ul>
     </section>
@@ -212,15 +227,15 @@
             </div>
 
             <div class="footer-links">
-                <h3>Quick Links</h3>
+                <h3 data-translate="quick_links">Quick Links</h3>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about us.html">About Us</a></li>
-                    <li><a href="resource&support.html">Resources</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="partner.html">Partner with Us</a></li>
-                    <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                    <li><a href="index.html" data-translate="home_link">Home</a></li>
+                    <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
+                    <li><a href="resource&support.html" data-translate="resources_link">Resources</a></li>
+                    <li><a href="events.html" data-translate="events_link">Events</a></li>
+                    <li><a href="news.html" data-translate="news_link">News</a></li>
+                    <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
+                    <li><a href="donate.html" class="donate-btn" data-translate="donate_link">Donate</a></li>
                 </ul>
                 <div class="payment-icons">
                     <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
@@ -230,14 +245,14 @@
             </div>
 
             <div class="footer-location">
-                <h3>Location</h3>
+                <h3 data-translate="location">Location</h3>
                 <p>Nairobi, Kenya</p>
             </div>
 
             <div class="footer-contact">
-                <h3>Contact Us</h3>
+                <h3 data-translate="contact_us">Contact Us</h3>
                 <p>Email: shi3ldmaidens@gmail.com</p>
-                <h3>Our Socials</h3>
+                <h3 data-translate="our_socials">Our Socials</h3>
                 <div class="social-icons">
                     <a href="https://x.com/_shield_maidens" target="_blank">
                         <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
@@ -252,11 +267,375 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>Copyright © 2025 Shield Maidens</p>
+            <p data-translate="copyright">Copyright © 2025 Shield Maidens</p>
         </div>
     </footer>
 
+    <!-- Report Form Modal -->
+    <div id="reportModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeReportForm()">&times;</span>
+        <h2 data-translate="report_incident_modal_title">Report an Incident</h2>
+        <form id="reportForm" onsubmit="submitReport(event)">
+          <div class="form-group">
+            <label for="reporterName" data-translate="your_name_label">Your Name:</label>
+            <input type="text" id="reporterName" name="reporterName" required>
+          </div>
+          <div class="form-group">
+            <label for="incidentDescription" data-translate="incident_description_label">Describe the Incident:</label>
+            <textarea id="incidentDescription" name="incidentDescription" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="reporterEmail" data-translate="email_address_label">Email Address (Optional):</label>
+            <input type="email" id="reporterEmail" name="reporterEmail">
+          </div>
+          <div class="form-group checkbox">
+            <input type="checkbox" id="contactPermission" name="contactPermission">
+            <label for="contactPermission" data-translate="contact_permission_label">I agree to be contacted for follow-up (we will respond within 12 hours)</label>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="submit-btn" data-translate="submit_report_button">Submit Report</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <script src="accessibility.js"></script>
     <script src="script.js"></script>
+    <script src="js/report-translations.js"></script>
+    <script src="js/language-handler.js"></script>
+
+
+
+    <div class="accessibility-panel" id="accessibilityPanel">
+      <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()">
+        <i class="fas fa-universal-access"></i>
+      </button>
+      <div class="accessibility-controls">
+        <button onclick="toggleTextToSpeech()" id="ttsToggle">
+          <i class="fas fa-volume-up"></i> TTS
+        </button>
+        <button onclick="increaseFontSize()">
+          <i class="fas fa-text-height"></i> A+
+        </button>
+        <button onclick="decreaseFontSize()">
+          <i class="fas fa-text-height"></i> A-
+        </button>
+        <button onclick="toggleHighContrast()" id="contrastToggle">
+          <i class="fas fa-adjust"></i> Contrast
+        </button>
+        <button onclick="resetAccessibility()">
+          <i class="fas fa-undo"></i> Reset
+        </button>
+      </div>
+    </div>
+    
+    <style>
+    /* Accessibility Panel Styles */
+    .accessibility-panel {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    .accessibility-toggle {
+      background: #ff4500;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    
+    .accessibility-toggle:hover {
+      transform: scale(1.1);
+    }
+    
+    .accessibility-controls {
+      position: absolute;
+      bottom: 60px;
+      right: 0;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .accessibility-controls.active {
+      display: flex;
+    }
+    
+    .accessibility-controls button {
+      background: #f5f5f5;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .accessibility-controls button:hover {
+      background: #e0e0e0;
+    }
+    
+    /* High Contrast Mode */
+    .high-contrast {
+      background-color: #000 !important;
+      color: #fff !important;
+    }
+    
+    .high-contrast * {
+      background-color: #000 !important;
+      color: #fff !important;
+      border-color: #fff !important;
+    }
+    
+    .high-contrast a {
+      color: #ffff00 !important;
+    }
+    
+    .high-contrast button {
+      background-color: #fff !important;
+      color: #000 !important;
+    }
+    </style>
+    
+    <script>
+    // Accessibility Functions (Globally accessible)
+    let isTTSActive = true; // Set to true by default for auto-read
+    let isHighContrast = false;
+    let currentFontSize = 16;
+    let currentTTSVoice = null; // To store the currently selected voice
+    
+    // Function to find a voice based on language
+    window.selectTTSVoice = function(lang) {
+        const voices = window.speechSynthesis.getVoices();
+        console.log('Available Voices:', voices);
+        console.log('Attempting to select voice for language:', lang);
+    
+        let selectedVoice = null;
+    
+        if (lang === 'en') {
+            // Prioritize Awasili voice for English
+            selectedVoice = voices.find(voice => voice.name === 'Awasili') ||
+                           voices.find(voice => voice.name === 'Asilia') ||
+                           voices.find(voice => voice.lang === 'en-KE') ||
+                           voices.find(voice => voice.lang.startsWith('en-US')) ||
+                           voices.find(voice => voice.lang.startsWith('en-GB')) ||
+                           voices.find(voice => voice.lang.startsWith('en'));
+        } else if (lang === 'sw') {
+            // Prioritize Swahili (Kenya) then any Swahili voice
+            selectedVoice = voices.find(voice => voice.lang === 'sw-KE') ||
+                           voices.find(voice => voice.lang.startsWith('sw'));
+        } else if (lang === 'fr') {
+            // Prioritize French voices
+            selectedVoice = voices.find(voice => voice.lang.startsWith('fr'));
+        } else if (lang === 'ar') {
+            // Prioritize Arabic voices
+            selectedVoice = voices.find(voice => voice.lang.startsWith('ar'));
+        }
+    
+        currentTTSVoice = selectedVoice || voices.find(voice => voice.lang.startsWith('en')) || voices[0];
+        if (!currentTTSVoice) {
+            console.warn("No suitable voice found for language " + lang + ", using default system voice.");
+        } else {
+            console.log('Selected voice:', currentTTSVoice.name, '(' + currentTTSVoice.lang + ')');
+        }
+    };
+    
+    // Toggle accessibility panel visibility
+    window.toggleAccessibilityPanel = function() {
+        const controls = document.querySelector('.accessibility-controls');
+        controls.classList.toggle('active');
+    };
+    
+    // Toggle text-to-speech on/off
+    window.toggleTextToSpeech = function() {
+        isTTSActive = !isTTSActive;
+        const ttsButton = document.getElementById('ttsToggle');
+        
+        if (isTTSActive) {
+            ttsButton.style.backgroundColor = '#ff4500';
+            ttsButton.style.color = 'white';
+            window.readPageContent(); // Restart reading when toggled on
+        } else {
+            ttsButton.style.backgroundColor = '#f5f5f5';
+            ttsButton.style.color = 'black';
+            window.speechSynthesis.cancel();
+        }
+    };
+    
+    // Read the entire page content
+    window.readPageContent = function() {
+        if (!isTTSActive) {
+            console.log('TTS is not active, not reading content.');
+            return;
+        }
+        
+        // Get the current language
+        const currentLang = document.documentElement.lang || 'en';
+        
+        // Function to create and speak an utterance
+        const speakText = (text, rate = 1) => {
+            if (!text) return null;
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.rate = rate;
+            utterance.pitch = 1;
+            utterance.volume = 1;
+            utterance.lang = currentLang;
+            
+            if (currentTTSVoice) {
+                utterance.voice = currentTTSVoice;
+            }
+            
+            return utterance;
+        };
+    
+        // Create a queue of utterances
+        const utterances = [];
+        
+        // 1. Read navigation links once, clearly
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            // Get the complete text content, including any child elements
+            const text = link.textContent.replace(/\s+/g, ' ').trim();
+            if (text) {
+                const utterance = speakText(text, 0.9);
+                if (utterance) {
+                    utterances.push(utterance);
+                }
+            }
+        });
+    
+        // 2. Read the main content
+        const mainContent = Array.from(document.querySelectorAll('[data-translate]'))
+            .filter(el => el.getAttribute('data-lang') === currentLang || !el.getAttribute('data-lang'))
+            .map(el => el.textContent.replace(/\s+/g, ' ').trim())
+            .filter(text => text) // Remove empty strings
+            .join(' ');
+    
+        if (mainContent) {
+            const utterance = speakText(mainContent, 1);
+            if (utterance) {
+                utterances.push(utterance);
+            }
+        }
+    
+        // Function to speak the next utterance in the queue
+        const speakNext = (index) => {
+            if (index < utterances.length) {
+                const utterance = utterances[index];
+                utterance.onend = () => {
+                    // Add a pause between items
+                    setTimeout(() => {
+                        speakNext(index + 1);
+                    }, 500); // Consistent pause between all items
+                };
+                window.speechSynthesis.speak(utterance);
+            }
+        };
+    
+        // Start speaking the queue
+        speakNext(0);
+    };
+    
+    // Increase font size
+    window.increaseFontSize = function() {
+        currentFontSize += 2;
+        document.body.style.fontSize = currentFontSize + 'px';
+    };
+    
+    // Decrease font size
+    window.decreaseFontSize = function() {
+        currentFontSize = Math.max(12, currentFontSize - 2);
+        document.body.style.fontSize = currentFontSize + 'px';
+    };
+    
+    // Toggle high contrast mode
+    window.toggleHighContrast = function() {
+        isHighContrast = !isHighContrast;
+        const contrastButton = document.getElementById('contrastToggle');
+        
+        if (isHighContrast) {
+            document.body.classList.add('high-contrast');
+            contrastButton.style.backgroundColor = '#ff4500';
+            contrastButton.style.color = 'white';
+        } else {
+            document.body.classList.remove('high-contrast');
+            contrastButton.style.backgroundColor = '#f5f5f5';
+            contrastButton.style.color = 'black';
+        }
+    };
+    
+    // Reset all accessibility settings
+    window.resetAccessibility = function() {
+        // Reset font size
+        currentFontSize = 16;
+        document.body.style.fontSize = ''; // Resets to default
+    
+        // Reset high contrast
+        isHighContrast = false;
+        document.body.classList.remove('high-contrast');
+        document.getElementById('contrastToggle').style.backgroundColor = '#f5f5f5';
+        document.getElementById('contrastToggle').style.color = 'black';
+    
+        // Reset text-to-speech
+        isTTSActive = false;
+        window.speechSynthesis.cancel(); // Stop any ongoing speech
+        document.getElementById('ttsToggle').style.backgroundColor = '#f5f5f5';
+        document.getElementById('ttsToggle').style.color = 'black';
+    
+        // Re-select voice based on current page language (defaults to English)
+        window.selectTTSVoice(document.documentElement.lang || 'en');
+    };
+    
+    // Initial setup for voices and auto-read
+    document.addEventListener('DOMContentLoaded', () => {
+        const initializeTTSOnLoad = () => {
+            // Set TTS to active by default
+            isTTSActive = true;
+            
+            // Initialize voice selection
+            window.selectTTSVoice(document.documentElement.lang || 'en');
+            
+            // Set the TTS button to active state
+            const ttsButton = document.getElementById('ttsToggle');
+            if (ttsButton) {
+                ttsButton.style.backgroundColor = '#ff4500';
+                ttsButton.style.color = 'white';
+            }
+    
+            // Start reading the page content automatically
+            setTimeout(() => {
+                window.readPageContent();
+            }, 1000); // Small delay to ensure everything is loaded
+        };
+    
+        if (window.speechSynthesis && window.speechSynthesis.getVoices().length > 0) {
+            initializeTTSOnLoad();
+        } else if (window.speechSynthesis) {
+            window.speechSynthesis.onvoiceschanged = () => {
+                initializeTTSOnLoad();
+            };
+        } else {
+            console.warn("SpeechSynthesis API not supported in this browser.");
+        }
+    });
+    </script>
+    </body>
+    </html>
+    
 </body>
 </html> 

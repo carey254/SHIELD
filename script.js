@@ -1,3 +1,32 @@
+// Language switcher functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Set default language
+    let currentLang = localStorage.getItem('language') || 'en';
+    setLanguage(currentLang);
+
+    // Add click handlers to language switcher links
+    document.querySelectorAll('.language-switcher a[data-lang]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lang = this.getAttribute('data-lang');
+            setLanguage(lang);
+        });
+    });
+});
+
+function setLanguage(lang) {
+    // Save selected language
+    localStorage.setItem('language', lang);
+    
+    // Update all elements with data-translate attribute
+    document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   let event = {
     title: "Introduction to Cyber Attacks",
@@ -205,129 +234,42 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-//CONTACT EMAIL SEND
-// Handle mailing list form
-document.getElementById('mailing-list').addEventListener('submit', function (e) {
-  e.preventDefault(); // Prevent normal form submission
-
-  const email = document.getElementById('mailingEmail').value;
-
-  fetch('send_email.php', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: 'email=' + encodeURIComponent(email)
-  })
-  .then(response => response.text())
-  .then(text => {
-    console.log("Server response:", text);
-    try {
-      const json = JSON.parse(text);
-      document.getElementById('mailingResponse').textContent = json.message;
-    } catch (err) {
-      document.getElementById('mailingResponse').textContent = "Something went wrong. Please try again.";
-      console.error("JSON parse error:", err);
-    }
-  })
-  .catch(error => {
-    document.getElementById('mailingResponse').textContent = "Request failed. Please try again.";
-    console.error("Fetch error:", error);
-  });
-});
-
-// Handle contact form submission
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-
-  const form = this;
-  const responseEl = document.getElementById('response');
-  const formData = new FormData(form);
-
-  responseEl.textContent = 'Sending…';
-  responseEl.style.color = '';
-
-  try {
-    const res = await fetch('submit_contact.php', {
-      method: 'POST',
-      body: formData
-    });
-    const data = await res.json();
-
-    responseEl.textContent = data.message;
-    responseEl.style.color = data.status === 'success' ? 'green' : 'red';
-
-    if (data.status === 'success') {
-      form.reset();
-
-      const existingPopup = document.getElementById('submissionPopup');
-      if (existingPopup) existingPopup.remove();
-
-      const popup = document.createElement('div');
-      popup.id = 'submissionPopup';
-      popup.textContent = "Thank you for your thoughts. Let's stay safe online 💙!";
-      popup.style.position = 'fixed';
-      popup.style.top = '20px';
-      popup.style.right = '20px';
-      popup.style.padding = '15px 20px';
-      popup.style.backgroundColor = '#28a745';
-      popup.style.color = '#fff';
-      popup.style.fontWeight = 'bold';
-      popup.style.borderRadius = '10px';
-      popup.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
-      popup.style.zIndex = '1000';
-      popup.style.transition = 'opacity 0.5s ease-in-out';
-
-      document.body.appendChild(popup);
-      setTimeout(() => {
-        popup.style.opacity = '0';
-        setTimeout(() => popup.remove(), 500);
-      }, 5000);
-    }
-  } catch (error) {
-    console.error('Error:', error);
-    responseEl.textContent = 'Server error. Please try again later.';
-    responseEl.style.color = 'red';
-  }
-});
 
 
 
 
 
 //heroes section
+const images = document.querySelectorAll('.bg-image');
+let current = 0;
 
-
-  const images = document.querySelectorAll('.bg-image');
-  let current = 0;
-
-  setInterval(() => {
-    images[current].classList.remove('active');
-    current = (current + 1) % images.length;
-    images[current].classList.add('active');
-  }, 4000); // change every 4 seconds
+setInterval(() => {
+  images[current].classList.remove('active');
+  current = (current + 1) % images.length;
+  images[current].classList.add('active');
+}, 4000); // change every 4 seconds
 
 
 
-  const hamburger = document.getElementById('hamburger');
-  const sideMenu = document.getElementById('sideMenu');
-  const closeBtn = document.getElementById('closeBtn');
-  const overlay = document.getElementById('menuOverlay');
+const hamburger = document.getElementById('hamburger');
+const sideMenu = document.getElementById('sideMenu');
+const closeBtn = document.getElementById('closeBtn');
+const overlay = document.getElementById('menuOverlay');
 
-  hamburger.addEventListener('click', () => {
-    sideMenu.classList.add('open');
-    overlay.classList.add('active');
-  });
+hamburger.addEventListener('click', () => {
+  sideMenu.classList.add('open');
+  overlay.classList.add('active');
+});
 
-  closeBtn.addEventListener('click', () => {
-    sideMenu.classList.remove('open');
-    overlay.classList.remove('active');
-  });
+closeBtn.addEventListener('click', () => {
+  sideMenu.classList.remove('open');
+  overlay.classList.remove('active');
+});
 
-  overlay.addEventListener('click', () => {
-    sideMenu.classList.remove('open');
-    overlay.classList.remove('active');
-  });
+overlay.addEventListener('click', () => {
+  sideMenu.classList.remove('open');
+  overlay.classList.remove('active');
+});
 
 
   

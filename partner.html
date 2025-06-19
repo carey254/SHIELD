@@ -38,7 +38,11 @@ padding-top: 100px; /* 👈 Adds space for the nav */
 
   }
 
-
+  .nav-links a:hover {
+    background-color: #ff4500;
+    color: white;
+    border-radius: 12px;
+  }
   
   
 
@@ -50,33 +54,44 @@ padding-top: 100px; /* 👈 Adds space for the nav */
   <!-- Navigation Bar -->
   <nav>
     <a href="index.html" class="logo-link">
-      <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
+      <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo">
   </a>
   
-    <div class="nav-links" role="menubar">
-        <a href="index.html" role="menuitem">Home</a>
-        <a href="about us.html" role="menuitem">About Us</a>
-        <a href="resource&support.html" role="menuitem">Resources</a>
-        <div class="dropdown" role="menuitem" aria-haspopup="true">
-            <a href="#" aria-expanded="false">Get Involved</a>
+    <div class="right-nav-section">
+        <div class="nav-links" role="menubar">
+            <a href="index.html" role="menuitem" data-translate="home_link">Home</a>
+            <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
+            <a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a>
+            <div class="dropdown" role="menuitem" aria-haspopup="true">
+                <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content" role="menu">
+                    <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
+                    <a href="news.html" role="menuitem" data-translate="news_link">News</a>
+                    <a href="partner.html" class="highlight" role="menuitem" aria-current="page" data-translate="partner_link">Partner with Us</a>
+                </div>
+            </div>
+            <a href="donate.html" role="menuitem" data-translate="donate_link">Donate</a>
+            
+            <!-- Report Button added to Navigation -->
+            <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">Where to Report</a>
+        </div>
+
+        <!-- Language Switcher -->
+        <div class="dropdown language-switcher" role="menuitem" aria-haspopup="true">
+            <a href="#" aria-expanded="false" data-translate="english_link">English <i class="fas fa-chevron-down"></i></a>
             <div class="dropdown-content" role="menu">
-                <a href="events.html" role="menuitem">Events</a>
-                <a href="news.html" role="menuitem">News</a>
-                <a href="partner.html" class="highlight" role="menuitem" aria-current="page">Partner with Us</a>
+                <a href="#" data-lang="en" data-translate="english_link">English</a>
+                <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+                <a href="#" data-lang="fr" data-translate="french_link">French</a>
+                <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
             </div>
         </div>
-        <a href="donate.html" role="menuitem">Donate</a>
-        
-        <!-- Report Button added to Navigation -->
-        <a href="report.html" class="nav-report-btn" role="menuitem">
-            <i class="fas fa-exclamation-circle"></i>
-            Where to Report
-        </a>
     </div>
-    <!-- Hamburger Icon (Mobile Only) -->
-    <div class="hamburger" onclick="openMenu()">
-      <i class="fas fa-bars"></i>
-    </div>
+
+<!-- Hamburger Icon (Mobile Only) -->
+<div class="hamburger" onclick="openMenu()">
+  <i class="fas fa-bars"></i>
+</div>
 </nav>
 
 <!-- Mobile Sidebar Menu -->
@@ -85,41 +100,41 @@ padding-top: 100px; /* 👈 Adds space for the nav */
     <span class="close-btn" onclick="closeMenu()">&times;</span>
   </div>
   <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about us.html">About Us</a></li>
-    <li><a href="resource&support.html">Resources</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="news.html">News</a></li>
-    <li><a href="partner.html">Partner with Us</a></li>
-    <li><a href="donate.html" class="highlight">Donate</a></li>
+    <li><a href="index.html" data-translate="home_link">Home</a></li>
+    <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
+    <li><a href="resource&support.html" data-translate="resources_link">Resources</a></li>
+    <li><a href="events.html" data-translate="events_link">Events</a></li>
+    <li><a href="news.html" data-translate="news_link">News</a></li>
+    <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
+    <li><a href="donate.html" class="highlight" data-translate="donate_link">Donate</a></li>
   </ul>
 </div>
 
   <section class="partner-section">
     <div class="partner-left">
-      <span>PARTNER</span>
-      <h2>JOIN OUR MISSION TO COMBAT TECH-FACILITATED GENDER-BASED VIOLENCE</h2>
+      <span data-translate="partner_badge">PARTNER</span>
+      <h2 data-translate="partner_main_heading">JOIN OUR MISSION TO COMBAT TECH-FACILITATED GENDER-BASED VIOLENCE</h2>
       <img src="images/partner-.png" alt="Handshake Icon" style="width: 350px; margin-top: 5px;" />
     </div>
     <div class="partner-right">
-      <h3>LET'S BUILD SAFER DIGITAL SPACES, TOGETHER.</h3>
-      <p>
+      <h3 data-translate="partner_sub_heading">LET'S BUILD SAFER DIGITAL SPACES, TOGETHER.</h3>
+      <p data-translate="partner_p1">
         We are proud to launch a heartfelt initiative rooted in equity, safety, inclusion and community. 
         Our mission is to raise awareness, promote effective cyber safety practices, and foster meaningful community engagement in the fight against Technology Facilitated Gender-Based Violence (TFGBV).
       </p>
-      <p>
+      <p data-translate="partner_p2">
         At the core of our work is a commitment to inclusivity, especially for individuals from marginalized communities, including Persons with Disabilities (PWDs). 
         Through accessible resources, advocacy, and partnerships, we strive to ensure that no one is left behind in the journey toward safer online and offline environments.
       </p>
-      <p>
+      <p data-translate="partner_p3">
         With the support of corporate partners, philanthropists, and passionate changemakers, we're shaping a future where technology empowers rather than endangers, and where every voice can be heard without fear.
       </p>
-      <p><strong>Contact Us:</strong> 
+      <p><strong><span data-translate="contact_us_strong">Contact Us:</span></strong> 
         <a href="mailto:shi3ldmaidens@gmail.com">shi3ldmaidens@gmail.com</a>
       </p>
       <a href="https://docs.google.com/forms/d/1hPSHoeDtr1xTP0qmF07xg9IgmUeESB2S7OgQiAvEsls"
    target="_blank"
-   class="contact-btn become-partner-btn">
+   class="contact-btn become-partner-btn" data-translate="become_partner_button">
    Become a Partner
 </a>
 
@@ -134,15 +149,15 @@ padding-top: 100px; /* 👈 Adds space for the nav */
         </div>
 
         <div class="footer-links">
-            <h3>Quick Links</h3>
+            <h3 data-translate="quick_links">Quick Links</h3>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about us.html">About Us</a></li>
-                <li><a href="resource&support.html">Resources</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="partner.html">Partner with Us</a></li>
-                <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                <li><a href="index.html" data-translate="home_link">Home</a></li>
+                <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
+                <li><a href="resource&support.html" data-translate="resources_link">Resources</a></li>
+                <li><a href="events.html" data-translate="events_link">Events</a></li>
+                <li><a href="news.html" data-translate="news_link">News</a></li>
+                <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
+                <li><a href="donate.html" class="donate-btn" data-translate="donate_link">Donate</a></li>
             </ul>
             <div class="payment-icons">
                 <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
@@ -152,14 +167,14 @@ padding-top: 100px; /* 👈 Adds space for the nav */
         </div>
 
         <div class="footer-location">
-            <h3>Location</h3>
+            <h3 data-translate="location">Location</h3>
             <p>Nairobi, Kenya</p>
         </div>
 
         <div class="footer-contact">
-            <h3>Contact Us</h3>
+            <h3 data-translate="contact_us">Contact Us</h3>
             <p>Email: shi3ldmaidens@gmail.com</p>
-            <h3>Our Socials</h3>
+            <h3 data-translate="our_socials">Our Socials</h3>
             <div class="social-icons">
               <a href="https://x.com/_shield_maidens" target="_blank">
                   <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
@@ -174,7 +189,7 @@ padding-top: 100px; /* 👈 Adds space for the nav */
         </div>
     </div>
     <div class="footer-bottom">
-        <p>Copyright © 2025 Shield Maidens</p>
+        <p data-translate="copyright">Copyright © 2025 Shield Maidens</p>
     </div>
 </footer>
 
@@ -213,5 +228,338 @@ padding-top: 100px; /* 👈 Adds space for the nav */
 
   <script src="accessibility.js"></script>
   <script src="script.js"></script>
+  <script src="js/partner-translations.js"></script>
+  <script src="js/language-handler.js"></script>
+
+  <div class="accessibility-panel" id="accessibilityPanel">
+    <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()">
+      <i class="fas fa-universal-access"></i>
+    </button>
+    <div class="accessibility-controls">
+      <button onclick="toggleTextToSpeech()" id="ttsToggle">
+        <i class="fas fa-volume-up"></i> TTS
+      </button>
+      <button onclick="increaseFontSize()">
+        <i class="fas fa-text-height"></i> A+
+      </button>
+      <button onclick="decreaseFontSize()">
+        <i class="fas fa-text-height"></i> A-
+      </button>
+      <button onclick="toggleHighContrast()" id="contrastToggle">
+        <i class="fas fa-adjust"></i> Contrast
+      </button>
+      <button onclick="resetAccessibility()">
+        <i class="fas fa-undo"></i> Reset
+      </button>
+    </div>
+  </div>
+  
+  <style>
+  /* Accessibility Panel Styles */
+  .accessibility-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .accessibility-toggle {
+    background: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .accessibility-toggle:hover {
+    transform: scale(1.1);
+  }
+  
+  .accessibility-controls {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .accessibility-controls.active {
+    display: flex;
+  }
+  
+  .accessibility-controls button {
+    background: #f5f5f5;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accessibility-controls button:hover {
+    background: #e0e0e0;
+  }
+  
+  /* High Contrast Mode */
+  .high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+  }
+  
+  .high-contrast * {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+  }
+  
+  .high-contrast a {
+    color: #ffff00 !important;
+  }
+  
+  .high-contrast button {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+  </style>
+  
+  <script>
+  // Accessibility Functions (Globally accessible)
+  let isTTSActive = true; // Set to true by default for auto-read
+  let isHighContrast = false;
+  let currentFontSize = 16;
+  let currentTTSVoice = null; // To store the currently selected voice
+  
+  // Function to find a voice based on language
+  window.selectTTSVoice = function(lang) {
+      const voices = window.speechSynthesis.getVoices();
+      console.log('Available Voices:', voices);
+      console.log('Attempting to select voice for language:', lang);
+  
+      let selectedVoice = null;
+  
+      if (lang === 'en') {
+          // Prioritize Awasili voice for English
+          selectedVoice = voices.find(voice => voice.name === 'Awasili') ||
+                         voices.find(voice => voice.name === 'Asilia') ||
+                         voices.find(voice => voice.lang === 'en-KE') ||
+                         voices.find(voice => voice.lang.startsWith('en-US')) ||
+                         voices.find(voice => voice.lang.startsWith('en-GB')) ||
+                         voices.find(voice => voice.lang.startsWith('en'));
+      } else if (lang === 'sw') {
+          // Prioritize Swahili (Kenya) then any Swahili voice
+          selectedVoice = voices.find(voice => voice.lang === 'sw-KE') ||
+                         voices.find(voice => voice.lang.startsWith('sw'));
+      } else if (lang === 'fr') {
+          // Prioritize French voices
+          selectedVoice = voices.find(voice => voice.lang.startsWith('fr'));
+      } else if (lang === 'ar') {
+          // Prioritize Arabic voices
+          selectedVoice = voices.find(voice => voice.lang.startsWith('ar'));
+      }
+  
+      currentTTSVoice = selectedVoice || voices.find(voice => voice.lang.startsWith('en')) || voices[0];
+      if (!currentTTSVoice) {
+          console.warn("No suitable voice found for language " + lang + ", using default system voice.");
+      } else {
+          console.log('Selected voice:', currentTTSVoice.name, '(' + currentTTSVoice.lang + ')');
+      }
+  };
+  
+  // Toggle accessibility panel visibility
+  window.toggleAccessibilityPanel = function() {
+      const controls = document.querySelector('.accessibility-controls');
+      controls.classList.toggle('active');
+  };
+  
+  // Toggle text-to-speech on/off
+  window.toggleTextToSpeech = function() {
+      isTTSActive = !isTTSActive;
+      const ttsButton = document.getElementById('ttsToggle');
+      
+      if (isTTSActive) {
+          ttsButton.style.backgroundColor = '#ff4500';
+          ttsButton.style.color = 'white';
+          window.readPageContent(); // Restart reading when toggled on
+      } else {
+          ttsButton.style.backgroundColor = '#f5f5f5';
+          ttsButton.style.color = 'black';
+          window.speechSynthesis.cancel();
+      }
+  };
+  
+  // Read the entire page content
+  window.readPageContent = function() {
+      if (!isTTSActive) {
+          console.log('TTS is not active, not reading content.');
+          return;
+      }
+      
+      // Get the current language
+      const currentLang = document.documentElement.lang || 'en';
+      
+      // Function to create and speak an utterance
+      const speakText = (text, rate = 1) => {
+          if (!text) return null;
+          
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.rate = rate;
+          utterance.pitch = 1;
+          utterance.volume = 1;
+          utterance.lang = currentLang;
+          
+          if (currentTTSVoice) {
+              utterance.voice = currentTTSVoice;
+          }
+          
+          return utterance;
+      };
+  
+      // Create a queue of utterances
+      const utterances = [];
+      
+      // 1. Read navigation links once, clearly
+      const navLinks = document.querySelectorAll('.nav-links a');
+      navLinks.forEach(link => {
+          // Get the complete text content, including any child elements
+          const text = link.textContent.replace(/\s+/g, ' ').trim();
+          if (text) {
+              const utterance = speakText(text, 0.9);
+              if (utterance) {
+                  utterances.push(utterance);
+              }
+          }
+      });
+  
+      // 2. Read the main content
+      const mainContent = Array.from(document.querySelectorAll('[data-translate]'))
+          .filter(el => el.getAttribute('data-lang') === currentLang || !el.getAttribute('data-lang'))
+          .map(el => el.textContent.replace(/\s+/g, ' ').trim())
+          .filter(text => text) // Remove empty strings
+          .join(' ');
+  
+      if (mainContent) {
+          const utterance = speakText(mainContent, 1);
+          if (utterance) {
+              utterances.push(utterance);
+          }
+      }
+  
+      // Function to speak the next utterance in the queue
+      const speakNext = (index) => {
+          if (index < utterances.length) {
+              const utterance = utterances[index];
+              utterance.onend = () => {
+                  // Add a pause between items
+                  setTimeout(() => {
+                      speakNext(index + 1);
+                  }, 500); // Consistent pause between all items
+              };
+              window.speechSynthesis.speak(utterance);
+          }
+      };
+  
+      // Start speaking the queue
+      speakNext(0);
+  };
+  
+  // Increase font size
+  window.increaseFontSize = function() {
+      currentFontSize += 2;
+      document.body.style.fontSize = currentFontSize + 'px';
+  };
+  
+  // Decrease font size
+  window.decreaseFontSize = function() {
+      currentFontSize = Math.max(12, currentFontSize - 2);
+      document.body.style.fontSize = currentFontSize + 'px';
+  };
+  
+  // Toggle high contrast mode
+  window.toggleHighContrast = function() {
+      isHighContrast = !isHighContrast;
+      const contrastButton = document.getElementById('contrastToggle');
+      
+      if (isHighContrast) {
+          document.body.classList.add('high-contrast');
+          contrastButton.style.backgroundColor = '#ff4500';
+          contrastButton.style.color = 'white';
+      } else {
+          document.body.classList.remove('high-contrast');
+          contrastButton.style.backgroundColor = '#f5f5f5';
+          contrastButton.style.color = 'black';
+      }
+  };
+  
+  // Reset all accessibility settings
+  window.resetAccessibility = function() {
+      // Reset font size
+      currentFontSize = 16;
+      document.body.style.fontSize = ''; // Resets to default
+  
+      // Reset high contrast
+      isHighContrast = false;
+      document.body.classList.remove('high-contrast');
+      document.getElementById('contrastToggle').style.backgroundColor = '#f5f5f5';
+      document.getElementById('contrastToggle').style.color = 'black';
+  
+      // Reset text-to-speech
+      isTTSActive = false;
+      window.speechSynthesis.cancel(); // Stop any ongoing speech
+      document.getElementById('ttsToggle').style.backgroundColor = '#f5f5f5';
+      document.getElementById('ttsToggle').style.color = 'black';
+  
+      // Re-select voice based on current page language (defaults to English)
+      window.selectTTSVoice(document.documentElement.lang || 'en');
+  };
+  
+  // Initial setup for voices and auto-read
+  document.addEventListener('DOMContentLoaded', () => {
+      const initializeTTSOnLoad = () => {
+          // Set TTS to active by default
+          isTTSActive = true;
+          
+          // Initialize voice selection
+          window.selectTTSVoice(document.documentElement.lang || 'en');
+          
+          // Set the TTS button to active state
+          const ttsButton = document.getElementById('ttsToggle');
+          if (ttsButton) {
+              ttsButton.style.backgroundColor = '#ff4500';
+              ttsButton.style.color = 'white';
+          }
+  
+          // Start reading the page content automatically
+          setTimeout(() => {
+              window.readPageContent();
+          }, 1000); // Small delay to ensure everything is loaded
+      };
+  
+      if (window.speechSynthesis && window.speechSynthesis.getVoices().length > 0) {
+          initializeTTSOnLoad();
+      } else if (window.speechSynthesis) {
+          window.speechSynthesis.onvoiceschanged = () => {
+              initializeTTSOnLoad();
+          };
+      } else {
+          console.warn("SpeechSynthesis API not supported in this browser.");
+      }
+  });
+  </script>
+  </body>
+  </html>
+  
 </body>
 </html>

@@ -267,6 +267,24 @@ nav a:not(.logo-link):hover {
   }
 }
 
+.logo {
+  height: 150px !important;
+  object-fit: contain;
+}
+
+.right-nav-section {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 20px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
 </style>
 </head>
 <body>
@@ -274,28 +292,33 @@ nav a:not(.logo-link):hover {
     <!-- Navigation Bar -->
     <nav>
         <a href="index.html" class="logo-link">
-            <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
+            <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo">
         </a>
-        
-        <div class="nav-links" role="menubar">
-            <a href="index.html" role="menuitem">Home</a>
-            <a href="about us.html" role="menuitem">About Us</a>
-            <a href="resource&support.html" role="menuitem">Resources</a>
-            <div class="dropdown" role="menuitem" aria-haspopup="true">
-                <a href="#" aria-expanded="false">Get Involved</a>
+        <div class="right-nav-section">
+            <div class="nav-links" role="menubar">
+                <a href="index.html" role="menuitem" data-translate="home_link">Home</a>
+                <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
+                <a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a>
+                <div class="dropdown" role="menuitem" aria-haspopup="true">
+                    <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content" role="menu">
+                        <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
+                        <a href="news.html" class="highlight" role="menuitem" aria-current="page" data-translate="news_link">News</a>
+                        <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
+                    </div>
+                </div>
+                <a href="donate.html" role="menuitem" data-translate="donate_link">Donate</a>
+                <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">Where to Report</a>
+            </div>
+            <div class="dropdown language-switcher" role="menuitem" aria-haspopup="true">
+                <a href="#" aria-expanded="false" data-translate="english_link">English <i class="fas fa-chevron-down"></i></a>
                 <div class="dropdown-content" role="menu">
-                    <a href="events.html" role="menuitem">Events</a>
-                    <a href="news.html" role="menuitem" aria-current="page">News</a>
-                    <a href="partner.html" role="menuitem">Partner with Us</a>
+                    <a href="#" data-lang="en" data-translate="english_link">English</a>
+                    <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+                    <a href="#" data-lang="fr" data-translate="french_link">French</a>
+                    <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
                 </div>
             </div>
-            <a href="donate.html" class="highlight" role="menuitem">Donate</a>
-            
-            <!-- Report Button added to Navigation -->
-            <a href="report.html" class="nav-report-btn" role="menuitem">
-                <i class="fas fa-exclamation-circle"></i>
-                Where to Report
-            </a>
         </div>
     </nav>
     
@@ -310,9 +333,9 @@ nav a:not(.logo-link):hover {
     <span class="close-btn" onclick="closeMenu()">&times;</span>
   </div>
   <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about us.html">About Us</a></li>
-    <li><a href="resource&support.html">Resources</a></li>
+    <li><a href="index.html" data-translate="home_link">Home</a></li>
+    <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
+    <li><a href="resource&support.html" data-translate="resources_link">Resources</a></li>
     <li><a href="events.html">Events</a></li>
     <li><a href="news.html">News</a></li>
     <li><a href="partner.html">Partner with Us</a></li>
@@ -323,19 +346,19 @@ nav a:not(.logo-link):hover {
 
     <main class="news-section">
         <section class="milestones">
-            <h2>Milestones</h2>
-            <h3>2024</h3>
+            <h2 data-translate="milestones_title">Milestones</h2>
+            <h3 data-translate="year_2024">2024</h3>
             <div class="milestone-card">
                 <span class="year"></span>
-                <p> UN Women,African Girls Can Code Initiative (AGCCI) girls sessions on Digital Security and Mobile App Security. Two sessions with 30+ attendees total.</p>
+                <p data-translate="un_women_session">UN Women, African Girls Can Code Initiative (AGCCI) girls sessions on Digital Security and Mobile App Security. Two sessions with 30+ attendees total.</p>
             </div>
             <div class="milestone-card">
                 <span class="year"></span>
-                <p>Partnered with Inuka AgriSolutions – training on Cybersecurity & Artificial Intelligence (AI) during a holiday bootcamp. 27 trained.</p>
+                <p data-translate="inuka_partnership">Partnered with Inuka AgriSolutions – training on Cybersecurity & Artificial Intelligence (AI) during a holiday bootcamp. 27 trained.</p>
             </div>
             <div class="milestone-card">
-              <h4>Hour of Code Launch at Pharo School Nairobi</h4>
-              <p>Happy to have been part of the launch of an Hour of Code at Pharo School Nairobi. The spark of curiosity in the young learners' eyes as they learn to code is a powerful reminder of the importance of introducing these skills early on ✨💡.</p>
+              <h4 data-translate="hour_of_code_title">Hour of Code Launch at Pharo School Nairobi</h4>
+              <p data-translate="hour_of_code_description">Happy to have been part of the launch of an Hour of Code at Pharo School Nairobi. The spark of curiosity in the young learners' eyes as they learn to code is a powerful reminder of the importance of introducing these skills early on ✨💡.</p>
               
               <div class="milestone-images">
                 <img src="images/pharoo.png" alt="Pharo School Hour of Code 1">
@@ -345,9 +368,9 @@ nav a:not(.logo-link):hover {
             </div>
             
             <div class="milestone-card">
-              <h4>Highlight from GICICI Primary School Session</h4>
+              <h4 data-translate="gicici_title">Highlight from GICICI Primary School Session</h4>
               <span class="year"></span>
-              <p>
+              <p data-translate="gicici_description">
                 GICICI Primary School with Betty Mwende – taught 36 students about Cyberbullying & Online Safety.
                 It was an absolute honor to be invited and share insights on internet safety. The students were engaged 
                 and well-informed, offering a glimpse into the digital habits of today's young generation. 
@@ -362,9 +385,9 @@ nav a:not(.logo-link):hover {
             </div>
             
             <div class="milestone-card">
-              <h4>Highlight from Gifted Community Center on Good Digital CitizenshipSession</h4>
+              <h4 data-translate="gifted_center_title">Highlight from Gifted Community Center on Good Digital Citizenship Session</h4>
               <span class="year"></span>
-              <p>
+              <p data-translate="gifted_center_description">
                 X-Space event with Gifted Community Center – focused on Good Digital Citizenship & Cybersecurity Protection. 
                 Joined by tech experts, legislators, student leaders, and women with disabilities, the session emphasized 
                 online safety, inclusion, and fighting technology-facilitated gender-based violence (TFGBV). 
@@ -387,15 +410,15 @@ nav a:not(.logo-link):hover {
           </div>
   
           <div class="footer-links">
-              <h3>Quick Links</h3>
+              <h3 data-translate="quick_links">Quick Links</h3>
               <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="about us.html">About Us</a></li>
-                  <li><a href="resource&support.html">Resources</a></li>
-                  <li><a href="events.html">Events</a></li>
-                  <li><a href="news.html">News</a></li>
-                  <li><a href="partner.html">Partner with Us</a></li>
-                  <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                  <li><a href="index.html" data-translate="home_link">Home</a></li>
+                  <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
+                  <li><a href="resource&support.html" data-translate="resources_link">Resources</a></li>
+                  <li><a href="events.html" data-translate="events_link">Events</a></li>
+                  <li><a href="news.html" data-translate="news_link">News</a></li>
+                  <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
+                  <li><a href="donate.html" class="donate-btn" data-translate="donate_link">Donate</a></li>
               </ul>
               <div class="payment-icons">
                   <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
@@ -405,15 +428,15 @@ nav a:not(.logo-link):hover {
           </div>
   
           <div class="footer-location">
-              <h3>Location</h3>
+              <h3 data-translate="location">Location</h3>
               <p>Nairobi, Kenya</p>
           </div>
   
           <div class="footer-contact">
-              <h3>Contact Us</h3>
+              <h3 data-translate="contact_us">Contact Us</h3>
               <p>Email: shi3ldmaidens@gmail.com
               </p>
-              <h3>Our Socials</h3>
+              <h3 data-translate="our_socials">Our Socials</h3>
               <div class="social-icons">
                 <a href="https://x.com/_shield_maidens" target="_blank">
                     <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
@@ -428,7 +451,7 @@ nav a:not(.logo-link):hover {
           </div>
       </div>
       <div class="footer-bottom">
-          <p>Copyright © 2025 Shield Maidens</p>
+          <p data-translate="copyright">Copyright © 2025 Shield Maidens</p>
       </div>
   </footer>
   
@@ -444,41 +467,13 @@ function closeMenu() {
 </script>
     <script src="accessibility.js"></script>
     <script src="script.js"></script>
+    <script src="js/news-translations.js"></script>
 
 <!-- Report Form Modal -->
-<div id="reportModal" class="modal">
-  <div class="modal-content">
-    <span class="close-modal" onclick="closeReportForm()">&times;</span>
-    <h2>Report an Incident</h2>
-    <form id="reportForm" onsubmit="submitReport(event)">
-      <div class="form-group">
-        <label for="reporterName">Your Name:</label>
-        <input type="text" id="reporterName" name="reporterName" required>
-      </div>
-      <div class="form-group">
-        <label for="incidentDescription">Describe the Incident:</label>
-        <textarea id="incidentDescription" name="incidentDescription" required></textarea>
-      </div>
-      <div class="form-group">
-        <label for="reporterEmail">Email Address (Optional):</label>
-        <input type="email" id="reporterEmail" name="reporterEmail">
-      </div>
-      <div class="form-group checkbox">
-        <input type="checkbox" id="contactPermission" name="contactPermission">
-        <label for="contactPermission">I agree to be contacted for follow-up (we will respond within 12 hours)</label>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="submit-btn">Submit Report</button>
-      </div>
-    </form>
-  </div>
-</div>
 
-<!-- Floating Report Button -->
-<button class="floating-report-btn" onclick="openReportForm()">
-  <i class="fas fa-exclamation-circle"></i>
-  Report Incident
-</button>
+
+    <!-- Add this before the closing </body> tag -->
+    <script src="js/language-handler.js"></script>
 </body>
 </html>
 

@@ -1,9 +1,10 @@
 /* General Styles */
 body {
   margin: 0;
-  padding: 0; /* Reset padding-top */
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
+  padding-top: 80px; /* Add padding to body equal to nav height */
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
   box-sizing: border-box;
 }
 
@@ -111,47 +112,308 @@ body {
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: white;
-    padding: 15px 40px;
+    justify-content: flex-start;
+    padding: 0 32px;
+    background-color: #fff;
+    height: 80px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     z-index: 1000;
-    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Logo container - ALWAYS on the far left, using flexbox */
+.logo-link {
+    margin-right: auto; /* Pushes content to the right */
+}
+
+/* Right section - contains nav links and language switcher, always on the far right */
+.right-nav-section {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between nav-links and language switcher */
+}
+
+/* Language Switcher container */
+.language-switcher {
+    position: relative;
+    direction: ltr !important; /* Force LTR direction for the switcher container itself */
+}
+
+/* Language Switcher dropdown content alignment */
+.language-switcher .dropdown-content {
+    right: 0; /* Aligns dropdown to the right edge of its parent (.language-switcher) */
+    left: auto;
+    text-align: right; /* Text within dropdown should be RTL for Arabic, LTR for others */
+    direction: ltr !important; /* Ensure dropdown content box itself is LTR */
+}
+
+/* General body and main content direction */
+body {
+}
+
+/* Ensure the main page content layout remains LTR */
+main,
+section,
+footer {
+}
+
+/* Override specific elements for RTL text alignment within an LTR layout */
+[dir="rtl"] .nav-links a,
+[dir="rtl"] .language-switcher a,
+[dir="rtl"] .dropdown-content a,
+[dir="rtl"] main h1,
+[dir="rtl"] main h2,
+[dir="rtl"] main h3,
+[dir="rtl"] main p,
+[dir="rtl"] main li,
+[dir="rtl"] footer * /* Apply to all elements in the footer */ {
+    text-align: right; /* Align text to the right for RTL languages */
+}
+
+/* Ensure the main language switcher display is always LTR */
+[dir="rtl"] .language-switcher > a[aria-expanded] {
+    direction: ltr !important; /* Keep the 'English' / 'Arabic' text LTR for consistent UI */
+}
+
+/* Adjust text alignment within LTR content for RTL languages */
+[dir="rtl"] main *, [dir="rtl"] section * {
+    text-align: right;
+}
+
+/* Specific exceptions/overrides for nav links if needed */
+[dir="rtl"] .nav-links a, [dir="rtl"] .language-switcher a {
+    text-align: right;
+}
+
+/* Keep logo on the left even in RTL - reaffirming previous rules */
+[dir="rtl"] .logo-link {
+    margin-right: auto;
+    margin-left: 0;
+    order: 1;
+}
+
+/* Keep right section on the right even in RTL - reaffirming previous rules */
+[dir="rtl"] .right-nav-section {
+    margin-left: auto;
+    margin-right: 0;
+    order: 2;
+}
+
+/* Keep language switcher dropdown aligned to the right */
+[dir="rtl"] .language-switcher .dropdown-content {
+    right: 0;
+    left: auto;
+    text-align: right;
+}
+
+/* NEW: General rule for elements that should ALWAYS remain LTR directionally */
+[data-ltr-direction="true"] {
+    direction: ltr !important;
+    text-align: left !important;
 }
 
 /* Logo image size control */
 .logo-link img {
-    height: 50px;
+    height: 90px; /* Maintain increased logo size */
 }
 
-/* Right-side links */
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Reduced spacing between links */
-    margin-right: 140px; /* <-- Add this */
-   
-  white-space: nowrap; /* prevents breaking into 2 lines */
-  
-  
+/* Language Switcher Styling */
+.language-switcher a {
+    text-decoration: none;
+    color: #1a1717;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: 0.3s;
+    border: 1px solid #ccc; /* Add border for the box look */
+    border-radius: 5px; /* Slightly rounded corners */
+    background-color: #fff; /* White background */
+    display: inline-flex; /* Use flex to align text and icon */
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Push arrow to the right */
+    min-width: 120px; /* Ensure consistent width */
+}
+
+.language-switcher a i {
+    margin-left: 10px; /* Space between text and arrow */
+    font-size: 0.9em; /* Adjust arrow size */
+}
+
+.language-switcher .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.language-switcher .dropdown-content a {
+    color: black !important; /* Ensure text color is black */
+    padding: 12px 16px !important;
+    text-decoration: none !important;
+    display: block !important;
+    text-align: left !important;
+    border: none !important; /* Remove border */
+    background-color: transparent !important; /* Remove background color */
+}
+
+.language-switcher .dropdown-content a:hover {
+    background-color: #f1f1f1 !important; /* Uniform light grey background on hover */
+    color: black !important; /* Keep text color black on hover */
+}
+
+.language-switcher:hover .dropdown-content {
+    display: block;
+    animation: flip 0.4s ease-in-out;
+}
+
+@keyframes flip {
+    from { transform: rotateX(90deg); }
+    to { transform: rotateX(0deg); }
+    }
+
+@media (max-width: 768px) {
+    /* Adjust navigation bar for smaller screens */
+    nav {
+        flex-direction: row; /* Keep logo and hamburger on the same row */
+        justify-content: space-between; /* Push logo to left, hamburger to right */
+        align-items: center;
+        padding: 10px 20px; /* Adjust padding for mobile */
+        height: auto; /* Allow height to adjust */
+    }
+
+    /* Hide the regular nav links and language switcher on small screens */
+    .nav-links,
+    .right-nav-section {
+        display: none; /* Hide desktop navigation */
+    }
+
+    /* Hamburger Icon - Show on mobile */
+    .hamburger {
+        display: block; /* Show hamburger icon */
+        order: 2; /* Place hamburger on the right */
+        position: static !important; /* Force it to be positioned within the nav flex container */
+        top: auto; /* Reset fixed positioning */
+        right: auto; /* Reset fixed positioning */
+        margin-left: auto; /* Push to the right within the flex container */
+        z-index: 1001; /* Ensure it's above other elements if necessary */
+    }
+
+    /* Logo - Remain on the left */
+    .logo-link {
+        order: 1; /* Place logo on the left */
+        margin-right: auto; /* Push content to the right */
+    }
+
+    /* Mobile Menu - ensure it's positioned correctly for sliding */
+    .mobile-menu {
+        left: -280px; /* Keep it hidden off-screen by default */
+    }
+
+    /* Ensure mobile menu links are styled for responsiveness */
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    .mobile-menu ul li {
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+    }
+
+    .mobile-menu ul li:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-menu ul li a {
+        display: block;
+        padding: 15px 20px;
+        text-decoration: none;
+        color: #333;
+        font-size: 1.1em;
+        transition: background-color 0.3s;
+    }
+
+    .mobile-menu ul li a:hover {
+        background-color: #f0f0f0;
+    }
+}
+
+/* Ensure desktop styles are active on larger screens */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* Hide hamburger on larger screens */
+    }
+    .mobile-menu {
+        left: -280px; /* Ensure mobile menu is hidden off-screen */
+        display: none; /* Explicitly hide mobile menu on larger screens */
+    }
+    .nav-links,
+    .right-nav-section {
+        display: flex; /* Show desktop navigation */
+    }
+
+    /* Re-apply desktop nav specific styles if they were overridden by mobile rules */
+    nav {
+        height: 80px;
+        padding: 10px 30px;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* Ensure language switcher is visible and positioned correctly on desktop */
+    .language-switcher {
+        display: block; /* Ensure it's visible */
+        /* Other desktop specific styles for language switcher will apply from global rules */
+    }
 }
 
 /* Navigation links */
 nav a {
-    color: rgb(26, 23, 23);
+    padding: 8px 15px;
     text-decoration: none;
-    padding: 8px 12px;
-    transition: 0.3s;
+    color: #333;
+    transition: color 0.3s ease;
+    display: flex; /* Use flexbox for consistent alignment */
+    align-items: center; /* Vertically align items in the middle */
+    line-height: 1; /* Ensure consistent line height */
 }
 
-/* Hover effect */
-nav a:not(.logo-link):hover {
-    background-color: #ff4500;
-    color: white;
-    border-radius: 15px;
+nav a:hover {
+    color: orange; /* Orange color on hover */
+}
+
+/* Ensure Resources link does not have an orange background, making it look like a regular link */
+nav a[data-translate="resources_link"] {
+    background-color: transparent !important;
+    color: #333 !important; /* Set to default link color */
+    padding: 0 !important; /* Remove button-like padding */
+    border-radius: 0 !important; /* Remove button-like border-radius */
+}
+
+/* Add a dropdown arrow to the "Get Involved" link */
+nav a[data-translate="get_involved_link"]::after {
+    content: "\f078"; /* Font Awesome chevron-down icon */
+    font-family: 'Font Awesome 5 Free'; /* Specify Font Awesome font */
+    font-weight: 900; /* Needed for solid icons in Font Awesome 5 */
+    font-size: 0.7em; /* Adjust size as needed, slightly smaller than text */
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* Clean up previous potentially problematic rules */
+/* Remove header nav a.active if it was setting a background color */
+header nav a.active {
+    color: #ff6600; /* Keep text color for active state if desired, but remove background */
+    background-color: transparent !important; /* Ensure no background on active */
 }
 
 /* Donate button style */
@@ -190,7 +452,7 @@ nav a:not(.logo-link):hover {
 /* RESPONSIVENESS */
 @media (max-width: 988px) {
     .logo {
-        height: 200px;
+        height: 170px !important;
     }
 }
 
@@ -219,6 +481,13 @@ nav a:not(.logo-link):hover {
     color: black;
     padding: 12px 16px;
     display: block;
+}
+.dropdown a i {
+    margin-left: 5px; /* Add some space between text and arrow */
+    vertical-align: middle; /* Align the arrow nicely with the text */
+    display: inline-block !important; /* Ensure it is displayed and overrides any other display rule */
+    font-size: 0.8em !important; /* Adjust size if needed, important to ensure it's not zero */
+    color: inherit !important; /* Inherit color from parent link, important to ensure it's not transparent/hidden */
 }
 .dropdown:hover .dropdown-content {
     display: block;
@@ -490,8 +759,17 @@ button:hover {
   margin-right: 8px;
 }
 
-.social-icons a {
-  margin-right: 10px;
+.social-icons {
+    display: flex; /* Arrange icons in a row */
+    gap: 15px;     /* Add space between icons */
+    margin-top: 10px; /* Add some space below the heading */
+    align-items: center; /* Vertically align icons */
+}
+
+.social-icons a img {
+    width: 32px;   /* Adjust size as needed */
+    height: 32px;  /* Ensure aspect ratio is maintained */
+    border-radius: 5px; /* Optional: slight roundness for icons */
 }
 
 .footer-bottom {
@@ -530,20 +808,11 @@ section {
 
 /* Sections */
 section {
-    background: white;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-section {
-    background: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    transition: none !important;
+    background: none; /* Removed white box */
+    margin: 40px 0; /* Adds spacing between sections */
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 
@@ -622,22 +891,6 @@ section {
     border: 3px solid #ff6600;
 }
 
-
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
 
 h2 {
     text-align: center;
@@ -1227,11 +1480,12 @@ button:hover {
 
   /* News page*/
    header {
-            background-color: #000;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            position: static !important;
+            box-shadow: none !important;
+            background-color: transparent !important;
+            padding: 0 !important;
+            z-index: auto !important;
+            direction: ltr !important;
         }
         header nav a {
             color: #fff;
@@ -1240,7 +1494,7 @@ button:hover {
             font-weight: bold;
         }
         header nav a.active {
-            color: #FFA500;
+            color: #ff6600;
         }
         .logo {
             height: 50px;
@@ -1464,10 +1718,10 @@ button:hover {
     font-weight: bold;
   }
   
-  input[type=\"text\"],
-  input[type=\"email\"],
-  input[type=\"tel\"],
-  input[type=\"number\"],
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
   select,
   textarea {
     width: 100%;
@@ -1507,7 +1761,7 @@ button:hover {
     font-weight: bold;
   }
   
-  button[type=\"submit\"] {
+  button[type="submit"] {
     background-color: #f5a91d;
     color: white;
     border: none;
@@ -1519,7 +1773,7 @@ button:hover {
     cursor: pointer;
   }
   
-  button[type=\"submit\"]:hover {
+  button[type="submit"]:hover {
     background-color: #e6a20f;
   }
 
@@ -1540,40 +1794,117 @@ button:hover {
 
 
   /* 📱 Mobile Optimization */
-@media (max-width: 600px) {
-    /* Navigation Bar */
+@media (max-width: 768px) {
+    /* Navigation Bar - Mobile Specifics */
     nav {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 10px 20px;
-      height: auto;
+        flex-direction: row; /* Ensure logo and hamburger are on the same row */
+        justify-content: space-between; /* Push logo to left, hamburger to right */
+        align-items: center;
+        padding: 10px 20px; /* Adjust padding for mobile */
+        height: auto; /* Allow height to adjust */
+        position: fixed; /* Ensure nav remains fixed at the top */
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: #fff; /* Ensure background is white */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Keep shadow */
     }
-  
-    .nav-links {
-      flex-direction: column;
-      width: 100%;
-      align-items: flex-start;
-      gap: 10px;
-      margin-top: 10px;
+
+    /* Hide the regular nav links and language switcher on small screens */
+    .nav-links,
+    .right-nav-section {
+        display: none; /* Hide desktop navigation links */
     }
-  
-    nav a {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
+
+    /* Hamburger Icon - Show on mobile */
+    .hamburger {
+        display: block; /* Show hamburger icon */
+        order: 2; /* Place hamburger on the right */
+        position: static !important; /* Force it to be positioned within the nav flex container */
+        top: auto; /* Reset fixed positioning */
+        right: auto; /* Reset fixed positioning */
+        margin-left: auto; /* Push to the right within the flex container */
+        z-index: 1001; /* Ensure it's above other elements if necessary */
     }
-  
-    .logo-link img {
-      height: 40px;
+
+    /* Logo - Remain on the left */
+    .logo-link {
+        order: 1; /* Place logo on the left */
+        margin-right: auto; /* Push content to the right */
     }
-  
-    .logo {
-      height: 100px;
-    }
-  
     
-  
-    /* About Us */
+    /* Adjustments for logo image size on small screens */
+    .logo-link img {
+        height: 65px !important; /* Specific height for mobile logo */
+        width: auto !important; /* Maintain aspect ratio */
+    }
+
+    /* Mobile Menu - Position and slide behavior */
+    .mobile-menu {
+        position: fixed; /* Keep it fixed */
+        top: 0;
+        left: -280px; /* Hidden off-screen by default */
+        width: 280px; /* Width of the sliding menu */
+        height: 100vh; /* Full viewport height */
+        background-color: white; /* White background as requested */
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        transition: left 0.3s ease-in-out; /* Smooth sliding transition */
+        z-index: 1000; /* Ensure it's above other page content */
+        overflow-y: auto; /* Enable scrolling for long menus */
+    }
+
+    .mobile-menu.active {
+        left: 0; /* Slides in from left when active */
+    }
+
+    .menu-header {
+        display: flex;
+        justify-content: flex-end; /* Push close button to the right */
+        padding: 20px;
+    }
+
+    .close-btn {
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 5px;
+    }
+
+    /* Mobile Menu Links Styling */
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .mobile-menu ul li {
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+    }
+
+    .mobile-menu ul li:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-menu ul li a {
+        display: block;
+        padding: 15px 20px;
+        text-decoration: none;
+        color: #333;
+        font-size: 1.1em;
+        transition: background-color 0.3s;
+    }
+
+    .mobile-menu ul li a:hover {
+        background-color: #f0f0f0;
+    }
+
+    /* General Mobile Optimizations (Restored) */
     .about-us, .about-container {
       flex-direction: column;
       text-align: center;
@@ -1654,288 +1985,42 @@ button:hover {
       width: 100%;
     }
   
-    
-  
     /* Popup */
     #eventPopup .popup-content {
       width: 90%;
       padding: 20px;
     }
-  }
-  
- 
-
-/*action*/
-
-.shield-cta-section {
-    padding: 60px 20px;
-    background: #FF6600 !important; /* strong orange background */
-    color: rgb(27, 25, 25); /* dark text color */
-    text-align: center; /* center the text */
 }
 
-
-
-.shield-cta-container {
-    max-width: 900px;
-    margin: auto;
-}
-
-.shield-cta-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.shield-cta-intro {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-    line-height: 1.7;
-}
-
-.shield-cta-button {
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    background-color: #ffffff;
-    color: #FF6600;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.shield-cta-button:hover {
-    background-color: #fcfbfb;
-    color: #ffffff;
-}
-.btn-get-involved {
-    display: inline-block;
-    background-color: #f5f1ef;
-    color: orangered;
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-  
-  
-
-
-/* NAVBAR */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: white;
-  padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  height: 80px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* LOGO */
-.logo {
-  height: 70px;
-}
-
-@media (max-width: 768px) {
-  .logo {
-    height: 60px;
-  }
-}
-
-/* NAV LINKS (desktop) */
-.nav-links {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: black;
-  padding: 8px 12px;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  background-color: #ff4500;
-  color: white;
-  border-radius: 10px;
-}
-
-/* DONATE BUTTON */
-.donate-btn {
-  background-color: #ff4500;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.donate-btn:hover {
-  background-color: #e63b00;
-}
-
-
-
-/* RESPONSIVE BEHAVIOR */
-/* General styles for the .nav element */
-.nav {
-  width: 80%;
-  margin: 0 auto;
-  padding: 15px;
-}
-
-/* Media query for tablets */
-@media (max-width: 1024px) {
-  .nav {
-    width: 90%; /* Adjust width on tablets */
-  }
-}
-
-/* Media query for small devices (phones) */
-@media (max-width: 768px) {
-  .nav {
-    width: 100%; /* Full width on mobile devices */
-    padding: 10px; /* Optional, adjust padding on smaller screens */
-  }
-}
-
-/* Media query for very small devices (phones in portrait) */
-@media (max-width: 480px) {
-  .nav {
-    width: 100%; /* Full width for very small screens */
-    padding: 5px; /* Further adjust padding if necessary */
-  }
-}
-
-/* Hamburger Icon (Mobile Only) */
-.hamburger {
-  display: none;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  font-size: 24px;
-  color: #333;
-  z-index: 1001;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 10px;
-}
-
-/* Sidebar Menu */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: -280px;
-  width: 280px;
-  height: 100vh;
-  background-color: white;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-  transition: left 0.3s ease-in-out;
-  z-index: 1000;
-  overflow-y: auto;
-}
-
-.mobile-menu.active {
-  left: 0;
-}
-
-.menu-header {
-  display: flex;
-  justify-content: flex-end;
-  padding: 20px;
-}
-
-.close-btn {
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 5px;
-}
-
-.mobile-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.mobile-menu ul li {
-  padding: 0;
-  margin: 0;
-}
-
-.mobile-menu ul li a {
-  display: block;
-  padding: 15px 20px;
-  color: #333;
-  text-decoration: none;
-  font-size: 16px;
-  border-bottom: 1px solid #eee;
-  transition: background-color 0.3s;
-}
-
-.mobile-menu ul li a:hover {
-  background-color: #f5f5f5;
-}
-
-.mobile-menu ul li a.highlight {
-  background-color: #FF6600;
-  color: white;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-
-    .nav-links {
-        display: none !important;
-    }
-
-    nav {
-        padding: 10px 20px;
-        /* Ensure nav is a flex container */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo-link {
-        /* Removed order: 2 */
-    }
-
-    .hamburger {
-        /* Removed order: 1 */
-    }
-
-    .logo-link img {
-        height: 65px !important;
-    }
-}
-
-/* Ensure content is accessible on all screen sizes */
+/* Desktop Styles (Min-width 769px) */
 @media (min-width: 769px) {
-    .mobile-menu {
-        display: none;
+    /* Hide hamburger on larger screens */
+    .hamburger {
+        display: none; 
     }
-    
-    .nav-links {
-        display: flex !important;
+    /* Ensure mobile menu is hidden off-screen */
+    .mobile-menu {
+        left: -280px; 
+        display: none; /* Explicitly hide mobile menu on larger screens */
+    }
+    /* Show desktop navigation links and language switcher */
+    .nav-links,
+    .right-nav-section {
+        display: flex; /* Show desktop navigation */
+    }
+
+    /* Re-apply desktop nav specific styles */
+    nav {
+        height: 80px;
+        padding: 10px 30px;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* Language switcher on desktop */
+    .language-switcher {
+        display: block; /* Ensure it's visible */
     }
 }
 
@@ -2459,6 +2544,186 @@ button:hover {
   margin: 20px auto;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   box-sizing: border-box; /* Ensure consistent box model */
+}
+
+/* Ensure the main navigation container maintains LTR direction for layout */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    direction: ltr !important; /* Force LTR for layout */
+}
+
+/* Ensure logo stays on the left */
+.logo {
+    order: 1; /* Explicitly set order to keep it first */
+    margin-inline-end: auto; /* Pushes the next element to the right */
+    direction: ltr !important; /* Ensure content within logo is LTR */
+}
+
+/* Ensure the right navigation section (links + language switcher) stays on the right */
+.right-nav-section {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between nav-links and language switcher */
+}
+
+/* Ensure dropdown menu opens in the correct direction relative to its parent */
+.language-switcher .dropdown-menu {
+    left: auto; /* Reset left */
+    right: 0;   /* Align dropdown to the right of its parent */
+    transform-origin: top right;
+}
+
+/* Ensure the language dropdown options are LTR */
+.language-switcher .dropdown-content a {
+    text-align: left !important;
+    direction: ltr !important;
+}
+
+/* Clean up previous potentially problematic rules */
+header,
+nav {
+    direction: ltr !important; /* Ensure overarching header/nav stays LTR for layout */
+}
+
+/* Remove specific float and position adjustments if they were added before */
+.logo {
+    /* float: none !important; */
+    /* position: static !important; */
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px; /* Space between navigation links */
+}
+
+.social-media-section {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.social-cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center;
+    gap: 20px; /* Space between social boxes */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-box {
+    flex: 1 1 300px; /* Allow boxes to grow and shrink, with a base width of 300px */
+    min-width: 280px; /* Minimum width to ensure content fits */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex; /* Enable flexbox for content within the card */
+    flex-direction: column;
+    justify-content: space-between; /* Push content to top and bottom */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+.social-card.twitter-card {
+    /* Specific adjustments for Twitter card if needed, e.g., to accommodate embeds */
+    flex: 1 1 300px; 
+    min-width: 280px;
+}
+
+.social-card.twitter-card iframe, .social-card.twitter-card blockquote {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 200px; /* Ensure a minimum height for embeds */
+    box-sizing: border-box;
+}
+
+.social-card .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.social-card .card-header img {
+    border-radius: 50%; /* Make avatar round */
+}
+
+.social-card .twitter-timeline {
+    margin: 15px 0; /* Space for the timeline */
+}
+
+.social-card .twitter-follow-button {
+    margin-top: 15px;
+    align-self: flex-start; /* Align button to the start of the flex container */
+}
+
+.social-box .follow-btn {
+    margin-bottom: 15px;
+}
+
+.social-box .instagram-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #E1306C; /* Instagram color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.social-box .instagram-btn:hover {
+    background-color: #C13584;
+}
+
+@media (max-width: 768px) {
+    .social-cards-container {
+        flex-direction: column; /* Stack cards vertically on small screens */
+        align-items: center;
+    }
+
+    .social-box, .social-card.twitter-card {
+        width: 90%; /* Take more width on small screens */
+        max-width: 400px; /* Limit max width for readability */
+    }
+}
+
+/* Ensure LTR direction for elements within data-ltr-direction containers */
+[data-ltr-direction="true"] * {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+/* Ensure LTR direction for elements with data-ltr-direction="true" when HTML is RTL */
+html[dir="rtl"] [data-ltr-direction="true"] {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+/* Ensure LTR direction for all children of elements with data-ltr-direction="true" */
+html[dir="rtl"] [data-ltr-direction="true"] * {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+/* Reset flex-direction and order for quiz options in RTL if they are inside LTR-forced containers */
+html[dir="rtl"] [data-ltr-direction="true"] .options {
+    flex-direction: column !important; /* Ensure vertical layout */
+}
+
+html[dir="rtl"] [data-ltr-direction="true"] .btn-group {
+    flex-direction: row !important; /* Ensure horizontal layout for buttons */
+}
+
+html[dir="rtl"] [data-ltr-direction="true"] .btn-group button {
+    order: unset !important; /* Remove any ordering that might reverse buttons */
 }
