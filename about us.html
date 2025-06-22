@@ -1087,6 +1087,68 @@ nav a:not(.logo-link):hover {
   .hero-text, .hero-typing { text-align: center; margin-bottom: 20px; }
   .hero-image { justify-content: center; }
 }
+
+/* New Styles for the About Us Hero Section */
+.about-hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end; /* Align content to the bottom */
+    justify-content: flex-start; /* Align content to the left */
+    text-align: left;
+    padding: 60px 8%; /* Adjust padding for bottom alignment */
+    color: #fff;
+    background-image: url('images/abbut.png');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.about-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(250, 218, 221, 0.9) 10%, transparent 70%); /* Light pink gradient from bottom */
+    z-index: 1;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 70%; /* Adjust width for better layout */
+}
+
+.about-hero-content h2 {
+    font-size: 4rem; /* Bold headline */
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff; /* White text */
+}
+
+.about-hero-content p {
+    font-size: 1.1rem; /* Clear subtitle text */
+    line-height: 1.6;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    font-weight: bold; /* Bolder text as requested */
+    color: #fff; /* White text for paragraphs */
+}
+
+.about-hero-content p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hide the old section */
+.about-us {
+    display: none;
+}
     </style>
 </head>
 
@@ -1161,19 +1223,15 @@ nav a:not(.logo-link):hover {
       </div>
     </section>
 
-<!-- About Us Section -->
-<section class="about-us">
-  <div class="about-container">
-      <div class="about-image"> 
-          <img src="images/woman.png" alt="About Us" class="wide-image">
-      </div>
-      <div class="about-text">
-          <h2 style="color: orange;" data-translate="about_us_title">About Us</h2>
-          <p data-translate="about_us_paragraph_1">Shield Maidens was founded in 2024 by Sumaiyya Jumma and Maria Muneeni as a way of giving back to the community. As beneficiaries of UN Women, the African Girls Can Code Initiative (AGCCI), and Siemens EmpowerHER, they recognized the need to create a platform dedicated to advocacy, empowerment, and education.</p>
-          <p data-translate="about_us_paragraph_2">At Shield Maidens, our mission is to educate young women, persons with disabilities (PWDs) and youth on digital safety while actively fighting against technology-facilitated gender-based violence (TFGBV). We are committed to fostering an inclusive world by advocating for gender equality, justice, and the protection of online spaces.</p>
-          <p data-translate="about_us_paragraph_3">Our goal is to empower individuals with the knowledge and tools needed to navigate the digital world safely, to amplify voices against gender-based violence, and to drive meaningful change through advocacy and education. Together, we stand for a safer, more inclusive future for all.</p>
-      </div>
-  </div>
+<!-- New Full-Screen About Us Section -->
+<section class="about-hero-section">
+    <div class="about-hero-content">
+        <h2 data-translate="about_us_title">About Us</h2>
+        <p class="animated-text" data-translate="about_us_paragraph_1">Shield Maidens was founded in 2024 by Sumaiyya Jumma and Maria Muneeni as a way of giving back to the community. As beneficiaries of UN Women, the African Girls Can Code Initiative (AGCCI), and Siemens EmpowerHER, they recognized the need to create a platform dedicated to advocacy, empowerment, and education.</p>
+        <p class="animated-text" data-translate="about_us_paragraph_2">At Shield Maidens, our mission is to educate young women, persons with disabilities (PWDs) and youth on digital safety while actively fighting against technology-facilitated gender-based violence (TFGBV). We are committed to fostering an inclusive world by advocating for gender equality, justice, and the protection of online spaces.</p>
+        <p class="animated-text" data-translate="about_us_paragraph_3">Our goal is to empower individuals with the knowledge and tools needed to navigate the digital world safely, to amplify voices against gender-based violence, and to drive meaningful change through advocacy and education. Together, we stand for a safer, more inclusive future for all.</p>
+        <a href="#our-team" class="hero-button" style="display: inline-block; margin-top: 20px; padding: 12px 28px; border: 2px solid #ff9800; color: ff9800; text-decoration: none; border-radius: 50px; font-weight: 600; transition: background-color 0.3s, color 0.3s;">Meet Our Team</a>
+    </div>
 </section>
 
 <!-- What We Do Section -->
@@ -1274,9 +1332,6 @@ nav a:not(.logo-link):hover {
     </div>
   </details>
 </section>
-
-<!-- Font Awesome for icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 
 
@@ -1758,6 +1813,17 @@ function typeWord() {
 typingElem.innerHTML = '';
 logoImg.classList.remove('visible');
 typeWord();
+
+document.addEventListener('DOMContentLoaded', () => {
+    const paragraphs = document.querySelectorAll('.about-hero-content .animated-text');
+    let delay = 300; // Initial delay
+    paragraphs.forEach(p => {
+        setTimeout(() => {
+            p.classList.add('visible');
+        }, delay);
+        delay += 1000; // Stagger the animation for each paragraph
+    });
+});
 </script>
 </body>
 </html>

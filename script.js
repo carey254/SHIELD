@@ -41,50 +41,55 @@ document.addEventListener("DOMContentLoaded", function () {
   let linkEl = document.getElementById("eventLink");
   let reminderBtn = document.getElementById("setReminder");
 
-  let timeDiff = event.date - now;
-  let hoursLeft = timeDiff / (1000 * 60 * 60);
-  let minutesLeft = timeDiff / (1000 * 60);
+  // Only proceed if the popup elements exist (they're only on index.html)
+  if (titleEl && messageEl && linkEl && reminderBtn) {
+    let timeDiff = event.date - now;
+    let hoursLeft = timeDiff / (1000 * 60 * 60);
+    let minutesLeft = timeDiff / (1000 * 60 * 60);
 
-  titleEl.innerText = "Shield Maidens 2025!";
+    titleEl.innerText = "Shield Maidens 2025!";
 
-  // Display popup if event is in the future
-  if (!event || event.date < now) {
-    messageEl.innerText = "There are no upcoming events at this time.";
-    linkEl.style.display = "none";
-    reminderBtn.style.display = "none";
-  } else {
-    // Detect 1-day-before message
-    if (hoursLeft <= 48 && now.getDate() !== event.date.getDate()) {
-      messageEl.innerText = "🚨 Just a day to go! Set a reminder so you don't miss it.";
-      reminderBtn.style.display = "block";
+    // Display popup if event is in the future
+    if (!event || event.date < now) {
+      messageEl.innerText = "There are no upcoming events at this time.";
       linkEl.style.display = "none";
-
-    } else if (hoursLeft <= 24) {
-      messageEl.innerText = "Join us later today for an exciting session!";
       reminderBtn.style.display = "none";
+    } else {
+      // Detect 1-day-before message
+      if (hoursLeft <= 48 && now.getDate() !== event.date.getDate()) {
+        messageEl.innerText = "🚨 Just a day to go! Set a reminder so you don't miss it.";
+        reminderBtn.style.display = "block";
+        linkEl.style.display = "none";
 
-      if (event.link) {
-        linkEl.style.display = "block";
-        linkEl.href = event.link;
-        linkEl.innerText = "Join Now";
+      } else if (hoursLeft <= 24) {
+        messageEl.innerText = "Join us later today for an exciting session!";
+        reminderBtn.style.display = "none";
+
+        if (event.link) {
+          linkEl.style.display = "block";
+          linkEl.href = event.link;
+          linkEl.innerText = "Join Now";
+        } else {
+          linkEl.style.display = "none";
+        }
+
       } else {
+        messageEl.innerText = "We have an exciting session coming up. Stay tuned!";
+        reminderBtn.style.display = "block";
         linkEl.style.display = "none";
       }
-
-    } else {
-      messageEl.innerText = "We have an exciting session coming up. Stay tuned!";
-      reminderBtn.style.display = "block";
-      linkEl.style.display = "none";
     }
-  }
 
-  // Show popup box
-  popup.style.display = "block";
+    // Show popup box
+    if (popup) {
+      popup.style.display = "block";
+    }
 
-  // If reminder already set, and it's within 30 minutes, trigger a notification
-  if (localStorage.getItem("eventReminder") === "set" && minutesLeft <= 30 && minutesLeft > 0) {
-    sendReminderNotification("Your Shield Maidens session starts in 30 minutes! Be ready.");
-    localStorage.removeItem("eventReminder"); // clear reminder after showing
+    // If reminder already set, and it's within 30 minutes, trigger a notification
+    if (localStorage.getItem("eventReminder") === "set" && minutesLeft <= 30 && minutesLeft > 0) {
+      sendReminderNotification("Your Shield Maidens session starts in 30 minutes! Be ready.");
+      localStorage.removeItem("eventReminder"); // clear reminder after showing
+    }
   }
 });
 
@@ -112,24 +117,26 @@ function sendReminderNotification(message) {
   }
 }
 
-
-  
+// Add null check for carousel
 const carousel = document.querySelector('.session-carousel');
-carousel.innerHTML += carousel.innerHTML; // Duplicate for seamless scroll
+if (carousel) {
+  carousel.innerHTML += carousel.innerHTML; // Duplicate for seamless scroll
+}
 
+// Events page
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
   
-  
-  // Events page
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
+  // Only proceed if calendar exists (only on events.html)
+  if (calendarEl) {
     var today = new Date().toISOString().split('T')[0];
-  
+
     var events = [
       { title: 'Training on Internet Safety', start: '2025-04-24', description: 'Amazon Leadership Initiative for Girls in ICT Day' },
       { title: 'Cyber Security Talk', start: '2024-12-15', description: 'Session at Gifted Community Centre' },
       { title: 'Hour of Code Launch', start: '2024-11-30', description: 'Event at Pharo School Nairobi' }
     ];
-  
+
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
       selectable: true,
@@ -138,30 +145,32 @@ carousel.innerHTML += carousel.innerHTML; // Duplicate for seamless scroll
         alert(info.event.title + "\n" + info.event.start.toDateString() + "\n" + info.event.extendedProps.description);
       }
     });
-  
+
     calendar.render();
-  
+
     // Categorize events into Upcoming and Past
     var upcomingList = document.getElementById('upcoming-events-list');
     var pastList = document.getElementById('past-events-list');
-  
-    events.forEach(event => {
-      let eventDate = new Date(event.start);
-      let eventItem = `<li><strong>${event.title}</strong> - ${eventDate.toDateString()}<br>${event.description}</li>`;
-  
-      if (event.start >= today) {
-        upcomingList.innerHTML += eventItem;
-      } else {
-        pastList.innerHTML += eventItem;
-      }
-    });
-  });
-  
-  function showContactAlert() {
-    alert("Thanks for your interest! Please email us at: shi3ldmaidens@gmail.com and we'll get back to you shortly.");
+
+    if (upcomingList && pastList) {
+      events.forEach(event => {
+        let eventDate = new Date(event.start);
+        let eventItem = `<li><strong>${event.title}</strong> - ${eventDate.toDateString()}<br>${event.description}</li>`;
+
+        if (event.start >= today) {
+          upcomingList.innerHTML += eventItem;
+        } else {
+          pastList.innerHTML += eventItem;
+        }
+      });
+    }
   }
-  
-  // Donate Page
+});
+
+function showContactAlert() {
+  alert("Thanks for your interest! Please email us at: shi3ldmaidens@gmail.com and we'll get back to you shortly.");
+}
+
 // Donate Page
 document.addEventListener("DOMContentLoaded", () => {
   const amountButtons = document.querySelectorAll(".amount-btn");
@@ -170,74 +179,73 @@ document.addEventListener("DOMContentLoaded", () => {
   const summaryText = document.getElementById("summaryText");
   const form = document.getElementById("donationForm");
 
-  function updateAmount(amount) {
-    finalAmount.value = amount;
-    summaryText.innerHTML = `Selected donation: <strong>KES ${parseInt(amount).toLocaleString()}</strong>`;
-  }
+  // Only proceed if donation form exists (only on donate.html)
+  if (form && finalAmount && summaryText) {
+    function updateAmount(amount) {
+      finalAmount.value = amount;
+      summaryText.innerHTML = `Selected donation: <strong>KES ${parseInt(amount).toLocaleString()}</strong>`;
+    }
 
-  // Update amount when a preset button is clicked
-  amountButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      amountButtons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
-      customAmount.value = "";
-      updateAmount(button.dataset.amount);
+    // Update amount when a preset button is clicked
+    amountButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        amountButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        if (customAmount) customAmount.value = "";
+        updateAmount(button.dataset.amount);
+      });
     });
-  });
 
-  // Update amount when custom amount is entered
-  customAmount.addEventListener("input", () => {
-    amountButtons.forEach(btn => btn.classList.remove("active"));
-    let value = parseInt(customAmount.value);
-    if (!isNaN(value) && value > 0) {
-      updateAmount(value);
-    } else {
-      updateAmount(0);
-    }
-  });
-
-  // Handle form submission
-  form.addEventListener("submit", (e) => {
-    e.preventDefault(); // ❌ STOP form from submitting normally
-
-    // Check if a valid amount is entered
-    if (!finalAmount.value || parseInt(finalAmount.value) <= 0) {
-      alert("❌ Please select or enter a valid donation amount.");
-      return;
+    // Update amount when custom amount is entered
+    if (customAmount) {
+      customAmount.addEventListener("input", () => {
+        amountButtons.forEach(btn => btn.classList.remove("active"));
+        let value = parseInt(customAmount.value);
+        if (!isNaN(value) && value > 0) {
+          updateAmount(value);
+        } else {
+          updateAmount(0);
+        }
+      });
     }
 
-    // Validate other fields
-    const firstName = document.querySelector('input[name="first_name"]').value.trim();
-    const lastName = document.querySelector('input[name="last_name"]').value.trim();
-    const email = document.querySelector('input[name="email"]').value.trim();
-    const phone = document.querySelector('input[name="phone"]').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const donationAmount = finalAmount.value.trim();
+    // Handle form submission
+    form.addEventListener("submit", (e) => {
+      e.preventDefault(); // ❌ STOP form from submitting normally
 
-    if (!firstName || !lastName || !email || !phone) {
-      alert("❌ Please fill in all required fields.");
-      return;
-    }
+      // Check if a valid amount is entered
+      if (!finalAmount.value || parseInt(finalAmount.value) <= 0) {
+        alert("❌ Please select or enter a valid donation amount.");
+        return;
+      }
 
-    // ✅ Show Alert
-    alert(`✅ Thank you for your donation, ${firstName} ${lastName}!\n\nDonation Details:\nAmount: KES ${parseInt(donationAmount).toLocaleString()}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message || 'No message'}`);
+      // Validate other fields
+      const firstName = document.querySelector('input[name="first_name"]');
+      const lastName = document.querySelector('input[name="last_name"]');
+      const email = document.querySelector('input[name="email"]');
+      const phone = document.querySelector('input[name="phone"]');
+      const message = document.getElementById('message');
+      const donationAmount = finalAmount.value.trim();
 
-    // ✅ After alert, you can reset the form
-    form.reset();
-    finalAmount.value = 0;
-    summaryText.innerHTML = `Selected donation: <strong>KES 0</strong>`;
-    amountButtons.forEach(btn => btn.classList.remove("active"));
+      if (!firstName?.value.trim() || !lastName?.value.trim() || !email?.value.trim() || !phone?.value.trim()) {
+        alert("❌ Please fill in all required fields.");
+        return;
+      }
 
-    // 🛑 Do NOT send anything to PHP!
-    // 🛑 No fetch('process_donation.php') call here
-  });
+      // ✅ Show Alert
+      alert(`✅ Thank you for your donation, ${firstName.value.trim()} ${lastName.value.trim()}!\n\nDonation Details:\nAmount: KES ${parseInt(donationAmount).toLocaleString()}\nEmail: ${email.value.trim()}\nPhone: ${phone.value.trim()}\nMessage: ${message?.value.trim() || 'No message'}`);
+
+      // ✅ After alert, you can reset the form
+      form.reset();
+      finalAmount.value = 0;
+      summaryText.innerHTML = `Selected donation: <strong>KES 0</strong>`;
+      amountButtons.forEach(btn => btn.classList.remove("active"));
+
+      // 🛑 Do NOT send anything to PHP!
+      // 🛑 No fetch('process_donation.php') call here
+    });
+  }
 });
-
-
-
-
-
-
 
 //heroes section
 const images = document.querySelectorAll('.bg-image');
@@ -249,137 +257,30 @@ setInterval(() => {
   images[current].classList.add('active');
 }, 4000); // change every 4 seconds
 
-
-
+// Add null checks for mobile menu elements
 const hamburger = document.getElementById('hamburger');
 const sideMenu = document.getElementById('sideMenu');
 const closeBtn = document.getElementById('closeBtn');
 const overlay = document.getElementById('menuOverlay');
 
-hamburger.addEventListener('click', () => {
-  sideMenu.classList.add('open');
-  overlay.classList.add('active');
-});
-
-closeBtn.addEventListener('click', () => {
-  sideMenu.classList.remove('open');
-  overlay.classList.remove('active');
-});
-
-overlay.addEventListener('click', () => {
-  sideMenu.classList.remove('open');
-  overlay.classList.remove('active');
-});
-
-
-  
-
-
-
-
-
-
-
-
-  /* ===== Server-side Node.js (keep in backend files, not frontend) =====
-  
-  const express = require('express');
-  const app = express();
-  const Feedback = require('./models/Feedback');
-  const Subscriber = require('./models/Subscriber');
-  const nodemailer = require('nodemailer');
-  
-  app.use(express.json());
-  
-  // Contact Us API
-  app.post('/send-message', async (req, res) => {
-    try {
-      const { name, email, message } = req.body;
-      const newFeedback = new Feedback({ name, email, message, response: "" });
-      await newFeedback.save();
-      res.json({ message: "Your message has been received!" });
-    } catch (err) {
-      res.status(500).json({ error: "Internal server error" });
-    }
+// Only add event listeners if elements exist
+if (hamburger && sideMenu && closeBtn && overlay) {
+  hamburger.addEventListener('click', () => {
+    sideMenu.classList.add('open');
+    overlay.classList.add('active');
   });
-  
-  // Mailing List API
-  app.post('/subscribe', async (req, res) => {
-    try {
-      const { email } = req.body;
-  
-      if (!email.endsWith("@gmail.com")) {
-        return res.status(400).json({ error: "Please enter a valid Gmail address." });
-      }
-  
-      const existingSubscriber = await Subscriber.findOne({ email });
-      if (existingSubscriber) {
-        return res.json({ message: "You're already subscribed!" });
-      }
-  
-      const newSubscriber = new Subscriber({ email });
-      await newSubscriber.save();
-  
-      const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS
-        }
-      });
-  
-      const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: email,
-        subject: "Subscription Confirmed",
-        text: "Thank you for subscribing! We will notify you about upcoming sessions."
-      };
-  
-      await transporter.sendMail(mailOptions);
-      res.json({ message: "Subscription successful! Check your email." });
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({ error: "Internal server error" });
-    }
+
+  closeBtn.addEventListener('click', () => {
+    sideMenu.classList.remove('open');
+    overlay.classList.remove('active');
   });
-  
-  // Send update to all subscribers
-  app.post('/send-update', async (req, res) => {
-    try {
-      const { sessionInfo } = req.body;
-      const subscribers = await Subscriber.find({ subscribed: true });
-  
-      const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS
-        }
-      });
-  
-      for (let subscriber of subscribers) {
-        const mailOptions = {
-          from: process.env.EMAIL_USER,
-          to: subscriber.email,
-          subject: "New Session Update!",
-          text: `Hello! We have a new session coming up: ${sessionInfo}. Stay tuned!`
-        };
-  
-        await transporter.sendMail(mailOptions);
-      }
-  
-      res.json({ message: "Email updates sent successfully!" });
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({ error: "Error sending updates." });
-    }
+
+  overlay.addEventListener('click', () => {
+    sideMenu.classList.remove('open');
+    overlay.classList.remove('active');
   });
-  
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-  
-  ===== END OF SERVER-SIDE CODE ===== */
-  
+}
+
 // Report Form Functions
 function openReportForm() {
   document.getElementById('reportModal').style.display = 'block';

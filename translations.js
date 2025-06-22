@@ -743,3 +743,19 @@ function setLanguage(lang) {
         mobileLangSelect.value = lang;
     }
 } 
+
+// Make translations available globally for language-handler.js
+window.generalTranslations = translations;
+
+// Also create page-specific translation objects for compatibility
+window.resourcesTranslations = translations;
+window.eventsTranslations = translations;
+window.newsTranslations = translations;
+window.partnerTranslations = translations;
+window.donateTranslations = translations;
+window.reportTranslations = translations;
+
+// Export for module systems if needed
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = translations;
+}

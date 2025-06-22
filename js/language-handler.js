@@ -44,7 +44,30 @@ function updateContent(lang) {
 
     if (!translations || Object.keys(translations).length === 0) {
         console.error('No translations object found or it is empty for the current page.', translations);
+        console.log('Available translation objects:', {
+            generalTranslations: !!window.generalTranslations,
+            resourcesTranslations: !!window.resourcesTranslations,
+            eventsTranslations: !!window.eventsTranslations,
+            newsTranslations: !!window.newsTranslations,
+            partnerTranslations: !!window.partnerTranslations,
+            donateTranslations: !!window.donateTranslations,
+            reportTranslations: !!window.reportTranslations
+        });
         return; // Exit if no translations object is found or it's empty
+    }
+
+    // Check if the specific language exists in the translations object
+    if (!translations[lang]) {
+        console.error(`Language '${lang}' not found in translations object. Available languages:`, Object.keys(translations));
+        // Fallback to English if available, otherwise use the first available language
+        const fallbackLang = translations.en ? 'en' : Object.keys(translations)[0];
+        if (fallbackLang) {
+            console.log(`Falling back to language: ${fallbackLang}`);
+            lang = fallbackLang;
+        } else {
+            console.error('No fallback language available');
+            return;
+        }
     }
 
     console.log('Resolved translations object:', translations); // Log 6
@@ -317,7 +340,8 @@ function initializeLanguageSelector() {
             const mainSwitcherText = this.closest('.language-switcher').querySelector('a[aria-expanded]');
             if (mainSwitcherText) {
                 // Get the translation for the selected language itself
-                const translatedLangName = window.resourcesTranslations[lang][`${lang}_link`]; // Use resourcesTranslations here
+                const resourcesTranslations = window.resourcesTranslations || window.generalTranslations || {};
+                const translatedLangName = resourcesTranslations[lang] && resourcesTranslations[lang][`${lang}_link`];
                 if (translatedLangName) {
                     mainSwitcherText.innerHTML = `${translatedLangName} <i class="fas fa-chevron-down"></i>`;
                 } else {
@@ -335,7 +359,8 @@ function initializeLanguageSelector() {
     // Update the display text for the main language switcher button on load
     const mainSwitcherText = document.querySelector('.language-switcher > a[aria-expanded]');
     if (mainSwitcherText) {
-        const translatedLangName = window.resourcesTranslations[initialLang][`${initialLang}_link`]; // Use resourcesTranslations here
+        const resourcesTranslations = window.resourcesTranslations || window.generalTranslations || {};
+        const translatedLangName = resourcesTranslations[initialLang] && resourcesTranslations[initialLang][`${initialLang}_link`];
         if (translatedLangName) {
             mainSwitcherText.innerHTML = `${translatedLangName} <i class="fas fa-chevron-down"></i>`;
         } else {
@@ -347,14 +372,18 @@ function initializeLanguageSelector() {
 
 // DOMContentLoaded listener
 document.addEventListener('DOMContentLoaded', () => {
-    initializeLanguageSelector();
+    // Add a small delay to ensure all translation objects are loaded
+    setTimeout(() => {
+        initializeLanguageSelector();
+    }, 100);
 });
 
 // Update the language selector display based on the active language
 function updateLanguageSelectorDisplay(lang) {
     const mainSwitcherText = document.querySelector('.language-switcher > a[aria-expanded]');
     if (mainSwitcherText) {
-        const translatedLangName = window.resourcesTranslations[lang][`${lang}_link`]; // Use resourcesTranslations here
+        const resourcesTranslations = window.resourcesTranslations || window.generalTranslations || {};
+        const translatedLangName = resourcesTranslations[lang] && resourcesTranslations[lang][`${lang}_link`];
         if (translatedLangName) {
             mainSwitcherText.innerHTML = `${translatedLangName} <i class="fas fa-chevron-down"></i>`;
         } else {
@@ -366,5 +395,8 @@ function updateLanguageSelectorDisplay(lang) {
 
 // Attach event listeners to language switcher buttons
 document.addEventListener('DOMContentLoaded', () => {
-    initializeLanguageSelector();
+    // Add a small delay to ensure all translation objects are loaded
+    setTimeout(() => {
+        initializeLanguageSelector();
+    }, 100);
 });

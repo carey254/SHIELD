@@ -27,8 +27,162 @@
         background-color: #ff4500;
         color: white;
         border-radius: 12px;
-      }
-      
+    }
+
+    /* Completely New Mission & Vision Styles based on the new screenshot */
+    #mission-vision-new {
+        padding: 80px 40px;
+        background-color: #4b3832; /* Main dark brown background */
+        font-family: 'Serif', 'Georgia', serif; /* A more elegant serif font */
+    }
+    .mission-vision-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch; /* Make items stretch to the same height */
+        gap: 60px;
+        max-width: 1400px;
+        margin: 0 auto;
+        flex-wrap: wrap; 
+    }
+    .mission-vision-item {
+        display: flex;
+        flex: 1;
+        min-width: 500px; /* Adjust as needed */
+        max-width: 650px;
+        align-items: center;
+        gap: 20px;
+    }
+    .mission-vision-item .content-wrapper {
+        flex: 1;
+        color: #fff;
+    }
+    .content-wrapper .title {
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 1.1;
+        color: #f5eadd;
+        position: relative;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .content-wrapper .title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 2px;
+        background-color: #fff;
+    }
+    .content-wrapper .text-box {
+        background-color: #6a4f4b; /* Slightly lighter brown for the text box */
+        padding: 25px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+    .content-wrapper .text-box p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #f5eadd;
+        margin: 0;
+    }
+    .mission-vision-item .image-wrapper {
+        flex: 1;
+        border-radius: 12px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        border: 4px solid #fff;
+        height: 400px; /* Fixed height for consistency */
+    }
+    .mission-vision-item .image-wrapper img {
+        width: 100%;
+        height: 100%; /* Make image fill the wrapper height */
+        object-fit: cover; /* This crops the image to fit without distortion */
+        border-radius: 8px;
+        display: block;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+        .mission-vision-item {
+            flex-direction: column;
+            min-width: 100%;
+        }
+        .mission-vision-item .content-wrapper,
+        .mission-vision-item .image-wrapper {
+            width: 100%;
+            max-width: 500px; /* Constrain width on smaller screens */
+        }
+    }
+
+    /* New Safety Tips Section Styles */
+    #safety-tips {
+        padding: 60px 20px;
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+    #safety-tips h2 {
+        font-size: 2.5rem;
+        color: #1d3557;
+        margin-bottom: 15px;
+    }
+    #safety-tips .intro-text {
+        font-size: 1.1rem;
+        max-width: 800px;
+        margin: 0 auto 40px auto;
+        line-height: 1.6;
+        color: #555;
+    }
+    .tips-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .tip-card {
+        padding: 40px 25px;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tip-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    .tip-card i {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+    .tip-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #1d3557;
+    }
+    .tip-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Pastel Background Colors & Icon Colors */
+    .tip-card.color-1 { background-color: #e0f7fa; color: #00796b; }
+    .tip-card.color-2 { background-color: #fff3e0; color: #ef6c00; }
+    .tip-card.color-3 { background-color: #e8eaf6; color: #3949ab; }
+    .tip-card.color-4 { background-color: #fce4ec; color: #d81b60; }
+    .tip-card.color-5 { background-color: #e8f5e9; color: #2e7d32; }
+    
+    /* Full-width card for the last item if it's odd */
+    .tip-card:last-child:nth-child(odd) {
+        grid-column: span 2;
+    }
+
+    @media (max-width: 768px) {
+        .tips-grid {
+            grid-template-columns: 1fr;
+        }
+        .tip-card:last-child:nth-child(odd) {
+            grid-column: span 1;
+        }
+    }
 </style>
 
 </head>
@@ -119,101 +273,106 @@
         </div>
     </section>
 
-    <!-- About Us (Homepage Intro) -->
-    <section class="about-us" style="padding: 60px 20px; background-color: #f0f4f8;">
-        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; max-width: 1200px; margin: auto;">
-            <div style="flex: 1 1 300px; padding: 20px; text-align: center;">
-                <img src="images/Globe.png" alt="About Us" style="max-width: 100%; height: auto; border-radius: 10px;">
-            </div>
-            <div style="flex: 2 1 400px; padding: 20px;">
-                <h2 style="font-size: 2em; color: #1d3557; margin-bottom: 15px;" data-translate="about_intro">Who We Are</h2>
-                <p style="font-size: 1.2em; margin-bottom: 20px;" data-translate="about_text">
-                    Shield Maidens is a women-led initiative dedicated to digital empowerment and online safety for young women and marginalized groups. We work to combat technology-facilitated gender-based violence (TFGBV) through education, advocacy, and inclusive support.
-                </p>
-                <a href="about us.html" style="display: inline-block; padding: 10px 20px; background-color: #e63946; color: white; border-radius: 5px; text-decoration: none;" data-translate="learn_more_button">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission and Vision Section -->
-    <section id="mission-vision" style="background-color: #f8f9fa; padding: 40px 20px;">
-        <div style="width: 100%; max-width: 1200px; margin: 0 auto; text-align: center;">
-             
-            <div style="display: grid; grid-template-columns: 2fr 1fr; align-items: center; gap: 20px; background: #ffffff; padding: 20px; margin: 0 auto 30px auto; border-left: 6px solid orange; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); text-align: left;">
-                <div>
-                    <strong style="font-size: 1.3em; display: block; margin-bottom: 10px;" data-translate="our_mission_strong">Our Mission:</strong>
-                    <p style="font-size: 1.2em;" data-translate="mission_text">We aim to raise awareness, provide cyber safety practices, and engage communities in combating TFGBV while supporting marginalized groups, including PWDs, through inclusive resources and advocacy.</p>
+    <!-- Merged About Us Intro with Mission/Vision -->
+    <section class="about-intro-mission-vision" style="padding: 60px 20px; background-color: #FFF5F5;">
+        <div style="max-width: 1200px; margin: auto; text-align: center;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin-bottom: 40px;">
+                <div style="flex: 1 1 300px; padding: 20px; text-align: center;">
+                    <img src="images/Globe.png" alt="About Us" style="max-width: 100%; height: auto; border-radius: 10px;">
                 </div>
-                <div>
-                    <img src="images/mission.png" alt="Mission Icon" style="width: 100%; height: 260px; object-fit: contain; border-radius: 8px;">
-                </div>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 2fr 1fr; align-items: center; gap: 20px; background: #ffffff; padding: 20px; margin: auto; border-left: 6px solid orange; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); text-align: left;">
-                <div>
-                    <strong style="font-size: 1.3em; display: block; margin-bottom: 10px;" data-translate="our_vision_strong">Our Vision:</strong>
-                    <p style="font-size: 1.2em;" data-translate="vision_text">To create a world where young women, girls, and persons with disabilities are empowered to navigate digital spaces safely, confidently, and free from Technology-Facilitated Gender-Based Violence (TFGBV).</p>
-                </div>
-                <div>
-                    <img src="images/vision.png" alt="Vision Icon" style="width: 100%; height: 260px; object-fit: contain; border-radius: 8px;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Learn to Be Safe Online Section -->
-    <section id="safety" style="padding: 30px 15px; background-color: #f2f6f9;">
-        <div style="max-width: 1200px; margin: auto;">
-            <h2 style="text-align: center; font-size: 2.2em; margin-bottom: 15px;" data-translate="safety_online_title">Learn to Be Safe Online</h2>
-
-            <p style="font-size: 1.1em; margin: auto; max-width: 900px; margin-bottom: 20px;" data-translate="safety_online_intro">
-                The internet can be empowering, but also risky without the right knowledge. Whether you're a teen, adult, or guardian, 
-                understanding how to stay safe online is critical. This section highlights a few essential practices to protect yourself and others. 
-                Want to dive deeper? Visit our <strong>Resources</strong> section to access toolkits, guides, and take our interactive safety quiz.
-            </p>
-
-            <div style="text-align: center; margin: 20px 0;">
-                <a href="resource&support.html#quiz" style="background-color: #e63946; color: white; padding: 8px 20px; text-decoration: none; font-weight: bold; border-radius: 6px;" data-translate="explore_quiz_button">
-                    Explore More & Take the Safety Quiz →
-                </a>
-            </div>
-
-            <div class="safety-cards" style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;">
-                <!-- Repeatable card style -->
-                <div style="flex: 1 1 300px; min-width: 280px; padding: 15px; font-size: 1.1em;">
-                    <h3 style="color: orange; margin-bottom: 8px;" data-translate="strong_passwords">Strong Passwords</h3>
-                    <p data-translate="strong_passwords_text">Create long, unique passwords using a combination of letters, numbers, and symbols. Avoid reusing the same password across platforms. Use a password manager if possible.</p>
-                </div>
-
-                <div style="flex: 1 1 300px; min-width: 280px; padding: 15px; font-size: 1.1em;">
-                    <h3 style="color: orange; margin-bottom: 8px;" data-translate="avoid_phishing">Avoid Phishing</h3>
-                    <p data-translate="avoid_phishing_text">Phishing scams attempt to steal your data through fake emails, links, or messages. Be cautious of anything that asks for sensitive info or urges "urgent" action. Verify sources directly.</p>
-                </div>
-
-                <div style="flex: 1 1 300px; min-width: 280px; padding: 15px; font-size: 1.1em;">
-                    <h3 style="color: orange; margin-bottom: 8px;" data-translate="privacy_settings">Privacy Settings</h3>
-                    <p data-translate="privacy_settings_text">Always check and customize your privacy settings on social media and apps. Limit who can view your posts, tag you, or access your location and personal data.</p>
-                </div>
-
-                <div style="flex: 1 1 300px; min-width: 280px; padding: 15px; font-size: 1.1em;">
-                    <h3 style="color: orange; margin-bottom: 8px;" data-translate="safe_sharing">Safe Sharing Habits</h3>
-                    <p data-translate="safe_sharing_text">Think before you share. Avoid posting personal information like your address, school, or travel plans. Once it's online, it can be hard to control who sees it, or how it's used.</p>
-                </div>
-
-                <div style="flex: 1 1 300px; min-width: 280px; padding: 15px; font-size: 1.1em;">
-                    <h3 style="color: orange; margin-bottom: 8px;" data-translate="seek_help">Seek Help</h3>
-                    <p data-translate="seek_help_text">If you're being harassed or threatened online, don't stay silent. Report the incident to the platform and reach out to someone you trust. Need support?
-                        <a href="#contact" style="color: #e63946; text-decoration: none; font-weight: bold;" data-translate="contact_team">Contact our team →</a>
+                <div style="flex: 2 1 400px; padding: 20px; text-align: left;">
+                    <h2 style="font-size: 2.5em; color: #1d3557; margin-bottom: 20px;" data-translate="about_intro">Who We Are</h2>
+                    <p style="font-size: 1.2em; line-height: 1.6;" data-translate="about_text">
+                        Shield Maidens is a women-led initiative dedicated to digital empowerment and online safety for young women and marginalized groups. We work to combat technology-facilitated gender-based violence (TFGBV) through education, advocacy, and inclusive support.
                     </p>
                 </div>
             </div>
+            
+            <!-- This container holds the new Mission/Vision cards -->
+            <div class="mission-vision-container" style="margin-top: 40px; display: flex; justify-content: center; align-items: stretch; gap: 60px; flex-wrap: wrap;">
+                <!-- Mission Item -->
+                <div class="mission-vision-item" style="display: flex; flex: 1; min-width: 500px; max-width: 650px; align-items: center; gap: 20px;">
+                    <div class="content-wrapper" style="flex: 1; color: #fff;">
+                        <h2 class="title" style="font-size: 3rem; font-weight: 600; line-height: 1.1; color: #f5eadd; position: relative; padding-bottom: 20px; margin-bottom: 20px; text-align: left;" data-translate="our_mission_strong">OUR<br>MISSION</h2>
+                        <div class="text-box" style="background-color: #6a4f4b; padding: 25px; border-radius: 8px; margin-top: 20px; text-align: left;">
+                            <p style="font-size: 1rem; line-height: 1.7; color: #f5eadd; margin: 0;" data-translate="mission_text">
+                                We aim to raise awareness, provide cyber safety practices, and engage communities in combating TFGBV while supporting marginalized groups, including PWDs, through inclusive resources and advocacy.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="image-wrapper" style="flex: 1; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); border: 4px solid #fff; height: 400px;">
+                        <img src="images/mission.png" alt="Our Mission Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block;">
+                    </div>
+                </div>
+                <!-- Vision Item -->
+                <div class="mission-vision-item" style="display: flex; flex: 1; min-width: 500px; max-width: 650px; align-items: center; gap: 20px;">
+                    <div class="content-wrapper" style="flex: 1; color: #fff;">
+                        <h2 class="title" style="font-size: 3rem; font-weight: 600; line-height: 1.1; color: #f5eadd; position: relative; padding-bottom: 20px; margin-bottom: 20px; text-align: left;" data-translate="our_vision_strong">OUR<br>VISION</h2>
+                        <div class="text-box" style="background-color: #6a4f4b; padding: 25px; border-radius: 8px; margin-top: 20px; text-align: left;">
+                            <p style="font-size: 1rem; line-height: 1.7; color: #f5eadd; margin: 0;" data-translate="vision_text">
+                                To create a world where young women, girls, and persons with disabilities are empowered to navigate digital spaces safely, confidently, and free from Technology-Facilitated Gender-Based Violence (TFGBV).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="image-wrapper" style="flex: 1; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); border: 4px solid #fff; height: 400px;">
+                        <img src="images/vision.png" alt="Our Vision Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block;">
+                    </div>
+                </div>
+            </div>
 
-            <div style="text-align: center; margin: 20px 0;">
-                <a href="resource&support.html" style="background-color: #1d3557; color: white; padding: 8px 20px; text-decoration: none; font-weight: bold; border-radius: 6px;">
-                    Go to Resources & Support →
-                </a>
+            <a href="about us.html" style="display: inline-block; padding: 12px 25px; background-color: #e63946; color: white; border-radius: 8px; text-decoration: none; margin-top: 50px; font-weight: bold;" data-translate="learn_more_button">Learn More About Us</a>
+        </div>
+    </section>
+
+    <!-- Old About Us, Mission, and Vision sections are now combined above and will be removed -->
+    <section class="about-us" style="display: none;"></section>
+    <section id="mission-vision-new" style="background-color: #4b3832; display: none;"></section>
+
+    <!-- Redesigned 'Learn to Be Safe Online' Section -->
+    <section id="safety-tips">
+        <h2 data-translate="safety_online_title">Learn to Be Safe Online</h2>
+        <p class="intro-text" data-translate="safety_online_intro">
+            The internet can be empowering, but also risky without the right knowledge. Whether you're a teen, adult, or guardian, 
+            understanding how to stay safe online is critical. This section highlights a few essential practices to protect yourself and others. 
+            Want to dive deeper? Visit our <strong>Resources</strong> section to access toolkits, guides, and take our interactive safety quiz.
+        </p>
+        <div class="tips-grid">
+            <div class="tip-card color-1">
+                <i class="fas fa-key"></i>
+                <h3 data-translate="strong_passwords">Strong Passwords</h3>
+                <p data-translate="strong_passwords_text">Create long, unique passwords using a combination of letters, numbers, and symbols. Avoid reusing the same password across platforms.</p>
+            </div>
+            <div class="tip-card color-2">
+                <i class="fas fa-user-secret"></i>
+                <h3 data-translate="avoid_phishing">Avoid Phishing</h3>
+                <p data-translate="avoid_phishing_text">Be cautious of emails or messages asking for sensitive info or urging "urgent" action. Verify sources directly before clicking links.</p>
+            </div>
+            <div class="tip-card color-3">
+                <i class="fas fa-user-shield"></i>
+                <h3 data-translate="privacy_settings">Privacy Settings</h3>
+                <p data-translate="privacy_settings_text">Regularly check and customize your privacy settings on social media and apps. Limit who can view your posts, tag you, or access your data.</p>
+            </div>
+            <div class="tip-card color-4">
+                <i class="fas fa-comment-slash"></i>
+                <h3 data-translate="safe_sharing">Safe Sharing Habits</h3>
+                <p data-translate="safe_sharing_text">Think before you post. Avoid sharing personal information like your address or phone number. Once it's online, you can't control it.</p>
+            </div>
+            <div class="tip-card color-5">
+                <i class="fas fa-hands-helping"></i>
+                <h3 data-translate="seek_help">Seek Help</h3>
+                <p data-translate="seek_help_text">If you're being harassed online, don't stay silent. Report it to the platform and talk to someone you trust. Your safety matters.</p>
             </div>
         </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="resource&support.html" style="background-color: #e63946; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 8px;">
+                Go to Resources & Support →
+            </a>
+        </div>
+    </section>
+
+    <!-- Old 'Learn to Be Safe Online' Section (to be removed) -->
+    <section id="safety" style="padding: 30px 15px; background-color: #f2f6f9; display: none;">
+        <!-- This section has been replaced by #safety-tips -->
     </section>
 
     <!-- Dynamic Card Display Section -->
@@ -1098,6 +1257,12 @@ document.getElementById('mailing-list').addEventListener('submit', function(e) {
 });
 
       </script>
+      
+      <!-- Load scripts at the end of body for proper loading order -->
+      <script src="js/language-handler.js"></script>
+      <script src="js/form-handler.js"></script>
+      <script src="script.js"></script>
+      
       </body>
       </html>
       
