@@ -709,7 +709,7 @@ h2 {
     <!-- Navigation Bar -->
     <nav>
         <a href="index.html" class="logo-link">
-            <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
+            <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo">
         </a>
         <div class="right-nav-section">
             <div class="nav-links" role="menubar">
@@ -727,39 +727,39 @@ h2 {
                 <a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a>
                 <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">Where to Report</a>
             </div>
-            <div class="dropdown language-switcher" role="menuitem" aria-haspopup="true">
-                <a href="#" aria-expanded="false" data-translate="english_link">English <i class="fas fa-chevron-down"></i></a>
-                <div class="dropdown-content" role="menu">
-                    <a href="#" data-lang="en" data-translate="english_link">English</a>
-                    <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
-                    <a href="#" data-lang="fr" data-translate="french_link">French</a>
-                    <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
+            <div class="nav-actions">
+                <div class="dropdown language-switcher" role="menuitem" aria-haspopup="true">
+                    <a href="#" aria-expanded="false" data-translate="english_link">English <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content" role="menu">
+                        <a href="#" data-lang="en" data-translate="english_link">English</a>
+                        <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+                        <a href="#" data-lang="fr" data-translate="french_link">French</a>
+                        <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
+                    </div>
                 </div>
+                <button class="hamburger" aria-label="Open menu" onclick="openMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hamburger Icon (Mobile Only) -->
-<div class="hamburger" onclick="openMenu()">
-  <i class="fas fa-bars"></i>
-</div>
-
-<!-- Mobile Sidebar Menu -->
-<div id="mobileMenu" class="mobile-menu">
-  <div class="menu-header">
-    <span class="close-btn" onclick="closeMenu()">&times;</span>
-  </div>
-  <ul>
-    <li><a href="index.html" data-translate="home_link">Home</a></li>
-    <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
-    <li><a href="resource&support.html">Resources</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="news.html">News</a></li>
-    <li><a href="partner.html">Partner with Us</a></li>
-    <li><a href="donate.html" class="highlight">Donate</a></li>
-  </ul>
-</div>
-
+    <!-- Mobile Sidebar Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="menu-header">
+        <span class="close-btn" onclick="closeMenu()">&times;</span>
+      </div>
+      <ul>
+        <li><a href="index.html" data-translate="home_link">Home</a></li>
+        <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
+        <li><a href="resource&support.html" data-translate="resources_link">Resources</a></li>
+        <li><a href="events.html" data-translate="events_link">Events</a></li>
+        <li><a href="news.html" data-translate="news_link">News</a></li>
+        <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
+        <li><a href="donate.html" class="highlight" data-translate="donate_link">Donate</a></li>
+        <li><a href="report.html" class="nav-report-btn" data-translate="where_to_report_link">Where to Report</a></li>
+      </ul>
+    </div>
 
     <h2 data-translate="calendar_title">Upcoming and Past Events Calendar</h2>
     <div id="calendar"></div>
