@@ -668,57 +668,87 @@ img {
 /* Base styling */
  /* General styles for the .nav element */
  .nav {
-  width: 80%;
-  margin: 0 auto;
-  padding: 15px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background: #fff !important;
+  padding: 0 20px !important;
+  min-height: 60px !important;
+  position: fixed !important;
+  top: 0 !important; left: 0 !important; right: 0 !important;
+  z-index: 1000 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+.logo-link {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  flex-grow: 0 !important;
+  flex-basis: auto !important;
+  order: 0 !important;
+}
+.logo {
+  height: 45px !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0;
-  white-space: nowrap;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  flex-grow: 0 !important;
+  flex-basis: auto !important;
+  order: 1 !important;
 }
-
-/* Navigation links */
-nav a {
-  color: rgb(26, 23, 23);
-  text-decoration: none;
-  padding: 8px 12px;
-  transition: 0.3s;
+.nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    gap: 0 !important;
+    order: 2 !important;
 }
-
-/* Hover effect */
-nav a:not(.logo-link):hover {
-  background-color: #ff4500;
-  color: white;
-  border-radius: 15px;
+.language-switcher {
+    width: 110px !important;
+    max-width: 140px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: 20px !important;
+    order: 1 !important;
+    position: relative !important;
 }
-
-/* Media query for tablets */
-@media (max-width: 1024px) {
-  .nav {
-    width: 90%; /* Adjust width on tablets */
-  }
+.hamburger {
+    font-size: 2.2rem !important;
+    color: #ff4500 !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    margin-left: 4px !important;
+    z-index: 1102 !important;
+    display: none !important;
+    order: 2 !important;
 }
-
-/* Media query for small devices (phones) */
-@media (max-width: 768px) {
-  .nav {
-    width: 100%; /* Full width on mobile devices */
-    padding: 10px; /* Optional, adjust padding on smaller screens */
-  }
+@media (max-width: 900px) {
+    .nav-links { display: none !important; }
+    .logo-link { order: 0 !important; }
+    .nav-actions { margin-left: auto !important; display: flex !important; align-items: center !important; order: 2 !important; gap: 32px !important; }
+    .language-switcher { width: 60px !important; max-width: 70px !important; margin-left: 0 !important; order: 1 !important; }
+    .hamburger { display: block !important; order: 2 !important; margin-left: 0 !important; }
+    nav { padding: 0 10px !important; }
+    .logo { height: 45px !important; }
 }
-
-/* Media query for very small devices (phones in portrait) */
-@media (max-width: 480px) {
-  .nav {
-    width: 100%; /* Full width for very small screens */
-    padding: 5px; /* Further adjust padding if necessary */
-  }
+@media (min-width: 901px) {
+    .hamburger { display: none !important; }
+    .nav-links { display: flex !important; order: 2 !important; margin-left: auto !important; }
+    .logo { height: 170px !important; }
+    .language-switcher { order: 3 !important; margin-left: 20px !important; }
+    .nav-actions { margin-left: 0 !important; order: 4 !important; }
 }
-
-
 
 .dropdown {
   position: relative;
@@ -1158,45 +1188,41 @@ nav a:not(.logo-link):hover {
       <a href="index.html" class="logo-link">
         <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo">
       </a>
-      <div class="right-nav-section">
-        <div class="nav-links" role="menubar">
-          <a href="index.html" role="menuitem" data-translate="home_link">Home</a>
-          <a href="about us.html" role="menuitem" aria-current="page" data-translate="about_us_link">About Us</a>
-          <a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a>
-          <div class="dropdown" role="menuitem" aria-haspopup="true">
-              <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
-              <div class="dropdown-content" role="menu">
-                  <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
-                  <a href="news.html" role="menuitem" data-translate="news_link">News</a>
-                  <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
-              </div>
+      <div class="nav-links" role="menubar">
+        <a href="index.html" role="menuitem" data-translate="home_link">Home</a>
+        <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
+        <a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a>
+        <div class="dropdown" role="menuitem" aria-haspopup="true">
+          <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content" role="menu">
+            <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
+            <a href="news.html" role="menuitem" data-translate="news_link">News</a>
+            <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
           </div>
-          <a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a>
-  
-          <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">
-            <i class="fas fa-exclamation-circle"></i>
-            Where to Report
+        </div>
+        <a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a>
+        <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">
+          <i class="fas fa-exclamation-circle"></i>
+          Where to Report
         </a>
+      </div>
+      <div class="nav-actions">
+        <div class="language-switcher dropdown">
+          <a href="#" aria-expanded="false">ENG <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="#" data-lang="en" data-translate="english_link">English</a>
+            <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+            <a href="#" data-lang="fr" data-translate="french_link">French</a>
+            <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
+          </div>
         </div>
-        <!-- Language Switcher -->
-        <div class="dropdown language-switcher" role="menuitem" aria-haspopup="true">
-            <a href="#" aria-expanded="false">ENG <i class="fas fa-chevron-down"></i></a>
-            <div class="dropdown-content" role="menu">
-                <a href="#" data-lang="en" data-translate="english_link">English</a>
-                <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
-                <a href="#" data-lang="fr" data-translate="french_link">French</a>
-                <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
-            </div>
-        </div>
+        <button class="hamburger" aria-label="Open menu" onclick="openMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </nav>
 
-   <!-- Hamburger Icon (Mobile Only) -->
-<div class="hamburger" onclick="openMenu()">
-  <i class="fas fa-bars"></i>
-</div>
-
-<!-- Mobile Sidebar Menu -->
+   <!-- Mobile Sidebar Menu -->
 <div id="mobileMenu" class="mobile-menu">
   <div class="menu-header">
     <span class="close-btn" onclick="closeMenu()">&times;</span>
@@ -1209,6 +1235,7 @@ nav a:not(.logo-link):hover {
     <li><a href="news.html" role="menuitem" data-translate="news_link">News</a></li>
     <li><a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a></li>
     <li><a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a></li>
+    <li><a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link"><i class="fas fa-exclamation-circle"></i> Where to Report</a></li>
   </ul>
 </div>
 

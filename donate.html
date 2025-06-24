@@ -27,8 +27,7 @@
     <a href="index.html" class="logo-link">
         <img src="/images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo">
     </a>
-
-    <div class="right-nav-section">
+    <div class="right-nav-section nav-actions">
         <div class="nav-links" role="menubar">
             <a href="index.html" role="menuitem" data-translate="home_link">Home</a>
             <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
@@ -42,29 +41,23 @@
                 </div>
             </div>
             <a href="donate.html" class="highlight" role="menuitem" aria-current="page" data-translate="donate_link">Donate</a>
-            
-            <!-- Report Button added to Navigation -->
             <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">
                 <i class="fas fa-exclamation-circle"></i>
                 Where to Report
             </a>
-
-            <!-- Language Switcher -->
-            <div class="dropdown language-switcher" role="menuitem" aria-haspopup="true">
-                <a href="#" aria-expanded="false" data-translate="english_link">English <i class="fas fa-chevron-down"></i></a>
-                <div class="dropdown-content" role="menu">
-                    <a href="#" data-lang="en" data-translate="english_link">English</a>
-                    <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
-                    <a href="#" data-lang="fr" data-translate="french_link">French</a>
-                    <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
-                </div>
+        </div>
+        <div class="dropdown language-switcher" role="menuitem" aria-haspopup="true" style="order:1;">
+            <a href="#" aria-expanded="false" data-translate="english_link">English <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content" role="menu">
+                <a href="#" data-lang="en" data-translate="english_link">English</a>
+                <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+                <a href="#" data-lang="fr" data-translate="french_link">French</a>
+                <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
             </div>
         </div>
-    </div>
-
-    <!-- Hamburger Icon (Mobile Only) -->
-    <div class="hamburger" onclick="openMenu()">
-      <i class="fas fa-bars"></i>
+        <button class="hamburger" aria-label="Open menu" onclick="openMenu()" style="order:2; display: block;">
+            <i class="fas fa-bars"></i>
+        </button>
     </div>
   </nav>
 
@@ -81,6 +74,7 @@
     <li><a href="news.html" data-translate="news_link">News</a></li>
     <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
     <li><a href="donate.html" class="highlight" data-translate="donate_link">Donate</a></li>
+    <li><a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link"><i class="fas fa-exclamation-circle"></i> Where to Report</a></li>
   </ul>
 </div>
 

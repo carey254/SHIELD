@@ -10,17 +10,17 @@
     <style>
         /* Add specific styles for the report page content here */
         .report-resources-section {
-            display: block; /* Ensure it's a block element for auto margins to work */
-            margin-top: 280px; /* Increased top margin to push content further below fixed nav */
-            padding: 20px; /* Adjusted padding for internal spacing */
-            max-width: 900px; /* Re-added max-width to control content width */
-            width: 95%; /* Added explicit width */
-            margin-left: auto !important;
-            margin-right: auto !important;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            box-sizing: border-box; /* Ensure consistent box model */
+            display: block;
+            margin-top: 120px !important;
+            padding: 0 !important;
+            max-width: none !important;
+            width: 100% !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            background: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            box-sizing: border-box;
         }
         .report-resources-section h2 {
             text-align: center;
@@ -83,59 +83,57 @@
       <a href="index.html" class="logo-link">
         <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
       </a>
-    
-      <div class="nav-links" role="menubar">
-        <a href="index.html" role="menuitem" data-translate="home_link">Home</a>
-        <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
-        <a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a>
-        <div class="dropdown" role="menuitem" aria-haspopup="true">
-          <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
+      <div class="right-nav-section nav-actions">
+        <div class="nav-links" role="menubar">
+          <a href="index.html" role="menuitem" data-translate="home_link">Home</a>
+          <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
+          <a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a>
+          <div class="dropdown" role="menuitem" aria-haspopup="true">
+            <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content" role="menu">
+              <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
+              <a href="news.html" role="menuitem" data-translate="news_link">News</a>
+              <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
+            </div>
+          </div>
+          <a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a>
+          <a href="report.html" class="nav-report-btn" role="menuitem" aria-current="page" data-translate="where_to_report_link">
+            <i class="fas fa-exclamation-circle"></i>
+            Where to Report
+          </a>
+        </div>
+        <div class="dropdown language-switcher" role="menuitem" aria-haspopup="true" style="order:1;">
+          <a href="#" aria-expanded="false" data-translate="english_link">English <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-content" role="menu">
-            <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
-            <a href="news.html" role="menuitem" data-translate="news_link">News</a>
-            <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
+            <a href="#" data-lang="en" data-translate="english_link">English</a>
+            <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+            <a href="#" data-lang="fr" data-translate="french_link">French</a>
+            <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
           </div>
         </div>
-        <a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a>
-        
-        <!-- Report Button added to Navigation -->
-        <a href="report.html" class="nav-report-btn" role="menuitem" aria-current="page" data-translate="where_to_report_link">
-          <i class="fas fa-exclamation-circle"></i>
-          Where to Report
-        </a>
-             <div class="dropdown language-switcher" role="menuitem" aria-haspopup="true">
-                <a href="#" aria-expanded="false" data-translate="english_link">English <i class="fas fa-chevron-down"></i></a>
-                <div class="dropdown-content" role="menu">
-                    <a href="#" data-lang="en" data-translate="english_link">English</a>
-                    <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
-                    <a href="#" data-lang="fr" data-translate="french_link">French</a>
-                    <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
-                </div>
-            </div>
+        <button class="hamburger" aria-label="Open menu" onclick="openMenu()" style="order:2; display: block;">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </nav>
-
-   <!-- Hamburger Icon (Mobile Only) -->
-    <div class="hamburger" onclick="openMenu()">
-      <i class="fas fa-bars"></i>
-    </div>
-
     <!-- Mobile Sidebar Menu -->
-    <div id="mobileMenu" class="mobile-menu">
+    <div class="mobile-menu" id="mobileMenu">
       <div class="menu-header">
         <span class="close-btn" onclick="closeMenu()">&times;</span>
       </div>
-      <ul>
-        <li><a href="index.html" data-translate="home_link">Home</a></li>
-        <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
-        <li><a href="resource&support.html" data-translate="resources_link">Resources</a></li>
-        <li><a href="events.html" data-translate="events_link">Events</a></li>
-        <li><a href="news.html" data-translate="news_link">News</a></li>
-        <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
-        <li><a href="donate.html" class="highlight" data-translate="donate_link">Donate</a></li>
-        <li><a href="report.html" data-translate="where_to_report_link">Where to Report</a></li>
+      <ul role="menu">
+        <li><a href="index.html" role="menuitem" data-translate="home_link">Home</a></li>
+        <li><a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a></li>
+        <li><a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a></li>
+        <li><a href="events.html" role="menuitem" data-translate="events_link">Events</a></li>
+        <li><a href="news.html" role="menuitem" data-translate="news_link">News</a></li>
+        <li><a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a></li>
+        <li><a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a></li>
+        <li><a href="report.html" class="nav-report-btn" role="menuitem" aria-current="page" data-translate="where_to_report_link">Where to Report</a></li>
       </ul>
     </div>
+
+   
 
     <section class="report-resources-section">
         <h2 data-translate="hotlines_heading">Kenyan Hotlines and Reporting Platforms for GBV</h2>
