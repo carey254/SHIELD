@@ -1,5 +1,7 @@
 const reportTranslations = {
     en: {
+        en_link: "English",
+        sw_link: "Swahili",
         // Navigation
         "home_link": "Home",
         "about_us_link": "About Us",
@@ -153,6 +155,8 @@ const reportTranslations = {
         "unfpa_link": "UNFPA Dashboard"
     },
     sw: {
+        en_link: "Kiingereza",
+        sw_link: "Kiswahili",
         // Navigation
         "home_link": "Nyumbani",
         "about_us_link": "Kuhusu Sisi",
@@ -161,7 +165,7 @@ const reportTranslations = {
         "events_link": "Matukio",
         "news_link": "Habari",
         "partner_link": "Shirikiana Nasi",
-        "donate_link": "Toa",
+        "donate_link: "Toa",
         "where_to_report_link": "Wapi Kutoa Ripoti",
         
         // Language Switcher
@@ -245,8 +249,8 @@ const reportTranslations = {
         "wangu_kanja_p1": "Inatoa msaada wa kimatibabu, kisaikolojia, kisheria, na uwezeshaji wa kifedha kwa waathirika.",
         "wangu_kanja_hotline": "Namba ya Simu: +254722790404",
 
-        // SOLWODI (Solidarity with Women in Distress) Mombasa
-        "solwodi_title": "SOLWODI (Ushirikiano na Wanawake Walio Katika Dhiki) Mombasa",
+        // SOLWODI (Solidarité avec les Femmes en Détresse) Mombasa
+        "solwodi_title": "SOLWODI (Solidarité avec les Femmes en Détresse) Mombasa",
         "solwodi_p1": "Inalenga kuwaokoa wasichana kutoka biashara haramu ya ngono, usafirishaji haramu wa binadamu, na ndoa za kulazimishwa.",
         "solwodi_hotline": "Namba ya Simu: +254739422422",
 
@@ -343,6 +347,10 @@ const reportTranslations = {
         "unfpa_link": "UNFPA Dashboard"
     },
     fr: {
+        en_link: "Anglais",
+        sw_link: "Swahili",
+        french_link: "Français",
+        arabic_link: "Arabe",
         // Navigation
         "home_link": "Accueil",
         "about_us_link": "À Propos",
@@ -407,19 +415,19 @@ const reportTranslations = {
 
         // Medicins Sans Frontieres (MSF's) Lavender House Clinic (Mathare, Nairobi)
         "msf_title": "Clinique Lavender House de Médecins Sans Frontières (MSF) (Mathare, Nairobi)",
-        "msf_p1": "Offre un soutien médical et psychosocial dans les zones à faible revenu.",
-        "msf_contact": "Contact : 020 2400330",
+        "msf_p1": "Inatoa msaada wa kimatibabu na kisaikolojia katika maeneo yenye kipato cha chini.",
+        "msf_contact": "Mawasiliano: 020 2400330",
 
         // Rescue Dada Centre (Ngara, Nairobi)
         "rescue_dada_title": "Centre Rescue Dada (Ngara, Nairobi)",
         "rescue_dada_p1": "Sauvetage, réhabilitation et réintégration des jeunes filles des rues.",
-        "rescue_dada_contact": "Contact : 0725 694 624",
+        "rescue_dada_contact": "Mawasiliano: 0725 694 624",
 
         // Nena Na Binti
         "nena_na_binti_title": "Nena Na Binti",
         "nena_na_binti_p1": "Fournit un soutien confidentiel et non-jugeant en matière de DSSR, y compris le lien avec la VBG.",
-        "nena_na_binti_hotlines": "Lignes d'urgence : 0800 211 227 (Numéro Vert), 0775533117 (SMS/WhatsApp)",
-        "nena_na_binti_link": "Site Web",
+        "nena_na_binti_hotlines": "Namba za Simu: 0800 211 227 (Numéro Vert), 0775533117 (SMS/WhatsApp)",
+        "nena_na_binti_link": "Tovuti",
 
         // Uwiano Platform for Peace
         "uwiano_title": "Plateforme Uwiano pour la Paix",
@@ -437,10 +445,10 @@ const reportTranslations = {
 
         // CREAW Kenya
         "creaw_title": "CREAW Kenya",
-        "creaw_p1": "Offre un soutien juridique et psychosocial aux survivantes de VBG.",
-        "creaw_hotline": "Ligne d'urgence gratuite : 0800 720 186",
-        "creaw_email": "E-mail : info@creaw.org",
-        "creaw_link": "Site Web",
+        "creaw_p1": "Inatoa msaada wa kisheria na kisaikolojia kwa waathirika wa GBV.",
+        "creaw_hotline": "Namba ya Simu Isiyolipishwa: 0800 720 186",
+        "creaw_email": "Barua pepe: info@creaw.org",
+        "creaw_link": "Tovuti",
 
         // Footer
         "quick_links": "Liens Rapides",
@@ -491,13 +499,17 @@ const reportTranslations = {
         "interpol_desc": "Signalez la traite des êtres humains et les abus facilités par la technologie via la police nationale ou les contacts INTERPOL.",
         "interpol_link": "Trafic INTERPOL",
         "spotlight_title": "Initiative Spotlight",
-        "spotlight_desc": "Plateforme ONU-UE offrant des outils de signalement et de réponse TFGBV en ligne par région. Visitez la page de votre pays pour les étapes.",
+        "spotlight_desc": "Plateforme ONU-EU offrant des outils de signalement et de réponse TFGBV en ligne par région. Visitez la page de votre pays pour les étapes.",
         "spotlight_link": "Visitez l'Initiative Spotlight",
         "unfpa_title": "Tableau de bord UNFPA GBV",
         "unfpa_desc": "Trouvez des centres d'aide TFGBV en ligne spécifiques à chaque pays. Cliquez sur 'Get help' pour signaler un abus ou demander un refuge sûr.",
         "unfpa_link": "Tableau de bord UNFPA"
     },
     ar: {
+        en_link: "الإنجليزية",
+        sw_link: "السواحيلية",
+        french_link: "الفرنسية",
+        arabic_link: "العربية",
         // Navigation
         "home_link": "الرئيسية",
         "about_us_link": "من نحن",

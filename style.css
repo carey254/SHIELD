@@ -2982,3 +2982,14 @@ nav .dropdown > a[data-translate="get_involved_link"] i {
   display: none !important;
 }
 
+.language-switcher .dropdown-content {
+  display: none;
+}
+.language-switcher.open .dropdown-content {
+  display: block;
+}
+.language-switcher:hover .dropdown-content {
+  /* Remove or comment out this rule to prevent hover-only behavior */
+  /* display: block; */
+}
+
