@@ -161,6 +161,28 @@
           .resource-item h3 { font-size:1.1em; }
         }
         
+        @media (max-width: 600px) {
+          .logo-link img {
+            height: 48px !important;
+            width: auto !important;
+          }
+          .hamburger {
+            display: block !important;
+            margin-right: 12px !important;
+            margin-left: 0 !important;
+            position: relative !important;
+            z-index: 1102 !important;
+          }
+        }
+
+        .language-switcher .dropdown-content {
+          display: none;
+          /* ...other styles... */
+        }
+        .language-switcher.open .dropdown-content {
+          display: block;
+        }
+
     </style>
 </head>
 <body>
@@ -783,9 +805,70 @@
         });
       });
     
-    </script>
-    </body>
-    </html>
+    document.addEventListener('DOMContentLoaded', function() {
+      const switcher = document.querySelector('.language-switcher');
+      const toggle = switcher.querySelector('.dropdown-toggle');
+      const dropdown = switcher.querySelector('.dropdown-content');
+
+      // Open on click
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        switcher.classList.toggle('open');
+      });
+
+      // Optional: Open on hover (desktop only)
+      switcher.addEventListener('mouseenter', function() {
+        switcher.classList.add('open');
+      });
+      switcher.addEventListener('mouseleave', function() {
+        switcher.classList.remove('open');
+      });
+
+      // Close when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!switcher.contains(e.target)) {
+          switcher.classList.remove('open');
+        }
+      });
+    });
     
+    </script>
+    <!-- Place these at the end of the body, before </body> -->
+    <script>
+    // Debug: Log missing translation keys for all languages
+    (function() {
+      if (window.reportTranslations) {
+        const langs = Object.keys(window.reportTranslations);
+        const allKeys = new Set();
+        langs.forEach(lang => {
+          Object.keys(window.reportTranslations[lang]).forEach(k => allKeys.add(k));
+        });
+        langs.forEach(lang => {
+          const missing = [];
+          allKeys.forEach(k => {
+            if (!(k in window.reportTranslations[lang])) missing.push(k);
+          });
+          if (missing.length) {
+            console.warn(`Missing keys in ${lang}:`, missing);
+          }
+        });
+      }
+    })();
+    // Patch openMenu/closeMenu to avoid classList errors
+    window.openMenu = function() {
+      var menu = document.getElementById("mobileMenu");
+      if (menu) {
+        menu.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+    };
+    window.closeMenu = function() {
+      var menu = document.getElementById("mobileMenu");
+      if (menu) {
+        menu.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    };
+    </script>
 </body>
 </html> 
