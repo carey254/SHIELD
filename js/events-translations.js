@@ -118,6 +118,8 @@ const eventsTranslations = {
     },
     ar: {
         // Navigation
+        "home_link": "الرئيسية",
+"about_us_link": "معلومات عنا",
         "resources_link": "الموارد",
         "get_involved_link": "شارك معنا",
         "events_link": "الفعاليات",
@@ -192,3 +194,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 }); 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const select = document.querySelector('.language-switcher-select');
+    if (select) {
+      select.addEventListener('change', function() {
+        const lang = this.value;
+        applyEventsTranslations(lang);
+        // Optionally, store the selected language in localStorage
+        localStorage.setItem('eventsLang', lang);
+      });
+  
+      // On page load, set select to stored language or default
+      const storedLang = localStorage.getItem('eventsLang') || 'en';
+      select.value = storedLang;
+      applyEventsTranslations(storedLang);
+    }
+  });

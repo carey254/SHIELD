@@ -6,11 +6,11 @@
     <title>Events Calendar</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/fullcalendar.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/index.global.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    
 
     <link rel="stylesheet" href="accessibilityoption.css">
   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
     <style>
         body {
@@ -20,12 +20,13 @@
             font-family: Arial, sans-serif;
   margin: 0; /* Remove original margin */
   padding-top: 80px; /* 👈 Adds space for the nav */
+  background: #ddd !important;
         }
         nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: white;
+            background-color: #fff !important;
             padding: 15px 40px;
             position: fixed;
             top: 0;
@@ -33,11 +34,15 @@
             width: 100%;
             z-index: 1000;
             height: 60px;
+            flex-direction: row !important;
+            direction: ltr !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
         
         /* Logo image size control */
         .logo-link img {
-            height: 50px;
+            height: 150px !important;
+            width: auto !important;
         }
         
         /* Right-side links */
@@ -63,6 +68,19 @@
             color: white;
             border-radius: 15px;
         }
+        .nav-report-btn{
+          background-color: rgba(231, 27, 27, 0.815) !important;
+          color: white;
+          padding: 8px 15px;
+          border-radius: 20px;
+          font-weight: bold;
+      }
+      
+      .nav-report-btn:hover {
+        background-color: orangered !important;
+        color: white;
+    }
+      
         
         /* Donate button style */
         .highlight {
@@ -81,8 +99,8 @@
         
         /* Logo */
         .logo {
-            height: 300px;                 /* You can make this larger if needed */
-            width: auto;
+            height: 150px !important;
+            width: auto !important;
             display: block;
             margin: 0 auto;
             padding: 10px 20px;            /* Fixed padding */
@@ -519,7 +537,7 @@ h2 {
   }
   
   .logo {
-    height: 60px;
+    height: 150px !important;
   }
   
   .nav-links {
@@ -652,6 +670,8 @@ h2 {
   .logo-link {
     display: flex;
     align-items: center;
+    float: left !important;
+    direction: ltr !important;
   }
 }
 
@@ -700,6 +720,58 @@ h2 {
   height: 1.5em;
   display: block;
 }
+
+.payment-icons img {
+  margin-top: 10px;
+  margin-right: 8px;
+  max-height: 18px !important;
+  max-width: 40px !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+.nav-actions {
+  margin-left: 0 !important;
+  min-width: 160px !important;
+  z-index: 1001 !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.language-switcher {
+  width: auto;              /* Let it size to content */
+  min-width: 90px;          /* Or whatever looks good */
+  max-width: 120px;         /* Prevents it from being too wide */
+  margin-right: 24px;       /* Adds space at the far right */
+  display: inline-block;    /* Or flex, as needed */
+}
+
+.language-switcher select {
+  width: 100%;
+  min-width: 80px;
+  max-width: 110px;
+  border: 3px solid #ffb380;
+  border-radius: 15px;
+  box-sizing: border-box;
+  padding: 2px 8px;
+}
+
+.logo-link {
+  order: 0 !important;
+  margin-right: auto !important;
+}
+
+nav {
+  direction: ltr !important;
+}
+
+nav .dropdown > a[data-translate="get_involved_link"]::after {
+  content: " ▼";
+  font-size: 1em;
+  margin-left: 8px;
+  color: #222;
+}
 </style>
 
 </head>
@@ -717,7 +789,9 @@ h2 {
                 <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
                 <a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a>
                 <div class="dropdown" role="menuitem" aria-haspopup="true">
-                    <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" aria-expanded="false" data-translate="get_involved_link">
+                        Get Involved <i class="fas fa-chevron-down"></i>
+                    </a>
                     <div class="dropdown-content" role="menu">
                         <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
                         <a href="news.html" role="menuitem" data-translate="news_link">News</a>
@@ -728,15 +802,12 @@ h2 {
                 <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">Where to Report</a>
             </div>
             <div class="nav-actions">
-                <div class="dropdown language-switcher" role="menuitem" aria-haspopup="true">
-                    <a href="#" aria-expanded="false" data-translate="english_link">English <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content" role="menu">
-                        <a href="#" data-lang="en" data-translate="english_link">English</a>
-                        <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
-                        <a href="#" data-lang="fr" data-translate="french_link">French</a>
-                        <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
-                    </div>
-                </div>
+                <select class="language-switcher-select" aria-label="Language Switcher">
+                    <option value="en" data-translate="english_link">English</option>
+                    <option value="sw" data-translate="swahili_link">Swahili</option>
+                    <option value="fr" data-translate="french_link">French</option>
+                    <option value="ar" data-translate="arabic_link">Arabic</option>
+                </select>
                 <button class="hamburger" aria-label="Open menu" onclick="openMenu()">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -823,6 +894,7 @@ h2 {
                   <li><a href="news.html" data-translate="news_link">News</a></li>
                   <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
                   <li><a href="donate.html" class="donate-btn" data-translate="donate_link">Donate</a></li>
+                  <li><a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">Where to Report</a></li>
               </ul>
               <div class="payment-icons">
                   <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
@@ -913,34 +985,7 @@ h2 {
     <script src="script.js"></script>
     <script src="js/events-translations.js"></script>
 
-    <!-- Report Form Modal -->
-    <div id="reportModal" class="modal">
-      <div class="modal-content">
-        <span class="close-modal" onclick="closeReportForm()">&times;</span>
-        <h2 data-translate="report_incident">Report an Incident</h2>
-        <form id="reportForm" onsubmit="submitReport(event)">
-          <div class="form-group">
-            <label for="reporterName" data-translate="your_name">Your Name:</label>
-            <input type="text" id="reporterName" name="reporterName" required>
-          </div>
-          <div class="form-group">
-            <label for="incidentDescription" data-translate="describe_incident">Describe the Incident:</label>
-            <textarea id="incidentDescription" name="incidentDescription" required></textarea>
-          </div>
-          <div class="form-group">
-            <label for="reporterEmail" data-translate="email_address">Email Address (Optional):</label>
-            <input type="email" id="reporterEmail" name="reporterEmail">
-          </div>
-          <div class="form-group checkbox">
-            <input type="checkbox" id="contactPermission" name="contactPermission">
-            <label for="contactPermission" data-translate="contact_permission">I agree to be contacted for follow-up (we will respond within 12 hours)</label>
-          </div>
-          <div class="form-group">
-            <button type="submit" class="submit-btn" data-translate="submit_report">Submit Report</button>
-          </div>
-        </form>
-      </div>
-    </div>
+ 
     <div class="accessibility-panel" id="accessibilityPanel">
       <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()">
         <i class="fas fa-universal-access"></i>
@@ -1268,6 +1313,7 @@ h2 {
         }
     });
     </script>
+    <script src="/js/events-translations.js"></script>
     </body>
     </html>
     

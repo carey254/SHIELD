@@ -1,12 +1,21 @@
-/* General Styles */
-body {
-  margin: 0;
-  padding-top: 80px; /* Add padding to body equal to nav height */
+/* Global Layout Settings */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
   background-color: #f8f8f8;
   color: #333;
   box-sizing: border-box;
 }
+
+/* Add space below fixed/sticky nav (if needed) */
+body {
+  padding-top: 80px !important; /* Adjust if nav height changes */
+}
+
+
 
 .popup {
   position: fixed;
@@ -110,9 +119,10 @@ body {
 /* Navigation */
 /* Navigation Bar */
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
   background: #fff;
   padding: 0 30px;
   min-height: 70px;
@@ -125,16 +135,17 @@ nav {
 
 /* Logo container - ALWAYS on the far left, using flexbox */
 .logo-link {
-  display: flex;
-  align-items: center;
-  margin-right: auto;
+  order: 0 !important;
+  margin-right: auto !important;
 }
 
 /* Right section - contains nav links and language switcher, always on the far right */
 .right-nav-section {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
+  flex: 1;
 }
 
 /* Language Switcher container */
@@ -152,14 +163,6 @@ nav {
 }
 
 /* General body and main content direction */
-body {
-}
-
-/* Ensure the main page content layout remains LTR */
-main,
-section,
-footer {
-}
 
 /* Override specific elements for RTL text alignment within an LTR layout */
 [dir="rtl"] .nav-links a,
@@ -169,8 +172,7 @@ footer {
 [dir="rtl"] main h2,
 [dir="rtl"] main h3,
 [dir="rtl"] main p,
-[dir="rtl"] main li,
-[dir="rtl"] footer * /* Apply to all elements in the footer */ {
+[dir="rtl"] main li{
   text-align: right; /* Align text to the right for RTL languages */
 }
 
@@ -218,7 +220,8 @@ footer {
 
 /* Logo image size control */
 .logo-link img {
-  height: 90px; /* Maintain increased logo size */
+  height: 150px !important;
+  width: auto !important;
 }
 
 /* Language Switcher Styling */
@@ -278,32 +281,22 @@ footer {
 
 @media (max-width: 768px) {
   nav {
-    display: flex !important;
     flex-direction: row !important;
+    justify-content: space-between !important;
     align-items: center !important;
   }
   .logo-link {
-    order: 1 !important;
+    order: 0 !important;
     margin-right: auto !important;
-    margin-left: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-  }
-  .right-nav-section {
-    order: 2 !important;
-    margin-left: auto !important;
-    margin-right: 0 !important;
-    display: flex !important;
-    align-items: center !important;
   }
   .nav-actions {
+    order: 2 !important;
+    margin-left: auto !important;
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
-    margin-left: auto !important;
-    margin-right: 0 !important;
+    gap: 10px !important;
   }
-  .language-switcher {
+  .nav-links {
     order: 1 !important;
   }
   .hamburger {
@@ -315,6 +308,9 @@ footer {
     align-items: center !important;
     justify-content: space-between !important;
     min-width: 100px !important;
+    border-width: 3px !important;
+    border-style: solid !important;
+    border-color: #bbb !important;
   }
   .language-switcher > a i {
     margin-left: 8px !important;
@@ -383,13 +379,16 @@ nav a[data-translate="resources_link"] {
 }
 
 /* Add a dropdown arrow to the "Get Involved" link */
+nav a[data-translate="get_involved_link"] i,
 nav a[data-translate="get_involved_link"]::after {
-  content: "\f078"; /* Font Awesome chevron-down icon */
-  font-family: 'Font Awesome 5 Free'; /* Specify Font Awesome font */
-  font-weight: 900; /* Needed for solid icons in Font Awesome 5 */
-  font-size: 0.7em; /* Adjust size as needed, slightly smaller than text */
-  margin-left: 5px;
-  vertical-align: middle;
+  display: inline-block !important;
+  font-family: 'Font Awesome 5 Free' !important;
+  font-weight: 900 !important;
+  content: "\f078" !important;
+  font-size: 1em !important;
+  margin-left: 8px !important;
+  vertical-align: middle !important;
+  color: #222 !important;
 }
 
 /* Clean up previous potentially problematic rules */
@@ -417,8 +416,8 @@ header nav a.active {
 
 
 .logo {
-  height: 50px;
-  width: auto;
+  height: 150px !important;
+  width: auto !important;
   margin: 0;
   padding: 0;
 }
@@ -660,121 +659,10 @@ button:hover {
   color: #ff4500;
 }
 
-/* Footer */
-
-.footer {
-  background: #111;
-  color: #fff;
-  padding: 40px 0 10px;
-  font-family: 'Segoe UI', sans-serif;
-  width: 100vw;
-  box-sizing: border-box;
-  margin-left: calc(-50vw + 50%);
-  position: relative;
-}
-
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap: 30px;
-}
-
-.footer-logo img {
-  max-height: 150px;
-}
-
-.footer-links, .footer-location, .footer-contact {
-  max-width: 250px;
-}
-
-.footer-links h3,
-.footer-location h3,
-.footer-contact h3 {
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-.footer-links h3 {
-  color: orange;
-}
-.footer-location h3,
-.footer-contact h3 {
-  color: orange;
-}
-
-
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links ul li {
-  margin-bottom: 6px;
-}
-
-.footer-links ul li a,
-.footer-contact p,
-.footer-location p {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-.footer-links .donate-btn {
-  background-color: #f2b400;
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #000;
-}
-
-.payment-icons img {
-  margin-top: 10px;
-  margin-right: 8px;
-}
-
-.social-icons {
-  display: flex; /* Arrange icons in a row */
-  gap: 15px;     /* Add space between icons */
-  margin-top: 10px; /* Add some space below the heading */
-  align-items: center; /* Vertically align icons */
-}
-
-.social-icons a img {
-  width: 32px;   /* Adjust size as needed */
-  height: 32px;  /* Ensure aspect ratio is maintained */
-  border-radius: 5px; /* Optional: slight roundness for icons */
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 14px;
-  color: #aaa;
-  border-top: 1px solid #333;
-  padding-top: 10px;
-}
 
 
 
   
-  /* Make sure it stacks only on smaller screens */
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .footer-section {
-      margin-bottom: 20px;
-    }
-  }
   
 
 
@@ -1500,12 +1388,7 @@ button:hover {
             font-weight: bold;
             color: #000;
         }
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 20px 10px;
-        }
+      
         @media screen and (max-width: 600px) {
             header nav a {
                 display: block;
@@ -2711,3 +2594,391 @@ html[dir="rtl"] [data-ltr-direction="true"] .btn-group {
 html[dir="rtl"] [data-ltr-direction="true"] .btn-group button {
     order: unset !important; /* Remove any ordering that might reverse buttons */
 }
+
+/* Full width rules for index.html and all pages */
+section {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Remove max-width restrictions from all containers */
+.container,
+.mission-vision-container,
+.tips-grid,
+.card-display-container,
+.contact-container,
+.team-container,
+.about-container,
+.what-we-do-container,
+.values-container,
+.events-container,
+.social-cards-container,
+.awareness-container,
+.hero-slide .container,
+.report-resources-section {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure navigation bar is always full width */
+nav {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+}
+
+
+
+
+/* Ensure images and content stretch full width */
+img,
+.hero-alt img,
+.bg-image,
+.hero-image img {
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  object-fit: cover !important;
+}
+
+/* Remove any centering that might limit width */
+* {
+  box-sizing: border-box !important;
+}
+
+/* Override any existing max-width rules */
+@media (min-width: 769px) {
+  .container,
+  .mission-vision-container,
+  .tips-grid,
+  .card-display-container,
+  .contact-container,
+  .team-container,
+  .about-container,
+  .what-we-do-container,
+  .values-container,
+  .events-container,
+  .social-cards-container,
+  .awareness-container,
+  .hero-slide .container,
+  .report-resources-section {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 40px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container,
+  .mission-vision-container,
+  .tips-grid,
+  .card-display-container,
+  .contact-container,
+  .team-container,
+  .about-container,
+  .what-we-do-container,
+  .values-container,
+  .events-container,
+  .social-cards-container,
+  .awareness-container,
+  .hero-slide .container,
+  .report-resources-section {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 15px !important;
+  }
+}
+
+/* Custom About Us Hero Section Styles (screenshot match) */
+.about-hero-section {
+  background: #111 !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 !important;
+  position: relative;
+}
+.custom-about-hero {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff;
+  padding: 40px 0 0 0;
+  min-height: 100vh;
+  position: relative;
+}
+.about-title-row, .about-title-centered {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+.about-main {
+  font-size: 4.2rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  display: block;
+  line-height: 1;
+  text-align: center;
+}
+.about-us-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: -10px;
+  justify-content: center;
+}
+.about-us-text {
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #fff;
+  -webkit-text-stroke: 2px #fff;
+  text-stroke: 2px #fff;
+  margin-right: 10px;
+  align-self: flex-start;
+  margin-left: 0;
+  position: static !important;
+  text-align: center;
+}
+.about-arrow-circle {
+  background: #baff6b;
+  color: #111;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-left: 5px;
+}
+.about-description-bottom {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: auto;
+  margin-bottom: 40px;
+  font-size: 1.05rem;
+  color: #fff;
+  line-height: 1.5;
+  max-width: 95vw;
+  background: none;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 60px;
+}
+.about-description-bottom p {
+  flex: 1 1 0;
+  margin-bottom: 0;
+  text-align: left;
+  display: block;
+  white-space: normal;
+  background: none;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+.about-description-bottom p:first-child {
+  border-left: 3px solid #ff9800;
+  padding-left: 18px;
+}
+@media (max-width: 900px) {
+  .about-description-bottom {
+    flex-direction: column;
+    gap: 18px;
+    position: static;
+    left: 0;
+    transform: none;
+    bottom: 0;
+    margin-bottom: 20px;
+  }
+  .about-description-bottom p {
+    padding: 0 0 0 12px;
+  }
+  .about-description-bottom p:first-child {
+    padding-left: 18px;
+  }
+}
+.hero-button {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 28px;
+  border: 2px solid #baff6b;
+  color: #baff6b;
+  background: none;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, color 0.3s;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+.hero-button:hover {
+  background: #baff6b;
+  color: #111;
+}
+@media (max-width: 600px) {
+  .about-main { font-size: 2.5rem; }
+  .about-us-text { font-size: 1.7rem; }
+  .about-arrow-circle { width: 32px; height: 32px; font-size: 1.2rem; }
+  .about-description-bottom { font-size: 0.95rem; max-width: 95vw; left: 50%; transform: translateX(-50%); bottom: 80px; }
+  .custom-about-hero { padding: 20px 0 0 0; }
+  .hero-button { font-size: 1rem; padding: 10px 18px; bottom: 10px; }
+}
+
+.milestone-images img {
+  flex: 1 1 calc(50% - 12px) !important;
+  max-width: calc(50% - 12px) !important;
+  width: calc(50% - 12px) !important;
+  height: auto !important;
+  border-radius: 8px !important;
+  object-fit: cover !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  display: block !important;
+}
+
+@media (min-width: 900px) {
+  nav {
+    justify-content: flex-start !important;
+  }
+  .nav-links {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+}
+
+.resources-section ul,
+.resources-section ol {
+  list-style-position: outside !important;
+  padding-left: 2em !important;
+  margin-left: 0 !important;
+}
+
+.resources-section li {
+  text-indent: 0 !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  display: list-item !important;
+  font-size: 1.08em;
+  font-family: inherit;
+  color: #222;
+}
+
+.resources-section li strong {
+  display: inline;
+  font-weight: bold;
+}
+
+.aligned-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+.aligned-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1em;
+}
+.li-label {
+  min-width: 260px;
+  font-weight: bold;
+  display: inline-block;
+}
+.li-desc {
+  flex: 1;
+  display: inline-block;
+}
+
+.language-switcher-select {
+  width: auto !important;
+  min-width: unset !important;
+  max-width: unset !important;
+  padding: 6px 12px !important;
+  font-size: 1em !important;
+  font-weight: 500;
+  border-radius: 8px !important;
+  background-position: right 8px center !important;
+  box-sizing: border-box !important;
+}
+
+.nav-report-btn {
+  background: #a10023 !important;
+  color: #fff !important;
+  border-radius: 22px !important;
+  padding: 8px 24px !important;
+  font-weight: bold !important;
+  margin-left: 10px !important;
+  display: inline-block !important;
+  transition: background 0.2s;
+}
+
+.nav-report-btn:hover {
+  background: #7a001a !important;
+  color: #fff !important;
+}
+
+.nav-links .dropdown > a[data-translate="get_involved_link"]::after {
+  content: "\f078";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 0.7em;
+  margin-left: 5px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.nav-actions {
+  margin-left: 40px !important;
+  display: flex;
+  align-items: center;
+}
+
+.language-switcher-select {
+  margin-left: 24px !important;
+}
+
+nav .dropdown > a[data-translate="get_involved_link"]::after {
+  content: "\f078";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 1em;
+  margin-left: 8px;
+  vertical-align: middle;
+  display: inline-block;
+  color: #222;
+}
+
+nav .dropdown > a[data-translate="get_involved_link"] i {
+  display: none !important;
+}
+
