@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shield Maidens</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="accessibility.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -224,8 +225,13 @@
         display: flex !important;
         align-items: center !important;
         margin-left: auto !important;
-        gap: 0 !important;
+        margin-right: 44px !important;
+        gap: 12px !important;
         order: 2 !important;
+        min-width: 0 !important;
+        max-width: 160px !important;
+        flex-shrink: 1 !important;
+        justify-content: flex-end !important;
     }
     .language-switcher {
         width: 110px !important;
@@ -348,25 +354,41 @@
         .logo-link { order: 0 !important; }
         .nav-actions {
             margin-left: auto !important;
+            margin-right: 44px !important;
             display: flex !important;
             align-items: center !important;
-            flex-direction: row !important;
             order: 2 !important;
-            gap: 32px !important;
+            gap: 12px !important;
+            min-width: 0 !important;
+            max-width: 160px !important;
+            flex-shrink: 1 !important;
+            justify-content: flex-end !important;
         }
         .language-switcher {
             width: 60px !important;
-            max-width: 70px !important;
+            max-width: 80px !important;
             margin-left: 0 !important;
             order: 1 !important;
+            font-size: 1em !important;
+            flex-shrink: 1 !important;
+            padding: 0 !important;
+        }
+        .language-switcher > a {
+            padding: 2px 10px !important;
+            min-width: 60px !important;
+            max-width: 80px !important;
+            font-size: 1em !important;
         }
         .hamburger {
             display: block !important;
             order: 2 !important;
             margin-left: 0 !important;
+            font-size: 1.7rem !important;
+            flex-shrink: 1 !important;
+            padding: 0 !important;
         }
-        nav { padding: 0 10px !important; }
-        .logo { height: 45px !important; }
+        nav { padding: 0 8px !important; }
+        .logo { height: 32px !important; }
     }
     @media (min-width: 901px) {
         .hamburger { display: none !important; }
@@ -375,6 +397,265 @@
         .language-switcher { order: 2 !important; margin-left: 20px !important; }
         .nav-actions { margin-left: 0 !important; order: 2 !important; }
     }
+
+    .social-media-section {
+        padding: 40px 20px;
+        background: #f9f9f9;
+    }
+
+    .social-cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .social-box,
+    .twitter-card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        flex: 1 1 100%;
+
+        padding: 16px;
+        flex: 1 1 300px;
+        max-width: 360px;
+        min-height: 520px;
+        position: relative;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .follow-btn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 10;
+    }
+
+    .instagram-btn,
+    .twitter-follow-button,
+    .linkedin-btn {
+        padding: 8px 14px;
+        background-color: #e1306c;
+        color: #fff !important;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+        display: inline-block;
+        border: none;
+    }
+
+    .linkedin-btn {
+        background-color: #0077b5;
+    }
+
+    .twitter-btn,
+    .twitter-follow-button {
+        background-color: #1DA1F2 !important;
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .card-header img {
+        width: 28px !important;
+        height: 28px !important;
+        border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+        .social-box,
+        .twitter-card {
+            min-width: 90%;
+        }
+    }
+
+    .contact {
+        padding: 40px !important;
+        text-align: center !important;
+        display: flex !important;
+        justify-content: center !important;
+        gap: 20px !important;
+    }
+    
+    .contact-container {
+        display: flex !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+    
+    #contact, #mailing-list {
+        width: 45% !important;
+        padding: 20px !important;
+    }
+    
+    .contact form {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .contact input, .contact textarea {
+        width: 80% !important;
+        padding: 10px !important;
+        margin: 5px 0 !important;
+    }
+    
+    .contact button {
+        background-color: #222 !important;
+        color: white !important;
+        padding: 10px 20px !important;
+        border: none !important;
+        cursor: pointer !important;
+        border-radius: 5px !important;
+    }
+    
+    h2 {
+        text-align: center !important;
+    }
+    
+    #contact h2::before {
+        content: "📞 " !important;
+    }
+    
+    #mailing-list h2::before {
+        content: "📩 " !important;
+    }
+    
+    input, textarea, button {
+        width: 100% !important;
+        padding: 10px !important;
+        margin-top: 10px !important;
+        border-radius: 5px !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    button {
+        background-color: #75490f !important;
+        color: white !important;
+        cursor: pointer !important;
+    }
+    
+    button:hover {
+        background-color: #b37c17 !important;
+    }
+    
+    
+    
+    @media (max-width: 900px) {
+        .contact-container {
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100vw !important;
+            padding: 0 !important;
+        }
+        #contact, #mailing-list {
+            width: 95vw !important;
+            max-width: 98vw !important;
+            min-width: 0 !important;
+            padding: 18px 4vw !important;
+        }
+    }
+    .form-row textarea {
+        flex: 1;
+        padding: 6px 8px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+        height: 60px;         
+        max-height: 120px;    
+    }
+  
+
+
+
+
+@media (max-width: 600px) {
+  .popup {
+    max-width: 95vw !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    padding: 8px 0 !important;
+    top: 30px !important;
+  }
+  .popup-content {
+    padding: 10px 8px !important;
+    font-size: 0.98em !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .popup-content h2 {
+    font-size: 1.1em !important;
+  }
+  .popup-content p {
+    font-size: 0.98em !important;
+  }
+  .close-btn {
+    font-size: 1.5em !important;
+    top: 8px !important;
+    right: 12px !important;
+  }
+}
+
+/* Responsive section images */
+.about-image img,
+.mission-vision-item .image-wrapper img,
+.event-card-large img,
+.social-box img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.session-card img {
+  max-width: 220px;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .about-image img,
+  .mission-vision-item .image-wrapper img,
+  .event-card-large img,
+  .social-box img {
+    max-width: 95vw;
+    max-height: 160px;
+  }
+  .session-card img {
+    max-width: 95vw;
+    max-height: 120px;
+  }
+}
+
+
+
+
+section, .about-us, .about-container, .about-intro-mission-vision, .mission-vision-item, .hero-alt, .social-media-section, .event-card-large, .next-sessions-section, .carousel-wrapper, .team-container, .contact, .contact-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+@media (max-width: 900px) {
+  section, .about-us, .about-container, .about-intro-mission-vision, .mission-vision-item, .hero-alt, .social-media-section, .event-card-large, .next-sessions-section, .carousel-wrapper, .team-container, .contact, .contact-container {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+}
+
 </style>
 
 </head>
@@ -473,45 +754,60 @@
             </div>
             
             <!-- This container holds the new Mission/Vision cards -->
-            <div class="mission-vision-container" style="margin-top: 40px; display: flex; justify-content: center; align-items: stretch; gap: 60px; flex-wrap: wrap;">
-                <!-- Mission Item -->
-                <div class="mission-vision-item" style="display: flex; flex: 1; min-width: 500px; max-width: 650px; align-items: center; gap: 20px;">
-                    <div class="content-wrapper" style="flex: 1; color: #fff;">
-                        <h2 class="title" style="font-size: 3rem; font-weight: 600; line-height: 1.1; color: #f5eadd; position: relative; padding-bottom: 20px; margin-bottom: 20px; text-align: left;" data-translate="our_mission_strong">OUR<br>MISSION</h2>
-                        <div class="text-box" style="background-color: #6a4f4b; padding: 25px; border-radius: 8px; margin-top: 20px; text-align: left;">
-                            <p style="font-size: 1rem; line-height: 1.7; color: #f5eadd; margin: 0;" data-translate="mission_text">
-                                We aim to raise awareness, provide cyber safety practices, and engage communities in combating TFGBV while supporting marginalized groups, including PWDs, through inclusive resources and advocacy.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="image-wrapper" style="flex: 1; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); border: 4px solid #fff; height: 400px;">
-                        <img src="images/mission.png" alt="Our Mission Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block;">
-                    </div>
-                </div>
-                <!-- Vision Item -->
-                <div class="mission-vision-item" style="display: flex; flex: 1; min-width: 500px; max-width: 650px; align-items: center; gap: 20px;">
-                    <div class="content-wrapper" style="flex: 1; color: #fff;">
-                        <h2 class="title" style="font-size: 3rem; font-weight: 600; line-height: 1.1; color: #f5eadd; position: relative; padding-bottom: 20px; margin-bottom: 20px; text-align: left;" data-translate="our_vision_strong">OUR<br>VISION</h2>
-                        <div class="text-box" style="background-color: #6a4f4b; padding: 25px; border-radius: 8px; margin-top: 20px; text-align: left;">
-                            <p style="font-size: 1rem; line-height: 1.7; color: #f5eadd; margin: 0;" data-translate="vision_text">
-                                To create a world where young women, girls, and persons with disabilities are empowered to navigate digital spaces safely, confidently, and free from Technology-Facilitated Gender-Based Violence (TFGBV).
-                            </p>
-                        </div>
-                    </div>
-                    <div class="image-wrapper" style="flex: 1; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); border: 4px solid #fff; height: 400px;">
-                        <img src="images/vision.png" alt="Our Vision Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block;">
-                    </div>
-                </div>
-            </div>
+           <!-- Accessible, Responsive Mission & Vision Section -->
 
-            <a href="about us.html" style="display: inline-block; padding: 12px 25px; background-color: #e63946; color: white; border-radius: 8px; text-decoration: none; margin-top: 50px; font-weight: bold;" data-translate="learn_more_button">Learn More About Us</a>
+<!-- Soft Full-Page Section with Subtle Design Bottoms -->
+<section aria-label="Our Mission and Vision" style="background: #f5f1ee; padding: 80px 20px;">
+    <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 60px; justify-content: center; align-items: flex-start;">
+  
+      <!-- MISSION -->
+      <div role="region" aria-labelledby="mission-title" style="flex: 1 1 300px; min-width: 280px; max-width: 550px;">
+        <div style="text-align: left; position: relative;">
+          <i class="fas fa-bullseye" style="font-size: 40px; color: #5c4033;" aria-hidden="true"></i>
+          <h3 id="mission-title" style="font-size: 26px; font-weight: 600; color: #5c4033; margin: 10px 0;" data-translate="our_mission_strong">Our Mission</h3>
+          <p style="font-size: 16px; line-height: 1.8; color: #333;" data-translate="mission_text">
+            We aim to raise awareness, provide cyber safety practices, and engage communities in combating TFGBV while supporting marginalized groups, including PWDs, through inclusive resources and advocacy.
+          </p>
+          <!-- Soft Bottom Design -->
+          <div style="
+            background: #e2cdbf;
+            height: 60px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+            margin-top: 30px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+          ">
+            <span style="color: #5c4033; font-size: 16px; font-weight: bold; padding-bottom: 8px;">01</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Old About Us, Mission, and Vision sections are now combined above and will be removed -->
-    <section class="about-us" style="display: none;"></section>
-    <section id="mission-vision-new" style="background-color: #4b3832; display: none;"></section>
-
+      </div>
+  
+      <!-- VISION -->
+      <div role="region" aria-labelledby="vision-title" style="flex: 1 1 300px; min-width: 280px; max-width: 550px;">
+        <div style="text-align: left; position: relative;">
+          <i class="fas fa-lightbulb" style="font-size: 40px; color: #5c4033;" aria-hidden="true"></i>
+          <h3 id="vision-title" style="font-size: 26px; font-weight: 600; color: #5c4033; margin: 10px 0;" data-translate="our_vision_strong">Our Vision</h3>
+          <p style="font-size: 16px; line-height: 1.8; color: #333;" data-translate="vision_text">
+            To create a world where young women, girls, and persons with disabilities are empowered to navigate digital spaces safely, confidently, and free from Technology-Facilitated Gender-Based Violence (TFGBV).
+          </p>
+          <!-- Soft Bottom Design -->
+          <div style="
+            background: #cbb7a4;
+            height: 60px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+            margin-top: 30px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+          ">
+            <span style="color: #5c4033; font-size: 16px; font-weight: bold; padding-bottom: 8px;">02</span>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
     <!-- Redesigned 'Learn to Be Safe Online' Section -->
     <section id="safety-tips">
         <h2 data-translate="safety_online_title">Learn to Be Safe Online</h2>
@@ -553,7 +849,7 @@
             </a>
         </div>
     </section>
-
+    <hr style="margin: 50px 0 0 0; border: none; border-top: 3px solid #eee;">
     <!-- Old 'Learn to Be Safe Online' Section (to be removed) -->
     <section id="safety" style="padding: 30px 15px; background-color: #f2f6f9; display: none;">
         <!-- This section has been replaced by #safety-tips -->
@@ -841,134 +1137,84 @@
     </section>
 
     <!-- Social Media Section -->
-    <section class="social-media-section">
-        <h2 style="text-align: center; margin-bottom: 30px;" data-translate="follow_our_socials">Follow our social handles to know more</h2>
-        <div class="social-cards-container">
-            <!-- LinkedIn -->
-            <div class="social-box">
-                <div style="border: 1px solid #ddd; padding: 16px; border-radius: 8px; background: #fff; position: relative;">
-              
-                    <!-- Connect Button at Top Right -->
-                    <div style="position: absolute; top: 16px; right: 16px;">
-                        <a href="https://www.linkedin.com/in/shield-maidens-47ab66329" target="_blank" 
-                           style="padding: 8px 14px; background-color: #0077b5; color: white; text-decoration: none; font-size: 14px; border-radius: 5px;"
-                           data-translate="connect">
-                            Connect
-                        </a>
-                    </div>
-              
-                    <!-- LinkedIn logo and text in one row -->
-                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                        <!-- LinkedIn Icon -->
-                        <img src="https://static-exp1.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" 
-                             alt="LinkedIn Logo" 
-                             style="width: 40px; height: 40px; border-radius: 4px;">
-              
-                        <!-- Text and Link -->
-                        <div style="text-align: left;">
-                            <a href="https://www.linkedin.com/in/shield-maidens-47ab66329" target="_blank" style="text-decoration: none; color: #000;">
-                                <strong>Shield Maidens</strong><br>
-                                <span data-translate="view_profile">View our LinkedIn profile</span><br>
-                                <span style="color: #0077b5; font-size: 13px;">linkedin.com/in/shield-maidens-47ab66329</span>
-                            </a>
-                        </div>
-                    </div>
-              
-                    <!-- Gigs Image Below -->
-                    <div>
-                        <img src="images/gigs.jpg" alt="Gigs Image" style="width: 100%; border-radius: 10px;">
-                    </div>
-              
-                </div>
-            </div>
-            
+   
+<section class="social-media-section">
+    <h2 style="text-align: center; margin-bottom: 30px;" data-translate="follow_our_socials">
+        Follow our social handles to know more
+    </h2>
 
-            <!-- Instagram -->
-            <div class="social-box">
-                <div class="follow-btn">
-                    <a href="https://www.instagram.com/the_shield_maidens/embed" target="_blank" class="instagram-btn" data-translate="follow_instagram">
-                        Follow on Instagram
-                    </a>
-                </div>
-                <iframe src="https://www.instagram.com/the_shield_maidens/embed" 
-                        width="100%" height="500" frameborder="0" scrolling="yes"></iframe>
+    <div class="social-cards-container">
+        <!-- LinkedIn -->
+        <div class="social-box">
+            <div class="follow-btn">
+                <a href="https://www.linkedin.com/in/shield-maidens-47ab66329" target="_blank"
+                    class="linkedin-btn">Connect</a>
             </div>
 
-            <!-- Twitter (X) -->
-            <div class="social-card twitter-card">
-                <div class="card-header">
-                    <img src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Twitter Logo" style="width: 32px;">
-                    <strong>@_shield_maidens</strong>
+            <div class="card-header">
+                <img src="https://static-exp1.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico"
+                    alt="LinkedIn Logo">
+                <div>
+                    <strong>Shield Maidens</strong><br>
+                    <span>View our LinkedIn profile</span><br>
+                    <span style="color: #0077b5; font-size: 13px;">linkedin.com/in/shield-maidens-47ab66329</span>
                 </div>
-
-                <!-- Twitter Timeline -->
-                <a class="twitter-timeline"
-                   href="https://twitter.com/_shield_maidens"
-                   data-height="400"
-                   data-theme="light"
-                   data-chrome="noheader nofooter noborders transparent"
-                   data-dnt="true"
-                   data-translate="tweets_by_shield_maidens">
-                    Tweets by @_shield_maidens
-                </a>
-
-                <!-- Twitter Follow Button -->
-                <a href="https://twitter.com/_shield_maidens?ref_src=twsrc%5Etfw" 
-                   class="twitter-follow-button"
-                   data-show-count="false"
-                   data-size="large"
-                   data-translate="follow_shield_maidens">
-                    Follow @_shield_maidens
-                </a>
-
-                <!-- Embedded Recent Post -->
-                <blockquote class="twitter-tweet" data-theme="dark">
-                    <a href="https://twitter.com/_shield_maidens/status/1911289276991492240"></a>
-                </blockquote>
-
             </div>
+
+            <img src="images/gigs.jpg" alt="Gigs Image" style="width: 100%; border-radius: 10px;">
         </div>
-    </section>
 
-    <!-- Twitter Script Loader -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <!-- Instagram -->
+        <div class="social-box">
+            <div class="follow-btn">
+                <a href="https://www.instagram.com/the_shield_maidens" target="_blank"
+                    class="instagram-btn">Follow</a>
+            </div>
 
-
-    <section class="shield-cta-section" style="background-color: #ff4500;">
-        <div class="shield-cta-container">
-            <h2 data-translate="join_difference">Join Us in Making a Difference</h2>
-            <p class="shield-cta-intro" data-translate="cta_intro">
-                At Shield Maidens, we believe in the power of collective action. Together, we can create a safer, more inclusive digital space for all. Get involved today to help us fight against Technology-Facilitated Gender-Based Violence and advocate for the rights of marginalized communities online.
-            </p>
-            <button onclick="window.location.href='index.html#contact'" class="btn-get-involved" data-translate="join_us" style="cursor:pointer;">Join Us</button>
+            <iframe src="https://www.instagram.com/the_shield_maidens/embed" width="100%" height="460" frameborder="0"
+                scrolling="yes" style="border-radius: 10px;"></iframe>
         </div>
-    </section>  
 
+        <!-- Twitter -->
+        <div class="social-box twitter-card">
+            <div class="social-card-header">
+                <span>@_shield_maidens</span>
+                <a href="https://twitter.com/_shield_maidens" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @_shield_maidens</a>
+            </div>
+            <img src="images/XX.jpg" alt="Twitter preview" style="width:100%; border-radius:8px;">
+        </div>
+    </div>
+</section>
+
+<!-- Twitter Script -->
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
     <!-- Contact Us -->
     <div class="contact-container">
         <div id="contact">
-            <h2 data-translate="contact_us">Contact Us</h2>
-            <form id="contactForm" action="send_email.php" method="POST" style="max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px;">
-                <label for="name" style="text-align:left;">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required data-translate="your_name" style="width:100%;padding:5px;">
-                <label for="email" style="text-align:left;">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required data-translate="your_email" style="width:100%;padding:5px;">
-                <label for="message" style="text-align:left;"> Send Message</label>
-                <textarea id="message" name="message" placeholder="Your Message" required data-translate="your_message" style="width:100%;padding:5px;"></textarea>
-                <button type="submit" data-translate="send_message" style="width:100%;padding:12px 0;background: orange;color:#fff;border:none;border-radius:5px;font-size:1.1em;">Send Message</button>
-            </form>
-            <p id="response"></p>
+        <h2 data-translate="contact_us">Contact Us</h2>
+        <form id="contactForm" action="submit_contact.php" method="POST">
+            <input type="text" id="name" name="name" placeholder="Your Name" required data-translate="your_name">
+<input type="email" id="email" name="email" placeholder="Your Email" required data-translate="your_email">
+<textarea id="message" name="message" placeholder="Your Message" required data-translate="your_message"></textarea>
+
+            <button type="submit" data-translate="send_message">Send Message</button>
+          </form>
+          
+        <p id="response"></p>
         </div>
     
-        <!-- Mailing List Section -->
-        <form id="mailing-list" action="send_email.php" method="POST">
-            <h2 data-translate="join_mailing_list">Join Our Mailing List</h2>
-            <p data-translate="mailing_list_text">Be the first to know about upcoming Training Sessions, Events, and other related news.</p>
-            <input type="email" id="mailingEmail" name="email" placeholder="Enter your email here" required>
-            <button type="submit" data-translate="stay_updated">Stay updated</button>
-            <p id="mailingResponse"></p>
-        </form>
-    </div>
+     
+         <!-- Mailing List Section -->
+<form id="mailing-list" method="POST">
+    <h2 data-translate="join_mailing_list">Join Our Mailing List</h2>
+    <p data-translate="mailing_list_text">Be the first to know about upcoming Training Sessions, Events, and other related news.</p>
+    <input type="email" id="mailingEmail" name="mailingEmail" placeholder="Enter your email here" required data-translate="your_email">
+    <button type="submit" data-translate="stay_updated">Stay updated</button>
+    <p id="mailingResponse"></p>
+  </form>
 
     <!-- Footer -->
     <footer class="footer">
@@ -976,17 +1222,18 @@
             <div class="footer-logo">
                 <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo">
             </div>
-
+    
             <div class="footer-links">
                 <h3 data-translate="quick_links">Quick Links</h3>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about us.html">About Us</a></li>
-                    <li><a href="resource&support.html">Resources</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="partner.html">Partner with Us</a></li>
-                    <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                    <li><a href="index.html" data-translate="home_link">Home</a></li>
+                    <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
+                    <li><a href="resource&support.html" data-translate="resources_link">Resources</a></li>
+                    <li><a href="events.html" data-translate="events_link">Events</a></li>
+                    <li><a href="news.html" data-translate="news_link">News</a></li>
+                    <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
+                    <li><a href="donate.html" class="donate-btn" data-translate="donate_link">Donate</a></li>
+                    <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">Where to Report</a>
                 </ul>
                 <div class="payment-icons">
                     <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
@@ -994,15 +1241,15 @@
                     <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" height="20">
                 </div>
             </div>
-
+    
             <div class="footer-location">
                 <h3 data-translate="location">Location</h3>
-                <p>Nairobi, Kenya</p>
+                <span data-translate="location_text">Nairobi, Kenya</span>
             </div>
-
+    
             <div class="footer-contact">
                 <h3 data-translate="contact_us_footer">Contact Us</h3>
-                <p>Email: shi3ldmaidens@gmail.com</p>
+                <span>Email: <span data-translate="footer_email">shi3ldmaidens@gmail.com</span></span>
                 <h3 data-translate="follow_our_socials">Follow our social handles to know more</h3>
                 <div class="social-icons">
                     <a href="https://x.com/_shield_maidens" target="_blank">
@@ -1448,6 +1695,8 @@ document.getElementById('mailing-list').addEventListener('submit', function(e) {
       <script src="js/language-handler.js"></script>
       <script src="js/form-handler.js"></script>
       <script src="script.js"></script>
+
+  
       
       </body>
       </html>

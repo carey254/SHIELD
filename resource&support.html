@@ -9,6 +9,7 @@
      <!-- Add this in the <head> of your HTML -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="footer.css">
   <link rel="stylesheet" href="accessibility.css">
   <link rel="stylesheet" href="quiz.css">
   
@@ -50,7 +51,14 @@ nav {
 }
 
 /* LOGO */
-
+.logo-link img {
+  height: 150px !important;
+  width: auto !important;
+}
+.logo {
+  height: 150px !important;
+  width: auto !important;
+}
 
 /* NAV LINKS GROUP */
 .nav-links {
@@ -651,88 +659,6 @@ button:disabled {
 }
 
 
-/* Footer Styles */
-.footer {
-  background: #111;
-  color: #fff;
-  padding: 40px 20px 10px;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap: 30px;
-}
-
-.footer-logo img {
-  max-height: 150px;
-}
-
-.footer-links, .footer-location, .footer-contact {
-  max-width: 250px;
-}
-
-.footer-links h3,
-.footer-location h3,
-.footer-contact h3 {
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links ul li {
-  margin-bottom: 6px;
-}
-
-.footer-links ul li a,
-.footer-contact p,
-.footer-location p {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 15px;
-}
-.footer-links h3 {
-  color: orange;
-}
-.footer-location h3,
-.footer-contact h3 {
-  color: orange;
-}
-
-.footer-links .donate-btn {
-  background-color: #f2b400;
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #000;
-}
-
-.payment-icons img {
-  margin-top: 10px;
-  margin-right: 8px;
-}
-
-.social-icons a {
-  margin-right: 10px;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 14px;
-  color: #aaa;
-  border-top: 1px solid #333;
-  padding-top: 10px;
-}
 
 /* General styles for the .nav element */
 .nav {
@@ -1061,6 +987,15 @@ button:disabled {
         height: 350px;
     }
 }
+
+.payment-icons img {
+  margin-top: 10px;
+  margin-right: 8px;
+  max-height: 18px !important;
+  max-width: 40px !important;
+  height: auto !important;
+  width: auto !important;
+}
   </style>
 </head>
 
@@ -1086,10 +1021,10 @@ button:disabled {
       <a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a>
       
       <!-- Report Button added to Navigation -->
-      <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">Where to Report</a>
+      <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link" style="margin-right: 16px;">Where to Report</a>
       
     </div>
-    <div class="nav-actions">
+    <div class="nav-actions" style="display: flex; align-items: center; gap: 10px;">
       <div class="language-switcher dropdown" role="menuitem" aria-haspopup="true">
         <a href="#" aria-expanded="false">EN <i class="fas fa-chevron-down"></i></a>
         <div class="dropdown-content" role="menu">
@@ -1157,7 +1092,7 @@ button:disabled {
   </div>
 </section>
 
-  
+
   <!-- TFGBV Awareness Section -->
   <div class="awareness-section">
     <div class="awareness-container">
@@ -1181,6 +1116,8 @@ button:disabled {
       </div>
     </div>
   </div>
+
+  <hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
   <section class="tfbgv-awareness">
 
     <!-- Block 1 -->
@@ -1206,12 +1143,27 @@ button:disabled {
     <p data-translate="forms_description">
       TFGBV takes many forms, which are constantly evolving with technology. These acts often target women and girls, aiming to humiliate, silence, or control them through digital means. Some common forms include:
     </p>
-    <ul>
-      <li data-translate="cyberstalking_li" data-html="true"><strong>Cyberstalking:</strong> Repeated online harassment and threats that instill fear or distress.</li>
-      <li data-translate="doxxing_li" data-html="true"><strong>Doxxing:</strong> Publishing private information like phone numbers, addresses, or personal data without consent.</li>
-      <li data-translate="non_consensual_li" data-html="true"><strong>Non-consensual sharing of intimate images:</strong> Often referred to as "revenge porn," this involves distributing private content to shame or blackmail victims.</li>
-      <li data-translate="online_harassment_li" data-html="true"><strong>Online harassment:</strong> Persistent abusive messages via social media, email, or forums.</li>
-      <li data-translate="deepfakes_li" data-html="true"><strong>Deepfakes and manipulated content:</strong> Using AI to create false or harmful visual/audio content, often sexual in nature.</li>
+    <ul class="aligned-list">
+      <li data-translate="cyberstalking_li" data-html="true">
+        <span class="li-label"><strong>Cyberstalking:</strong></span>
+        <span class="li-desc">Repeated online harassment and threats that instill fear or distress.</span>
+      </li>
+      <li data-translate="doxxing_li" data-html="true">
+        <span class="li-label"><strong>Doxxing:</strong></span>
+        <span class="li-desc">Publishing private information like phone numbers, addresses, or personal data without consent.</span>
+      </li>
+      <li data-translate="non_consensual_li" data-html="true">
+        <span class="li-label"><strong>Non-consensual sharing of intimate images:</strong></span>
+        <span class="li-desc">Often referred to as "revenge porn," this involves distributing private content to shame or blackmail victims.</span>
+      </li>
+      <li data-translate="online_harassment_li" data-html="true">
+        <span class="li-label"><strong>Online harassment:</strong></span>
+        <span class="li-desc">Persistent abusive messages via social media, email, or forums.</span>
+      </li>
+      <li data-translate="deepfakes_li" data-html="true">
+        <span class="li-label"><strong>Deepfakes and manipulated content:</strong></span>
+        <span class="li-desc">Using AI to create false or harmful visual/audio content, often sexual in nature.</span>
+      </li>
     </ul>
     <p data-translate="forms_conclusion">These forms not only cause emotional and psychological harm but also infringe on rights to safety, dignity, and expression.</p>
     <a href="https://www.unfpa.org/sites/default/files/pub-pdf/An%20Infographic%20Guide%20to%20An%20Infographic%20Guide%20to%20TFGBV.pdf" target="_blank" data-translate="explore_unfpa">Explore more on UNFPA</a>
@@ -1229,11 +1181,23 @@ button:disabled {
     <p data-translate="effects_description">
       The impact of TFGBV goes beyond the screen. Victims experience serious consequences across emotional, physical, social, and economic levels:
     </p>
-    <ul>
-      <li data-translate="mental_health_li" data-html="true"><strong>Mental Health:</strong> Victims often suffer from anxiety, depression, panic attacks, and PTSD.</li>
-      <li data-translate="loss_opportunities_li" data-html="true"><strong>Loss of Opportunities:</strong> Some withdraw from public life, education, or career advancement due to fear or shame.</li>
-      <li data-translate="physical_safety_li" data-html="true"><strong>Physical Safety Risks:</strong> Online abuse can escalate to physical stalking or violence in the real world.</li>
-      <li data-translate="self_censorship_li" data-html="true"><strong>Self-Censorship:</strong> Many survivors silence their voices or avoid digital spaces entirely to avoid further harm.</li>
+    <ul class="aligned-list">
+      <li data-translate="mental_health_li" data-html="true">
+        <span class="li-label"><strong>Mental Health:</strong></span>
+        <span class="li-desc">Victims often suffer from anxiety, depression, panic attacks, and PTSD.</span>
+      </li>
+      <li data-translate="loss_opportunities_li" data-html="true">
+        <span class="li-label"><strong>Loss of Opportunities:</strong></span>
+        <span class="li-desc">Some withdraw from public life, education, or career advancement due to fear or shame.</span>
+      </li>
+      <li data-translate="physical_safety_li" data-html="true">
+        <span class="li-label"><strong>Physical Safety Risks:</strong></span>
+        <span class="li-desc">Online abuse can escalate to physical stalking or violence in the real world.</span>
+      </li>
+      <li data-translate="self_censorship_li" data-html="true">
+        <span class="li-label"><strong>Self-Censorship:</strong></span>
+        <span class="li-desc">Many survivors silence their voices or avoid digital spaces entirely to avoid further harm.</span>
+      </li>
     </ul>
     <p data-translate="effects_conclusion">
       These effects can linger for years, diminishing self-worth, eroding trust in technology, and limiting freedom of expression and access to digital resources.
@@ -1434,6 +1398,7 @@ button:disabled {
                 <li><a href="news.html" data-translate="news_link">News</a></li>
                 <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
                 <li><a href="donate.html" class="donate-btn" data-translate="donate_link">Donate</a></li>
+                <li><a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">Where to Report</a></li>
             </ul>
             <div class="payment-icons">
                 <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
