@@ -143,15 +143,15 @@ nav {
 .right-nav-section {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-  flex: 1;
+  margin-left: 0; /* Remove auto margin that pushes content apart */
+  gap: 5px; /* Small gap between nav links and language switcher */
 }
 
 /* Language Switcher container */
 .language-switcher {
   position: relative;
   direction: ltr !important; /* Force LTR direction for the switcher container itself */
+  margin-left: 10px !important; /* Small space between nav links and language switcher */
 }
 
 /* Language Switcher dropdown content alignment */

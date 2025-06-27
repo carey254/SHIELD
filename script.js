@@ -1,32 +1,3 @@
-// Language switcher functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Set default language
-    let currentLang = localStorage.getItem('language') || 'en';
-    setLanguage(currentLang);
-
-    // Add click handlers to language switcher links
-    document.querySelectorAll('.language-switcher a[data-lang]').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const lang = this.getAttribute('data-lang');
-            setLanguage(lang);
-        });
-    });
-});
-
-function setLanguage(lang) {
-    // Save selected language
-    localStorage.setItem('language', lang);
-    
-    // Update all elements with data-translate attribute
-    document.querySelectorAll('[data-translate]').forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
-        }
-    });
-}
-
 document.addEventListener("DOMContentLoaded", function () {
   let event = {
     title: "Introduction to Cyber Attacks",
