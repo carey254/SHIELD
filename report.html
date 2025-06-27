@@ -183,6 +183,150 @@
           display: block;
         }
 
+
+
+        .section-title {
+          text-align: center;
+          font-size: 2rem;
+          color: #080808;
+          margin: 40px 0 20px;
+        }
+      
+        .flowchart-container {
+          display: flex;
+          align-items: stretch;
+          justify-content: space-between;
+          flex-wrap: nowrap; /* Prevent wrapping */
+          gap: 8px; /* Reduce space between steps */
+          margin: 0 auto;
+          width: 100%;
+          max-width: none;
+          padding: 0 2vw;
+        }
+      
+        .flow-step {
+          flex: 1 1 0;
+          min-width: 0;
+          background: #f8f0fb;
+          border: 2px solid #c89be9;
+          border-radius: 15px;
+          padding: 16px 10px;
+          text-align: center;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+          transition: transform 0.3s;
+          width: auto;
+          margin: 0;
+        }
+      
+        .flow-step:hover {
+          transform: scale(1.05);
+        }
+      
+        .step-circle {
+          width: 40px;
+          height: 40px;
+          background: #800080;
+          color: white;
+          font-weight: bold;
+          border-radius: 50%;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 10px;
+          font-size: 18px;
+        }
+      
+        .flow-arrow {
+          flex: 0 0 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 22px;
+          color: #800080;
+          margin: 0;
+          padding: 0;
+        }
+      
+        .reporting-map {
+          background: #f2f2f2;
+          padding: 40px 20px;
+        }
+
+        @media (max-width: 1100px) {
+          .flow-step { font-size: 0.95em; padding: 10px 4px; }
+          .flow-arrow { font-size: 18px; }
+        }
+        @media (max-width: 900px) {
+          .flowchart-container { gap: 4px; padding: 0 1vw; }
+          .flow-step { font-size: 0.9em; padding: 8px 2px; }
+        }
+        @media (max-width: 700px) {
+          .flowchart-container { flex-wrap: wrap; gap: 10px; }
+          .flow-step, .flow-arrow { flex: 1 1 100%; min-width: 180px; }
+        }
+
+        .language-switcher {
+          width: 110px !important;
+          max-width: 140px !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          margin-left: 20px !important;
+          order: 2 !important;
+          position: relative !important;
+      }
+      .language-switcher > a, .language-switcher select {
+          width: 100% !important;
+          padding: 4px 8px !important;
+          font-size: 1em !important;
+          border-radius: 6px !important;
+          border: 1px solid #ccc !important;
+          background: #fff !important;
+          color: #222 !important;
+          text-align: center !important;
+          cursor: pointer !important;
+          position: relative !important;
+          z-index: 2 !important;
+      }
+      .language-switcher .dropdown-content {
+          display: none !important;
+          position: absolute !important;
+          left: 0 !important;
+          top: 100% !important;
+          min-width: 100% !important;
+          background: #fff !important;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.12) !important;
+          border-radius: 0 0 8px 8px !important;
+          z-index: 10 !important;
+          border: 1px solid #ccc !important;
+          border-top: none !important;
+          margin-top: -1px !important;
+      }
+      .language-switcher:hover .dropdown-content,
+      .language-switcher:focus-within .dropdown-content {
+          display: block !important;
+      }
+      .language-switcher .dropdown-content a {
+          display: block !important;
+          padding: 8px 12px !important;
+          color: #222 !important;
+          text-decoration: none !important;
+          background: #fff !important;
+          border-radius: 0 !important;
+          font-size: 1em !important;
+          text-align: left !important;
+          cursor: pointer !important;
+      }
+      .language-switcher .dropdown-content a:hover {
+          background: #f0f0f0 !important;
+      }
+      .dropdown a i {
+        margin-left: 5px !important; /* Add some space between text and arrow */
+        vertical-align: middle !important; /* Align the arrow nicely with the text */
+        display: inline-block !important; /* Ensure it is displayed and overrides any other display rule */
+        font-size: 0.8em !important; /* Adjust size if needed, important to ensure it's not zero */
+        color: inherit !important; /* Inherit color from parent link, important to ensure it's not transparent/hidden */
+    }
     </style>
 </head>
 <body>
@@ -210,15 +354,16 @@
             Where to Report
           </a>
         </div>
-        <div class="dropdown language-switcher" role="menuitem" aria-haspopup="true" style="order:1;">
-          <a href="#" aria-expanded="false" data-translate="english_link">English <i class="fas fa-chevron-down"></i></a>
-          <div class="dropdown-content" role="menu">
-            <a href="#" data-lang="en" data-translate="english_link">English</a>
-            <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
-            <a href="#" data-lang="fr" data-translate="french_link">French</a>
-            <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
+        <div class="nav-actions">
+          <div class="language-switcher dropdown" role="menuitem" aria-haspopup="true">
+              <a href="#" aria-expanded="false">EN <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content" role="menu">
+                  <a href="#" data-lang="en" data-translate="english_link">English</a>
+                  <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+                  <a href="#" data-lang="fr" data-translate="french_link">French</a>
+                  <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
+              </div>
           </div>
-        </div>
         <button class="hamburger" aria-label="Open menu" onclick="openMenu()" style="order:2; display: block;">
           <i class="fas fa-bars"></i>
         </button>
@@ -241,80 +386,39 @@
       </ul>
     </div>
 
-    <section class="report-resources-section">
-      <h2 data-translate="report_resources_heading"></h2>
     
-      <!-- Africa Section with Dropdown -->
-      <div class="dropdown-menu">
-        <button class="dropbtn"><span data-translate="africa_dropdown_btn"></span><span class="chevron">&#9660;</span></button>
-        <div class="dropdown-content">
-          <div class="resource-item">
-            <h3 data-translate="south_africa_gbv_title"></h3>
-            <p data-translate="south_africa_gbv_desc"></p>
-          </div>
-          <div class="resource-item">
-            <h3 data-translate="childline_sa_title"></h3>
-            <p data-translate="childline_sa_desc"></p>
-          </div>
-          <div class="resource-item">
-            <h3 data-translate="safecity_title"></h3>
-            <p data-translate="safecity_desc"></p>
-            <p><a href="https://www.safecity.in/" target="_blank" data-translate="safecity_link"></a></p>
-          </div>
-          <div class="resource-item">
-            <h3 data-translate="soawr_title"></h3>
-            <p data-translate="soawr_desc"></p>
-            <p><a href="https://soawr.org" target="_blank" data-translate="soawr_link"></a></p>
-          </div>
-          <div class="resource-item">
-            <h3 data-translate="eliezah_title"></h3>
-            <p data-translate="eliezah_desc"></p>
-          </div>
+    
+    <!-- Reporting Flowchart Section -->
+    <section class="reporting-flowchart">
+      <h2 class="section-title" data-translate="reporting_flowchart_title">How to Report GBV & TFGBV</h2>
+      <div class="flowchart-container" style="display: flex; align-items: stretch; justify-content: space-between; flex-wrap: nowrap; gap: 8px; width: 100%; max-width: none; padding: 0 2vw; box-sizing: border-box;">
+        <div class="flow-step" style="flex: 1 1 0; min-width: 0; background: #f8f0fb; border: 2px solid #c89be9; border-radius: 15px; padding: 16px 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.08); width: auto; margin: 0;">
+          <div class="step-circle" style="width: 40px; height: 40px; background: #080808; color: white; font-weight: bold; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 18px;">1</div>
+          <p data-translate="flowchart_step_1" title="Ensure safety first. Leave dangerous situations if possible and seek a trusted person.">Ensure safety first. Leave dangerous situations if possible and seek a trusted person.</p>
         </div>
-      </div>
-    
-      <!-- Global Section with Dropdown -->
-      <div class="dropdown-menu">
-        <button class="dropbtn"><span data-translate="global_dropdown_btn"></span><span class="chevron">&#9660;</span></button>
-        <div class="dropdown-content">
-          <div class="resource-item">
-            <h3 data-translate="unwomen_title"></h3>
-            <p data-translate="unwomen_desc"></p>
-            <p><a href="https://www.unwomen.org/en/what-we-do/ending-violence-against-women/facts-and-figures" target="_blank" data-translate="unwomen_link"></a></p>
-          </div>
-          <div class="resource-item">
-            <h3 data-translate="rainn_title"></h3>
-            <p data-translate="rainn_desc"></p>
-            <p><a href="https://www.rainn.org/" target="_blank" data-translate="rainn_link"></a></p>
-          </div>
-          <div class="resource-item">
-            <h3 data-translate="iawj_title"></h3>
-            <p data-translate="iawj_desc"></p>
-            <p><a href="https://www.iawj.org/" target="_blank" data-translate="iawj_link"></a></p>
-          </div>
-          <div class="resource-item">
-            <h3 data-translate="hotline_ie_title"></h3>
-            <p data-translate="hotline_ie_desc"></p>
-            <p><a href="https://www.hotline.ie/" target="_blank" data-translate="hotline_ie_link"></a></p>
-          </div>
-          <div class="resource-item">
-            <h3 data-translate="interpol_title"></h3>
-            <p data-translate="interpol_desc"></p>
-            <p><a href="https://www.interpol.int/en/Crimes/Human-trafficking" target="_blank" data-translate="interpol_link"></a></p>
-          </div>
-          <div class="resource-item">
-            <h3 data-translate="spotlight_title"></h3>
-            <p data-translate="spotlight_desc"></p>
-            <p><a href="https://www.spotlightinitiative.org/" target="_blank" data-translate="spotlight_link"></a></p>
-          </div>
-          <div class="resource-item">
-            <h3 data-translate="unfpa_title"></h3>
-            <p data-translate="unfpa_desc"></p>
-            <p><a href="https://www.unfpa.org/GBV-dashboard" target="_blank" data-translate="unfpa_link"></a></p>
-          </div>
+        <div class="flow-arrow" style="flex: 0 0 32px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #800080; margin: 0; padding: 0;">&#10140;</div>
+        <div class="flow-step" style="flex: 1 1 0; min-width: 0; background: #f8f0fb; border: 2px solid #c89be9; border-radius: 15px; padding: 16px 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.08); width: auto; margin: 0;">
+          <div class="step-circle" style="width: 40px; height: 40px; background: #080808; color: white; font-weight: bold; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 18px;">2</div>
+          <p data-translate="flowchart_step_2" title="Document any evidence (messages, screenshots, photos, medical reports).">Document any evidence (messages, screenshots, photos, medical reports).</p>
+        </div>
+        <div class="flow-arrow" style="flex: 0 0 32px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #800080; margin: 0; padding: 0;">&#10140;</div>
+        <div class="flow-step" style="flex: 1 1 0; min-width: 0; background: #f8f0fb; border: 2px solid #c89be9; border-radius: 15px; padding: 16px 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.08); width: auto; margin: 0;">
+          <div class="step-circle" style="width: 40px; height: 40px; background: #080808; color: white; font-weight: bold; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 18px;">3</div>
+          <p data-translate="flowchart_step_3" title="Use listed hotlines or online platforms to report the case.">Use listed hotlines or online platforms to report the case.</p>
+        </div>
+        <div class="flow-arrow" style="flex: 0 0 32px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #800080; margin: 0; padding: 0;">&#10140;</div>
+        <div class="flow-step" style="flex: 1 1 0; min-width: 0; background: #f8f0fb; border: 2px solid #c89be9; border-radius: 15px; padding: 16px 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.08); width: auto; margin: 0;">
+          <div class="step-circle" style="width: 40px; height: 40px; background: #080808; color: white; font-weight: bold; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 18px;">4</div>
+          <p data-translate="flowchart_step_4" title="Seek medical and psychological support at listed centers or clinics.">Seek medical and psychological support at listed centers or clinics.</p>
+        </div>
+        <div class="flow-arrow" style="flex: 0 0 32px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #800080; margin: 0; padding: 0;">&#10140;</div>
+        <div class="flow-step" style="flex: 1 1 0; min-width: 0; background: #f8f0fb; border: 2px solid #c89be9; border-radius: 15px; padding: 16px 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.08); width: auto; margin: 0;">
+          <div class="step-circle" style="width: 40px; height: 40px; background: #080808; color: white; font-weight: bold; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 18px;">5</div>
+          <p data-translate="flowchart_step_5" title="Follow up with legal support or report to police stations with GBV desks.">Follow up with legal support or report to police stations with GBV desks.</p>
         </div>
       </div>
     </section>
+
 
     <section class="report-resources-section">
         <h2 data-translate="hotlines_heading">Kenyan Hotlines and Reporting Platforms for GBV</h2>
@@ -398,8 +502,6 @@
         </ul>
     </section>
 
-    
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -456,11 +558,7 @@
     <!-- Report Form Modal -->
 
 
-    <script src="accessibility.js"></script>
-    <script src="script.js"></script>
-    <script src="js/report-translations.js"></script>
-    <script src="js/language-handler.js"></script>
-
+    
 
 
     <div class="accessibility-panel" id="accessibilityPanel">
@@ -470,6 +568,9 @@
       <div class="accessibility-controls">
         <button onclick="toggleTextToSpeech()" id="ttsToggle">
           <i class="fas fa-volume-up"></i> TTS
+        </button>
+        <button onclick="stopTTS()" id="ttsStop">
+          <i class="fas fa-stop"></i> Stop
         </button>
         <button onclick="increaseFontSize()">
           <i class="fas fa-text-height"></i> A+
@@ -806,28 +907,28 @@
       });
     
     document.addEventListener('DOMContentLoaded', function() {
-      const switcher = document.querySelector('.language-switcher');
-      const toggle = switcher.querySelector('.dropdown-toggle');
-      const dropdown = switcher.querySelector('.dropdown-content');
+      const langSwitcher = document.querySelector('.language-switcher');
+      const toggle = langSwitcher.querySelector('.dropdown-toggle');
+      const dropdown = langSwitcher.querySelector('.dropdown-content');
 
       // Open on click
       toggle.addEventListener('click', function(e) {
         e.preventDefault();
-        switcher.classList.toggle('open');
+        langSwitcher.classList.toggle('open');
       });
 
       // Optional: Open on hover (desktop only)
-      switcher.addEventListener('mouseenter', function() {
-        switcher.classList.add('open');
+      langSwitcher.addEventListener('mouseenter', function() {
+        langSwitcher.classList.add('open');
       });
-      switcher.addEventListener('mouseleave', function() {
-        switcher.classList.remove('open');
+      langSwitcher.addEventListener('mouseleave', function() {
+        langSwitcher.classList.remove('open');
       });
 
       // Close when clicking outside
       document.addEventListener('click', function(e) {
-        if (!switcher.contains(e.target)) {
-          switcher.classList.remove('open');
+        if (!langSwitcher.contains(e.target)) {
+          langSwitcher.classList.remove('open');
         }
       });
     });
@@ -870,5 +971,59 @@
       }
     };
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var langSwitcher = document.querySelector('.language-switcher');
+      if (!langSwitcher) return;
+      var links = langSwitcher.querySelectorAll('.dropdown-content a[data-lang]');
+      links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = this.getAttribute('data-lang');
+          if (window.setLanguage) {
+            window.setLanguage(lang);
+          } else if (typeof setLanguage === 'function') {
+            setLanguage(lang);
+          }
+          langSwitcher.classList.remove('open');
+        });
+      });
+      // Optional: open/close on click for accessibility
+      var toggle = langSwitcher.querySelector('a[aria-expanded]');
+      if (toggle) {
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          langSwitcher.classList.toggle('open');
+        });
+      }
+      document.addEventListener('click', function(e) {
+        if (!langSwitcher.contains(e.target)) langSwitcher.classList.remove('open');
+      });
+    });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      setLanguage(localStorage.getItem('selectedLanguage') || 'en');
+    });
+    </script>
+    <script>
+    console.log(window.reportTranslations);
+    console.log(typeof updateContent, updateContent);
+    </script>
+    <!-- 1. Load the translations object FIRST -->
+    <script src="js/report-translations.js"></script>
+
+    <!-- 2. THEN load the language handler -->
+    <script src="js/language-handler.js"></script>
+
+    <!-- 3. THEN any other scripts that use translations -->
+    <script src="script.js"></script>
+
+    <!-- Place these at the end of the body, before </body> -->
+    <script src="js/report-translations.js"></script>
+    <script src="js/language-handler.js"></script>
+    <script src="accessibility.js"></script>
+    <script src="script.js"></script>
 </body>
 </html> 

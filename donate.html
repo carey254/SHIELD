@@ -189,6 +189,9 @@
   <script src="accessibility.js"></script>
   <script src="script.js"></script>
   <script src="js/donate-translations.js"></script>
+  <script>
+    window.translations = donateTranslations;
+  </script>
   <script src="js/language-handler.js"></script>
 
   <div class="accessibility-panel" id="accessibilityPanel">
@@ -198,6 +201,9 @@
     <div class="accessibility-controls">
       <button onclick="toggleTextToSpeech()" id="ttsToggle">
         <i class="fas fa-volume-up"></i> TTS
+      </button>
+      <button onclick="stopTTS()" id="ttsStop">
+        <i class="fas fa-stop"></i> Stop
       </button>
       <button onclick="increaseFontSize()">
         <i class="fas fa-text-height"></i> A+
@@ -244,7 +250,7 @@
     position: absolute;
     bottom: 60px;
     right: 0;
-    background: white;
+    background: orange;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -258,7 +264,7 @@
   }
   
   .accessibility-controls button {
-    background: #f5f5f5;
+    background: orange;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;

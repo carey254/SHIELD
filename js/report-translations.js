@@ -152,7 +152,12 @@ const reportTranslations = {
         "spotlight_link": "Visit Spotlight Initiative",
         "unfpa_title": "UNFPA GBV Dashboard",
         "unfpa_desc": "Find country-specific online TFGBV help centers. Click 'Get help' to report abuse or seek safe shelter referrals.",
-        "unfpa_link": "UNFPA Dashboard"
+        "unfpa_link": "UNFPA Dashboard",
+        "flowchart_step_1": "Ensure safety first. Leave dangerous situations if possible and seek a trusted person.",
+        "flowchart_step_2": "Document any evidence (messages, screenshots, photos, medical reports).",
+        "flowchart_step_3": "Use listed hotlines or online platforms to report the case.",
+        "flowchart_step_4": "Seek medical and psychological support at listed centers or clinics.",
+        "flowchart_step_5": "Follow up with legal support or report to police stations with GBV desks."
     },
     sw: {
         en_link: "Kiingereza",
@@ -165,7 +170,7 @@ const reportTranslations = {
         "events_link": "Matukio",
         "news_link": "Habari",
         "partner_link": "Shirikiana Nasi",
-        "donate_link: "Toa",
+        "donate_link": "Toa",
         "where_to_report_link": "Wapi Kutoa Ripoti",
         
         // Language Switcher
@@ -344,7 +349,12 @@ const reportTranslations = {
         "spotlight_link": "Tembelea Spotlight Initiative",
         "unfpa_title": "UNFPA GBV Dashboard",
         "unfpa_desc": "Pata vituo vya msaada vya TFGBV mtandaoni kwa kila nchi. Bonyeza 'Get help' kuripoti au kupata hifadhi salama.",
-        "unfpa_link": "UNFPA Dashboard"
+        "unfpa_link": "UNFPA Dashboard",
+        "flowchart_step_1": "Hakikisha usalama kwanza. Ondoka katika hali hatari ikiwa inawezekana na tafuta mtu unayemwamini.",
+        "flowchart_step_2": "Hifadhi ushahidi wowote (ujumbe, picha za skrini, picha, ripoti za matibabu).",
+        "flowchart_step_3": "Tumia nambari za simu au majukwaa ya mtandaoni kuripoti tukio.",
+        "flowchart_step_4": "Tafuta msaada wa matibabu na kisaikolojia katika vituo au kliniki zilizoorodheshwa.",
+        "flowchart_step_5": "Fuatilia msaada wa kisheria au ripoti kwa vituo vya polisi vilivyo na dawati la GBV."
     },
     fr: {
         en_link: "Anglais",
@@ -438,7 +448,7 @@ const reportTranslations = {
 
         // FIDA Kenya
         "fida_title": "FIDA Kenya",
-        "fida_p1": "Fournit une aide juridique et un plaidoyer pour les droits des femmes.",
+        "fida_p1": "Inatoa msaada wa kisheria na utetezi wa haki za wanawake.",
         "fida_hotline": "Ligne d'urgence : +254 772 509 760",
         "fida_email": "E-mail : info@fida-kenya.org",
         "fida_link": "Site Web",
@@ -503,7 +513,12 @@ const reportTranslations = {
         "spotlight_link": "Visitez l'Initiative Spotlight",
         "unfpa_title": "Tableau de bord UNFPA GBV",
         "unfpa_desc": "Trouvez des centres d'aide TFGBV en ligne spécifiques à chaque pays. Cliquez sur 'Get help' pour signaler un abus ou demander un refuge sûr.",
-        "unfpa_link": "Tableau de bord UNFPA"
+        "unfpa_link": "Tableau de bord UNFPA",
+        "flowchart_step_1": "Assurez-vous d'abord de votre sécurité. Quittez les situations dangereuses si possible et cherchez une personne de confiance.",
+        "flowchart_step_2": "Documentez toute preuve (messages, captures d'écran, photos, rapports médicaux).",
+        "flowchart_step_3": "Utilisez les lignes d'assistance ou les plateformes en ligne pour signaler le cas.",
+        "flowchart_step_4": "Cherchez un soutien médical et psychologique dans les centres ou cliniques listés.",
+        "flowchart_step_5": "Faites un suivi avec un soutien juridique ou signalez aux postes de police disposant de bureaux VBG."
     },
     ar: {
         en_link: "الإنجليزية",
@@ -636,8 +651,8 @@ const reportTranslations = {
         "soawr_title": "SOAWR (تضامن من أجل حقوق المرأة الأفريقية)",
         "soawr_desc": "تحالف عموم أفريقيا يدعم المساعدة القانونية لـ TFGBV. الوصول إلى خدمات الإحالة والدعم حسب البلد.",
         "soawr_link": "تواصل عبر SOAWR",
-        "eliezah_title": "مبادرة مؤسسة إلييزاه (أوغندا)",
-        "eliezah_desc": "تقدم الدعم القانوني والتقني والنفسي لضحايا TFGBV. اتصل بـ +256 392 000 xxx أو زر efiug.org.",
+        "eliezah_title": "Eliezah Foundation Initiative (Uganda)",
+        "eliezah_desc": "Inatoa msaada wa kisheria, usalama wa kiteknolojia, na kisaikolojia kwa waathirika wa TFGBV. Piga +256 392 000 xxx au tembelea efiug.org.",
         "unwomen_title": "هيئة الأمم المتحدة للمرأة – دعم TFGBV",
         "unwomen_desc": "خطوط مساعدة TFGBV حسب البلد ومساعدة السلامة الرقمية. انقر على بلدك لعرض خطوات الإبلاغ.",
         "unwomen_link": "مساعدة هيئة الأمم المتحدة للمرأة TFGBV",
@@ -658,7 +673,12 @@ const reportTranslations = {
         "spotlight_link": "زيارة مبادرة سبوتلايت",
         "unfpa_title": "لوحة معلومات UNFPA GBV",
         "unfpa_desc": "ابحث عن مراكز مساعدة TFGBV عبر الإنترنت حسب البلد. انقر على 'Get help' للإبلاغ أو طلب ملجأ آمن.",
-        "unfpa_link": "لوحة معلومات UNFPA"
+        "unfpa_link": "لوحة معلومات UNFPA",
+        "flowchart_step_1": "تأكد من السلامة أولاً. غادر المواقف الخطرة إذا أمكن وابحث عن شخص موثوق.",
+        "flowchart_step_2": "وثق أي دليل (رسائل، لقطات شاشة، صور، تقارير طبية).",
+        "flowchart_step_3": "استخدم الخطوط الساخنة أو المنصات الإلكترونية المدرجة للإبلاغ عن الحالة.",
+        "flowchart_step_4": "اطلب الدعم الطبي والنفسي في المراكز أو العيادات المدرجة.",
+        "flowchart_step_5": "تابع مع الدعم القانوني أو أبلغ مراكز الشرطة التي بها مكاتب GBV."
     }
 };
 

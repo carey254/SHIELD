@@ -313,4 +313,46 @@ textarea:focus {
         width: 35px;
         height: 35px;
     }
+}
+
+/* Add new contrast themes */
+.contrast-theme-orange {
+  background: #ff6600 !important;
+  color: #fff !important;
+}
+.contrast-theme-orange * {
+  background: #ff6600 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+.contrast-theme-orange a { color: #222 !important; }
+
+.contrast-theme-blue {
+  background: #003366 !important;
+  color: #ffff00 !important;
+}
+.contrast-theme-blue * {
+  background: #003366 !important;
+  color: #ffff00 !important;
+  border-color: #ffff00 !important;
+}
+.contrast-theme-blue a { color: #fff !important; }
+
+/* Make accessibility buttons orange and visible by default */
+.accessibility-controls button {
+  background: #ff6600 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(255,102,0,0.08);
+}
+.accessibility-controls button:hover, .accessibility-controls button.active {
+  background: #d35400 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+/* Ensure panel is always visible */
+.accessibility-panel {
+  z-index: 2000 !important;
 } 

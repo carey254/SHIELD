@@ -16,6 +16,9 @@
   <!-- Load resources_translations.js first to define resourcesTranslations -->
   <script src="js/resources_translations.js"></script>
   <!-- Then make resourcesTranslations available globally -->
+  <script>
+    window.translations = resourcesTranslations;
+  </script>
   <script src="js/language-handler.js"></script>
   
   <style>
@@ -1524,6 +1527,9 @@ button:disabled {
   <div class="accessibility-controls">
     <button onclick="toggleTextToSpeech()" id="ttsToggle">
       <i class="fas fa-volume-up"></i> TTS
+    </button>
+    <button onclick="stopTTS()" id="ttsStop">
+      <i class="fas fa-stop"></i> Stop
     </button>
     <button onclick="increaseFontSize()">
       <i class="fas fa-text-height"></i> A+
