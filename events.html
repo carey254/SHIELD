@@ -142,10 +142,6 @@
           .nav-actions {
             margin-right: 12px !important; /* Reduce space on the right */
           }
-          .language-switcher-select {
-            margin-right: 8px !important;
-            margin-left: 0 !important;
-          }
           .hamburger {
             margin-right: 0 !important;
           }
@@ -795,6 +791,158 @@ nav .dropdown > a[data-translate="get_involved_link"]::after {
   margin-left: 8px;
   color: #222;
 }
+
+@media (max-width: 700px) {
+  .footer, .footer-container, .footer-logo, .footer-links, .footer-location, .footer-contact, .footer-bottom {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .footer-links ul {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .footer-links ul li {
+    margin-bottom: 8px;
+  }
+  .footer-bottom {
+    text-align: center !important;
+    font-size: 13px;
+    padding-top: 10px;
+  }
+  .payment-icons img,
+  .social-icons img {
+    margin: 0 6px !important;
+  }
+}
+
+/* Custom Language Dropdown Styles */
+.custom-language-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 24px !important;
+}
+
+.custom-language-button {
+  background: white;
+  border: 3px solid #ffb380;
+  border-radius: 15px;
+  padding: 6px 12px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 80px;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.custom-language-button:hover {
+  background: #f8f8f8;
+  border-color: #ff8c00;
+}
+
+.custom-language-button i {
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+.custom-language-dropdown.open .custom-language-button i {
+  transform: rotate(180deg);
+}
+
+.custom-dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  display: none;
+  margin-top: 4px;
+}
+
+.custom-language-dropdown.open .custom-dropdown-options {
+  display: block;
+  animation: fadeInDown 0.3s ease;
+}
+
+.dropdown-option {
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-option:last-child {
+  border-bottom: none;
+}
+
+.dropdown-option:hover {
+  background-color: #f8f8f8;
+}
+
+.dropdown-option.selected {
+  background-color: #ffb380;
+  color: white;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+  .custom-language-dropdown {
+    margin-left: 0 !important;
+    margin-right: 8px !important;
+  }
+  
+  .custom-language-button {
+    min-width: 70px;
+    padding: 4px 8px;
+    font-size: 0.9em;
+  }
+}
+
+/* REMOVED: Problematic CSS that hides dropdown arrow
+.language-switcher-select[data-short] {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+  position: relative;
+}
+.language-switcher-select[data-short] option {
+  color: #000;
+  text-shadow: none;
+}
+.language-switcher-select[data-short]::after {
+  content: attr(data-short);
+  color: #000;
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-weight: bold;
+}
+*/
 </style>
 
 </head>
@@ -825,12 +973,18 @@ nav .dropdown > a[data-translate="get_involved_link"]::after {
                 <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">Where to Report</a>
             </div>
             <div class="nav-actions">
-                <select class="language-switcher-select" aria-label="Language Switcher">
-                    <option value="en" data-translate="english_link">English</option>
-                    <option value="sw" data-translate="swahili_link">Swahili</option>
-                    <option value="fr" data-translate="french_link">French</option>
-                    <option value="ar" data-translate="arabic_link">Arabic</option>
-                </select>
+                <div class="custom-language-dropdown">
+                    <button class="custom-language-button" aria-label="Language Switcher">
+                        <span class="selected-language">ENG</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="custom-dropdown-options">
+                        <div class="dropdown-option" data-lang="en" data-short="ENG">English</div>
+                        <div class="dropdown-option" data-lang="sw" data-short="KS">Kiswahili</div>
+                        <div class="dropdown-option" data-lang="fr" data-short="FR">French</div>
+                        <div class="dropdown-option" data-lang="ar" data-short="AR">Arabic</div>
+                    </div>
+                </div>
                 <button class="hamburger" aria-label="Open menu" onclick="openMenu()">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -1007,11 +1161,95 @@ nav .dropdown > a[data-translate="get_involved_link"]::after {
     <script src="accessibility.js"></script>
     <script src="js/events-translations.js"></script>
     <script>
-      window.translations = eventsTranslations;
+      window.eventsTranslations = eventsTranslations;
     </script>
     <script src="js/language-handler.js"></script>
 
- 
+    <script>
+        // Add event listener for the custom language dropdown
+        document.addEventListener('DOMContentLoaded', function() {
+            const customDropdown = document.querySelector('.custom-language-dropdown');
+            const customButton = document.querySelector('.custom-language-button');
+            const selectedLanguageSpan = document.querySelector('.selected-language');
+            const dropdownOptions = document.querySelectorAll('.dropdown-option');
+            
+            if (customDropdown && customButton && selectedLanguageSpan) {
+                // Toggle dropdown on button click
+                customButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    customDropdown.classList.toggle('open');
+                });
+                
+                // Handle option selection
+                dropdownOptions.forEach(option => {
+                    option.addEventListener('click', function() {
+                        const lang = this.getAttribute('data-lang');
+                        const shortCode = this.getAttribute('data-short');
+                        
+                        // Update selected language display
+                        selectedLanguageSpan.textContent = shortCode;
+                        
+                        // Update selected state
+                        dropdownOptions.forEach(opt => opt.classList.remove('selected'));
+                        this.classList.add('selected');
+                        
+                        // Close dropdown
+                        customDropdown.classList.remove('open');
+                        
+                        // Store the selected language
+                        storeLanguage(lang);
+                        
+                        // Update content using the main language system
+                        updateContent(lang);
+                        
+                        // Also update the custom dropdown display
+                        updateLanguageSelectorDisplay(lang);
+                        
+                        console.log('Language changed to:', lang);
+                        console.log('Available translations:', window.eventsTranslations);
+                        console.log('Translations for language:', window.eventsTranslations[lang]);
+                    });
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!customDropdown.contains(e.target)) {
+                        customDropdown.classList.remove('open');
+                    }
+                });
+                
+                // Set initial language based on stored preference
+                const storedLang = getStoredLanguage();
+                if (storedLang) {
+                    const initialOption = document.querySelector(`[data-lang="${storedLang}"]`);
+                    if (initialOption) {
+                        const shortCode = initialOption.getAttribute('data-short');
+                        selectedLanguageSpan.textContent = shortCode;
+                        initialOption.classList.add('selected');
+                        // Apply initial translations with a small delay to ensure scripts are loaded
+                        setTimeout(() => {
+                            updateContent(storedLang);
+                            updateLanguageSelectorDisplay(storedLang);
+                            console.log('Initial language applied:', storedLang);
+                        }, 100);
+                    }
+                } else {
+                    // Default to English
+                    const englishOption = document.querySelector('[data-lang="en"]');
+                    if (englishOption) {
+                        englishOption.classList.add('selected');
+                        // Apply initial translations with a small delay to ensure scripts are loaded
+                        setTimeout(() => {
+                            updateContent('en');
+                            updateLanguageSelectorDisplay('en');
+                            console.log('Initial language applied: en');
+                        }, 100);
+                    }
+                }
+            }
+        });
+    </script>
+
     <div class="accessibility-panel" id="accessibilityPanel">
       <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()">
         <i class="fas fa-universal-access"></i>

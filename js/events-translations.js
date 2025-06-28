@@ -1,6 +1,8 @@
 const eventsTranslations = {
     en: {
         // Navigation
+        "home_link": "Home",
+        "about_us_link": "About Us",
         "resources_link": "Resources",
         "get_involved_link": "Get Involved",
         "events_link": "Events",
@@ -12,6 +14,7 @@ const eventsTranslations = {
         "swahili_link": "Swahili",
         "french_link": "French",
         "arabic_link": "Arabic",
+        "calendar_title": "Upcoming and Past Events Calendar",
 
         // Main Content
         "events_title": "Events",
@@ -80,6 +83,8 @@ const eventsTranslations = {
     },
     fr: {
         // Navigation
+        "home_link": "Accueil",
+        "about_us_link": "À Propos de Nous",
         "resources_link": "Ressources",
         "get_involved_link": "S'impliquer",
         "events_link": "Événements",
@@ -91,6 +96,7 @@ const eventsTranslations = {
         "swahili_link": "Swahili",
         "french_link": "Français",
         "arabic_link": "Arabe",
+        "calendar_title": "Calendrier des Événements à Venir et Passés",
 
         // Main Content
         "events_title": "Événements",
@@ -119,7 +125,7 @@ const eventsTranslations = {
     ar: {
         // Navigation
         "home_link": "الرئيسية",
-"about_us_link": "معلومات عنا",
+        "about_us_link": "معلومات عنا",
         "resources_link": "الموارد",
         "get_involved_link": "شارك معنا",
         "events_link": "الفعاليات",
@@ -131,6 +137,7 @@ const eventsTranslations = {
         "swahili_link": "السواحيلية",
         "french_link": "الفرنسية",
         "arabic_link": "العربية",
+        "calendar_title": "تقويم الفعاليات القادمة والسابقة",
 
         // Main Content
         "events_title": "الفعاليات",
@@ -180,35 +187,8 @@ function applyEventsTranslations(lang) {
 
 // Initialize translations when the page loads
 document.addEventListener('DOMContentLoaded', function() {
-    // Set default language
-    const defaultLang = 'en';
-    applyEventsTranslations(defaultLang);
+    // Don't auto-apply translations here - let the main language system handle it
+    // The main language system will call updateContent() which will use this translations object
+    console.log('Events translations loaded and ready');
+});
 
-    // Add click handlers for language switcher
-    const langLinks = document.querySelectorAll('.language-switcher a[data-lang]');
-    langLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const lang = this.getAttribute('data-lang');
-            applyEventsTranslations(lang);
-        });
-    });
-}); 
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const select = document.querySelector('.language-switcher-select');
-    if (select) {
-      select.addEventListener('change', function() {
-        const lang = this.value;
-        applyEventsTranslations(lang);
-        // Optionally, store the selected language in localStorage
-        localStorage.setItem('eventsLang', lang);
-      });
-  
-      // On page load, set select to stored language or default
-      const storedLang = localStorage.getItem('eventsLang') || 'en';
-      select.value = storedLang;
-      applyEventsTranslations(storedLang);
-    }
-  });

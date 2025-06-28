@@ -326,7 +326,80 @@
         display: inline-block !important; /* Ensure it is displayed and overrides any other display rule */
         font-size: 0.8em !important; /* Adjust size if needed, important to ensure it's not zero */
         color: inherit !important; /* Inherit color from parent link, important to ensure it's not transparent/hidden */
-    }
+        }
+
+        @media (max-width: 700px) {
+          .footer, .footer-container, .footer-logo, .footer-links, .footer-location, .footer-contact, .footer-bottom {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+          .footer-container {
+            flex-direction: column !important;
+            gap: 20px !important;
+            padding: 20px !important;
+          }
+          .footer-links ul {
+            padding: 0;
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+          }
+          .footer-links ul li {
+            margin-bottom: 8px;
+            text-align: center;
+          }
+          .footer-bottom {
+            text-align: center !important;
+            font-size: 13px;
+            padding-top: 10px;
+          }
+          .payment-icons img,
+          .social-icons img {
+            margin: 0 6px !important;
+          }
+          .footer-contact {
+            align-items: center !important;
+            text-align: center !important;
+            margin: 0 auto !important;
+          }
+          .social-icons {
+            justify-content: center !important;
+          }
+        }
+        .social-icons {
+          justify-content: center !important;
+        }
+      }
+    
+      @media (max-width: 480px) {
+        .footer-container {
+          padding: 15px !important;
+          gap: 15px !important;
+        }
+        .footer-logo img {
+          max-height: 80px !important;
+        }
+        .footer-links, .footer-location, .footer-contact {
+          max-width: 100% !important;
+          text-align: center !important;
+        }
+        .footer-links ul li {
+          text-align: center !important;
+        }
+        .social-icons {
+          justify-content: center !important;
+          gap: 10px !important;
+        }
+        .payment-icons {
+          justify-content: center !important;
+          gap: 8px !important;
+        }
+      }
     </style>
 </head>
 <body>
@@ -357,13 +430,13 @@
         <div class="nav-actions">
           <div class="language-switcher dropdown" role="menuitem" aria-haspopup="true">
               <a href="#" aria-expanded="false">EN <i class="fas fa-chevron-down"></i></a>
-              <div class="dropdown-content" role="menu">
-                  <a href="#" data-lang="en" data-translate="english_link">English</a>
-                  <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
-                  <a href="#" data-lang="fr" data-translate="french_link">French</a>
-                  <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
-              </div>
+          <div class="dropdown-content" role="menu">
+            <a href="#" data-lang="en" data-translate="english_link">English</a>
+            <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+            <a href="#" data-lang="fr" data-translate="french_link">French</a>
+            <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
           </div>
+        </div>
         <button class="hamburger" aria-label="Open menu" onclick="openMenu()" style="order:2; display: block;">
           <i class="fas fa-bars"></i>
         </button>
@@ -389,35 +462,35 @@
     
     
     <!-- Reporting Flowchart Section -->
-    <section class="reporting-flowchart">
+<section class="reporting-flowchart">
       <h2 class="section-title" data-translate="reporting_flowchart_title">How to Report GBV & TFGBV</h2>
       <div class="flowchart-container" style="display: flex; align-items: stretch; justify-content: space-between; flex-wrap: nowrap; gap: 8px; width: 100%; max-width: none; padding: 0 2vw; box-sizing: border-box;">
         <div class="flow-step" style="flex: 1 1 0; min-width: 0; background: #f8f0fb; border: 2px solid #c89be9; border-radius: 15px; padding: 16px 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.08); width: auto; margin: 0;">
           <div class="step-circle" style="width: 40px; height: 40px; background: #080808; color: white; font-weight: bold; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 18px;">1</div>
           <p data-translate="flowchart_step_1" title="Ensure safety first. Leave dangerous situations if possible and seek a trusted person.">Ensure safety first. Leave dangerous situations if possible and seek a trusted person.</p>
-        </div>
+    </div>
         <div class="flow-arrow" style="flex: 0 0 32px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #800080; margin: 0; padding: 0;">&#10140;</div>
         <div class="flow-step" style="flex: 1 1 0; min-width: 0; background: #f8f0fb; border: 2px solid #c89be9; border-radius: 15px; padding: 16px 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.08); width: auto; margin: 0;">
           <div class="step-circle" style="width: 40px; height: 40px; background: #080808; color: white; font-weight: bold; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 18px;">2</div>
           <p data-translate="flowchart_step_2" title="Document any evidence (messages, screenshots, photos, medical reports).">Document any evidence (messages, screenshots, photos, medical reports).</p>
-        </div>
+    </div>
         <div class="flow-arrow" style="flex: 0 0 32px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #800080; margin: 0; padding: 0;">&#10140;</div>
         <div class="flow-step" style="flex: 1 1 0; min-width: 0; background: #f8f0fb; border: 2px solid #c89be9; border-radius: 15px; padding: 16px 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.08); width: auto; margin: 0;">
           <div class="step-circle" style="width: 40px; height: 40px; background: #080808; color: white; font-weight: bold; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 18px;">3</div>
           <p data-translate="flowchart_step_3" title="Use listed hotlines or online platforms to report the case.">Use listed hotlines or online platforms to report the case.</p>
-        </div>
+    </div>
         <div class="flow-arrow" style="flex: 0 0 32px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #800080; margin: 0; padding: 0;">&#10140;</div>
         <div class="flow-step" style="flex: 1 1 0; min-width: 0; background: #f8f0fb; border: 2px solid #c89be9; border-radius: 15px; padding: 16px 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.08); width: auto; margin: 0;">
           <div class="step-circle" style="width: 40px; height: 40px; background: #080808; color: white; font-weight: bold; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 18px;">4</div>
           <p data-translate="flowchart_step_4" title="Seek medical and psychological support at listed centers or clinics.">Seek medical and psychological support at listed centers or clinics.</p>
-        </div>
+    </div>
         <div class="flow-arrow" style="flex: 0 0 32px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #800080; margin: 0; padding: 0;">&#10140;</div>
         <div class="flow-step" style="flex: 1 1 0; min-width: 0; background: #f8f0fb; border: 2px solid #c89be9; border-radius: 15px; padding: 16px 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.08); width: auto; margin: 0;">
           <div class="step-circle" style="width: 40px; height: 40px; background: #080808; color: white; font-weight: bold; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 18px;">5</div>
           <p data-translate="flowchart_step_5" title="Follow up with legal support or report to police stations with GBV desks.">Follow up with legal support or report to police stations with GBV desks.</p>
-        </div>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
 
 
     <section class="report-resources-section">
@@ -558,7 +631,7 @@
     <!-- Report Form Modal -->
 
 
-    
+
 
 
     <div class="accessibility-panel" id="accessibilityPanel">

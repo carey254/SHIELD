@@ -1,38 +1,9 @@
-// Language switcher functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Set default language
-    let currentLang = localStorage.getItem('language') || 'en';
-    setLanguage(currentLang);
-
-    // Add click handlers to language switcher links
-    document.querySelectorAll('.language-switcher a[data-lang]').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const lang = this.getAttribute('data-lang');
-            setLanguage(lang);
-        });
-    });
-});
-
-function setLanguage(lang) {
-    // Save selected language
-    localStorage.setItem('language', lang);
-    
-    // Update all elements with data-translate attribute
-    document.querySelectorAll('[data-translate]').forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
-        }
-    });
-}
-
-
-
-
-
 const translations = {
     en: {
+        en_link: "English",
+        sw_link: "Kiswahili",
+        fr_link: "French",
+        ar_link: "Arabic",
         // Navigation
         home_link: "Home",
         about_us_link: "About Us",
@@ -199,6 +170,10 @@ const translations = {
         join_us_about: "Get Involved"
     },
     sw: {
+        en_link: "English",
+        sw_link: "Kiswahili",
+        fr_link: "Kifaransa",
+        ar_link: "Kiarabu",
         // Navigation
         home_link: "Nyumbani",
         about_us_link: "Kuhusu Sisi",
@@ -365,6 +340,10 @@ const translations = {
         join_us_about: "Jiunge Nasi"
     },
     fr: {
+        en_link: "Anglais",
+        sw_link: "Swahili",
+        fr_link: "Français",
+        ar_link: "Arabe",
         // Navigation
         home_link: "Accueil",
         about_us_link: "À Propos De Nous",
@@ -531,6 +510,10 @@ const translations = {
         join_us_about: "S'impliquer"
     },
     ar: {
+        en_link: "الإنجليزية",
+        sw_link: "السواحلية",
+        fr_link: "الفرنسية",
+        ar_link: "العربية",
         // Navigation
         home_link: "الصفحة الرئيسية",
         about_us_link: "معلومات عنا",
@@ -698,64 +681,5 @@ const translations = {
     }
 };
 
-let currentLang = localStorage.getItem('currentLang') || 'en';
-
-document.addEventListener('DOMContentLoaded', () => {
-    setLanguage(currentLang);
-
-    // Event listener for the new language switcher dropdown
-    const languageDropdownContent = document.querySelector('.language-switcher .dropdown-content');
-    if (languageDropdownContent) {
-        languageDropdownContent.addEventListener('click', (event) => {
-            if (event.target.tagName === 'A' && event.target.dataset.lang) {
-                const selectedLang = event.target.dataset.lang;
-                setLanguage(selectedLang);
-            }
-        });
-    }
-});
-
-function setLanguage(lang) {
-    if (!translations[lang]) {
-        console.warn(`Translation for language ${lang} not found. Defaulting to English.`);
-        lang = 'en';
-    }
-    currentLang = lang;
-    localStorage.setItem('currentLang', lang);
-
-    document.querySelectorAll('[data-translate]').forEach(element => {
-        const key = element.dataset.translate;
-        if (translations[currentLang][key]) {
-            element.textContent = translations[currentLang][key];
-        }
-    });
-
-    // Update the main language switcher button text
-    const mainLanguageButton = document.querySelector('.language-switcher > a');
-    if (mainLanguageButton) {
-        const selectedLanguageText = translations[currentLang][`${lang}_link`] || translations.en[`${lang}_link`];
-        mainLanguageButton.innerHTML = selectedLanguageText + ' <i class="fas fa-chevron-down"></i>';
-    }
-
-    // Update the selected option in the mobile menu (if applicable)
-    const mobileLangSelect = document.getElementById('mobileLanguageSelect');
-    if (mobileLangSelect) {
-        mobileLangSelect.value = lang;
-    }
-} 
-
-// Make translations available globally for language-handler.js
 window.generalTranslations = translations;
 
-// Also create page-specific translation objects for compatibility
-window.resourcesTranslations = translations;
-window.eventsTranslations = translations;
-window.newsTranslations = translations;
-window.partnerTranslations = translations;
-window.donateTranslations = translations;
-window.reportTranslations = translations;
-
-// Export for module systems if needed
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = translations;
-}

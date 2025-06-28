@@ -692,6 +692,63 @@ section, .about-us, .about-container, .about-intro-mission-vision, .mission-visi
   }
 }
 
+@media (max-width: 768px) {
+  .session-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem; /* or your preferred gap */
+  }
+  .session-card {
+    min-width: 80vw; /* or your preferred width */
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 20px !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 0 5vw !important;
+  }
+  .footer-logo,
+  .footer-links,
+  .footer-location,
+  .footer-contact {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    align-items: center !important;
+    text-align: center !important;
+    order: unset !important;
+  }
+  .footer-links ul {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .footer-links ul li {
+    margin-bottom: 8px;
+  }
+  .footer-bottom {
+    text-align: center !important;
+    font-size: 13px;
+    padding-top: 10px;
+  }
+  .payment-icons img,
+  .social-icons img {
+    margin: 0 6px !important;
+  }
+}
+
 </style>
 
 </head>

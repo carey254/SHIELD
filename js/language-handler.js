@@ -324,6 +324,7 @@ function changeLanguage(lang) {
     console.log('changeLanguage called with:', lang); // Log 1
     storeLanguage(lang); // Store the selected language
     updateContent(lang); // Update the content
+    updateLanguageSelectorDisplay(lang);
 }
 
 // Initialize language selector buttons
@@ -335,39 +336,14 @@ function initializeLanguageSelector() {
             const lang = this.getAttribute('data-lang');
             console.log('Language link clicked, data-lang:', lang); // Log 3
             changeLanguage(lang);
-
-            // Update the display text for the main language switcher button
-            const mainSwitcherText = this.closest('.language-switcher').querySelector('a[aria-expanded]');
-            if (mainSwitcherText) {
-                // Get the translation for the selected language itself
-                const resourcesTranslations = window.resourcesTranslations || window.generalTranslations || {};
-                const translatedLangName = resourcesTranslations[lang] && resourcesTranslations[lang][`${lang}_link`];
-                if (translatedLangName) {
-                    mainSwitcherText.innerHTML = `${translatedLangName} <i class="fas fa-chevron-down"></i>`;
-                } else {
-                    console.warn(`Translation for language name ${lang}_link missing for ${lang} language.`);
-                    mainSwitcherText.innerHTML = `${lang.toUpperCase()} <i class="fas fa-chevron-down"></i>`; // Fallback
-                }
-            }
         });
     });
 
     // Set initial language based on stored preference or default
     const initialLang = getStoredLanguage();
     updateContent(initialLang);
-
-    // Update the display text for the main language switcher button on load
-    const mainSwitcherText = document.querySelector('.language-switcher > a[aria-expanded]');
-    if (mainSwitcherText) {
-        const resourcesTranslations = window.resourcesTranslations || window.generalTranslations || {};
-        const translatedLangName = resourcesTranslations[initialLang] && resourcesTranslations[initialLang][`${initialLang}_link`];
-        if (translatedLangName) {
-            mainSwitcherText.innerHTML = `${translatedLangName} <i class="fas fa-chevron-down"></i>`;
-        } else {
-            console.warn(`Translation for language name ${initialLang}_link missing for ${initialLang} language on load.`);
-            mainSwitcherText.innerHTML = `${initialLang.toUpperCase()} <i class="fas fa-chevron-down"></i>`;
-        }
-    }
+    // Use short code for initial display
+    updateLanguageSelectorDisplay(initialLang);
 }
 
 // DOMContentLoaded listener
@@ -378,25 +354,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
 });
 
-// Update the language selector display based on the active language
+// Update the function that sets the language switcher display
 function updateLanguageSelectorDisplay(lang) {
-    const mainSwitcherText = document.querySelector('.language-switcher > a[aria-expanded]');
-    if (mainSwitcherText) {
-        const resourcesTranslations = window.resourcesTranslations || window.generalTranslations || {};
-        const translatedLangName = resourcesTranslations[lang] && resourcesTranslations[lang][`${lang}_link`];
-        if (translatedLangName) {
-            mainSwitcherText.innerHTML = `${translatedLangName} <i class="fas fa-chevron-down"></i>`;
-        } else {
-            console.warn(`Translation for language name ${lang}_link missing for ${lang} language in updateLanguageSelectorDisplay.`);
-            mainSwitcherText.innerHTML = `${lang.toUpperCase()} <i class="fas fa-chevron-down"></i>`;
-        }
-    }
+  // For custom dropdown
+  const selectedLanguageSpan = document.querySelector('.selected-language');
+  const dropdownOptions = document.querySelectorAll('.dropdown-option');
+  
+  if (selectedLanguageSpan) {
+    const languageShortCodes = {
+      en: 'ENG',
+      sw: 'KS',
+      fr: 'FR',
+      ar: 'AR'
+    };
+    
+    selectedLanguageSpan.textContent = languageShortCodes[lang] || 'ENG';
+    
+    // Update selected state in dropdown options
+    dropdownOptions.forEach(option => {
+      option.classList.remove('selected');
+      if (option.getAttribute('data-lang') === lang) {
+        option.classList.add('selected');
+      }
+    });
+  }
+  
+  // Fallback for old dropdown (if it exists)
+  const switcher = document.querySelector('.language-switcher > a[aria-expanded]');
+  if (switcher) {
+    const languageShortCodes = {
+      en: 'ENG',
+      sw: 'KS',
+      fr: 'FR',
+      ar: 'AR'
+    };
+    switcher.innerHTML = languageShortCodes[lang] + ' <i class="fas fa-chevron-down"></i>';
+  }
 }
 
-// Attach event listeners to language switcher buttons
-document.addEventListener('DOMContentLoaded', () => {
-    // Add a small delay to ensure all translation objects are loaded
-    setTimeout(() => {
-        initializeLanguageSelector();
-    }, 100);
-});
+// Ensure this function is called after language change
