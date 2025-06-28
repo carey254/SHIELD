@@ -153,6 +153,32 @@ nav {
   direction: ltr !important; /* Force LTR direction for the switcher container itself */
   margin-left: 10px !important; /* Small space between nav links and language switcher */
 }
+@media (max-width: 600px) {
+  .language-switcher > a[aria-expanded] {
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    min-width: 120px;
+    max-width: 180px;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 1rem;
+    padding: 8px 10px 8px 22px; /* More left padding, less right padding */
+    box-sizing: border-box;
+    margin-right: 10px; /* Space from hamburger */
+    border-width: 2px;
+  }
+  
+  .language-switcher > a[aria-expanded] i {
+    margin-left: 4px; /* Icon very close to text */
+    font-size: 1em;
+    position: static;
+  }
+  
+  .hamburger {
+    margin-left: 8px !important; /* Ensure hamburger is not too close */
+  }
+}
 
 /* Language Switcher dropdown content alignment */
 .language-switcher .dropdown-content {
@@ -2991,5 +3017,31 @@ nav .dropdown > a[data-translate="get_involved_link"] i {
 .language-switcher:hover .dropdown-content {
   /* Remove or comment out this rule to prevent hover-only behavior */
   /* display: block; */
+}
+
+@media (max-width: 700px) {
+  .flowchart-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 18px !important;
+    padding: 0 2vw !important;
+  }
+  .flow-step {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 400px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .flow-arrow {
+    transform: rotate(90deg);
+    font-size: 28px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    color: #800080 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
 }
 

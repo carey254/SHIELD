@@ -61,6 +61,80 @@ padding-top: 100px; /* 👈 Adds space for the nav */
     width: auto !important;
   }
 }
+
+@media (max-width: 700px) {
+  .footer, .footer-container, .footer-logo, .footer-links, .footer-location, .footer-contact, .footer-bottom {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .footer-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 20px !important;
+  }
+  .footer-links ul {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+  .footer-links ul li {
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .footer-bottom {
+    text-align: center !important;
+    font-size: 13px;
+    padding-top: 10px;
+  }
+  .payment-icons img,
+  .social-icons img {
+    margin: 0 6px !important;
+  }
+  .footer-contact {
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+  .social-icons {
+    justify-content: center !important;
+  }
+}
+
+.social-icons {
+  justify-content: center !important;
+}
+}
+
+@media (max-width: 480px) {
+.footer-container {
+  padding: 15px !important;
+  gap: 15px !important;
+}
+.footer-logo img {
+  max-height: 80px !important;
+}
+.footer-links, .footer-location, .footer-contact {
+  max-width: 100% !important;
+  text-align: center !important;
+}
+.footer-links ul li {
+  text-align: center !important;
+}
+.social-icons {
+  justify-content: center !important;
+  gap: 10px !important;
+}
+.payment-icons {
+  justify-content: center !important;
+  gap: 8px !important;
+}
+}
 </style>
 </head>
 <body>

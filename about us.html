@@ -294,11 +294,78 @@ padding-top: 80px; /* 👈 Adds space for the nav */
   margin-bottom: 60px;
 }
 
-footer {
-  margin-top: 60px;
+@media (max-width: 700px) {
+  .footer, .footer-container, .footer-logo, .footer-links, .footer-location, .footer-contact, .footer-bottom {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .footer-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 20px !important;
+  }
+  .footer-links ul {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+  .footer-links ul li {
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .footer-bottom {
+    text-align: center !important;
+    font-size: 13px;
+    padding-top: 10px;
+  }
+  .payment-icons img,
+  .social-icons img {
+    margin: 0 6px !important;
+  }
+  .footer-contact {
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+  .social-icons {
+    justify-content: center !important;
+  }
+}
+.social-icons {
+  justify-content: center !important;
+}
 }
 
-
+@media (max-width: 480px) {
+.footer-container {
+  padding: 15px !important;
+  gap: 15px !important;
+}
+.footer-logo img {
+  max-height: 80px !important;
+}
+.footer-links, .footer-location, .footer-contact {
+  max-width: 100% !important;
+  text-align: center !important;
+}
+.footer-links ul li {
+  text-align: center !important;
+}
+.social-icons {
+  justify-content: center !important;
+  gap: 10px !important;
+}
+.payment-icons {
+  justify-content: center !important;
+  gap: 8px !important;
+}
+}
 
 /*OUR VALUES*/
 
@@ -1402,10 +1469,16 @@ h2 {
           <img src="images/abbutt.png" alt="About Us" class="wide-image">
       </div>
       <div class="about-text">
-          <h2 style="color: orange;">About Us</h2>
-          <p>Shield Maidens was founded in 2024 by Sumaiyya Jumma and Maria Muneeni as a way of giving back to the community. As beneficiaries of UN Women, the African Girls Can Code Initiative (AGCCI), and Siemens EmpowerHER, they recognized the need to create a platform dedicated to advocacy, empowerment, and education.</p>
-          <p>At Shield Maidens, our mission is to educate young women and youth on digital safety while actively fighting against technology-facilitated gender-based violence (TFGBV). We are committed to fostering an inclusive world by advocating for gender equality, justice, and the protection of online spaces.</p>
-          <p>Our goal is to empower individuals with the knowledge and tools needed to navigate the digital world safely, to amplify voices against gender-based violence, and to drive meaningful change through advocacy and education. Together, we stand for a safer, more inclusive future for all.</p>
+          <h2 style="color: orange;" data-translate="about_us_title">About Us</h2>
+          <p data-translate="about_us_paragraph_1">
+            Shield Maidens was founded in 2024 by Sumaiyya Jumma and Maria Muneeni as a way of giving back to the community. As beneficiaries of UN Women, the African Girls Can Code Initiative (AGCCI), and Siemens EmpowerHER, they recognized the need to create a platform dedicated to advocacy, empowerment, and education.
+          </p>
+          <p data-translate="about_us_paragraph_2">
+            At Shield Maidens, our mission is to educate young women and youth on digital safety while actively fighting against technology-facilitated gender-based violence (TFGBV). We are committed to fostering an inclusive world by advocating for gender equality, justice, and the protection of online spaces.
+          </p>
+          <p data-translate="about_us_paragraph_3">
+            Our goal is to empower individuals with the knowledge and tools needed to navigate the digital world safely, to amplify voices against gender-based violence, and to drive meaningful change through advocacy and education. Together, we stand for a safer, more inclusive future for all.
+          </p>
       </div>
   </div>
 </section>
@@ -1516,9 +1589,9 @@ h2 {
 <!-- Our Team Section -->
 
 <main role="main" aria-label="Team section" style="background: #5c4033;">
-  <h2 id="team-heading">OUR AMAZING TEAM</h2>
+  <h2 id="team-heading" data-translate="our_team_title">OUR AMAZING TEAM</h2>
 
-  <p class="team-intro" aria-describedby="team-heading">
+  <p class="team-intro" aria-describedby="team-heading" data-translate="our_team_intro">
     Empowering and celebrating women in technology across Africa guiding Tech-Girls to their Full Potential
   </p>
 
@@ -1527,8 +1600,8 @@ h2 {
     <article class="team-member" aria-label="Jane Doe - Founder and Security Consultant">
       <img src="images/sumaiyah.jpg" alt="Portrait of Jane Doe, Founder and Security Consultant">
       <div class="team-info">
-        <h3>JANE DOE</h3>
-        <p>Founder / Security Consultant</p>
+        <h3 data-translate="team_member_jane_name">JANE DOE</h3>
+        <p data-translate="team_member_jane_role">Founder / Security Consultant</p>
         <div class="social-icons" aria-label="Jane Doe social media links">
           <a href="#" aria-label="Jane on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
           <a href="#" aria-label="Jane on Instagram"><i class="fab fa-instagram"></i></a>
@@ -1540,8 +1613,8 @@ h2 {
     <article class="team-member" aria-label="Maria Muneeni - Co-Founder and Digital Safety Trainer">
       <img src="images/mariaah.png" alt="Portrait of Maria Muneeni, Co-Founder and Champion for PWDs">
       <div class="team-info">
-        <h3>MARIA MUNEENI</h3>
-        <p>Co-Founder / Digital Safety Trainer / Champion for PWDs Inclusivity</p>
+        <h3 data-translate="team_member_maria_name">MARIA MUNEENI</h3>
+        <p data-translate="team_member_maria_role">Co-Founder / Digital Safety Trainer / Champion for PWDs Inclusivity</p>
         <div class="social-icons" aria-label="Maria Muneeni social media links">
           <a href="#" aria-label="Maria on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
           <a href="#" aria-label="Maria on Instagram"><i class="fab fa-instagram"></i></a>
@@ -1553,8 +1626,8 @@ h2 {
     <article class="team-member" aria-label="Ruth Jebitok - Social Media Manager">
       <img src="images/rutt.png" alt="Portrait of Ruth Jebitok, Social Media Manager">
       <div class="team-info">
-        <h3>RUTH JEBITOK</h3>
-        <p>Social Media Manager</p>
+        <h3 data-translate="team_member_ruth_name">RUTH JEBITOK</h3>
+        <p data-translate="team_member_ruth_role">Social Media Manager</p>
         <div class="social-icons" aria-label="Ruth Jebitok social media links">
           <a href="#" aria-label="Ruth on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
           <a href="#" aria-label="Ruth on Instagram"><i class="fab fa-instagram"></i></a>
@@ -1566,8 +1639,8 @@ h2 {
     <article class="team-member" aria-label="Irene Cherono - Digital Safety Trainer">
       <img src="images/irene.png" alt="Portrait of Irene Cherono, Digital Safety Trainer">
       <div class="team-info">
-        <h3>IRENE CHERONO</h3>
-        <p>Digital Safety Trainer</p>
+        <h3 data-translate="team_member_irene_name">IRENE CHERONO</h3>
+        <p data-translate="team_member_irene_role">Digital Safety Trainer</p>
         <div class="social-icons" aria-label="Irene Cherono social media links">
           <a href="#" aria-label="Irene on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
           <a href="#" aria-label="Irene on Instagram"><i class="fab fa-instagram"></i></a>
@@ -1579,8 +1652,8 @@ h2 {
     <article class="team-member" aria-label="Caren Jeruto - Online Safety Advocate">
       <img src="images/rey.png" alt="Portrait of Caren Jeruto, Online Safety Advocate">
       <div class="team-info">
-        <h3>CAREN JERUTO</h3>
-        <p>Online Safety Advocate</p>
+        <h3 data-translate="team_member_caren_name">CAREN JERUTO</h3>
+        <p data-translate="team_member_caren_role">Online Safety Advocate</p>
         <div class="social-icons" aria-label="Caren Jeruto social media links">
           <a href="#" aria-label="Caren on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
           <a href="#" aria-label="Caren on Instagram"><i class="fab fa-instagram"></i></a>
@@ -1793,7 +1866,7 @@ document.addEventListener('DOMContentLoaded', () => {
       typingElem.textContent = fullText + currentWord.substring(0, charIndex + 1);
       charIndex++;
       setTimeout(typeWord, 120);
-    } else {
+      } else {
       // Add a space after each word except the last
       fullText += currentWord + (wordIndex < words.length - 1 ? " " : "");
       typingElem.textContent = fullText;
@@ -1801,7 +1874,7 @@ document.addEventListener('DOMContentLoaded', () => {
       wordIndex++;
       if (wordIndex < words.length) {
         setTimeout(typeWord, 400);
-      } else {
+    } else {
         // All words typed, show logo
         if (logoImg) {
           logoImg.style.display = 'inline-block';

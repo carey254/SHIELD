@@ -228,6 +228,32 @@ setInterval(() => {
   images[current].classList.add('active');
 }, 4000); // change every 4 seconds
 
+// Add swipe support for hero section on mobile
+let startX = 0;
+let endX = 0;
+
+const heroSection = document.querySelector('.hero-alt');
+if (heroSection) {
+  heroSection.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  heroSection.addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].clientX;
+    if (endX < startX - 30) {
+      // Swipe left: next image
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
+    } else if (endX > startX + 30) {
+      // Swipe right: previous image
+      images[current].classList.remove('active');
+      current = (current - 1 + images.length) % images.length;
+      images[current].classList.add('active');
+    }
+  });
+}
+
 // Add null checks for mobile menu elements
 const hamburger = document.getElementById('hamburger');
 const sideMenu = document.getElementById('sideMenu');
