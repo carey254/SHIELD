@@ -1578,6 +1578,17 @@ section, .about-us, .about-container, .about-intro-mission-vision, .mission-visi
           }
       };
       
+      // Stop text-to-speech
+      window.stopTTS = function() {
+          isTTSActive = false;
+          window.speechSynthesis.cancel();
+          const ttsButton = document.getElementById('ttsToggle');
+          if (ttsButton) {
+              ttsButton.style.backgroundColor = '#f5f5f5';
+              ttsButton.style.color = 'black';
+          }
+      };
+      
       // Read the entire page content
       window.readPageContent = function() {
           if (!isTTSActive) {
@@ -1792,11 +1803,6 @@ document.getElementById('mailing-list').addEventListener('submit', function(e) {
       <script src="js/language-handler.js"></script>
       <script src="js/form-handler.js"></script>
       <script src="script.js"></script>
-
-  
-      
-      <script src="accessibility.js"></script>
-      
 
 </body>
 </html>

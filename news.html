@@ -165,6 +165,32 @@ nav a:not(.logo-link):hover {
   }
 }
 
+@media (max-width: 768px) {
+  .right-nav-section, .nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0 !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    position: static !important;
+  }
+  .language-switcher, .custom-language-dropdown {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .hamburger {
+    display: block;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    margin-top: 0px;
+  }
+  .hamburger i, .hamburger svg {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
 
 
 /* Hamburger Icon (Mobile Only) */
@@ -343,7 +369,7 @@ nav a:not(.logo-link):hover {
 .social-icons {
   justify-content: center !important;
 }
-}
+
 
 @media (max-width: 480px) {
 .footer-container {
@@ -540,28 +566,8 @@ nav a:not(.logo-link):hover {
       </div>
   </footer>
   
-      
-<script>
-function openMenu() {
-  document.getElementById("mobileMenu").classList.add("active");
-}
-
-function closeMenu() {
-  document.getElementById("mobileMenu").classList.remove("active");
-}
-</script>
-    <script src="accessibility.js"></script>
-    <script src="script.js"></script>
-    <script src="js/news-translations.js"></script>
-<script>
-  window.translations = newsTranslations;
-</script>
-<script src="js/language-handler.js"></script>
-
-<!-- Report Form Modal -->
-</script>
-<!-- Accessibility Control Panel -->
-<div class="accessibility-panel" id="accessibilityPanel">
+  <!-- Accessibility Control Panel -->
+  <div class="accessibility-panel" id="accessibilityPanel">
     <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()">
       <i class="fas fa-universal-access"></i>
     </button>
@@ -571,7 +577,7 @@ function closeMenu() {
       </button>
       <button onclick="stopTTS()" id="ttsStop">
         <i class="fas fa-stop"></i> Stop
-    </button>
+      </button>
       <button onclick="increaseFontSize()">
         <i class="fas fa-text-height"></i> A+
       </button>
@@ -586,7 +592,7 @@ function closeMenu() {
       </button>
     </div>
   </div>
-  
+
   <style>
   /* Accessibility Panel Styles */
   .accessibility-panel {
@@ -667,24 +673,24 @@ function closeMenu() {
     color: #000 !important;
   }
   </style>
-  
+
+  <script src="js/events-translations.js"></script>
   <script>
-  // Accessibility Functions (Globally accessible)
-  let isTTSActive = true; // Set to true by default for auto-read
+  window.eventsTranslations = eventsTranslations;
+  </script>
+  <script src="js/language-handler.js"></script>
+
+  <script>
+  // Accessibility Functions
+  let isTTSActive = true;
   let isHighContrast = false;
   let currentFontSize = 16;
-  let currentTTSVoice = null; // To store the currently selected voice
-  
-  // Function to find a voice based on language
+  let currentTTSVoice = null;
+
   window.selectTTSVoice = function(lang) {
       const voices = window.speechSynthesis.getVoices();
-      console.log('Available Voices:', voices);
-      console.log('Attempting to select voice for language:', lang);
-  
       let selectedVoice = null;
-  
       if (lang === 'en') {
-          // Prioritize Awasili voice for English
           selectedVoice = voices.find(voice => voice.name === 'Awasili') ||
                          voices.find(voice => voice.name === 'Asilia') ||
                          voices.find(voice => voice.lang === 'en-KE') ||
@@ -692,209 +698,147 @@ function closeMenu() {
                          voices.find(voice => voice.lang.startsWith('en-GB')) ||
                          voices.find(voice => voice.lang.startsWith('en'));
       } else if (lang === 'sw') {
-          // Prioritize Swahili (Kenya) then any Swahili voice
           selectedVoice = voices.find(voice => voice.lang === 'sw-KE') ||
                          voices.find(voice => voice.lang.startsWith('sw'));
       } else if (lang === 'fr') {
-          // Prioritize French voices
           selectedVoice = voices.find(voice => voice.lang.startsWith('fr'));
       } else if (lang === 'ar') {
-          // Prioritize Arabic voices
           selectedVoice = voices.find(voice => voice.lang.startsWith('ar'));
       }
-  
       currentTTSVoice = selectedVoice || voices.find(voice => voice.lang.startsWith('en')) || voices[0];
-      if (!currentTTSVoice) {
-          console.warn("No suitable voice found for language " + lang + ", using default system voice.");
-      } else {
-          console.log('Selected voice:', currentTTSVoice.name, '(' + currentTTSVoice.lang + ')');
-      }
   };
-  
-  // Toggle accessibility panel visibility
+
   window.toggleAccessibilityPanel = function() {
       const controls = document.querySelector('.accessibility-controls');
       controls.classList.toggle('active');
   };
-  
-  // Toggle text-to-speech on/off
+
   window.toggleTextToSpeech = function() {
       isTTSActive = !isTTSActive;
       const ttsButton = document.getElementById('ttsToggle');
-      
       if (isTTSActive) {
-          ttsButton.style.backgroundColor = '#ff4500';
-          ttsButton.style.color = 'white';
-          window.readPageContent(); // Restart reading when toggled on
+          ttsButton.classList.add('active');
+          window.readPageContent();
       } else {
-          ttsButton.style.backgroundColor = '#f5f5f5';
-          ttsButton.style.color = 'black';
+          ttsButton.classList.remove('active');
           window.speechSynthesis.cancel();
       }
   };
-  
-  // Read the entire page content
+
+  window.stopTTS = function() {
+      isTTSActive = false;
+      window.speechSynthesis.cancel();
+      const ttsButton = document.getElementById('ttsToggle');
+      if (ttsButton) ttsButton.classList.remove('active');
+  };
+
   window.readPageContent = function() {
-      if (!isTTSActive) {
-          console.log('TTS is not active, not reading content.');
-          return;
-      }
-      
-      // Get the current language
+      window.speechSynthesis.cancel();
+      if (!isTTSActive) return;
       const currentLang = document.documentElement.lang || 'en';
-      
-      // Function to create and speak an utterance
       const speakText = (text, rate = 1) => {
           if (!text) return null;
-          
           const utterance = new SpeechSynthesisUtterance(text);
           utterance.rate = rate;
           utterance.pitch = 1;
           utterance.volume = 1;
           utterance.lang = currentLang;
-          
-          if (currentTTSVoice) {
-              utterance.voice = currentTTSVoice;
-          }
-          
+          if (currentTTSVoice) utterance.voice = currentTTSVoice;
           return utterance;
       };
-  
-      // Create a queue of utterances
       const utterances = [];
-      
-      // 1. Read navigation links once, clearly
       const navLinks = document.querySelectorAll('.nav-links a');
       navLinks.forEach(link => {
-          // Get the complete text content, including any child elements
           const text = link.textContent.replace(/\s+/g, ' ').trim();
           if (text) {
               const utterance = speakText(text, 0.9);
-              if (utterance) {
-                  utterances.push(utterance);
-              }
+              if (utterance) utterances.push(utterance);
           }
       });
-  
-      // 2. Read the main content
       const mainContent = Array.from(document.querySelectorAll('[data-translate]'))
           .filter(el => el.getAttribute('data-lang') === currentLang || !el.getAttribute('data-lang'))
           .map(el => el.textContent.replace(/\s+/g, ' ').trim())
-          .filter(text => text) // Remove empty strings
+          .filter(text => text)
           .join(' ');
-  
       if (mainContent) {
           const utterance = speakText(mainContent, 1);
-          if (utterance) {
-              utterances.push(utterance);
-          }
+          if (utterance) utterances.push(utterance);
       }
-  
-      // Function to speak the next utterance in the queue
       const speakNext = (index) => {
           if (index < utterances.length) {
               const utterance = utterances[index];
-              utterance.onend = () => {
-                  // Add a pause between items
-                  setTimeout(() => {
-                      speakNext(index + 1);
-                  }, 500); // Consistent pause between all items
-              };
+              utterance.onend = () => setTimeout(() => speakNext(index + 1), 500);
               window.speechSynthesis.speak(utterance);
           }
       };
-  
-      // Start speaking the queue
       speakNext(0);
   };
-  
-  // Increase font size
+
   window.increaseFontSize = function() {
       currentFontSize += 2;
       document.body.style.fontSize = currentFontSize + 'px';
   };
-  
-  // Decrease font size
+
   window.decreaseFontSize = function() {
       currentFontSize = Math.max(12, currentFontSize - 2);
       document.body.style.fontSize = currentFontSize + 'px';
   };
-  
-  // Toggle high contrast mode
+
   window.toggleHighContrast = function() {
-      isHighContrast = !isHighContrast;
-      const contrastButton = document.getElementById('contrastToggle');
-      
-      if (isHighContrast) {
-          document.body.classList.add('high-contrast');
-          contrastButton.style.backgroundColor = '#ff4500';
-          contrastButton.style.color = 'white';
-      } else {
-          document.body.classList.remove('high-contrast');
-          contrastButton.style.backgroundColor = '#f5f5f5';
-          contrastButton.style.color = 'black';
+      document.body.classList.remove('high-contrast', 'contrast-theme-orange', 'contrast-theme-blue');
+      currentContrastTheme = (currentContrastTheme + 1) % contrastThemes.length;
+      if (currentContrastTheme > 0) {
+          document.body.classList.add(contrastThemes[currentContrastTheme]);
       }
   };
-  
-  // Reset all accessibility settings
+
   window.resetAccessibility = function() {
-      // Reset font size
       currentFontSize = 16;
-      document.body.style.fontSize = ''; // Resets to default
-  
-      // Reset high contrast
-      isHighContrast = false;
-      document.body.classList.remove('high-contrast');
-      document.getElementById('contrastToggle').style.backgroundColor = '#f5f5f5';
-      document.getElementById('contrastToggle').style.color = 'black';
-  
-      // Reset text-to-speech
+      document.body.style.fontSize = '';
+      document.body.classList.remove('high-contrast', 'contrast-theme-orange', 'contrast-theme-blue');
+      currentContrastTheme = 0;
       isTTSActive = false;
-      window.speechSynthesis.cancel(); // Stop any ongoing speech
-      document.getElementById('ttsToggle').style.backgroundColor = '#f5f5f5';
-      document.getElementById('ttsToggle').style.color = 'black';
-  
-      // Re-select voice based on current page language (defaults to English)
-      window.selectTTSVoice(document.documentElement.lang || 'en');
+      window.speechSynthesis.cancel();
+      const ttsButton = document.getElementById('ttsToggle');
+      if (ttsButton) ttsButton.classList.remove('active');
   };
-  
-  // Initial setup for voices and auto-read
+
   document.addEventListener('DOMContentLoaded', () => {
-      const initializeTTSOnLoad = () => {
-          // Set TTS to active by default
-          isTTSActive = true;
-          
-          // Initialize voice selection
-          window.selectTTSVoice(document.documentElement.lang || 'en');
-          
-          // Set the TTS button to active state
-          const ttsButton = document.getElementById('ttsToggle');
-          if (ttsButton) {
-              ttsButton.style.backgroundColor = '#ff4500';
-              ttsButton.style.color = 'white';
-          }
-  
-          // Start reading the page content automatically
-          setTimeout(() => {
-              window.readPageContent();
-          }, 1000); // Small delay to ensure everything is loaded
-      };
-  
-      if (window.speechSynthesis && window.speechSynthesis.getVoices().length > 0) {
-          initializeTTSOnLoad();
-      } else if (window.speechSynthesis) {
-          window.speechSynthesis.onvoiceschanged = () => {
-              initializeTTSOnLoad();
-          };
-      } else {
-          console.warn("SpeechSynthesis API not supported in this browser.");
-      }
+      window.selectTTSVoice(document.documentElement.lang || 'en');
+      isTTSActive = true;
+      setTimeout(() => window.readPageContent(), 800);
   });
+  </script>
 
-</script>
-
+  <script>
+  function openMenu() {
+    document.getElementById("mobileMenu").classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+  function closeMenu() {
+    document.getElementById("mobileMenu").classList.remove("active");
+    document.body.style.overflow = "";
+  }
+  </script>
+  <script>
+    window.newsTranslations = newsTranslations;
+  </script>
+  <script src="js/language-handler.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // For nav language switcher (not custom)
+      document.querySelectorAll('.language-switcher .dropdown-content a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = this.getAttribute('data-lang');
+          storeLanguage(lang);
+          updateContent(lang);
+          updateLanguageSelectorDisplay(lang);
+        });
+      });
+    });
+    </script>
     
-    <script src="js/language-handler.js"></script>
 </body>
 </html>
 

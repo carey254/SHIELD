@@ -1,3 +1,5 @@
+window.newsTranslations = newsTranslations;
+
 const newsTranslations = {
     en: {
         // Navigation

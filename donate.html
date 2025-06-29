@@ -12,6 +12,34 @@
 
   <style>
 
+    @media (max-width: 768px) {
+      .right-nav-section, .nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0 !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        position: static !important;
+      }
+      .language-switcher, .custom-language-dropdown {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .hamburger {
+        display: block;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0 !important;margin-top: 0px;
+
+      }
+      .hamburger i, .hamburger svg {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+    
+
     .nav-links a:hover {
       background-color: #ff4500;
       color: white;
@@ -80,7 +108,7 @@
     .social-icons {
       justify-content: center !important;
     }
-  }
+  
 
   @media (max-width: 480px) {
     .footer-container {
@@ -440,6 +468,17 @@
       }
   };
   
+  // Stop text-to-speech
+  window.stopTTS = function() {
+      isTTSActive = false;
+      window.speechSynthesis.cancel();
+      const ttsButton = document.getElementById('ttsToggle');
+      if (ttsButton) {
+          ttsButton.style.backgroundColor = '#f5f5f5';
+          ttsButton.style.color = 'black';
+      }
+  };
+  
   // Read the entire page content
   window.readPageContent = function() {
       if (!isTTSActive) {
@@ -600,6 +639,3 @@
   </script>
   </body>
   </html>
-  
-</body>
-</html>

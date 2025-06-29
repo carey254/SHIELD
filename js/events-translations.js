@@ -190,5 +190,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Don't auto-apply translations here - let the main language system handle it
     // The main language system will call updateContent() which will use this translations object
     console.log('Events translations loaded and ready');
+
+    // For nav language switcher (not custom)
+    document.querySelectorAll('.language-switcher .dropdown-content a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var lang = this.getAttribute('data-lang');
+            storeLanguage(lang);
+            updateContent(lang);
+            updateLanguageSelectorDisplay(lang);
+        });
+    });
 });
 
