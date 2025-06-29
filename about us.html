@@ -340,7 +340,6 @@ padding-top: 80px; /* 👈 Adds space for the nav */
 .social-icons {
   justify-content: center !important;
 }
-}
 
 @media (max-width: 480px) {
 .footer-container {
@@ -672,6 +671,7 @@ img {
         display: block !important;
         order: 2 !important;
         margin-left: 0 !important;
+        margin-top: 0px;
         font-size: 1.7rem !important;
         flex-shrink: 1 !important;
         padding: 0 !important;
@@ -1456,7 +1456,7 @@ h2 {
           <span class="hero-typing" id="heroTyping"></span>
         </div>
         <div class="hero-image">
-          <img id="cyberLogoImg" src="images/FIFS.png" alt="Cyber Logo" />
+          <img id="cyberLogoImg" src="images/uss.png" alt="Cyber Logo" />
         </div>
       </div>
     </section>
@@ -1879,6 +1879,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (logoImg) {
           logoImg.style.display = 'inline-block';
           logoImg.style.visibility = 'visible';
+          logoImg.classList.add('visible');
         }
       }
     }
