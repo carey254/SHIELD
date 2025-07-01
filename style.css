@@ -920,24 +920,23 @@ h2 {
 
 /* Session Card Style */
 .session-card {
-  flex: 0 0 300px;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  flex: 0 0 140px;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   text-align: center;
-  transition: transform 0.3s;
-}
-
-.session-card:hover {
-  transform: scale(1.02);
+  transition: none;
+  margin: 0 8px !important;
 }
 
 .session-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
+  width: 100px !important;
+  height: 100px !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
+  margin: 0 auto 8px auto !important;
+  display: block;
 }
 
 .session-card p {
@@ -3042,6 +3041,50 @@ nav .dropdown > a[data-translate="get_involved_link"] i {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-wrapper {
+    position: relative;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  .session-carousel {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0;
+    width: 100vw;
+    padding-bottom: 10px;
+  }
+  .session-card {
+    min-width: 90vw !important;
+    max-width: 90vw !important;
+    flex: 0 0 90vw !important;
+    scroll-snap-align: start;
+    margin: 0 5vw 0 0 !important;
+  }
+  .carousel-arrow {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    font-size: 2.2em;
+    color: #ff6600;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+    user-select: none;
   }
 }
 

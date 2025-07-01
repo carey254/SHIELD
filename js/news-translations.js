@@ -1,4 +1,4 @@
-window.newsTranslations = newsTranslations;
+
 
 const newsTranslations = {
     en: {
@@ -178,40 +178,4 @@ const newsTranslations = {
         "report_incident_btn": "بلغ عن حادثة"
     }
 };
-
-// Function to apply translations
-function applyNewsTranslations(lang) {
-    const elements = document.querySelectorAll('[data-translate]');
-    elements.forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (newsTranslations[lang] && newsTranslations[lang][key]) {
-            element.textContent = newsTranslations[lang][key];
-        }
-    });
-
-    // Apply RTL for Arabic
-    if (lang === 'ar') {
-        document.body.style.direction = 'rtl';
-        document.body.classList.add('rtl');
-    } else {
-        document.body.style.direction = 'ltr';
-        document.body.classList.remove('rtl');
-    }
-}
-
-// Initialize translations when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-    // Set default language
-    const defaultLang = 'en';
-    applyNewsTranslations(defaultLang);
-
-    // Add click handlers for language switcher
-    const langLinks = document.querySelectorAll('.language-switcher a[data-lang]');
-    langLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const lang = this.getAttribute('data-lang');
-            applyNewsTranslations(lang);
-        });
-    });
-}); 
+window.newsTranslations = newsTranslations;

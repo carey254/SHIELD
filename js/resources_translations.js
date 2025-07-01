@@ -141,20 +141,25 @@ window.resourcesTranslations = {
         "protecting_yourself_heading": "🔒 Protecting Yourself from TFGBV",
         "protecting_yourself_description": "This guide explains effective techniques and tools you can use to protect yourself from online and mobile harassment, including how to report TFGBV safely and securely.",
         "learn_how_to_protect": "Learn How to Protect Yourself",
-        "quick_links_heading": "Quick Links",
-        "location_heading": "Location",
+        "quick_links": "Quick Links",
+        "our location": "Location",
         "location_text": "Nairobi, Kenya",
-        "contact_us_heading": "Contact Us",
+        "contact_us_footer": "Contact Us",
         "email_text": "Email: shi3ldmaidens@gmail.com",
-        "socials_heading": "Our Socials",
-        "copyright_text": "Copyright © 2025 Shield Maidens",
+        "our socials": "Our Socials",
+        "copyright": "Copyright © 2025 Shield Maidens",
         "report_incident_modal_heading": "Report an Incident",
         "your_name_label": "Your Name:",
         "incident_description_label": "Describe the Incident:",
         "email_address_label": "Email Address (Optional):",
         "contact_permission_label": "I agree to be contacted for follow-up (we will respond within 12 hours)",
         "submit_report_button": "Submit Report",
-        "floating_report_button": "Report Incident"
+        "floating_report_button": "Report Incident",
+        "quick_links_heading": "Quick Links",
+        "contact_us_heading": "Contact Us",
+        "location_heading": "Location",
+        "socials_heading": "Our Socials",
+        "copyright_text": "Copyright © 2025 Shield Maidens"
     },
     sw: {
         "page_title": "📚 Rasilimali na Usaidizi | Uhamasishaji wa TFGBV",
@@ -311,7 +316,12 @@ window.resourcesTranslations = {
         "email_address_label": "Anwani ya Barua Pepe (Si Lazima):",
         "contact_permission_label": "Ninakubali kuwasiliana nami kwa ajili ya kufuatilia (tutajibu ndani ya masaa 12)",
         "submit_report_button": "Wasilisha Ripoti",
-        "floating_report_button": "Ripoti Tukio"
+        "floating_report_button": "Ripoti Tukio",
+        "quick_links_heading": "Quick Links",
+        "contact_us_heading": "Contact Us",
+        "location_heading": "Location",
+        "socials_heading": "Our Socials",
+        "copyright_text": "Copyright © 2025 Shield Maidens"
     },
     fr: {
         "page_title": "📚 Ressources et Soutien | Sensibilisation à la VFTBG",
@@ -468,7 +478,12 @@ window.resourcesTranslations = {
         "email_address_label": "Adresse E-mail (Facultatif) :",
         "contact_permission_label": "J'accepte d'être contacté pour un suivi (nous répondrons dans les 12 heures)",
         "submit_report_button": "Soumettre le Rapport",
-        "floating_report_button": "Signaler un Incident"
+        "floating_report_button": "Signaler un Incident",
+        "quick_links_heading": "Quick Links",
+        "contact_us_heading": "Contact Us",
+        "location_heading": "Location",
+        "socials_heading": "Our Socials",
+        "copyright_text": "Copyright © 2025 Shield Maidens"
     },
     ar: {
         "page_title": "📚 الموارد والدعم | التوعية بالعنف القائم على النوع الاجتماعي الميسر بالتكنولوجيا",
@@ -625,6 +640,11 @@ window.resourcesTranslations = {
         "email_address_label": "عنوان البريد الإلكتروني (اختياري):",
         "contact_permission_label": "أوافق على التواصل معي للمتابعة (سنرد في غضون 12 ساعة)",
         "submit_report_button": "إرسال التقرير",
-        "floating_report_button": "الإبلاغ عن حادث"
+        "floating_report_button": "الإبلاغ عن حادث",
+        "quick_links_heading": "Quick Links",
+        "contact_us_heading": "Contact Us",
+        "location_heading": "Location",
+        "socials_heading": "Our Socials",
+        "copyright_text": "Copyright © 2025 Shield Maidens"
     }
 };

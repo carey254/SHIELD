@@ -154,15 +154,15 @@ const translations = {
         our_team_title: "Our Amazing Team",
         our_team_intro: "Empowering and celebrating women in technology across Africa guiding Tech-Girls to their Full Potential",
         team_member_jane_name: "Jane Doe",
-        team_member_jane_role: "Founder / Data Privacy Specialist",
+        team_member_jane_role: "Founder / Security Consultant/Digital Safety Trainer",
         team_member_maria_name: "Maria Muneeni",
         team_member_maria_role: "Co-Founder / Digital Safety Trainer / Champion for PWDs Inclusivity",
         team_member_ruth_name: "Ruth Jebitok",
         team_member_ruth_role: "Social Media Manager",
         team_member_irene_name: "Irene Cherono",
-        team_member_irene_role: "Online Safety Advocate/Content Creator",
+        team_member_irene_role: "Digital Safety Trainer",
         team_member_caren_name: "Caren Jeruto",
-        team_member_caren_role: "Online Safety Advocate / Developer",
+        team_member_caren_role: "Digital Safety Trainer",
 
         // CTA Section (re-used from index.html if possible, or new ones for this page)
         join_difference_about: "Join Us in Making a Difference",
@@ -330,9 +330,9 @@ const translations = {
         team_member_ruth_name: "Ruth Jebitok",
         team_member_ruth_role: "Meneja wa Mitandao ya Kijamii",
         team_member_irene_name: "Irene Cherono",
-        team_member_irene_role: "Mwanaharakati wa Usalama Mtandaoni / Muundaji Maudhui",
+        team_member_irene_role: "Mkufunzi wa Usalama wa Kidijitali",
         team_member_caren_name: "Caren Jeruto",
-        team_member_caren_role: "Mwanaharakati wa Usalama Mtandaoni / Msanidi Programu",
+        team_member_caren_role: "Mkufunzi wa Usalama wa Kidijitali ",
 
         // CTA Section (re-used from index.html if possible, or new ones for this page)
         join_difference_about: "Jiunge Nasi Katika Kufanya Tofauti",
@@ -494,15 +494,15 @@ const translations = {
         our_team_title: "Notre Équipe Incroyable",
         our_team_intro: "Autonomiser et célébrer les femmes dans la technologie à travers l'Afrique, en guidant les jeunes femmes de la Tech vers leur plein potentiel",
         team_member_jane_name: "Jane Doe",
-        team_member_jane_role: "Fondatrice / Spécialiste de la Confidentialité des Données",
+        team_member_jane_role: "Fondatrice / Consultant en Sécurité",
         team_member_maria_name: "Maria Muneeni",
         team_member_maria_role: "Co-fondatrice / Formatrice en Sécurité Numérique / Championne de l'Inclusion des PH",
         team_member_ruth_name: "Ruth Jebitok",
         team_member_ruth_role: "Responsable des Médias Sociaux",
         team_member_irene_name: "Irene Cherono",
-        team_member_irene_role: "Défenseur de la Sécurité en Ligne / Créatrice de Contenu",
+        team_member_irene_role: "Formateur en Sécurité Numérique",
         team_member_caren_name: "Caren Jeruto",
-        team_member_caren_role: "Défenseur de la Sécurité en Ligne / Développeuse",
+        team_member_caren_role: "Formateur en Sécurité Numérique",
 
         // CTA Section (re-used from index.html if possible, or new ones for this page)
         join_difference_about: "Rejoignez-nous pour Faire une Différence",
@@ -664,7 +664,7 @@ const translations = {
         our_team_title: "فريقنا الرائع",
         our_team_intro: "تمكين والاحتفاء بالنساء في التكنولوجيا عبر إفريقيا وتوجيه الفتيات في مجال التكنولوجيا إلى إمكاناتهن الكاملة",
         team_member_jane_name: "جين دو",
-        team_member_jane_role: "المؤسس / أخصائي خصوصية البيانات",
+        team_member_jane_role: "المؤسس / مستشار أمني",
         team_member_maria_name: "ماريا مونيني",
         team_member_maria_role: "المؤسس المشارك / مدرب السلامة الرقمية / بطل إدماج الأشخاص ذوي الإعاقة",
         team_member_ruth_name: "روث جيبتوك",
@@ -672,7 +672,7 @@ const translations = {
         team_member_irene_name: "إيرين تشيرونو",
         team_member_irene_role: "مناصرة السلامة عبر الإنترنت / منشئ المحتوى",
         team_member_caren_name: "كارين جيروتو",
-        team_member_caren_role: "مناصرة السلامة عبر الإنترنت / مطورة",
+        team_member_caren_role: "مدرب السلامة الرقمية",
 
         // CTA Section (re-used from index.html if possible, or new ones for this page)
         join_difference_about: "انضم إلينا لإحداث فرق",

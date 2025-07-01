@@ -38,7 +38,7 @@ const reportTranslations = {
         "hak_p1": "Provides immediate assistance and referrals for GBV survivors.",
         "hak_hotline": "Hotline: 1195 (24/7, toll-free)",
         "hak_email": "Email: info@hakgbv1195.org",
-        "hak_link": "Website",
+        "hak_link": "Visit HAK Website",
 
         // National Police Service
         "nps_title": "National Police Service",
@@ -50,7 +50,7 @@ const reportTranslations = {
         "gvrc_p1": "Offers medical and psychosocial support to GBV survivors.",
         "gvrc_hotlines": "Hotlines: +254 719 638 006 / +254 709 667 000",
         "gvrc_email": "Email: info@gvrc.or.ke",
-        "gvrc_link": "Website",
+        "gvrc_link": "Visit GVRC Website",
 
         // Wangu Kanja Foundation
         "wangu_kanja_title": "Wangu Kanja Foundation",
@@ -76,28 +76,28 @@ const reportTranslations = {
         "nena_na_binti_title": "Nena Na Binti",
         "nena_na_binti_p1": "Provides confidential and non-judgmental SRHR support, including SGBV linkage.",
         "nena_na_binti_hotlines": "Hotlines: 0800 211 227 (Toll Free), 0775533117 (Text/WhatsApp)",
-        "nena_na_binti_link": "Website",
+        "nena_na_binti_link": "Report via Nena Na Binti",
 
         // Uwiano Platform for Peace
         "uwiano_title": "Uwiano Platform for Peace",
         "uwiano_p1": "Conflict prevention strategy, includes reporting via SMS or email.",
         "uwiano_sms": "Report via SMS to: 108",
         "uwiano_email": "Email: uwiano@nscpeace.go.ke",
-        "uwiano_link": "Website",
+        "uwiano_link": "Visit Uwiano Website",
 
         // FIDA Kenya
         "fida_title": "FIDA Kenya",
         "fida_p1": "Provides legal aid and advocacy for women's rights.",
         "fida_hotline": "Hotline: +254 772 509 760",
         "fida_email": "Email: info@fida-kenya.org",
-        "fida_link": "Website",
+        "fida_link": "Visit FIDA Website",
 
         // CREAW Kenya
         "creaw_title": "CREAW Kenya",
         "creaw_p1": "Offers legal and psychosocial support to GBV survivors.",
         "creaw_hotline": "Toll-Free Hotline: 0800 720 186",
         "creaw_email": "Email: info@creaw.org",
-        "creaw_link": "Website",
+        "creaw_link": "Visit CREAW Kenya Website",
 
         // Footer
         "quick_links": "Quick Links",
@@ -231,11 +231,11 @@ const reportTranslations = {
         "nc4_link": "Tembelea Tovuti ya NC4",
 
         // Healthcare Assistance Kenya (HAK) - GBV Hotline
-        "hak_title": "Msaada wa Afya Kenya (HAK) - Namba ya Simu ya GBV",
+        "hak_title": "Msaada wa Afya Kenya (HAK) - GBV Hotline",
         "hak_p1": "Inatoa msaada wa haraka na rufaa kwa waathirika wa GBV.",
-        "hak_hotline": "Namba ya Simu: 1195 (saa 24/7, bila malipo)",
+        "hak_hotline": "Hotline: 1195 (24/7, toll-free)",
         "hak_email": "Barua pepe: info@hakgbv1195.org",
-        "hak_link": "Tovuti",
+        "hak_link": "Tembelea Tovuti ya HAK",
 
         // National Police Service
         "nps_title": "Jeshi la Polisi la Kitaifa",
@@ -247,7 +247,7 @@ const reportTranslations = {
         "gvrc_p1": "Inatoa msaada wa kimatibabu na kisaikolojia kwa waathirika wa GBV.",
         "gvrc_hotlines": "Namba za Simu: +254 719 638 006 / +254 709 667 000",
         "gvrc_email": "Barua pepe: info@gvrc.or.ke",
-        "gvrc_link": "Tovuti",
+        "gvrc_link": "Tembelea Tovuti ya GVRC",
 
         // Wangu Kanja Foundation
         "wangu_kanja_title": "Mfuko wa Wangu Kanja",
@@ -273,28 +273,28 @@ const reportTranslations = {
         "nena_na_binti_title": "Nena Na Binti",
         "nena_na_binti_p1": "Inatoa msaada wa siri na usio na ubaguzi wa SRHR, ikiwemo kuunganisha na huduma za SGBV.",
         "nena_na_binti_hotlines": "Namba za Simu: 0800 211 227 (Bila Malipo), 0775533117 (Ujumbe/WhatsApp)",
-        "nena_na_binti_link": "Tovuti",
+        "nena_na_binti_link": "Ripoti kupitia Nena Na Binti",
 
         // Uwiano Platform for Peace
         "uwiano_title": "Jukwaa la Amani la Uwiano",
         "uwiano_p1": "Mkakati wa kuzuia migogoro, unajumuisha kuripoti kupitia SMS au barua pepe.",
         "uwiano_sms": "Ripoti kupitia SMS kwa: 108",
         "uwiano_email": "Barua pepe: uwiano@nscpeace.go.ke",
-        "uwiano_link": "Tovuti",
+        "uwiano_link": "Tembelea Tovuti ya Uwiano",
 
         // FIDA Kenya
         "fida_title": "FIDA Kenya",
         "fida_p1": "Inatoa msaada wa kisheria na utetezi wa haki za wanawake.",
         "fida_hotline": "Namba ya Simu: +254 772 509 760",
         "fida_email": "Barua pepe: info@fida-kenya.org",
-        "fida_link": "Tovuti",
+        "fida_link": "Tembelea Tovuti ya FIDA",
 
         // CREAW Kenya
         "creaw_title": "CREAW Kenya",
         "creaw_p1": "Inatoa msaada wa kisheria na kisaikolojia kwa waathirika wa GBV.",
         "creaw_hotline": "Namba ya Simu Isiyolipishwa: 0800 720 186",
         "creaw_email": "Barua pepe: info@creaw.org",
-        "creaw_link": "Tovuti",
+        "creaw_link": "Tembelea Tovuti ya CREAW Kenya",
 
         // Footer
         "quick_links": "Viungo vya Haraka",
@@ -399,7 +399,7 @@ const reportTranslations = {
         "hak_p1": "Fournit une assistance immédiate et des références pour les survivantes de VBG.",
         "hak_hotline": "Ligne d'urgence : 1195 (24/7, sans frais)",
         "hak_email": "E-mail : info@hakgbv1195.org",
-        "hak_link": "Site Web",
+        "hak_link": "Visiter le site HAK",
 
         // National Police Service
         "nps_title": "Service National de Police",
@@ -411,7 +411,7 @@ const reportTranslations = {
         "gvrc_p1": "Offre un soutien médical et psychosocial aux survivantes de VBG.",
         "gvrc_hotlines": "Lignes d'urgence : +254 719 638 006 / +254 709 667 000",
         "gvrc_email": "E-mail : info@gvrc.or.ke",
-        "gvrc_link": "Site Web",
+        "gvrc_link": "Visiter le site GVRC",
 
         // Wangu Kanja Foundation
         "wangu_kanja_title": "Fondation Wangu Kanja",
@@ -437,28 +437,28 @@ const reportTranslations = {
         "nena_na_binti_title": "Nena Na Binti",
         "nena_na_binti_p1": "Fournit un soutien confidentiel et non-jugeant en matière de DSSR, y compris le lien avec la VBG.",
         "nena_na_binti_hotlines": "Namba za Simu: 0800 211 227 (Numéro Vert), 0775533117 (SMS/WhatsApp)",
-        "nena_na_binti_link": "Tovuti",
+        "nena_na_binti_link": "Signaler via Nena Na Binti",
 
         // Uwiano Platform for Peace
         "uwiano_title": "Plateforme Uwiano pour la Paix",
         "uwiano_p1": "Mkakati wa kuzuia migogoro, unajumuisha kuripoti kupitia SMS au barua pepe.",
         "uwiano_sms": "Signaler par SMS au : 108",
         "uwiano_email": "E-mail : uwiano@nscpeace.go.ke",
-        "uwiano_link": "Tovuti",
+        "uwiano_link": "Visiter le site Uwiano",
 
         // FIDA Kenya
         "fida_title": "FIDA Kenya",
         "fida_p1": "Inatoa msaada wa kisheria na utetezi wa haki za wanawake.",
         "fida_hotline": "Ligne d'urgence : +254 772 509 760",
         "fida_email": "E-mail : info@fida-kenya.org",
-        "fida_link": "Site Web",
+        "fida_link": "Visiter le site FIDA",
 
         // CREAW Kenya
         "creaw_title": "CREAW Kenya",
         "creaw_p1": "Inatoa msaada wa kisheria na kisaikolojia kwa waathirika wa GBV.",
         "creaw_hotline": "Namba ya Simu Isiyolipishwa: 0800 720 186",
         "creaw_email": "Barua pepe: info@creaw.org",
-        "creaw_link": "Tovuti",
+        "creaw_link": "Visiter le site CREAW Kenya",
 
         // Footer
         "quick_links": "Liens Rapides",
@@ -499,7 +499,7 @@ const reportTranslations = {
         "rainn_title": "RAINN (États-Unis)",
         "rainn_desc": "Chat en direct ou appelez le 1‑800‑656‑HOPE (4673) pour un soutien en cas d'abus sexuel lié à la technologie et des références mondiales.",
         "rainn_link": "Visitez RAINN.org",
-        "iawj_title": "IAWJ – Signalement TFGBV & Aide Juridique",
+        "iawj_title": "IAWJ – Signalement TFGBV & Msaada wa Kisheria",
         "iawj_desc": "Trouvez un soutien juridique régional pour les cas d'abus technologiques via l'outil 'Find a Judge'.",
         "iawj_link": "Visitez IAWJ",
         "hotline_ie_title": "Hotline.ie (Irlande)",
@@ -561,7 +561,7 @@ const reportTranslations = {
         "hak_p1": "يقدم مساعدة فورية وإحالات للناجين من العنف القائم على النوع الاجتماعي.",
         "hak_hotline": "الخط الساخن: 1195 (24/7، مجاني)",
         "hak_email": "البريد الإلكتروني: info@hakgbv1195.org",
-        "hak_link": "الموقع الإلكتروني",
+        "hak_link": "زيارة موقع HAK",
 
         // National Police Service
         "nps_title": "الخدمة الوطنية للشرطة",
@@ -573,7 +573,7 @@ const reportTranslations = {
         "gvrc_p1": "يقدم الدعم الطبي والنفسي والاجتماعي للناجين من العنف القائم على النوع الاجتماعي.",
         "gvrc_hotlines": "الخطوط الساخنة: +254 719 638 006 / +254 709 667 000",
         "gvrc_email": "البريد الإلكتروني: info@gvrc.or.ke",
-        "gvrc_link": "الموقع الإلكتروني",
+        "gvrc_link": "زيارة موقع GVRC",
 
         // Wangu Kanja Foundation
         "wangu_kanja_title": "مؤسسة وانغو كانجا",
@@ -599,28 +599,28 @@ const reportTranslations = {
         "nena_na_binti_title": "نينا نا بنتي",
         "nena_na_binti_p1": "تقدم دعمًا سريًا وغير حكمي في مجال الصحة الجنسية والإنجابية، بما في ذلك الربط بالعنف القائم على النوع الاجتماعي.",
         "nena_na_binti_hotlines": "الخطوط الساخنة: 0800 211 227 (مجاني)، 0775533117 (نص/واتساب)",
-        "nena_na_binti_link": "الموقع الإلكتروني",
+        "nena_na_binti_link": "الإبلاغ عبر Nena Na Binti",
 
         // Uwiano Platform for Peace
         "uwiano_title": "منصة أويانو للسلام",
         "uwiano_p1": "استراتيجية منع النزاعات، تشمل الإبلاغ عبر الرسائل القصيرة أو البريد الإلكتروني.",
         "uwiano_sms": "الإبلاغ عبر الرسائل القصيرة إلى: 108",
         "uwiano_email": "البريد الإلكتروني: uwiano@nscpeace.go.ke",
-        "uwiano_link": "الموقع الإلكتروني",
+        "uwiano_link": "زيارة موقع Uwiano",
 
         // FIDA Kenya
         "fida_title": "فيدا كينيا",
         "fida_p1": "توفر المساعدة القانونية والدعوة لحقوق المرأة.",
         "fida_hotline": "الخط الساخن: +254 772 509 760",
         "fida_email": "البريد الإلكتروني: info@fida-kenya.org",
-        "fida_link": "الموقع الإلكتروني",
+        "fida_link": "زيارة موقع FIDA",
 
         // CREAW Kenya
         "creaw_title": "CREAW كينيا",
         "creaw_p1": "تقدم الدعم القانوني والنفسي والاجتماعي للناجين من العنف القائم على النوع الاجتماعي.",
         "creaw_hotline": "الخط الساخن المجاني: 0800 720 186",
         "creaw_email": "البريد الإلكتروني: info@creaw.org",
-        "creaw_link": "الموقع الإلكتروني",
+        "creaw_link": "زيارة موقع CREAW Kenya",
 
         // Footer
         "quick_links": "روابط سريعة",
@@ -644,7 +644,7 @@ const reportTranslations = {
         "south_africa_gbv_title": "مركز قيادة العنف القائم على النوع الاجتماعي في جنوب أفريقيا",
         "south_africa_gbv_desc": "أبلغ عن التهديدات التقنية عبر 0800 428 428 أو *120*7867# (USSD). الصم: Skype HelpmeGbv أو أرسل 'help' إلى 31531.",
         "childline_sa_title": "Childline جنوب أفريقيا",
-        "childline_sa_desc": "خط المساعدة 0800 55 555 للأطفال/البالغين الذين يتعرضون للتنمر الإلكتروني أو الإساءة عبر الإنترنت. زر childlinesa.org.za للدردشة عبر الإنترنت.",
+        "childline_sa_desc": "خط المساعدة 0800 55 555 kwa watoto/watu wazima wanaopitia unyanyasaji mtandaoni. Tembelea childlinesa.org.za kuzungumza mtandaoni.",
         "safecity_title": "Safecity (مؤسسة Red Dot)",
         "safecity_desc": "منصة إبلاغ مجهولة عن التحرش والإساءة الرقمية في الأماكن العامة أو عبر الإنترنت. متاحة في كينيا والكاميرون والمزيد.",
         "safecity_link": "أبلغ عبر Safecity",
