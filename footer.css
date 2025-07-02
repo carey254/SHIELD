@@ -62,10 +62,10 @@
     margin-bottom: 16px;
   }
   .footer-links ul {
-    font-size: 1.13em !important;
+    font-size: 1.08em !important;
   }
   .footer-links ul li a {
-    font-size: 1.08em !important;
+    font-size: 1.03em !important;
   }
   
   .footer-contact {
@@ -78,7 +78,7 @@
     width: 100%;
     max-width: 320px;
     justify-content: flex-start;
-    font-size: 1.13em !important;
+    font-size: 1.08em !important;
   }
   .footer-contact h3 {
     color: orange;
@@ -87,7 +87,7 @@
   }
   .footer-contact p, .footer-location p {
     margin-bottom: 12px;
-    font-size: 1.08em !important;
+    font-size: 1.03em !important;
   }
   .footer-location {
     margin-bottom: 12px;
@@ -97,7 +97,7 @@
   }
   .footer-location p {
     color: #ccc;
-    font-size: 15px;
+    font-size: 10px;
     margin-bottom: 8px;
   }
   .footer-contact .social-icons {

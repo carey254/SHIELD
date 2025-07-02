@@ -52,45 +52,38 @@ window.stopTTS = function() {
 };
 
 window.readPageContent = function() {
-    window.speechSynthesis.cancel(); // Always stop previous speech
     if (!isTTSActive) return;
+    // Gather content to read
     const currentLang = document.documentElement.lang || 'en';
-    const speakText = (text, rate = 1) => {
-        if (!text) return null;
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.rate = rate;
-        utterance.pitch = 1;
-        utterance.volume = 1;
-        utterance.lang = currentLang;
-        if (currentTTSVoice) utterance.voice = currentTTSVoice;
-        return utterance;
-    };
-    const utterances = [];
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        const text = link.textContent.replace(/\s+/g, ' ').trim();
-        if (text) {
-            const utterance = speakText(text, 0.9);
-            if (utterance) utterances.push(utterance);
-        }
-    });
+    if (currentLang !== 'en') return; // Only use Polly for English for now
+    const navLinks = Array.from(document.querySelectorAll('.nav-links a'))
+        .map(link => link.textContent.replace(/\s+/g, ' ').trim())
+        .filter(Boolean)
+        .join('. ');
     const mainContent = Array.from(document.querySelectorAll('[data-translate]'))
         .filter(el => el.getAttribute('data-lang') === currentLang || !el.getAttribute('data-lang'))
         .map(el => el.textContent.replace(/\s+/g, ' ').trim())
-        .filter(text => text)
+        .filter(Boolean)
         .join(' ');
-    if (mainContent) {
-        const utterance = speakText(mainContent, 1);
-        if (utterance) utterances.push(utterance);
-    }
-    const speakNext = (index) => {
-        if (index < utterances.length) {
-            const utterance = utterances[index];
-            utterance.onend = () => setTimeout(() => speakNext(index + 1), 500);
-            window.speechSynthesis.speak(utterance);
-        }
-    };
-    speakNext(0);
+    const text = navLinks + '. ' + mainContent;
+    if (!text.trim()) return;
+    fetch('/tts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text })
+    })
+    .then(res => {
+        if (!res.ok) throw new Error('TTS failed');
+        return res.blob();
+    })
+    .then(blob => {
+        const url = URL.createObjectURL(blob);
+        const audio = new Audio(url);
+        audio.play();
+    })
+    .catch(err => {
+        console.error('TTS error:', err);
+    });
 };
 
 window.increaseFontSize = function() {

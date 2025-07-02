@@ -6,6 +6,7 @@ const cors = require("cors");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 const connectDB = require("./db");
+const AWS = require('aws-sdk');
 
 const app = express();
 app.use(express.json());
@@ -31,6 +32,14 @@ const transporter = nodemailer.createTransport({
         pass: process.env.EMAIL_PASS,
     },
 });
+
+AWS.config.update({
+    accessKeyId: 'AKIARUR7NWK5NNXDM BVB',
+    secretAccessKey: 'NNbmH0TgOV/tJAEM6dB/GCzFgTyNXOacNN6BQQ3O',
+    region: 'eu-west-1'
+});
+
+const polly = new AWS.Polly();
 
 // Route to handle contact form submission
 app.post("/send-message", async (req, res) => {
@@ -63,6 +72,34 @@ app.post("/send-message", async (req, res) => {
         res.json({ message: "Message received! Check your email for confirmation." });
     } catch (error) {
         res.status(500).json({ message: "Error saving feedback." });
+    }
+});
+
+app.post('/tts', async (req, res) => {
+    const { text } = req.body;
+    if (!text || typeof text !== 'string' || text.trim().length === 0) {
+        return res.status(400).json({ message: 'Text is required.' });
+    }
+    const params = {
+        OutputFormat: 'mp3',
+        Text: text,
+        VoiceId: 'Amy',
+        LanguageCode: 'en-GB'
+    };
+    try {
+        polly.synthesizeSpeech(params, (err, data) => {
+            if (err) {
+                return res.status(500).json({ message: 'Polly error', error: err });
+            }
+            if (data && data.AudioStream instanceof Buffer) {
+                res.set('Content-Type', 'audio/mpeg');
+                res.send(data.AudioStream);
+            } else {
+                res.status(500).json({ message: 'No audio stream returned.' });
+            }
+        });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error });
     }
 });
 
