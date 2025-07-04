@@ -858,347 +858,566 @@
 
 
 
-
-    <div class="accessibility-panel" id="accessibilityPanel">
-      <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()">
-        <i class="fas fa-universal-access"></i>
+  <!-- Accessibility Control Panel -->
+  <div class="accessibility-panel" id="accessibilityPanel">
+    <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()">
+      <i class="fas fa-universal-access"></i>
+    </button>
+    <div class="accessibility-controls">
+      <button onclick="toggleTextToSpeech()" id="ttsToggle">
+        <i class="fas fa-volume-up"></i> TTS
       </button>
-      <div class="accessibility-controls">
-        <button onclick="toggleTextToSpeech()" id="ttsToggle">
-          <i class="fas fa-volume-up"></i> TTS
-        </button>
-        <button onclick="stopTTS()" id="ttsStop">
-          <i class="fas fa-stop"></i> Stop
-        </button>
-        <button onclick="increaseFontSize()">
-          <i class="fas fa-text-height"></i> A+
-        </button>
-        <button onclick="decreaseFontSize()">
-          <i class="fas fa-text-height"></i> A-
-        </button>
-        <button onclick="toggleHighContrast()" id="contrastToggle">
-          <i class="fas fa-adjust"></i> Contrast
-        </button>
-        <button onclick="resetAccessibility()">
-          <i class="fas fa-undo"></i> Reset
-        </button>
-      </div>
+      <button onclick="stopTTS()" id="ttsStop">
+        <i class="fas fa-stop"></i> Stop
+    </button>
+      <button onclick="increaseFontSize()">
+        <i class="fas fa-text-height"></i> A+
+      </button>
+      <button onclick="decreaseFontSize()">
+        <i class="fas fa-text-height"></i> A-
+      </button>
+      <button onclick="cycleContrast()" id="contrastToggle">
+        <i class="fas fa-adjust"></i> <span id="contrastLabel">Contrast</span>
+      </button>
+      <button onclick="cycleSaturation()" id="saturationToggle">
+        <i class="fas fa-tint"></i> <span id="saturationLabel">Saturation</span>
+      </button>
+      <button onclick="resetAccessibility()">
+        <i class="fas fa-undo"></i> Reset
+      </button>
     </div>
-    
-    <style>
-    /* Accessibility Panel Styles */
-    .accessibility-panel {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-    
-    .accessibility-toggle {
-      background: #ff4500;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
-    
-    .accessibility-toggle:hover {
-      transform: scale(1.1);
-    }
-    
-    .accessibility-controls {
-      position: absolute;
-      bottom: 60px;
-      right: 0;
-      background: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-    }
-    
-    .accessibility-controls.active {
-      display: flex;
-    }
-    
-    .accessibility-controls button {
-      background: #f5f5f5;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: background-color 0.3s ease;
-    }
-    
-    .accessibility-controls button:hover {
-      background: #e0e0e0;
-    }
-    
-    /* High Contrast Mode */
-    .high-contrast {
-      background-color: #000 !important;
-      color: #fff !important;
-    }
-    
-    .high-contrast * {
-      background-color: #000 !important;
-      color: #fff !important;
-      border-color: #fff !important;
-    }
-    
-    .high-contrast a {
-      color: #ffff00 !important;
-    }
-    
-    .high-contrast button {
-      background-color: #fff !important;
-      color: #000 !important;
-    }
-    </style>
-    
-    <script>
-    // Accessibility Functions (Globally accessible)
-    let isTTSActive = true; // Set to true by default for auto-read
-    let isHighContrast = false;
-    let currentFontSize = 16;
-    let currentTTSVoice = null; // To store the currently selected voice
-    
-    // Function to find a voice based on language
-    window.selectTTSVoice = function(lang) {
-        const voices = window.speechSynthesis.getVoices();
-        console.log('Available Voices:', voices);
-        console.log('Attempting to select voice for language:', lang);
-    
-        let selectedVoice = null;
-    
-        if (lang === 'en') {
-            // Prioritize Awasili voice for English
-            selectedVoice = voices.find(voice => voice.name === 'Awasili') ||
-                           voices.find(voice => voice.name === 'Asilia') ||
-                           voices.find(voice => voice.lang === 'en-KE') ||
-                           voices.find(voice => voice.lang.startsWith('en-US')) ||
-                           voices.find(voice => voice.lang.startsWith('en-GB')) ||
-                           voices.find(voice => voice.lang.startsWith('en'));
-        } else if (lang === 'sw') {
-            // Prioritize Swahili (Kenya) then any Swahili voice
-            selectedVoice = voices.find(voice => voice.lang === 'sw-KE') ||
-                           voices.find(voice => voice.lang.startsWith('sw'));
-        } else if (lang === 'fr') {
-            // Prioritize French voices
-            selectedVoice = voices.find(voice => voice.lang.startsWith('fr'));
-        } else if (lang === 'ar') {
-            // Prioritize Arabic voices
-            selectedVoice = voices.find(voice => voice.lang.startsWith('ar'));
-        }
-    
-        currentTTSVoice = selectedVoice || voices.find(voice => voice.lang.startsWith('en')) || voices[0];
-        if (!currentTTSVoice) {
-            console.warn("No suitable voice found for language " + lang + ", using default system voice.");
-        } else {
-            console.log('Selected voice:', currentTTSVoice.name, '(' + currentTTSVoice.lang + ')');
-        }
-    };
-    
-    // Toggle accessibility panel visibility
-    window.toggleAccessibilityPanel = function() {
-        const controls = document.querySelector('.accessibility-controls');
-        controls.classList.toggle('active');
-    };
-    
-    // Toggle text-to-speech on/off
-    window.toggleTextToSpeech = function() {
-        isTTSActive = !isTTSActive;
-        const ttsButton = document.getElementById('ttsToggle');
-        
-        if (isTTSActive) {
-            ttsButton.style.backgroundColor = '#ff4500';
-            ttsButton.style.color = 'white';
-            window.readPageContent(); // Restart reading when toggled on
-        } else {
-            ttsButton.style.backgroundColor = '#f5f5f5';
-            ttsButton.style.color = 'black';
-            window.speechSynthesis.cancel();
-        }
-    };
-    
-    // Stop text-to-speech
-    window.stopTTS = function() {
-        isTTSActive = false;
-        window.speechSynthesis.cancel();
-        const ttsButton = document.getElementById('ttsToggle');
-        if (ttsButton) {
-            ttsButton.style.backgroundColor = '#f5f5f5';
-            ttsButton.style.color = 'black';
-        }
-    };
-    
-    // Read the entire page content
-    window.readPageContent = function() {
-        if (!isTTSActive) {
-            console.log('TTS is not active, not reading content.');
-            return;
-        }
-        
-        // Get the current language
-        const currentLang = document.documentElement.lang || 'en';
-        
-        // Function to create and speak an utterance
-        const speakText = (text, rate = 1) => {
-            if (!text) return null;
-            
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.rate = rate;
-            utterance.pitch = 1;
-            utterance.volume = 1;
-            utterance.lang = currentLang;
-            
-            if (currentTTSVoice) {
-                utterance.voice = currentTTSVoice;
-            }
-            
-            return utterance;
-        };
-    
-        // Create a queue of utterances
-        const utterances = [];
-        
-        // 1. Read navigation links once, clearly
-        const navLinks = document.querySelectorAll('.nav-links a');
-        navLinks.forEach(link => {
-            // Get the complete text content, including any child elements
-            const text = link.textContent.replace(/\s+/g, ' ').trim();
-            if (text) {
-                const utterance = speakText(text, 0.9);
-                if (utterance) {
-                    utterances.push(utterance);
-                }
-            }
-        });
-    
-        // 2. Read the main content
-        const mainContent = Array.from(document.querySelectorAll('[data-translate]'))
-            .filter(el => el.getAttribute('data-lang') === currentLang || !el.getAttribute('data-lang'))
-            .map(el => el.textContent.replace(/\s+/g, ' ').trim())
-            .filter(text => text) // Remove empty strings
-            .join(' ');
-    
-        if (mainContent) {
-            const utterance = speakText(mainContent, 1);
-            if (utterance) {
-                utterances.push(utterance);
-            }
-        }
-    
-        // Function to speak the next utterance in the queue
-        const speakNext = (index) => {
-            if (index < utterances.length) {
-                const utterance = utterances[index];
-                utterance.onend = () => {
-                    // Add a pause between items
-                    setTimeout(() => {
-                        speakNext(index + 1);
-                    }, 500); // Consistent pause between all items
-                };
-                window.speechSynthesis.speak(utterance);
-            }
-        };
-    
-        // Start speaking the queue
-        speakNext(0);
-    };
-    
-    // Increase font size
-    window.increaseFontSize = function() {
-        currentFontSize += 2;
-        document.body.style.fontSize = currentFontSize + 'px';
-    };
-    
-    // Decrease font size
-    window.decreaseFontSize = function() {
-        currentFontSize = Math.max(12, currentFontSize - 2);
-        document.body.style.fontSize = currentFontSize + 'px';
-    };
-    
-    // Toggle high contrast mode
-    window.toggleHighContrast = function() {
-        isHighContrast = !isHighContrast;
-        const contrastButton = document.getElementById('contrastToggle');
-        
-        if (isHighContrast) {
-            document.body.classList.add('high-contrast');
-            contrastButton.style.backgroundColor = '#ff4500';
-            contrastButton.style.color = 'white';
-        } else {
-            document.body.classList.remove('high-contrast');
-            contrastButton.style.backgroundColor = '#f5f5f5';
-            contrastButton.style.color = 'black';
-        }
-    };
-    
-    // Reset all accessibility settings
-    window.resetAccessibility = function() {
-        // Reset font size
-        currentFontSize = 16;
-        document.body.style.fontSize = ''; // Resets to default
-    
-        // Reset high contrast
-        isHighContrast = false;
-        document.body.classList.remove('high-contrast');
-        document.getElementById('contrastToggle').style.backgroundColor = '#f5f5f5';
-        document.getElementById('contrastToggle').style.color = 'black';
-    
-        // Reset text-to-speech
-        isTTSActive = false;
-        window.speechSynthesis.cancel(); // Stop any ongoing speech
-        document.getElementById('ttsToggle').style.backgroundColor = '#f5f5f5';
-        document.getElementById('ttsToggle').style.color = 'black';
-    
-        // Re-select voice based on current page language (defaults to English)
-        window.selectTTSVoice(document.documentElement.lang || 'en');
-    };
-    
-    // Initial setup for voices and auto-read
-    document.addEventListener('DOMContentLoaded', () => {
-        const initializeTTSOnLoad = () => {
-            // Set TTS to active by default
-            isTTSActive = true;
-            
-            // Initialize voice selection
-            window.selectTTSVoice(document.documentElement.lang || 'en');
-            
-            // Set the TTS button to active state
-            const ttsButton = document.getElementById('ttsToggle');
-            if (ttsButton) {
-                ttsButton.style.backgroundColor = '#ff4500';
-                ttsButton.style.color = 'white';
-            }
-    
-            // Start reading the page content automatically
-            setTimeout(() => {
-                window.readPageContent();
-            }, 1000); // Small delay to ensure everything is loaded
-        };
-    
-        if (window.speechSynthesis && window.speechSynthesis.getVoices().length > 0) {
-            initializeTTSOnLoad();
-        } else if (window.speechSynthesis) {
-            window.speechSynthesis.onvoiceschanged = () => {
-                initializeTTSOnLoad();
-            };
-        } else {
-            console.warn("SpeechSynthesis API not supported in this browser.");
-        }
-    });
+  </div>
+  
+  <style>
+  /* Accessibility Panel Styles */
+  .accessibility-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .accessibility-toggle {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    width: 50px !important;
+    height: 50px !important;
+    background: #ff4500 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50% !important;
+    font-size: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 10000 !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+    cursor: pointer !important;
+  }
+  
+  .accessibility-toggle:hover {
+    transform: scale(1.1);
+  }
+  
+  .accessibility-controls {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background: orange;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .accessibility-controls.active {
+    display: flex;
+  }
+  
+  .accessibility-controls button {
+    background: orange;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accessibility-controls button:hover {
+    background: #e0e0e0;
+  }
+  
+  /* High Contrast Mode */
+  .high-contrast {
+    background-color: #000 !important;
+    background-color: yellow !important;
+    color: #fff !important;
+  }
+  
+  .high-contrast * {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+  }
+  
+  .high-contrast a {
+    color: #ffff00 !important;
+  }
+  
+  .high-contrast button {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+  /* Invert Colors Theme (Pink) */
+  body.invert-colors {
+    background: #ff69b4 !important; /* Hot pink */
+    color: #fff !important;
+  }
+  body.invert-colors a, body.invert-colors button, body.invert-colors input, body.invert-colors textarea {
+    color: #fff !important;
+    background: #d72670 !important;
+    border-color: #fff !important;
+  }
+  /* Dark Mode Theme */
+  body.dark-mode {
+    background: #181a1b !important;
+    color: #e8eaed !important;
+  }
+  body.dark-mode a, body.dark-mode button, body.dark-mode input, body.dark-mode textarea {
+    color: #e8eaed !important;
+    background: #23272a !important;
+    border-color: #444 !important;
+  }
+  /* Light Mode Theme */
+  body.light-mode {
+    background: #fff !important;
+    color: #222 !important;
+  }
+  body.light-mode a, body.light-mode button, body.light-mode input, body.light-mode textarea {
+    color: #222 !important;
+    background: #f5f5f5 !important;
+    border-color: #bbb !important;
+  }
+  /* Color-blind Friendly Theme (blue/yellow) */
+  body.color-blind-mode {
+    background: #f7f7e8 !important;
+    color: #1a1a7a !important;
+  }
+  body.color-blind-mode a, body.color-blind-mode button, body.color-blind-mode input, body.color-blind-mode textarea {
+    color: #1a1a7a !important;
+    background: #ffe066 !important;
+    border-color: #1a1a7a !important;
+  }
+  /* Saturation Modes */
+  body.saturation-low {
+    filter: saturate(0.2) !important;
+  }
+  body.saturation-high {
+    filter: saturate(2) !important;
+  }
+  body.saturation-normal {
+    filter: saturate(1) !important;
+  }
+
+  /* Ensure accessibility panel and icon always stay fixed and visible */
+  .accessibility-panel {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 9999 !important;
+  }
+  .accessibility-toggle {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
+  }
+
+  /* Invert Colors Theme (Light Pink Background Only) */
+  body.invert-colors {
+    background: #ffe4ec !important; /* Light pink */
+  }
+  body.invert-colors *,
+  body.invert-colors h1,
+  body.invert-colors h2,
+  body.invert-colors h3,
+  body.invert-colors h4,
+  body.invert-colors h5,
+  body.invert-colors h6,
+  body.invert-colors p,
+  body.invert-colors span,
+  body.invert-colors a,
+  body.invert-colors button,
+  body.invert-colors input,
+  body.invert-colors textarea {
+    color: initial !important;
+    background: initial !important;
+  }
+  /* Saturation Modes: apply to .main-content only, not body */
+  .main-content.saturation-low {
+    filter: saturate(0.2) !important;
+  }
+  .main-content.saturation-high {
+    filter: saturate(2) !important;
+  }
+  .main-content.saturation-normal {
+    filter: saturate(1) !important;
+  }
+  /* Ensure accessibility panel and icon always stay fixed and visible */
+  .accessibility-panel {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 9999 !important;
+  }
+  .accessibility-toggle {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
+  }
+  </style>
+  
+  <script>
+  // Accessibility Functions (Globally accessible)
+  let isTTSActive = true; // Set to true by default for auto-read
+  let isHighContrast = false;
+  let currentFontSize = 16;
+  let currentTTSVoice = null; // To store the currently selected voice
+  
+  // Function to find a voice based on language
+  window.selectTTSVoice = function(lang) {
+      const voices = window.speechSynthesis.getVoices();
+      console.log('Available Voices:', voices);
+      console.log('Attempting to select voice for language:', lang);
+  
+      let selectedVoice = null;
+  
+      if (lang === 'en') {
+          // Prioritize Awasili voice for English
+          selectedVoice = voices.find(voice => voice.name === 'Awasili') ||
+                         voices.find(voice => voice.name === 'Asilia') ||
+                         voices.find(voice => voice.lang === 'en-KE') ||
+                         voices.find(voice => voice.lang.startsWith('en-US')) ||
+                         voices.find(voice => voice.lang.startsWith('en-GB')) ||
+                         voices.find(voice => voice.lang.startsWith('en'));
+      } else if (lang === 'sw') {
+          // Prioritize Swahili (Kenya) then any Swahili voice
+          selectedVoice = voices.find(voice => voice.lang === 'sw-KE') ||
+                         voices.find(voice => voice.lang.startsWith('sw'));
+      } else if (lang === 'fr') {
+          // Prioritize French voices
+          selectedVoice = voices.find(voice => voice.lang.startsWith('fr'));
+      } else if (lang === 'ar') {
+          // Prioritize Arabic voices
+          selectedVoice = voices.find(voice => voice.lang.startsWith('ar'));
+      }
+  
+      currentTTSVoice = selectedVoice || voices.find(voice => voice.lang.startsWith('en')) || voices[0];
+      if (!currentTTSVoice) {
+          console.warn("No suitable voice found for language " + lang + ", using default system voice.");
+      } else {
+          console.log('Selected voice:', currentTTSVoice.name, '(' + currentTTSVoice.lang + ')');
+      }
+  };
+  
+  // Toggle accessibility panel visibility
+  window.toggleAccessibilityPanel = function() {
+      const controls = document.querySelector('.accessibility-controls');
+      controls.classList.toggle('active');
+  };
+  
+  // Toggle text-to-speech on/off
+  window.toggleTextToSpeech = function() {
+      isTTSActive = !isTTSActive;
+      const ttsButton = document.getElementById('ttsToggle');
+      
+      if (isTTSActive) {
+          ttsButton.style.backgroundColor = '#ff4500';
+          ttsButton.style.color = 'white';
+          window.readPageContent(); // Restart reading when toggled on
+      } else {
+          ttsButton.style.backgroundColor = '#f5f5f5';
+          ttsButton.style.color = 'black';
+          window.speechSynthesis.cancel();
+      }
+  };
+  
+  // Stop text-to-speech
+  window.stopTTS = function() {
+      isTTSActive = false;
+      window.speechSynthesis.cancel();
+      const ttsButton = document.getElementById('ttsToggle');
+      if (ttsButton) {
+          ttsButton.style.backgroundColor = '#f5f5f5';
+          ttsButton.style.color = 'black';
+      }
+  };
+  
+  // Read the entire page content
+  window.readPageContent = function() {
+      if (!isTTSActive) {
+          console.log('TTS is not active, not reading content.');
+          return;
+      }
+      
+      // Get the current language
+      const currentLang = document.documentElement.lang || 'en';
+      
+      // Function to create and speak an utterance
+      const speakText = (text, rate = 1) => {
+          if (!text) return null;
+          
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.rate = rate;
+          utterance.pitch = 1;
+          utterance.volume = 1;
+          utterance.lang = currentLang;
+          
+          if (currentTTSVoice) {
+              utterance.voice = currentTTSVoice;
+          }
+          
+          return utterance;
+      };
+  
+      // Create a queue of utterances
+      const utterances = [];
+      
+      // 1. Read navigation links once, clearly
+      const navLinks = document.querySelectorAll('.nav-links a');
+      navLinks.forEach(link => {
+          // Get the complete text content, including any child elements
+          const text = link.textContent.replace(/\s+/g, ' ').trim();
+          if (text) {
+              const utterance = speakText(text, 0.9);
+              if (utterance) {
+                  utterances.push(utterance);
+              }
+          }
+      });
+  
+      // 2. Read the main content
+      const mainContent = Array.from(document.querySelectorAll('[data-translate]'))
+          .filter(el => el.getAttribute('data-lang') === currentLang || !el.getAttribute('data-lang'))
+          .map(el => el.textContent.replace(/\s+/g, ' ').trim())
+          .filter(text => text) // Remove empty strings
+          .join(' ');
+  
+      if (mainContent) {
+          const utterance = speakText(mainContent, 1);
+          if (utterance) {
+              utterances.push(utterance);
+          }
+      }
+  
+      // Function to speak the next utterance in the queue
+      const speakNext = (index) => {
+          if (index < utterances.length) {
+              const utterance = utterances[index];
+              utterance.onend = () => {
+                  // Add a pause between items
+                  setTimeout(() => {
+                      speakNext(index + 1);
+                  }, 500); // Consistent pause between all items
+              };
+              window.speechSynthesis.speak(utterance);
+          }
+      };
+  
+      // Start speaking the queue
+      speakNext(0);
+  };
+  
+  // Increase font size
+  window.increaseFontSize = function() {
+      currentFontSize += 2;
+      document.body.style.fontSize = currentFontSize + 'px';
+  };
+  
+  // Decrease font size
+  window.decreaseFontSize = function() {
+      currentFontSize = Math.max(12, currentFontSize - 2);
+      document.body.style.fontSize = currentFontSize + 'px';
+  };
+  
+  // Toggle high contrast mode
+  window.toggleHighContrast = function() {
+      isHighContrast = !isHighContrast;
+      const contrastButton = document.getElementById('contrastToggle');
+      
+      if (isHighContrast) {
+          document.body.classList.add('high-contrast');
+          contrastButton.style.backgroundColor = '#ff4500';
+          contrastButton.style.color = 'white';
+      } else {
+          document.body.classList.remove('high-contrast');
+          contrastButton.style.backgroundColor = '#f5f5f5';
+          contrastButton.style.color = 'black';
+      }
+  };
+  
+  // Reset all accessibility settings
+  window.resetAccessibility = function() {
+      // Reset font size
+      currentFontSize = 16;
+      document.body.style.fontSize = ''; // Resets to default
+  
+      // Reset high contrast
+      isHighContrast = false;
+      document.body.classList.remove('high-contrast');
+      document.getElementById('contrastToggle').style.backgroundColor = '#f5f5f5';
+      document.getElementById('contrastToggle').style.color = 'black';
+  
+      // Reset text-to-speech
+      isTTSActive = false;
+      window.speechSynthesis.cancel(); // Stop any ongoing speech
+      document.getElementById('ttsToggle').style.backgroundColor = '#f5f5f5';
+      document.getElementById('ttsToggle').style.color = 'black';
+  
+      // Re-select voice based on current page language (defaults to English)
+      window.selectTTSVoice(document.documentElement.lang || 'en');
+  };
+  
+  // Initial setup for voices and auto-read
+  document.addEventListener('DOMContentLoaded', () => {
+      const initializeTTSOnLoad = () => {
+          // Set TTS to active by default
+          isTTSActive = true;
+          
+          // Initialize voice selection
+          window.selectTTSVoice(document.documentElement.lang || 'en');
+          
+          // Set the TTS button to active state
+          const ttsButton = document.getElementById('ttsToggle');
+          if (ttsButton) {
+              ttsButton.style.backgroundColor = '#ff4500';
+              ttsButton.style.color = 'white';
+          }
+  
+          // Start reading the page content automatically
+          setTimeout(() => {
+              window.readPageContent();
+          }, 1000); // Small delay to ensure everything is loaded
+      };
+  
+      if (window.speechSynthesis && window.speechSynthesis.getVoices().length > 0) {
+          initializeTTSOnLoad();
+      } else if (window.speechSynthesis) {
+          window.speechSynthesis.onvoiceschanged = () => {
+              initializeTTSOnLoad();
+          };
+      } else {
+          console.warn("SpeechSynthesis API not supported in this browser.");
+      }
+  });
+
+
+
+  </script>
+  
+
+
+<script>
+function updateCarouselArrow() {
+  const carousel = document.querySelector('.session-carousel');
+  const arrow = document.getElementById('carouselLeftArrow');
+  if (!carousel || !arrow) return;
+  if (window.innerWidth > 600) {
+    arrow.style.display = 'none';
+    return;
+  }
+  // Show arrow if not at leftmost
+  if (carousel.scrollLeft > 10) {
+    arrow.style.display = 'flex';
+  } else {
+    arrow.style.display = 'none';
+  }
+}
+window.addEventListener('resize', updateCarouselArrow);
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.session-carousel');
+  const arrow = document.getElementById('carouselLeftArrow');
+  if (!carousel || !arrow) return;
+  updateCarouselArrow();
+  carousel.addEventListener('scroll', updateCarouselArrow);
+  arrow.addEventListener('click', function() {
+    carousel.scrollBy({ left: -carousel.offsetWidth * 0.9, behavior: 'smooth' });
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+<script>
+// --- Contrast and Saturation Cycling Logic ---
+let contrastIndex = 0;
+const contrastModes = [
+{ name: 'Default', fn: () => resetContrast() },
+{ name: 'Invert', fn: () => { resetContrast(); document.body.classList.add('invert-colors'); } },
+{ name: 'High', fn: () => { resetContrast(); document.body.classList.add('high-contrast'); } },
+{ name: 'Dark', fn: () => { resetContrast(); document.body.classList.add('dark-mode'); } },
+{ name: 'Light', fn: () => { resetContrast(); document.body.classList.add('light-mode'); } },
+{ name: 'Color-blind', fn: () => { resetContrast(); document.body.classList.add('color-blind-mode'); } }
+];
+function resetContrast() {
+document.body.classList.remove('invert-colors', 'high-contrast', 'dark-mode', 'light-mode', 'color-blind-mode');
+}
+function cycleContrast() {
+contrastIndex = (contrastIndex + 1) % contrastModes.length;
+contrastModes[contrastIndex].fn();
+document.getElementById('contrastLabel').textContent = 'Contrast: ' + contrastModes[contrastIndex].name;
+}
+
+let saturationIndex = 0;
+const saturationModes = [
+{ name: 'Normal', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-normal'); } },
+{ name: 'Low', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-low'); } },
+{ name: 'High', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-high'); } }
+];
+function resetSaturation() {
+document.querySelector('.main-content').classList.remove('saturation-low', 'saturation-high', 'saturation-normal');
+}
+function cycleSaturation() {
+saturationIndex = (saturationIndex + 1) % saturationModes.length;
+saturationModes[saturationIndex].fn();
+document.getElementById('saturationLabel').textContent = 'Saturation: ' + saturationModes[saturationIndex].name;
+}
+
+// Update labels on load and after reset
+function updateLabels() {
+document.getElementById('contrastLabel').textContent = 'Contrast: ' + contrastModes[contrastIndex].name;
+document.getElementById('saturationLabel').textContent = 'Saturation: ' + saturationModes[saturationIndex].name;
+}
+document.addEventListener('DOMContentLoaded', updateLabels);
+
+// Update resetAccessibility to also reset these
+const oldReset = window.resetAccessibility;
+window.resetAccessibility = function() {
+oldReset();
+contrastIndex = 0;
+saturationIndex = 0;
+resetContrast();
+resetSaturation();
+updateLabels();
+};
+</script>
+</div>
+<!-- Accessibility icon/panel must be here, outside .main-content -->
+<div class="accessibility-panel" id="accessibilityPanel">
+<!-- ... existing accessibility panel code ... -->
+</div>
 
 
 
@@ -1329,12 +1548,12 @@
     <!-- 3. THEN any other scripts that use translations -->
     <script src="script.js"></script>
 
-    <!-- Place these at the end of the body, before </body> -->
+   
     <script src="js/report-translations.js"></script>
     <script src="js/language-handler.js"></script>
     <script src="script.js"></script>
 
-
+<script></script>
     // Show the loader
     document.getElementById('globalLoader').style.display = 'flex';
   

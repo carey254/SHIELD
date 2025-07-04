@@ -1264,7 +1264,8 @@ nav .dropdown > a[data-translate="get_involved_link"]::after {
     });
     </script>
 
-    <div class="accessibility-panel" id="accessibilityPanel">
+     <!-- Accessibility Control Panel -->
+     <div class="accessibility-panel" id="accessibilityPanel">
       <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()">
         <i class="fas fa-universal-access"></i>
       </button>
@@ -1274,15 +1275,18 @@ nav .dropdown > a[data-translate="get_involved_link"]::after {
         </button>
         <button onclick="stopTTS()" id="ttsStop">
           <i class="fas fa-stop"></i> Stop
-        </button>
+      </button>
         <button onclick="increaseFontSize()">
           <i class="fas fa-text-height"></i> A+
         </button>
         <button onclick="decreaseFontSize()">
           <i class="fas fa-text-height"></i> A-
         </button>
-        <button onclick="toggleHighContrast()" id="contrastToggle">
-          <i class="fas fa-adjust"></i> Contrast
+        <button onclick="cycleContrast()" id="contrastToggle">
+          <i class="fas fa-adjust"></i> <span id="contrastLabel">Contrast</span>
+        </button>
+        <button onclick="cycleSaturation()" id="saturationToggle">
+          <i class="fas fa-tint"></i> <span id="saturationLabel">Saturation</span>
         </button>
         <button onclick="resetAccessibility()">
           <i class="fas fa-undo"></i> Reset
@@ -1300,16 +1304,22 @@ nav .dropdown > a[data-translate="get_involved_link"]::after {
     }
     
     .accessibility-toggle {
-      background: #ff4500;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+      position: fixed !important;
+      bottom: 20px !important;
+      right: 20px !important;
+      width: 50px !important;
+      height: 50px !important;
+      background: #ff4500 !important;
+      color: white !important;
+      border: none !important;
+      border-radius: 50% !important;
+      font-size: 24px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      z-index: 10000 !important;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+      cursor: pointer !important;
     }
     
     .accessibility-toggle:hover {
@@ -1317,14 +1327,14 @@ nav .dropdown > a[data-translate="get_involved_link"]::after {
     }
     
     .accessibility-controls {
+      display: none;
       position: absolute;
       bottom: 60px;
       right: 0;
-      background: white;
+      background: orange;
       padding: 15px;
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      display: none;
       flex-direction: column;
       gap: 10px;
     }
@@ -1334,7 +1344,7 @@ nav .dropdown > a[data-translate="get_involved_link"]::after {
     }
     
     .accessibility-controls button {
-      background: #f5f5f5;
+      background: orange;
       border: none;
       padding: 10px 15px;
       border-radius: 5px;
@@ -1352,6 +1362,7 @@ nav .dropdown > a[data-translate="get_involved_link"]::after {
     /* High Contrast Mode */
     .high-contrast {
       background-color: #000 !important;
+      background-color: yellow !important;
       color: #fff !important;
     }
     
@@ -1368,6 +1379,114 @@ nav .dropdown > a[data-translate="get_involved_link"]::after {
     .high-contrast button {
       background-color: #fff !important;
       color: #000 !important;
+    }
+    /* Invert Colors Theme (Pink) */
+    body.invert-colors {
+      background: #ff69b4 !important; /* Hot pink */
+      color: #fff !important;
+    }
+    body.invert-colors a, body.invert-colors button, body.invert-colors input, body.invert-colors textarea {
+      color: #fff !important;
+      background: #d72670 !important;
+      border-color: #fff !important;
+    }
+    /* Dark Mode Theme */
+    body.dark-mode {
+      background: #181a1b !important;
+      color: #e8eaed !important;
+    }
+    body.dark-mode a, body.dark-mode button, body.dark-mode input, body.dark-mode textarea {
+      color: #e8eaed !important;
+      background: #23272a !important;
+      border-color: #444 !important;
+    }
+    /* Light Mode Theme */
+    body.light-mode {
+      background: #fff !important;
+      color: #222 !important;
+    }
+    body.light-mode a, body.light-mode button, body.light-mode input, body.light-mode textarea {
+      color: #222 !important;
+      background: #f5f5f5 !important;
+      border-color: #bbb !important;
+    }
+    /* Color-blind Friendly Theme (blue/yellow) */
+    body.color-blind-mode {
+      background: #f7f7e8 !important;
+      color: #1a1a7a !important;
+    }
+    body.color-blind-mode a, body.color-blind-mode button, body.color-blind-mode input, body.color-blind-mode textarea {
+      color: #1a1a7a !important;
+      background: #ffe066 !important;
+      border-color: #1a1a7a !important;
+    }
+    /* Saturation Modes */
+    body.saturation-low {
+      filter: saturate(0.2) !important;
+    }
+    body.saturation-high {
+      filter: saturate(2) !important;
+    }
+    body.saturation-normal {
+      filter: saturate(1) !important;
+    }
+
+    /* Ensure accessibility panel and icon always stay fixed and visible */
+    .accessibility-panel {
+      position: fixed !important;
+      bottom: 20px !important;
+      right: 20px !important;
+      z-index: 9999 !important;
+    }
+    .accessibility-toggle {
+      position: fixed !important;
+      bottom: 20px !important;
+      right: 20px !important;
+      z-index: 10000 !important;
+    }
+
+    /* Invert Colors Theme (Light Pink Background Only) */
+    body.invert-colors {
+      background: #ffe4ec !important; /* Light pink */
+    }
+    body.invert-colors *,
+    body.invert-colors h1,
+    body.invert-colors h2,
+    body.invert-colors h3,
+    body.invert-colors h4,
+    body.invert-colors h5,
+    body.invert-colors h6,
+    body.invert-colors p,
+    body.invert-colors span,
+    body.invert-colors a,
+    body.invert-colors button,
+    body.invert-colors input,
+    body.invert-colors textarea {
+      color: initial !important;
+      background: initial !important;
+    }
+    /* Saturation Modes: apply to .main-content only, not body */
+    .main-content.saturation-low {
+      filter: saturate(0.2) !important;
+    }
+    .main-content.saturation-high {
+      filter: saturate(2) !important;
+    }
+    .main-content.saturation-normal {
+      filter: saturate(1) !important;
+    }
+    /* Ensure accessibility panel and icon always stay fixed and visible */
+    .accessibility-panel {
+      position: fixed !important;
+      bottom: 20px !important;
+      right: 20px !important;
+      z-index: 9999 !important;
+    }
+    .accessibility-toggle {
+      position: fixed !important;
+      bottom: 20px !important;
+      right: 20px !important;
+      z-index: 10000 !important;
     }
     </style>
     
@@ -1604,7 +1723,107 @@ nav .dropdown > a[data-translate="get_involved_link"]::after {
             console.warn("SpeechSynthesis API not supported in this browser.");
         }
     });
+
+  
+
+
     </script>
+    
+  
+  <script>
+  function updateCarouselArrow() {
+    const carousel = document.querySelector('.session-carousel');
+    const arrow = document.getElementById('carouselLeftArrow');
+    if (!carousel || !arrow) return;
+    if (window.innerWidth > 600) {
+      arrow.style.display = 'none';
+      return;
+    }
+    // Show arrow if not at leftmost
+    if (carousel.scrollLeft > 10) {
+      arrow.style.display = 'flex';
+    } else {
+      arrow.style.display = 'none';
+    }
+  }
+  window.addEventListener('resize', updateCarouselArrow);
+  document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.session-carousel');
+    const arrow = document.getElementById('carouselLeftArrow');
+    if (!carousel || !arrow) return;
+    updateCarouselArrow();
+    carousel.addEventListener('scroll', updateCarouselArrow);
+    arrow.addEventListener('click', function() {
+      carousel.scrollBy({ left: -carousel.offsetWidth * 0.9, behavior: 'smooth' });
+    });
+  });
+  </script>
+
+ 
+
+ 
+
+ 
+  
+
+  <script>
+// --- Contrast and Saturation Cycling Logic ---
+let contrastIndex = 0;
+const contrastModes = [
+  { name: 'Default', fn: () => resetContrast() },
+  { name: 'Invert', fn: () => { resetContrast(); document.body.classList.add('invert-colors'); } },
+  { name: 'High', fn: () => { resetContrast(); document.body.classList.add('high-contrast'); } },
+  { name: 'Dark', fn: () => { resetContrast(); document.body.classList.add('dark-mode'); } },
+  { name: 'Light', fn: () => { resetContrast(); document.body.classList.add('light-mode'); } },
+  { name: 'Color-blind', fn: () => { resetContrast(); document.body.classList.add('color-blind-mode'); } }
+];
+function resetContrast() {
+  document.body.classList.remove('invert-colors', 'high-contrast', 'dark-mode', 'light-mode', 'color-blind-mode');
+}
+function cycleContrast() {
+  contrastIndex = (contrastIndex + 1) % contrastModes.length;
+  contrastModes[contrastIndex].fn();
+  document.getElementById('contrastLabel').textContent = 'Contrast: ' + contrastModes[contrastIndex].name;
+}
+
+let saturationIndex = 0;
+const saturationModes = [
+  { name: 'Normal', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-normal'); } },
+  { name: 'Low', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-low'); } },
+  { name: 'High', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-high'); } }
+];
+function resetSaturation() {
+  document.querySelector('.main-content').classList.remove('saturation-low', 'saturation-high', 'saturation-normal');
+}
+function cycleSaturation() {
+  saturationIndex = (saturationIndex + 1) % saturationModes.length;
+  saturationModes[saturationIndex].fn();
+  document.getElementById('saturationLabel').textContent = 'Saturation: ' + saturationModes[saturationIndex].name;
+}
+
+// Update labels on load and after reset
+function updateLabels() {
+  document.getElementById('contrastLabel').textContent = 'Contrast: ' + contrastModes[contrastIndex].name;
+  document.getElementById('saturationLabel').textContent = 'Saturation: ' + saturationModes[saturationIndex].name;
+}
+document.addEventListener('DOMContentLoaded', updateLabels);
+
+// Update resetAccessibility to also reset these
+const oldReset = window.resetAccessibility;
+window.resetAccessibility = function() {
+  oldReset();
+  contrastIndex = 0;
+  saturationIndex = 0;
+  resetContrast();
+  resetSaturation();
+  updateLabels();
+};
+</script>
+</div>
+<!-- Accessibility icon/panel must be here, outside .main-content -->
+<div class="accessibility-panel" id="accessibilityPanel">
+  <!-- ... existing accessibility panel code ... -->
+</div>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {

@@ -3141,3 +3141,56 @@ nav .dropdown > a[data-translate="get_involved_link"] i {
   text-align: center;
 }
 
+/* High Contrast Theme */
+body.high-contrast {
+  background: #000 !important;
+  color: #fff !important;
+}
+body.high-contrast a, body.high-contrast button, body.high-contrast input, body.high-contrast textarea {
+  color: #fff !important;
+  background: #222 !important;
+  border-color: #fff !important;
+}
+
+/* Dark Mode Theme */
+body.dark-mode {
+  background: #181a1b !important;
+  color: #e8eaed !important;
+}
+body.dark-mode a, body.dark-mode button, body.dark-mode input, body.dark-mode textarea {
+  color: #e8eaed !important;
+  background: #23272a !important;
+  border-color: #444 !important;
+}
+
+/* Light Mode Theme */
+body.light-mode {
+  background: #fff !important;
+  color: #222 !important;
+}
+body.light-mode a, body.light-mode button, body.light-mode input, body.light-mode textarea {
+  color: #222 !important;
+  background: #f5f5f5 !important;
+  border-color: #bbb !important;
+}
+
+/* Color-blind Friendly Theme (blue/yellow) */
+body.color-blind-mode {
+  background: #f7f7e8 !important;
+  color: #1a1a7a !important;
+}
+body.color-blind-mode a, body.color-blind-mode button, body.color-blind-mode input, body.color-blind-mode textarea {
+  color: #1a1a7a !important;
+  background: #ffe066 !important;
+  border-color: #1a1a7a !important;
+}
+
+/* Ensure focus styles are visible in all themes */
+body.high-contrast :focus,
+body.dark-mode :focus,
+body.light-mode :focus,
+body.color-blind-mode :focus {
+  outline: 3px solid #ff0 !important;
+  outline-offset: 2px;
+}
+

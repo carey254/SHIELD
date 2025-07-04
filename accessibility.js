@@ -3,8 +3,9 @@ var isTTSActive = false;
 var isHighContrast = false;
 var currentFontSize = 16;
 var currentTTSVoice = null;
-var currentContrastTheme = 0; // 0: default, 1: high contrast, 2: orange, 3: blue
-const contrastThemes = ['default', 'high-contrast', 'contrast-theme-orange', 'contrast-theme-blue'];
+// Enhanced contrast theme cycling for accessibility
+var currentContrastTheme = 0; // 0: default, 1: high contrast, 2: dark mode, 3: light mode, 4: color-blind friendly
+const contrastThemes = ['default', 'high-contrast', 'dark-mode', 'light-mode', 'color-blind-mode'];
 
 window.selectTTSVoice = function(lang) {
     const voices = window.speechSynthesis.getVoices();
@@ -97,7 +98,7 @@ window.decreaseFontSize = function() {
 
 window.toggleContrastTheme = function() {
     // Remove all contrast classes
-    document.body.classList.remove('high-contrast', 'contrast-theme-orange', 'contrast-theme-blue');
+    document.body.classList.remove('high-contrast', 'dark-mode', 'light-mode', 'color-blind-mode');
     currentContrastTheme = (currentContrastTheme + 1) % contrastThemes.length;
     if (currentContrastTheme > 0) {
         document.body.classList.add(contrastThemes[currentContrastTheme]);
@@ -107,7 +108,7 @@ window.toggleContrastTheme = function() {
 window.resetAccessibility = function() {
     currentFontSize = 16;
     document.body.style.fontSize = '';
-    document.body.classList.remove('high-contrast', 'contrast-theme-orange', 'contrast-theme-blue');
+    document.body.classList.remove('high-contrast', 'dark-mode', 'light-mode', 'color-blind-mode');
     currentContrastTheme = 0;
     isTTSActive = false;
     window.speechSynthesis.cancel();

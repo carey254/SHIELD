@@ -749,66 +749,239 @@ section, .about-us, .about-container, .about-intro-mission-vision, .mission-visi
   }
 }
 
+/* Accessibility Panel Styles */
+.accessibility-panel, .accessibility-toggle {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 10000 !important;
+}
+
+.accessibility-toggle {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: #ff4500 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50% !important;
+  font-size: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 10000 !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+  cursor: pointer !important;
+}
+
+.accessibility-toggle:hover {
+  transform: scale(1.1);
+}
+
+.accessibility-controls {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background: orange;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accessibility-controls.active {
+  display: flex;
+}
+
+.accessibility-controls button {
+  background: orange;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.accessibility-controls button:hover {
+  background: #e0e0e0;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  background-color: #000 !important;
+  background-color: yellow !important;
+  color: #fff !important;
+}
+
+.high-contrast * {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.high-contrast a {
+  color: #ffff00 !important;
+}
+
+.high-contrast button {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+/* Invert Colors Theme (Pink) */
+body.invert-colors {
+  background: #ff69b4 !important; /* Hot pink */
+  color: #fff !important;
+}
+body.invert-colors a, body.invert-colors button, body.invert-colors input, body.invert-colors textarea {
+  color: #fff !important;
+  background: #d72670 !important;
+  border-color: #fff !important;
+}
+/* Dark Mode Theme */
+body.dark-mode {
+  background: #181a1b !important;
+  color: #e8eaed !important;
+}
+body.dark-mode a, body.dark-mode button, body.dark-mode input, body.dark-mode textarea {
+  color: #e8eaed !important;
+  background: #23272a !important;
+  border-color: #444 !important;
+}
+/* Light Mode Theme */
+body.light-mode {
+  background: #fff !important;
+  color: #222 !important;
+}
+body.light-mode a, body.light-mode button, body.light-mode input, body.light-mode textarea {
+  color: #222 !important;
+  background: #f5f5f5 !important;
+  border-color: #bbb !important;
+}
+/* Color-blind Friendly Theme (blue/yellow) */
+body.color-blind-mode {
+  background: #f7f7e8 !important;
+  color: #1a1a7a !important;
+}
+body.color-blind-mode a, body.color-blind-mode button, body.color-blind-mode input, body.color-blind-mode textarea {
+  color: #1a1a7a !important;
+  background: #ffe066 !important;
+  border-color: #1a1a7a !important;
+}
+
+
+/* Ensure accessibility panel and icon always stay fixed and visible */
+.accessibility-panel {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+}
+.accessibility-toggle {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 10000 !important;
+}
+
+/* Invert Colors Theme (Light Pink Background Only) */
+body.invert-colors {
+  background: #ffe4ec !important; /* Light pink */
+}
+body.invert-colors *,
+body.invert-colors h1,
+body.invert-colors h2,
+body.invert-colors h3,
+body.invert-colors h4,
+body.invert-colors h5,
+body.invert-colors h6,
+body.invert-colors p,
+body.invert-colors span,
+body.invert-colors a,
+body.invert-colors button,
+body.invert-colors input,
+body.invert-colors textarea {
+  color: initial !important;
+  background: initial !important;
+}
+/* Saturation Modes: apply to .main-content only, not body */
+.main-content.saturation-low {
+  filter: saturate(0.2) !important;
+}
+.main-content.saturation-high {
+  filter: saturate(2) !important;
+}
+.main-content.saturation-normal {
+  filter: saturate(1) !important;
+}
+/* Ensure accessibility panel and icon always stay fixed and visible */
+.accessibility-panel {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+}
+.accessibility-toggle {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 10000 !important;
+}
+
 </style>
 
 </head>
 <body>
-  <div class="loader-overlay" id="globalLoader" style="display: none;">
-    <div class="loader">
-      <div class="loader-dot"></div>
-      <div class="loader-dot"></div>
-      <div class="loader-dot"></div>
-      <div class="loader-dot"></div>
-      <div class="loader-dot"></div>
-      <div class="loader-dot"></div>
-      <div class="loader-dot"></div>
-      <div class="loader-dot"></div>
+  <!-- Navbar (should be fixed, outside .main-content) -->
+  <nav class="navbar">
+    <a href="index.html" class="logo-link" aria-label="Shield Maidens Home">
+        <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo - Empowering women in digital spaces" class="logo">
+    </a>
+    <div class="nav-links" role="menubar">
+        <a href="index.html" role="menuitem" aria-current="page" data-translate="home_link">Home</a>
+        <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
+        <a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a>
+        <div class="dropdown" role="menuitem" aria-haspopup="true">
+            <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content" role="menu">
+                <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
+                <a href="news.html" role="menuitem" data-translate="news_link">News</a>
+                <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
+            </div>
+        </div>
+        <a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a>
+        <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">
+            <i class="fas fa-exclamation-circle"></i>
+            Where to Report
+        </a>
     </div>
-    <div class="loader-text">Please wait...</div>
-  </div>
-  <!-- rest of your body content -->
+    <div class="nav-actions">
+        <div class="language-switcher dropdown" role="menuitem" aria-haspopup="true">
+            <a href="#" aria-expanded="false">EN <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content" role="menu">
+                <a href="#" data-lang="en" data-translate="english_link">English</a>
+                <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+                <a href="#" data-lang="fr" data-translate="french_link">French</a>
+                <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
+            </div>
+        </div>
+        <button class="hamburger" aria-label="Open menu" onclick="openMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+  </nav>
 
+  <div class="main-content">
+    <!-- All main content that should be affected by saturation -->
     <!-- Skip to main content link -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
-
-    <!-- Navigation Bar -->
-    <nav role="navigation" aria-label="Main navigation">
-        <a href="index.html" class="logo-link" aria-label="Shield Maidens Home">
-            <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo - Empowering women in digital spaces" class="logo">
-        </a>
-        <div class="nav-links" role="menubar">
-            <a href="index.html" role="menuitem" aria-current="page" data-translate="home_link">Home</a>
-            <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
-            <a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a>
-            <div class="dropdown" role="menuitem" aria-haspopup="true">
-                <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
-                <div class="dropdown-content" role="menu">
-                    <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
-                    <a href="news.html" role="menuitem" data-translate="news_link">News</a>
-                    <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
-                </div>
-            </div>
-            <a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a>
-            <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">
-                <i class="fas fa-exclamation-circle"></i>
-                Where to Report
-            </a>
-        </div>
-        <div class="nav-actions">
-            <div class="language-switcher dropdown" role="menuitem" aria-haspopup="true">
-                <a href="#" aria-expanded="false">EN <i class="fas fa-chevron-down"></i></a>
-                <div class="dropdown-content" role="menu">
-                    <a href="#" data-lang="en" data-translate="english_link">English</a>
-                    <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
-                    <a href="#" data-lang="fr" data-translate="french_link">French</a>
-                    <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
-                </div>
-            </div>
-            <button class="hamburger" aria-label="Open menu" onclick="openMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
 
     <!-- Mobile Menu Overlay -->
     <div id="mobileMenu" class="mobile-menu" role="dialog" aria-label="Mobile menu">
@@ -1170,7 +1343,7 @@ section, .about-us, .about-container, .about-intro-mission-vision, .mission-visi
                                     <div style="margin-top:10px;">
                                         <strong data-translate="contact_us_24_7">Contact us 24/7:</strong><br>
                                         <a href="mailto:shi3ldmaidens@gmail.com" style="color:#e63946;">shi3ldmaidens@gmail.com</a><br>
-                                        <a href="tel:+254702997534" style="color:#e63946;">+254 702 997534</a>
+                                        <a href="tel:" style="color:#e63946;"></a>
                                     </div>
                                     <a href="resource&support.html" class="resource-link" data-translate="get_support_link">Get Support →</a>
                                 </div>
@@ -1304,11 +1477,14 @@ section, .about-us, .about-container, .about-intro-mission-vision, .mission-visi
     <div class="contact-container">
         <div id="contact">
         <h2 data-translate="contact_us">Contact Us</h2>
-        <form id="contactForm" action="submit_contact.php" method="POST">
+        <form id="contactForm" action="send_email.php" method="POST">
+            <label for="name">Your Name</label>
             <input type="text" id="name" name="name" placeholder="Your Name" required data-translate="your_name">
-<input type="email" id="email" name="email" placeholder="Your Email" required data-translate="your_email">
-<textarea id="message" name="message" placeholder="Your Message" required data-translate="your_message"></textarea>
-<div class="g-recaptcha" data-sitekey="6LcpkHQrAAAAAIDPOJ1mevTnvRxF42fXk8INJH-X"></div>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required data-translate="your_email">
+            <label for="message">Your Message/Feedback</label>
+            <textarea id="message" name="message" placeholder="Your Message" required data-translate="your_message"></textarea>
+            <div class="g-recaptcha" data-sitekey="6LcpkHQrAAAAAIDPOJ1mevTnvRxF42fXk8INJH-X"></div>
             <button type="submit" data-translate="send_message">Send Message</button>
           </form>
           
@@ -1317,9 +1493,10 @@ section, .about-us, .about-container, .about-intro-mission-vision, .mission-visi
     
      
          <!-- Mailing List Section -->
-<form id="mailing-list" method="POST">
+<form id="mailing-list" action="send_email.php" method="POST">
     <h2 data-translate="join_mailing_list">Join Our Mailing List</h2>
     <p data-translate="mailing_list_text">Be the first to know about upcoming Training Sessions, Events, and other related news.</p>
+    <label for="mailingEmail">Your Email</label>
     <input type="email" id="mailingEmail" name="mailingEmail" placeholder="Enter your email here" required data-translate="your_email">
     <div class="g-recaptcha" data-sitekey="6LcpkHQrAAAAAIDPOJ1mevTnvRxF42fXk8INJH-X"></div>
     <button type="submit" data-translate="stay_updated">Stay updated</button>
@@ -1441,9 +1618,10 @@ section, .about-us, .about-container, .about-intro-mission-vision, .mission-visi
           <button onclick="decreaseFontSize()">
             <i class="fas fa-text-height"></i> A-
           </button>
-          <button onclick="toggleHighContrast()" id="contrastToggle">
-            <i class="fas fa-adjust"></i> Contrast
+          <button onclick="cycleContrast()" id="contrastToggle">
+            <i class="fas fa-adjust"></i> <span id="contrastLabel">Contrast</span>
           </button>
+          <button onclick="cycleSaturation()" id="saturationCycleBtn" disabled>Cycle Saturation</button>
           <button onclick="resetAccessibility()">
             <i class="fas fa-undo"></i> Reset
           </button>
@@ -1460,16 +1638,22 @@ section, .about-us, .about-container, .about-intro-mission-vision, .mission-visi
       }
       
       .accessibility-toggle {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 50px !important;
+        height: 50px !important;
         background: #ff4500 !important;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-        cursor: pointer;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease;
+        color: white !important;
+        border: none !important;
+        border-radius: 50% !important;
+        font-size: 24px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 10000 !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+        cursor: pointer !important;
       }
       
       .accessibility-toggle:hover {
@@ -1477,6 +1661,7 @@ section, .about-us, .about-container, .about-intro-mission-vision, .mission-visi
       }
       
       .accessibility-controls {
+        display: none;
         position: absolute;
         bottom: 60px;
         right: 0;
@@ -1484,7 +1669,6 @@ section, .about-us, .about-container, .about-intro-mission-vision, .mission-visi
         padding: 15px;
         border-radius: 10px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        display: none;
         flex-direction: column;
         gap: 10px;
       }
@@ -1529,6 +1713,114 @@ section, .about-us, .about-container, .about-intro-mission-vision, .mission-visi
       .high-contrast button {
         background-color: #fff !important;
         color: #000 !important;
+      }
+      /* Invert Colors Theme (Pink) */
+      body.invert-colors {
+        background: #ff69b4 !important; /* Hot pink */
+        color: #fff !important;
+      }
+      body.invert-colors a, body.invert-colors button, body.invert-colors input, body.invert-colors textarea {
+        color: #fff !important;
+        background: #d72670 !important;
+        border-color: #fff !important;
+      }
+      /* Dark Mode Theme */
+      body.dark-mode {
+        background: #181a1b !important;
+        color: #e8eaed !important;
+      }
+      body.dark-mode a, body.dark-mode button, body.dark-mode input, body.dark-mode textarea {
+        color: #e8eaed !important;
+        background: #23272a !important;
+        border-color: #444 !important;
+      }
+      /* Light Mode Theme */
+      body.light-mode {
+        background: #fff !important;
+        color: #222 !important;
+      }
+      body.light-mode a, body.light-mode button, body.light-mode input, body.light-mode textarea {
+        color: #222 !important;
+        background: #f5f5f5 !important;
+        border-color: #bbb !important;
+      }
+      /* Color-blind Friendly Theme (blue/yellow) */
+      body.color-blind-mode {
+        background: #f7f7e8 !important;
+        color: #1a1a7a !important;
+      }
+      body.color-blind-mode a, body.color-blind-mode button, body.color-blind-mode input, body.color-blind-mode textarea {
+        color: #1a1a7a !important;
+        background: #ffe066 !important;
+        border-color: #1a1a7a !important;
+      }
+      /* Saturation Modes */
+      body.saturation-low {
+        filter: saturate(0.2) !important;
+      }
+      body.saturation-high {
+        filter: saturate(2) !important;
+      }
+      body.saturation-normal {
+        filter: saturate(1) !important;
+      }
+
+      /* Ensure accessibility panel and icon always stay fixed and visible */
+      .accessibility-panel {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 9999 !important;
+      }
+      .accessibility-toggle {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 10000 !important;
+      }
+
+      /* Invert Colors Theme (Light Pink Background Only) */
+      body.invert-colors {
+        background: #ffe4ec !important; /* Light pink */
+      }
+      body.invert-colors *,
+      body.invert-colors h1,
+      body.invert-colors h2,
+      body.invert-colors h3,
+      body.invert-colors h4,
+      body.invert-colors h5,
+      body.invert-colors h6,
+      body.invert-colors p,
+      body.invert-colors span,
+      body.invert-colors a,
+      body.invert-colors button,
+      body.invert-colors input,
+      body.invert-colors textarea {
+        color: initial !important;
+        background: initial !important;
+      }
+      /* Saturation Modes: apply to .main-content only, not body */
+      .main-content.saturation-low {
+        filter: saturate(0.2) !important;
+      }
+      .main-content.saturation-high {
+        filter: saturate(2) !important;
+      }
+      .main-content.saturation-normal {
+        filter: saturate(1) !important;
+      }
+      /* Ensure accessibility panel and icon always stay fixed and visible */
+      .accessibility-panel {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 9999 !important;
+      }
+      .accessibility-toggle {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 10000 !important;
       }
       </style>
       
@@ -1768,26 +2060,41 @@ section, .about-us, .about-container, .about-intro-mission-vision, .mission-visi
 
     
        // Contact Form
-// Contact Form
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     var form = this;
     var formData = new FormData(form);
+    
+    console.log('Submitting contact form to:', form.action);
+    
     fetch(form.action, {
         method: 'POST',
         body: formData
     })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data); // <-- Add this line
-        if(data.status === "success") {
-            alert("Thank you for contacting Shieldmaidens! We value inclusivity, empowerment, and safety. Our team will get back to you shortly. 💖");
-            form.reset();
-        } else {
-            alert(data.message || "There was an error. Please try again.");
+    .then(res => {
+        console.log('Response status:', res.status);
+        console.log('Response headers:', res.headers);
+        return res.text(); // Get raw response first
+    })
+    .then(text => {
+        console.log('Raw response from server:', text);
+        try {
+            const data = JSON.parse(text);
+            console.log('Parsed JSON data:', data);
+            if(data.status === "success") {
+                alert("Thank you for contacting Shieldmaidens! We value inclusivity, empowerment, and safety. Our team will get back to you shortly. Stay Safe Online!");
+                form.reset();
+            } else {
+                alert(data.message || "There was an error. Please try again.");
+            }
+        } catch (parseError) {
+            console.error('Failed to parse JSON:', parseError);
+            console.error('Raw response was:', text);
+            alert("Server returned invalid response. Please check console for details.");
         }
     })
-    .catch(() => {
+    .catch((error) => {
+        console.error('Fetch error:', error);
         alert("There was an error. Please try again.");
     });
 });
@@ -1797,21 +2104,37 @@ document.getElementById('mailing-list').addEventListener('submit', function(e) {
     e.preventDefault();
     var form = this;
     var formData = new FormData(form);
+    
+    console.log('Submitting mailing list form to:', form.action);
+    
     fetch(form.action, {
         method: 'POST',
         body: formData
     })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data); // <-- Add this line
-        if(data.status === "success") {
-            alert("Thank you for subscribing to our news, let's get updated! 📰");
-            form.reset();
-        } else {
-            alert(data.message || "There was an error. Please try again.");
+    .then(res => {
+        console.log('Response status:', res.status);
+        console.log('Response headers:', res.headers);
+        return res.text(); // Get raw response first
+    })
+    .then(text => {
+        console.log('Raw response from server:', text);
+        try {
+            const data = JSON.parse(text);
+            console.log('Parsed JSON data:', data);
+            if(data.status === "success") {
+                alert("Thank you for subscribing to our news, let's get updated! 📰");
+                form.reset();
+            } else {
+                alert(data.message || "There was an error. Please try again.");
+            }
+        } catch (parseError) {
+            console.error('Failed to parse JSON:', parseError);
+            console.error('Raw response was:', text);
+            alert("Server returned invalid response. Please check console for details.");
         }
     })
-    .catch(() => {
+    .catch((error) => {
+        console.error('Fetch error:', error);
         alert("There was an error. Please try again.");
     });
 });
@@ -1820,7 +2143,6 @@ document.getElementById('mailing-list').addEventListener('submit', function(e) {
       
       <!-- Load scripts at the end of body for proper loading order -->
       <script src="js/language-handler.js"></script>
-      <script src="js/form-handler.js"></script>
       <script src="script.js"></script>
 
     <script>
@@ -1852,27 +2174,71 @@ document.getElementById('mailing-list').addEventListener('submit', function(e) {
     });
     </script>
 
-    <script>
-    // Show the loader
-    document.getElementById('globalLoader').style.display = 'flex';
-
-    // Hide the loader (when done)
-    document.getElementById('globalLoader').style.display = 'none';
-    </script>
+   
 
    
 
-    <script>
-    // Show loader only if page takes too long to load
-    let loaderTimeout = setTimeout(function() {
-      document.getElementById('globalLoader').style.display = 'flex';
-    }, 700); // Show loader if not loaded in 700ms
-
-    window.addEventListener('load', function() {
-      clearTimeout(loaderTimeout);
-      document.getElementById('globalLoader').style.display = 'none';
-    });
-    </script>
+   
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script>
+  // --- Contrast and Saturation Cycling Logic ---
+  let contrastIndex = 0;
+  const contrastModes = [
+    { name: 'Default', fn: () => resetContrast() },
+    { name: 'Invert', fn: () => { resetContrast(); document.body.classList.add('invert-colors'); } },
+    { name: 'High', fn: () => { resetContrast(); document.body.classList.add('high-contrast'); } },
+    { name: 'Dark', fn: () => { resetContrast(); document.body.classList.add('dark-mode'); } },
+    { name: 'Light', fn: () => { resetContrast(); document.body.classList.add('light-mode'); } },
+    { name: 'Color-blind', fn: () => { resetContrast(); document.body.classList.add('color-blind-mode'); } }
+  ];
+  function resetContrast() {
+    document.body.classList.remove('invert-colors', 'high-contrast', 'dark-mode', 'light-mode', 'color-blind-mode');
+  }
+  function cycleContrast() {
+    contrastIndex = (contrastIndex + 1) % contrastModes.length;
+    contrastModes[contrastIndex].fn();
+    document.getElementById('contrastLabel').textContent = 'Contrast: ' + contrastModes[contrastIndex].name;
+  }
+
+  let saturationIndex = 0;
+  const saturationModes = [
+    { name: 'Normal', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-normal'); } },
+    { name: 'Low', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-low'); } },
+    { name: 'High', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-high'); } }
+  ];
+  function resetSaturation() {
+    document.querySelector('.main-content').classList.remove('saturation-low', 'saturation-high', 'saturation-normal');
+  }
+  function cycleSaturation() {
+    saturationIndex = (saturationIndex + 1) % saturationModes.length;
+    saturationModes[saturationIndex].fn();
+    document.getElementById('saturationLabel').textContent = 'Saturation: ' + saturationModes[saturationIndex].name;
+  }
+
+  // Update labels on load and after reset
+  function updateLabels() {
+    document.getElementById('contrastLabel').textContent = 'Contrast: ' + contrastModes[contrastIndex].name;
+    document.getElementById('saturationLabel').textContent = 'Saturation: ' + saturationModes[saturationIndex].name;
+  }
+  document.addEventListener('DOMContentLoaded', updateLabels);
+
+  // Update resetAccessibility to also reset these
+  const oldReset = window.resetAccessibility;
+  window.resetAccessibility = function() {
+    oldReset();
+    contrastIndex = 0;
+    saturationIndex = 0;
+    resetContrast();
+    resetSaturation();
+    updateLabels();
+  };
+</script>
+  </div>
+  <!-- Accessibility icon/panel must be here, outside .main-content -->
+  <div class="accessibility-panel" id="accessibilityPanel">
+    <!-- ... existing accessibility panel code ... -->
+  </div>
+  <!-- Footer, scripts, etc. -->
 </body>
 </html>
