@@ -25,7 +25,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
 
     body {
-      background-color: #f5f5f5;
+      background-color: #ebe2e2;
       color: #333;
       font-family: 'Roboto', sans-serif;
     }
@@ -513,6 +513,47 @@ a:visited {
       }
     }
     
+    .awareness-row {
+      height: 75vh !important;
+      display: flex !important;
+      align-items: stretch !important;
+      overflow: hidden !important;
+      gap: 20px !important;
+    }
+    
+    .awareness-image img {
+      height: 100% !important;
+      max-height: 100% !important;
+      object-fit: cover !important;
+    }
+    
+    .awareness-text {
+      max-height: 100% !important;
+      overflow-y: auto !important;
+      padding: 10px 15px !important;
+      font-size: 0.95rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important; /* Ensure block-number is at the top */
+    }
+    
+    .block-number {
+      font-size: 2.5rem !important;
+      margin-bottom: 10px !important;
+      color: orange !important;
+      flex-shrink: 0 !important; /* Prevent it from being squished or hidden */
+    }
+    
+    .awareness-text h2 {
+      font-size: 1.4rem !important;
+      margin-bottom: 10px !important;
+    }
+    
+    .awareness-text p, 
+    .awareness-text li {
+      font-size: 0.95rem !important;
+      line-height: 1.4 !important;
+    }
     
     
 /* ——— Global ——— */
@@ -523,6 +564,7 @@ a:visited {
   padding: 20px;
   background: #f9f9f9;
   border-radius: 8px;
+  width: auto;
 }
 
 /* Adds space between the radio button and the answer text */
@@ -1149,6 +1191,80 @@ button:disabled {
   text-align: center;
 }
 
+
+.tfgbv-section {
+  max-width: 800px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.tfgbv-section ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tfgbv-section li {
+  margin-bottom: 8px;
+}
+
+
+.awareness-text {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.awareness-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.awareness-text li {
+  margin-bottom: 10px;
+}
+
+.awareness-text a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0073e6;
+  text-decoration: underline;
+}
+
+.awareness-text {
+  text-align: left;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #333;
+}
+
+.awareness-text ul.aligned-list {
+  padding-left: 20px;
+  list-style-type: disc;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.awareness-text ul.aligned-list li {
+  margin-bottom: 10px;
+}
+
+.awareness-row a{
+  display: inline-block;
+  color: #fff;                 /* White text for contrast on orange */
+  text-decoration: none;      /* Remove underline */
+  font-weight: 600;
+  padding: 10px 16px;
+  background-color: #f90;     /* Use orange background */
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+
+
   </style>
 </head>
 
@@ -1296,82 +1412,128 @@ button:disabled {
       </div>
       <div class="awareness-text">
         <div class="block-number">01</div>
-        <h2 data-translate="meaning_types_heading">Meaning and Types of TFGBV</h2>
-        <p data-translate="meaning_types_description">Technology-facilitated gender-based violence (TFGBV) describes harmful acts or behaviors committed against people using digital technologies, usually women and girls. These acts take advantage of the anonymity and connectivity that technology offers, making it easier for perpetrators to target their victims and inflict more widespread harm.</p>
+        <h2 data-translate="Meaning and Types of TFGBV">Meaning and Types of TFGBV</h2>
+
+  <p data-translate="Technology-facilitated gender-based violence (TFGBV) describes harmful acts or behaviors committed against people using digital technologies, usually women and girls. These acts take advantage of the anonymity and connectivity that technology offers, making it easier for perpetrators to target their victims and inflict more widespread harm.">
+    Technology-facilitated gender-based violence (TFGBV) describes harmful acts or behaviors committed against people using digital technologies, usually women and girls. These acts take advantage of the anonymity and connectivity that technology offers, making it easier for perpetrators to target their victims and inflict more widespread harm.
+  </p>
+
+  <strong><p data-translate="TFGBV can take place through:"><strong>TFGBV can take place through:</strong>
+  
+  </p></strong>
+
+  <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+    <li data-translate="  Social media platforms (e.g., Facebook, X/Twitter, Instagram, TikTok)">
+      Social media platforms (e.g., Facebook, X/Twitter, Instagram, TikTok)
+    </li>
+    <li data-translate=" Messaging apps (e.g., WhatsApp, Telegram, Signal)">
+      Messaging apps (e.g., WhatsApp, Telegram, Signal)
+    </li>
+    <li data-translate=" Emails, SMS, or mobile calls">
+      Emails, SMS, or mobile calls
+    </li>
+    <li data-translate=" Dating platforms, online forums, blogs">
+      Dating platforms, online forums, blogs
+    </li>
+    <li data-translate="Gaming communities and livestream chats">
+      Gaming communities and livestream chats
+    </li>
+    <li data-translate=" AI-driven platforms or content manipulation tools">
+      AI-driven platforms or content manipulation tools
+    </li>
+  </ul>
+
+  <p data-translate="Unlike physical violence, TFGBV often follows survivors across borders and time zones, leaving victims vulnerable to ongoing trauma, digital exclusion, or further victimization. The violence may be public (e.g., cyberbullying) or private (e.g., sextortion).">
+    Unlike physical violence, TFGBV often follows survivors across borders and time zones, leaving victims vulnerable to ongoing trauma, digital exclusion, or further victimization. The violence may be public (e.g., cyberbullying) or private (e.g., sextortion).
+  </p>
       </div>
     </div>
   
     <!-- Block 2 - FORMS of TFGBV -->
-<div class="awareness-row reverse">
-  <div class="awareness-image">
-    <img src="images/forms.png" alt="Forms of TFGBV">
-  </div>
-  <div class="awareness-text">
-    <div class="block-number">02</div>
-    <h2 data-translate="forms_heading">Forms of Technology-Facilitated Gender-Based Violence</h2>
-    <p data-translate="forms_description">
-      TFGBV takes many forms, which are constantly evolving with technology. These acts often target women and girls, aiming to humiliate, silence, or control them through digital means. Some common forms include:
-    </p>
-    <ul class="aligned-list">
-      <li data-translate="cyberstalking_li" data-html="true">
-        <span class="li-label"><strong>Cyberstalking:</strong></span>
-        <span class="li-desc">Repeated online harassment and threats that instill fear or distress.</span>
-      </li>
-      <li data-translate="doxxing_li" data-html="true">
-        <span class="li-label"><strong>Doxxing:</strong></span>
-        <span class="li-desc">Publishing private information like phone numbers, addresses, or personal data without consent.</span>
-      </li>
-      <li data-translate="non_consensual_li" data-html="true">
-        <span class="li-label"><strong>Non-consensual sharing of intimate images:</strong></span>
-        <span class="li-desc">Often referred to as "revenge porn," this involves distributing private content to shame or blackmail victims.</span>
-      </li>
-      <li data-translate="online_harassment_li" data-html="true">
-        <span class="li-label"><strong>Online harassment:</strong></span>
-        <span class="li-desc">Persistent abusive messages via social media, email, or forums.</span>
-      </li>
-      <li data-translate="deepfakes_li" data-html="true">
-        <span class="li-label"><strong>Deepfakes and manipulated content:</strong></span>
-        <span class="li-desc">Using AI to create false or harmful visual/audio content, often sexual in nature.</span>
-      </li>
-    </ul>
-    <p data-translate="forms_conclusion">These forms not only cause emotional and psychological harm but also infringe on rights to safety, dignity, and expression.</p>
-    <a href="https://www.unfpa.org/sites/default/files/pub-pdf/An%20Infographic%20Guide%20to%20An%20Infographic%20Guide%20to%20TFGBV.pdf" target="_blank" data-translate="explore_unfpa">Explore more on UNFPA</a>
-  </div>
-</div>
-
+    <div class="awareness-row reverse">
+      <div class="awareness-image">
+        <img src="images/forms.png" alt="Forms of TFGBV">
+      </div>
+    
+      <div class="awareness-text" style="text-align: left;">
+        <div class="block-number">02</div>
+    
+        <h2 data-translate="forms_heading">
+          Forms of Technology-Facilitated Gender-Based Violence
+        </h2>
+    
+        <p data-translate="forms_description">
+          TFGBV takes many forms, which are constantly evolving with technology. These acts often target women and girls, aiming to humiliate, silence, or control them through digital means. Some common forms include:
+        </p>
+    
+        <ul class="aligned-list" style="list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
+          <li data-translate="cyberstalking_li" data-html="true">
+            <strong>Cyberstalking:</strong> Repeated online harassment and threats that instill fear or distress.
+          </li>
+          <li data-translate="doxxing_li" data-html="true">
+            <strong>Doxxing:</strong> Publishing private information like phone numbers, addresses, or personal data without consent.
+          </li>
+          <li data-translate="non_consensual_li" data-html="true">
+            <strong>Non-consensual sharing of intimate images:</strong> Often referred to as "revenge porn," this involves distributing private content to shame or blackmail victims.
+          </li>
+          <li data-translate="online_harassment_li" data-html="true">
+            <strong>Online harassment:</strong> Persistent abusive messages via social media, email, or forums.
+          </li>
+          <li data-translate="deepfakes_li" data-html="true">
+            <strong>Deepfakes and manipulated content:</strong> Using AI to create false or harmful visual/audio content, often sexual in nature.
+          </li>
+        </ul>
+    
+        <p data-translate="forms_conclusion">
+          These forms not only cause emotional and psychological harm but also infringe on rights to safety, dignity, and expression.
+        </p>
+    
+        <a href="https://www.unfpa.org/sites/default/files/pub-pdf/An%20Infographic%20Guide%20to%20An%20Infographic%20Guide%20to%20TFGBV.pdf"
+           target="_blank"
+           data-translate="explore_unfpa">
+          Explore more on UNFPA
+        </a>
+      </div>
+    </div>
+    
+    
 <!-- Block 3 - EFFECTS of TFGBV -->
 <div class="awareness-row">
   <div class="awareness-image">
     <img src="images/effects.png" alt="Effects of TFGBV">
   </div>
-  <div class="awareness-text">
+
+  <div class="awareness-text" style="text-align: left;">
     <div class="block-number">03</div>
+
     <h2 data-translate="effects_heading">Effects of Technology-Facilitated Gender-Based Violence</h2>
+
     <p data-translate="effects_description">
       The impact of TFGBV goes beyond the screen. Victims experience serious consequences across emotional, physical, social, and economic levels:
     </p>
-    <ul class="aligned-list">
+
+    <ul class="aligned-list" style="list-style-type: disc; padding-left: 20px;">
       <li data-translate="mental_health_li" data-html="true">
-        <span class="li-label"><strong>Mental Health:</strong></span>
-        <span class="li-desc">Victims often suffer from anxiety, depression, panic attacks, and PTSD.</span>
+        <strong>Mental Health:</strong> Victims often suffer from anxiety, depression, panic attacks, and PTSD.
       </li>
       <li data-translate="loss_opportunities_li" data-html="true">
-        <span class="li-label"><strong>Loss of Opportunities:</strong></span>
-        <span class="li-desc">Some withdraw from public life, education, or career advancement due to fear or shame.</span>
+        <strong>Loss of Opportunities:</strong> Some withdraw from public life, education, or career advancement due to fear or shame.
       </li>
       <li data-translate="physical_safety_li" data-html="true">
-        <span class="li-label"><strong>Physical Safety Risks:</strong></span>
-        <span class="li-desc">Online abuse can escalate to physical stalking or violence in the real world.</span>
+        <strong>Physical Safety Risks:</strong> Online abuse can escalate to physical stalking or violence in the real world.
       </li>
       <li data-translate="self_censorship_li" data-html="true">
-        <span class="li-label"><strong>Self-Censorship:</strong></span>
-        <span class="li-desc">Many survivors silence their voices or avoid digital spaces entirely to avoid further harm.</span>
+        <strong>Self-Censorship:</strong> Many survivors silence their voices or avoid digital spaces entirely to avoid further harm.
       </li>
     </ul>
+
     <p data-translate="effects_conclusion">
       These effects can linger for years, diminishing self-worth, eroding trust in technology, and limiting freedom of expression and access to digital resources.
     </p>
-    <a href="https://giwps.georgetown.edu/resource/technology-facilitated-gender-based-violence/" target="_blank" data-translate="learn_more_gwps">Learn more on GWPS</a>
+
+    <a href="https://giwps.georgetown.edu/resource/technology-facilitated-gender-based-violence/" target="_blank" data-translate="learn_more_gwps">
+      Learn more on GWPS
+    </a>
   </div>
 </div>
 
@@ -2274,5 +2436,7 @@ function closeMenu() {
       document.getElementById('globalLoader').style.display = 'none';
     });
     </script>
+
+    <script src="quiz.js"></script>
 </body>
 </html>

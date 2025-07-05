@@ -1,6 +1,8 @@
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   375  100   295  100    80  26362   7149 --:--:-- --:--:-- --:--:-- 34090
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   375  100   295  100    80  26362   7149 --:--:-- --:--:-- --:--:-- 34090
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
 <html><head>
 <title>404 Not Found</title>
