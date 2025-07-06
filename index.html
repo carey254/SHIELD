@@ -935,123 +935,6 @@ body.invert-colors textarea {
   z-index: 10000 !important;
 }
 
-
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
- 
-  padding: 2rem;
-  overflow-x: hidden;
-}
-#tfgbv-stats-hero {
-  width: 100vw;
-  max-width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  left: 0;
-  right: 0;
-  position: relative;
-  margin: 0;
-  padding: 0 2rem 2rem 2rem; /* No top padding, only sides and bottom */
-  width: 100%;
-  background-image: url('server/image.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 2rem 0;
-  box-sizing: border-box;
-}
-
-#tfgbv-stats-hero {
-  flex: 1 1 100%;
-  min-width: 0;
-}
-    h1 {
-      color: #fff;
-      font-weight: 900;
-      font-size: 2.5rem;
-      text-align: center;
-      letter-spacing: 0.05em;
-      margin-bottom: 2rem;
-      margin-top: 0;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.25);
-    }
-
-    .year-section {
-      display: none;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 4rem;
-    }
-
-    .stat-box {
-      background-color: #000;
-      border-radius: 15px;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      position: relative;
-    }
-
-    .stat-box .percentage {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #ffdd57;
-    }
-
-    .stat-box .text {
-        color: aliceblue;
-      font-size: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 10px;
-      background-color: #444;
-      border-radius: 5px;
-      margin-top: 1rem;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background-color: #ffdd57;
-      width: 0%;
-      transition: width 2s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 60px; /* example */
-      z-index: 1000;
-    }
-    #tfgbv-stats-hero {
-      padding-top: 60px; /* match header height */
-    }
-
-    #tfgbv-stats-hero .year-section h2 {
-      color: #fff;
-      font-weight: 900;
-      font-size: 2.5rem;
-      text-align: center;
-      letter-spacing: 0.05em;
-      margin-bottom: 2rem;
-      margin-top: 0;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.25);
-    }
 </style>
 
 </head>
@@ -1126,9 +1009,14 @@ body {
     </div>
 
     <!-- Hero Section with Responsive Video -->
-    <section id="tfgbv-stats-hero">
-      <h1><strong> Impact of TFGBV (2020–2026) </strong></h1>
-      <div id="stat-wrapper"></div>
+    <section class="hero-alt" role="banner" aria-label="Hero section with rotating images">
+        <div class="image-container">
+            <div class="color-overlay" aria-hidden="true"></div>
+            <img src="images/gbv1.png" alt="Women empowerment and digital safety awareness campaign" class="bg-image active">
+            <img src="images/tgbvw2.png" alt="Fighting technology-facilitated gender-based violence" class="bg-image">
+            <img src="images/tgbv.png" alt="Supporting survivors of online harassment" class="bg-image">
+            <img src="images/tgbvw1.png" alt="Building a safer digital space for women" class="bg-image">
+        </div>
     </section>
 
     <!-- Merged About Us Intro with Mission/Vision -->
@@ -1237,9 +1125,7 @@ body {
             </div>
         </div>
         <div style="text-align: center; margin-top: 40px;">
-            <a href="resource&support.html" style="background-color: #e63946; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 8px;">
-                Go to Resources & Support →
-            </a>
+            <a href="resource&support.html" style="background-color: #e63946; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 8px;" data-translate="go_to_resources">Go to Resources & Support →</a>
         </div>
     </section>
     <hr style="margin: 50px 0 0 0; border: none; border-top: 3px solid #eee;">
@@ -1270,13 +1156,13 @@ body {
                                     <p data-translate="password_security_text">Create strong, unique passwords and use password managers</p>
                                 </div>
                                 <div class="card-back" style="background: #e2cdbf;">
-                                    <h4>Password Security Tips</h4>
+                                    <h4 data-translate="password_security_tips">Password Security Tips</h4>
                                     <ul>
-                                        <li>Use at least 12 characters</li>
-                                        <li>Mix uppercase, lowercase, numbers & symbols</li>
-                                        <li>Never reuse passwords across accounts</li>
-                                        <li>Use a password manager like LastPass or 1Password</li>
-                                        <li>Enable biometric authentication when available</li>
+                                        <li data-translate="password_tip_12_chars">Use at least 12 characters</li>
+                                        <li data-translate="password_tip_mix">Mix uppercase, lowercase, numbers & symbols</li>
+                                        <li data-translate="password_tip_no_reuse">Never reuse passwords across accounts</li>
+                                        <li data-translate="password_tip_manager">Use a password manager like LastPass or 1Password</li>
+                                        <li data-translate="password_tip_biometric">Enable biometric authentication when available</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1289,13 +1175,13 @@ body {
                                     <p data-translate="privacy_settings_card_text">Manage your privacy settings across all platforms</p>
                                 </div>
                                 <div class="card-back" style="background: #e2cdbf;">
-                                    <h4>Privacy Settings Guide</h4>
+                                    <h4 data-translate="privacy_settings_guide">Privacy Settings Guide</h4>
                                     <ul>
-                                        <li>Review social media privacy settings monthly</li>
-                                        <li>Limit who can see your posts and profile</li>
-                                        <li>Disable location sharing when not needed</li>
-                                        <li>Use private browsing for sensitive activities</li>
-                                        <li>Regularly clear browser cookies and cache</li>
+                                        <li data-translate="privacy_tip_review">Review social media privacy settings monthly</li>
+                                        <li data-translate="privacy_tip_limit">Limit who can see your posts and profile</li>
+                                        <li data-translate="privacy_tip_location">Disable location sharing when not needed</li>
+                                        <li data-translate="privacy_tip_private_browsing">Use private browsing for sensitive activities</li>
+                                        <li data-translate="privacy_tip_clear_cookies">Regularly clear browser cookies and cache</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1308,13 +1194,13 @@ body {
                                     <p data-translate="two_factor_text">Enable 2FA for additional account security</p>
                                 </div>
                                 <div class="card-back" style="background: #e2cdbf;">
-                                    <h4>2FA Implementation Guide</h4>
+                                    <h4 data-translate="two_factor_guide">2FA Implementation Guide</h4>
                                     <ul>
-                                        <li>Enable 2FA on all critical accounts</li>
-                                        <li>Use authenticator apps over SMS when possible</li>
-                                        <li>Keep backup codes in a secure location</li>
-                                        <li>Set up recovery email addresses</li>
-                                        <li>Regularly review active sessions</li>
+                                        <li data-translate="two_factor_enable">Enable 2FA on all critical accounts</li>
+                                        <li data-translate="two_factor_auth_app">Use authenticator apps over SMS when possible</li>
+                                        <li data-translate="two_factor_backup">Keep backup codes in a secure location</li>
+                                        <li data-translate="two_factor_recovery">Set up recovery email addresses</li>
+                                        <li data-translate="two_factor_review_sessions">Regularly review active sessions</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1332,18 +1218,18 @@ body {
                             <div class="card-inner">
                                 <div class="card-front" style="background: #e2cdbf;">
                                     <i class="fas fa-exclamation-triangle"></i>
-                                    <h4 data-translate="Report Abuse">Report Abuse</h4>
-                                    <p data-translate="Report and document online harassment">Report and document online harassment</p>
+                                    <h4 data-translate="report_abuse">Report Abuse</h4>
+                                    <p data-translate="report_abuse_text">Report and document online harassment</p>
                                     <button class="report-btn" onclick="openReportForm()" data-translate="report_incident_button">Report Incident</button>
                                 </div>
                                 <div class="card-back" style="background: #e2cdbf;">
-                                    <h4 data-translate="How to Report Abuse">How to Report Abuse</h4>
+                                    <h4 data-translate="how_to_report_abuse">How to Report Abuse</h4>
                                     <ul>
-                                        <li data-translate="Document all incidents with screenshots">Document all incidents with screenshots</li>
-                                        <li data-translate="Report to platform moderators">Report to platform moderators</li>
-                                        <li data-translate="Contact local authorities if needed">Contact local authorities if needed</li>
-                                        <li data-translate="Use our reporting form for support">Use our reporting form for support</li>
-                                        <li data-translate="Keep records of all communications">Keep records of all communications</li>
+                                        <li data-translate="report_tip_screenshots">Document all incidents with screenshots</li>
+                                        <li data-translate="report_tip_moderators">Report to platform moderators</li>
+                                        <li data-translate="report_tip_authorities">Contact local authorities if needed</li>
+                                        <li data-translate="report_tip_support_form">Use our reporting form for support</li>
+                                        <li data-translate="report_tip_records">Keep records of all communications</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1352,19 +1238,19 @@ body {
                             <div class="card-inner">
                                 <div class="card-front" style="background: #e2cdbf;">
                                     <i class="fas fa-hand-holding-heart"></i>
-                                    <h4 data-translate="Support Resources">Support Resources</h4>
-                                    <p data-translate="Access counseling and support services">Access counseling and support services</p>
+                                    <h4 data-translate="support_resources">Support Resources</h4>
+                                    <p data-translate="support_resources_text">Access counseling and support services</p>
                                 </div>
                                 <div class="card-back" style="background: #e2cdbf;">
-                                    <h4 data-translate="Available Support">Available Support</h4>
+                                    <h4 data-translate="available_support">Available Support</h4>
                                     <ul>
-                                        <li data-translate="24/7 Crisis hotline support">24/7 Crisis hotline support</li>
-                                        <li data-translate="Professional counseling services">Professional counseling services</li>
-                                        <li data-translate="Peer support groups">Peer support groups</li>
-                                        <li data-translate="Legal consultation">Legal consultation</li>
-                                        <li data-translate="Mental health resources">Mental health resources</li>
+                                        <li data-translate="support_tip_crisis">24/7 Crisis hotline support</li>
+                                        <li data-translate="support_tip_counseling">Professional counseling services</li>
+                                        <li data-translate="support_tip_peer">Peer support groups</li>
+                                        <li data-translate="support_tip_legal">Legal consultation</li>
+                                        <li data-translate="support_tip_mental_health">Mental health resources</li>
                                     </ul>
-                                    <a href="resource&support.html" class="resource-link" data-translate="Access Resources →">Access Resources →</a>
+                                    <a href="resource&support.html" class="resource-link" data-translate="access_resources">Access Resources →</a>
                                 </div>
                             </div>
                         </div>
@@ -1372,17 +1258,17 @@ body {
                             <div class="card-inner">
                                 <div class="card-front" style="background: #e2cdbf;">
                                     <i class="fas fa-gavel"></i>
-                                    <h4 data-translate="Legal Guidance">Legal Guidance</h4>
-                                    <p data-translate="Information about legal rights and protections">Information about legal rights and protections</p>
+                                    <h4 data-translate="legal_guidance">Legal Guidance</h4>
+                                    <p data-translate="legal_guidance_text">Information about legal rights and protections</p>
                                 </div>
                                 <div class="card-back" style="background: #e2cdbf;">
-                                    <h4 data-translate="Legal Resources">Legal Resources</h4>
+                                    <h4 data-translate="legal_resources">Legal Resources</h4>
                                     <ul>
-                                        <li data-translate="Know your digital rights">Know your digital rights</li>
-                                        <li data-translate="Documentation guidelines">Documentation guidelines</li>
-                                        <li data-translate="Legal consultation services">Legal consultation services</li>
-                                        <li data-translate="Restraining order information">Restraining order information</li>
-                                        <li data-translate="International legal resources">International legal resources</li>
+                                        <li data-translate="legal_tip_rights">Know your digital rights</li>
+                                        <li data-translate="legal_tip_documentation">Documentation guidelines</li>
+                                        <li data-translate="legal_tip_consultation">Legal consultation services</li>
+                                        <li data-translate="legal_tip_restraining">Restraining order information</li>
+                                        <li data-translate="legal_tip_international">International legal resources</li>
                                     </ul>
                                     <a href="resource&support.html#legal" class="resource-link" data-translate="legal_resources_link">Legal Resources →</a>
                                 </div>
@@ -1401,17 +1287,17 @@ body {
                             <div class="card-inner">
                                 <div class="card-front" style="background: #e2cdbf;">
                                     <i class="fas fa-phone-alt"></i>
-                                    <h4 data-translate="Emergency Contacts">Emergency Contacts</h4>
-                                    <p data-translate="Quick access to emergency services">Quick access to emergency services</p>
+                                    <h4 data-translate="emergency_contacts">Emergency Contacts</h4>
+                                    <p data-translate="emergency_contacts_text">Quick access to emergency services</p>
                                 </div>
                                 <div class="card-back" style="background: #e2cdbf;">
-                                    <h4 data-translate="Emergency Resources">Emergency Resources</h4>
+                                    <h4 data-translate="emergency_resources">Emergency Resources</h4>
                                     <ul>
-                                        <li data-translate="Emergency Services: 1195">Emergency Services: 1195</li>
-                                        <li data-translate="National Crisis: report@cid.go.ke">National Crisis: report@cid.go.ke</li>
-                                        <li data-translate="Mental Health Support Befrienders Kenya: Hotline: +254 722 178177">Mental Health Support Befrienders Kenya: Hotline: +254 722 178177</li>
-                                        <li data-translate="Medical Emergency">Medical Emergency</li>
-                                        <li data-translate="Law Enforcement">Law Enforcement</li>
+                                        <li data-translate="emergency_services_1195">Emergency Services: 1195</li>
+                                        <li data-translate="national_crisis_email">National Crisis: report@cid.go.ke</li>
+                                        <li data-translate="mental_health_support">Mental Health Support Befrienders Kenya: Hotline: +254 722 178177</li>
+                                        <li data-translate="medical_emergency">Medical Emergency</li>
+                                        <li data-translate="law_enforcement">Law Enforcement</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1420,17 +1306,17 @@ body {
                             <div class="card-inner">
                                 <div class="card-front" style="background: #e2cdbf;">
                                     <i class="fas fa-file-alt"></i>
-                                    <h4 data-translate="Reporting Forms">Reporting Forms</h4>
-                                    <p data-translate="Easy-to-use incident reporting forms">Easy-to-use incident reporting forms</p>
+                                    <h4 data-translate="reporting_forms">Reporting Forms</h4>
+                                    <p data-translate="reporting_forms_text">Easy-to-use incident reporting forms</p>
                                 </div>
                                 <div class="card-back" style="background: #e2cdbf;">
-                                    <h4 data-translate="Report an Incident">How to Report an Incident</h4>
+                                    <h4 data-translate="report_an_incident">How to Report an Incident</h4>
                                     <ul>
-                                        <li data-translate="Anonymous reporting option">Anonymous reporting option</li>
-                                        <li data-translate="Detailed incident forms">Detailed incident forms</li>
-                                        <li data-translate="Evidence upload capability">Evidence upload capability</li>
-                                        <li data-translate="Follow-up tracking">Follow-up tracking</li>
-                                        <li data-translate="Support service connection">Support service connection</li>
+                                        <li data-translate="anonymous_reporting">Anonymous reporting option</li>
+                                        <li data-translate="detailed_incident_forms">Detailed incident forms</li>
+                                        <li data-translate="evidence_upload">Evidence upload capability</li>
+                                        <li data-translate="follow_up_tracking">Follow-up tracking</li>
+                                        <li data-translate="support_service_connection">Support service connection</li>
                                     </ul>
                                    
                                 </div>
@@ -1440,24 +1326,24 @@ body {
                             <div class="card-inner">
                                 <div class="card-front" style="background: #e2cdbf;">
                                     <i class="fas fa-hands-helping"></i>
-                                    <h4 data-translate="Support Services">Support Services</h4>
-                                    <p data-translate="Direct access to support resources">Direct access to support resources</p>
+                                    <h4 data-translate="support_services">Support Services</h4>
+                                    <p data-translate="support_services_text">Direct access to support resources</p>
                                 </div>
                                 <div class="card-back" style="background: #e2cdbf;">
-                                    <h4 data-translate="Available Support">Available Support</h4>
+                                    <h4 data-translate="available_support">Available Support</h4>
                                     <ul>
-                                        <li data-translate="24/7 Online Chat Support">24/7 Online Chat Support</li>
-                                        <li data-translate="Peer Support Groups">Peer Support Groups</li>
-                                        <li data-translate="Professional Counseling">Professional Counseling</li>
-                                        <li data-translate="Resource Directory">Resource Directory</li>
-                                        <li data-translate="Community Forums">Community Forums</li>
+                                        <li data-translate="online_chat_support">24/7 Online Chat Support</li>
+                                        <li data-translate="peer_support_groups">Peer Support Groups</li>
+                                        <li data-translate="professional_counseling">Professional Counseling</li>
+                                        <li data-translate="resource_directory">Resource Directory</li>
+                                        <li data-translate="community_forums">Community Forums</li>
                                     </ul>
                                     <div style="margin-top:10px;">
-                                        <strong data-translate="contact us 24/7">Contact us 24/7:</strong><br>
+                                        <strong data-translate="contact_us_247">Contact us 24/7:</strong><br>
                                         <a href="mailto:shi3ldmaidens@gmail.com" style="color:#e63946;">shi3ldmaidens@gmail.com</a><br>
                                         <a href="tel:" style="color:#e63946;"></a>
                                     </div>
-                                    <a href="resource&support.html" class="resource-link" data-translate="get support">Get Support →</a>
+                                    <a href="resource&support.html" class="resource-link" data-translate="get_support">Get Support →</a>
                                 </div>
                             </div>
                         </div>
@@ -1533,36 +1419,29 @@ body {
     <!-- Social Media Section -->
    
 <section class="social-media-section">
-    <h2 style="text-align: center; margin-bottom: 30px;" data-translate="  Follow our social handles to know more">
-        Follow our social handles to know more
-    </h2>
+    <h2 style="text-align: center; margin-bottom: 30px;" data-translate="follow_social_handles">Follow our social handles to know more</h2>
 
     <div class="social-cards-container">
         <!-- LinkedIn -->
         <div class="social-box">
             <div class="follow-btn">
-                <a href="https://www.linkedin.com/in/shield-maidens-47ab66329" target="_blank"
-                    class="linkedin-btn">Connect</a>
+                <a href="https://www.linkedin.com/in/shield-maidens-47ab66329" target="_blank" class="linkedin-btn" data-translate="connect">Connect</a>
             </div>
-
             <div class="card-header">
-                <img src="https://static-exp1.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico"
-                    alt="LinkedIn Logo">
+                <img src="https://static-exp1.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" alt="LinkedIn Logo">
                 <div>
                     <strong>Shield Maidens</strong><br>
-                    <span>View our LinkedIn profile</span><br>
+                    <span data-translate="view_linkedin_profile">View our LinkedIn profile</span><br>
                     <span style="color: #0077b5; font-size: 13px;">linkedin.com/in/shield-maidens-47ab66329</span>
                 </div>
             </div>
-
             <img src="images/gigs.jpg" alt="Gigs Image" style="width: 100%; border-radius: 10px;">
         </div>
 
         <!-- Instagram -->
         <div class="social-box">
             <div class="follow-btn">
-                <a href="https://www.instagram.com/the_shield_maidens" target="_blank"
-                    class="instagram-btn">Follow</a>
+                <a href="https://www.instagram.com/the_shield_maidens" target="_blank" class="instagram-btn" data-translate="follow">Follow</a>
             </div>
 
             <iframe src="https://www.instagram.com/the_shield_maidens/embed" width="100%" height="460" frameborder="0"
@@ -1573,7 +1452,7 @@ body {
         <div class="social-box twitter-card">
             <div class="social-card-header">
                 <span>@_shield_maidens</span>
-                <a href="https://twitter.com/_shield_maidens" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @_shield_maidens</a>
+                <a href="https://twitter.com/_shield_maidens" class="twitter-follow-button" data-show-count="false" data-size="large" data-translate="follow_on_twitter">Follow @_shield_maidens</a>
             </div>
             <img src="images/XX.jpg" alt="Twitter preview" style="width:100%; border-radius:8px;">
         </div>
@@ -1590,11 +1469,11 @@ body {
         <div id="contact">
         <h2 data-translate="contact_us">Contact Us</h2>
         <form id="contactForm" action="send_email.php" method="POST">
-            <label for="name">Your Name</label>
+            <label for="name" data-translate="your_name_label">Your Name</label>
             <input type="text" id="name" name="name" placeholder="Your Name" required data-translate="your_name">
-            <label for="email">Your Email</label>
+            <label for="email" data-translate="your_email_label">Your Email</label>
             <input type="email" id="email" name="email" placeholder="Your Email" required data-translate="your_email">
-            <label for="message">Your Message/Feedback</label>
+            <label for="message" data-translate="your_message_label">Your Message/Feedback</label>
             <textarea id="message" name="message" placeholder="Your Message" required data-translate="your_message"></textarea>
             <div class="g-recaptcha" data-sitekey="6LcpkHQrAAAAAIDPOJ1mevTnvRxF42fXk8INJH-X"></div>
             <button type="submit" data-translate="send_message">Send Message</button>
@@ -1608,7 +1487,7 @@ body {
 <form id="mailing-list" action="send_email.php" method="POST">
     <h2 data-translate="join_mailing_list">Join Our Mailing List</h2>
     <p data-translate="mailing_list_text">Be the first to know about upcoming Training Sessions, Events, and other related news.</p>
-    <label for="mailingEmail">Your Email</label>
+    <label for="mailingEmail" data-translate="your_email_label">Your Email</label>
     <input type="email" id="mailingEmail" name="mailingEmail" placeholder="Enter your email here" required data-translate="your_email">
     <div class="g-recaptcha" data-sitekey="6LcpkHQrAAAAAIDPOJ1mevTnvRxF42fXk8INJH-X"></div>
     <button type="submit" data-translate="stay_updated">Stay updated</button>
@@ -1646,9 +1525,9 @@ body {
           <!-- Column 3: Contact, Location, Socials (right) -->
           <div class="footer-contact">
             <h3 data-translate="contact_us_footer">Contact Us</h3>
-            <p>Email: shi3ldmaidens@gmail.com</p>
+            <p data-translate="footer_email">Email: shi3ldmaidens@gmail.com</p>
             <div class="footer-location">
-              <h3 data-translate="our location">Location</h3>
+              <h3 data-translate="footer_location">Location</h3>
               <p>Nairobi, Kenya</p>
             </div>
             <h3 data-translate="our_socials">Our Socials</h3>
@@ -1866,7 +1745,16 @@ body {
         background: #ffe066 !important;
         border-color: #1a1a7a !important;
       }
-
+      /* Saturation Modes */
+      body.saturation-low {
+        filter: saturate(0.2) !important;
+      }
+      body.saturation-high {
+        filter: saturate(2) !important;
+      }
+      body.saturation-normal {
+        filter: saturate(1) !important;
+      }
 
       /* Ensure accessibility panel and icon always stay fixed and visible */
       .accessibility-panel {
@@ -1925,167 +1813,7 @@ body {
         right: 20px !important;
         z-index: 10000 !important;
       }
-
-
-
-
-      
       </style>
-
-
-      <script>
-        const yearlyStats = {
-          "2020": [
-            { value: 53, text: "of teen girls and LGBTQ+ youth experienced digital harassment." },
-            { value: 38, text: "of young girls under 18 faced online abuse." },
-            { value: 45, text: "of youth reported online trauma from bullying." },
-            { value: 50, text: "of affected individuals were unsure how to report." },
-            { value: 35, text: "of cases were never addressed by platforms." },
-            { value: 27, text: "experienced long-term psychological effects." },
-            { value: 14, text: "thought of suicide after online abuse." }
-          ],
-          "2021": [
-            { value: 57, text: "of survivors reported emotional trauma from online harm." },
-            { value: 48, text: "of incidents happened on social media." },
-            { value: 33, text: "of cases involved image-based abuse." },
-            { value: 30, text: "of affected users were under 18." },
-            { value: 19, text: "of victims were targeted repeatedly." },
-            { value: 16, text: "reported attempted suicide." },
-            { value: 24, text: "filed complaints that were never resolved." }
-          ],
-          "2022": [
-            { value: 61, text: "of reports were ignored by online platforms." },
-            { value: 40, text: "of abuse included hate speech." },
-            { value: 34, text: "involved non-consensual content sharing." },
-            { value: 28, text: "of victims were afraid to speak out." },
-            { value: 20, text: "developed anxiety or PTSD." },
-            { value: 13, text: "lost opportunities due to online shaming." },
-            { value: 12, text: "dropped out of school or work." }
-          ],
-          "2023": [
-            { value: 65, text: "of users considered quitting social media due to harm." },
-            { value: 43, text: "of youth felt digitally unsafe." },
-            { value: 38, text: "had multiple accounts hacked or doxxed." },
-            { value: 29, text: "of LGBTQ+ youth faced targeted harassment." },
-            { value: 26, text: "felt excluded from online communities." },
-            { value: 18, text: "stopped engaging with online learning." },
-            { value: 15, text: "attempted self-harm after abuse." }
-          ],
-          "2024": [
-            { value: 70, text: "of abuse survivors reported mental health effects." },
-            { value: 55, text: "of teens were affected by online blackmail or sextortion." },
-            { value: 39, text: "feared further harm if they reported." },
-            { value: 32, text: "had their images shared without consent." },
-            { value: 25, text: "experienced threats against family or friends." },
-            { value: 21, text: "were retraumatized by platform inaction." },
-            { value: 17, text: "attempted suicide or had suicidal ideation." }
-          ],
-          "2025": [
-            { value: 75, text: "received no justice or follow-up support." },
-            { value: 58, text: "of victims withdrew from online life entirely." },
-            { value: 46, text: "reported loss of self-esteem or isolation." },
-            { value: 36, text: "were attacked using AI-generated content." },
-            { value: 31, text: "were impersonated in online scams." },
-            { value: 19, text: "lost jobs or academic opportunities." },
-            { value: 22, text: "developed long-term depression." }
-          ],
-          "2026": [
-            { value: 80, text: "of victims include women, youth, LGBTQ+, and marginalized groups." },
-            { value: 63, text: "continue to live in fear of digital abuse." },
-            { value: 51, text: "felt invisible or silenced online." },
-            { value: 44, text: "live with trauma from repeated online attacks." },
-            { value: 33, text: "have never found a safe digital space." },
-            { value: 26, text: "lack mental health resources post-abuse." },
-            { value: 20, text: "live with unresolved cases or open threats." }
-          ]
-        };
-    
-        const wrapper = document.getElementById("stat-wrapper");
-        const years = Object.keys(yearlyStats);
-        let currentYearIndex = 0;
-    
-        function createYearSection(year, data) {
-          const section = document.createElement("div");
-          section.className = "year-section";
-          section.id = `year-${year}`;
-    
-          const title = document.createElement("h2");
-          title.textContent = year;
-          section.appendChild(title);
-    
-          const grid = document.createElement("div");
-          grid.className = "grid";
-    
-          data.forEach(stat => {
-            const box = document.createElement("div");
-            box.className = "stat-box";
-    
-            const percent = document.createElement("div");
-            percent.className = "percentage";
-            percent.textContent = "0%";
-    
-            const desc = document.createElement("div");
-            desc.className = "text";
-            desc.textContent = stat.text;
-    
-            const progress = document.createElement("div");
-            progress.className = "progress-bar";
-            const fill = document.createElement("div");
-            fill.className = "progress-fill";
-            progress.appendChild(fill);
-    
-            box.appendChild(percent);
-            box.appendChild(desc);
-            box.appendChild(progress);
-    
-            grid.appendChild(box);
-    
-            animateStat(percent, fill, stat.value);
-          });
-    
-          section.appendChild(grid);
-          return section;
-        }
-    
-        function rotateSections() {
-          const oldSections = document.querySelectorAll(".year-section");
-          oldSections.forEach(sec => sec.style.display = "none");
-    
-          const year = years[currentYearIndex];
-          let section = document.getElementById(`year-${year}`);
-    
-          if (!section) {
-            section = createYearSection(year, yearlyStats[year]);
-            wrapper.appendChild(section);
-          }
-    
-          section.style.display = "block";
-          currentYearIndex = (currentYearIndex + 1) % years.length;
-        }
-    
-        function animateStat(element, fillEl, target) {
-          let current = 0;
-          const steps = 30;
-          const increment = target / steps;
-          const interval = 50;
-    
-          const animate = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              current = target;
-              clearInterval(animate);
-            }
-            element.textContent = `${Math.round(current)}%`;
-            fillEl.style.width = `${current}%`;
-          }, interval);
-        }
-    
-        rotateSections();
-        setInterval(rotateSections, 8000); // rotates every 8 seconds
-      </script>
-
-
-
       
       <script>
       // Accessibility Functions (Globally accessible)
