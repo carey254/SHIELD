@@ -1,6 +1,6 @@
 /* The translations object was moved to translations.js to avoid conflicts. */
 // Language translations object
-// Removed the hardcoded translations object as it conflicts with translations.js
+
 
 // Function to store the selected language in local storage
 function storeLanguage(lang) {
@@ -18,6 +18,7 @@ function updateContent(lang) {
     // Use specific translations object based on the current page
     let translations;
     const path = window.location.pathname;
+    console.log('Current path:', path); // Add this for debugging
 
     if (path.includes('report.html')) {
         translations = window.reportTranslations;
@@ -34,7 +35,7 @@ function updateContent(lang) {
     } else if (path.includes('news.html')) {
         translations = window.newsTranslations;
         console.log('Using newsTranslations for news.html');
-    } else if (path.includes('resource&support.html')) {
+    } else if (decodeURIComponent(path).includes('resource&support.html')) {
         translations = window.resourcesTranslations;
         console.log('Using resourcesTranslations for resource&support.html');
     } else {
@@ -326,6 +327,14 @@ function changeLanguage(lang) {
     updateContent(lang); // Update the content
     updateLanguageSelectorDisplay(lang);
 }
+
+// Alias function for setLanguage (for compatibility)
+function setLanguage(lang) {
+    changeLanguage(lang);
+}
+
+// Make setLanguage globally available
+window.setLanguage = setLanguage;
 
 // Initialize language selector buttons
 function initializeLanguageSelector() {

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="accessibilityoption.css">
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="js/all-translations.js"></script>
     
     <style>
         body {
@@ -589,6 +590,44 @@ h2 {
     display: block;
   }
   
+  /* Language Switcher Specific Styles */
+  .language-switcher {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .language-switcher .dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 120px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    border-radius: 4px;
+    top: 100%;
+    left: 0;
+  }
+  
+  .language-switcher:hover .dropdown-content {
+    display: block;
+  }
+  
+  .language-switcher .dropdown-content a {
+    color: #333;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .language-switcher .dropdown-content a:last-child {
+    border-bottom: none;
+  }
+  
+  .language-switcher .dropdown-content a:hover {
+    background-color: #f8f8f8;
+  }
+  
  
   
   /* Hamburger Icon (Mobile Only) */
@@ -1056,16 +1095,13 @@ nav .dropdown > a[data-translate="get_involved_link"]::after {
                 <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">Where to Report</a>
             </div>
             <div class="nav-actions">
-                <div class="custom-language-dropdown">
-                    <button class="custom-language-button" aria-label="Language Switcher">
-                        <span class="selected-language">ENG</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="custom-dropdown-options">
-                        <div class="dropdown-option" data-lang="en" data-short="ENG">English</div>
-                        <div class="dropdown-option" data-lang="sw" data-short="KS">Kiswahili</div>
-                        <div class="dropdown-option" data-lang="fr" data-short="FR">French</div>
-                        <div class="dropdown-option" data-lang="ar" data-short="AR">Arabic</div>
+                <div class="language-switcher">
+                    <a href="#" aria-expanded="false" data-translate="english_link">English <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content" role="menu">
+                        <a href="#" data-lang="en" data-translate="english_link">English</a>
+                        <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+                        <a href="#" data-lang="fr" data-translate="french_link">French</a>
+                        <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
                     </div>
                 </div>
                 <button class="hamburger" aria-label="Open menu" onclick="openMenu()">
@@ -1239,30 +1275,9 @@ nav .dropdown > a[data-translate="get_involved_link"]::after {
         }
     </script>
 
-    <script src="js/events-translations.js"></script>
+    <script src="js/all-translations.js"></script>
     <script src="js/language-handler.js"></script>
-    <script>
-    // Ensure the global variable is set (in case the assignment in the JS file is missing)
-    window.eventsTranslations = window.eventsTranslations || eventsTranslations;
 
-    document.addEventListener('DOMContentLoaded', function() {
-      // Set initial language from localStorage or default to English
-      var initialLang = localStorage.getItem('selectedLanguage') || 'en';
-      updateContent(initialLang);
-      updateLanguageSelectorDisplay(initialLang);
-
-      // Attach click handler to nav language switcher
-      document.querySelectorAll('.language-switcher .dropdown-content a[data-lang]').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          var lang = this.getAttribute('data-lang');
-          storeLanguage(lang);
-          updateContent(lang);
-          updateLanguageSelectorDisplay(lang);
-        });
-      });
-    });
-    </script>
 
      <!-- Accessibility Control Panel -->
      <div class="accessibility-panel" id="accessibilityPanel">
@@ -1870,6 +1885,7 @@ window.resetAccessibility = function() {
           document.getElementById('globalLoader').style.display = 'none';
         });
         </script>
+        <script src="js/language-handler.js"></script>
     
 </body>
 </html>

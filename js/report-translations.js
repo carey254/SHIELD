@@ -21,6 +21,7 @@ const reportTranslations = {
 
         // Main Content
         "report_page_title": "Report Incident - Hotlines & Resources",
+        "reporting_flowchart_title": "How to Report GBV & TFGBV",
         "hotlines_heading": "Kenyan Hotlines and Reporting Platforms for GBV",
         
         // Stop NCII
@@ -101,8 +102,8 @@ const reportTranslations = {
 
         // Footer
         "quick_links": "Quick Links",
-        "location": "Location",
-        "contact_us": "Contact Us",
+        "contact_us_footer": "Contact Us",
+        "our location": "Location",
         "our_socials": "Our Socials",
         "copyright": "Copyright © 2025 Shield Maidens",
 
@@ -218,6 +219,7 @@ const reportTranslations = {
 "unfpa_desc": "Pata vituo vya msaada vya TFGBV mtandaoni kwa kila nchi. Bonyeza 'Get help' kuripoti au kupata hifadhi salama.",
 "unfpa_link": "UNFPA Dashboard",
         "report_page_title": "Ripoti Tukio - Namba za Simu na Rasilimali",
+        "reporting_flowchart_title": "Jinsi ya Kuripoti GBV & TFGBV",
         "hotlines_heading": "Namba za Simu na Mifumo ya Kuripoti GBV Nchini Kenya",
 
         // Stop NCII
@@ -298,8 +300,8 @@ const reportTranslations = {
 
         // Footer
         "quick_links": "Viungo vya Haraka",
-        "location": "Mahali",
-        "contact_us": "Wasiliana Nasi",
+        "contact_us_footer": "Wasiliana Nasi",
+        "our location": "Mahali",
         "our_socials": "Mitandao Yetu ya Kijamii",
         "copyright": "Hakimiliki © 2025 Shield Maidens",
 
@@ -382,6 +384,7 @@ const reportTranslations = {
 
         
         "report_page_title": "Signaler un Incident - Lignes d'urgence et Ressources",
+        "reporting_flowchart_title": "Comment Signaler la VBG et la VFTBG",
         "hotlines_heading": "Lignes d'urgence et plateformes de signalement de la VBG au Kenya",
 
         // Stop NCII
@@ -462,8 +465,8 @@ const reportTranslations = {
 
         // Footer
         "quick_links": "Liens Rapides",
-        "location": "Emplacement",
-        "contact_us": "Contactez-nous",
+        "contact_us_footer": "Contactez-nous",
+        "our location": "Emplacement",
         "our_socials": "Nos Réseaux Sociaux",
         "copyright": "Copyright © 2025 Shield Maidens",
 
@@ -544,6 +547,7 @@ const reportTranslations = {
 
         // Main Content
         "report_page_title": "الإبلاغ عن حادث - الخطوط الساخنة والموارد",
+        "reporting_flowchart_title": "كيفية الإبلاغ عن العنف القائم على النوع الاجتماعي وTFGBV",
         "hotlines_heading": "الخطوط الساخنة ومنصات الإبلاغ عن العنف القائم على النوع الاجتماعي في كينيا",
 
         // Stop NCII
@@ -624,8 +628,8 @@ const reportTranslations = {
 
         // Footer
         "quick_links": "روابط سريعة",
-        "location": "الموقع",
-        "contact_us": "اتصل بنا",
+        "contact_us_footer": "اتصل بنا",
+        "our location": "الموقع",
         "our_socials": "وسائل التواصل الاجتماعي",
         "copyright": "حقوق النشر © 2025 Shield Maidens",
 
