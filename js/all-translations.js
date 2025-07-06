@@ -1,5 +1,3 @@
-
-
 const donateTranslations = {
     en: {
         // Navigation
@@ -489,6 +487,7 @@ const newsTranslations = {
         "swahili_link": "Swahili",
         "french_link": "Français",
         "arabic_link": "Arabe",
+        "calendar_title": "Calendrier des Événements à Venir et Passés",
 
         // Main Content
         "milestones_title": "Jalons",
@@ -533,6 +532,7 @@ const newsTranslations = {
         "swahili_link": "السواحيلية",
         "french_link": "الفرنسية",
         "arabic_link": "العربية",
+        "calendar_title": "تقويم الفعاليات القادمة والسابقة",
 
         // Main Content
         "milestones_title": "المحطات الرئيسية",
@@ -642,7 +642,7 @@ const partnerTranslations = {
         "home_link": "Accueil",
         "about_us_link": "À Propos",
         "resources_link": "Ressources",
-        "get_involved_link": "S'Impliquer",
+        "get_involved_link": "S'impliquer",
         "events_link": "Événements",
         "news_link": "Actualités",
         "partner_link": "Devenir Partenaire",
