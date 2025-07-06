@@ -881,7 +881,17 @@ window.resourcesTranslations = {
         "contact_us_heading": "Contact Us",
         "location_heading": "Location",
         "socials_heading": "Our Socials",
-        "copyright_text": "Copyright © 2025 Shield Maidens"
+        "copyright_text": "Copyright © 2025 Shield Maidens",
+        "tfgbv_types_heading": "Meaning and Types of TFGBV",
+        "tfgbv_types_intro": "Technology-facilitated gender-based violence (TFGBV) describes harmful acts or behaviors committed against people using digital technologies, usually women and girls. These acts take advantage of the anonymity and connectivity that technology offers, making it easier for perpetrators to target their victims and inflict more widespread harm.",
+        "tfgbv_types_list_heading": "TFGBV can take place through:",
+        "tfgbv_social_media_li": "Social media platforms (e.g., Facebook, X/Twitter, Instagram, TikTok)",
+        "tfgbv_messaging_li": "Messaging apps (e.g., WhatsApp, Telegram, Signal)",
+        "tfgbv_email_li": "Emails, SMS, or mobile calls",
+        "tfgbv_dating_li": "Dating platforms, online forums, blogs",
+        "tfgbv_gaming_li": "Gaming communities and livestream chats",
+        "tfgbv_ai_li": "AI-driven platforms or content manipulation tools",
+        "tfgbv_types_conclusion": "Unlike physical violence, TFGBV often follows survivors across borders and time zones, leaving victims vulnerable to ongoing trauma, digital exclusion, or further victimization. The violence may be public (e.g., cyberbullying) or private (e.g., sextortion)."
     },
     sw: {
         "page_title": "📚 Rasilimali na Usaidizi | Uhamasishaji wa TFGBV",
@@ -1051,7 +1061,17 @@ window.resourcesTranslations = {
         "contact_us_heading": "Contact Us",
         "location_heading": "Location",
         "socials_heading": "Our Socials",
-        "copyright_text": "Copyright © 2025 Shield Maidens"
+        "copyright_text": "Copyright © 2025 Shield Maidens",
+        "tfgbv_types_heading": "Maana na Aina za TFGBV",
+        "tfgbv_types_intro": "Ukatili unaowezeshwa na teknolojia kulingana na jinsia (TFGBV) unaelezea vitendo au tabia hatari zinazofanywa dhidi ya watu kwa kutumia teknolojia za kidijitali, kwa kawaida wanawake na wasichana. Vitendo hivi hutumia fursa ya kutokujulikana na kuunganishwa ambazo teknolojia inatoa, na kufanya iwe rahisi kwa wahalifu kuwalenga waathirika wao na kusababisha madhara makubwa zaidi.",
+        "tfgbv_types_list_heading": "TFGBV inaweza kutokea kupitia:",
+        "tfgbv_social_media_li": "Mitandao ya kijamii (mfano, Facebook, X/Twitter, Instagram, TikTok)",
+        "tfgbv_messaging_li": "Programu za ujumbe (mfano, WhatsApp, Telegram, Signal)",
+        "tfgbv_email_li": "Barua pepe, SMS, au simu za mkononi",
+        "tfgbv_dating_li": "Mitandao ya kujua watu, vikao vya mtandaoni, blogu",
+        "tfgbv_gaming_li": "Jamii za michezo na mazungumzo ya moja kwa moja",
+        "tfgbv_ai_li": "Mitandao ya AI au zana za kubadilisha maudhui",
+        "tfgbv_types_conclusion": "Tofauti na unyanyasaji wa kimwili, TFGBV mara nyingi hufuata waathirika kote kwenye mipaka na majira ya saa, na kuwaacha waathirika katika hatari ya matatizo ya kuendelea, kutengwa kidijitali, au kudhulumiwa zaidi. Ukatili unaweza kuwa wa umma (mfano, unyanyasaji mtandaoni) au wa faragha (mfano, kulipiza kisasi)."
     },
     fr: {
         "page_title": "📚 Ressources et Soutien | Sensibilisation à la VFTBG",
@@ -1221,7 +1241,17 @@ window.resourcesTranslations = {
         "contact_us_heading": "Contact Us",
         "location_heading": "Location",
         "socials_heading": "Our Socials",
-        "copyright_text": "Copyright © 2025 Shield Maidens"
+        "copyright_text": "Copyright © 2025 Shield Maidens",
+        "tfgbv_types_heading": "Signification et Types de VFTBG",
+        "tfgbv_types_intro": "La violence basée sur le genre facilitée par la technologie (VFTBG) décrit les actes ou comportements nuisibles commis contre des personnes utilisant les technologies numériques, généralement des femmes et des filles. Ces actes profitent de l'anonymat et de la connectivité qu'offre la technologie, ce qui facilite la tâche des auteurs pour cibler leurs victimes et infliger des dommages plus étendus.",
+        "tfgbv_types_list_heading": "La VFTBG peut se produire par :",
+        "tfgbv_social_media_li": "Plateformes de médias sociaux (ex : Facebook, X/Twitter, Instagram, TikTok)",
+        "tfgbv_messaging_li": "Applications de messagerie (ex : WhatsApp, Telegram, Signal)",
+        "tfgbv_email_li": "Courriels, SMS ou appels mobiles",
+        "tfgbv_dating_li": "Plateformes de rencontres, forums en ligne, blogs",
+        "tfgbv_gaming_li": "Communautés de jeux et chats de diffusion en direct",
+        "tfgbv_ai_li": "Plateformes alimentées par l'IA ou outils de manipulation de contenu",
+        "tfgbv_types_conclusion": "Contrairement à la violence physique, la VFTBG suit souvent les survivants à travers les frontières et les fuseaux horaires, laissant les victimes vulnérables à un traumatisme continu, à l'exclusion numérique ou à une victimisation accrue. La violence peut être publique (ex : cyberintimidation) ou privée (ex : sextorsion)."
     },
     ar: {
         "page_title": "📚 الموارد والدعم | التوعية بالعنف القائم على النوع الاجتماعي الميسر بالتكنولوجيا",
@@ -1391,7 +1421,17 @@ window.resourcesTranslations = {
         "contact_us_heading": "Contact Us",
         "location_heading": "Location",
         "socials_heading": "Our Socials",
-        "copyright_text": "Copyright © 2025 Shield Maidens"
+        "copyright_text": "Copyright © 2025 Shield Maidens",
+        "tfgbv_types_heading": "المعنى وأنواع العنف القائم على النوع الاجتماعي الميسر بالتكنولوجيا",
+        "tfgbv_types_intro": "يصف العنف القائم على النوع الاجتماعي الميسر بالتكنولوجيا (TFGBV) الأفعال أو السلوكيات الضارة المرتكبة ضد الأشخاص باستخدام التقنيات الرقمية، وعادة ما تكون النساء والفتيات. تستفيد هذه الأفعال من إخفاء الهوية والاتصال الذي توفره التكنولوجيا، مما يسهل على الجناة استهداف ضحاياهم وإلحاق ضرر أوسع نطاقًا.",
+        "tfgbv_types_list_heading": "يمكن أن يحدث العنف القائم على النوع الاجتماعي الميسر بالتكنولوجيا من خلال:",
+        "tfgbv_social_media_li": "منصات وسائل التواصل الاجتماعي (مثل فيسبوك، إكس/تويتر، إنستغرام، تيك توك)",
+        "tfgbv_messaging_li": "تطبيقات المراسلة (مثل واتساب، تيليجرام، سيجنال)",
+        "tfgbv_email_li": "رسائل البريد الإلكتروني، الرسائل النصية، أو المكالمات الهاتفية",
+        "tfgbv_dating_li": "منصات التعارف، المنتديات عبر الإنترنت، المدونات",
+        "tfgbv_gaming_li": "مجتمعات الألعاب والدردشات المباشرة",
+        "tfgbv_ai_li": "المنصات المدعومة بالذكاء الاصطناعي أو أدوات التلاعب بالمحتوى",
+        "tfgbv_types_conclusion": "على عكس العنف الجسدي، غالباً ما يتبع العنف القائم على النوع الاجتماعي الميسر بالتكنولوجيا الناجين عبر الحدود والمناطق الزمنية، مما يترك الضحايا عرضة للصدمة المستمرة، أو الاستبعاد الرقمي، أو المزيد من الإيذاء. قد يكون العنف علنياً (مثل التنمر الإلكتروني) أو خاصاً (مثل الابتزاز الجنسي)."
     }
 };
 window.resourcesTranslations = resourcesTranslations;
