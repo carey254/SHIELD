@@ -20,24 +20,26 @@ function updateContent(lang) {
     const path = window.location.pathname;
     console.log('Current path:', path); // Add this for debugging
 
-    if (path.includes('report.html')) {
+    // Normalize path for matching
+    const decodedPath = decodeURIComponent(path);
+    if (decodedPath.includes('report.html') || decodedPath.endsWith('/report')) {
         translations = window.reportTranslations;
-        console.log('Using reportTranslations for report.html');
-    } else if (path.includes('donate.html')) {
+        console.log('Using reportTranslations for report.html or /report');
+    } else if (decodedPath.includes('donate.html') || decodedPath.endsWith('/donate')) {
         translations = window.donateTranslations;
-        console.log('Using donateTranslations for donate.html');
-    } else if (path.includes('partner.html')) {
+        console.log('Using donateTranslations for donate.html or /donate');
+    } else if (decodedPath.includes('partner.html') || decodedPath.endsWith('/partner')) {
         translations = window.partnerTranslations;
-        console.log('Using partnerTranslations for partner.html');
-    } else if (path.includes('events.html')) {
+        console.log('Using partnerTranslations for partner.html or /partner');
+    } else if (decodedPath.includes('events.html') || decodedPath.endsWith('/events')) {
         translations = window.eventsTranslations;
-        console.log('Using eventsTranslations for events.html');
-    } else if (path.includes('news.html')) {
+        console.log('Using eventsTranslations for events.html or /events');
+    } else if (decodedPath.includes('news.html') || decodedPath.endsWith('/news')) {
         translations = window.newsTranslations;
-        console.log('Using newsTranslations for news.html');
-    } else if (decodeURIComponent(path).includes('resource&support.html')) {
+        console.log('Using newsTranslations for news.html or /news');
+    } else if (decodedPath.includes('resource&support.html') || decodedPath.endsWith('/resource&support')) {
         translations = window.resourcesTranslations;
-        console.log('Using resourcesTranslations for resource&support.html');
+        console.log('Using resourcesTranslations for resource&support.html or /resource&support');
     } else {
         translations = window.generalTranslations || {}; // Fallback to an empty object if no general translations
         console.log('Using generalTranslations or empty object');
