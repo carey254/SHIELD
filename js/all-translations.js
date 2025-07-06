@@ -37,10 +37,11 @@ const donateTranslations = {
 
         // Footer
         "quick_links": "Quick Links",
-        "location": "Location",
+        "our location": "Location",
         "contact_us": "Contact Us",
         "our_socials": "Our Socials",
-        "copyright": "Copyright © 2025 Shield Maidens"
+        "copyright": "Copyright © 2025 Shield Maidens",
+        "email_text": "Email: shi3ldmaidens@gmail.com"
     },
     sw: {
         // Navigation
@@ -80,10 +81,11 @@ const donateTranslations = {
 
         // Footer
         "quick_links": "Viungo vya Haraka",
-        "location": "Mahali",
+        "our location": "Mahali",  
         "contact_us": "Wasiliana Nasi",
         "our_socials": "Mitandao Yetu ya Kijamii",
-        "copyright": "Hakimiliki © 2025 Shield Maidens"
+        "copyright": "Hakimiliki © 2025 Shield Maidens",
+        "email_text": "Barua pepe: shi3ldmaidens@gmail.com"
     },
     fr: {
         // Navigation
@@ -123,10 +125,11 @@ const donateTranslations = {
 
         // Footer
         "quick_links": "Liens Rapides",
-        "location": "Emplacement",
+        "our location": "Emplacement",
         "contact_us": "Contactez-nous",
         "our_socials": "Nos Réseaux Sociaux",
-        "copyright": "Copyright © 2025 Shield Maidens"
+        "copyright": "Copyright © 2025 Shield Maidens",
+        "email_text": "Courriel : shi3ldmaidens@gmail.com"
     },
     ar: {
         // Navigation
@@ -166,10 +169,11 @@ const donateTranslations = {
 
         // Footer
         "quick_links": "روابط سريعة",
-        "location": "الموقع",
+        "our location": "الموقع",   
         "contact_us": "اتصل بنا",
         "our_socials": "وسائل التواصل الاجتماعي",
-        "copyright": "حقوق النشر © 2025 Shield Maidens"
+        "copyright": "حقوق النشر © 2025 Shield Maidens",
+        "email_text": "البريد الإلكتروني: shi3ldmaidens@gmail.com"
     }
 };
 window.donateTranslations = donateTranslations;
@@ -600,7 +604,8 @@ const partnerTranslations = {
         "location": "Location",
         "contact_us": "Contact Us",
         "our_socials": "Our Socials",
-        "copyright": "Copyright © 2025 Shield Maidens"
+        "copyright": "Copyright © 2025 Shield Maidens",
+        "email_text": "Email: shi3ldmaidens@gmail.com"
     },
     sw: {
         // Navigation
@@ -635,7 +640,8 @@ const partnerTranslations = {
         "location": "Mahali",
         "contact_us": "Wasiliana Nasi",
         "our_socials": "Mitandao Yetu ya Kijamii",
-        "copyright": "Hakimiliki © 2025 Shield Maidens"
+        "copyright": "Hakimiliki © 2025 Shield Maidens",
+        "email_text": "Barua pepe: shi3ldmaidens@gmail.com"
     },
     fr: {
         // Navigation
@@ -670,7 +676,8 @@ const partnerTranslations = {
         "location": "Emplacement",
         "contact_us": "Contactez-nous",
         "our_socials": "Nos Réseaux Sociaux",
-        "copyright": "Copyright © 2025 Shield Maidens"
+        "copyright": "Copyright © 2025 Shield Maidens",
+        "email_text": "Courriel : shi3ldmaidens@gmail.com"
     },
     ar: {
         // Navigation
@@ -705,7 +712,8 @@ const partnerTranslations = {
         "location": "الموقع",
         "contact_us": "اتصل بنا",
         "our_socials": "وسائل التواصل الاجتماعي",
-        "copyright": "حقوق النشر © 2025 Shield Maidens"
+        "copyright": "حقوق النشر © 2025 Shield Maidens",
+        "email_text": "البريد الإلكتروني: shi3ldmaidens@gmail.com"
     }
 };
 
@@ -1248,10 +1256,10 @@ window.resourcesTranslations = {
         "tfgbv_social_media_li": "Plateformes de médias sociaux (ex : Facebook, X/Twitter, Instagram, TikTok)",
         "tfgbv_messaging_li": "Applications de messagerie (ex : WhatsApp, Telegram, Signal)",
         "tfgbv_email_li": "Courriels, SMS ou appels mobiles",
-        "tfgbv_dating_li": "Plateformes de rencontres, forums en ligne, blogs",
-        "tfgbv_gaming_li": "Communautés de jeux et chats de diffusion en direct",
-        "tfgbv_ai_li": "Plateformes alimentées par l'IA ou outils de manipulation de contenu",
-        "tfgbv_types_conclusion": "Contrairement à la violence physique, la VFTBG suit souvent les survivants à travers les frontières et les fuseaux horaires, laissant les victimes vulnérables à un traumatisme continu, à l'exclusion numérique ou à une victimisation accrue. La violence peut être publique (ex : cyberintimidation) ou privée (ex : sextorsion)."
+        "tfgbv_dating_li": "Mitandao ya kujua watu, vikao vya mtandaoni, blogu",
+        "tfgbv_gaming_li": "Jamii za michezo na mazungumzo ya moja kwa moja",
+        "tfgbv_ai_li": "Mitandao ya AI au zana za kubadilisha maudhui",
+        "tfgbv_types_conclusion": "Tofauti na unyanyasaji wa kimwili, TFGBV mara nyingi hufuata waathirika kote kwenye mipaka na majira ya saa, na kuwaacha waathirika katika hatari ya matatizo ya kuendelea, kutengwa kidijitali, au kudhulumiwa zaidi. Ukatili unaweza kuwa wa umma (mfano, unyanyasaji mtandaoni) au wa faragha (mfano, kulipiza kisasi)."
     },
     ar: {
         "page_title": "📚 الموارد والدعم | التوعية بالعنف القائم على النوع الاجتماعي الميسر بالتكنولوجيا",
