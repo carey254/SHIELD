@@ -149,6 +149,19 @@ class Quiz {
             }
         });
 
+        // Remove focus/outline/box from radio buttons and labels
+        document.querySelectorAll('.quiz-options input[type="radio"]').forEach(radio => {
+            radio.addEventListener('focus', function(e) {
+                this.blur(); // Remove focus ring
+            });
+        });
+        // Remove outline from label on click
+        document.querySelectorAll('.quiz-options label').forEach(label => {
+            label.addEventListener('mousedown', function(e) {
+                this.style.outline = 'none';
+            });
+        });
+
         // Submit buttons with scroll position preservation
         ['submit-basic', 'submit-intermediate'].forEach(buttonId => {
             document.getElementById(buttonId).addEventListener('click', (e) => {
@@ -211,6 +224,11 @@ class Quiz {
         const submitButton = document.getElementById('submit-basic');
 
         prevButton.disabled = this.currentQuestion === 0;
+        if (this.currentQuestion === 0) {
+            prevButton.classList.add('disabled');
+        } else {
+            prevButton.classList.remove('disabled');
+        }
         nextButton.disabled = this.currentQuestion === 4;
         
         if (submitButton) {
@@ -321,4 +339,4 @@ class Quiz {
 // Initialize quiz when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new Quiz();
-}); 
+});

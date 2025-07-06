@@ -431,7 +431,7 @@ a:visited {
     
     .awareness-text {
       flex: 1;
-      background: #fff;
+      background: #f7f4f4;
       padding: 20px;
       border-radius: 10px;
       display: flex;
@@ -556,7 +556,7 @@ a:visited {
   margin: auto;
   font-family: Arial, sans-serif;
   padding: 20px;
-  background: #f9f9f9;
+  background: #dbd9d9;
   border-radius: 8px;
   width: auto;
 }
@@ -610,7 +610,7 @@ h2 {
 
 
 button:hover {
-  background-color: #0052a3;
+  background-color: #d11d80;
 }
 
 button:disabled {
@@ -630,7 +630,7 @@ button:disabled {
 
 
 .resources-section {
-  background: #f9f9f9;
+  background: #f7f4f4;
   padding: 40px 20px;
   text-align: center;
 }
@@ -681,7 +681,7 @@ button:disabled {
 .resource-link a {
   background-color: #ec8b21;
   color: white;
-  text-decoration: none;
+  text-decoration: none !important;
   padding: 12px 20px;
   border-radius: 6px;
   display: inline-block;
@@ -1257,7 +1257,15 @@ button:disabled {
   transition: background 0.3s ease;
 }
 
-
+.btn-group button:disabled,
+.btn-group button.disabled {
+  background: #e0e0e0 !important;
+  color: #aaa !important;
+  cursor: not-allowed !important;
+  opacity: 0.7;
+  border: none;
+  box-shadow: none;
+}
 
   </style>
 </head>
@@ -1531,7 +1539,7 @@ button:disabled {
 
   </section>
   
-
+  <hr style="margin: 50px 0 0 0; border: none; border-top: 3px solid #eee;">
   <div id="quiz" class="quiz-container">
     <h1 data-translate="quiz_title">Test Your TFGBV Knowledge</h1>
 
@@ -1541,7 +1549,7 @@ button:disabled {
 
       <div class="question" data-correct="1">
         <p data-translate="q1_text">1. What is TFGBV?</p>
-        <ul class="options">
+        <ul class="options quiz-options">
           <li><label><input type="radio" name="q1" value="0"><span data-translate="q1_opt1">Violence only in physical spaces</span></label></li>
           <li><label><input type="radio" name="q1" value="1"><span data-translate="q1_opt2">Violence using digital technologies</span></label></li>
           <li><label><input type="radio" name="q1" value="2"><span data-translate="q1_opt3">Only verbal abuse offline</span></label></li>
@@ -1551,7 +1559,7 @@ button:disabled {
 
       <div class="question" data-correct="0">
         <p data-translate="q2_text">2. Which is an example of TFGBV?</p>
-        <ul class="options">
+        <ul class="options quiz-options">
           <li><label><input type="radio" name="q2" value="0">Sending anonymous threats online</label></li>
           <li><label><input type="radio" name="q2" value="1">A face-to-face argument</label></li>
           <li><label><input type="radio" name="q2" value="2">Schoolyard bullying</label></li>
@@ -1561,7 +1569,7 @@ button:disabled {
 
       <div class="question" data-correct="0">
         <p data-translate="q3_text">3. Who are chiefly targeted by TFGBV?</p>
-        <ul class="options">
+        <ul class="options quiz-options">
           <li><label><input type="radio" name="q3" value="0">All genders equally</label></li>
           <li><label><input type="radio" name="q3" value="1">Women and girls</label></li>
           <li><label><input type="radio" name="q3" value="2">Only men</label></li>
@@ -1571,7 +1579,7 @@ button:disabled {
 
       <div class="question" data-correct="3">
         <p data-translate="q4_text">4. What is "doxxing"?</p>
-        <ul class="options">
+        <ul class="options quiz-options">
           <li><label><input type="radio" name="q4" value="0">Publishing private info without consent</label></li>
           <li><label><input type="radio" name="q4" value="1">Sending kind messages</label></li>
           <li><label><input type="radio" name="q4" value="2">Setting up security software</label></li>
@@ -1581,7 +1589,7 @@ button:disabled {
 
       <div class="question" data-correct="3">
         <p data-translate="q5_text">5. A consequence of TFGBV can be:</p>
-        <ul class="options">
+        <ul class="options quiz-options">
           <li><label><input type="radio" name="q5" value="0">Better job offers</label></li>
           <li><label><input type="radio" name="q5" value="1">Increased self-esteem</label></li>
           <li><label><input type="radio" name="q5" value="2">More trust in technology</label></li>
@@ -1589,9 +1597,9 @@ button:disabled {
         </ul>
       </div>
 
-      <div class="btn-group">
-        <button id="prev">⬅ Previous</button>
-        <button id="next">Next ➡</button>
+      <div class="btn-group" style="display: flex; justify-content: space-between; gap: 12px;">
+        <button id="prev" disabled style="min-width: 90px;">⬅ Previous</button>
+        <button id="next" style="min-width: 90px;">Next ➡</button>
       </div>
       
       <button id="submit-basic" class="quiz-submit">Submit Basic Quiz</button>
@@ -1611,7 +1619,7 @@ button:disabled {
 
       <div class="question" data-correct="0">
         <p data-translate="iq1_text">1. What makes digital tools powerful for TFGBV perpetrators?</p>
-        <ul class="options">
+        <ul class="options quiz-options">
           <li><label><input type="radio" name="iq1" value="0">Anonymity and wide reach</label></li>
           <li><label><input type="radio" name="iq1" value="1">Strong encryption</label></li>
           <li><label><input type="radio" name="iq1" value="2">Offline meetups</label></li>
@@ -1621,7 +1629,7 @@ button:disabled {
 
       <div class="question" data-correct="3">
         <p data-translate="iq2_text">2. Which is NOT a form of TFGBV?</p>
-        <ul class="options">
+        <ul class="options quiz-options">
           <li><label><input type="radio" name="iq2" value="0">Cyberstalking</label></li>
           <li><label><input type="radio" name="iq2" value="1">Impersonation</label></li>
           <li><label><input type="radio" name="iq2" value="2">Non-consensual image sharing</label></li>
@@ -1631,7 +1639,7 @@ button:disabled {
 
       <div class="question" data-correct="1">
         <p data-translate="iq3_text">3. A common impact of TFGBV is:</p>
-        <ul class="options">
+        <ul class="options quiz-options">
           <li><label><input type="radio" name="iq3" value="0">More online participation</label></li>
           <li><label><input type="radio" name="iq3" value="1">Negative psychological harm</label></li>
           <li><label><input type="radio" name="iq3" value="2">Improved finances</label></li>
@@ -1641,7 +1649,7 @@ button:disabled {
 
       <div class="question" data-correct="1">
         <p data-translate="iq4_text">4. What is "revenge porn"?</p>
-        <ul class="options">
+        <ul class="options quiz-options">
           <li><label><input type="radio" name="iq4" value="0">Posting memes</label></li>
           <li><label><input type="radio" name="iq4" value="1">Non-consensual sharing of intimate images</label></li>
           <li><label><input type="radio" name="iq4" value="2">Cyberbullying by text only</label></li>
@@ -1651,7 +1659,7 @@ button:disabled {
 
       <div class="question" data-correct="0">
         <p data-translate="iq5_text">5. How can communities reduce TFGBV?</p>
-        <ul class="options">
+        <ul class="options quiz-options">
           <li><label><input type="radio" name="iq5" value="0">Spreading awareness and digital literacy</label></li>
           <li><label><input type="radio" name="iq5" value="1">Ignoring the issue</label></li>
           <li><label><input type="radio" name="iq5" value="2">Limiting all online use</label></li>
@@ -1663,7 +1671,7 @@ button:disabled {
     </div>
   </div>
 
-
+  <hr style="margin: 50px 0 0 0; border: none; border-top: 3px solid #eee;">
   <section id="resources" class="resources-section" data-ltr-direction="true">
     <div class="resources-container">
       <h2 data-translate="useful_resources_heading">📚 Learn More: Useful Resources</h2>
