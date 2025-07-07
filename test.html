@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<select id="voices"></select>
+<script>
+function loadVoices() {
+  var voices = window.speechSynthesis.getVoices();
+  var sel = document.getElementById('voices');
+  sel.innerHTML = '';
+  if (voices.length === 0) {
+    var opt = document.createElement('option');
+    opt.textContent = 'No voices loaded';
+    sel.appendChild(opt);
+  } else {
+    voices.forEach(function(v) {
+      var opt = document.createElement('option');
+      opt.textContent = v.name + ' (' + v.lang + ')';
+      sel.appendChild(opt);
+    });
+  }
+}
+window.speechSynthesis.onvoiceschanged = loadVoices;
+loadVoices();
+</script>
+</body>
+</html>
