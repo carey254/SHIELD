@@ -93,7 +93,17 @@ padding-top: 100px; /* 👈 Adds space for the nav */
     color: #444;
     line-height: 1.6;
   }
-  
+  .milestone-card img {
+  flex: 1 1 calc(45% - 10px) !important;
+  max-width: calc(45% - 10px) !important;
+  width: calc(45% - 10px) !important;
+  height: auto !important;
+  border-radius: 8px !important;
+  object-fit: cover !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  display: block !important;
+}
+
   .milestone-images {
     display: flex;
     flex-direction: row;
@@ -386,8 +396,6 @@ nav a:not(.logo-link):hover {
 }
 .footer-links ul li {
   text-align: center !important;
-}
-.social-icons {
   justify-content: center !important;
   gap: 10px !important;
 }
@@ -456,6 +464,38 @@ nav a:not(.logo-link):hover {
   font-weight: 500;
   text-align: center;
 }
+
+
+.social-icons .icon {
+  background-color: transparent; /* remove background */
+  color: inherit;                /* use brand color or white */
+  font-size: 24px;
+  margin: 0 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.social-icons .icon.x i {
+  color: white; /* force white so it shows on dark background */
+  background-color: black;
+  border-radius: 50%;
+}
+
+.social-icons .icon.instagram i {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.social-icons .icon.linkedin i {
+  color: #0077b5;
+}
+
 
 </style>
 </head>
@@ -541,8 +581,8 @@ nav a:not(.logo-link):hover {
               <p data-translate="hour_of_code_description">Happy to have been part of the launch of an Hour of Code at Pharo School Nairobi. The spark of curiosity in the young learners' eyes as they learn to code is a powerful reminder of the importance of introducing these skills early on ✨💡.</p>
               
               <div class="milestone-images">
-                <img src="images/pharoo.png" alt="Pharo School Hour of Code 1">
-                <img src="images/pharo.png" alt="Pharo School Hour of Code 2">
+                <img src="images/pharoo.png" alt="Pharo School Hour of Code 1" style="width: 100px !important; height: auto !important;" >
+                <img src="images/pharo.png" alt="Pharo School Hour of Code 2" style="width: 100px !important; height: auto !important;" >
                 
               </div>
             </div>
@@ -559,8 +599,8 @@ nav a:not(.logo-link):hover {
               </p>
               <div class="milestone-images">
                 
-                <img src="images/givivi.png" alt="GICICIT Session 2">
-                <img src="images/GICICV.png" alt="GICICIT Session 3">
+                <img src="images/givivi.png" alt="GICICIT Session 2"  >
+                <img src="images/GICICV.png" alt="GICICIT Session 3" >
               </div>
             </div>
             
@@ -573,8 +613,9 @@ nav a:not(.logo-link):hover {
                 online safety, inclusion, and fighting technology-facilitated gender-based violence (TFGBV). 
                 A powerful, collaborative effort to create safer digital spaces for all.
               </p>
-              <img src="images/X.png" alt="X-Space event session"
-                   style="width:300px; max-width:300px; height:auto; max-height:300px; margin: 20px auto 0 auto; border-radius: 8px; display: block; object-fit: contain;">
+             <img src="images/X.png" alt="X-Space event session" 
+     style="width: 100%; max-width: 100%; height: auto; border-radius: 8px; object-fit: cover; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); display: block;">
+
             </div>
             
         </section>
@@ -613,24 +654,19 @@ nav a:not(.logo-link):hover {
     
         <!-- Column 3: Contact, Location, Socials (right) -->
         <div class="footer-contact">
-          <h3 data-translate="contact_us_footer">Contact Us</h3>
+          <h3 data-translate="Contact Us">Contact Us</h3>
           <p>Email: shi3ldmaidens@gmail.com</p>
           <div class="footer-location">
             <h3 data-translate="our location">Location</h3>
             <p>Nairobi, Kenya</p>
           </div>
           <h3 data-translate="our_socials">Our Socials</h3>
-          <div class="social-icons">
-            <a href="https://x.com/_shield_maidens" target="_blank">
-              <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
-            </a>
-            <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank">
-              <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"/>
-            </a>
-            <a href="https://www.instagram.com/the_shield_maidens/" target="_blank">
-              <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram"/>
-            </a>
-          </div>
+              <div class="social-icons">
+  <a href="https://x.com/_shield_maidens" target="_blank" class="icon x"><i class="fab fa-x-twitter"></i></a>
+
+  <a href="https://www.instagram.com/the_shield_maidens/" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+</div>
         </div>
       </div>
       <div class="footer-bottom">
@@ -832,7 +868,7 @@ nav a:not(.logo-link):hover {
 
   /* Invert Colors Theme (Light Pink Background Only) */
   body.invert-colors {
-    background: #ffe4ec !important; /* Light pink */
+  background-color: #f8f8f8 !important; /* Light pink */
   }
   body.invert-colors *,
   body.invert-colors h1,

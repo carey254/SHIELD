@@ -1003,7 +1003,7 @@ img {
 }
 .hero-text {
   flex: 1;
-  color: #fff;
+  color: #dc8100;
   font-size: 2.2em;
   font-weight: bold;
   letter-spacing: 2px;
@@ -1012,14 +1012,14 @@ img {
   min-width: 250px;
   max-width: 500px;
 }
-.hero-typing {
-  color: #fff;
+.hero-typing, #heroTyping {
+  color: #fff !important;
   font-size: 2.2em;
   font-weight: bold;
   letter-spacing: 2px;
   text-align: left;
   min-height: 2.5em;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-shadow: 2px 2px 8px #a05a00 !important;
 }
 .hero-image {
   flex: 1;
@@ -1639,19 +1639,7 @@ body.invert-colors textarea {
 
 <body>
   
-    <div class="loader-overlay" id="globalLoader" style="display: none;">
-      <div class="loader">
-        <div class="loader-dot"></div>
-        <div class="loader-dot"></div>
-        <div class="loader-dot"></div>
-        <div class="loader-dot"></div>
-        <div class="loader-dot"></div>
-        <div class="loader-dot"></div>
-        <div class="loader-dot"></div>
-        <div class="loader-dot"></div>
-      </div>
-      <div class="loader-text">Please wait...</div>
-    </div>
+ 
     
   
     <!-- Navigation Bar -->
@@ -1884,14 +1872,14 @@ body.invert-colors textarea {
     </article>
 
     <article class="team-member" aria-label="Ruth Jebitok - Social Media Manager">
-      <img src="images/rutt.png" alt="Portrait of Ruth Jebitok, Social Media Manager">
+      <img src="images/rtth.jpg" alt="Portrait of Ruth Jebitok, Social Media Manager">
       <div class="team-info">
         <h3 data-translate="team_member_ruth_name">RUTH JEBITOK</h3>
         <p data-translate="team_member_ruth_role">Social Media Manager</p>
         <div class="social-icons" aria-label="Ruth Jebitok social media links">
           <a href="#" aria-label="Ruth on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" aria-label="Ruth on Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Ruth on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/jebi.tok?igsh=dW1rZmx6MDlybHNu&utm_source=qr" aria-label="Ruth on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/ruth-jebitok-6114b6283/" aria-label="Ruth on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
     </article>
@@ -1910,7 +1898,7 @@ body.invert-colors textarea {
     </article>
 
     <article class="team-member" aria-label="Caren Jeruto - Online Safety Advocate">
-      <img src="images/rey.png" alt="Portrait of Caren Jeruto, Online Safety Advocate">
+      <img src="images/car.jpg" alt="Portrait of Caren Jeruto, Online Safety Advocate">
       <div class="team-info">
         <h3 data-translate="team_member_caren_name">CAREN JERUTO</h3>
         <p data-translate="team_member_caren_role">Digital Saftey Trainer</p>
@@ -2001,7 +1989,7 @@ body.invert-colors textarea {
 </script>
 <!-- Accessibility Control Panel -->
 <div class="accessibility-panel" id="accessibilityPanel">
-    <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()">
+    <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()" aria-label="Accessibility options">
       <i class="fas fa-universal-access"></i>
     </button>
     <div class="accessibility-controls">
@@ -2607,36 +2595,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 </script>
-<script>
-  // Show the loader
-  document.getElementById('globalLoader').style.display = 'flex';
 
-  // Hide the loader (when done)
-  document.getElementById('globalLoader').style.display = 'none';
-  </script>
 
   
-  <script>
-    // Show loader immediately
-    document.getElementById('globalLoader').style.display = 'flex';
-    // Hide loader after 2 seconds (demo)
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        document.getElementById('globalLoader').style.display = 'none';
-      }, 2000);
-    });
-  </script>
-  <script>
-    // Show loader only if page takes too long to load
-    let loaderTimeout = setTimeout(function() {
-      document.getElementById('globalLoader').style.display = 'flex';
-    }, 700); // Show loader if not loaded in 700ms
-    
-    window.addEventListener('load', function() {
-      clearTimeout(loaderTimeout);
-      document.getElementById('globalLoader').style.display = 'none';
-    });
-    </script>
+ 
+ 
 
 
       </div>

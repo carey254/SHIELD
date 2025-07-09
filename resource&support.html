@@ -1267,125 +1267,87 @@ button:disabled {
   box-shadow: none;
 }
 
-
-
-
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
- 
-  padding: 2rem;
-  overflow-x: hidden;
-}
-#tfgbv-stats-hero {
-  width: 100vw;
-  max-width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  left: 0;
-  right: 0;
-  position: relative;
-  margin: 0;
-  padding: 0 2rem 2rem 2rem; /* No top padding, only sides and bottom */
-  width: 100%;
-  background-image: url('server/image.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 2rem 0;
-  box-sizing: border-box;
-}
-
-#tfgbv-stats-hero {
-  flex: 1 1 100%;
-  min-width: 0;
-}
-    h1 {
-      color: #fff;
-      font-weight: 900;
-      font-size: 2.5rem;
+    /* New Safety Tips Section Styles */
+    #safety-tips {
+      padding: 60px 20px;
+      background-color: #f9f9f9;
       text-align: center;
-      letter-spacing: 0.05em;
-      margin-bottom: 2rem;
-      margin-top: 0;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.25);
-    }
-
-    .year-section {
-      display: none;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .grid {
+  }
+  #safety-tips h2 {
+      font-size: 2.5rem;
+      color: #1d3557;
+      margin-bottom: 15px;
+  }
+  #safety-tips .intro-text {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      line-height: 1.6;
+      color: #555;
+  }
+  .tips-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 4rem;
-    }
-
-    .stat-box {
-      background-color: #000;
-      border-radius: 15px;
-      padding: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+  .tip-card {
+      padding: 40px 25px;
+      border-radius: 12px;
       text-align: center;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      position: relative;
-    }
-
-    .stat-box .percentage {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #ffdd57;
-    }
-
-    .stat-box .text {
-        color: aliceblue;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .tip-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  }
+  .tip-card i {
+      font-size: 3rem;
+      margin-bottom: 20px;
+  }
+  .tip-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #1d3557;
+  }
+  .tip-card p {
       font-size: 1rem;
-      margin-top: 0.5rem;
-    }
+      line-height: 1.6;
+  }
 
-    .progress-bar {
-      width: 100%;
-      height: 10px;
-      background-color: #444;
-      border-radius: 5px;
-      margin-top: 1rem;
-      overflow: hidden;
-    }
+  /* Pastel Background Colors & Icon Colors */
+  .tip-card.color-1 { background-color: #e0f7fa; color: #00796b; }
+  .tip-card.color-2 { background-color: #fff3e0; color: #0c0e0c; }
+  .tip-card.color-3 { background-color: #e8eaf6; color: #3949ab; }
+  .tip-card.color-4 { background-color: #fce4ec; color: #0c0e0c; }
+  .tip-card.color-5 { background-color: #e8f5e9; color: #2e7d32; }
+  
+  /* Full-width card for the last item if it's odd */
+  .tip-card:last-child:nth-child(odd) {
+      grid-column: span 2;
+  }
 
-    .progress-fill {
-      height: 100%;
-      background-color: #ffdd57;
-      width: 0%;
-      transition: width 2s ease-in-out;
-    }
+  @media (max-width: 768px) {
+      .tips-grid {
+          grid-template-columns: 1fr;
+      }
+      .tip-card:last-child:nth-child(odd) {
+          grid-column: span 1;
+      }
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+/* Remove max-width restrictions from all containers */
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 60px; /* example */
-      z-index: 1000;
-    }
-    #tfgbv-stats-hero {
-      padding-top: 60px; /* match header height */
-    }
+.tips-grid
+{
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+}
 
-    #tfgbv-stats-hero .year-section h2 {
-      color: #fff;
-      font-weight: 900;
-      font-size: 2.5rem;
-      text-align: center;
-      letter-spacing: 0.05em;
-      margin-bottom: 2rem;
-      margin-top: 0;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.25);
-    }
 
   </style>
 </head>
@@ -1515,7 +1477,7 @@ body {
       <div class="right-panel">
         <h1 data-translate="statistics_heading">TFGBV Statistics</h1>
         <p data-translate="statistics_text_1" data-html="true"><strong>Did you know?</strong> Over <span class="highlight">85%</span> of women online globally have witnessed or experienced digital violence. In Kenya, a 2021 survey reported that <span class="highlight">1 in 3</span> women encountered TFGBV during election seasons.</p>
-        <p data-translate="statistics_text_2">This growing trend reflects how online spaces mirror offline gender discrimination—yet with faster, broader consequences. We need digital safety policies, education, and tech accountability now more than ever.</p>
+        <p data-translate="statistics_text_2">This growing trend reflects how online spaces mirror offline gender discrimination, yet with faster, broader consequences. We need digital safety policies, education, and tech accountability now more than ever.</p>
       
        <!-- New Stats -->
        <p class="big-stat" data-translate="stat_survivors_not_report">60% of survivors don't report the abuse</p>
@@ -1523,18 +1485,45 @@ body {
       </div>
     </div>
   </div>
+ <hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
+<h2 class="intro-text" data-translate="safety_tips_intro">
+  Explore essential online safety tips to help protect yourself and others in the digital world
+</h2>
+
+ <hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
+  <div class="tips-grid">
+    
+    <div class="tip-card color-1">
+        <i class="fas fa-key"></i>
+        <h3 data-translate="strong_passwords">Strong Passwords</h3>
+        <p data-translate="strong_passwords_text">Create long, unique passwords using a combination of letters, numbers, and symbols. Avoid reusing the same password across platforms.</p>
+    </div>
+    <div class="tip-card color-2">
+        <i class="fas fa-user-secret"></i>
+        <h3 data-translate="avoid_phishing">Avoid Phishing</h3>
+        <p data-translate="avoid_phishing_text">Be cautious of emails or messages asking for sensitive info or urging "urgent" action. Verify sources directly before clicking links.</p>
+    </div>
+    <div class="tip-card color-3">
+        <i class="fas fa-user-shield"></i>
+        <h3 data-translate="privacy_settings">Privacy Settings</h3>
+        <p data-translate="privacy_settings_text">Regularly check and customize your privacy settings on social media and apps. Limit who can view your posts, tag you, or access your data.</p>
+    </div>
+    <div class="tip-card color-4">
+        <i class="fas fa-comment-slash"></i>
+        <h3 data-translate="safe_sharing">Safe Sharing Habits</h3>
+        <p data-translate="safe_sharing_text">Think before you post. Avoid sharing personal information like your address or phone number. Once it's online, you can't control it.</p>
+    </div>
+    <div class="tip-card color-5">
+        <i class="fas fa-hands-helping"></i>
+        <h3 data-translate="seek_help">Seek Help</h3>
+        <p data-translate="seek_help_text">If you're being harassed online, don't stay silent. Report it to the platform and talk to someone you trust. Your safety matters.</p>
+    </div>
+</div>
+
+</section>
 
 
 
-
-  <!-- Hero Section with Responsive Video -->
-  <section id="tfgbv-stats-hero">
-    <h1><strong> Impact of TFGBV (2020–2026) </strong></h1>
-    <div id="stat-wrapper"></div>
-  </section>
-
-
-  <hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
   <section class="tfbgv-awareness">
 
     <!-- Block 1 -->
@@ -1669,7 +1658,7 @@ body {
 
   </section>
   
-  <hr style="margin: 50px 0 0 0; border: none; border-top: 3px solid #eee;">
+  <hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
   <div id="quiz" class="quiz-container">
     <h1 data-translate="quiz_title">Test Your TFGBV Knowledge</h1>
 
@@ -1879,17 +1868,12 @@ body {
           <p>Nairobi, Kenya</p>
         </div>
         <h3 data-translate="socials_heading">Our Socials</h3>
-        <div class="social-icons">
-          <a href="https://x.com/_shield_maidens" target="_blank">
-            <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
-          </a>
-          <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank">
-            <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"/>
-          </a>
-          <a href="https://www.instagram.com/the_shield_maidens/" target="_blank">
-            <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram"/>
-          </a>
-        </div>
+                <div class="social-icons">
+  <a href="https://x.com/_shield_maidens" target="_blank" class="icon x"><i class="fab fa-x-twitter"></i></a>
+
+  <a href="https://www.instagram.com/the_shield_maidens/" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+</div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -2135,7 +2119,7 @@ body {
 
   /* Invert Colors Theme (Light Pink Background Only) */
   body.invert-colors {
-    background: #ffe4ec !important; /* Light pink */
+    background-color: #f8f8f8 !important;/* Light pink */
   }
   body.invert-colors *,
   body.invert-colors h1,
@@ -2570,157 +2554,6 @@ function closeMenu() {
 
 
 
-
-    <script>
-      const yearlyStats = {
-        "2020": [
-          { value: 53, text: "of teen girls and LGBTQ+ youth experienced digital harassment." },
-          { value: 38, text: "of young girls under 18 faced online abuse." },
-          { value: 45, text: "of youth reported online trauma from bullying." },
-          { value: 50, text: "of affected individuals were unsure how to report." },
-          { value: 35, text: "of cases were never addressed by platforms." },
-          { value: 27, text: "experienced long-term psychological effects." },
-          { value: 14, text: "thought of suicide after online abuse." }
-        ],
-        "2021": [
-          { value: 57, text: "of survivors reported emotional trauma from online harm." },
-          { value: 48, text: "of incidents happened on social media." },
-          { value: 33, text: "of cases involved image-based abuse." },
-          { value: 30, text: "of affected users were under 18." },
-          { value: 19, text: "of victims were targeted repeatedly." },
-          { value: 16, text: "reported attempted suicide." },
-          { value: 24, text: "filed complaints that were never resolved." }
-        ],
-        "2022": [
-          { value: 61, text: "of reports were ignored by online platforms." },
-          { value: 40, text: "of abuse included hate speech." },
-          { value: 34, text: "involved non-consensual content sharing." },
-          { value: 28, text: "of victims were afraid to speak out." },
-          { value: 20, text: "developed anxiety or PTSD." },
-          { value: 13, text: "lost opportunities due to online shaming." },
-          { value: 12, text: "dropped out of school or work." }
-        ],
-        "2023": [
-          { value: 65, text: "of users considered quitting social media due to harm." },
-          { value: 43, text: "of youth felt digitally unsafe." },
-          { value: 38, text: "had multiple accounts hacked or doxxed." },
-          { value: 29, text: "of LGBTQ+ youth faced targeted harassment." },
-          { value: 26, text: "felt excluded from online communities." },
-          { value: 18, text: "stopped engaging with online learning." },
-          { value: 15, text: "attempted self-harm after abuse." }
-        ],
-        "2024": [
-          { value: 70, text: "of abuse survivors reported mental health effects." },
-          { value: 55, text: "of teens were affected by online blackmail or sextortion." },
-          { value: 39, text: "feared further harm if they reported." },
-          { value: 32, text: "had their images shared without consent." },
-          { value: 25, text: "experienced threats against family or friends." },
-          { value: 21, text: "were retraumatized by platform inaction." },
-          { value: 17, text: "attempted suicide or had suicidal ideation." }
-        ],
-        "2025": [
-          { value: 75, text: "received no justice or follow-up support." },
-          { value: 58, text: "of victims withdrew from online life entirely." },
-          { value: 46, text: "reported loss of self-esteem or isolation." },
-          { value: 36, text: "were attacked using AI-generated content." },
-          { value: 31, text: "were impersonated in online scams." },
-          { value: 19, text: "lost jobs or academic opportunities." },
-          { value: 22, text: "developed long-term depression." }
-        ],
-        "2026": [
-          { value: 80, text: "of victims include women, youth, LGBTQ+, and marginalized groups." },
-          { value: 63, text: "continue to live in fear of digital abuse." },
-          { value: 51, text: "felt invisible or silenced online." },
-          { value: 44, text: "live with trauma from repeated online attacks." },
-          { value: 33, text: "have never found a safe digital space." },
-          { value: 26, text: "lack mental health resources post-abuse." },
-          { value: 20, text: "live with unresolved cases or open threats." }
-        ]
-      };
-  
-      const wrapper = document.getElementById("stat-wrapper");
-      const years = Object.keys(yearlyStats);
-      let currentYearIndex = 0;
-  
-      function createYearSection(year, data) {
-        const section = document.createElement("div");
-        section.className = "year-section";
-        section.id = `year-${year}`;
-  
-        const title = document.createElement("h2");
-        title.textContent = year;
-        section.appendChild(title);
-  
-        const grid = document.createElement("div");
-        grid.className = "grid";
-  
-        data.forEach(stat => {
-          const box = document.createElement("div");
-          box.className = "stat-box";
-  
-          const percent = document.createElement("div");
-          percent.className = "percentage";
-          percent.textContent = "0%";
-  
-          const desc = document.createElement("div");
-          desc.className = "text";
-          desc.textContent = stat.text;
-  
-          const progress = document.createElement("div");
-          progress.className = "progress-bar";
-          const fill = document.createElement("div");
-          fill.className = "progress-fill";
-          progress.appendChild(fill);
-  
-          box.appendChild(percent);
-          box.appendChild(desc);
-          box.appendChild(progress);
-  
-          grid.appendChild(box);
-  
-          animateStat(percent, fill, stat.value);
-        });
-  
-        section.appendChild(grid);
-        return section;
-      }
-  
-      function rotateSections() {
-        const oldSections = document.querySelectorAll(".year-section");
-        oldSections.forEach(sec => sec.style.display = "none");
-  
-        const year = years[currentYearIndex];
-        let section = document.getElementById(`year-${year}`);
-  
-        if (!section) {
-          section = createYearSection(year, yearlyStats[year]);
-          wrapper.appendChild(section);
-        }
-  
-        section.style.display = "block";
-        currentYearIndex = (currentYearIndex + 1) % years.length;
-      }
-  
-      function animateStat(element, fillEl, target) {
-        let current = 0;
-        const steps = 30;
-        const increment = target / steps;
-        const interval = 50;
-  
-        const animate = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            current = target;
-            clearInterval(animate);
-          }
-          element.textContent = `${Math.round(current)}%`;
-          fillEl.style.width = `${current}%`;
-        }, interval);
-      }
-  
-      rotateSections();
-      setInterval(rotateSections, 8000); // rotates every 8 seconds
-    </script>
 
     <script src="quiz.js"></script>
 

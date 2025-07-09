@@ -32,20 +32,64 @@ const translations = {
         vision_text: "To create a world where young women, girls, and persons with disabilities are empowered to navigate digital spaces safely, confidently, and free from Technology-Facilitated Gender-Based Violence (TFGBV).",
 
         // Safety Section
-        safety_online_title: "Learn to Be Safe Online",
-        safety_online_intro: "The internet can be empowering, but also risky without the right knowledge. Whether you're a teen, adult, or guardian, understanding how to stay safe online is critical. This section highlights a few essential practices to protect yourself and others. Want to dive deeper? Visit our Resources section to access toolkits, guides, and take our interactive safety quiz.",
-        explore_quiz_button: "Explore More & Take the Safety Quiz →",
-        strong_passwords: "Strong Passwords",
-        strong_passwords_text: "Create long, unique passwords using a combination of letters, numbers, and symbols. Avoid reusing the same password across platforms. Use a password manager if possible.",
-        avoid_phishing: "Avoid Phishing",
-        avoid_phishing_text: "Phishing scams attempt to steal your data through fake emails, links, or messages. Be cautious of anything that asks for sensitive info or urges \"urgent\" action. Verify sources directly.",
-        privacy_settings: "Privacy Settings",
-        privacy_settings_text: "Always check and customize your privacy settings on social media and apps. Limit who can view your posts, tag you, or access your location and personal data.",
-        safe_sharing: "Safe Sharing Habits",
-        safe_sharing_text: "Think before you share. Avoid posting personal information like your address, school, or travel plans. Once it's online, it can be hard to control who sees it, or how it's used.",
-        seek_help: "Seek Help",
-        seek_help_text: "If you're being harassed or threatened online, don't stay silent. Report the incident to the platform and reach out to someone you trust. Need support?",
-        contact_team: "Contact our team →",
+        
+  safety_online_title: "Learn to Be Safe Online",
+  safety_online_intro: "The internet opens up countless opportunities to connect, learn, and grow, but it also presents serious risks, especially for women, youth, LGBTQ+ individuals, and other marginalized communities. Recent statistics reveal a troubling rise in online abuse, from harassment and image-based violations to threats, blackmail, and lasting emotional trauma. Understanding how to navigate the digital world safely is more urgent than ever.",
+   // 2021
+  stat_2021_1: "of survivors reported emotional trauma from online harm.",
+  stat_2021_2: "of incidents happened on social media.",
+  stat_2021_3: "of cases involved image-based abuse.",
+  stat_2021_4: "of affected users were under 18.",
+  stat_2021_5: "of victims were targeted repeatedly.",
+  stat_2021_6: "reported attempted suicide.",
+  stat_2021_7: "filed complaints that were never resolved.",
+
+  // 2022
+  stat_2022_1: "of reports were ignored by online platforms.",
+  stat_2022_2: "of abuse included hate speech.",
+  stat_2022_3: "involved non-consensual content sharing.",
+  stat_2022_4: "of victims were afraid to speak out.",
+  stat_2022_5: "developed anxiety or PTSD.",
+  stat_2022_6: "lost opportunities due to online shaming.",
+  stat_2022_7: "dropped out of school or work.",
+
+  // 2023
+  stat_2023_1: "of users considered quitting social media due to harm.",
+  stat_2023_2: "of youth felt digitally unsafe.",
+  stat_2023_3: "had multiple accounts hacked or doxxed.",
+  stat_2023_4: "of LGBTQ+ youth faced targeted harassment.",
+  stat_2023_5: "felt excluded from online communities.",
+  stat_2023_6: "stopped engaging with online learning.",
+  stat_2023_7: "attempted self-harm after abuse.",
+
+  // 2024
+  stat_2024_1: "of abuse survivors reported mental health effects.",
+  stat_2024_2: "of teens were affected by online blackmail or sextortion.",
+  stat_2024_3: "feared further harm if they reported.",
+  stat_2024_4: "had their images shared without consent.",
+  stat_2024_5: "experienced threats against family or friends.",
+  stat_2024_6: "were retraumatized by platform inaction.",
+  stat_2024_7: "attempted suicide or had suicidal ideation.",
+
+  // 2025
+  stat_2025_1: "received no justice or follow-up support.",
+  stat_2025_2: "of victims withdrew from online life entirely.",
+  stat_2025_3: "reported loss of self-esteem or isolation.",
+  stat_2025_4: "were attacked using AI-generated content.",
+  stat_2025_5: "were impersonated in online scams.",
+  stat_2025_6: "lost jobs or academic opportunities.",
+  stat_2025_7: "developed long-term depression.",
+
+  // 2026
+  stat_2026_1: "of victims include women, youth, LGBTQ+, and marginalized groups.",
+  stat_2026_2: "continue to live in fear of digital abuse.",
+  stat_2026_3: "felt invisible or silenced online.",
+  stat_2026_4: "live with trauma from repeated online attacks.",
+  stat_2026_5: "have never found a safe digital space.",
+  stat_2026_6: "lack mental health resources post-abuse.",
+  stat_2026_7: "live with unresolved cases or open threats.",
+
+
 
         // Dynamic Cards Section
         digital_safety: "Digital Safety & Accessibility",
@@ -260,7 +304,7 @@ const translations = {
         news_link: "Habari",
         partner_link: "Shirikiana Nasi",
         donate_link: "Changia",
-        where_to_report_link: "Wapi Kutoa Ripoti",
+        where_to_report_link: "Mahali pa kuripoti",
         english_link: "Kiingereza",
         swahili_link: "Kiswahili",
         french_link: "Kifaransa",
@@ -279,20 +323,63 @@ const translations = {
         vision_text: "Kuunda ulimwengu ambapo wanawake vijana, wasichana, na watu wenye ulemavu wanawezeshwa kusafiri katika nafasi za kidijitali kwa usalama, kwa ujasiri, na bila ya Ukatili wa Kijinsia unaoendeshwa na Teknolojia (TFGBV).",
 
         // Safety Section
-        safety_online_title: "Jifunze Kuwa Salama Mtandaoni",
-        safety_online_intro: "Mtandao unaweza kuwa na nguvu, lakini pia una hatari bila ujuzi sahihi. Iwe wewe ni kijana, mtu mzima, au mlezi, kuelewa jinsi ya kukaa salama mtandaoni ni muhimu. Sehemu hii inaangazia mazoea muhimu kadhaa ya kujilinda na wengine. Unataka kujifunza zaidi? Tembelea sehemu yetu ya Rasilimali kupata vifaa, miongozo, na kuchukua jaribio letu la usalama.",
-        explore_quiz_button: "Jifunze Zaidi & Chukua Jaribio la Usalama →",
-        strong_passwords: "Nywila Nzuri",
-        strong_passwords_text: "Unda nywila ndefu, za kipekee kwa kutumia mchanganyiko wa herufi, namba, na alama. Epuka kutumia nywila ile ile kwenye majukwaa tofauti. Tumia msimamizi wa nywila ikiwezekana.",
-        avoid_phishing: "Epuka Ujangili",
-        avoid_phishing_text: "Ujangili unajaribu kukwamua data yako kupitia barua pepe bandia, viungo, au ujumbe. Kuwa mwangalifu kwa chochote kinachouliza habari nyeti au kinachohimiza hatua za \"haraka\". Thibitisha vyanzo moja kwa moja.",
-        privacy_settings: "Mipangilio ya Faragha",
-        privacy_settings_text: "Daima angalia na urekebishe mipangilio yako ya faragha kwenye mitandao ya kijamii na programu. Punguza wanaoweza kuona machapisho yako, kukutaja, au kufikia eneo lako na data ya kibinafsi.",
-        safe_sharing: "Mazoea ya Kugawana Salama",
-        safe_sharing_text: "Fikiria kabla ya kugawana. Epuka kuchapisha habari za kibinafsi kama anwani yako, shule, au mipango ya safari. Mara tu ikiwa mtandaoni, inaweza kuwa ngumu kudhibiti nani anaiona, au jinsi inavyotumika.",
-        seek_help: "Tafuta Usaidizi",
-        seek_help_text: "Ikiwa unanyanyaswa au kutishiwa mtandaoni, usikae kimya. Ripoti tukio hilo kwa jukwaa na wasiliana na mtu unaomwamini. Unahitaji usaidizi?",
-        contact_team: "Wasiliana na timu yetu →",
+        // Safety Section
+  safety_online_title: "Jifunze Kuhusu Usalama Mtandaoni",
+  safety_online_intro: "Intaneti hutoa fursa nyingi za kuunganishwa, kujifunza, na kukua—lakini pia inaleta hatari kubwa, hasa kwa wanawake, vijana, watu wa LGBTQ+, na jamii zilizotengwa. Takwimu za hivi karibuni zinaonyesha ongezeko la unyanyasaji mtandaoni, kutoka kwa matusi, ukiukaji wa picha, vitisho, ulaghai, hadi msongo wa kudumu wa kihisia. Kuelewa jinsi ya kuvinjari ulimwengu wa kidijitali kwa usalama ni jambo la haraka zaidi sasa kuliko hapo awali.",
+
+  // 2021
+  stat_2021_1: "asilimia ya waathiriwa waliripoti mshtuko wa kihisia kutokana na madhara ya mtandaoni.",
+  stat_2021_2: "asilimia ya matukio yalitokea kwenye mitandao ya kijamii.",
+  stat_2021_3: "asilimia ya kesi zilihusisha unyanyasaji wenye picha.",
+  stat_2021_4: "asilimia ya watumiaji walioathiriwa walikuwa chini ya miaka 18.",
+  stat_2021_5: "asilimia ya waathiriwa walilengwa mara kwa mara.",
+  stat_2021_6: "waliripoti jaribio la kujiua.",
+  stat_2021_7: "walilalamika lakini malalamiko hayakutolewa majibu.",
+
+  // 2022
+  stat_2022_1: "asilimia ya ripoti zilipigwa chini na majukwaa ya mtandaoni.",
+  stat_2022_2: "asilimia ya unyanyasaji ulihusisha hotuba ya chuki.",
+  stat_2022_3: "ilihusisha kushiriki maudhui bila idhini.",
+  stat_2022_4: "asilimia ya waathiriwa walihofia kuongea.",
+  stat_2022_5: "walipata wasiwasi au PTSD.",
+  stat_2022_6: "walipoteza fursa kutokana na aibu mtandaoni.",
+  stat_2022_7: "waliacha shule au kazi.",
+
+  // 2023
+  stat_2023_1: "asilimia ya watumiaji walifikiria kuacha mitandao ya kijamii kutokana na madhara.",
+  stat_2023_2: "asilimia ya vijana walihisi kutokuwa salama kidijitali.",
+  stat_2023_3: "walidukuliwa au akaunti zao zilifichuliwa mara nyingi.",
+  stat_2023_4: "asilimia ya vijana wa LGBTQ+ walilengwa kwa unyanyasaji.",
+  stat_2023_5: "walihisi kutengwa kutoka kwa jamii za mtandaoni.",
+  stat_2023_6: "waliacha kushiriki katika masomo ya mtandaoni.",
+  stat_2023_7: "walijijeruhi kwa kujaribu baada ya unyanyasaji.",
+
+  // 2024
+  stat_2024_1: "asilimia ya waathiriwa walioripoti athari za afya ya akili.",
+  stat_2024_2: "asilimia ya vijana walioathiriwa na ulaghai au kutishiwa mtandaoni.",
+  stat_2024_3: "waliogopa madhara zaidi wakiripoti.",
+  stat_2024_4: "picha zao zilisambazwa bila idhini.",
+  stat_2024_5: "walipokea vitisho dhidi ya familia au marafiki.",
+  stat_2024_6: "walirembewa tena kutokana na kutochukuliwa hatua na majukwaa.",
+  stat_2024_7: "walijaribu kujiua au kulazimika kuhusika katika mawazo ya kujiua.",
+
+  // 2025
+  stat_2025_1: "hawakupata haki wala msaada wa ufuatiliaji.",
+  stat_2025_2: "asilimia ya waathiriwa waliijiondoa kabisa kwenye mtandao.",
+  stat_2025_3: "waliripoti kupoteza kujiamini au kuhisi kutengwa.",
+  stat_2025_4: "walishambuliwa kwa kutumia maudhui yaliyotengenezwa na AI.",
+  stat_2025_5: "walighushiwa katika ulaghai wa mtandao.",
+  stat_2025_6: "walipoteza ajira au fursa za kielimu.",
+  stat_2025_7: "walipata msongo wa mawazo au huzuni ya muda mrefu.",
+
+  // 2026
+  stat_2026_1: "asilimia ya waathiriwa ni wanawake, vijana, LGBTQ+, na makundi yaliyotengwa.",
+  stat_2026_2: "wanaendelea kuishi kwa hofu ya unyanyasaji wa kidijitali.",
+  stat_2026_3: "walihisi kuwa wasioonekana au kunyamazishwa mtandaoni.",
+  stat_2026_4: "wanaishi na majeraha kutokana na mashambulizi ya mara kwa mara mtandaoni.",
+  stat_2026_5: "hawajawahi kupata nafasi salama ya kidijitali.",
+  stat_2026_6: "wanakosa rasilimali za afya ya akili baada ya unyanyasaji.",
+  stat_2026_7: "wanaishi na kesi zisizotatuliwa au vitisho vidumu.",
 
         // Dynamic Cards Section
         digital_safety: "Usalama wa Kidijitali na Ufikiaji",
@@ -529,20 +616,63 @@ const translations = {
         vision_text: "Créer un monde où les jeunes femmes, les filles et les personnes handicapées sont habilitées à naviguer dans les espaces numériques en toute sécurité, avec confiance et sans violence basée sur le genre facilitée par la technologie (TFGBV).",
 
         // Safety Section
-        safety_online_title: "Apprenez à être en sécurité en ligne",
-        safety_online_intro: "Internet peut être un outil puissant, mais aussi risqué sans les bonnes connaissances. Que vous soyez adolescent, adulte ou tuteur, comprendre comment rester en sécurité en ligne est essentiel. Cette section met en évidence quelques pratiques essentielles pour vous protéger et protéger les autres. Vous voulez en savoir plus ? Visitez notre section Ressources pour accéder aux boîtes à outils, aux guides et passer notre quiz interactif sur la sécurité.",
-        explore_quiz_button: "Explorer plus et passer le quiz de sécurité →",
-        strong_passwords: "Mots de passe forts",
-        strong_passwords_text: "Créez des mots de passe longs, uniques en utilisant une combinaison de lettres, de chiffres et de symboles. Évitez de réutiliser le même mot de passe sur différentes plateformes. Utilisez un gestionnaire de mots de passe si possible.",
-        avoid_phishing: "Éviter le phishing",
-        avoid_phishing_text: "Les escroqueries par phishing tentent de voler vos données via de faux e-mails, liens ou messages. Soyez prudent face à tout ce qui demande des informations sensibles ou qui exhorte à une action « urgente ». Vérifiez les sources directement.",
-        privacy_settings: "Paramètres de confidentialité",
-        privacy_settings_text: "Vérifiez et personnalisez toujours vos paramètres de confidentialité sur les médias sociaux et les applications. Limitez qui peut voir vos publications, vous taguer ou accéder à votre emplacement et à vos données personnelles.",
-        safe_sharing: "Habitudes de partage sécurisées",
-        safe_sharing_text: "Réfléchissez avant de partager. Évitez de publier des informations personnelles comme votre adresse, votre école ou vos projets de voyage. Une fois en ligne, il peut être difficile de contrôler qui les voit ou comment elles sont utilisées.",
-        seek_help: "Demandez de l'aide",
-        seek_help_text: "Si vous êtes harcelé ou menacé en ligne, ne restez pas silencieux. Signalez l'incident à la plateforme et contactez une personne de confiance. Besoin d'aide ?",
-        contact_team: "Contacter notre équipe →",
+          // Safety Section
+  safety_online_title: "Apprenez à être en sécurité en ligne",
+  safety_online_intro: "Internet offre d’innombrables occasions de se connecter, d’apprendre et de grandir — mais il comporte aussi des risques sérieux, notamment pour les femmes, les jeunes, les personnes LGBTQ+ et autres communautés marginalisées. Les statistiques récentes révèlent une augmentation alarmante des abus en ligne, allant du harcèlement et des violations d’images aux menaces, au chantage et aux traumatismes émotionnels durables. Comprendre comment naviguer en toute sécurité dans le monde numérique est plus urgent que jamais.",
+
+  // 2021
+  stat_2021_1: "des survivants ont signalé un traumatisme émotionnel causé par des préjudices en ligne.",
+  stat_2021_2: "des incidents se sont produits sur les réseaux sociaux.",
+  stat_2021_3: "des cas impliquaient des abus liés aux images.",
+  stat_2021_4: "des utilisateurs touchés étaient âgés de moins de 18 ans.",
+  stat_2021_5: "des victimes ont été ciblées à plusieurs reprises.",
+  stat_2021_6: "ont signalé une tentative de suicide.",
+  stat_2021_7: "ont déposé des plaintes qui n'ont jamais été résolues.",
+
+  // 2022
+  stat_2022_1: "des signalements ont été ignorés par les plateformes en ligne.",
+  stat_2022_2: "des abus comprenaient des discours haineux.",
+  stat_2022_3: "impliquait le partage de contenu sans consentement.",
+  stat_2022_4: "des victimes avaient peur de s’exprimer.",
+  stat_2022_5: "ont développé de l'anxiété ou un TSPT.",
+  stat_2022_6: "ont perdu des opportunités à cause de la honte en ligne.",
+  stat_2022_7: "ont quitté l’école ou leur travail.",
+
+  // 2023
+  stat_2023_1: "des utilisateurs ont envisagé de quitter les réseaux sociaux à cause des abus.",
+  stat_2023_2: "des jeunes se sentaient en insécurité numérique.",
+  stat_2023_3: "ont vu plusieurs comptes piratés ou exposés.",
+  stat_2023_4: "des jeunes LGBTQ+ ont été harcelés intentionnellement.",
+  stat_2023_5: "se sentaient exclus des communautés en ligne.",
+  stat_2023_6: "ont cessé de participer à l’apprentissage en ligne.",
+  stat_2023_7: "ont tenté de s’automutiler après des abus.",
+
+  // 2024
+  stat_2024_1: "des survivants d’abus ont signalé des problèmes de santé mentale.",
+  stat_2024_2: "des adolescents ont été victimes de chantage ou sextorsion en ligne.",
+  stat_2024_3: "craignaient d’autres dommages s’ils signalaient.",
+  stat_2024_4: "leurs images ont été partagées sans consentement.",
+  stat_2024_5: "ont reçu des menaces contre leur famille ou amis.",
+  stat_2024_6: "ont été traumatisés à nouveau par l’inaction des plateformes.",
+  stat_2024_7: "ont tenté de se suicider ou ont eu des pensées suicidaires.",
+
+  // 2025
+  stat_2025_1: "n'ont reçu ni justice ni soutien ultérieur.",
+  stat_2025_2: "des victimes se sont complètement retirées de la vie en ligne.",
+  stat_2025_3: "ont signalé une perte d’estime de soi ou isolement.",
+  stat_2025_4: "ont été attaqués avec du contenu généré par l’IA.",
+  stat_2025_5: "ont été usurpés dans des escroqueries en ligne.",
+  stat_2025_6: "ont perdu leur emploi ou des opportunités académiques.",
+  stat_2025_7: "ont développé une dépression à long terme.",
+
+  // 2026
+  stat_2026_1: "des victimes incluent femmes, jeunes, LGBTQ+ et groupes marginalisés.",
+  stat_2026_2: "continuent de vivre dans la peur des abus numériques.",
+  stat_2026_3: "se sentaient invisibles ou réduits au silence en ligne.",
+  stat_2026_4: "vivent avec des traumatismes dus à des attaques numériques répétées.",
+  stat_2026_5: "n’ont jamais trouvé d’espace numérique sûr.",
+  stat_2026_6: "manquent de ressources en santé mentale après les abus.",
+  stat_2026_7: "vivent avec des cas non résolus ou des menaces persistantes.",
 
         // Dynamic Cards Section
         digital_safety: "Sécurité Numérique & Accessibilité",
@@ -779,20 +909,63 @@ const translations = {
         vision_text: "خلق عالم حيث يتم تمكين الشابات والفتيات والأشخاص ذوي الإعاقة للتنقل في الفضاءات الرقمية بأمان وثقة، وخالية من العنف القائم على النوع الاجتماعي والتكنولوجيا (TFGBV).",
 
         // Safety Section
-        safety_online_title: "تعلم أن تكون آمناً عبر الإنترنت",
-        safety_online_intro: "يمكن أن يكون الإنترنت أداة تمكين، ولكنه قد يكون محفوفًا بالمخاطر بدون المعرفة الصحيحة. سواء كنت مراهقًا، بالغًا، أو ولي أمر، فإن فهم كيفية البقاء آمنًا عبر الإنترنت أمر بالغ الأهمية. يسلط هذا القسم الضوء على بعض الممارسات الأساسية لحماية نفسك والآخرين. هل تريد الغوص أعمق؟ قم بزيارة قسم الموارد لدينا للوصول إلى مجموعات الأدوات والأدلة واختبار الأمان التفاعلي.",
-        explore_quiz_button: "اكتشف المزيد وأجرِ اختبار الأمان ←",
-        strong_passwords: "كلمات مرور قوية",
-        strong_passwords_text: "أنشئ كلمات مرور طويلة وفريدة باستخدام مجموعة من الأحرف والأرقام والرموز. تجنب إعادة استخدام نفس كلمة المرور عبر المنصات. استخدم مدير كلمات المرور إذا أمكن.",
-        avoid_phishing: "تجنب التصيد الاحتيالي",
-        avoid_phishing_text: "تحاول عمليات التصيد الاحتيالي سرقة بياناتك عبر رسائل بريد إلكتروني أو روابط أو رسائل مزيفة. كن حذرًا من أي شيء يطلب معلومات حساسة أو يحث على إجراء \"عاجل\". تحقق من المصادر مباشرة.",
-        privacy_settings: "إعدادات الخصوصية",
-        privacy_settings_text: "تحقق دائمًا من إعدادات الخصوصية الخاصة بك على وسائل التواصل الاجتماعي والتطبيقات وخصصها. حدد من يمكنه عرض منشوراتك أو الإشارة إليك أو الوصول إلى موقعك وبياناتك الشخصية.",
-        safe_sharing: "عادات المشاركة الآمنة",
-        safe_sharing_text: "فكر قبل أن تشارك. تجنب نشر معلومات شخصية مثل عنوانك أو مدرستك أو خطط سفرك. بمجرد أن تكون عبر الإنترنت، قد يكون من الصعب التحكم في من يراها أو كيف يتم استخدامها.",
-        seek_help: "طلب المساعدة",
-        seek_help_text: "إذا تعرضت للمضايقة أو التهديد عبر الإنترنت، فلا تصمت. أبلغ عن الحادث للمنصة وتواصل مع شخص تثق به. هل تحتاج إلى دعم؟",
-        contact_team: "تواصل مع فريقنا ←",
+      // Safety Section
+  safety_online_title: "تعلّم كيف تكون آمناً عبر الإنترنت",
+  safety_online_intro: "يفتح الإنترنت فرصًا لا حصر لها للتواصل والتعلم والنمو — ولكنه يقدم أيضًا مخاطر خطيرة، خاصةً للنساء والشباب وأفراد مجتمع الميم والمجتمعات المهمشة الأخرى. تُظهر الإحصائيات الحديثة ارتفاعًا مقلقًا في الإساءة عبر الإنترنت، بدءًا من التحرش والانتهاكات المتعلقة بالصور إلى التهديدات والابتزاز والصدمات النفسية طويلة الأمد. أصبح فهم كيفية التنقل بأمان في العالم الرقمي أكثر ضرورة من أي وقت مضى.",
+
+  // 2021
+  stat_2021_1: "من الناجين أبلغوا عن صدمة عاطفية نتيجة المضايقات عبر الإنترنت.",
+  stat_2021_2: "وقعت حوادث على وسائل التواصل الاجتماعي.",
+  stat_2021_3: "شملت الحالات إساءة مبنية على الصور.",
+  stat_2021_4: "من المستخدمين المتضررين كانوا دون سن 18.",
+  stat_2021_5: "من الضحايا تم استهدافهم بشكل متكرر.",
+  stat_2021_6: "أبلغوا عن محاولة انتحار.",
+  stat_2021_7: "قدموا شكاوى لم تُحل أبدًا.",
+
+  // 2022
+  stat_2022_1: "تم تجاهل التقارير من قبل المنصات الإلكترونية.",
+  stat_2022_2: "شملت الإساءة خطابًا للكراهية.",
+  stat_2022_3: "شملت مشاركة محتوى دون موافقة.",
+  stat_2022_4: "كان الضحايا يخشون التحدث.",
+  stat_2022_5: "أصيبوا بقلق أو اضطراب ما بعد الصدمة.",
+  stat_2022_6: "فقدوا فرصًا بسبب العار عبر الإنترنت.",
+  stat_2022_7: "انسحبوا من المدرسة أو العمل.",
+
+  // 2023
+  stat_2023_1: "فكر المستخدمون في ترك وسائل التواصل الاجتماعي بسبب الأذى.",
+  stat_2023_2: "شعر الشباب بعدم الأمان الرقمي.",
+  stat_2023_3: "تعرضت عدة حسابات للاختراق أو الانكشاف.",
+  stat_2023_4: "تعرض شباب مجتمع الميم للتحرش المستهدف.",
+  stat_2023_5: "شعروا بالتهميش من المجتمعات عبر الإنترنت.",
+  stat_2023_6: "توقفوا عن المشاركة في التعليم عبر الإنترنت.",
+  stat_2023_7: "حاولوا إيذاء أنفسهم بعد التعرض للإساءة.",
+
+  // 2024
+  stat_2024_1: "أبلغ الناجون من الإساءة عن آثار على صحتهم النفسية.",
+  stat_2024_2: "تعرض المراهقون للابتزاز أو التهديد بالسجن الجنسي عبر الإنترنت.",
+  stat_2024_3: "خافوا من مزيد من الأذى إذا أبلغوا.",
+  stat_2024_4: "تمت مشاركة صورهم بدون موافقة.",
+  stat_2024_5: "تلقوا تهديدات ضد العائلة أو الأصدقاء.",
+  stat_2024_6: "عانوا من إعادة تجربة الصدمة نتيجة تقاعس المنصات.",
+  stat_2024_7: "حاولوا الانتحار أو فكروا به.",
+
+  // 2025
+  stat_2025_1: "لم يتلقوا العدالة أو الدعم اللاحق.",
+  stat_2025_2: "انسحب الضحايا تمامًا من الحياة عبر الإنترنت.",
+  stat_2025_3: "أبلغوا عن فقدان الثقة بالنفس أو الشعور بالعزلة.",
+  stat_2025_4: "تعرضوا لهجوم باستخدام محتوى مولّد بالذكاء الاصطناعي.",
+  stat_2025_5: "تم انتحال هويتهم في عمليات احتيال عبر الإنترنت.",
+  stat_2025_6: "فقدوا وظائف أو فرصًا تعليمية.",
+  stat_2025_7: "طوروا اكتئابًا طويل الأمد.",
+
+  // 2026
+  stat_2026_1: "تشمل الضحايا النساء والشباب وأفراد الميم والمجموعات المهمشة.",
+  stat_2026_2: "يستمرون في العيش في خوف من الإساءة الرقمية.",
+  stat_2026_3: "شعروا بأنهم غير مرئيين أو مكتومين عبر الإنترنت.",
+  stat_2026_4: "يعيشون مع صدمة من هجمات رقمية متكررة.",
+  stat_2026_5: "لم يجدوا مساحة رقمية آمنة من قبل.",
+  stat_2026_6: "يفتقرون إلى الموارد للصحة النفسية بعد التعرض للإساءة.",
+  stat_2026_7: "يعيشون مع قضايا لم تُحل أو تهديدات مستمرة.",
 
         // Dynamic Cards Section
         digital_safety: "السلامة الرقمية وإمكانية الوصول",
