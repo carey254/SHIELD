@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  </head>
+<body>
+
+<!-- Add this inside your <body> tag -->
+<section class="hero-section">
+  <div class="hero-image">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>The Shield Maidens</h1>
+      <p>Join us as we stand together to fight against technology-facilitated gender-based violence (TFGBV), support marginalized communities, and build lasting change. Find out more about who we are and how you can be part of the movement.</p>
+      <div class="hero-links">
+        <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
+    
+        <a href="#vision">Vision</a>
+        <a href="#team">Team</a>
+      <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
+      </div>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="social-iconis">
+       <a href="https://x.com/yourusername" target="_blank" class="icon x"><i class="fab fa-x-twitter"></i></a>
+            
+              <a href="https://instagram.com/yourusername" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+  </div>
+</section>
+
+
+  <!-- Social Media Icons -->
+<div class="social-icons">
+  <a href="https://x.com/_shield_maidens" target="_blank" class="icon x"><i class="fab fa-x-twitter"></i></a>
+
+  <a href="https://www.instagram.com/the_shield_maidens/" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
+<!-- Style -->
+<style>/* Add this to your CSS */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  color: white;
+}
+
+.hero-image {
+  background: url('images/tgbvw2.png') no-repeat center center/cover;
+  filter: blur(0.8px);
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+.hero-links a {
+  margin: 0 10px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-links a:hover {
+  text-decoration: underline;
+}
+
+.social-iconis {
+  position: absolute;
+  top: 40%;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.social-iconis a {
+  margin: 8px 0;
+  color: rgb(241, 132, 7);
+  font-size: 1.5em;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  color: white;
+  z-index: 2;
+}
+
+
+
+
+
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+
+  .icon.x {
+    background-color: #000; /* Twitter/X in black */
+  }
+
+  .icon.facebook {
+    background-color: #3b5998;
+  }
+
+  .icon.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  }
+
+  .icon.linkedin {
+    background-color: #0077b5;
+  }
+
+  .icon:hover {
+    opacity: 0.8;
+  }
+</style>
+
+<select id="voices"></select>
+<script>
+function loadVoices() {
+  var voices = window.speechSynthesis.getVoices();
+  var sel = document.getElementById('voices');
+  sel.innerHTML = '';
+  if (voices.length === 0) {
+    var opt = document.createElement('option');
+    opt.textContent = 'No voices loaded';
+    sel.appendChild(opt);
+  } else {
+    voices.forEach(function(v) {
+      var opt = document.createElement('option');
+      opt.textContent = v.name + ' (' + v.lang + ')';
+      sel.appendChild(opt);
+    });
+  }
+}
+window.speechSynthesis.onvoiceschanged = loadVoices;
+loadVoices();
+</script>
+</body>
+</html>
+
+  <div class="social-icons">
+                    <a href="https://x.com/_shield_maidens" target="_blank">
+                        <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank">
+                        <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"/>
+                    </a>
+                    <a href="https://www.instagram.com/the_shield_maidens/" target="_blank">
+                        <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram"/>
+                    </a>
+                </div>

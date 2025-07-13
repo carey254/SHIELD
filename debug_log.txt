@@ -1,0 +1,37 @@
+NAME: , EMAIL: , MESSAGE: 
+NAME: , EMAIL: , MESSAGE: 
+NAME: caren jeruto, EMAIL: carenjeruto477@gmail.com, MESSAGE: i enjoyed the session
+NAME: , EMAIL: , MESSAGE: 
+NAME: , EMAIL: , MESSAGE: 
+NAME: caren jeruto, EMAIL: carenjeruto477@gmail.com, MESSAGE: i enjoyed the session
+NAME: , EMAIL: , MESSAGE: 
+NAME: caren jeruto, EMAIL: carenjeruto477@gmail.com, MESSAGE: i enjoyed the session
+NAME: caren jeruto, EMAIL: carenjeruto477@gmail.com, MESSAGE: i enjoyed the session
+SUBMIT: name=, email=, message=
+DB Conn Success
+DB Query Success
+DB Conn Success
+DB Query Success
+DB Conn Success
+DB Query Success
+[2025-04-26 14:34:10] DB Connection Success
+[2025-04-26 14:34:10] Query Success on table 'donations'
+[2025-04-26 17:00:36] DB Connection Success
+[2025-04-26 17:00:36] Query Success on table 'donations'
+Mailer Error (caren10koech@gmail.com): SMTP Error: Could not authenticate.
+Mailer Error (shi3ldmaidens@gmail.com): SMTP Error: Could not authenticate.
+Mailer Error (caren10koech@gmail.com): SMTP Error: Could not authenticate.
+Mailer Error (shi3ldmaidens@gmail.com): SMTP Error: Could not authenticate.
+Mailing list - User email: FAILED, Admin email: FAILED
+Email sent successfully to: carenjeruto477@gmail.com
+Email sent successfully to: shi3ldmaidens@gmail.com
+Mailing list - User email: SUCCESS, Admin email: SUCCESS
+Email sent successfully to: carenjeruto477@gmail.com
+Email sent successfully to: shi3ldmaidens@gmail.com
+Mailing list - User email: SUCCESS, Admin email: SUCCESS
+Email sent successfully to: carenjeruto477@gmail.com
+Email sent successfully to: shi3ldmaidens@gmail.com
+Mailing list - User email: SUCCESS, Admin email: SUCCESS
+Email sent successfully to: carenjeruto477@gmail.com
+Email sent successfully to: shi3ldmaidens@gmail.com
+Mailing list - User email: SUCCESS, Admin email: SUCCESS

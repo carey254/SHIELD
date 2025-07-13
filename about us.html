@@ -1,0 +1,2671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="translations.js"></script>
+    <script src="accessibility.js" defer></script>
+    <style>
+      
+
+         /* Values page*/
+         * {
+          box-sizing: border-box;
+        }
+      
+        body {
+          font-family: sans-serif;
+          margin: 0;
+          background-color: #fefefe;
+        }
+      
+        .values-section {
+          padding: 2rem;
+          background-color: #fff7ed;
+        }
+      
+        summary {
+          background-color: #ffffff;
+          padding: 1.2rem;
+          font-size: 1.6rem;
+          font-weight: bold;
+          color: #ea580c;
+          text-align: center;
+          border-radius: 10px;
+          cursor: pointer;
+          border: 2px solid #f97316;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+      
+        summary::marker {
+          display: none;
+        }
+      
+        .values-intro {
+          text-align: center;
+          max-width: 900px;
+          margin: 1.7rem auto;
+          font-size: 1.3rem;
+          color: black;
+        }
+      
+        .values-cards {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1.5rem;
+          margin-top: 2rem;
+        }
+      
+        .card {
+          width: 18%;
+          min-width: 180px;
+          perspective: 1000px;
+        }
+      
+        .card-inner {
+          width: 100%;
+          height: 220px;
+          position: relative;
+          transition: transform 0.8s;
+          transform-style: preserve-3d;
+        }
+      
+        .card:hover .card-inner {
+          transform: rotateY(180deg);
+        }
+      
+        .card-front, .card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          backface-visibility: hidden;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          background-color: white;
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+      
+        .card-front {
+          border: 2px solid #f97316;
+          color: #ea580c;
+          font-weight: bold;
+        }
+      
+        .card-front i {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+          color: #ea580c;
+        }
+      
+        .sticker {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          background: #f97316;
+          color: white;
+          font-size: 0.75rem;
+          padding: 0.2rem 0.6rem;
+          border-radius: 10px;
+        }
+      
+        .card-back {
+          transform: rotateY(180deg);
+          background-color: #fff7ed;
+          border: 2px solid #f97316;
+          color: #444;
+          font-size: 0.95rem;
+          padding: 1rem;
+        }
+      
+        @media (max-width: 1000px) {
+          .card {
+            width: 45%;
+          }
+        }
+      
+        @media (max-width: 600px) {
+          .card {
+            width: 90%;
+          }
+        }
+
+/*action*/
+
+.shield-cta-section {
+    padding: 60px 20px;
+    background: #FF6600 !important; /* strong orange background */
+    color: rgb(27, 25, 25); /* dark text color */
+    text-align: center; /* center the text */
+}
+
+
+
+.shield-cta-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.shield-cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.shield-cta-intro {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    line-height: 1.7;
+}
+
+.shield-cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #ffffff;
+    color: #FF6600;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.btn-get-involved {
+    display: inline-block;
+    background-color: #f5f1ef;
+    color: orangered;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+
+
+/* What We Do Section Styles */
+/* What We Do Section (Professional Style) */
+/* Full-Width What We Do Section */
+/* Reset default margin */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+ 
+  font-family: Arial, sans-serif;
+margin: 0; /* Remove original margin */
+padding-top: 80px; /* 👈 Adds space for the nav */
+}
+
+/* Full-width section */
+#what-we-do {
+  width: 100vw;
+  background-color: #fff8f0;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+/* Heading */
+#what-we-do h2 {
+  color: orange;
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* Content stretches full width */
+/* Ensure no default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full-width section */
+#what-we-do {
+  width: 100%;
+  background-color: #fff8f0;
+  padding: 60px 0;
+}
+
+/* Heading style */
+#what-we-do h2 {
+  color: orange;
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* Container: no max width, full width */
+.what-we-do-content {
+  width: 100%;
+  display: block;
+}
+
+/* Each item full width */
+.what-we-do-item {
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 40px;
+}
+
+/* Sub-headings */
+.what-we-do-item h3 {
+  color: black;
+  font-size: 1.7em;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-decoration: #000;
+}
+
+/* Paragraphs */
+.what-we-do-item p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Add this to your CSS */
+.what-we-do-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 40px; /* optional side padding for spacing */
+  box-sizing: border-box;
+}
+
+
+
+
+.shield-cta-section {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 700px) {
+  .footer, .footer-container, .footer-logo, .footer-links, .footer-location, .footer-contact, .footer-bottom {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .footer-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 20px !important;
+  }
+  .footer-links ul {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+  .footer-links ul li {
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .footer-bottom {
+    text-align: center !important;
+    font-size: 13px;
+    padding-top: 10px;
+  }
+  .payment-icons img,
+  .social-icons img {
+    margin: 0 6px !important;
+  }
+  .footer-contact {
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+  .social-icons {
+    justify-content: center !important;
+  }
+}
+.social-icons {
+  justify-content: center !important;
+}
+
+@media (max-width: 480px) {
+.footer-container {
+  padding: 15px !important;
+  gap: 15px !important;
+}
+.footer-logo img {
+  max-height: 80px !important;
+}
+.footer-links, .footer-location, .footer-contact {
+  max-width: 100% !important;
+  text-align: center !important;
+}
+.footer-links ul li {
+  text-align: center !important;
+}
+.social-icons {
+  justify-content: center !important;
+  gap: 10px !important;
+}
+.payment-icons {
+  justify-content: center !important;
+  gap: 8px !important;
+}
+}
+
+/*OUR VALUES*/
+
+.values-section {
+  background-color: #f3f4f6;
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+.values-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+summary {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+}
+
+details[open] summary::after {
+  content: "▲";
+  float: right;
+}
+
+summary::after {
+  content: "▼";
+  float: right;
+}
+
+.values-intro {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: black;
+}
+
+.values-cards {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.value-card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.value-card h3 {
+  color: #6b21a8;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.value-card p {
+  color:black;
+  font-size: 1.03rem;
+}
+
+
+/* Footer Styles */
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 40px 20px 10px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.footer-logo img {
+  max-height: 100px;
+}
+
+.footer-links, .footer-location, .footer-contact {
+  max-width: 250px;
+}
+
+.footer-links h3,
+.footer-location h3,
+.footer-contact h3 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 6px;
+}
+
+.footer-links ul li a,
+.footer-contact p,
+.footer-location p {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 15px;
+}
+.footer-links h3 {
+  color: orange;
+}
+.footer-location h3,
+.footer-contact h3 {
+  color: orange;
+}
+
+.footer-links .donate-btn {
+  background-color: #f2b400;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #000;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.payment-icons img {
+  height: 32px !important;
+  width: auto !important;
+  max-width: 60px !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+}
+
+.social-icons a {
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #aaa;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+}
+
+
+
+.about-container,
+.what-we-do-container,
+.values-cards{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    max-width: 200%;
+    gap: 5px;
+    padding: 0 5%;
+}
+
+
+
+.what-we-do-item,
+.value-card {
+    flex: 1 1 30%; /* Adjusts to 3 per row */
+    margin: 10px;
+    min-width: 250px;
+}
+
+.values-intro,
+#team-intro p {
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+#what-we-do, .values-section, #team {
+    padding: 40px 5%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2Opx;
+}
+
+
+
+/* Base styling */
+ /* General styles for the .nav element */
+ .nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background: #fff !important;
+  padding: 0 20px !important;
+  min-height: 60px !important;
+  position: fixed !important;
+  top: 0 !important; left: 0 !important; right: 0 !important;
+  z-index: 1000 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+.logo-link {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  flex-grow: 0 !important;
+  flex-basis: auto !important;
+  order: 0 !important;
+}
+.logo {
+  height: 45px !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.nav-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  flex-grow: 0 !important;
+  flex-basis: auto !important;
+  order: 1 !important;
+}
+.nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    gap: 0 !important;
+    order: 2 !important;
+}
+.language-switcher {
+    width: 110px !important;
+    max-width: 140px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: 20px !important;
+    order: 1 !important;
+    position: relative !important;
+}
+.hamburger {
+    font-size: 2.2rem !important;
+    color: #ff4500 !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    margin-left: 4px !important;
+    z-index: 1102 !important;
+    display: none !important;
+    order: 2 !important;
+}
+@media (max-width: 900px) {
+    .nav-links { display: none !important; }
+    .logo-link { order: 0 !important; }
+    .nav-actions {
+        margin-left: auto !important;
+        margin-right: 70px !important;
+        display: flex !important;
+        align-items: center !important;
+        order: 2 !important;
+        gap: 12px !important;
+        min-width: 0 !important;
+        max-width: 160px !important;
+        flex-shrink: 1 !important;
+        justify-content: flex-end !important;
+    }
+    .language-switcher {
+        width: 60px !important;
+        max-width: 80px !important;
+        margin-left: 0 !important;
+        order: 1 !important;
+        font-size: 1em !important;
+        flex-shrink: 1 !important;
+        padding: 0 !important;
+    }
+    .language-switcher > a {
+        padding: 2px 10px !important;
+        min-width: 60px !important;
+        max-width: 80px !important;
+        font-size: 1em !important;
+    }
+    .hamburger {
+        display: block !important;
+        order: 2 !important;
+        margin-left: 0 !important;
+        margin-top: 0px;
+        font-size: 1.7rem !important;
+        flex-shrink: 1 !important;
+        padding: 0 !important;
+    }
+    nav { padding: 0 8px !important; }
+    .logo { height: 32px !important; }
+}
+@media (min-width: 901px) {
+    .hamburger { display: none !important; }
+    .nav-links { display: flex !important; order: 2 !important; margin-left: auto !important; }
+    .logo { height: 170px !important; }
+    .language-switcher { order: 3 !important; margin-left: 20px !important; }
+    .nav-actions { margin-left: 0 !important; order: 4 !important; }
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* Responsive Mobile Menu */
+/* General styles for the .nav element */
+.nav {
+  
+}
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+  .nav {
+    width: 90%; /* Adjust width on tablets */
+  }
+}
+
+/* Media query for small devices (phones) */
+@media (max-width: 768px) {
+  .nav {
+    width: 100%; /* Full width on mobile devices */
+    padding: 10px; /* Optional, adjust padding on smaller screens */
+  }
+}
+
+/* Media query for very small devices (phones in portrait) */
+@media (max-width: 480px) {
+  .nav {
+    width: 100%; /* Full width for very small screens */
+    padding: 5px; /* Further adjust padding if necessary */
+  }
+}
+
+
+.hero img {
+   
+  max-width: 600px; /* Set a max width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto; /* Center the images */
+  width: 100%; /* Ensures the image spans the full width */
+  max-width: 100%; /* Prevents overflow */
+  height: 400px; /* Keeps the height fixed */
+  object-fit: cover; /* Ensures the image fills the width while maintaining a good aspect ratio */
+  display: block;
+}
+
+
+/* Hide hamburger & menu by default */
+.hamburger,
+.side-menu {
+  display: none;
+}
+
+/* Mobile styles only */
+@media (max-width: 768px) {
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    z-index: 1001;
+    display: block;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .side-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .side-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    margin: 15px 0;
+  }
+
+  .close-btn {
+    align-self: flex-end;
+    font-size: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  /* Hide original nav links */
+  nav .nav-links {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* WHAT WE DO: Stack items vertically on phones */
+  .what-we-do-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .what-we-do-item {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+/* Desktop - big logo */
+.logo {
+  height: 150px !important;
+  object-fit: contain;
+}
+/* Hamburger Icon (Mobile Only) */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  color: #ff4500;
+  z-index: 1100;
+  cursor: pointer;
+}
+
+/* Sidebar Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  max-width: 280px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  transition: 0.3s ease-in-out;
+  z-index: 1050;
+  padding: 20px;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-btn {
+  font-size: 26px;
+  color: #ff4500;
+  cursor: pointer;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 15px;
+}
+
+.mobile-menu ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #222;
+}
+
+.mobile-menu ul li a.highlight {
+  background-color: #ff4500;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+/* Show hamburger and hide desktop links on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px; /* adjust as needed for left/right spacing */
+  }
+  
+  .logo-link {
+    flex-shrink: 0;
+  }
+  
+  .right-nav-section {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* pushes this section to the far right */
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000;
+    height: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .logo-link img {
+    height: 65px !important;
+    margin: 0;
+    padding: 0;
+  }
+  .logo-link {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .about-image,
+  .about-text {
+    width: 100%;
+    max-width: 95%;
+  }
+
+  .about-text h2 {
+    font-size: 1.6rem;
+    margin-top: 20px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+.nav-links a:hover {
+  background-color: #ff4500;
+  color: white;
+  border-radius: 12px;
+}
+
+.right-nav-section {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 20px;
+}
+
+/* Hero Section: Safety & Inclusion */
+.hero-section-bg {
+  width: 100vw;
+  min-height: 25vh; /* Only 1/4 of the viewport height */
+  background: #ff9800; /* Strong, solid orange */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 20px 30px 20px;
+}
+.hero-text {
+  flex: 1;
+  color: #dc8100;
+  font-size: 2.2em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: left;
+  z-index: 2;
+  min-width: 250px;
+  max-width: 500px;
+}
+.hero-typing, #heroTyping {
+  color: #fff !important;
+  font-size: 2.2em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: left;
+  min-height: 2.5em;
+  text-shadow: 2px 2px 8px #a05a00 !important;
+}
+.hero-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 200px;
+  max-width: 400px;
+}
+.hero-image img {
+  width: 90%;
+  max-width: 320px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.hero-image img.visible {
+  opacity: 1;
+}
+@media (max-width: 800px) {
+  .hero-content { flex-direction: column; text-align: center; }
+  .hero-text, .hero-typing { text-align: center; margin-bottom: 20px; }
+  .hero-image { justify-content: center; }
+}
+
+/* New Styles for the About Us Hero Section */
+.about-hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end; /* Align content to the bottom */
+    justify-content: flex-start; /* Align content to the left */
+    text-align: left;
+    padding: 60px 8%; /* Adjust padding for bottom alignment */
+    color: #fff;
+    background-image: url('images/abbut.png');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.about-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(250, 218, 221, 0.9) 10%, transparent 70%); /* Light pink gradient from bottom */
+    z-index: 1;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 70%; /* Adjust width for better layout */
+}
+
+.about-hero-content h2 {
+    font-size: 4rem; /* Bold headline */
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff; /* White text */
+}
+
+.about-hero-content p {
+    font-size: 1.1rem; /* Clear subtitle text */
+    line-height: 1.6;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    font-weight: bold; /* Bolder text as requested */
+    color: #fff; /* White text for paragraphs */
+}
+
+.about-hero-content p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+.about-us {
+  padding: 60px 5%;
+  background-color: #f0f4f8;
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+
+  
+
+.wide-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-text h2 {
+  text-align: center;
+  font-size: 2.5em;
+  color: orange;
+  margin-bottom: 30px;
+}
+
+.about-paragraphs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.about-text p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 0;
+}
+
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-us .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  
+
+  .about-us .content,
+  .about-us .image {
+    flex: 1 1 100%;
+  }
+
+  .about-us .content h2 {
+    font-size: 1.5em;
+  }
+
+  .about-us .content p {
+    font-size: 1em;
+  }
+}
+
+.about-container,
+.what-we-do-container,
+.values-cards{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    max-width: 200%;
+    gap: 5px;
+    padding: 0 5%;
+}
+
+
+
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-image,
+    .about-text {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  
+
+
+
+
+.about-container {
+    display: flex;
+    align-items: center; /* 👈 This centers content vertically */
+    justify-content: center;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  
+  
+  .about-image {
+    flex: 1;
+    max-width: 25%; /* 1/4 of the section */
+  }
+  
+  .about-text {
+    flex: 3;
+    max-width: 70%; /* 3/4 of the section */
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+
+
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .about-image,
+  .about-text {
+    width: 100%;
+    max-width: 95%;
+  }
+
+  .about-text h2 {
+    font-size: 1.6rem;
+    margin-top: 20px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+main {
+  display: block;
+}
+
+h2 {
+  text-align: center;
+  padding: 30px 0 10px;
+  color: white;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.team-intro {
+ 
+  color: azure;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  font-size: 16px;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 20px 50px;
+  background-color: #5c4033;
+}
+
+.team-member {
+  background-color: white;
+  width: 220px;
+  border-radius: 0 0 20px 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding-bottom: 40px;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+.team-info h3 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #5c4033;
+}
+
+.team-info p {
+  font-size: 13px;
+  margin: 0;
+  color: #6c6c6c;
+  padding: 0 5px;
+}
+
+.team-member::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 20px;
+  background-color: #5c4033;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #5c4033;
+  margin: 0 6px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff4500;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .team-member {
+    width: 45%;
+  }
+}
+
+@media (max-width: 500px) {
+  .team-member {
+    width: 100%;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Custom Circular Loader */
+.loader-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.7);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin-bottom: 18px;
+}
+.loader-dot {
+  width: 14px;
+  height: 14px;
+  background: #bbb;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+}
+.loader-dot:nth-child(1) { transform: rotate(0deg) translate(32px) scale(1); }
+.loader-dot:nth-child(2) { transform: rotate(45deg) translate(32px) scale(1); }
+.loader-dot:nth-child(3) { transform: rotate(90deg) translate(32px) scale(1); }
+.loader-dot:nth-child(4) { transform: rotate(135deg) translate(32px) scale(1); }
+.loader-dot:nth-child(5) { transform: rotate(180deg) translate(32px) scale(1); }
+.loader-dot:nth-child(6) { transform: rotate(225deg) translate(32px) scale(1); }
+.loader-dot:nth-child(7) { transform: rotate(270deg) translate(32px) scale(1); }
+.loader-dot:nth-child(8) { transform: rotate(315deg) translate(32px) scale(1); }
+
+@keyframes spin-loader {
+  100% { transform: rotate(360deg); }
+}
+.loader {
+  animation: spin-loader 1.1s linear infinite;
+}
+.loader-text {
+  font-size: 1.2em;
+  color: #444;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+
+
+
+/* Accessibility Panel Styles */
+.accessibility-panel, .accessibility-toggle {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 10000 !important;
+}
+
+.accessibility-toggle {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: #ff4500 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50% !important;
+  font-size: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 10000 !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+  cursor: pointer !important;
+}
+
+.accessibility-toggle:hover {
+  transform: scale(1.1);
+}
+
+.accessibility-controls {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background: orange;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accessibility-controls.active {
+  display: flex;
+}
+
+.accessibility-controls button {
+  background: orange;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.accessibility-controls button:hover {
+  background: #e0e0e0;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  background-color: #000 !important;
+  background-color: yellow !important;
+  color: #fff !important;
+}
+
+.high-contrast * {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.high-contrast a {
+  color: #ffff00 !important;
+}
+
+.high-contrast button {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+/* Invert Colors Theme (Pink) */
+body.invert-colors {
+  background: #ff69b4 !important; /* Hot pink */
+  color: #fff !important;
+}
+body.invert-colors a, body.invert-colors button, body.invert-colors input, body.invert-colors textarea {
+  color: #fff !important;
+  background: #d72670 !important;
+  border-color: #fff !important;
+}
+/* Dark Mode Theme */
+body.dark-mode {
+  background: #181a1b !important;
+  color: #e8eaed !important;
+}
+body.dark-mode a, body.dark-mode button, body.dark-mode input, body.dark-mode textarea {
+  color: #e8eaed !important;
+  background: #23272a !important;
+  border-color: #444 !important;
+}
+/* Light Mode Theme */
+body.light-mode {
+  background: #fff !important;
+  color: #222 !important;
+}
+body.light-mode a, body.light-mode button, body.light-mode input, body.light-mode textarea {
+  color: #222 !important;
+  background: #f5f5f5 !important;
+  border-color: #bbb !important;
+}
+/* Color-blind Friendly Theme (blue/yellow) */
+body.color-blind-mode {
+  background: #f7f7e8 !important;
+  color: #1a1a7a !important;
+}
+body.color-blind-mode a, body.color-blind-mode button, body.color-blind-mode input, body.color-blind-mode textarea {
+  color: #1a1a7a !important;
+  background: #ffe066 !important;
+  border-color: #1a1a7a !important;
+}
+
+
+/* Ensure accessibility panel and icon always stay fixed and visible */
+.accessibility-panel {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+}
+.accessibility-toggle {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 10000 !important;
+}
+
+/* Invert Colors Theme (Light Pink Background Only) */
+body.invert-colors {
+  background: #ffe4ec !important; /* Light pink */
+}
+body.invert-colors *,
+body.invert-colors h1,
+body.invert-colors h2,
+body.invert-colors h3,
+body.invert-colors h4,
+body.invert-colors h5,
+body.invert-colors h6,
+body.invert-colors p,
+body.invert-colors span,
+body.invert-colors a,
+body.invert-colors button,
+body.invert-colors input,
+body.invert-colors textarea {
+  color: initial !important;
+  background: initial !important;
+}
+/* Saturation Modes: apply to .main-content only, not body */
+.main-content.saturation-low {
+  filter: saturate(0.2) !important;
+}
+.main-content.saturation-high {
+  filter: saturate(2) !important;
+}
+.main-content.saturation-normal {
+  filter: saturate(1) !important;
+}
+/* Ensure accessibility panel and icon always stay fixed and visible */
+.accessibility-panel {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+}
+.accessibility-toggle {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 10000 !important;
+}
+
+
+
+@media (max-width: 700px) {
+  .team-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 0 !important;
+    width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+  }
+  .team-member {
+    flex: 0 0 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    scroll-snap-align: center !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    display: inline-block !important;
+    white-space: normal !important;
+    height: auto !important;
+  }
+}
+    </style>
+</head>
+
+<body>
+  
+ 
+    
+  
+    <!-- Navigation Bar -->
+    <nav>
+      <a href="index.html" class="logo-link">
+        <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo">
+      </a>
+      <div class="nav-links" role="menubar">
+        <a href="index.html" role="menuitem" data-translate="home_link">Home</a>
+        <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
+        <a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a>
+        <div class="dropdown" role="menuitem" aria-haspopup="true">
+          <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content" role="menu">
+            <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
+            <a href="news.html" role="menuitem" data-translate="news_link">News</a>
+            <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
+          </div>
+        </div>
+        <a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a>
+        <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">
+          <i class="fas fa-exclamation-circle"></i>
+          Where to Report
+        </a>
+      </div>
+      <div class="nav-actions">
+        <div class="language-switcher dropdown">
+          <a href="#" aria-expanded="false">ENG <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="#" data-lang="en" data-translate="english_link">English</a>
+            <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+            <a href="#" data-lang="fr" data-translate="french_link">French</a>
+            <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
+          </div>
+        </div>
+        <button class="hamburger" aria-label="Open menu" onclick="openMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+   <!-- Mobile Sidebar Menu -->
+<div id="mobileMenu" class="mobile-menu">
+  <div class="menu-header">
+    <span class="close-btn" onclick="closeMenu()">&times;</span>
+  </div>
+  <ul role="menu">
+    <li><a href="index.html" role="menuitem" aria-current="page" data-translate="home_link">Home</a></li>
+    <li><a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a></li>
+    <li><a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a></li>
+    <li><a href="events.html" role="menuitem" data-translate="events_link">Events</a></li>
+    <li><a href="news.html" role="menuitem" data-translate="news_link">News</a></li>
+    <li><a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a></li>
+    <li><a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a></li>
+    <li><a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link"><i class="fas fa-exclamation-circle"></i> Where to Report</a></li>
+  </ul>
+</div>
+
+    <section class="hero-section-bg">
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-typing" id="heroTyping"></span>
+        </div>
+        <div class="hero-image">
+          <img id="cyberLogoImg" src="images/uss.png" alt="Cyber Logo" />
+        </div>
+      </div>
+    </section>
+
+
+<!-- About Us Section -->
+<section class="about-us">
+  <div class="about-container">
+      <div class="about-image"> 
+          <img src="images/abbutt.png" alt="About Us" class="wide-image">
+      </div>
+      <div class="about-text">
+          <h2 style="color: orange;" data-translate="about_us_title">About Us</h2>
+          <p data-translate="about_us_paragraph_1">
+            Shield Maidens was founded in 2024 by Sumaiyya Jumma and Maria Muneeni as a way of giving back to the community. As beneficiaries of UN Women, the African Girls Can Code Initiative (AGCCI), and Siemens EmpowerHER, they recognized the need to create a platform dedicated to advocacy, empowerment, and education.
+          </p>
+          <p data-translate="about_us_paragraph_2">
+            At Shield Maidens, our mission is to educate young women and youth on digital safety while actively fighting against technology-facilitated gender-based violence (TFGBV). We are committed to fostering an inclusive world by advocating for gender equality, justice, and the protection of online spaces.
+          </p>
+          <p data-translate="about_us_paragraph_3">
+            Our goal is to empower individuals with the knowledge and tools needed to navigate the digital world safely, to amplify voices against gender-based violence, and to drive meaningful change through advocacy and education. Together, we stand for a safer, more inclusive future for all.
+          </p>
+      </div>
+  </div>
+</section>
+
+<!-- What We Do Section -->
+<section id="what-we-do">
+  <h2 data-translate="what_we_do_title">What We Do</h2>
+  <div class="what-we-do-container">
+      <div class="what-we-do-item">
+          <h3 data-translate="what_we_do_digital_safety_heading">Digital Safety & Awareness</h3>
+          <p data-translate="what_we_do_digital_safety_text">We equip individuals, especially women, girls, and marginalized groups, with the knowledge and skills they need to protect themselves in the digital world. Through online safety trainings, toolkits, and community workshops, we teach how to identify online threats such as phishing, cyberbullying, and doxxing. We also advocate for responsible digital citizenship and the ethical use of technology in everyday life.</p>
+      </div>
+
+      <div class="what-we-do-item">
+          <h3 data-translate="what_we_do_tfgbv_prevention_heading">TFGBV Prevention & Support</h3>
+          <p data-translate="what_we_do_tfgbv_prevention_text">Technology Facilitated Gender Based Violence (TFGBV) is a growing concern in the digital age. We actively address this issue by creating safe spaces for survivors, offering emotional support, and connecting them to professional resources and services. Through storytelling, survivor-led advocacy, and awareness campaigns, we educate the public and policymakers about the impact of TFGBV and push for systemic change.</p>
+      </div>
+
+      <div class="what-we-do-item">
+          <h3 data-translate="what_we_do_innovation_heading">Innovation & Technology</h3>
+          <p data-translate="what_we_do_innovation_text">We believe technology can be a force for good. That is why we support youth and women in developing digital solutions that promote safety, inclusivity, and justice. Digital reporting tools and educational platforms, our team harnesses innovation to solve real-world issues. We also teach coding, cybersecurity, and digital literacy to bridge the digital divide and empower future tech leaders.</p>
+      </div>
+  </div>
+</section>
+
+<hr style="margin: 50px 0 0 0; border: none; border-top: 4px solid #eee;">
+<!-- Tailwind Core Values Dropdown Cards Section -->
+<section class="values-section">
+  <details open>
+    <summary>🔥 Our Core Values</summary>
+    <p class="values-intro" data-translate="core_values_intro">
+      At Shield Maidens, we empower young women, girls, and marginalized communities to thrive in digital spaces. United by core values, we combat TFGBV and stand for a just, inclusive, and safe tech world.
+    </p>
+
+    <div class="values-cards">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Empowerment</div>
+            <i class="fas fa-bolt"></i>
+            <span data-translate="value_empowerment_title">Empowerment</span>
+          </div>
+          <div class="card-back">
+            <span data-translate="value_empowerment_text">We uplift women, girls and persons with disabilities (PWDs) to confidently and safely lead in digital spaces, fighting TFGBV every step of the way.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Integrity</div>
+            <i class="fas fa-shield-alt"></i>
+            <span data-translate="value_integrity_title">Integrity</span>
+          </div>
+          <div class="card-back">
+            <span data-translate="value_integrity_text">We are honest, ethical, and transparent in everything we do, building trust with our communities.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Advocacy</div>
+            <i class="fas fa-bullhorn"></i>
+            <span data-translate="value_advocacy_title">Advocacy</span>
+          </div>
+          <div class="card-back">
+            <span data-translate="value_advocacy_text">We amplify marginalized voices and demand policies and protections that keep all users safe online.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Solidarity</div>
+            <i class="fas fa-hands-helping"></i>
+            <span data-translate="value_solidarity_title">Solidarity</span>
+          </div>
+          <div class="card-back">
+            <span data-translate="value_solidarity_text">We stand with survivors and allies to build a community rooted in strength and resilience.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Inclusion</div>
+            <i class="fas fa-universal-access"></i>
+            <span data-translate="value_inclusion_title">Inclusion</span>
+          </div>
+          <div class="card-back">
+            <span data-translate="value_inclusion_text">We celebrate diversity and ensure access for all, including Persons with Disabilities (PWDs), to participate equally in tech.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+</section>
+
+
+<hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
+
+
+<!-- Our Team Section -->
+
+<main role="main" aria-label="Team section" style="background: #5c4033;">
+  <h2 id="team-heading" data-translate="our_team_title">OUR AMAZING TEAM</h2>
+
+  <p class="team-intro" aria-describedby="team-heading" data-translate="our_team_intro">
+    Empowering and celebrating women in technology across Africa guiding Tech-Girls to their Full Potential
+  </p>
+
+  <section class="team-container" aria-labelledby="team-heading">
+
+    <article class="team-member" aria-label="Jane Doe - Founder and Security Consultant">
+      <img src="images/sumaiyah.jpg" alt="Portrait of Jane Doe, Founder and Security Consultant">
+      <div class="team-info">
+        <h3 data-translate="team_member_jane_name">JANE DOE</h3>
+        <p data-translate="team_member_jane_role">Founder / Security Consultant</p>
+        <div class="social-icons" aria-label="Jane Doe social media links">
+          <a href="#" aria-label="Jane on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Jane on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Jane on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="team-member" aria-label="Maria Muneeni - Co-Founder and Digital Safety Trainer">
+      <img src="images/mariaah.png" alt="Portrait of Maria Muneeni, Co-Founder and Champion for PWDs">
+      <div class="team-info">
+        <h3 data-translate="team_member_maria_name">MARIA MUNEENI</h3>
+        <p data-translate="team_member_maria_role">Co-Founder / Digital Safety Trainer / Champion for PWDs Inclusivity</p>
+        <div class="social-icons" aria-label="Maria Muneeni social media links">
+          <a href="#" aria-label="Maria on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Maria on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Maria on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="team-member" aria-label="Ruth Jebitok - Social Media Manager">
+      <img src="images/rtth.jpg" alt="Portrait of Ruth Jebitok, Social Media Manager">
+      <div class="team-info">
+        <h3 data-translate="team_member_ruth_name">RUTH JEBITOK</h3>
+        <p data-translate="team_member_ruth_role">Social Media Manager</p>
+        <div class="social-icons" aria-label="Ruth Jebitok social media links">
+          <a href="#" aria-label="Ruth on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/jebi.tok?igsh=dW1rZmx6MDlybHNu&utm_source=qr" aria-label="Ruth on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/ruth-jebitok-6114b6283/" aria-label="Ruth on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="team-member" aria-label="Irene Cherono - Digital Safety Trainer">
+      <img src="images/irene.png" alt="Portrait of Irene Cherono, Digital Safety Trainer">
+      <div class="team-info">
+        <h3 data-translate="team_member_irene_name">IRENE CHERONO</h3>
+        <p data-translate="team_member_irene_role">Digital Safety Trainer</p>
+        <div class="social-icons" aria-label="Irene Cherono social media links">
+          <a href="#" aria-label="Irene on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Irene on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Irene on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="team-member" aria-label="Caren Jeruto - Online Safety Advocate">
+      <img src="images/car.jpg" alt="Portrait of Caren Jeruto, Online Safety Advocate">
+      <div class="team-info">
+        <h3 data-translate="team_member_caren_name">CAREN JERUTO</h3>
+        <p data-translate="team_member_caren_role">Digital Saftey Trainer</p>
+        <div class="social-icons" aria-label="Caren Jeruto social media links">
+          <a href="https://x.com/jerut2618/" aria-label="Caren on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/carre_y254?igsh=YzljYTk1ODg3Zg==" aria-label="Caren on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/caren-jeruto-831037286/?" aria-label="Caren on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </article>
+
+  </section>
+</main>
+<hr style="margin: 50px 0 0 0; border: none; border-top: 4px solid #eee;">
+<section class="shield-cta-section">
+    <div class="shield-cta-container">
+        <h2 data-translate="join_difference_about">Join Us in Making a Difference</h2>
+        <p class="shield-cta-intro" data-translate="cta_intro_about">
+            At Shield Maidens, we believe in the power of collective action. Together, we can create a safer, more inclusive digital space for all. Get involved today to help us fight against Technology-Facilitated Gender-Based Violence and advocate for the rights of marginalized communities online.
+        </p>
+        <a href="index.html#contact" class="btn-get-involved" data-translate="join_us_about">Get Involved</a>
+    </div>
+</section>
+
+<hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
+ <!-- Footer -->
+ <footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1: Logo (left) -->
+    <div class="footer-logo">
+      <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo">
+    </div>
+
+    <!-- Column 2: Quick Links (center) -->
+    <div class="footer-links">
+      <h3 data-translate="quick_links">Quick Links</h3>
+      <ul>
+        <li><a href="index.html" data-translate="home_link">Home</a></li>
+        <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
+        <li><a href="resource&support.html" data-translate="resources_link">Resources</a></li>
+        <li><a href="events.html" data-translate="events_link">Events</a></li>
+        <li><a href="news.html" data-translate="news_link">News</a></li>
+        <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
+        <li><a href="donate.html" class="donate-btn" data-translate="donate_link">Donate</a></li>
+        <li><a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">Where to Report</a></li>
+      </ul>
+      <div class="payment-icons">
+        <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
+        <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" height="20">
+        <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" height="20">
+      </div>
+    </div>
+
+    <!-- Column 3: Contact, Location, Socials (right) -->
+    <div class="footer-contact">
+      <h3 data-translate="contact_us">Contact Us</h3>
+      <p>Email: shi3ldmaidens@gmail.com</p>
+      <div class="footer-location">
+        <h3 data-translate="our location">Location</h3>
+        <p>Nairobi, Kenya</p>
+      </div>
+      <h3 data-translate="our_socials">Our Socials</h3>
+      <div class="social-icons">
+        <a href="https://x.com/_shield_maidens" target="_blank">
+          <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
+        </a>
+        <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank">
+          <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"/>
+        </a>
+        <a href="https://www.instagram.com/the_shield_maidens/" target="_blank">
+          <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram"/>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p data-translate="copyright">Copyright © 2025 Shield Maidens</p>
+  </div>
+</footer>
+
+<script src="accessibility.js"></script>
+<script src="script.js"></script>
+
+
+
+<script src="js/language-handler.js"></script>
+
+</script>
+<!-- Accessibility Control Panel -->
+<div class="accessibility-panel" id="accessibilityPanel">
+    <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()" aria-label="Accessibility options">
+      <i class="fas fa-universal-access"></i>
+    </button>
+    <div class="accessibility-controls">
+      <button onclick="toggleTextToSpeech()" id="ttsToggle">
+        <i class="fas fa-volume-up"></i> TTS
+      </button>
+      <button onclick="stopTTS()" id="ttsStop">
+        <i class="fas fa-stop"></i> Stop
+    </button>
+      <button onclick="increaseFontSize()">
+        <i class="fas fa-text-height"></i> A+
+      </button>
+      <button onclick="decreaseFontSize()">
+        <i class="fas fa-text-height"></i> A-
+      </button>
+      <button onclick="cycleContrast()" id="contrastToggle">
+        <i class="fas fa-adjust"></i> <span id="contrastLabel">Contrast</span>
+      </button>
+      <button onclick="cycleSaturation()" id="saturationToggle">
+        <i class="fas fa-tint"></i> <span id="saturationLabel">Saturation</span>
+      </button>
+      <button onclick="resetAccessibility()">
+        <i class="fas fa-undo"></i> Reset
+      </button>
+    </div>
+  </div>
+  
+  <style>
+  /* Accessibility Panel Styles */
+  .accessibility-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .accessibility-toggle {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    width: 50px !important;
+    height: 50px !important;
+    background: #ff4500 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50% !important;
+    font-size: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 10000 !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+    cursor: pointer !important;
+  }
+  
+  .accessibility-toggle:hover {
+    transform: scale(1.1);
+  }
+  
+  .accessibility-controls {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background: orange;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .accessibility-controls.active {
+    display: flex;
+  }
+  
+  .accessibility-controls button {
+    background: orange;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accessibility-controls button:hover {
+    background: #e0e0e0;
+  }
+  
+  /* High Contrast Mode */
+  .high-contrast {
+    background-color: #000 !important;
+    background-color: yellow !important;
+    color: #fff !important;
+  }
+  
+  .high-contrast * {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+  }
+  
+  .high-contrast a {
+    color: #ffff00 !important;
+  }
+  
+  .high-contrast button {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+  /* Invert Colors Theme (Pink) */
+  body.invert-colors {
+    background: #ff69b4 !important; /* Hot pink */
+    color: #fff !important;
+  }
+  body.invert-colors a, body.invert-colors button, body.invert-colors input, body.invert-colors textarea {
+    color: #fff !important;
+    background: #d72670 !important;
+    border-color: #fff !important;
+  }
+  /* Dark Mode Theme */
+  body.dark-mode {
+    background: #181a1b !important;
+    color: #e8eaed !important;
+  }
+  body.dark-mode a, body.dark-mode button, body.dark-mode input, body.dark-mode textarea {
+    color: #e8eaed !important;
+    background: #23272a !important;
+    border-color: #444 !important;
+  }
+  /* Light Mode Theme */
+  body.light-mode {
+    background: #fff !important;
+    color: #222 !important;
+  }
+  body.light-mode a, body.light-mode button, body.light-mode input, body.light-mode textarea {
+    color: #222 !important;
+    background: #f5f5f5 !important;
+    border-color: #bbb !important;
+  }
+  /* Color-blind Friendly Theme (blue/yellow) */
+  body.color-blind-mode {
+    background: #f7f7e8 !important;
+    color: #1a1a7a !important;
+  }
+  body.color-blind-mode a, body.color-blind-mode button, body.color-blind-mode input, body.color-blind-mode textarea {
+    color: #1a1a7a !important;
+    background: #ffe066 !important;
+    border-color: #1a1a7a !important;
+  }
+  /* Saturation Modes */
+  body.saturation-low {
+    filter: saturate(0.2) !important;
+  }
+  body.saturation-high {
+    filter: saturate(2) !important;
+  }
+  body.saturation-normal {
+    filter: saturate(1) !important;
+  }
+
+  /* Ensure accessibility panel and icon always stay fixed and visible */
+  .accessibility-panel {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 9999 !important;
+  }
+  .accessibility-toggle {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
+  }
+
+  /* Invert Colors Theme (Light Pink Background Only) */
+  body.invert-colors {
+    background: #ffe4ec !important; /* Light pink */
+  }
+  body.invert-colors *,
+  body.invert-colors h1,
+  body.invert-colors h2,
+  body.invert-colors h3,
+  body.invert-colors h4,
+  body.invert-colors h5,
+  body.invert-colors h6,
+  body.invert-colors p,
+  body.invert-colors span,
+  body.invert-colors a,
+  body.invert-colors button,
+  body.invert-colors input,
+  body.invert-colors textarea {
+    color: initial !important;
+    background: initial !important;
+  }
+  /* Saturation Modes: apply to .main-content only, not body */
+  .main-content.saturation-low {
+    filter: saturate(0.2) !important;
+  }
+  .main-content.saturation-high {
+    filter: saturate(2) !important;
+  }
+  .main-content.saturation-normal {
+    filter: saturate(1) !important;
+  }
+  /* Ensure accessibility panel and icon always stay fixed and visible */
+  .accessibility-panel {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 9999 !important;
+  }
+  .accessibility-toggle {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
+  }
+  </style>
+  
+  <script>
+  // Accessibility Functions (Globally accessible)
+  let isTTSActive = true; // Set to true by default for auto-read
+  let isHighContrast = false;
+  let currentFontSize = 16;
+  let currentTTSVoice = null; // To store the currently selected voice
+  
+  // Function to find a voice based on language
+  window.selectTTSVoice = function(lang) {
+      const voices = window.speechSynthesis.getVoices();
+      console.log('Available Voices:', voices);
+      console.log('Attempting to select voice for language:', lang);
+  
+      let selectedVoice = null;
+  
+      if (lang === 'en') {
+          // Prioritize Awasili voice for English
+          selectedVoice = voices.find(voice => voice.name === 'Awasili') ||
+                         voices.find(voice => voice.name === 'Asilia') ||
+                         voices.find(voice => voice.lang === 'en-KE') ||
+                         voices.find(voice => voice.lang.startsWith('en-US')) ||
+                         voices.find(voice => voice.lang.startsWith('en-GB')) ||
+                         voices.find(voice => voice.lang.startsWith('en'));
+      } else if (lang === 'sw') {
+          // Prioritize Swahili (Kenya) then any Swahili voice
+          selectedVoice = voices.find(voice => voice.lang === 'sw-KE') ||
+                         voices.find(voice => voice.lang.startsWith('sw'));
+      } else if (lang === 'fr') {
+          // Prioritize French voices
+          selectedVoice = voices.find(voice => voice.lang.startsWith('fr'));
+      } else if (lang === 'ar') {
+          // Prioritize Arabic voices
+          selectedVoice = voices.find(voice => voice.lang.startsWith('ar'));
+      }
+  
+      currentTTSVoice = selectedVoice || voices.find(voice => voice.lang.startsWith('en')) || voices[0];
+      if (!currentTTSVoice) {
+          console.warn("No suitable voice found for language " + lang + ", using default system voice.");
+      } else {
+          console.log('Selected voice:', currentTTSVoice.name, '(' + currentTTSVoice.lang + ')');
+      }
+  };
+  
+  // Toggle accessibility panel visibility
+  window.toggleAccessibilityPanel = function() {
+      const controls = document.querySelector('.accessibility-controls');
+      controls.classList.toggle('active');
+  };
+  
+  // Toggle text-to-speech on/off
+  window.toggleTextToSpeech = function() {
+      isTTSActive = !isTTSActive;
+      const ttsButton = document.getElementById('ttsToggle');
+      
+      if (isTTSActive) {
+          ttsButton.style.backgroundColor = '#ff4500';
+          ttsButton.style.color = 'white';
+          window.readPageContent(); // Restart reading when toggled on
+      } else {
+          ttsButton.style.backgroundColor = '#f5f5f5';
+          ttsButton.style.color = 'black';
+          window.speechSynthesis.cancel();
+      }
+  };
+  
+  // Stop text-to-speech
+  window.stopTTS = function() {
+      isTTSActive = false;
+      window.speechSynthesis.cancel();
+      const ttsButton = document.getElementById('ttsToggle');
+      if (ttsButton) {
+          ttsButton.style.backgroundColor = '#f5f5f5';
+          ttsButton.style.color = 'black';
+      }
+  };
+  
+  // Read the entire page content
+  window.readPageContent = function() {
+      if (!isTTSActive) {
+          console.log('TTS is not active, not reading content.');
+          return;
+      }
+      
+      // Get the current language
+      const currentLang = document.documentElement.lang || 'en';
+      
+      // Function to create and speak an utterance
+      const speakText = (text, rate = 1) => {
+          if (!text) return null;
+          
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.rate = rate;
+          utterance.pitch = 1;
+          utterance.volume = 1;
+          utterance.lang = currentLang;
+          
+          if (currentTTSVoice) {
+              utterance.voice = currentTTSVoice;
+          }
+          
+          return utterance;
+      };
+  
+      // Create a queue of utterances
+      const utterances = [];
+      
+      // 1. Read navigation links once, clearly
+      const navLinks = document.querySelectorAll('.nav-links a');
+      navLinks.forEach(link => {
+          // Get the complete text content, including any child elements
+          const text = link.textContent.replace(/\s+/g, ' ').trim();
+          if (text) {
+              const utterance = speakText(text, 0.9);
+              if (utterance) {
+                  utterances.push(utterance);
+              }
+          }
+      });
+  
+      // 2. Read the main content
+      const mainContent = Array.from(document.querySelectorAll('[data-translate]'))
+          .filter(el => el.getAttribute('data-lang') === currentLang || !el.getAttribute('data-lang'))
+          .map(el => el.textContent.replace(/\s+/g, ' ').trim())
+          .filter(text => text) // Remove empty strings
+          .join(' ');
+  
+      if (mainContent) {
+          const utterance = speakText(mainContent, 1);
+          if (utterance) {
+              utterances.push(utterance);
+          }
+      }
+  
+      // Function to speak the next utterance in the queue
+      const speakNext = (index) => {
+          if (index < utterances.length) {
+              const utterance = utterances[index];
+              utterance.onend = () => {
+                  // Add a pause between items
+                  setTimeout(() => {
+                      speakNext(index + 1);
+                  }, 500); // Consistent pause between all items
+              };
+              window.speechSynthesis.speak(utterance);
+          }
+      };
+  
+      // Start speaking the queue
+      speakNext(0);
+  };
+  
+  // Increase font size
+  window.increaseFontSize = function() {
+      currentFontSize += 2;
+      document.body.style.fontSize = currentFontSize + 'px';
+  };
+  
+  // Decrease font size
+  window.decreaseFontSize = function() {
+      currentFontSize = Math.max(12, currentFontSize - 2);
+      document.body.style.fontSize = currentFontSize + 'px';
+  };
+  
+  // Toggle high contrast mode
+  window.toggleHighContrast = function() {
+      isHighContrast = !isHighContrast;
+      const contrastButton = document.getElementById('contrastToggle');
+      
+      if (isHighContrast) {
+          document.body.classList.add('high-contrast');
+          contrastButton.style.backgroundColor = '#ff4500';
+          contrastButton.style.color = 'white';
+      } else {
+          document.body.classList.remove('high-contrast');
+          contrastButton.style.backgroundColor = '#f5f5f5';
+          contrastButton.style.color = 'black';
+      }
+  };
+  
+  // Reset all accessibility settings
+  window.resetAccessibility = function() {
+      // Reset font size
+      currentFontSize = 16;
+      document.body.style.fontSize = ''; // Resets to default
+  
+      // Reset high contrast
+      isHighContrast = false;
+      document.body.classList.remove('high-contrast');
+      document.getElementById('contrastToggle').style.backgroundColor = '#f5f5f5';
+      document.getElementById('contrastToggle').style.color = 'black';
+  
+      // Reset text-to-speech
+      isTTSActive = false;
+      window.speechSynthesis.cancel(); // Stop any ongoing speech
+      document.getElementById('ttsToggle').style.backgroundColor = '#f5f5f5';
+      document.getElementById('ttsToggle').style.color = 'black';
+  
+      // Re-select voice based on current page language (defaults to English)
+      window.selectTTSVoice(document.documentElement.lang || 'en');
+  };
+  
+  // Initial setup for voices and auto-read
+  document.addEventListener('DOMContentLoaded', () => {
+      const initializeTTSOnLoad = () => {
+          // Set TTS to active by default
+          isTTSActive = true;
+          
+          // Initialize voice selection
+          window.selectTTSVoice(document.documentElement.lang || 'en');
+          
+          // Set the TTS button to active state
+          const ttsButton = document.getElementById('ttsToggle');
+          if (ttsButton) {
+              ttsButton.style.backgroundColor = '#ff4500';
+              ttsButton.style.color = 'white';
+          }
+  
+          // Start reading the page content automatically
+          setTimeout(() => {
+              window.readPageContent();
+          }, 1000); // Small delay to ensure everything is loaded
+      };
+  
+      if (window.speechSynthesis && window.speechSynthesis.getVoices().length > 0) {
+          initializeTTSOnLoad();
+      } else if (window.speechSynthesis) {
+          window.speechSynthesis.onvoiceschanged = () => {
+              initializeTTSOnLoad();
+          };
+      } else {
+          console.warn("SpeechSynthesis API not supported in this browser.");
+      }
+  });
+
+</script>
+  
+
+<script>
+function updateCarouselArrow() {
+  const carousel = document.querySelector('.session-carousel');
+  const arrow = document.getElementById('carouselLeftArrow');
+  if (!carousel || !arrow) return;
+  if (window.innerWidth > 600) {
+    arrow.style.display = 'none';
+    return;
+  }
+  // Show arrow if not at leftmost
+  if (carousel.scrollLeft > 10) {
+    arrow.style.display = 'flex';
+  } else {
+    arrow.style.display = 'none';
+  }
+}
+window.addEventListener('resize', updateCarouselArrow);
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.session-carousel');
+  const arrow = document.getElementById('carouselLeftArrow');
+  if (!carousel || !arrow) return;
+  updateCarouselArrow();
+  carousel.addEventListener('scroll', updateCarouselArrow);
+  arrow.addEventListener('click', function() {
+    carousel.scrollBy({ left: -carousel.offsetWidth * 0.9, behavior: 'smooth' });
+  });
+});
+</script>
+
+
+
+
+
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+// --- Contrast and Saturation Cycling Logic ---
+let contrastIndex = 0;
+const contrastModes = [
+{ name: 'Default', fn: () => resetContrast() },
+{ name: 'Invert', fn: () => { resetContrast(); document.body.classList.add('invert-colors'); } },
+{ name: 'High', fn: () => { resetContrast(); document.body.classList.add('high-contrast'); } },
+{ name: 'Dark', fn: () => { resetContrast(); document.body.classList.add('dark-mode'); } },
+{ name: 'Light', fn: () => { resetContrast(); document.body.classList.add('light-mode'); } },
+{ name: 'Color-blind', fn: () => { resetContrast(); document.body.classList.add('color-blind-mode'); } }
+];
+function resetContrast() {
+document.body.classList.remove('invert-colors', 'high-contrast', 'dark-mode', 'light-mode', 'color-blind-mode');
+}
+function cycleContrast() {
+contrastIndex = (contrastIndex + 1) % contrastModes.length;
+contrastModes[contrastIndex].fn();
+document.getElementById('contrastLabel').textContent = 'Contrast: ' + contrastModes[contrastIndex].name;
+}
+
+let saturationIndex = 0;
+const saturationModes = [
+{ name: 'Normal', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-normal'); } },
+{ name: 'Low', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-low'); } },
+{ name: 'High', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-high'); } }
+];
+function resetSaturation() {
+document.querySelector('.main-content').classList.remove('saturation-low', 'saturation-high', 'saturation-normal');
+}
+function cycleSaturation() {
+saturationIndex = (saturationIndex + 1) % saturationModes.length;
+saturationModes[saturationIndex].fn();
+document.getElementById('saturationLabel').textContent = 'Saturation: ' + saturationModes[saturationIndex].name;
+}
+
+// Update labels on load and after reset
+function updateLabels() {
+document.getElementById('contrastLabel').textContent = 'Contrast: ' + contrastModes[contrastIndex].name;
+document.getElementById('saturationLabel').textContent = 'Saturation: ' + saturationModes[saturationIndex].name;
+}
+document.addEventListener('DOMContentLoaded', updateLabels);
+
+// Update resetAccessibility to also reset these
+const oldReset = window.resetAccessibility;
+window.resetAccessibility = function() {
+oldReset();
+contrastIndex = 0;
+saturationIndex = 0;
+resetContrast();
+resetSaturation();
+updateLabels();
+};
+</script>
+</div>
+<!-- Accessibility icon/panel must be here, outside .main-content -->
+<div class="accessibility-panel" id="accessibilityPanel">
+<!-- ... existing accessibility panel code ... -->
+</div>
+<!-- Footer, scripts, etc. -->
+</body>
+</html>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Typing animation for hero section
+  const words = ["WE", "VALUE", "SAFETY", "AND", "INCLUSIVITY"];
+  const typingElem = document.getElementById("heroTyping");
+  const logoImg = document.getElementById("cyberLogoImg");
+  let wordIndex = 0;
+  let charIndex = 0;
+  let fullText = "";
+
+  // Hide logo initially
+  if (logoImg) {
+    logoImg.style.visibility = 'hidden';
+    logoImg.style.display = 'none';
+  }
+
+  function typeWord() {
+    if (!typingElem) return;
+    const currentWord = words[wordIndex];
+    if (charIndex < currentWord.length) {
+      typingElem.textContent = fullText + currentWord.substring(0, charIndex + 1);
+      charIndex++;
+      setTimeout(typeWord, 120);
+      } else {
+      // Add a space after each word except the last
+      fullText += currentWord + (wordIndex < words.length - 1 ? " " : "");
+      typingElem.textContent = fullText;
+      charIndex = 0;
+      wordIndex++;
+      if (wordIndex < words.length) {
+        setTimeout(typeWord, 400);
+    } else {
+        // All words typed, show logo
+        if (logoImg) {
+          logoImg.style.display = 'inline-block';
+          logoImg.style.visibility = 'visible';
+          logoImg.classList.add('visible');
+        }
+      }
+    }
+  }
+  typeWord();
+});
+
+
+</script>
+
+
+  
+ 
+ 
+
+
+      </div>
+      <!-- Accessibility icon/panel must be here, outside .main-content -->
+      <div class="accessibility-panel" id="accessibilityPanel">
+        <!-- ... existing accessibility panel code ... -->
+      </div>
+      <!-- Footer, scripts, etc. -->
+    
+    
+</body>
+</html>
+
+<style>
+@media (max-width: 700px) {
+  .team-member img {
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    margin: 10px auto 0 auto !important;
+    display: block !important;
+  }
+  .team-member {
+    padding: 10px 0 20px 0 !important;
+    min-height: unset !important;
+    max-height: 350px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12) !important;
+  }
+  .team-info h3 {
+    font-size: 1.1em !important;
+    margin: 8px 0 4px 0 !important;
+  }
+  .team-info p {
+    font-size: 0.95em !important;
+    padding: 0 4px !important;
+  }
+}
+</style>
