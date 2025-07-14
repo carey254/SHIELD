@@ -1775,6 +1775,25 @@ window.resetAccessibility = function() {
           }, 2000);
         });
       </script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    isTTSActive = false;
+    var ttsButton = document.getElementById('ttsToggle');
+    var stopButton = document.getElementById('ttsStop');
+    if (ttsButton) {
+      ttsButton.disabled = true;
+      ttsButton.style.opacity = 0.5;
+      ttsButton.style.pointerEvents = 'none';
+    }
+    if (stopButton) {
+      stopButton.disabled = true;
+      stopButton.style.opacity = 0.5;
+      stopButton.style.pointerEvents = 'none';
+    }
+  });
+  </script>
       <script>
         // Show loader only if page takes too long to load
         let loaderTimeout = setTimeout(function() {

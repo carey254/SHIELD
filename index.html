@@ -2757,6 +2757,22 @@ document.getElementById('mailing-list').addEventListener('submit', function(e) {
     resetSaturation();
     updateLabels();
   };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    isTTSActive = false;
+    var ttsButton = document.getElementById('ttsToggle');
+    var stopButton = document.getElementById('ttsStop');
+    if (ttsButton) {
+      ttsButton.disabled = true;
+      ttsButton.style.opacity = 0.5;
+      ttsButton.style.pointerEvents = 'none';
+    }
+    if (stopButton) {
+      stopButton.disabled = true;
+      stopButton.style.opacity = 0.5;
+      stopButton.style.pointerEvents = 'none';
+    }
+  });
 </script>
   </div>
   <!-- Accessibility icon/panel must be here, outside .main-content -->
