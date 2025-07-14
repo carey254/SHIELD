@@ -45,11 +45,22 @@ window.toggleTextToSpeech = function() {
     }
 };
 
-window.stopTTS = function() {
+window.stopTTS = function(external) {
+    if (window._ttsStopped) return; // Only allow once
+    window._ttsStopped = true;
     isTTSActive = false;
     window.speechSynthesis.cancel();
     const ttsButton = document.getElementById('ttsToggle');
     if (ttsButton) ttsButton.classList.remove('active');
+    if (!external) {
+        // Broadcast to other tabs
+        if (ttsChannel) {
+            ttsChannel.postMessage('stop-tts');
+        } else {
+            localStorage.setItem('tts-stop', '1');
+            setTimeout(() => localStorage.removeItem('tts-stop'), 100);
+        }
+    }
 };
 
 window.readPageContent = function() {
@@ -128,3 +139,50 @@ document.addEventListener('DOMContentLoaded', () => {
 // function applyTranslations(language) { ... }
 // function updateDynamicContent(language) { ... }
 // document.addEventListener('DOMContentLoaded', () => { ... });
+
+// --- Cross-tab TTS Stop Logic ---
+(function() {
+    // Use BroadcastChannel if available, else fallback to localStorage events
+    let ttsChannel = null;
+    if (window.BroadcastChannel) {
+        ttsChannel = new BroadcastChannel('tts-control');
+        ttsChannel.onmessage = function(e) {
+            if (e.data === 'stop-tts') {
+                window._externalTTSStop = true;
+                window.stopTTS(true); // true = external
+            }
+        };
+    } else {
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'tts-stop' && e.newValue === '1') {
+                window._externalTTSStop = true;
+                window.stopTTS(true); // true = external
+            }
+        });
+    }
+
+    // Patch stopTTS to broadcast
+    const origStopTTS = window.stopTTS;
+    window.stopTTS = function(external) {
+        if (window._ttsStopped) return; // Only allow once
+        window._ttsStopped = true;
+        origStopTTS && origStopTTS();
+        if (!external) {
+            // Broadcast to other tabs
+            if (ttsChannel) {
+                ttsChannel.postMessage('stop-tts');
+            } else {
+                localStorage.setItem('tts-stop', '1');
+                setTimeout(() => localStorage.removeItem('tts-stop'), 100);
+            }
+        }
+    };
+
+    // Reset _ttsStopped on page load
+    window._ttsStopped = false;
+    window._externalTTSStop = false;
+    document.addEventListener('DOMContentLoaded', function() {
+        window._ttsStopped = false;
+        window._externalTTSStop = false;
+    });
+})();
