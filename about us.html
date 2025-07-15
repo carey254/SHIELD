@@ -9,7 +9,10 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<<<<<<< HEAD
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-bxKXJmQ4I4GLwZy2XIIqT+2x+SCs6VtqFvUde3bwUR7B7tt8d3y5YgHdbsRjhuIkqnmPf0ogGC+iaj4uWvHgYA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+=======
+>>>>>>> 0eaf508c154d8ec8ea5dcdf85aef3a794f14af68
     <script src="translations.js"></script>
     <script src="accessibility.js" defer></script>
     <style>
@@ -1272,6 +1275,7 @@ body {
   
 }
 
+<<<<<<< HEAD
 :root {
   --card-bg: #fff8e1;
   --brand-orange: #ff6810;
@@ -1450,6 +1454,103 @@ h2 {
   }
 }
 
+=======
+main {
+  display: block;
+}
+
+h2 {
+  text-align: center;
+  padding: 30px 0 10px;
+  color: white;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.team-intro {
+ 
+  color: azure;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  font-size: 16px;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 20px 50px;
+  background-color: #5c4033;
+}
+
+.team-member {
+  background-color: white;
+  width: 220px;
+  border-radius: 0 0 20px 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding-bottom: 40px;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+.team-info h3 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #5c4033;
+}
+
+.team-info p {
+  font-size: 13px;
+  margin: 0;
+  color: #6c6c6c;
+  padding: 0 5px;
+}
+
+.team-member::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 20px;
+  background-color: #5c4033;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #5c4033;
+  margin: 0 6px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff4500;
+}
+>>>>>>> 0eaf508c154d8ec8ea5dcdf85aef3a794f14af68
 
 /* Responsive layout for smaller screens */
 @media (max-width: 768px) {
@@ -1748,8 +1849,11 @@ body.invert-colors textarea {
     height: auto !important;
   }
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 0eaf508c154d8ec8ea5dcdf85aef3a794f14af68
     </style>
 </head>
 
@@ -1814,12 +1918,25 @@ body.invert-colors textarea {
   </ul>
 </div>
 
+<<<<<<< HEAD
     
         <div class="hero-image">
           <img id="cyberLogoImg" src="images/butt.png" alt="Cyber Logo" />
         </div>
       
  
+=======
+    <section class="hero-section-bg">
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-typing" id="heroTyping"></span>
+        </div>
+        <div class="hero-image">
+          <img id="cyberLogoImg" src="images/uss.png" alt="Cyber Logo" />
+        </div>
+      </div>
+    </section>
+>>>>>>> 0eaf508c154d8ec8ea5dcdf85aef3a794f14af68
 
 
 <!-- About Us Section -->
@@ -1947,6 +2064,7 @@ body.invert-colors textarea {
 
 
 <!-- Our Team Section -->
+<<<<<<< HEAD
 <section class="team-section" aria-labelledby="team-heading">
 
   <h2 id="team-heading" data-translate="our_team_title">OUR AMAZING TEAM</h2>
@@ -2005,6 +2123,85 @@ body.invert-colors textarea {
 
 </section>
 
+=======
+
+<main role="main" aria-label="Team section" style="background: #5c4033;">
+  <h2 id="team-heading" data-translate="our_team_title">OUR AMAZING TEAM</h2>
+
+  <p class="team-intro" aria-describedby="team-heading" data-translate="our_team_intro">
+    Empowering and celebrating women in technology across Africa guiding Tech-Girls to their Full Potential
+  </p>
+
+  <section class="team-container" aria-labelledby="team-heading">
+
+    <article class="team-member" aria-label="Jane Doe - Founder and Security Consultant">
+      <img src="images/sumaiyah.jpg" alt="Portrait of Jane Doe, Founder and Security Consultant">
+      <div class="team-info">
+        <h3 data-translate="team_member_jane_name">JANE DOE</h3>
+        <p data-translate="team_member_jane_role">Founder / Security Consultant</p>
+        <div class="social-icons" aria-label="Jane Doe social media links">
+          <a href="#" aria-label="Jane on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Jane on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Jane on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="team-member" aria-label="Maria Muneeni - Co-Founder and Digital Safety Trainer">
+      <img src="images/mariaah.png" alt="Portrait of Maria Muneeni, Co-Founder and Champion for PWDs">
+      <div class="team-info">
+        <h3 data-translate="team_member_maria_name">MARIA MUNEENI</h3>
+        <p data-translate="team_member_maria_role">Co-Founder / Digital Safety Trainer / Champion for PWDs Inclusivity</p>
+        <div class="social-icons" aria-label="Maria Muneeni social media links">
+          <a href="#" aria-label="Maria on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Maria on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Maria on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="team-member" aria-label="Ruth Jebitok - Social Media Manager">
+      <img src="images/rtth.jpg" alt="Portrait of Ruth Jebitok, Social Media Manager">
+      <div class="team-info">
+        <h3 data-translate="team_member_ruth_name">RUTH JEBITOK</h3>
+        <p data-translate="team_member_ruth_role">Social Media Manager</p>
+        <div class="social-icons" aria-label="Ruth Jebitok social media links">
+          <a href="#" aria-label="Ruth on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/jebi.tok?igsh=dW1rZmx6MDlybHNu&utm_source=qr" aria-label="Ruth on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/ruth-jebitok-6114b6283/" aria-label="Ruth on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="team-member" aria-label="Irene Cherono - Digital Safety Trainer">
+      <img src="images/irene.png" alt="Portrait of Irene Cherono, Digital Safety Trainer">
+      <div class="team-info">
+        <h3 data-translate="team_member_irene_name">IRENE CHERONO</h3>
+        <p data-translate="team_member_irene_role">Digital Safety Trainer</p>
+        <div class="social-icons" aria-label="Irene Cherono social media links">
+          <a href="#" aria-label="Irene on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Irene on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Irene on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="team-member" aria-label="Caren Jeruto - Online Safety Advocate">
+      <img src="images/car.jpg" alt="Portrait of Caren Jeruto, Online Safety Advocate">
+      <div class="team-info">
+        <h3 data-translate="team_member_caren_name">CAREN JERUTO</h3>
+        <p data-translate="team_member_caren_role">Digital Saftey Trainer</p>
+        <div class="social-icons" aria-label="Caren Jeruto social media links">
+          <a href="https://x.com/jerut2618/" aria-label="Caren on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/carre_y254?igsh=YzljYTk1ODg3Zg==" aria-label="Caren on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/caren-jeruto-831037286/?" aria-label="Caren on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </article>
+
+  </section>
+</main>
+>>>>>>> 0eaf508c154d8ec8ea5dcdf85aef3a794f14af68
 <hr style="margin: 50px 0 0 0; border: none; border-top: 4px solid #eee;">
 <section class="shield-cta-section">
     <div class="shield-cta-container">
