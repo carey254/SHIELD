@@ -1,0 +1,2612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📚 Resource & Support | TFGBV Awareness</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+     <!-- Add this in the <head> of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="accessibility.css">
+  <script src="js/all-translations.js"></script>
+
+  
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+
+    body {
+      background-color: #ebe2e2;
+      color: #333;
+      font-family: 'Roboto', sans-serif;
+    }
+
+
+    /* Reset body margin for layout testing */
+body {
+  margin: 0;
+  padding-top: 80px; /* offset for fixed navbar */
+}
+
+/* NAV BAR */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+/* LOGO */
+.logo-link img {
+  height: 150px !important;
+  width: auto !important;
+}
+.logo {
+  height: 150px !important;
+  width: auto !important;
+}
+
+/* NAV LINKS GROUP */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* more spacing */
+ 
+  margin-right: 80px;
+}
+
+.language-switcher {
+    position: relative;
+    display: inline-block;
+}
+
+.language-switcher a {
+    text-decoration: none;
+    color: #1a1717;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.language-switcher .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.language-switcher .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.language-switcher .dropdown-content a:hover {background-color: #f1f1f1;}
+
+.language-switcher:hover .dropdown-content {
+    display: block;
+}
+
+/* INDIVIDUAL LINKS */
+.nav-links a {
+  text-decoration: none;
+  color: #1a1717;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #ff4500;
+  color: white;
+  border-radius: 12px;
+}
+
+/* Ensure highlight class links also get the hover effect */
+.nav-links a.highlight:hover {
+  background-color: #ff4500; /* Ensure orange background on hover */
+  color: white; /* Ensure white text on hover */
+  border-radius: 12px;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 10px 16px;
+  display: block;
+  text-decoration: none;
+  color: #1a1717;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  animation: dropdownFade 0.3s ease-in-out;
+}
+
+@keyframes dropdownFade {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* DONATE BUTTON */
+.donate-btn {
+  background-color: orangered;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.donate-btn:hover {
+  background-color: #cc3700;
+}
+
+/* REMOVE PURPLE UNDERLINE */
+a:visited {
+  color: inherit;
+}
+
+    
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: center;
+    }
+
+    /* Hero wrapper: full-width background image for the entire section */
+/* Hero-slide wrapper with moving background */
+.hero-slide {
+  background: url('images/resources.png') center/cover no-repeat;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Scroll the background vertically */
+@keyframes bgScroll {
+  from { background-position: center bottom; }
+  to   { background-position: center top; }
+}
+
+/* Container centered, transparent */
+.hero-slide .container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.4);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+/* Slide panels */
+#slides .slide {
+  display: none;
+}
+#slides .slide.active {
+  display: block;
+}
+
+/* Content box */
+.slide-content {
+  background: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 2rem;
+  max-width: 90%;
+}
+
+/* Headings */
+.hero-slide h1 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #fff;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.hero-slide h2 {
+  font-size: 1.8rem;
+  color: #ecf0f1;
+  margin-bottom: 1rem;
+}
+.hero-slide p {
+  font-size: 1rem;
+  color: #ecf0f1;
+  line-height: 1.5;
+}
+
+/* Nav buttons */
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.btns button {
+  padding: 12px 20px;
+  background: #e58e26;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .3s;
+}
+.btns button:hover {
+  background: #f6b93b;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero-slide .container { padding: 20px; }
+  .slide-content { padding: 20px; }
+  .btns { flex-direction: column; }
+}
+
+    /* TFGBV Section */
+    .awareness-section {
+      background-color: #000;
+      color: white;
+      padding: 3rem 1rem;
+      margin-top: 4rem;
+    }
+
+   /* Replace your existing .awareness-container and panel rules with this: */
+
+.awareness-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* center both panels */
+  gap: 3rem;                  /* adds 3rem space between panels */
+  max-width: 1100px;
+  margin: auto;
+}
+
+.left-panel,
+.right-panel {
+  flex: 1;
+  min-width: 300px;
+  /* remove individual margins to let the gap control spacing */
+}
+
+
+    .circle-grid {
+      display: grid;
+      grid-template-areas:
+        "a c b"
+        "d c e";
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circle-card {
+      background-color: #1a1a1a;
+      border: 2px solid orange;
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .circle-card:hover {
+      transform: scale(1.05);
+      
+    }
+
+    .circle-card h2 {
+      color: orange;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+
+    .circle-card p {
+      font-size: 0.85rem;
+    }
+
+    .who { grid-area: a; }
+    .what { grid-area: b; }
+    .when { grid-area: d; }
+    .where { grid-area: e; }
+    .center {
+      grid-area: c;
+      background-color: orange;
+      color: black;
+      font-weight: bold;
+    }
+
+    .right-panel h1 {
+      color: orange;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 1rem;
+    }
+
+    .right-panel p {
+      line-height: 1.6;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      color: orange;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .circle-grid {
+        grid-template-areas:
+          "a"
+          "b"
+          "c"
+          "d"
+          "e";
+      }
+    }
+
+    .big-stat {
+      font-size: 4rem; /* Make it really big */
+      color: #e58e26; /* Orange color */
+      font-weight: bold; /* Make it bold */
+      text-align: center; /* Center it for better alignment */
+      margin: 1rem 0; /* Space around the statistics */
+    }
+
+    
+    
+    .awareness-row.reverse {
+      flex-direction: row-reverse;
+    }
+    
+    
+   
+    
+    .awareness-row {
+      display: flex;
+      align-items: stretch; /* Make both columns equal height */
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    
+    .awareness-image {
+      flex: 1;
+      min-width: 300px;
+      border-radius: 8px;
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+    }
+    
+    .awareness-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    
+    
+    
+    .awareness-text {
+      flex: 1;
+      background: #f7f4f4;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+  
+    
+
+    .tfbgv-awareness {
+      padding: 60px 20px;
+      background: url('images/rock-texture.jpg') no-repeat center center/cover;
+    }
+    
+    
+    
+    .awareness-row.reverse {
+      flex-direction: row-reverse;
+    }
+    
+    
+    
+    
+    
+    .block-number {
+      font-size: 4rem;
+      font-weight: bold;
+      color: orange;
+      margin-bottom: 15px;
+    }
+    
+    .awareness-text h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #222;
+    }
+    
+    .awareness-text p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+    
+    .awareness-text a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #fff;
+      background: orange;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    
+    .awareness-text a:hover {
+      background: #e67e22;
+    }
+    
+    @media (max-width: 768px) {
+      .awareness-row,
+      .awareness-row.reverse {
+        flex-direction: column;
+      }
+    
+      .awareness-image,
+      .awareness-text {
+        flex: 1 1 100%;
+        padding: 10px;
+      }
+    
+      .awareness-image img {
+        height: auto;
+        object-fit: contain;
+      }
+    }
+    
+    .awareness-row {
+      height: 75vh !important;
+      display: flex !important;
+      align-items: stretch !important;
+      overflow: hidden !important;
+      gap: 20px !important;
+    }
+    
+    .awareness-image img {
+      height: 100% !important;
+      max-height: 100% !important;
+      object-fit: cover !important;
+    }
+    
+    .awareness-text {
+      max-height: 100% !important;
+      overflow-y: auto !important;
+      padding: 10px 15px !important;
+      font-size: 0.95rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important; /* Ensure block-number is at the top */
+    }
+    
+    .block-number {
+      font-size: 2.5rem !important;
+      margin-bottom: 10px !important;
+      color: orange !important;
+      flex-shrink: 0 !important; /* Prevent it from being squished or hidden */
+    }
+    
+    .awareness-text h2 {
+      font-size: 1.4rem !important;
+      margin-bottom: 10px !important;
+    }
+    
+    .awareness-text p, 
+    .awareness-text li {
+      font-size: 0.95rem !important;
+      line-height: 1.4 !important;
+    }
+    
+    
+/* ——— Global ——— */
+.quiz-container {
+  max-width: 800px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #dbd9d9;
+  border-radius: 8px;
+  width: auto;
+}
+
+/* Adds space between the radio button and the answer text */
+.quiz-container .options label {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between radio button and text */
+}
+
+.quiz-container .options input[type="radio"] {
+  margin-right: 8px; /* Adjust the space between radio button and text */
+}
+
+.question {
+  display: none;
+
+  margin-bottom: 20px;
+}
+
+.options li {
+  list-style: none;
+  margin: 8px 0;
+}
+
+h2 {
+  color: #333;
+}
+
+.quiz-container button {
+  padding: 10px 15px;
+  margin: 10px 5px;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#next, #prev {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+button:hover {
+  background-color: #d11d80;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+#results, #intermediate-quiz {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+
+
+
+.resources-section {
+  background: #f7f4f4;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.resources-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.resources-section h2 {
+  font-size: 2rem;
+  color: #d35400;
+  margin-bottom: 2rem;
+}
+
+.resource-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 1.5rem;
+}
+
+.resource-content {
+  width: 45%;
+  text-align: left;
+}
+
+.resource-content h3 {
+  font-size: 1.25rem;
+  color: #e67e22;
+  margin-bottom: 1rem;
+}
+
+.resource-content p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.resource-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.resource-link a {
+  background-color: #ec8b21;
+  color: white;
+  text-decoration: none !important;
+  padding: 12px 20px;
+  border-radius: 6px;
+  display: inline-block;
+  width: 240px; /* Adjust this to match the longer button nicely */
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+
+.resource-link a:hover {
+  background: #f6b93b;
+}
+
+
+
+/* General styles for the .nav element */
+.nav {
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+  .nav {
+    width: 90%; /* Adjust width on tablets */
+  }
+}
+
+/* Media query for small devices (phones) */
+@media (max-width: 768px) {
+  .nav {
+    width: 100%; /* Full width on mobile devices */
+    padding: 10px; /* Optional, adjust padding on smaller screens */
+  }
+}
+
+/* Media query for very small devices (phones in portrait) */
+@media (max-width: 480px) {
+  .nav {
+    width: 100%; /* Full width for very small screens */
+    padding: 5px; /* Further adjust padding if necessary */
+  }
+}
+
+
+/* Hide hamburger & menu by default */
+.hamburger,
+.side-menu {
+  display: none;
+}
+
+/* Mobile styles only */
+@media (max-width: 768px) {
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    z-index: 1001;
+    display: block;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .side-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .side-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    margin: 15px 0;
+  }
+
+  .close-btn {
+    align-self: flex-end;
+    font-size: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  /* Hide original nav links */
+  nav .nav-links {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* WHAT WE DO: Stack items vertically on phones */
+  .what-we-do-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .what-we-do-item {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  /* OUR TEAM: Stack members vertically on phones */
+  .team-container {
+    flex-direction: column !important;
+    align-items:center
+  }
+
+  .team-member {
+    width: 90% !important;
+    margin-bottom : 20px;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .footer, .footer-container, .footer-logo, .footer-links, .footer-location, .footer-contact, .footer-bottom {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .footer-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 20px !important;
+  }
+  .footer-links ul {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+  .footer-links ul li {
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .footer-bottom {
+    text-align: center !important;
+    font-size: 13px;
+    padding-top: 10px;
+  }
+  .payment-icons img,
+  .social-icons img {
+    margin: 0 6px !important;
+  }
+  .footer-contact {
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+  .social-icons {
+    justify-content: center !important;
+  }
+}
+.social-icons {
+  justify-content: center !important;
+}
+
+@media (max-width: 480px) {
+.footer-container {
+  padding: 15px !important;
+  gap: 15px !important;
+}
+.footer-logo img {
+  max-height: 80px !important;
+}
+.footer-links, .footer-location, .footer-contact {
+  max-width: 100% !important;
+  text-align: center !important;
+}
+.footer-links ul li {
+  text-align: center !important;
+}
+.social-icons {
+  justify-content: center !important;
+  gap: 10px !important;
+}
+.payment-icons {
+  justify-content: center !important;
+  gap: 8px !important;
+}
+}
+
+/* Desktop - big logo */
+.logo {
+  height: 170px !important;
+  object-fit: contain;
+}
+/* Hamburger Icon (Mobile Only) */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  color: #ff4500;
+  z-index: 1100;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .right-nav-section, .nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0 !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    position: static !important;
+  }
+  .language-switcher, .custom-language-dropdown {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .hamburger {
+    display: block;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    margin-top: 0px;
+  }
+  .hamburger i, .hamburger svg {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+
+/* Sidebar Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  max-width: 280px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  transition: 0.3s ease-in-out;
+  z-index: 1050;
+  padding: 20px;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-btn {
+  font-size: 26px;
+  color: #ff4500;
+  cursor: pointer;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 15px;
+}
+
+.mobile-menu ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #222;
+}
+
+.mobile-menu ul li a.highlight {
+  background-color: #ff4500;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+/* Show hamburger and hide desktop links on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000;
+    height: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .logo-link img {
+    height: 65px !important;
+    margin: 0;
+    padding: 0;
+  }
+  .logo-link {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.hero-slide {
+  position: relative;
+  background: url('images/bogy.png') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+
+
+.slide-content {
+  z-index: 2;
+  position: relative;
+}
+
+
+#slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.hero-slide h1 {
+  font-size: 2.5em;
+  font-weight: 800;
+  color: orangered;
+  margin-bottom: 20px;
+  
+  z-index: 3;
+}
+
+.slide-content {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  color: white;
+  z-index: 3;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.slide-content h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #ff6600;
+}
+
+.slide-content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.btns {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 4;
+  width: 100%;
+}
+
+.btns button {
+  padding: 12px 25px;
+  font-size: 1.1em;
+  background-color: #FF6600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btns button:hover {
+  background-color: #FF8533;
+}
+
+@media (max-width: 768px) {
+  .hero-slide h1 {
+      font-size: 1.6em;
+  }
+
+  .slide-content h2 {
+      font-size: 1.3em;
+  }
+
+  .slide-content p {
+      font-size: 1em;
+  }
+}
+
+.logo{
+  height: 150px !important;
+}
+
+.btns button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background-color: #FF6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btns button:hover {
+    background-color: #FF8533;
+}
+
+@media (max-width: 768px) {
+    .hero-slide h1 {
+        font-size: 2em;
+    }
+
+    .slide-content h2 {
+        font-size: 1.5em;
+    }
+
+    .slide-content p {
+        font-size: 1.1em;
+    }
+
+    #slides {
+        height: 350px;
+    }
+}
+
+.payment-icons img {
+  margin-top: 10px;
+  margin-right: 8px;
+  max-height: 18px !important;
+  max-width: 40px !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+/* Custom Circular Loader */
+.loader-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.7);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin-bottom: 18px;
+}
+.loader-dot {
+  width: 14px;
+  height: 14px;
+  background: #bbb;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+}
+.loader-dot:nth-child(1) { transform: rotate(0deg) translate(32px) scale(1); }
+.loader-dot:nth-child(2) { transform: rotate(45deg) translate(32px) scale(1); }
+.loader-dot:nth-child(3) { transform: rotate(90deg) translate(32px) scale(1); }
+.loader-dot:nth-child(4) { transform: rotate(135deg) translate(32px) scale(1); }
+.loader-dot:nth-child(5) { transform: rotate(180deg) translate(32px) scale(1); }
+.loader-dot:nth-child(6) { transform: rotate(225deg) translate(32px) scale(1); }
+.loader-dot:nth-child(7) { transform: rotate(270deg) translate(32px) scale(1); }
+.loader-dot:nth-child(8) { transform: rotate(315deg) translate(32px) scale(1); }
+
+@keyframes spin-loader {
+  100% { transform: rotate(360deg); }
+}
+.loader {
+  animation: spin-loader 1.1s linear infinite;
+}
+.loader-text {
+  font-size: 1.2em;
+  color: #444;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+.tfgbv-section {
+  max-width: 800px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.tfgbv-section ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tfgbv-section li {
+  margin-bottom: 8px;
+}
+
+
+.awareness-text {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.awareness-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.awareness-text li {
+  margin-bottom: 10px;
+}
+
+.awareness-text a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0073e6;
+  text-decoration: underline;
+}
+
+.awareness-text {
+  text-align: left;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #333;
+}
+
+.awareness-text ul.aligned-list {
+  padding-left: 20px;
+  list-style-type: disc;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.awareness-text ul.aligned-list li {
+  margin-bottom: 10px;
+}
+
+.awareness-row a{
+  display: inline-block;
+  color: #fff;                 /* White text for contrast on orange */
+  text-decoration: none;      /* Remove underline */
+  font-weight: 600;
+  padding: 10px 16px;
+  background-color: #f90;     /* Use orange background */
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.btn-group button:disabled,
+.btn-group button.disabled {
+  background: #e0e0e0 !important;
+  color: #aaa !important;
+  cursor: not-allowed !important;
+  opacity: 0.7;
+  border: none;
+  box-shadow: none;
+}
+
+    /* New Safety Tips Section Styles */
+    #safety-tips {
+      padding: 60px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+  }
+  #safety-tips h2 {
+      font-size: 2.5rem;
+      color: #1d3557;
+      margin-bottom: 15px;
+  }
+  #safety-tips .intro-text {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      line-height: 1.6;
+      color: #555;
+  }
+  .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+  .tip-card {
+      padding: 40px 25px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .tip-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  }
+  .tip-card i {
+      font-size: 3rem;
+      margin-bottom: 20px;
+  }
+  .tip-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #1d3557;
+  }
+  .tip-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+  }
+
+  /* Pastel Background Colors & Icon Colors */
+  .tip-card.color-1 { background-color: #e0f7fa; color: #00796b; }
+  .tip-card.color-2 { background-color: #fff3e0; color: #0c0e0c; }
+  .tip-card.color-3 { background-color: #e8eaf6; color: #3949ab; }
+  .tip-card.color-4 { background-color: #fce4ec; color: #0c0e0c; }
+  .tip-card.color-5 { background-color: #e8f5e9; color: #2e7d32; }
+  
+  /* Full-width card for the last item if it's odd */
+  .tip-card:last-child:nth-child(odd) {
+      grid-column: span 2;
+  }
+
+  @media (max-width: 768px) {
+      .tips-grid {
+          grid-template-columns: 1fr;
+      }
+      .tip-card:last-child:nth-child(odd) {
+          grid-column: span 1;
+      }
+  }
+
+/* Remove max-width restrictions from all containers */
+
+.tips-grid
+{
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+}
+
+
+  </style>
+</head>
+
+<body>
+  <body>
+    <div class="loader-overlay" id="globalLoader" style="display: none;">
+      <div class="loader">
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+      </div>
+      <div class="loader-text">Please wait...</div>
+    </div>
+    
+  
+   <!-- Navigation Bar -->
+   <nav>
+    <a href="index.html" class="logo-link" aria-label="Home">
+        <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo"  >
+    </a>
+    
+    <div class="nav-links">
+      <a href="index.html" role="menuitem" data-translate="home_link">Home</a>
+      <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
+      <a href="resource&support.html" class="highlight" role="menuitem" aria-current="page" data-translate="resources_link">Resources</a>
+      <div class="dropdown" role="menuitem" aria-haspopup="true">
+        <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-content" role="menu">
+          <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
+          <a href="news.html" role="menuitem" data-translate="news_link">News</a>
+          <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
+        </div>
+      </div>
+      <a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a>
+      
+      <!-- Report Button added to Navigation -->
+      <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link" style="margin-right: 16px;">Where to Report</a>
+      
+    </div>
+    <div class="nav-actions" style="display: flex; align-items: center; gap: 10px;">
+      <div class="language-switcher dropdown" role="menuitem" aria-haspopup="true">
+        <a href="#" aria-expanded="false">EN <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-content" role="menu">
+          <a href="#" data-lang="en" data-translate="english_link">English</a>
+          <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+          <a href="#" data-lang="fr" data-translate="french_link">French</a>
+          <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
+        </div>
+      </div>
+      <button class="hamburger" aria-label="Open menu" onclick="openMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+   
+
+ <!-- Hero Slide Section -->
+<section class="hero-slide">
+  <div class="container">
+    <h1 data-translate="hero_heading">Understanding the Laws and Protections Against TFGBV</h1>
+    <div id="slides">
+      <div class="slide active">
+        <div class="slide-content">
+          <h2 data-translate="what_is_tfgbv_heading">What is TFGBV?</h2>
+          <p data-translate="what_is_tfgbv_description">Understanding Technology-Facilitated Gender-Based Violence is the first step to building safer online spaces. Learn how laws protect your rights and dignity.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h2 data-translate="kenya_act_heading">📡 Kenya Information and Communications Act (1998)</h2>
+          <p data-translate="kenya_act_description">This Act governs electronic communication and promotes ethical online behavior, indirectly addressing TFGBV.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h2 data-translate="constitution_heading">📜 Constitution of Kenya (2010)</h2>
+          <p data-translate="constitution_description">Guarantees the right to privacy, freedom from discrimination, and protection from violence, core defenses against TFGBV.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h2 data-translate="national_gender_act_heading">👩🏽‍⚖️ National Gender and Equality Commission Act (2011)</h2>
+          <p data-translate="national_gender_act_description">Establishes oversight on gender-based issues and supports policy formation to curb digital abuse.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h2 data-translate="cybercrimes_act_heading">💻 Computer Misuse and Cybercrimes Act (2018)</h2>
+          <p data-translate="cybercrimes_act_description">Criminalizes cyber harassment, stalking, and unauthorized sharing of intimate content.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h2 data-translate="data_protection_act_heading">🔒 Data Protection Act (2019)</h2>
+          <p data-translate="data_protection_act_description">Ensures that victims control their personal information online—key to preventing digital exploitation.</p>
+        </div>
+      </div>
+    </div>
+    <div class="btns">
+      <button onclick="manualPrev()" aria-label="Previous slide">⬅ Back</button>
+      <button onclick="manualNext()" aria-label="Next slide">Next ➡</button>
+    </div>
+  </div>
+</section>
+
+
+  <!-- TFGBV Awareness Section -->
+  <div class="awareness-section">
+    <div class="awareness-container">
+      <div class="left-panel">
+        <div class="circle-grid">
+          <div class="circle-card who"><h2 data-translate="who_heading">Who?</h2><p data-translate="who_description">Women, girls, LGBTQ+, and marginalized communities are primarily affected.</p></div>
+          <div class="circle-card what"><h2 data-translate="what_heading">What?</h2><p data-translate="what_description">Harassment, threats, cyberstalking, image-based abuse, and more.</p></div>
+          <div class="circle-card center"><h2 data-translate="tfgbv_center_heading">TFGBV</h2><p data-translate="tfgbv_center_description">Technology-Facilitated Gender-Based Violence (TFGBV)</p></div>
+          <div class="circle-card when"><h2 data-translate="when_heading">When?</h2><p data-translate="when_description">Often begins as early as ages 9-14 and continues into adulthood.</p></div>
+          <div class="circle-card where"><h2 data-translate="where_heading">Where?</h2><p data-translate="where_description">Occurs on social media, email, smart tech, and connected devices.</p></div>
+        </div>
+      </div>
+      <div class="right-panel">
+        <h1 data-translate="statistics_heading">TFGBV Statistics</h1>
+        <p data-translate="statistics_text_1" data-html="true"><strong>Did you know?</strong> Over <span class="highlight">85%</span> of women online globally have witnessed or experienced digital violence. In Kenya, a 2021 survey reported that <span class="highlight">1 in 3</span> women encountered TFGBV during election seasons.</p>
+        <p data-translate="statistics_text_2">This growing trend reflects how online spaces mirror offline gender discrimination, yet with faster, broader consequences. We need digital safety policies, education, and tech accountability now more than ever.</p>
+      
+       <!-- New Stats -->
+       <p class="big-stat" data-translate="stat_survivors_not_report">60% of survivors don't report the abuse</p>
+       <p class="big-stat" data-translate="stat_victims_contact_abuser">40% of victims remain in contact with their abuser</p>
+      </div>
+    </div>
+  </div>
+ <hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
+<h2 class="intro-text" data-translate="safety_tips_intro">
+  Explore essential online safety tips to help protect yourself and others in the digital world
+</h2>
+
+ <hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
+  <div class="tips-grid">
+    
+    <div class="tip-card color-1">
+        <i class="fas fa-key"></i>
+        <h3 data-translate="strong_passwords">Strong Passwords</h3>
+        <p data-translate="strong_passwords_text">Create long, unique passwords using a combination of letters, numbers, and symbols. Avoid reusing the same password across platforms.</p>
+    </div>
+    <div class="tip-card color-2">
+        <i class="fas fa-user-secret"></i>
+        <h3 data-translate="avoid_phishing">Avoid Phishing</h3>
+        <p data-translate="avoid_phishing_text">Be cautious of emails or messages asking for sensitive info or urging "urgent" action. Verify sources directly before clicking links.</p>
+    </div>
+    <div class="tip-card color-3">
+        <i class="fas fa-user-shield"></i>
+        <h3 data-translate="privacy_settings">Privacy Settings</h3>
+        <p data-translate="privacy_settings_text">Regularly check and customize your privacy settings on social media and apps. Limit who can view your posts, tag you, or access your data.</p>
+    </div>
+    <div class="tip-card color-4">
+        <i class="fas fa-comment-slash"></i>
+        <h3 data-translate="safe_sharing">Safe Sharing Habits</h3>
+        <p data-translate="safe_sharing_text">Think before you post. Avoid sharing personal information like your address or phone number. Once it's online, you can't control it.</p>
+    </div>
+    <div class="tip-card color-5">
+        <i class="fas fa-hands-helping"></i>
+        <h3 data-translate="seek_help">Seek Help</h3>
+        <p data-translate="seek_help_text">If you're being harassed online, don't stay silent. Report it to the platform and talk to someone you trust. Your safety matters.</p>
+    </div>
+</div>
+
+</section>
+
+
+
+  <section class="tfbgv-awareness">
+
+    <!-- Block 1 -->
+    <div class="awareness-row">
+      <div class="awareness-image"> 
+        <img src="images/May.png" alt="Meaning and Types of TFGBV">
+      </div>
+      <div class="awareness-text">
+        <div class="block-number">01</div>
+        <h2 data-translate="tfgbv_types_heading">Meaning and Types of TFGBV</h2>
+
+        <p data-translate="tfgbv_types_intro">
+          Technology-facilitated gender-based violence (TFGBV) describes harmful acts or behaviors committed against people using digital technologies, usually women and girls. These acts take advantage of the anonymity and connectivity that technology offers, making it easier for perpetrators to target their victims and inflict more widespread harm.
+        </p>
+
+        <p><strong data-translate="tfgbv_types_list_heading">TFGBV can take place through:</strong></p>
+
+        <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+          <li data-translate="tfgbv_social_media_li" data-html="true">
+            Social media platforms (e.g., Facebook, X/Twitter, Instagram, TikTok)
+          </li>
+          <li data-translate="tfgbv_messaging_li" data-html="true">
+            Messaging apps (e.g., WhatsApp, Telegram, Signal)
+          </li>
+          <li data-translate="tfgbv_email_li" data-html="true">
+            Emails, SMS, or mobile calls
+          </li>
+          <li data-translate="tfgbv_dating_li" data-html="true">
+            Dating platforms, online forums, blogs
+          </li>
+          <li data-translate="tfgbv_gaming_li" data-html="true">
+            Gaming communities and livestream chats
+          </li>
+          <li data-translate="tfgbv_ai_li" data-html="true">
+            AI-driven platforms or content manipulation tools
+          </li>
+        </ul>
+
+        <p data-translate="tfgbv_types_conclusion">
+          Unlike physical violence, TFGBV often follows survivors across borders and time zones, leaving victims vulnerable to ongoing trauma, digital exclusion, or further victimization. The violence may be public (e.g., cyberbullying) or private (e.g., sextortion).
+        </p>
+      </div>
+    </div>
+  
+    <!-- Block 2 - FORMS of TFGBV -->
+    <div class="awareness-row reverse">
+      <div class="awareness-image">
+        <img src="images/forms.png" alt="Forms of TFGBV">
+      </div>
+    
+      <div class="awareness-text" style="text-align: left;">
+        <div class="block-number">02</div>
+    
+        <h2 data-translate="forms_heading">
+          Forms of Technology-Facilitated Gender-Based Violence
+        </h2>
+    
+        <p data-translate="forms_description">
+          TFGBV takes many forms, which are constantly evolving with technology. These acts often target women and girls, aiming to humiliate, silence, or control them through digital means. Some common forms include:
+        </p>
+    
+        <ul class="aligned-list" style="list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
+          <li data-translate="cyberstalking_li" data-html="true">
+            <strong>Cyberstalking:</strong> Repeated online harassment and threats that instill fear or distress.
+          </li>
+          <li data-translate="doxxing_li" data-html="true">
+            <strong>Doxxing:</strong> Publishing private information like phone numbers, addresses, or personal data without consent.
+          </li>
+          <li data-translate="non_consensual_li" data-html="true">
+            <strong>Non-consensual sharing of intimate images:</strong> Often referred to as "revenge porn," this involves distributing private content to shame or blackmail victims.
+          </li>
+          <li data-translate="online_harassment_li" data-html="true">
+            <strong>Online harassment:</strong> Persistent abusive messages via social media, email, or forums.
+          </li>
+          <li data-translate="deepfakes_li" data-html="true">
+            <strong>Deepfakes and manipulated content:</strong> Using AI to create false or harmful visual/audio content, often sexual in nature.
+          </li>
+        </ul>
+    
+        <p data-translate="forms_conclusion">
+          These forms not only cause emotional and psychological harm but also infringe on rights to safety, dignity, and expression.
+        </p>
+    
+        <a href="https://www.unfpa.org/sites/default/files/pub-pdf/An%20Infographic%20Guide%20to%20An%20Infographic%20Guide%20to%20TFGBV.pdf"
+           target="_blank"
+           data-translate="explore_unfpa">
+          Explore more on UNFPA
+        </a>
+      </div>
+    </div>
+    
+    
+<!-- Block 3 - EFFECTS of TFGBV -->
+<div class="awareness-row">
+  <div class="awareness-image">
+    <img src="images/effects.png" alt="Effects of TFGBV">
+  </div>
+
+  <div class="awareness-text" style="text-align: left;">
+    <div class="block-number">03</div>
+
+    <h2 data-translate="effects_heading">Effects of Technology-Facilitated Gender-Based Violence</h2>
+
+    <p data-translate="effects_description">
+      The impact of TFGBV goes beyond the screen. Victims experience serious consequences across emotional, physical, social, and economic levels:
+    </p>
+
+    <ul class="aligned-list" style="list-style-type: disc; padding-left: 20px;">
+      <li data-translate="mental_health_li" data-html="true">
+        <strong>Mental Health:</strong> Victims often suffer from anxiety, depression, panic attacks, and PTSD.
+      </li>
+      <li data-translate="loss_opportunities_li" data-html="true">
+        <strong>Loss of Opportunities:</strong> Some withdraw from public life, education, or career advancement due to fear or shame.
+      </li>
+      <li data-translate="physical_safety_li" data-html="true">
+        <strong>Physical Safety Risks:</strong> Online abuse can escalate to physical stalking or violence in the real world.
+      </li>
+      <li data-translate="self_censorship_li" data-html="true">
+        <strong>Self-Censorship:</strong> Many survivors silence their voices or avoid digital spaces entirely to avoid further harm.
+      </li>
+    </ul>
+
+    <p data-translate="effects_conclusion">
+      These effects can linger for years, diminishing self-worth, eroding trust in technology, and limiting freedom of expression and access to digital resources.
+    </p>
+
+    <a href="https://giwps.georgetown.edu/resource/technology-facilitated-gender-based-violence/" target="_blank" data-translate="learn_more_gwps">
+      Learn more on GWPS
+    </a>
+  </div>
+</div>
+
+  </section>
+  
+  <hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
+  <div id="quiz" class="quiz-container">
+    <h1 data-translate="quiz_title">Test Your TFGBV Knowledge</h1>
+
+    <!-- BASIC QUIZ -->
+    <div id="basic-quiz" data-ltr-direction="true" class="visible">
+      <h2 data-translate="basic_quiz_heading">Basic Level Quiz</h2>
+
+      <div class="question" data-correct="1">
+        <p data-translate="q1_text">1. What is TFGBV?</p>
+        <ul class="options quiz-options">
+          <li><label><input type="radio" name="q1" value="0"><span data-translate="q1_opt1">Violence only in physical spaces</span></label></li>
+          <li><label><input type="radio" name="q1" value="1"><span data-translate="q1_opt2">Violence using digital technologies</span></label></li>
+          <li><label><input type="radio" name="q1" value="2"><span data-translate="q1_opt3">Only verbal abuse offline</span></label></li>
+          <li><label><input type="radio" name="q1" value="3"><span data-translate="q1_opt4">Violence targeting men exclusively</span></label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="0">
+        <p data-translate="q2_text">2. Which is an example of TFGBV?</p>
+        <ul class="options quiz-options">
+          <li><label><input type="radio" name="q2" value="0">Sending anonymous threats online</label></li>
+          <li><label><input type="radio" name="q2" value="1">A face-to-face argument</label></li>
+          <li><label><input type="radio" name="q2" value="2">Schoolyard bullying</label></li>
+          <li><label><input type="radio" name="q2" value="3">None of the above</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="0">
+        <p data-translate="q3_text">3. Who are chiefly targeted by TFGBV?</p>
+        <ul class="options quiz-options">
+          <li><label><input type="radio" name="q3" value="0">All genders equally</label></li>
+          <li><label><input type="radio" name="q3" value="1">Women and girls</label></li>
+          <li><label><input type="radio" name="q3" value="2">Only men</label></li>
+          <li><label><input type="radio" name="q3" value="3">Children under 5</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="3">
+        <p data-translate="q4_text">4. What is "doxxing"?</p>
+        <ul class="options quiz-options">
+          <li><label><input type="radio" name="q4" value="0">Publishing private info without consent</label></li>
+          <li><label><input type="radio" name="q4" value="1">Sending kind messages</label></li>
+          <li><label><input type="radio" name="q4" value="2">Setting up security software</label></li>
+          <li><label><input type="radio" name="q4" value="3">None of these</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="3">
+        <p data-translate="q5_text">5. A consequence of TFGBV can be:</p>
+        <ul class="options quiz-options">
+          <li><label><input type="radio" name="q5" value="0">Better job offers</label></li>
+          <li><label><input type="radio" name="q5" value="1">Increased self-esteem</label></li>
+          <li><label><input type="radio" name="q5" value="2">More trust in technology</label></li>
+          <li><label><input type="radio" name="q5" value="3">Emotional distress and reputational harm</label></li>
+        </ul>
+      </div>
+
+      <div class="btn-group" style="display: flex; justify-content: space-between; gap: 12px;">
+        <button id="prev" disabled style="min-width: 90px;">⬅ Previous</button>
+        <button id="next" style="min-width: 90px;">Next ➡</button>
+      </div>
+      
+      <button id="submit-basic" class="quiz-submit">Submit Basic Quiz</button>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="results">
+      <h2>Your Score: <span id="score"></span>%</h2>
+      <p id="feedback"></p>
+      <button id="retry-quiz">Try Again</button>
+      <button id="go-intermediate">Go to Intermediate Quiz</button>
+    </div>
+
+    <!-- INTERMEDIATE QUIZ -->
+    <div id="intermediate-quiz" style="display: none;" data-ltr-direction="true">
+      <h2>Intermediate Level Quiz</h2>
+
+      <div class="question" data-correct="0">
+        <p data-translate="iq1_text">1. What makes digital tools powerful for TFGBV perpetrators?</p>
+        <ul class="options quiz-options">
+          <li><label><input type="radio" name="iq1" value="0">Anonymity and wide reach</label></li>
+          <li><label><input type="radio" name="iq1" value="1">Strong encryption</label></li>
+          <li><label><input type="radio" name="iq1" value="2">Offline meetups</label></li>
+          <li><label><input type="radio" name="iq1" value="3">Legal barriers</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="3">
+        <p data-translate="iq2_text">2. Which is NOT a form of TFGBV?</p>
+        <ul class="options quiz-options">
+          <li><label><input type="radio" name="iq2" value="0">Cyberstalking</label></li>
+          <li><label><input type="radio" name="iq2" value="1">Impersonation</label></li>
+          <li><label><input type="radio" name="iq2" value="2">Non-consensual image sharing</label></li>
+          <li><label><input type="radio" name="iq2" value="3">Peaceful protest</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="1">
+        <p data-translate="iq3_text">3. A common impact of TFGBV is:</p>
+        <ul class="options quiz-options">
+          <li><label><input type="radio" name="iq3" value="0">More online participation</label></li>
+          <li><label><input type="radio" name="iq3" value="1">Negative psychological harm</label></li>
+          <li><label><input type="radio" name="iq3" value="2">Improved finances</label></li>
+          <li><label><input type="radio" name="iq3" value="3">Better career prospects</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="1">
+        <p data-translate="iq4_text">4. What is "revenge porn"?</p>
+        <ul class="options quiz-options">
+          <li><label><input type="radio" name="iq4" value="0">Posting memes</label></li>
+          <li><label><input type="radio" name="iq4" value="1">Non-consensual sharing of intimate images</label></li>
+          <li><label><input type="radio" name="iq4" value="2">Cyberbullying by text only</label></li>
+          <li><label><input type="radio" name="iq4" value="3">Hacking bank accounts</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="0">
+        <p data-translate="iq5_text">5. How can communities reduce TFGBV?</p>
+        <ul class="options quiz-options">
+          <li><label><input type="radio" name="iq5" value="0">Spreading awareness and digital literacy</label></li>
+          <li><label><input type="radio" name="iq5" value="1">Ignoring the issue</label></li>
+          <li><label><input type="radio" name="iq5" value="2">Limiting all online use</label></li>
+          <li><label><input type="radio" name="iq5" value="3">Encouraging anonymous threats</label></li>
+        </ul>
+      </div>
+      
+      <button id="submit-intermediate">Submit Intermediate Quiz</button>
+    </div>
+  </div>
+
+  <hr style="margin: 50px 0 0 0; border: none; border-top: 3px solid #eee;">
+  <section id="resources" class="resources-section" data-ltr-direction="true">
+    <div class="resources-container">
+      <h2 data-translate="useful_resources_heading">📚 Learn More: Useful Resources</h2>
+      
+      <div class="resource-item">
+        <div class="resource-content">
+          <h3 data-translate="digital_safety_guide_heading">📖 Digital Safety Guide</h3>
+          <p data-translate="digital_safety_guide_description">Learn how to protect yourself from online abuse and harassment through this detailed guide that provides practical advice on securing your digital presence.</p>
+        </div>
+        <div class="resource-link">
+          <a href="https://thelantern.net/wp-content/uploads/2022/04/TLP_SafetyGuide_2022.pdf" target="_blank" data-translate="download_safety_guide">Download the Safety Guide</a>
+          <a href="https://www.ncsc.gov.uk/cyberaware/home" target="_blank" data-translate="additional_guide">Additional Guide</a>
+        </div>
+      </div>
+  
+      <div class="resource-item">
+        <div class="resource-content">
+          <h3 data-translate="learning_effects_heading">🎓 Learning the Effects of TFGBV</h3>
+          <p data-translate="learning_effects_description">Understand the profound psychological and emotional effects that Technology-facilitated Gender-Based Violence can have on its victims, and learn the best strategies to help prevent it.</p>
+        </div>
+        <div class="resource-link">
+          <a href="https://giwps.georgetown.edu/resource/technology-facilitated-gender-based-violence/" target="_blank" data-translate="learn_more_effects">Learn More About the Effects</a>
+          <a href="https://www.unfpa.org/sites/default/files/pub-pdf/A%20Framework%20for%20TFGBV%20Programming.pdf" target="_blank" data-translate="additional_guide">Additional Guide</a>
+        </div>
+      </div>
+  
+      <div class="resource-item">
+        <div class="resource-content">
+          <h3 data-translate="protecting_yourself_heading">🔒 Protecting Yourself from TFGBV</h3>
+          <p data-translate="protecting_yourself_description">This guide explains effective techniques and tools you can use to protect yourself from online and mobile harassment, including how to report TFGBV safely and securely.</p>
+        </div>
+        <div class="resource-link">
+          <a href="https://unric.org/en/how-technology-facilitated-gender-based-violence-impacts-women-and-girls/" target="_blank" data-translate="learn_how_to_protect">Learn How to Protect Yourself</a>
+          <a href="https://www.unwomen.org/sites/default/files/2024-09/technology-facilitated-gender-based-violence-shared-research-agenda-en.pdf" target="_blank" data-translate="additional_guide">Additional Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1: Logo (left) -->
+      <div class="footer-logo">
+        <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo">
+      </div>
+  
+      <!-- Column 2: Quick Links (center) -->
+      <div class="footer-links">
+        <h3 data-translate="quick_links_heading">Quick Links</h3>
+        <ul>
+          <li><a href="index.html" data-translate="home_link">Home</a></li>
+          <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
+          <li><a href="resource&support.html" data-translate="resources_link">Resources</a></li>
+          <li><a href="events.html" data-translate="events_link">Events</a></li>
+          <li><a href="news.html" data-translate="news_link">News</a></li>
+          <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
+          <li><a href="donate.html" class="donate-btn" data-translate="donate_link">Donate</a></li>
+          <li><a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">Where to Report</a></li>
+        </ul>
+        <div class="payment-icons">
+          <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" height="20">
+          <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" height="20">
+        </div>
+      </div>
+  
+      <!-- Column 3: Contact, Location, Socials (right) -->
+      <div class="footer-contact">
+        <h3 data-translate="contact_us_heading">Contact Us</h3>
+        <p>Email: shi3ldmaidens@gmail.com</p>
+        <div class="footer-location">
+          <h3 data-translate="location_heading">Location</h3>
+          <p>Nairobi, Kenya</p>
+        </div>
+        <h3 data-translate="socials_heading">Our Socials</h3>
+                <div class="social-icons">
+  <a href="https://x.com/_shield_maidens" target="_blank" class="icon x"><i class="fab fa-x-twitter"></i></a>
+
+  <a href="https://www.instagram.com/the_shield_maidens/" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-translate="copyright_text">Copyright © 2025 Shield Maidens</p>
+    </div>
+  </footer>
+
+
+   
+  <script src="js/language-handler.js"></script>
+  <script src="script.js"></script>
+
+<!-- Report Form Modal -->
+
+
+
+<!-- Add Slides JavaScript -->
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+
+  function showSlide(index) {
+      // Hide all slides
+      slides.forEach(slide => {
+          slide.classList.remove('active');
+          slide.style.opacity = '0';
+      });
+      
+      // Show the current slide
+      slides[index].classList.add('active');
+      slides[index].style.opacity = '1';
+  }
+
+  function manualNext() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+  }
+
+  function manualPrev() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+  }
+
+  // Auto-advance slides every 5 seconds
+  let slideInterval = setInterval(manualNext, 5000);
+
+  // Pause auto-advance when user interacts with buttons
+  document.querySelectorAll('.btns button').forEach(button => {
+      button.addEventListener('click', () => {
+          clearInterval(slideInterval);
+          slideInterval = setInterval(manualNext, 5000);
+      });
+  });
+
+  // Initialize first slide
+  document.addEventListener('DOMContentLoaded', () => {
+      showSlide(0);
+  });
+</script>
+
+<!-- Accessibility Control Panel -->
+  <!-- Accessibility Control Panel -->
+  <div class="accessibility-panel" id="accessibilityPanel">
+    <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()">
+      <i class="fas fa-universal-access"></i>
+    </button>
+    <div class="accessibility-controls">
+      <button onclick="toggleTextToSpeech()" id="ttsToggle">
+        <i class="fas fa-volume-up"></i> TTS
+      </button>
+      <button onclick="stopTTS()" id="ttsStop">
+        <i class="fas fa-stop"></i> Stop
+    </button>
+      <button onclick="increaseFontSize()">
+        <i class="fas fa-text-height"></i> A+
+      </button>
+      <button onclick="decreaseFontSize()">
+        <i class="fas fa-text-height"></i> A-
+      </button>
+      <button onclick="cycleContrast()" id="contrastToggle">
+        <i class="fas fa-adjust"></i> <span id="contrastLabel">Contrast</span>
+      </button>
+      <button onclick="cycleSaturation()" id="saturationToggle">
+        <i class="fas fa-tint"></i> <span id="saturationLabel">Saturation</span>
+      </button>
+      <button onclick="resetAccessibility()">
+        <i class="fas fa-undo"></i> Reset
+      </button>
+    </div>
+  </div>
+  
+  <style>
+  /* Accessibility Panel Styles */
+  .accessibility-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .accessibility-toggle {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    width: 50px !important;
+    height: 50px !important;
+    background: #ff4500 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50% !important;
+    font-size: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 10000 !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+    cursor: pointer !important;
+  }
+  
+  .accessibility-toggle:hover {
+    transform: scale(1.1);
+  }
+  
+  .accessibility-controls {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background: orange;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .accessibility-controls.active {
+    display: flex;
+  }
+  
+  .accessibility-controls button {
+    background: orange;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accessibility-controls button:hover {
+    background: #e0e0e0;
+  }
+  
+  /* High Contrast Mode */
+  .high-contrast {
+    background-color: #000 !important;
+    background-color: yellow !important;
+    color: #fff !important;
+  }
+  
+  .high-contrast * {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+  }
+  
+  .high-contrast a {
+    color: #ffff00 !important;
+  }
+  
+  .high-contrast button {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+  /* Invert Colors Theme (Pink) */
+  body.invert-colors {
+    background: #ff69b4 !important; /* Hot pink */
+    color: #fff !important;
+  }
+  body.invert-colors a, body.invert-colors button, body.invert-colors input, body.invert-colors textarea {
+    color: #fff !important;
+    background: #d72670 !important;
+    border-color: #fff !important;
+  }
+  /* Dark Mode Theme */
+  body.dark-mode {
+    background: #181a1b !important;
+    color: #e8eaed !important;
+  }
+  body.dark-mode a, body.dark-mode button, body.dark-mode input, body.dark-mode textarea {
+    color: #e8eaed !important;
+    background: #23272a !important;
+    border-color: #444 !important;
+  }
+  /* Light Mode Theme */
+  body.light-mode {
+    background: #fff !important;
+    color: #222 !important;
+  }
+  body.light-mode a, body.light-mode button, body.light-mode input, body.light-mode textarea {
+    color: #222 !important;
+    background: #f5f5f5 !important;
+    border-color: #bbb !important;
+  }
+  /* Color-blind Friendly Theme (blue/yellow) */
+  body.color-blind-mode {
+    background: #f7f7e8 !important;
+    color: #1a1a7a !important;
+  }
+  body.color-blind-mode a, body.color-blind-mode button, body.color-blind-mode input, body.color-blind-mode textarea {
+    color: #1a1a7a !important;
+    background: #ffe066 !important;
+    border-color: #1a1a7a !important;
+  }
+  /* Saturation Modes */
+  body.saturation-low {
+    filter: saturate(0.2) !important;
+  }
+  body.saturation-high {
+    filter: saturate(2) !important;
+  }
+  body.saturation-normal {
+    filter: saturate(1) !important;
+  }
+
+  /* Ensure accessibility panel and icon always stay fixed and visible */
+  .accessibility-panel {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 9999 !important;
+  }
+  .accessibility-toggle {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
+  }
+
+  /* Invert Colors Theme (Light Pink Background Only) */
+  body.invert-colors {
+    background-color: #f8f8f8 !important;/* Light pink */
+  }
+  body.invert-colors *,
+  body.invert-colors h1,
+  body.invert-colors h2,
+  body.invert-colors h3,
+  body.invert-colors h4,
+  body.invert-colors h5,
+  body.invert-colors h6,
+  body.invert-colors p,
+  body.invert-colors span,
+  body.invert-colors a,
+  body.invert-colors button,
+  body.invert-colors input,
+  body.invert-colors textarea {
+    color: initial !important;
+    background: initial !important;
+  }
+  /* Saturation Modes: apply to .main-content only, not body */
+  .main-content.saturation-low {
+    filter: saturate(0.2) !important;
+  }
+  .main-content.saturation-high {
+    filter: saturate(2) !important;
+  }
+  .main-content.saturation-normal {
+    filter: saturate(1) !important;
+  }
+  /* Ensure accessibility panel and icon always stay fixed and visible */
+  .accessibility-panel {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 9999 !important;
+  }
+  .accessibility-toggle {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
+  }
+  </style>
+  
+  <script>
+  // Accessibility Functions (Globally accessible)
+  let isTTSActive = true; // Set to true by default for auto-read
+  let isHighContrast = false;
+  let currentFontSize = 16;
+  let currentTTSVoice = null; // To store the currently selected voice
+  
+  // Function to find a voice based on language
+  window.selectTTSVoice = function(lang) {
+      const voices = window.speechSynthesis.getVoices();
+      console.log('Available Voices:', voices);
+      console.log('Attempting to select voice for language:', lang);
+  
+      let selectedVoice = null;
+  
+      if (lang === 'en') {
+          // Prioritize Awasili voice for English
+          selectedVoice = voices.find(voice => voice.name === 'Awasili') ||
+                         voices.find(voice => voice.name === 'Asilia') ||
+                         voices.find(voice => voice.lang === 'en-KE') ||
+                         voices.find(voice => voice.lang.startsWith('en-US')) ||
+                         voices.find(voice => voice.lang.startsWith('en-GB')) ||
+                         voices.find(voice => voice.lang.startsWith('en'));
+      } else if (lang === 'sw') {
+          // Prioritize Swahili (Kenya) then any Swahili voice
+          selectedVoice = voices.find(voice => voice.lang === 'sw-KE') ||
+                         voices.find(voice => voice.lang.startsWith('sw'));
+      } else if (lang === 'fr') {
+          // Prioritize French voices
+          selectedVoice = voices.find(voice => voice.lang.startsWith('fr'));
+      } else if (lang === 'ar') {
+          // Prioritize Arabic voices
+          selectedVoice = voices.find(voice => voice.lang.startsWith('ar'));
+      }
+  
+      currentTTSVoice = selectedVoice || voices.find(voice => voice.lang.startsWith('en')) || voices[0];
+      if (!currentTTSVoice) {
+          console.warn("No suitable voice found for language " + lang + ", using default system voice.");
+      } else {
+          console.log('Selected voice:', currentTTSVoice.name, '(' + currentTTSVoice.lang + ')');
+      }
+  };
+  
+  // Toggle accessibility panel visibility
+  window.toggleAccessibilityPanel = function() {
+      const controls = document.querySelector('.accessibility-controls');
+      controls.classList.toggle('active');
+  };
+  
+  // Toggle text-to-speech on/off
+  window.toggleTextToSpeech = function() {
+      isTTSActive = !isTTSActive;
+      const ttsButton = document.getElementById('ttsToggle');
+      
+      if (isTTSActive) {
+          ttsButton.style.backgroundColor = '#ff4500';
+          ttsButton.style.color = 'white';
+          window.readPageContent(); // Restart reading when toggled on
+      } else {
+          ttsButton.style.backgroundColor = '#f5f5f5';
+          ttsButton.style.color = 'black';
+          window.speechSynthesis.cancel();
+      }
+  };
+  
+  // Stop text-to-speech
+  window.stopTTS = function() {
+      isTTSActive = false;
+      window.speechSynthesis.cancel();
+      const ttsButton = document.getElementById('ttsToggle');
+      if (ttsButton) {
+          ttsButton.style.backgroundColor = '#f5f5f5';
+          ttsButton.style.color = 'black';
+      }
+  };
+  
+ 
+
+ 
+  
+      // Create a queue of utterances
+      const utterances = [];
+      
+      // 1. Read navigation links once, clearly
+      const navLinks = document.querySelectorAll('.nav-links a');
+      navLinks.forEach(link => {
+          // Get the complete text content, including any child elements
+          const text = link.textContent.replace(/\s+/g, ' ').trim();
+          if (text) {
+              const utterance = speakText(text, 0.9);
+              if (utterance) {
+                  utterances.push(utterance);
+              }
+          }
+      });
+  
+      // 2. Read the main content
+      const mainContent = Array.from(document.querySelectorAll('[data-translate]'))
+          .filter(el => el.getAttribute('data-lang') === currentLang || !el.getAttribute('data-lang'))
+          .map(el => el.textContent.replace(/\s+/g, ' ').trim())
+          .filter(text => text) // Remove empty strings
+          .join(' ');
+  
+      if (mainContent) {
+          const utterance = speakText(mainContent, 1);
+          if (utterance) {
+              utterances.push(utterance);
+          }
+      }
+  
+      // Function to speak the next utterance in the queue
+      const speakNext = (index) => {
+          if (index < utterances.length) {
+              const utterance = utterances[index];
+              utterance.onend = () => {
+                  // Add a pause between items
+                  setTimeout(() => {
+                      speakNext(index + 1);
+                  }, 500); // Consistent pause between all items
+              };
+              window.speechSynthesis.speak(utterance);
+          }
+      };
+  
+      // Start speaking the queue
+      speakNext(0);
+    
+    
+  
+  // Increase font size
+  window.increaseFontSize = function() {
+      currentFontSize += 2;
+      document.body.style.fontSize = currentFontSize + 'px';
+  };
+  
+  // Decrease font size
+  window.decreaseFontSize = function() {
+      currentFontSize = Math.max(12, currentFontSize - 2);
+      document.body.style.fontSize = currentFontSize + 'px';
+  };
+  
+  // Toggle high contrast mode
+  window.toggleHighContrast = function() {
+      isHighContrast = !isHighContrast;
+      const contrastButton = document.getElementById('contrastToggle');
+      
+      if (isHighContrast) {
+          document.body.classList.add('high-contrast');
+          contrastButton.style.backgroundColor = '#ff4500';
+          contrastButton.style.color = 'white';
+      } else {
+          document.body.classList.remove('high-contrast');
+          contrastButton.style.backgroundColor = '#f5f5f5';
+          contrastButton.style.color = 'black';
+      }
+  };
+  
+  // Reset all accessibility settings
+  window.resetAccessibility = function() {
+      // Reset font size
+      currentFontSize = 16;
+      document.body.style.fontSize = ''; // Resets to default
+  
+      // Reset high contrast
+      isHighContrast = false;
+      document.body.classList.remove('high-contrast');
+      document.getElementById('contrastToggle').style.backgroundColor = '#f5f5f5';
+      document.getElementById('contrastToggle').style.color = 'black';
+  
+      // Reset text-to-speech
+      isTTSActive = false;
+      window.speechSynthesis.cancel(); // Stop any ongoing speech
+      document.getElementById('ttsToggle').style.backgroundColor = '#f5f5f5';
+      document.getElementById('ttsToggle').style.color = 'black';
+  
+      // Re-select voice based on current page language (defaults to English)
+      window.selectTTSVoice(document.documentElement.lang || 'en');
+  };
+  
+  // Initial setup for voices and auto-read
+  document.addEventListener('DOMContentLoaded', () => {
+      const initializeTTSOnLoad = () => {
+          // Set TTS to active by default
+          isTTSActive = true;
+          
+          // Initialize voice selection
+          window.selectTTSVoice(document.documentElement.lang || 'en');
+          
+          // Set the TTS button to active state
+          const ttsButton = document.getElementById('ttsToggle');
+          if (ttsButton) {
+              ttsButton.style.backgroundColor = '#ff4500';
+              ttsButton.style.color = 'white';
+          }
+  
+          // Start reading the page content automatically
+          setTimeout(() => {
+              window.readPageContent();
+          }, 1000); // Small delay to ensure everything is loaded
+      };
+  
+      if (window.speechSynthesis && window.speechSynthesis.getVoices().length > 0) {
+          initializeTTSOnLoad();
+      } else if (window.speechSynthesis) {
+          window.speechSynthesis.onvoiceschanged = () => {
+              initializeTTSOnLoad();
+          };
+      } else {
+          console.warn("SpeechSynthesis API not supported in this browser.");
+      }
+  });
+
+
+</script>
+  
+
+<script>
+function updateCarouselArrow() {
+  const carousel = document.querySelector('.session-carousel');
+  const arrow = document.getElementById('carouselLeftArrow');
+  if (!carousel || !arrow) return;
+  if (window.innerWidth > 600) {
+    arrow.style.display = 'none';
+    return;
+  }
+  // Show arrow if not at leftmost
+  if (carousel.scrollLeft > 10) {
+    arrow.style.display = 'flex';
+  } else {
+    arrow.style.display = 'none';
+  }
+}
+window.addEventListener('resize', updateCarouselArrow);
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.session-carousel');
+  const arrow = document.getElementById('carouselLeftArrow');
+  if (!carousel || !arrow) return;
+  updateCarouselArrow();
+  carousel.addEventListener('scroll', updateCarouselArrow);
+  arrow.addEventListener('click', function() {
+    carousel.scrollBy({ left: -carousel.offsetWidth * 0.9, behavior: 'smooth' });
+  });
+});
+</script>
+
+
+
+
+
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+// --- Contrast and Saturation Cycling Logic ---
+let contrastIndex = 0;
+const contrastModes = [
+{ name: 'Default', fn: () => resetContrast() },
+{ name: 'Invert', fn: () => { resetContrast(); document.body.classList.add('invert-colors'); } },
+{ name: 'High', fn: () => { resetContrast(); document.body.classList.add('high-contrast'); } },
+{ name: 'Dark', fn: () => { resetContrast(); document.body.classList.add('dark-mode'); } },
+{ name: 'Light', fn: () => { resetContrast(); document.body.classList.add('light-mode'); } },
+{ name: 'Color-blind', fn: () => { resetContrast(); document.body.classList.add('color-blind-mode'); } }
+];
+function resetContrast() {
+document.body.classList.remove('invert-colors', 'high-contrast', 'dark-mode', 'light-mode', 'color-blind-mode');
+}
+function cycleContrast() {
+contrastIndex = (contrastIndex + 1) % contrastModes.length;
+contrastModes[contrastIndex].fn();
+document.getElementById('contrastLabel').textContent = 'Contrast: ' + contrastModes[contrastIndex].name;
+}
+
+let saturationIndex = 0;
+const saturationModes = [
+{ name: 'Normal', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-normal'); } },
+{ name: 'Low', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-low'); } },
+{ name: 'High', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-high'); } }
+];
+function resetSaturation() {
+document.querySelector('.main-content').classList.remove('saturation-low', 'saturation-high', 'saturation-normal');
+}
+function cycleSaturation() {
+saturationIndex = (saturationIndex + 1) % saturationModes.length;
+saturationModes[saturationIndex].fn();
+document.getElementById('saturationLabel').textContent = 'Saturation: ' + saturationModes[saturationIndex].name;
+}
+
+// Update labels on load and after reset
+function updateLabels() {
+document.getElementById('contrastLabel').textContent = 'Contrast: ' + contrastModes[contrastIndex].name;
+document.getElementById('saturationLabel').textContent = 'Saturation: ' + saturationModes[saturationIndex].name;
+}
+document.addEventListener('DOMContentLoaded', updateLabels);
+
+// Update resetAccessibility to also reset these
+const oldReset = window.resetAccessibility;
+window.resetAccessibility = function() {
+oldReset();
+contrastIndex = 0;
+saturationIndex = 0;
+resetContrast();
+resetSaturation();
+updateLabels();
+};
+</script>
+</div>
+<!-- Accessibility icon/panel must be here, outside .main-content -->
+<div class="accessibility-panel" id="accessibilityPanel">
+<!-- ... existing accessibility panel code ... -->
+</div>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobileMenu" class="mobile-menu">
+  <div class="menu-header">
+    <span class="close-btn" onclick="closeMenu()">&times;</span>
+  </div>
+  <ul role="menu">
+    <li><a href="index.html" role="menuitem" aria-current="page" data-translate="home_link">Home</a></li>
+    <li><a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a></li>
+    <li><a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a></li>
+    <li><a href="events.html" role="menuitem" data-translate="events_link">Events</a></li>
+    <li><a href="news.html" role="menuitem" data-translate="news_link">News</a></li>
+    <li><a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a></li>
+    <li><a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a></li>
+    <li><a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link"><i class="fas fa-exclamation-circle"></i> Where to Report</a></li>
+  </ul>
+</div>
+
+<script>
+function openMenu() {
+  document.getElementById('mobileMenu').classList.add('active');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('active');
+}
+</script>
+<script>
+  // Show the loader
+  document.getElementById('globalLoader').style.display = 'flex';
+
+  // Hide the loader (when done)
+  document.getElementById('globalLoader').style.display = 'none';
+  </script>
+
+  
+  <script>
+    // Show loader immediately
+    document.getElementById('globalLoader').style.display = 'flex';
+    // Hide loader after 2 seconds (demo)
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('globalLoader').style.display = 'none';
+      }, 2000);
+    });
+  </script>
+  <script>
+    // Show loader only if page takes too long to load
+    let loaderTimeout = setTimeout(function() {
+      document.getElementById('globalLoader').style.display = 'flex';
+    }, 700); // Show loader if not loaded in 700ms
+    
+    window.addEventListener('load', function() {
+      clearTimeout(loaderTimeout);
+      document.getElementById('globalLoader').style.display = 'none';
+    });
+    </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  isTTSActive = false;
+  var ttsButton = document.getElementById('ttsToggle');
+  var stopButton = document.getElementById('ttsStop');
+  if (ttsButton) {
+    ttsButton.disabled = true;
+    ttsButton.style.opacity = 0.5;
+    ttsButton.style.pointerEvents = 'none';
+  }
+  if (stopButton) {
+    stopButton.disabled = true;
+    stopButton.style.opacity = 0.5;
+    stopButton.style.pointerEvents = 'none';
+  }
+});
+</script>
+
+
+
+    <script src="quiz.js"></script>
+
+    
+  
+  <script src="js/language-handler.js"></script>
+  
+</body>
+</html>

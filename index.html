@@ -1,0 +1,2774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shield Maidens</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="translations.js"></script>
+    
+<style>
+    .dropdown a i {
+        margin-left: 5px !important; /* Add some space between text and arrow */
+        vertical-align: middle !important; /* Align the arrow nicely with the text */
+        display: inline-block !important; /* Ensure it is displayed and overrides any other display rule */
+        font-size: 0.8em !important; /* Adjust size if needed, important to ensure it's not zero */
+        color: inherit !important; /* Inherit color from parent link, important to ensure it's not transparent/hidden */
+    }
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .nav-links a:hover {
+        background-color: #ff4500;
+        color: white;
+        border-radius: 12px;
+    }
+
+    /* Completely New Mission & Vision Styles based on the new screenshot */
+    #mission-vision-new {
+        padding: 80px 40px;
+        background-color: #4b3832; /* Main dark brown background */
+        font-family: 'Serif', 'Georgia', serif; /* A more elegant serif font */
+    }
+    .mission-vision-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch; /* Make items stretch to the same height */
+        gap: 60px;
+        max-width: 1400px;
+        margin: 0 auto;
+        flex-wrap: wrap; 
+    }
+    .mission-vision-item {
+        display: flex;
+        flex: 1;
+        min-width: 500px; /* Adjust as needed */
+        max-width: 650px;
+        align-items: center;
+        gap: 20px;
+    }
+    .mission-vision-item .content-wrapper {
+        flex: 1;
+        color: #fff;
+    }
+    .content-wrapper .title {
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 1.1;
+        color: #f5eadd;
+        position: relative;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .content-wrapper .title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 2px;
+        background-color: #fff;
+    }
+    .content-wrapper .text-box {
+        background-color: #6a4f4b; /* Slightly lighter brown for the text box */
+        padding: 25px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+    .content-wrapper .text-box p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #f5eadd;
+        margin: 0;
+    }
+    .mission-vision-item .image-wrapper {
+        flex: 1;
+        border-radius: 12px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        border: 4px solid #fff;
+        height: 400px; /* Fixed height for consistency */
+    }
+    .mission-vision-item .image-wrapper img {
+        width: 100%;
+        height: 100%; /* Make image fill the wrapper height */
+        object-fit: cover; /* This crops the image to fit without distortion */
+        border-radius: 8px;
+        display: block;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+        .mission-vision-item {
+            flex-direction: column;
+            min-width: 100%;
+        }
+        .mission-vision-item .content-wrapper,
+        .mission-vision-item .image-wrapper {
+            width: 100%;
+            max-width: 500px; /* Constrain width on smaller screens */
+        }
+    }
+
+
+
+    /* Inline CSS for Responsive Nav */
+    nav {
+        display: flex !important;
+        align-items: center !important;
+        background: #fff !important;
+        padding: 0 20px !important;
+        min-height: 60px !important;
+        position: fixed !important;
+        top: 0 !important; left: 0 !important; right: 0 !important;
+        z-index: 1000 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .logo-link {
+        display: flex !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+        flex-grow: 0 !important;
+        flex-basis: auto !important;
+        order: 0 !important;
+    }
+    .logo {
+        height: 45px !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transition: height 0.3s;
+    }
+    .nav-links {
+        display: flex !important;
+        align-items: center !important;
+        gap: 18px !important;
+        margin-left: auto !important;
+        order: 1 !important;
+    }
+    .nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        margin-left: auto !important;
+        margin-right: 44px !important;
+        gap: 12px !important;
+        order: 2 !important;
+        min-width: 0 !important;
+        max-width: 160px !important;
+        flex-shrink: 1 !important;
+        justify-content: flex-end !important;
+    }
+    .language-switcher {
+        width: 110px !important;
+        max-width: 140px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-left: 20px !important;
+        order: 2 !important;
+        position: relative !important;
+    }
+    .language-switcher > a, .language-switcher select {
+        width: 100% !important;
+        padding: 4px 8px !important;
+        font-size: 1em !important;
+        border-radius: 6px !important;
+        border: 1px solid #ccc !important;
+        background: #fff !important;
+        color: #222 !important;
+        text-align: center !important;
+        cursor: pointer !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+    .language-switcher .dropdown-content {
+        display: none !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 100% !important;
+        min-width: 100% !important;
+        background: #fff !important;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12) !important;
+        border-radius: 0 0 8px 8px !important;
+        z-index: 10 !important;
+        border: 1px solid #ccc !important;
+        border-top: none !important;
+        margin-top: -1px !important;
+    }
+    .language-switcher:hover .dropdown-content,
+    .language-switcher:focus-within .dropdown-content {
+        display: block !important;
+    }
+    .language-switcher .dropdown-content a {
+        display: block !important;
+        padding: 8px 12px !important;
+        color: #222 !important;
+        text-decoration: none !important;
+        background: #fff !important;
+        border-radius: 0 !important;
+        font-size: 1em !important;
+        text-align: left !important;
+        cursor: pointer !important;
+    }
+    .language-switcher .dropdown-content a:hover {
+        background: #f0f0f0 !important;
+    }
+    .hamburger {
+        font-size: 2.2rem !important;
+        color: #ff4500 !important;
+        background: none !important;
+        border: none !important;
+        cursor: pointer !important;
+        margin-left: 4px !important;
+        z-index: 1102 !important;
+        display: none !important;
+        order: 3 !important;
+    }
+    /* Mobile Menu Overlay */
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        background: #fff;
+        z-index: 2000;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 40px 30px 20px 30px;
+        transition: all 0.3s;
+    }
+    .mobile-menu.active {
+        display: flex;
+    }
+    .mobile-menu .close-btn {
+        font-size: 2.2rem;
+        color: #ff4500;
+        background: none;
+        border: none;
+        align-self: flex-end;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        width: 100%;
+    }
+    .mobile-menu ul li {
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+    }
+    .mobile-menu ul li:last-child {
+        border-bottom: none;
+    }
+    .mobile-menu ul li a {
+        display: block;
+        padding: 15px 0;
+        text-decoration: none;
+        color: #333;
+        font-size: 1.1em;
+        transition: background-color 0.3s;
+    }
+    .mobile-menu ul li a:hover {
+        background-color: #f0f0f0;
+    }
+    @media (max-width: 900px) {
+        .nav-links { display: none !important; }
+        .logo-link { order: 0 !important; }
+        .nav-actions {
+            margin-left: auto !important;
+            margin-right: 44px !important;
+            display: flex !important;
+            align-items: center !important;
+            order: 2 !important;
+            gap: 12px !important;
+            min-width: 0 !important;
+            max-width: 160px !important;
+            flex-shrink: 1 !important;
+            justify-content: flex-end !important;
+        }
+        .language-switcher {
+            width: 60px !important;
+            max-width: 80px !important;
+            margin-left: 0 !important;
+            order: 1 !important;
+            font-size: 1em !important;
+            flex-shrink: 1 !important;
+            padding: 0 !important;
+        }
+        .language-switcher > a {
+            padding: 2px 10px !important;
+            min-width: 60px !important;
+            max-width: 80px !important;
+            font-size: 1em !important;
+        }
+        .hamburger {
+            display: block !important;
+            order: 2 !important;
+            margin-left: 0 !important;
+            font-size: 1.7rem !important;
+            flex-shrink: 1 !important;
+            padding: 0 !important;
+        }
+        nav { padding: 0 8px !important; }
+        .logo { height: 32px !important; }
+    }
+    @media (min-width: 901px) {
+        .hamburger { display: none !important; }
+        .nav-links { display: flex !important; }
+        .logo { height: 170px !important; }
+        .language-switcher { order: 2 !important; margin-left: 20px !important; }
+        .nav-actions { margin-left: 0 !important; order: 2 !important; }
+    }
+
+    .social-media-section {
+        padding: 40px 20px;
+        background: #f9f9f9;
+    }
+
+    .social-cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .social-box,
+    .twitter-card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        flex: 1 1 100%;
+
+        padding: 16px;
+        flex: 1 1 300px;
+        max-width: 360px;
+        min-height: 520px;
+        position: relative;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .follow-btn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 10;
+    }
+
+    .instagram-btn,
+    .twitter-follow-button,
+    .linkedin-btn {
+        padding: 8px 14px;
+        background-color: #e1306c;
+        color: #fff !important;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+        display: inline-block;
+        border: none;
+    }
+
+    .linkedin-btn {
+        background-color: #0077b5;
+    }
+
+    .twitter-btn,
+    .twitter-follow-button {
+        background-color: #1DA1F2 !important;
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .card-header img {
+        width: 28px !important;
+        height: 28px !important;
+        border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+        .social-box,
+        .twitter-card {
+            min-width: 90%;
+        }
+    }
+
+    .contact {
+        padding: 40px !important;
+        text-align: center !important;
+        display: flex !important;
+        justify-content: center !important;
+        gap: 20px !important;
+    }
+    
+    .contact-container {
+        display: flex !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+    
+    #contact, #mailing-list {
+        width: 45% !important;
+        padding: 20px !important;
+    }
+    
+    .contact form {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .contact input, .contact textarea {
+        width: 80% !important;
+        padding: 10px !important;
+        margin: 5px 0 !important;
+    }
+    
+    .contact button {
+        background-color: #222 !important;
+        color: white !important;
+        padding: 10px 20px !important;
+        border: none !important;
+        cursor: pointer !important;
+        border-radius: 5px !important;
+    }
+    
+    h2 {
+        text-align: center !important;
+    }
+    
+    #contact h2::before {
+        content: "📞 " !important;
+    }
+    
+    #mailing-list h2::before {
+        content: "📩 " !important;
+    }
+    
+    input, textarea, button {
+        width: 100% !important;
+        padding: 10px !important;
+        margin-top: 10px !important;
+        border-radius: 5px !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    button {
+        background-color: #75490f !important;
+        color: white !important;
+        cursor: pointer !important;
+    }
+    
+    button:hover {
+        background-color: #b37c17 !important;
+    }
+    
+    
+    
+    @media (max-width: 900px) {
+        .contact-container {
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100vw !important;
+            padding: 0 !important;
+        }
+        #contact, #mailing-list {
+            width: 95vw !important;
+            max-width: 98vw !important;
+            min-width: 0 !important;
+            padding: 18px 4vw !important;
+        }
+    }
+    .form-row textarea {
+        flex: 1;
+        padding: 6px 8px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+        height: 60px;         
+        max-height: 120px;    
+    }
+  
+
+
+
+
+@media (max-width: 600px) {
+  .popup {
+    max-width: 95vw !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    padding: 8px 0 !important;
+    top: 30px !important;
+  }
+  .popup-content {
+    padding: 10px 8px !important;
+    font-size: 0.98em !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .popup-content h2 {
+    font-size: 1.1em !important;
+  }
+  .popup-content p {
+    font-size: 0.98em !important;
+  }
+  .close-btn {
+    font-size: 1.5em !important;
+    top: 8px !important;
+    right: 12px !important;
+  }
+}
+
+/* Responsive section images */
+.about-image img,
+.mission-vision-item .image-wrapper img,
+.event-card-large img,
+.social-box img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.session-card img {
+  max-width: 220px;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .about-image img,
+  .mission-vision-item .image-wrapper img,
+  .event-card-large img,
+  .social-box img {
+    max-width: 95vw;
+    max-height: 160px;
+  }
+  .session-card img {
+    max-width: 95vw;
+    max-height: 120px;
+  }
+}
+
+
+
+
+section, .about-us, .about-container, .about-intro-mission-vision, .mission-vision-item, .hero-alt, .social-media-section, .event-card-large, .next-sessions-section, .carousel-wrapper, .team-container, .contact, .contact-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+@media (max-width: 900px) {
+  section, .about-us, .about-container, .about-intro-mission-vision, .mission-vision-item, .hero-alt, .social-media-section, .event-card-large, .next-sessions-section, .carousel-wrapper, .team-container, .contact, .contact-container {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    display: block !important;
+    overflow: visible !important;
+    width: 100vw !important;
+  }
+  .dynamic-cards-section {
+    display: block !important;
+    width: 100vw !important;
+    position: static !important;
+    float: none !important;
+    clear: both !important;
+    margin-bottom: 80px !important;
+  }
+  .next-sessions-section {
+    display: block !important;
+    width: 100vw !important;
+    position: static !important;
+    float: none !important;
+    clear: both !important;
+    margin-top: 220px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .next-sessions-section h2 {
+    text-align: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .session-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem; /* or your preferred gap */
+  }
+  .session-card {
+    min-width: 80vw; /* or your preferred width */
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 20px !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 0 5vw !important;
+  }
+  .footer-logo,
+  .footer-links,
+  .footer-location,
+  .footer-contact {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    align-items: center !important;
+    text-align: center !important;
+    order: unset !important;
+  }
+  .footer-links ul {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .footer-links ul li {
+    margin-bottom: 8px;
+  }
+  .footer-bottom {
+    text-align: center !important;
+    font-size: 13px;
+    padding-top: 10px;
+  }
+  .payment-icons img,
+  .social-icons img {
+    margin: 0 6px !important;
+  }
+}
+
+/* Accessibility Panel Styles */
+.accessibility-panel, .accessibility-toggle {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 10000 !important;
+}
+
+.accessibility-toggle {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: #ff4500 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50% !important;
+  font-size: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 10000 !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+  cursor: pointer !important;
+}
+
+.accessibility-toggle:hover {
+  transform: scale(1.1);
+}
+
+.accessibility-controls {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background: orange;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accessibility-controls.active {
+  display: flex;
+}
+
+.accessibility-controls button {
+  background: orange;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.accessibility-controls button:hover {
+  background: #e0e0e0;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  background-color: #000 !important;
+  background-color: yellow !important;
+  color: #fff !important;
+}
+
+.high-contrast * {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.high-contrast a {
+  color: #ffff00 !important;
+}
+
+.high-contrast button {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+/* Invert Colors Theme (Pink) */
+body.invert-colors {
+  background: #ff69b4 !important; /* Hot pink */
+  color: #fff !important;
+}
+body.invert-colors a, body.invert-colors button, body.invert-colors input, body.invert-colors textarea {
+  color: #fff !important;
+  background: #d72670 !important;
+  border-color: #fff !important;
+}
+/* Dark Mode Theme */
+body.dark-mode {
+  background: #181a1b !important;
+  color: #e8eaed !important;
+}
+body.dark-mode a, body.dark-mode button, body.dark-mode input, body.dark-mode textarea {
+  color: #e8eaed !important;
+  background: #23272a !important;
+  border-color: #444 !important;
+}
+/* Light Mode Theme */
+body.light-mode {
+  background: #fff !important;
+  color: #222 !important;
+}
+body.light-mode a, body.light-mode button, body.light-mode input, body.light-mode textarea {
+  color: #222 !important;
+  background: #f5f5f5 !important;
+  border-color: #bbb !important;
+}
+/* Color-blind Friendly Theme (blue/yellow) */
+body.color-blind-mode {
+  background: #f7f7e8 !important;
+  color: #1a1a7a !important;
+}
+body.color-blind-mode a, body.color-blind-mode button, body.color-blind-mode input, body.color-blind-mode textarea {
+  color: #1a1a7a !important;
+  background: #ffe066 !important;
+  border-color: #1a1a7a !important;
+}
+
+
+/* Ensure accessibility panel and icon always stay fixed and visible */
+.accessibility-panel {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+}
+.accessibility-toggle {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 10000 !important;
+}
+
+/* Invert Colors Theme (Light Pink Background Only) */
+.body {
+   background-color: #f8f8f8 !important; /* Light pink */
+}
+
+/* Saturation Modes: apply to .main-content only, not body */
+.main-content.saturation-low {
+  filter: saturate(0.2) !important;
+}
+.main-content.saturation-high {
+  filter: saturate(2) !important;
+}
+.main-content.saturation-normal {
+  filter: saturate(1) !important;
+}
+/* Ensure accessibility panel and icon always stay fixed and visible */
+.accessibility-panel {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+}
+.accessibility-toggle {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 10000 !important;
+}
+
+
+
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+ 
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+
+#tfgbv-stats-hero {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+    h1 {
+      color: #fff;
+      font-weight: 900;
+      font-size: 2.5rem;
+      text-align: center;
+      letter-spacing: 0.05em;
+      margin-bottom: 2rem;
+      margin-top: 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+    .year-section {
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .stat-box {
+      background-color: #000;
+      border-radius: 15px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    .stat-box .percentage {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ffdd57;
+    }
+
+    .stat-box .text {
+        color: aliceblue;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background-color: #444;
+      border-radius: 5px;
+      margin-top: 1rem;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: #ffdd57;
+      width: 0%;
+      transition: width 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px; /* example */
+      z-index: 1000;
+    }
+    #tfgbv-stats-hero {
+      padding-top: 60px; /* match header height */
+    }
+
+    #tfgbv-stats-hero .year-section h2 {
+      color: orangered;
+      font-weight: 900;
+      font-size: 2.5rem;
+      text-align: center;
+      letter-spacing: 0.05em;
+      margin-bottom: 2rem;
+      margin-top: 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+  html, body {
+    background-color: #fffdf5e0 !important; /* Cream white */
+    background-image: none !important;
+    color: #000 !important; /* Optional: ensure text is readable */
+  }
+
+ 
+ 
+ .main-content, 
+.main-content p, 
+.main-content h1, 
+.main-content h2, 
+.main-content h3, 
+.main-content h4, 
+.main-content h5, 
+.main-content h6 {
+  font-weight: normal !important;
+}
+.hero-section {
+  position: relative;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-blur {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('images/boggi.png') no-repeat center center/cover;
+  filter: blur(3px); /* Apply blur only here */
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  padding: 0 20px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  font-weight: 500;
+  color: white; /* Ensure visible */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+
+.hero-image {
+  background: url('images/boggi.png') no-repeat center center/cover;
+
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+.hero-content h1 {
+  font-size: 3em;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Adds clarity */
+}
+
+
+
+
+
+.highlight:hover {
+  
+}
+.hero-links a {
+  margin: 0 10px;
+    padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  background-color: rgb(255, 145, 0);
+   color: white;
+  text-decoration: none !important;
+  
+  letter-spacing: 1px;
+}
+
+.hero-links a:hover {
+background-color: #e67e22;
+  color: white;
+}
+
+.social-iconis {
+  position: absolute;
+  top: 40%;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.social-iconis a {
+  margin: 8px 0;
+ 
+  font-size: 1.5em;
+}
+.social-iconis a {
+  margin: 8px 0;
+  color: #ffffff;
+  font-size: 1.8em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-iconis a:hover {
+  transform: scale(1.2);
+  color: #ffcc00; /* or any bright hover color */
+}
+
+
+@media (max-width: 600px) {
+  #tfgbv-stats-hero {
+    padding: 0 2vw !important;
+    margin: 0 !important;
+    width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+  .year-section {
+    width: 100vw !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  .year-section h2 {
+    font-size: 2em !important;
+    margin: 10px 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 0 !important;
+    width: 100vw !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    justify-content: center !important;
+    scrollbar-width: none; /* Firefox */
+  }
+  .grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+  .stat-box {
+    flex: 0 0 85vw !important;
+    max-width: 85vw !important;
+    min-width: 85vw !important;
+    margin: 0 7.5vw !important;
+    border-radius: 14px !important;
+    padding: 10px 6px !important;
+    font-size: 0.98em !important;
+    box-sizing: border-box !important;
+    background-color: #000 !important;
+    text-align: center !important;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1) !important;
+    position: relative !important;
+    scroll-snap-align: center !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+  .stat-box .text {
+    font-size: 0.98em !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    margin-top: 0.5em !important;
+  }
+  .stat-box .percentage {
+    font-size: 1.6em !important;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .social-cards-container {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    width: 100vw !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    scrollbar-width: none !important;
+  }
+  .social-cards-container::-webkit-scrollbar {
+    display: none !important;
+  }
+  .social-box {
+    flex: 0 0 90vw !important;
+    max-width: 90vw !important;
+    min-width: 90vw !important;
+    margin: 0 5vw !important;
+    scroll-snap-align: center !important;
+    box-sizing: border-box !important;
+  }
+}
+</style>
+
+</head>
+<body>
+  <!-- Navbar (should be fixed, outside .main-content) -->
+  <nav class="navbar">
+    <a href="index.html" class="logo-link" aria-label="Shield Maidens Home">
+        <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo - Empowering women in digital spaces" class="logo">
+    </a>
+    <div class="nav-links" role="menubar">
+        <a href="index.html" role="menuitem" aria-current="page" data-translate="home_link">Home</a>
+        <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
+        <a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a>
+        <div class="dropdown" role="menuitem" aria-haspopup="true">
+            <a href="#" aria-expanded="false" data-translate="get_involved_link">Get Involved <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content" role="menu">
+                <a href="events.html" role="menuitem" data-translate="events_link">Events</a>
+                <a href="news.html" role="menuitem" data-translate="news_link">News</a>
+                <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
+            </div>
+        </div>
+        <a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a>
+        <a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">
+            <i class="fas fa-exclamation-circle"></i>
+            Where to Report
+        </a>
+    </div>
+    <div class="nav-actions">
+        <div class="language-switcher dropdown" role="menuitem" aria-haspopup="true">
+            <a href="#" aria-expanded="false">EN <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content" role="menu">
+                <a href="#" data-lang="en" data-translate="english_link">English</a>
+                <a href="#" data-lang="sw" data-translate="swahili_link">Swahili</a>
+                <a href="#" data-lang="fr" data-translate="french_link">French</a>
+                <a href="#" data-lang="ar" data-translate="arabic_link">Arabic</a>
+            </div>
+        </div>
+        <button class="hamburger" aria-label="Open menu" onclick="openMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <!-- All main content that should be affected by saturation -->
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="mobile-menu" role="dialog" aria-label="Mobile menu">
+        <button class="close-btn" onclick="closeMenu()" aria-label="Close mobile menu">&times;</button>
+        <ul role="menu">
+            <li><a href="index.html" role="menuitem" aria-current="page" data-translate="home_link">Home</a></li>
+            <li><a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a></li>
+            <li><a href="resource&support.html" role="menuitem" data-translate="resources_link">Resources</a></li>
+            <li><a href="events.html" role="menuitem" data-translate="events_link">Events</a></li>
+            <li><a href="news.html" role="menuitem" data-translate="news_link">News</a></li>
+            <li><a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a></li>
+            <li><a href="donate.html" class="highlight" role="menuitem" data-translate="donate_link">Donate</a></li>
+            <li><a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link"><i class="fas fa-exclamation-circle"></i> Where to Report</a></li>
+        </ul>
+    </div>
+
+    <div id="eventPopup" class="popup"> 
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2 id="eventTitle"></h2>
+            <p id="eventMessage"></p>
+            <a id="eventLink" href="#" target="_blank" style="display:none;">Join Event</a>
+            <button id="setReminder" style="display:none;" onclick="setReminder()"> 🔔Set Reminder</button>
+        </div>
+    </div>
+
+    <!-- Hero Section with Responsive Video 
+    <section class="hero-alt" role="banner" aria-label="Hero section with rotating images">
+        <div class="image-container">
+            <div class="color-overlay" aria-hidden="true"></div>
+            <img src="images/gbv1.png" alt="Women empowerment and digital safety awareness campaign" class="bg-image active">
+            <img src="images/tgbvw2.png" alt="Fighting technology-facilitated gender-based violence" class="bg-image">
+            <img src="images/tgbv.png" alt="Supporting survivors of online harassment" class="bg-image">
+            <img src="images/tgbvw1.png" alt="Building a safer digital space for women" class="bg-image">
+        </div>
+    </section>-->
+
+    <section class="hero-section">
+  <div class="hero-image">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>The Shield Maidens</h1>
+      <p>Join us as we stand together to fight against technology-facilitated gender-based violence (TFGBV), support marginalized communities, and build lasting change. Find out more about who we are and how you can be part of the movement.</p>
+      <div class="hero-links">
+        <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
+    
+        <a href="about us.html#team-heading">Our Team</a>
+
+        <a href="index.html#contact">Get Involved</a>
+      <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
+      </div>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="social-iconis">
+       <a href="https://x.com/yourusername" target="_blank" class="icon x"><i class="fab fa-x-twitter"></i></a>
+            
+              <a href="https://instagram.com/yourusername" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+  </div>
+</section>
+
+
+ 
+
+    <!-- Merged About Us Intro with Mission/Vision -->
+    <section class="about-intro-mission-vision" style="padding: 60px 20px; background-color: #FFF5F5;">
+        <div style="max-width: 1200px; margin: auto; text-align: center;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin-bottom: 40px;">
+                <div style="flex: 1 1 300px; padding: 20px; text-align: center;">
+                    <img src="images/Globe.png" alt="About Us" style="max-width: 100%; height: auto; border-radius: 10px;">
+                </div>
+                <div style="flex: 2 1 400px; padding: 20px; text-align: left;">
+                    <h2 style="font-size: 2.5em; color: #1d3557; margin-bottom: 20px;" data-translate="about_intro">Who We Are</h2>
+                    <p style="font-size: 1.2em; line-height: 1.6;" data-translate="about_text">
+                        Shield Maidens is a women-led initiative dedicated to digital empowerment and online safety for young women and marginalized groups. We work to combat technology-facilitated gender-based violence (TFGBV) through education, advocacy, and inclusive support.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- This container holds the new Mission/Vision cards -->
+           <!-- Accessible, Responsive Mission & Vision Section -->
+
+<!-- Soft Full-Page Section with Subtle Design Bottoms -->
+<section aria-label="Our Mission and Vision" style="background: #f5f1ee; padding: 80px 20px;">
+    <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 60px; justify-content: center; align-items: flex-start;">
+  
+      <!-- MISSION -->
+      <div role="region" aria-labelledby="mission-title" style="flex: 1 1 300px; min-width: 280px; max-width: 550px;">
+        <div style="text-align: left; position: relative;">
+          <i class="fas fa-bullseye" style="font-size: 40px; color: #5c4033;" aria-hidden="true"></i>
+          <h3 id="mission-title" style="font-size: 26px; font-weight: 600; color: #5c4033; margin: 10px 0;" data-translate="our_mission_strong">Our Mission</h3>
+          <p style="font-size: 16px; line-height: 1.8; color: #333;" data-translate="mission_text">
+            We aim to raise awareness, provide cyber safety practices, and engage communities in combating TFGBV while supporting marginalized groups, including PWDs, through inclusive resources and advocacy.
+          </p>
+          <!-- Soft Bottom Design -->
+          <div style="
+            background: #e2cdbf;
+            height: 60px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+            margin-top: 30px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+          ">
+            <span style="color: #5c4033; font-size: 16px; font-weight: bold; padding-bottom: 8px;">01</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- VISION -->
+      <div role="region" aria-labelledby="vision-title" style="flex: 1 1 300px; min-width: 280px; max-width: 550px;">
+        <div style="text-align: left; position: relative;">
+          <i class="fas fa-lightbulb" style="font-size: 40px; color: #5c4033;" aria-hidden="true"></i>
+          <h3 id="vision-title" style="font-size: 26px; font-weight: 600; color: #5c4033; margin: 10px 0;" data-translate="our_vision_strong">Our Vision</h3>
+          <p style="font-size: 16px; line-height: 1.8; color: #333;" data-translate="vision_text">
+            To create a world where young women, girls, and persons with disabilities are empowered to navigate digital spaces safely, confidently, and free from Technology-Facilitated Gender-Based Violence (TFGBV).
+          </p>
+          <!-- Soft Bottom Design -->
+          <div style="
+            background: #cbb7a4;
+            height: 60px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+            margin-top: 30px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+          ">
+            <span style="color: #5c4033; font-size: 16px; font-weight: bold; padding-bottom: 8px;">02</span>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+    <!-- Redesigned 'Learn to Be Safe Online' Section -->
+    <section id="safety-tips">
+  <h2 data-translate="safety_online_title" style="font-weight: normal;">Learn to Be Safe Online</h2>
+  <p class="intro-text" data-translate="safety_online_intro"> The internet opens up countless opportunities to connect, learn, and grow, but it also presents serious risks, especially for women, youth, LGBTQ+ individuals, and other marginalized communities. 
+        Recent statistics reveal a troubling rise in online abuse, from harassment and image-based violations to threats, blackmail, and lasting emotional trauma. Understanding how to navigate the digital world safely is more urgent than ever. 
+      </p>
+</section>
+
+    
+
+<hr style="margin: 50px 0 0 0; border: none; border-top: 3px solid #eee;">
+        <section id="tfgbv-stats-hero">
+    
+          <div id="stat-wrapper"></div>
+        </section>
+    
+    <hr style="margin: 50px 0 0 0; border: none; border-top: 3px solid #eee;">
+    <!-- Old 'Learn to Be Safe Online' Section (to be removed) -->
+    <section id="safety" style="padding: 30px 15px; background-color: #f2f6f9; display: none;">
+        <!-- This section has been replaced by #safety-tips -->
+    </section>
+
+    <!-- Dynamic Card Display Section -->
+    <section class="dynamic-cards-section" style="padding: 30px 15px;">
+        <div class="card-navigation" style="margin-bottom: 20px;">
+            <button class="card-nav-btn active" data-card="digital-safety" data-translate="digital_safety">Digital Safety & Accessibility</button>
+            <button class="card-nav-btn" data-card="tfgbv" data-translate="tfgbv_protection">TFGBV Protection Tools</button>
+            <button class="card-nav-btn" data-card="quick-access" data-translate="quick_access">Quick Access Tools</button>
+        </div>
+        
+        <div class="card-display-container" style="max-width: 1200px; margin: 0 auto;">
+            <!-- Digital Safety Card -->
+            <div class="dynamic-card active" id="digital-safety">
+                <div class="card-content" style="padding: 20px; background: #f9F9F9;">
+                    <h3 style="margin-bottom: 20px;">Digital Safety & Accessibility</h3>
+                    <div class="card-grid" style="gap: 15px;">
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front" style="background: #e2cdbf;">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <h4 data-translate="password_security">Password Security</h4>
+                                    <p data-translate="password_security_text">Create strong, unique passwords and use password managers</p>
+                                </div>
+                                <div class="card-back" style="background: #e2cdbf;">
+                                    <h4 data-translate="password_security_tips">Password Security Tips</h4>
+                                    <ul>
+                                        <li data-translate="password_tip_12_chars">Use at least 12 characters</li>
+                                        <li data-translate="password_tip_mix">Mix uppercase, lowercase, numbers & symbols</li>
+                                        <li data-translate="password_tip_no_reuse">Never reuse passwords across accounts</li>
+                                        <li data-translate="password_tip_manager">Use a password manager like LastPass or 1Password</li>
+                                        <li data-translate="password_tip_biometric">Enable biometric authentication when available</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front" style="background: #e2cdbf;">
+                                    <i class="fas fa-lock"></i>
+                                    <h4 data-translate="privacy_settings_card">Privacy Settings</h4>
+                                    <p data-translate="privacy_settings_card_text">Manage your privacy settings across all platforms</p>
+                                </div>
+                                <div class="card-back" style="background: #e2cdbf;">
+                                    <h4 data-translate="privacy_settings_guide">Privacy Settings Guide</h4>
+                                    <ul>
+                                        <li data-translate="privacy_tip_review">Review social media privacy settings monthly</li>
+                                        <li data-translate="privacy_tip_limit">Limit who can see your posts and profile</li>
+                                        <li data-translate="privacy_tip_location">Disable location sharing when not needed</li>
+                                        <li data-translate="privacy_tip_private_browsing">Use private browsing for sensitive activities</li>
+                                        <li data-translate="privacy_tip_clear_cookies">Regularly clear browser cookies and cache</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front" style="background: #e2cdbf;">
+                                    <i class="fas fa-user-shield"></i>
+                                    <h4 data-translate="two_factor">Two-Factor Authentication</h4>
+                                    <p data-translate="two_factor_text">Enable 2FA for additional account security</p>
+                                </div>
+                                <div class="card-back" style="background: #e2cdbf;">
+                                    <h4 data-translate="two_factor_guide">2FA Implementation Guide</h4>
+                                    <ul>
+                                        <li data-translate="two_factor_enable">Enable 2FA on all critical accounts</li>
+                                        <li data-translate="two_factor_auth_app">Use authenticator apps over SMS when possible</li>
+                                        <li data-translate="two_factor_backup">Keep backup codes in a secure location</li>
+                                        <li data-translate="two_factor_recovery">Set up recovery email addresses</li>
+                                        <li data-translate="two_factor_review_sessions">Regularly review active sessions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TFGBV Protection Card -->
+            <div class="dynamic-card" id="tfgbv">
+                <div class="card-content" style="padding: 20px;">
+                    <h3 style="margin-bottom: 20px;">TFGBV Protection Tools</h3>
+                    <div class="card-grid" style="gap: 15px;">
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front" style="background: #e2cdbf;">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <h4 data-translate="report_abuse">Report Abuse</h4>
+                                    <p data-translate="report_abuse_text">Report and document online harassment</p>
+                                    <button class="report-btn" onclick="openReportForm()" data-translate="report_incident_button">Report Incident</button>
+                                </div>
+                                <div class="card-back" style="background: #e2cdbf;">
+                                    <h4 data-translate="how_to_report_abuse">How to Report Abuse</h4>
+                                    <ul>
+                                        <li data-translate="report_tip_screenshots">Document all incidents with screenshots</li>
+                                        <li data-translate="report_tip_moderators">Report to platform moderators</li>
+                                        <li data-translate="report_tip_authorities">Contact local authorities if needed</li>
+                                        <li data-translate="report_tip_support_form">Use our reporting form for support</li>
+                                        <li data-translate="report_tip_records">Keep records of all communications</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front" style="background: #e2cdbf;">
+                                    <i class="fas fa-hand-holding-heart"></i>
+                                    <h4 data-translate="support_resources">Support Resources</h4>
+                                    <p data-translate="support_resources_text">Access counseling and support services</p>
+                                </div>
+                                <div class="card-back" style="background: #e2cdbf;">
+                                    <h4 data-translate="available_support">Available Support</h4>
+                                    <ul>
+                                        <li data-translate="support_tip_crisis">24/7 Crisis hotline support</li>
+                                        <li data-translate="support_tip_counseling">Professional counseling services</li>
+                                        <li data-translate="support_tip_peer">Peer support groups</li>
+                                        <li data-translate="support_tip_legal">Legal consultation</li>
+                                        <li data-translate="support_tip_mental_health">Mental health resources</li>
+                                    </ul>
+                                    <a href="resource&support.html" class="resource-link" data-translate="access_resources">Access Resources →</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front" style="background: #e2cdbf;">
+                                    <i class="fas fa-gavel"></i>
+                                    <h4 data-translate="legal_guidance">Legal Guidance</h4>
+                                    <p data-translate="legal_guidance_text">Information about legal rights and protections</p>
+                                </div>
+                                <div class="card-back" style="background: #e2cdbf;">
+                                    <h4 data-translate="legal_resources">Legal Resources</h4>
+                                    <ul>
+                                        <li data-translate="legal_tip_rights">Know your digital rights</li>
+                                        <li data-translate="legal_tip_documentation">Documentation guidelines</li>
+                                        <li data-translate="legal_tip_consultation">Legal consultation services</li>
+                                        <li data-translate="legal_tip_restraining">Restraining order information</li>
+                                        <li data-translate="legal_tip_international">International legal resources</li>
+                                    </ul>
+                                    <a href="resource&support.html#legal" class="resource-link" data-translate="legal_resources_link">Legal Resources →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Card -->
+            <div class="dynamic-card" id="quick-access">
+                <div class="card-content" style="padding: 20px;">
+                    <h3 style="margin-bottom: 20px;">Quick Access Tools</h3>
+                    <div class="card-grid" style="gap: 15px;">
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front" style="background: #e2cdbf;">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <h4 data-translate="emergency_contacts">Emergency Contacts</h4>
+                                    <p data-translate="emergency_contacts_text">Quick access to emergency services</p>
+                                </div>
+                                <div class="card-back" style="background: #e2cdbf;">
+                                    <h4 data-translate="emergency_resources">Emergency Resources</h4>
+                                    <ul>
+                                        <li data-translate="emergency_services_1195">Emergency Services: 1195</li>
+                                        <li data-translate="national_crisis_email">National Crisis: report@cid.go.ke</li>
+                                        <li data-translate="mental_health_support">Mental Health Support Befrienders Kenya: Hotline: +254 722 178177</li>
+                                        <li data-translate="medical_emergency">Medical Emergency</li>
+                                        <li data-translate="law_enforcement">Law Enforcement</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front" style="background: #e2cdbf;">
+                                    <i class="fas fa-file-alt"></i>
+                                    <h4 data-translate="reporting_forms">Reporting Forms</h4>
+                                    <p data-translate="reporting_forms_text">Easy-to-use incident reporting forms</p>
+                                </div>
+                                <div class="card-back" style="background: #e2cdbf;">
+                                    <h4 data-translate="report_an_incident">How to Report an Incident</h4>
+                                    <ul>
+                                        <li data-translate="anonymous_reporting">Anonymous reporting option</li>
+                                        <li data-translate="detailed_incident_forms">Detailed incident forms</li>
+                                        <li data-translate="evidence_upload">Evidence upload capability</li>
+                                        <li data-translate="follow_up_tracking">Follow-up tracking</li>
+                                        <li data-translate="support_service_connection">Support service connection</li>
+                                    </ul>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item">
+                            <div class="card-inner">
+                                <div class="card-front" style="background: #e2cdbf;">
+                                    <i class="fas fa-hands-helping"></i>
+                                    <h4 data-translate="support_services">Support Services</h4>
+                                    <p data-translate="support_services_text">Direct access to support resources</p>
+                                </div>
+                                <div class="card-back" style="background: #e2cdbf;">
+                                    <h4 data-translate="available_support">Available Support</h4>
+                                    <ul>
+                                        <li data-translate="online_chat_support">24/7 Online Chat Support</li>
+                                        <li data-translate="peer_support_groups">Peer Support Groups</li>
+                                        <li data-translate="professional_counseling">Professional Counseling</li>
+                                        <li data-translate="resource_directory">Resource Directory</li>
+                                        <li data-translate="community_forums">Community Forums</li>
+                                    </ul>
+                                    <div style="margin-top:10px;">
+                                        <strong data-translate="contact_us_247">Contact us 24/7:</strong><br>
+                                        <a href="mailto:shi3ldmaidens@gmail.com" style="color:#e63946;">shi3ldmaidens@gmail.com</a><br>
+                                        <a href="tel:" style="color:#e63946;"></a>
+                                    </div>
+                                    <a href="resource&support.html" class="resource-link" data-translate="get_support">Get Support →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add a divider for clarity -->
+    <hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
+
+    <section class="next-sessions-section">
+        <h2 data-translate="join_sessions">Join Our Next Sessions</h2>
+        <div class="carousel-wrapper">
+          <div class="carousel-arrow" style="display: none;" id="carouselLeftArrow">&#8592;</div>
+          <div class="session-carousel">
+            <!-- PAST SESSION -->
+            <div class="session-card past">
+              <img src="images/eventw1.jpg" alt="Past Event 1">
+              <p><strong data-translate="topic">Topic:</strong> Technology-Facilitated Gender-Based Violence (TFGBV)</p>
+              <p data-translate="session_desc_1">Don't miss our session! Join us to learn how to stay safe online.</p>
+              <a class="event-link past-link" data-translate="past_event">Past Event</a>
+            </div>
+
+            <!-- PAST SESSION -->
+            <div class="session-card past">
+              <img src="images/event 3.jpg" alt="Past Event 2">
+              <p><strong data-translate="topic">Topic:</strong> Online Privacy & Digital Footprint</p>
+              <p data-translate="session_desc_2">Stay Safe in Digital Space.</p>
+              <a class="event-link past-link" data-translate="past_event">Past Event</a>
+            </div>
+
+            <div class="session-card past">
+              <img src="images/eventw2.jpg" alt="Past Event 2">
+              <p><strong data-translate="topic">Topic:</strong> Online Privacy & Digital Footprint</p>
+              <p data-translate="session_desc_2">Stay Safe in Digital Space.</p>
+              <a class="event-link past-link" data-translate="past_event">Past Event</a>
+            </div>
+
+            <!-- PAST SESSION -->
+            <div class="session-card past">
+              <img src="images/kenya.jpg" alt="Past Event 3">
+              <p><strong data-translate="topic">Topic:</strong> TFGBV in Kenya</p>
+              <p data-translate="session_desc_3">Session was on 7-8 PM. Learn about TFGBV in Kenya and the Resources involved to combat it.</p>
+              <a class="event-link past-link" data-translate="past_event">Past Event</a>
+            </div>
+            <!-- PAST SESSION -->
+            <div class="session-card past">
+              <img src="images/Eventt4.jpg" alt="Past Event 3">
+              <p><strong data-translate="topic">Topic:</strong> Introduction to Cyber Attacks</p>
+              <p data-translate="session_desc_4">Session was on 7-8 PM. Learn how to protect yourself against cyber threats.</p>
+              <a class="event-link past-link" data-translate="past_event">Past Event</a>
+            </div>
+
+           
+            <div class="session-card past">
+              <img src="images/today.jpg" alt="Past Event 4">
+              <p><strong data-translate="topic">Topic:</strong>  Introduction to Cyber Attacks</p>
+              <a class="event-link past-link" data-translate="past_event">Past Event</a>
+                
+              </p>
+              
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="safety-section">
+        <!-- Other content -->
+    </section>
+
+    <!-- Social Media Section -->
+   
+<section class="social-media-section">
+    <h2 style="text-align: center; margin-bottom: 30px;" data-translate="follow_social_handles">Follow our social handles to know more</h2>
+
+    <div class="social-cards-container">
+        <!-- LinkedIn -->
+        <div class="social-box">
+            <div class="follow-btn">
+                <a href="https://www.linkedin.com/in/shield-maidens-47ab66329" target="_blank" class="linkedin-btn" data-translate="connect">Connect</a>
+            </div>
+            <div class="card-header">
+                <img src="https://static-exp1.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" alt="LinkedIn Logo">
+                <div>
+                    <strong>Shield Maidens</strong><br>
+                    <span data-translate="view_linkedin_profile">View our LinkedIn profile</span><br>
+                    <span style="color: #0077b5; font-size: 13px;">linkedin.com/in/shield-maidens-47ab66329</span>
+                </div>
+            </div>
+            <img src="images/gigs.jpg" alt="Gigs Image" style="width: 100%; border-radius: 10px;">
+        </div>
+
+        <!-- Instagram -->
+        <div class="social-box">
+            <div class="follow-btn">
+                <a href="https://www.instagram.com/the_shield_maidens" target="_blank" class="instagram-btn" data-translate="follow">Follow</a>
+            </div>
+
+            <iframe src="https://www.instagram.com/the_shield_maidens/embed" width="100%" height="460" frameborder="0"
+                scrolling="yes" style="border-radius: 10px;"></iframe>
+        </div>
+
+        <!-- Twitter -->
+        <div class="social-box twitter-card">
+            <div class="social-card-header">
+                <span>@_shield_maidens</span>
+                <a href="https://twitter.com/_shield_maidens" class="twitter-follow-button" data-show-count="false" data-size="large" data-translate="follow_on_twitter">Follow @_shield_maidens</a>
+            </div>
+            <img src="images/XX.jpg" alt="Twitter preview" style="width:100%; border-radius:8px;">
+        </div>
+    </div>
+</section>
+
+<!-- Twitter Script -->
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<hr style="margin: 50px 0 0 0; border: none; border-top: 2px solid #eee;">
+    <!-- Contact Us -->
+    <div class="contact-container">
+        <div id="contact">
+        <h2 data-translate="contact_us">Contact Us</h2>
+        <form id="contactForm" action="send_email.php" method="POST">
+            <input type="text" id="name" name="name" placeholder="Your Name" required data-translate="your_name">
+            <input type="email" id="email" name="email" placeholder="Your Email" required data-translate="your_email">
+            <textarea id="message" name="message" placeholder="Your Message" required data-translate="your_message"></textarea>
+            <div class="g-recaptcha" data-sitekey="6LcpkHQrAAAAAIDPOJ1mevTnvRxF42fXk8INJH-X"></div>
+            <button type="submit" data-translate="send_message">Send Message</button>
+          </form>
+          
+        <p id="response"></p>
+        </div>
+    
+     
+         <!-- Mailing List Section -->
+<form id="mailing-list" action="send_email.php" method="POST">
+    <h2 data-translate="join_mailing_list">Join Our Mailing List</h2>
+    <p data-translate="mailing_list_text">Be the first to know about upcoming Training Sessions, Events, and other related news.</p>
+    <input type="email" id="mailingEmail" name="mailingEmail" placeholder="Enter your email here" required data-translate="your_email">
+    <div class="g-recaptcha" data-sitekey="6LcpkHQrAAAAAIDPOJ1mevTnvRxF42fXk8INJH-X"></div>
+    <button type="submit" data-translate="stay_updated">Stay updated</button>
+    <p id="mailingResponse"></p>
+  </form>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+          <!-- Column 1: Logo (left) -->
+          <div class="footer-logo">
+            <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo">
+          </div>
+      
+          <!-- Column 2: Quick Links (center) -->
+          <div class="footer-links">
+            <h3 data-translate="quick_links">Quick Links</h3>
+            <ul>
+              <li><a href="index.html" data-translate="home_link">Home</a></li>
+              <li><a href="about us.html" data-translate="about_us_link">About Us</a></li>
+              <li><a href="resource&support.html" data-translate="resources_link">Resources</a></li>
+              <li><a href="events.html" data-translate="events_link">Events</a></li>
+              <li><a href="news.html" data-translate="news_link">News</a></li>
+              <li><a href="partner.html" data-translate="partner_link">Partner with Us</a></li>
+              <li><a href="donate.html" class="donate-btn" data-translate="donate_link">Donate</a></li>
+              <li><a href="report.html" class="nav-report-btn" role="menuitem" data-translate="where_to_report_link">Where to Report</a></li>
+            </ul>
+            <div class="payment-icons">
+              <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
+              <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" height="20">
+              <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" height="20">
+            </div>
+          </div>
+      
+          <!-- Column 3: Contact, Location, Socials (right) -->
+          <div class="footer-contact">
+            <h3 data-translate="contact_us">Contact Us</h3>
+            <p data-translate="footer_email">Email: shi3ldmaidens@gmail.com</p>
+            <div class="footer-location">
+              <h3 data-translate="footer_location">Location</h3>
+              <p>Nairobi, Kenya</p>
+            </div>
+            <h3 data-translate="our_socials">Our Socials</h3>
+            <div class="social-icons">
+              <a href="https://x.com/yourusername" target="_blank" class="icon x"><i class="fab fa-x-twitter"></i></a>
+            
+              <a href="https://instagram.com/yourusername" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p data-translate="copyright">Copyright © 2025 Shield Maidens</p>
+        </div>
+      </footer>
+    
+    <script>
+        function openMenu() {
+            document.getElementById("mobileMenu").classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+    
+        function closeMenu() {
+            document.getElementById("mobileMenu").classList.remove("active");
+            document.body.style.overflow = "";
+        }
+    </script>
+    
+
+
+
+  
+
+    <script>
+    // Dynamic Card System
+    document.addEventListener('DOMContentLoaded', function() {
+        const cardButtons = document.querySelectorAll('.card-nav-btn');
+        const cards = document.querySelectorAll('.dynamic-card');
+
+        cardButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and cards
+                cardButtons.forEach(btn => btn.classList.remove('active'));
+                cards.forEach(card => card.classList.remove('active'));
+
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                // Show corresponding card
+                const cardId = button.getAttribute('data-card');
+                const targetCard = document.getElementById(cardId);
+                if (targetCard) {
+                    targetCard.classList.add('active');
+                }
+            });
+        });
+    });
+    </script>
+    <!-- Accessibility Control Panel -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" onclick="toggleAccessibilityPanel()">
+          <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-controls">
+          <button onclick="toggleTextToSpeech()" id="ttsToggle">
+            <i class="fas fa-volume-up"></i> TTS
+          </button>
+          <button onclick="stopTTS()" id="ttsStop">
+            <i class="fas fa-stop"></i> Stop
+        </button>
+          <button onclick="increaseFontSize()">
+            <i class="fas fa-text-height"></i> A+
+          </button>
+          <button onclick="decreaseFontSize()">
+            <i class="fas fa-text-height"></i> A-
+          </button>
+          <button onclick="cycleContrast()" id="contrastToggle">
+            <i class="fas fa-adjust"></i> <span id="contrastLabel">Contrast</span>
+          </button>
+          <button onclick="cycleSaturation()" id="saturationCycleBtn" disabled>Cycle Saturation</button>
+          <button onclick="resetAccessibility()">
+            <i class="fas fa-undo"></i> Reset
+          </button>
+        </div>
+      </div>
+      
+      <style>
+      /* Accessibility Panel Styles */
+      .accessibility-panel {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+      
+      .accessibility-toggle {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 50px !important;
+        height: 50px !important;
+        background: #ff4500 !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 50% !important;
+        font-size: 24px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 10000 !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+        cursor: pointer !important;
+      }
+      
+      .accessibility-toggle:hover {
+        transform: scale(1.1);
+      }
+      
+      .accessibility-controls {
+        display: none;
+        position: absolute;
+        bottom: 60px;
+        right: 0;
+        background: orange;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .accessibility-controls.active {
+        display: flex;
+      }
+      
+      .accessibility-controls button {
+        background: orange;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: background-color 0.3s ease;
+      }
+      
+      .accessibility-controls button:hover {
+        background: #e0e0e0;
+      }
+      
+      /* High Contrast Mode */
+      .high-contrast {
+        background-color: #000 !important;
+        background-color: yellow !important;
+        color: #fff !important;
+      }
+      
+      .high-contrast * {
+        background-color: #000 !important;
+        color: #fff !important;
+        border-color: #fff !important;
+      }
+      
+      .high-contrast a {
+        color: #ffff00 !important;
+      }
+      
+      .high-contrast button {
+        background-color: #fff !important;
+        color: #000 !important;
+      }
+      /* Invert Colors Theme (Pink) */
+      body.invert-colors {
+        background: #ff69b4 !important; /* Hot pink */
+        color: #fff !important;
+      }
+      body.invert-colors a, body.invert-colors button, body.invert-colors input, body.invert-colors textarea {
+        color: #fff !important;
+        background: #d72670 !important;
+        border-color: #fff !important;
+      }
+      /* Dark Mode Theme */
+      body.dark-mode {
+        background: #181a1b !important;
+        color: #e8eaed !important;
+      }
+      body.dark-mode a, body.dark-mode button, body.dark-mode input, body.dark-mode textarea {
+        color: #e8eaed !important;
+        background: #23272a !important;
+        border-color: #444 !important;
+      }
+      /* Light Mode Theme */
+      body.light-mode {
+        background: #fff !important;
+        color: #222 !important;
+      }
+      body.light-mode a, body.light-mode button, body.light-mode input, body.light-mode textarea {
+        color: #222 !important;
+        background: #f5f5f5 !important;
+        border-color: #bbb !important;
+      }
+      /* Color-blind Friendly Theme (blue/yellow) */
+      body.color-blind-mode {
+        background: #f7f7e8 !important;
+        color: #1a1a7a !important;
+      }
+      body.color-blind-mode a, body.color-blind-mode button, body.color-blind-mode input, body.color-blind-mode textarea {
+        color: #1a1a7a !important;
+        background: #ffe066 !important;
+        border-color: #1a1a7a !important;
+      }
+
+
+      /* Ensure accessibility panel and icon always stay fixed and visible */
+      .accessibility-panel {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 9999 !important;
+      }
+      .accessibility-toggle {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 10000 !important;
+      }
+
+      /* Invert Colors Theme (Light Pink Background Only) */
+      .body {
+     background-color: #f8f8f8 !important; /* Light pink */
+      }
+
+      /* Saturation Modes: apply to .main-content only, not body */
+      .main-content.saturation-low {
+        filter: saturate(0.2) !important;
+      }
+      .main-content.saturation-high {
+        filter: saturate(2) !important;
+      }
+      .main-content.saturation-normal {
+        filter: saturate(1) !important;
+      }
+      /* Ensure accessibility panel and icon always stay fixed and visible */
+      .accessibility-panel {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 9999 !important;
+      }
+      .accessibility-toggle {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 10000 !important;
+      }
+
+
+
+
+      @media (max-width: 600px) {
+        .hero-section {
+          height: auto !important;
+          min-height: 60vh !important;
+          padding: 30px 0 !important;
+        }
+        .hero-image {
+          flex-direction: column !important;
+          align-items: center !important;
+          justify-content: flex-start !important;
+          height: auto !important;
+          min-height: 60vh !important;
+          padding: 0 !important;
+          position: relative !important;
+        }
+        .hero-content {
+          padding: 0 8px !important;
+          max-width: 100vw !important;
+          text-align: center !important;
+          z-index: 2 !important;
+        }
+        .hero-content h1 {
+          font-size: 2em !important;
+          margin-bottom: 10px !important;
+        }
+        .hero-content p {
+          font-size: 1em !important;
+          margin-bottom: 18px !important;
+        }
+        .hero-links {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 12px !important;
+          align-items: center !important;
+          width: 100% !important;
+          margin: 0 auto !important;
+          z-index: 2 !important;
+        }
+        .hero-links a {
+          width: 80vw !important;
+          max-width: 220px !important;
+          font-size: 0.98em !important;
+          padding: 9px 0 !important;
+          border-radius: 6px !important;
+        }
+        .social-iconis {
+          position: static !important;
+          display: flex !important;
+          flex-direction: row !important;
+          justify-content: center !important;
+          align-items: center !important;
+          margin: 18px 0 0 0 !important;
+          width: 100% !important;
+          gap: 18px !important;
+          z-index: 2 !important;
+        }
+        .social-iconis a {
+          font-size: 1.6em !important;
+          margin: 0 8px !important;
+        }
+        .hero-image .overlay {
+          display: none !important;
+        }
+      }
+      
+      #voices {
+        width: 250px; /* Adjust width as needed */
+        font-size: 14px;
+        padding: 4px;
+      }
+       #voices {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        width: 200px; /* You can adjust size */
+        font-size: 14px;
+        padding: 4px;
+        z-index: 1000; /* Ensure it stays above other elements */
+      }
+      </style>
+      
+<script>
+function loadVoices() {
+  var voices = window.speechSynthesis.getVoices();
+  var sel = document.getElementById('voices');
+  sel.innerHTML = '';
+  if (voices.length === 0) {
+    var opt = document.createElement('option');
+    opt.textContent = 'No voices loaded';
+    sel.appendChild(opt);
+  } else {
+    voices.forEach(function(v) {
+      var opt = document.createElement('option');
+      opt.textContent = v.name + ' (' + v.lang + ')';
+      sel.appendChild(opt);
+    });
+  }
+}
+window.speechSynthesis.onvoiceschanged = loadVoices;
+loadVoices();
+</script>
+      <script>
+      // Accessibility Functions (Globally accessible)
+    // Accessibility & TTS Configuration
+let isTTSActive = true;
+let isHighContrast = false;
+let currentFontSize = 16;
+let currentTTSVoice = null;
+let allVoices = [];
+
+// Load all voices and cache them
+function loadAllVoices() {
+    allVoices = window.speechSynthesis.getVoices();
+
+    if (!allVoices.length) {
+        // Retry until voices are loaded
+        setTimeout(loadAllVoices, 100);
+        return;
+    }
+
+    // Optionally populate default English voices at start
+    populateVoiceDropdown('en');
+}
+
+// Populate dropdown with voices by language code
+function populateVoiceDropdown(langCode) {
+    const voiceSelect = document.getElementById('voices');
+    voiceSelect.innerHTML = '';
+
+    const filtered = allVoices.filter(v => v.lang.toLowerCase().startsWith(langCode.toLowerCase()));
+    
+    if (!filtered.length) {
+        const opt = document.createElement('option');
+        opt.textContent = 'No matching voices';
+        voiceSelect.appendChild(opt);
+        return;
+    }
+
+    filtered.forEach(voice => {
+        const opt = document.createElement('option');
+        opt.value = voice.name;
+        opt.textContent = `${voice.name} (${voice.lang})`;
+        voiceSelect.appendChild(opt);
+    });
+
+    // Auto-select first as default voice
+    currentTTSVoice = filtered[0];
+    voiceSelect.value = filtered[0].name;
+}
+
+// Update selected voice from dropdown
+function updateSelectedVoice() {
+    const selectedName = document.getElementById('voices').value;
+    const selected = allVoices.find(v => v.name === selectedName);
+    if (selected) {
+        currentTTSVoice = selected;
+        console.log("User selected voice:", selected.name, selected.lang);
+    }
+}
+
+// Select voice based on language & update dropdown
+window.selectTTSVoice = function(lang) {
+    console.log('Switching language to:', lang);
+    document.documentElement.lang = lang;
+
+    if (!allVoices.length) {
+        loadAllVoices();
+        return;
+    }
+
+    let selectedVoice = null;
+
+    // Custom language-specific logic
+    if (lang === 'en') {
+        selectedVoice = allVoices.find(v => v.name === 'Awasili') ||
+                        allVoices.find(v => v.name === 'Asilia') ||
+                        allVoices.find(v => v.lang === 'en-KE') ||
+                        allVoices.find(v => v.lang.startsWith('en-US')) ||
+                        allVoices.find(v => v.lang.startsWith('en-GB')) ||
+                        allVoices.find(v => v.lang.startsWith('en'));
+    } else if (lang === 'sw') {
+        selectedVoice = allVoices.find(v => v.lang === 'sw-KE') ||
+                        allVoices.find(v => v.lang.startsWith('sw'));
+    } else if (lang === 'fr') {
+        selectedVoice = allVoices.find(v => v.lang.startsWith('fr'));
+    } else if (lang === 'ar') {
+        selectedVoice = allVoices.find(v => v.lang.startsWith('ar'));
+    }
+
+    currentTTSVoice = selectedVoice || allVoices.find(v => v.lang.startsWith('en')) || allVoices[0];
+
+    if (currentTTSVoice) {
+        console.log('Selected voice:', currentTTSVoice.name, `(${currentTTSVoice.lang})`);
+    } else {
+        console.warn("No suitable voice found for language " + lang + ", using fallback.");
+    }
+
+    populateVoiceDropdown(lang);
+};
+
+// Load voices on page ready
+window.speechSynthesis.onvoiceschanged = loadAllVoices;
+
+      
+      // Toggle accessibility panel visibility
+      window.toggleAccessibilityPanel = function() {
+          const controls = document.querySelector('.accessibility-controls');
+          controls.classList.toggle('active');
+      };
+      
+      // Toggle text-to-speech on/off
+      window.toggleTextToSpeech = function() {
+          isTTSActive = !isTTSActive;
+          const ttsButton = document.getElementById('ttsToggle');
+          
+          if (isTTSActive) {
+              ttsButton.style.backgroundColor = '#ff4500';
+              ttsButton.style.color = 'white';
+              window.readPageContent(); // Restart reading when toggled on
+          } else {
+              ttsButton.style.backgroundColor = '#f5f5f5';
+              ttsButton.style.color = 'black';
+              window.speechSynthesis.cancel();
+          }
+      };
+      
+      // Stop text-to-speech
+      window.stopTTS = function() {
+          isTTSActive = false;
+          window.speechSynthesis.cancel();
+          const ttsButton = document.getElementById('ttsToggle');
+          if (ttsButton) {
+              ttsButton.style.backgroundColor = '#f5f5f5';
+              ttsButton.style.color = 'black';
+          }
+      };
+      
+      
+      // Read the entire page content
+      window.readPageContent = function() {
+          if (!isTTSActive) {
+              console.log('TTS is not active, not reading content.');
+              return;
+          }
+          
+          // Get the current language
+          const currentLang = document.documentElement.lang || 'en';
+          
+          // Function to create and speak an utterance
+          const speakText = (text, rate = 1) => {
+              if (!text) return null;
+              
+              const utterance = new SpeechSynthesisUtterance(text);
+              utterance.rate = rate;
+              utterance.pitch = 1;
+              utterance.volume = 1;
+              utterance.lang = currentLang;
+              
+              if (currentTTSVoice) {
+                  utterance.voice = currentTTSVoice;
+              }
+              
+              return utterance;
+          };
+      
+          // Create a queue of utterances
+          const utterances = [];
+          
+          // 1. Read navigation links once, clearly
+          const navLinks = document.querySelectorAll('.nav-links a');
+          navLinks.forEach(link => {
+              // Get the complete text content, including any child elements
+              const text = link.textContent.replace(/\s+/g, ' ').trim();
+              if (text) {
+                  const utterance = speakText(text, 0.9);
+                  if (utterance) {
+                      utterances.push(utterance);
+                  }
+              }
+          });
+      
+          // 2. Read the main content
+          const mainContent = Array.from(document.querySelectorAll('[data-translate]'))
+              .filter(el => el.getAttribute('data-lang') === currentLang || !el.getAttribute('data-lang'))
+              .map(el => el.textContent.replace(/\s+/g, ' ').trim())
+              .filter(text => text) // Remove empty strings
+              .join(' ');
+      
+          if (mainContent) {
+              const utterance = speakText(mainContent, 1);
+              if (utterance) {
+                  utterances.push(utterance);
+              }
+          }
+      
+          // Function to speak the next utterance in the queue
+          const speakNext = (index) => {
+              if (index < utterances.length) {
+                  const utterance = utterances[index];
+                  utterance.onend = () => {
+                      // Add a pause between items
+                      setTimeout(() => {
+                          speakNext(index + 1);
+                      }, 500); // Consistent pause between all items
+                  };
+                  window.speechSynthesis.speak(utterance);
+              }
+          };
+      
+          // Start speaking the queue
+          speakNext(0);
+      };
+      
+      // Increase font size
+      window.increaseFontSize = function() {
+          currentFontSize += 2;
+          document.body.style.fontSize = currentFontSize + 'px';
+      };
+      
+      // Decrease font size
+      window.decreaseFontSize = function() {
+          currentFontSize = Math.max(12, currentFontSize - 2);
+          document.body.style.fontSize = currentFontSize + 'px';
+      };
+      
+      // Toggle high contrast mode
+      window.toggleHighContrast = function() {
+          isHighContrast = !isHighContrast;
+          const contrastButton = document.getElementById('contrastToggle');
+          
+          if (isHighContrast) {
+              document.body.classList.add('high-contrast');
+              contrastButton.style.backgroundColor = '#ff4500';
+              contrastButton.style.color = 'white';
+          } else {
+              document.body.classList.remove('high-contrast');
+              contrastButton.style.backgroundColor = '#f5f5f5';
+              contrastButton.style.color = 'black';
+          }
+      };
+      
+      // Reset all accessibility settings
+      window.resetAccessibility = function() {
+          // Reset font size
+          currentFontSize = 16;
+          document.body.style.fontSize = ''; // Resets to default
+      
+          // Reset high contrast
+          isHighContrast = false;
+          document.body.classList.remove('high-contrast');
+          document.getElementById('contrastToggle').style.backgroundColor = '#f5f5f5';
+          document.getElementById('contrastToggle').style.color = 'black';
+      
+          // Reset text-to-speech
+          isTTSActive = false;
+          window.speechSynthesis.cancel(); // Stop any ongoing speech
+          document.getElementById('ttsToggle').style.backgroundColor = '#f5f5f5';
+          document.getElementById('ttsToggle').style.color = 'black';
+      
+          // Re-select voice based on current page language (defaults to English)
+          window.selectTTSVoice(document.documentElement.lang || 'en');
+      };
+      
+      // Initial setup for voices and auto-read
+      document.addEventListener('DOMContentLoaded', () => {
+          const initializeTTSOnLoad = () => {
+              // Set TTS to active by default
+              isTTSActive = true;
+              
+              // Initialize voice selection
+              window.selectTTSVoice(document.documentElement.lang || 'en');
+              
+              // Set the TTS button to active state
+              const ttsButton = document.getElementById('ttsToggle');
+              if (ttsButton) {
+                  ttsButton.style.backgroundColor = '#ff4500';
+                  ttsButton.style.color = 'white';
+              }
+      
+              // Start reading the page content automatically
+              setTimeout(() => {
+                  window.readPageContent();
+              }, 1000); // Small delay to ensure everything is loaded
+          };
+      
+          if (window.speechSynthesis && window.speechSynthesis.getVoices().length > 0) {
+              initializeTTSOnLoad();
+          } else if (window.speechSynthesis) {
+              window.speechSynthesis.onvoiceschanged = () => {
+                  initializeTTSOnLoad();
+              };
+          } else {
+              console.warn("SpeechSynthesis API not supported in this browser.");
+          }
+      });
+
+    
+       // Contact Form
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = this;
+    var formData = new FormData(form);
+    
+    console.log('Submitting contact form to:', form.action);
+    
+    fetch(form.action, {
+        method: 'POST',
+        body: formData
+    })
+    .then(res => {
+        console.log('Response status:', res.status);
+        console.log('Response headers:', res.headers);
+        return res.text(); // Get raw response first
+    })
+    .then(text => {
+        console.log('Raw response from server:', text);
+        try {
+            const data = JSON.parse(text);
+            console.log('Parsed JSON data:', data);
+            if(data.status === "success") {
+                alert("Thank you for contacting Shieldmaidens! We value inclusivity, empowerment, and safety. Our team will get back to you shortly. Stay Safe Online!");
+                form.reset();
+            } else {
+                alert(data.message || "There was an error. Please try again.");
+            }
+        } catch (parseError) {
+            console.error('Failed to parse JSON:', parseError);
+            console.error('Raw response was:', text);
+            alert("Server returned invalid response. Please check console for details.");
+        }
+    })
+    .catch((error) => {
+        console.error('Fetch error:', error);
+        alert("There was an error. Please try again.");
+    });
+});
+
+// Mailing List
+document.getElementById('mailing-list').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = this;
+    var formData = new FormData(form);
+    
+    console.log('Submitting mailing list form to:', form.action);
+    
+    fetch(form.action, {
+        method: 'POST',
+        body: formData
+    })
+    .then(res => {
+        console.log('Response status:', res.status);
+        console.log('Response headers:', res.headers);
+        return res.text(); // Get raw response first
+    })
+    .then(text => {
+        console.log('Raw response from server:', text);
+        try {
+            const data = JSON.parse(text);
+            console.log('Parsed JSON data:', data);
+            if(data.status === "success") {
+                alert("Thank you for subscribing to our news, let's get updated! 📰");
+                form.reset();
+            } else {
+                alert(data.message || "There was an error. Please try again.");
+            }
+        } catch (parseError) {
+            console.error('Failed to parse JSON:', parseError);
+            console.error('Raw response was:', text);
+            alert("Server returned invalid response. Please check console for details.");
+        }
+    })
+    .catch((error) => {
+        console.error('Fetch error:', error);
+        alert("There was an error. Please try again.");
+    });
+});
+
+      </script>
+      <script src="js/language-handler.js"></script>
+      <script src="script.js"></script>
+
+    <script>
+    function updateCarouselArrow() {
+      const carousel = document.querySelector('.session-carousel');
+      const arrow = document.getElementById('carouselLeftArrow');
+      if (!carousel || !arrow) return;
+      if (window.innerWidth > 600) {
+        arrow.style.display = 'none';
+        return;
+      }
+      // Show arrow if not at leftmost
+      if (carousel.scrollLeft > 10) {
+        arrow.style.display = 'flex';
+      } else {
+        arrow.style.display = 'none';
+      }
+    }
+    window.addEventListener('resize', updateCarouselArrow);
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.querySelector('.session-carousel');
+      const arrow = document.getElementById('carouselLeftArrow');
+      if (!carousel || !arrow) return;
+      updateCarouselArrow();
+      carousel.addEventListener('scroll', updateCarouselArrow);
+      arrow.addEventListener('click', function() {
+        carousel.scrollBy({ left: -carousel.offsetWidth * 0.9, behavior: 'smooth' });
+      });
+    });
+    </script>
+
+   
+
+<script>
+  const yearlyStats = {
+    "2020 reflect verified statistics from global reports": [
+      { value: 58, text: "of women experienced online violence including image-based abuse and harassment." },
+      { value: 35, text: "of girls faced online abuse on social media platforms." },
+      { value: 50, text: "of those affected were unsure how to report it." },
+      { value: 27, text: "experienced long-term psychological effects." },
+      { value: 14, text: "thought of suicide after online abuse." }
+    ],
+    "2021 reflect verified statistics from global reports": [
+      { value: 38, text: "of women personally experienced online abuse." },
+      { value: 85, text: "of women witnessed others being abused online." },
+      { value: 42, text: "of girls felt unsafe or withdrew from online spaces after abuse." },
+      { value: 33, text: "of reported cases included image-based abuse." },
+      { value: 16, text: "reported attempted suicide or self-harm." }
+    ],
+    "2022": [
+      { value: 32, text: "of girls experienced body shaming or threats online." },
+      { value: 30, text: "feared retaliation if they reported abuse." },
+      { value: 34, text: "involved non-consensual content or deepfakes." },
+      { value: 20, text: "developed anxiety or PTSD after online violence." },
+      { value: 13, text: "lost educational or career opportunities due to online shaming." }
+    ],
+    "2023": [
+      { value: 47, text: "of girls received threats or abusive messages online." },
+      { value: 29, text: "of LGBTQ+ youth reported targeted harassment." },
+      { value: 38, text: "had personal accounts hacked or impersonated." },
+      { value: 26, text: "felt excluded from online communities." },
+      { value: 18, text: "stopped engaging with online learning." },
+      { value: 15, text: "attempted self-harm after online abuse." }
+    ],
+    "2024": [
+      { value: 70, text: "of abuse survivors reported serious mental health effects." },
+      { value: 55, text: "of teens were affected by online blackmail, sextortion, or threats." },
+      { value: 39, text: "feared further harm if they reported." },
+      { value: 32, text: "had their images shared without consent." },
+      { value: 25, text: "experienced threats against family or friends." },
+      { value: 21, text: "were retraumatized by platform inaction." },
+      { value: 17, text: "attempted suicide or had suicidal ideation." }
+    ],
+    "2025": [ // Estimated
+      { value: 75, text: "received no justice or follow-up support. (Estimate)" },
+      { value: 58, text: "of victims withdrew from online life entirely. (Estimate)" },
+      { value: 46, text: "reported loss of self-esteem or isolation. (Estimate)" },
+      { value: 36, text: "were attacked using AI-generated content. (Estimate)" },
+      { value: 31, text: "were impersonated in online scams. (Estimate)" },
+      { value: 22, text: "developed long-term depression. (Estimate)" }
+    ],
+    "2026": [ // Estimated
+      { value: 80, text: "of victims include women, youth, LGBTQ+, and marginalized groups. (Estimate)" },
+      { value: 63, text: "continue to live in fear of digital abuse. (Estimate)" },
+      { value: 51, text: "felt invisible or silenced online. (Estimate)" },
+      { value: 44, text: "live with trauma from repeated online attacks. (Estimate)" },
+      { value: 26, text: "lack mental health resources post-abuse. (Estimate)" }
+    ]
+  };
+
+  
+      const wrapper = document.getElementById("stat-wrapper");
+      const years = Object.keys(yearlyStats);
+      let currentYearIndex = 0;
+  
+      function createYearSection(year, data) {
+        const section = document.createElement("div");
+        section.className = "year-section";
+        section.id = `year-${year}`;
+  
+        const title = document.createElement("h2");
+        title.textContent = year;
+        section.appendChild(title);
+  
+        const grid = document.createElement("div");
+        grid.className = "grid";
+  
+        data.forEach(stat => {
+          const box = document.createElement("div");
+          box.className = "stat-box";
+  
+          const percent = document.createElement("div");
+          percent.className = "percentage";
+          percent.textContent = "0%";
+  
+          const desc = document.createElement("div");
+          desc.className = "text";
+          desc.textContent = stat.text;
+  
+          const progress = document.createElement("div");
+          progress.className = "progress-bar";
+          const fill = document.createElement("div");
+          fill.className = "progress-fill";
+          progress.appendChild(fill);
+  
+          box.appendChild(percent);
+          box.appendChild(desc);
+          box.appendChild(progress);
+  
+          grid.appendChild(box);
+  
+          animateStat(percent, fill, stat.value);
+        });
+  
+        section.appendChild(grid);
+        return section;
+      }
+  
+      function rotateSections() {
+        const oldSections = document.querySelectorAll(".year-section");
+        oldSections.forEach(sec => sec.style.display = "none");
+  
+        const year = years[currentYearIndex];
+        let section = document.getElementById(`year-${year}`);
+  
+        if (!section) {
+          section = createYearSection(year, yearlyStats[year]);
+          wrapper.appendChild(section);
+        }
+  
+        section.style.display = "block";
+        currentYearIndex = (currentYearIndex + 1) % years.length;
+      }
+  
+      function animateStat(element, fillEl, target) {
+        let current = 0;
+        const steps = 30;
+        const increment = target / steps;
+        const interval = 50;
+  
+        const animate = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(animate);
+          }
+          element.textContent = `${Math.round(current)}%`;
+          fillEl.style.width = `${current}%`;
+        }, interval);
+      }
+  
+      rotateSections();
+      setInterval(rotateSections, 8000); // rotates every 8 seconds
+    </script>
+   
+
+   
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script>
+  // --- Contrast and Saturation Cycling Logic ---
+  let contrastIndex = 0;
+  const contrastModes = [
+    { name: 'Default', fn: () => resetContrast() },
+    { name: 'Invert', fn: () => { resetContrast(); document.body.classList.add('invert-colors'); } },
+    { name: 'High', fn: () => { resetContrast(); document.body.classList.add('high-contrast'); } },
+    { name: 'Dark', fn: () => { resetContrast(); document.body.classList.add('dark-mode'); } },
+    { name: 'Light', fn: () => { resetContrast(); document.body.classList.add('light-mode'); } },
+    { name: 'Color-blind', fn: () => { resetContrast(); document.body.classList.add('color-blind-mode'); } }
+  ];
+  function resetContrast() {
+    document.body.classList.remove('invert-colors', 'high-contrast', 'dark-mode', 'light-mode', 'color-blind-mode');
+  }
+  function cycleContrast() {
+    contrastIndex = (contrastIndex + 1) % contrastModes.length;
+    contrastModes[contrastIndex].fn();
+    document.getElementById('contrastLabel').textContent = 'Contrast: ' + contrastModes[contrastIndex].name;
+  }
+
+  let saturationIndex = 0;
+  const saturationModes = [
+    { name: 'Normal', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-normal'); } },
+    { name: 'Low', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-low'); } },
+    { name: 'High', fn: () => { resetSaturation(); document.querySelector('.main-content').classList.add('saturation-high'); } }
+  ];
+  function resetSaturation() {
+    document.querySelector('.main-content').classList.remove('saturation-low', 'saturation-high', 'saturation-normal');
+  }
+  function cycleSaturation() {
+    saturationIndex = (saturationIndex + 1) % saturationModes.length;
+    saturationModes[saturationIndex].fn();
+    document.getElementById('saturationLabel').textContent = 'Saturation: ' + saturationModes[saturationIndex].name;
+  }
+
+  // Update labels on load and after reset
+  function updateLabels() {
+    document.getElementById('contrastLabel').textContent = 'Contrast: ' + contrastModes[contrastIndex].name;
+    document.getElementById('saturationLabel').textContent = 'Saturation: ' + saturationModes[saturationIndex].name;
+  }
+  document.addEventListener('DOMContentLoaded', updateLabels);
+
+  // Update resetAccessibility to also reset these
+  const oldReset = window.resetAccessibility;
+  window.resetAccessibility = function() {
+    oldReset();
+    contrastIndex = 0;
+    saturationIndex = 0;
+    resetContrast();
+    resetSaturation();
+    updateLabels();
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    isTTSActive = false;
+    var ttsButton = document.getElementById('ttsToggle');
+    var stopButton = document.getElementById('ttsStop');
+    if (ttsButton) {
+      ttsButton.disabled = true;
+      ttsButton.style.opacity = 0.5;
+      ttsButton.style.pointerEvents = 'none';
+    }
+    if (stopButton) {
+      stopButton.disabled = true;
+      stopButton.style.opacity = 0.5;
+      stopButton.style.pointerEvents = 'none';
+    }
+  });
+</script>
+  </div>
+  <!-- Accessibility icon/panel must be here, outside .main-content -->
+  <div class="accessibility-panel" id="accessibilityPanel">
+    <!-- ... existing accessibility panel code ... -->
+  </div>
+  <!-- Footer, scripts, etc. -->
+</body>
+</html>

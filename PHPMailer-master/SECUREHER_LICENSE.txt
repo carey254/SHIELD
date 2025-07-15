@@ -1,0 +1,10 @@
+Copyright (c) 2024 Caren Jeruto
+
+All rights reserved.
+
+This project, SecureHer, and all associated files, assets, and content are the intellectual property of Caren Jeruto.
+
+Unauthorized copying, modification, distribution, or use of this project without express written permission from the author is strictly prohibited.
+
+For any inquiries regarding use, licensing, or contributions, please contact: carenjeruto477@gmail.com
+

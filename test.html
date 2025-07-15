@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  </head>
+<body>
+
+<!-- Add this inside your <body> tag -->
+<section class="hero-section">
+  <div class="hero-image">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>The Shield Maidens</h1>
+      <p>Join us as we stand together to fight against technology-facilitated gender-based violence (TFGBV), support marginalized communities, and build lasting change. Find out more about who we are and how you can be part of the movement.</p>
+      <div class="hero-links">
+        <a href="about us.html" role="menuitem" data-translate="about_us_link">About Us</a>
+    
+        <a href="#vision">Vision</a>
+        <a href="#team">Team</a>
+      <a href="partner.html" role="menuitem" data-translate="partner_link">Partner with Us</a>
+      </div>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="social-iconis">
+       <a href="https://x.com/yourusername" target="_blank" class="icon x"><i class="fab fa-x-twitter"></i></a>
+            
+              <a href="https://instagram.com/yourusername" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+  </div>
+</section>
+
+
+  <!-- Social Media Icons -->
+<div class="social-icons">
+  <a href="https://x.com/_shield_maidens" target="_blank" class="icon x"><i class="fab fa-x-twitter"></i></a>
+
+  <a href="https://www.instagram.com/the_shield_maidens/" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
+<!-- Style -->
+<style>/* Add this to your CSS */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  color: white;
+}
+
+.hero-image {
+  background: url('images/tgbvw2.png') no-repeat center center/cover;
+  filter: blur(0.8px);
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+.hero-links a {
+  margin: 0 10px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-links a:hover {
+  text-decoration: underline;
+}
+
+.social-iconis {
+  position: absolute;
+  top: 40%;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.social-iconis a {
+  margin: 8px 0;
+  color: rgb(241, 132, 7);
+  font-size: 1.5em;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  color: white;
+  z-index: 2;
+}
+
+
+
+
+
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+
+  .icon.x {
+    background-color: #000; /* Twitter/X in black */
+  }
+
+  .icon.facebook {
+    background-color: #3b5998;
+  }
+
+  .icon.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  }
+
+  .icon.linkedin {
+    background-color: #0077b5;
+  }
+
+  .icon:hover {
+    opacity: 0.8;
+  }
+</style>
+
+<select id="voices"></select>
+<script>
+function loadVoices() {
+  var voices = window.speechSynthesis.getVoices();
+  var sel = document.getElementById('voices');
+  sel.innerHTML = '';
+  if (voices.length === 0) {
+    var opt = document.createElement('option');
+    opt.textContent = 'No voices loaded';
+    sel.appendChild(opt);
+  } else {
+    voices.forEach(function(v) {
+      var opt = document.createElement('option');
+      opt.textContent = v.name + ' (' + v.lang + ')';
+      sel.appendChild(opt);
+    });
+  }
+}
+window.speechSynthesis.onvoiceschanged = loadVoices;
+loadVoices();
+</script>
+</body>
+</html>
+
+  <div class="social-icons">
+                    <a href="https://x.com/_shield_maidens" target="_blank">
+                        <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank">
+                        <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"/>
+                    </a>
+                    <a href="https://www.instagram.com/the_shield_maidens/" target="_blank">
+                        <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram"/>
+                    </a>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Amazing Team</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-bxKXJmQ4I4GLwZy2XIIqT+2x+SCs6VtqFvUde3bwUR7B7tt8d3y5YgHdbsRjhuIkqnmPf0ogGC+iaj4uWvHgYA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+
+:root {
+  --card-bg: #fff8e1;
+  --brand-orange: #ff6810;
+  --title-purple: #ffffff;
+  --card-border: #f7d54e;
+  --page-bg: #4e2e1e;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: var(--page-bg);
+  color: var(--title-purple);
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  color: #fff;
+}
+
+.team-intro {
+  max-width: 32rem;
+  margin: 0 auto 2.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #eee;
+}
+
+/* === team grid === */
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 3px solid var(--card-border);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--card-border);
+  margin: 1rem auto 0;
+  object-fit: cover;
+}
+
+.team-info {
+  background: var(--card-bg);
+  padding: 0.75rem 1rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.name-row h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #2c2c2c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.linkedin {
+  display: inline-flex;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  background: #000;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  transition: background 0.25s ease;
+}
+
+.linkedin:hover {
+  background: var(--brand-orange);
+}
+
+.team-info p {
+  margin: 0.4rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .team-member img {
+    width: 120px;
+    height: 120px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <h2 id="team-heading" data-translate="our_team_title">OUR AMAZING TEAM</h2>
+  <p class="team-intro" aria-describedby="team-heading" data-translate="our_team_intro">
+   Empowering women in tech across Africa while championing safety and standing strong against Tech-Facilitated Gender-Based Violence.
+  </p>
+
+  <section class="team-container" aria-labelledby="team-heading">
+    <!-- Jane -->
+    <article class="team-member" aria-label="Jane Doe – Founder and Security Consultant">
+      <img src="images/sumaiyah.jpg" alt="Portrait of Jane Doe, Founder and Security Consultant">
+      <div class="team-info">
+        <div class="name-row">
+          <h3 data-translate="team_member_jane_name">JANE DOE</h3>
+          <a href="#" class="linkedin" aria-label="Jane on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p data-translate="team_member_jane_role">Founder</p>
+      </div>
+    </article>
+
+    <!-- Maria -->
+    <article class="team-member" aria-label="Maria Muneeni – Co‑Founder and Digital Safety Trainer">
+      <img src="images/mariaah.png" alt="Portrait of Maria Muneeni, Co‑Founder and Champion for PWDs">
+      <div class="team-info">
+        <div class="name-row">
+          <h3 data-translate="team_member_maria_name">MARIA MUNEENI</h3>
+          <a href="#" class="linkedin" aria-label="Maria on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p data-translate="team_member_maria_role">Co‑Founder</p>
+      </div>
+    </article>
+
+    <!-- Ruth -->
+    <article class="team-member" aria-label="Ruth Jebitok – Social Media Manager">
+      <img src="images/rtth.jpg" alt="Portrait of Ruth Jebitok, Social Media Manager">
+      <div class="team-info">
+        <div class="name-row">
+          <h3 data-translate="team_member_ruth_name">RUTH JEBITOK</h3>
+          <a href="https://www.linkedin.com/in/ruth-jebitok-6114b6283/" class="linkedin" aria-label="Ruth on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p data-translate="team_member_ruth_role">Social Media Manager</p>
+      </div>
+    </article>
+
+
+
+    <!-- Caren -->
+    <article class="team-member" aria-label="Caren Jeruto – Digital Safety Trainer">
+      <img src="images/car.jpg" alt="Portrait of Caren Jeruto, Digital Safety Trainer">
+      <div class="team-info">
+        <div class="name-row">
+          <h3 data-translate="team_member_caren_name">CAREN JERUTO</h3>
+          <a href="https://www.linkedin.com/in/caren-jeruto-831037286/" class="linkedin" aria-label="Caren on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p data-translate="team_member_caren_role">Software Developer</p>
+      </div>
+    </article>
+  </section>
+</body>
+</html>
+
+
